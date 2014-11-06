@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="jnaoqi-windows32:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/jnaoqi_windows32_jar</output-path>
+    <root id="archive" name="jnaoqi-windows32.jar">
+      <element id="module-output" name="jnaoqi" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/generate/lib/qimessaging-2.1.0.19-win32-vs2010.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

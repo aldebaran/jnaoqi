@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="jnaoqi-android:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/jnaoqi_android_jar</output-path>
+    <root id="archive" name="jnaoqi-android.jar">
+      <element id="module-output" name="jnaoqi" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/generate/lib/qimessaging-2.1.1-android.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

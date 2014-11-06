@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="qimessaging-2.1.0.19-linux64">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/generate/lib/qimessaging-2.1.0.19-linux64.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
