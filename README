@@ -1,0 +1,15 @@
+http://www.aldebaran.com
+
+Example to control Nao with Java qimessaging library and jnaoqi wrapper
+
+- Work with Naoqi version 2.x
+- Examples that work on Desktop and Android and Robot JVMs
+
+Java Qimessaing source code could be find here : https://github.com/aldebaran/libqi-java
+
+If you want to test the robot project you must download a JRE on your robots : 
+The jre you need is :  Linux x86 jre-8u5-linux-i586.tar.gz
+
+
+
+
