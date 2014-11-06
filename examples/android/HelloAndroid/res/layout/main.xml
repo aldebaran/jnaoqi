@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="0dp"
+            android:id="@+id/robot_ip_edit"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="10.0.1.2"
+            android:hint="Robot Ip"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:onClick="connect"
+            android:layout_height="wrap_content"
+            android:text="Connect"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="rest"
+            android:onClick="onRest"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sit"
+            android:onClick="onSit"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="wake"
+            android:onClick="onWake"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="open Hand"
+            android:onClick="onOpenHand"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="close Hand"
+            android:onClick="onCloseHand"/>
+    </LinearLayout>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:columnCount="3"
+        android:layout_marginTop="20dp"
+        android:rowCount="3"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:onClick="onGoToFront"/>
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:onClick="onGoToLeft"/>
+        <ImageButton
+            android:layout_width="100dp"
+            android:scaleType="fitXY"
+            android:onClick="onStop"
+            android:layout_height="100dp"/>
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:onClick="onGoToRight"/>
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:onClick="onGoToBack"/>
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+
+    </GridLayout>
+
+</LinearLayout>

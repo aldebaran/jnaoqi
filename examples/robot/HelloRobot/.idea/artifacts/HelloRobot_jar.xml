@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="HelloRobot:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/HelloRobot_jar</output-path>
+    <root id="archive" name="HelloRobot.jar">
+      <element id="module-output" name="HelloRobot" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../jars/jnaoqi-atom-2.1.0.19.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
