@@ -7,6 +7,9 @@ import com.aldebaran.qimessaging.Session;
 import com.aldebaran.qimessaging.helpers.al.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by epinault on 25/09/2014.
@@ -69,6 +72,7 @@ public class ExSmileDetector {
 					if (humanID >= 0 && !isRunning) {
 						isRunning = true;
 
+						float neutralEmotion = 0.5f;
 						float threshHappyEmotion = 0.35f;
 						float threshSurprisedEmotion = 0.45f;
 						float threshAngryEmotion = 0.7f;
@@ -107,14 +111,26 @@ public class ExSmileDetector {
 								tabProperties[3] /= 3;
 								tabProperties[4] /= 3;
 
-								if (tabProperties[1] > threshHappyEmotion) {
-									tts.say("You are smiling ");
-								} else if (tabProperties[2] > threshSurprisedEmotion) {
-									tts.say("You are surprised ");
-								} else if (tabProperties[3] > threshAngryEmotion) {
-									tts.say("You are angry ");
-								} else if (tabProperties[4] > threshSadEmotion) {
-									tts.say("You are sad ");
+								List<Float> percentage = new ArrayList<Float>();
+
+								percentage.add(tabProperties[0] - neutralEmotion);
+								percentage.add(tabProperties[1] - threshHappyEmotion);
+								percentage.add(tabProperties[2] - threshSurprisedEmotion);
+								percentage.add(tabProperties[3] - threshAngryEmotion);
+								percentage.add(tabProperties[4] - threshSadEmotion);
+
+//								List b = Arrays.asList(ArrayUtils.toObject(a));
+								int i;
+								for (i = 0 ; i < 5; i++) {
+									if (percentage.get(i).equals(Collections.max(percentage))) {
+										break;
+									}
+								}
+								switch (i) {
+									case 1: tts.say("You are smiling ");break;
+									case 2: tts.say("You are surprised ");break;
+									case 3: tts.say("You are angry ");break;
+									case 4: tts.say("You are sad ");break;
 								}
 								counter = 0;
 							}

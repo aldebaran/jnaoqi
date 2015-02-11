@@ -17,7 +17,7 @@ public class RobotIP {
 //	public static String ip = "10.158.117.135";
 //	public static String port = "9559";
 
-	public static String ip = "maracuya.local";
+	public static String ip = "10.0.164.99";
 	public static String port = "9559";
 
 	public static String TWITPIK_KEY = "";

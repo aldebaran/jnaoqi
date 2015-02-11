@@ -33,6 +33,7 @@ public class ExReactToTouch {
             tts = new ALTextToSpeech(session);
             motion = new ALMotion(session);
 
+
             alMemory.subscribeToEvent("FrontTactilTouched" , "onTouchFront::(f)", new Object() {
 	            public void onTouchFront(Float touch) throws InterruptedException, CallError {
 		            if(touch == 1.0) {

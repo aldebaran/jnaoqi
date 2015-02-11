@@ -49,24 +49,22 @@ public class ExReactToVoice {
 
             alSpeechRecognition.subscribe("demo2");
             alMemory.subscribeToEvent("WordRecognized", "onWordRecognized::(m)", new Object() {
-	            public void onWordRecognized(Object words) throws InterruptedException, CallError {
-		            String word = (String) ((List<Object>)words).get(0);
-		            System.out.println("Word "+word);
+                public void onWordRecognized(Object words) throws InterruptedException, CallError {
+                    String word = (String) ((List<Object>) words).get(0);
+                    System.out.println("Word " + word);
 
-		            if(word.equals("wake") && !isAwake) {
-			            tts.say("hi");
-			            alSpeechRecognition.pause(true);
-			            motion.wakeUp();
-			            alSpeechRecognition.pause(false);
-			            isAwake = true;
-		            }
-		            else if (word.equals("come") && isAwake) {
-			            motion.moveToward(0.6f, 0f, 0f);
-		            }
-		            else if (word.equals("stop") && isAwake) {
-			            motion.moveToward(0f, 0f, 0f);
-		            }
-	            }
+                    if (word.equals("wake") && !isAwake) {
+                        tts.say("hi");
+                        alSpeechRecognition.pause(true);
+                        motion.wakeUp();
+                        alSpeechRecognition.pause(false);
+                        isAwake = true;
+                    } else if (word.equals("come") && isAwake) {
+                        motion.moveToward(0.6f, 0f, 0f);
+                    } else if (word.equals("stop") && isAwake) {
+                        motion.moveToward(0f, 0f, 0f);
+                    }
+                }
             });
             alMemory.subscribeToEvent("MiddleTactilTouched", "onEnd::(f)", new Object() {
 	            public void onEnd(Float touch) throws InterruptedException, CallError {
