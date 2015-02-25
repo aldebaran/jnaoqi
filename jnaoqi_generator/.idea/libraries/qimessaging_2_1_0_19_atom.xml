@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="qimessaging-2.1.0.19-atom">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/generate/lib/qimessaging-2.1.0.19-atom.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

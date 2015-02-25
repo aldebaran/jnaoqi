@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="java-naoqi-sdk-linux64:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/java_naoqi_sdk_linux64_jar</output-path>
-    <root id="archive" name="java-naoqi-sdk-linux64.jar">
-      <element id="module-output" name="java-naoqi-sdk" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/generate/lib/libqi-java-2.1.3-linux64.jar" path-in-jar="/" />
-    </root>
-  </artifact>
-</component>

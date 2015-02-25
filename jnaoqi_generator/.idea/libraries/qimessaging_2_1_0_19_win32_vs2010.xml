@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="qimessaging-2.1.0.19-win32-vs2010">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/generate/lib/qimessaging-2.1.0.19-win32-vs2010.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

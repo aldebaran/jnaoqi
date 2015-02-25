@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="jnaoqi-linux32:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/jnaoqi_linux32_jar</output-path>
-    <root id="archive" name="jnaoqi-linux32.jar">
-      <element id="module-output" name="java-naoqi-sdk" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/generate/lib/qimessaging-2.1.0.19-linux32.jar" path-in-jar="/" />
-    </root>
-  </artifact>
-</component>

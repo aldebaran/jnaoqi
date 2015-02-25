@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="jnaoqi-mac64:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/jnaoqi_mac64_jar</output-path>
-    <root id="archive" name="jnaoqi-mac64.jar">
-      <element id="module-output" name="java-naoqi-sdk" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/generate/lib/qimessaging-2.1.0.19-mac64.jar" path-in-jar="/" />
-    </root>
-  </artifact>
-</component>
