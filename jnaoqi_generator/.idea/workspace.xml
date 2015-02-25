@@ -11,76 +11,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac5a9c8f-caf1-4e8c-8e3b-05e194fd79b9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALAnimatedSpeech.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALAudioDevice.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALAudioPlayer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALAudioRecorder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALAudioSourceLocalization.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALAutonomousLife.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALAutonomousMoves.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALBacklightingDetection.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALBarcodeReader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALBasicAwareness.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALBattery.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALBehaviorManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALBodyTemperature.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALChestButton.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALColorBlobDetection.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALConnectionManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALDarknessDetection.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALDiagnosis.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALDialog.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALEngagementZones.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALFaceCharacteristics.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALFaceDetection.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALFsr.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALGazeAnalysis.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALInfrared.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALKnowledge.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALLaser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALLauncher.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALLeds.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALLocalization.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALLogger.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALMemory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALMood.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALMotion.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALMotionRecorder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALMovementDetection.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALNavigation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALNotificationManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALPeoplePerception.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALPhotoCapture.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALPreferenceManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALPreferences.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALRedBallDetection.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALResourceManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALRobotPosture.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALSensors.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALSittingPeopleDetection.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALSonar.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALSoundDetection.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALSoundLocalization.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALSpeechRecognition.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALStore.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALSystem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALTactileGesture.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALTextToSpeech.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALTouch.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALTracker.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALUserSession.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALVideoDevice.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALVideoRecorder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALVisionRecognition.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALVisualCompass.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALVisualSpaceHistory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALWavingDetection.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALWorldRepresentation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/DCM.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/PackageManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="ac5a9c8f-caf1-4e8c-8e3b-05e194fd79b9" name="Default" comment="" />
     <ignored path="PyTemp.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -1138,7 +1069,7 @@
       <workItem from="1424695020511" duration="2638000" />
       <workItem from="1424769566529" duration="290000" />
       <workItem from="1424771969447" duration="12010000" />
-      <workItem from="1424856315906" duration="1788000" />
+      <workItem from="1424856315906" duration="1847000" />
     </task>
     <task id="LOCAL-00001" summary="Update the generator with new apis and new name">
       <created>1424860929740</created>
@@ -1146,11 +1077,17 @@
       <option name="project" value="LOCAL" />
       <updated>1424860929740</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update proxies">
+      <created>1424861358649</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1424861358649</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108216000" />
+    <option name="totallyTimeSpent" value="108275000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1198,11 +1135,13 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
     <MESSAGE value="Update the generator with new apis and new name" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update the generator with new apis and new name" />
+    <MESSAGE value="Update proxies" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update proxies" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
