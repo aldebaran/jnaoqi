@@ -3,16 +3,167 @@
   <component name="AnalysisUIOptions">
     <option name="ANALYZE_TEST_SOURCES" value="false" />
     <option name="SCOPE_TYPE" value="4" />
+    <option name="CUSTOM_SCOPE_NAME" value="Module 'jnaoqi'" />
   </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="jnaoqi-atom:jar" />
+      <artifact name="java-naoqi-sdk-linux64:jar" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac5a9c8f-caf1-4e8c-8e3b-05e194fd79b9" name="Default" comment="" />
+    <list default="true" id="ac5a9c8f-caf1-4e8c-8e3b-05e194fd79b9" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/lib/libqi-java-2.1.3-android.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/lib/libqi-java-2.1.3-linux64.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/ALInterface.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/ALProxy.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../examples/android/RemoteNaoqi/app/src/main/java/com/aldebaran/remotenaoqi/ConnectFragment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/EventCallback.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../examples/desktop/HelloDesktop/src/com/aldebaran/demo/ExHelloWorldApplication.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../examples/android/RemoteNaoqi/app/src/main/java/com/aldebaran/remotenaoqi/FragmentHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../examples/android/RemoteNaoqi/RemoteNaoqi.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/SignalCallback.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../examples/android/RemoteNaoqi/app/app.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../examples/android/RemoteNaoqi/app/src/main/res/layout/fragment_connect.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/java_naoqi_sdk_android_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/java_naoqi_sdk_linux64_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/libqi_java_2_1_3_android.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/libqi_java_2_1_3_linux64.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/qimessaging_2_1_2_android.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/qimessaging_2_1_2_linux64.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/lib/qimessaging-2.1.0.19-atom.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/lib/qimessaging-2.1.0.19-linux32.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/lib/qimessaging-2.1.0.19-linux64.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/lib/qimessaging-2.1.0.19-mac64.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/lib/qimessaging-2.1.0.19-win32-vs2010.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/lib/qimessaging-2.1.1-android.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/ALInterface.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/ALModule.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALAnimatedSpeech.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALAudioDevice.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALAudioPlayer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALAudioRecorder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALAudioSourceLocalization.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALAutonomousLife.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALAutonomousMoves.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALBacklightingDetection.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALBarcodeReader.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALBasicAwareness.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALBattery.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALBehaviorManager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALBodyTemperature.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALBonjour.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALChestButton.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALCloseObjectDetection.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALColorBlobDetection.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALConnectionManager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALDarknessDetection.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALDebug.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALDiagnosis.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALDialog.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALEngagementZones.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALFaceCharacteristics.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALFaceDetection.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALFaceTracker.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALFileManager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALFrameManager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALFsr.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALGazeAnalysis.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALInfrared.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALLandMarkDetection.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALLaser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALLauncher.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALLeds.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALLocalization.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALLogger.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALMecaLogger.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALMemory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALMemoryWatcher.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALModularity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALMotion.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALMotionRecorder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALMovementDetection.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALNavigation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALNotificationManager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALPanoramaCompass.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALPeoplePerception.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALPhotoCapture.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALPodDetection.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALPreferenceManager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALPreferences.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALPythonBridge.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALRecharge.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALRedBallDetection.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALRedBallTracker.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALResourceManager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALRobotHealthMonitor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALRobotModel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALRobotPosture.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALSegmentation3D.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALSensors.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALServiceManager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALSittingPeopleDetection.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALSonar.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALSoundDetection.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALSoundLocalization.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALSpeechRecognition.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALStore.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALSystem.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALTelepathe.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALTextToSpeech.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALThinkingExpression.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALTouch.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALTracker.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALUserSession.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALVideoDevice.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALVideoRecorder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALVisionRecognition.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALVisualCompass.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALVisualSpaceHistory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALVoiceEmotionAnalysis.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALWavingDetection.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALWorldRepresentation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/AudioFilterLoader.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/DCM.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/LogManager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/PackageManager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ServiceDirectory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/Zik.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/generate/jnaoqi-android.iml" afterPath="$PROJECT_DIR$/generate/java-naoqi-sdk-android.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/generate/jnaoqi-atom.iml" afterPath="$PROJECT_DIR$/generate/java-naoqi-sdk-atom.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/generate/jnaoqi-linux32.iml" afterPath="$PROJECT_DIR$/generate/java-naoqi-sdk-linux32.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/generate/jnaoqi-linux64.iml" afterPath="$PROJECT_DIR$/generate/java-naoqi-sdk-linux64.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/generate/jnaoqi-mac64.iml" afterPath="$PROJECT_DIR$/generate/java-naoqi-sdk-mac64.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/generate/jnaoqi-windows32.iml" afterPath="$PROJECT_DIR$/generate/java-naoqi-sdk-windows32.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/generate/jnaoqi.iml" afterPath="$PROJECT_DIR$/generate/java-naoqi-sdk.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../examples/android/HelloAndroid/AndroidManifest.xml" afterPath="$PROJECT_DIR$/../examples/android/HelloAndroid/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../examples/desktop/HelloDesktop/src/com/aldebaran/demo/ExHelloWorld.java" afterPath="$PROJECT_DIR$/../examples/desktop/HelloDesktop/src/com/aldebaran/demo/ExHelloWorld.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../examples/android/HelloAndroid/HelloAndroid.iml" afterPath="$PROJECT_DIR$/../examples/android/HelloAndroid/HelloAndroid.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../examples/android/HelloAndroid/src/com/aldebaran/helloandroid/MyActivity.java" afterPath="$PROJECT_DIR$/../examples/android/HelloAndroid/src/com/aldebaran/helloandroid/MyActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../examples/android/HelloAndroid/src/com/aldebaran/helloandroid/VideoActivity.java" afterPath="$PROJECT_DIR$/../examples/android/HelloAndroid/src/com/aldebaran/helloandroid/VideoActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator.py" afterPath="$PROJECT_DIR$/generator.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_android_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_android_jar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_atom_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_atom_jar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_linux32_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_linux32_jar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_linux64_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_linux64_jar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_mac64_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_mac64_jar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_windows32_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_windows32_jar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../examples/android/HelloAndroid/.idea/vcs.xml" afterPath="$PROJECT_DIR$/../examples/android/HelloAndroid/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../examples/android/HelloAndroid/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../examples/android/HelloAndroid/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../examples/android/TestQi/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../examples/android/TestQi/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../examples/desktop/HelloDesktop/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../examples/desktop/HelloDesktop/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="PyTemp.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <ignored path="$PROJECT_DIR$/generate/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,41 +186,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="generator.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="generator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/generator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3435" max-vertical-offset="4665">
-              <caret line="229" column="67" selection-start-line="229" selection-start-column="67" selection-end-line="229" selection-end-column="67" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3338" max-vertical-offset="5265">
+              <caret line="241" column="31" selection-start-line="241" selection-start-column="31" selection-end-line="241" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="270">
+              <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/generate/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="1155">
+              <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ALModule.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/ALModule.java">
+      <file leaf-file-name="ALProxy.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/ALProxy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20522387" vertical-offset="0" max-vertical-offset="804">
-              <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ALTextToSpeech.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALTextToSpeech.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1980" max-vertical-offset="7650">
-              <caret line="132" column="27" selection-start-line="132" selection-start-column="16" selection-end-line="132" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ALWorldRepresentation.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALWorldRepresentation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="6735">
-              <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.16832918" vertical-offset="0" max-vertical-offset="825">
+              <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -82,6 +237,9 @@
       <setting name="OPEN_NEW_TAB" value="true" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="GradleLocalSettings">
     <option name="modificationStamps">
       <map>
@@ -90,23 +248,77 @@
     </option>
   </component>
   <component name="IdeDocumentHistory">
-    <option name="changedFiles">
+    <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/temp.py" />
-        <option value="$PROJECT_DIR$/__init__.py" />
-        <option value="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALLeds.java" />
-        <option value="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALLocalization.java" />
-        <option value="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALRobotHealthMonitor.java" />
+        <option value="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALAnimationPlayer.java" />
         <option value="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALAnimatedSpeech.java" />
-        <option value="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALConnectionManager.java" />
         <option value="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ServiceDirectory.java" />
-        <option value="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/PackageManager.java" />
-        <option value="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALMemory.java" />
-        <option value="$PROJECT_DIR$/generator.py" />
+        <option value="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/ALInterface.java" />
         <option value="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/ALModule.java" />
-        <option value="$PROJECT_DIR$/temp2.py" />
+        <option value="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/EventCallback.java" />
+        <option value="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helpers/EventCallback.java" />
+        <option value="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helpers/SignalCallback.java" />
+        <option value="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helpers/ALModule.java" />
+        <option value="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/ALInterface.java" />
+        <option value="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/ALProxy.java" />
+        <option value="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALMood.java" />
+        <option value="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALMotionRecorder.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/doc/stylesheet.css" />
+        <option value="$PROJECT_DIR$/generate/pom.xml" />
+        <option value="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALAnimatedSpeech.java" />
+        <option value="$PROJECT_DIR$/generator.py" />
+        <option value="$PROJECT_DIR$/test.py" />
       </list>
     </option>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$USER_HOME$/Applications/apache-maven-3.0.5" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="JavaNaoqiSDK" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Plugins" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="JavaNaoqiSDK" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Lifecycle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </treeState>
   </component>
   <component name="ProjectFrameBounds">
     <option name="width" value="1440" />
@@ -120,25 +332,241 @@
             <id />
           </State>
           <State>
+            <id>AOP</id>
+          </State>
+          <State>
+            <id>Abstraction issues</id>
+          </State>
+          <State>
+            <id>ActionScript specificJavaScript</id>
+          </State>
+          <State>
+            <id>Android Lint</id>
+          </State>
+          <State>
+            <id>Assignment issues</id>
+          </State>
+          <State>
+            <id>Assignment issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Bitwise operation issuesJavaScript</id>
+          </State>
+          <State>
+            <id>CDI(Contexts and Dependency Injection) issues</id>
+          </State>
+          <State>
+            <id>Class metrics</id>
+          </State>
+          <State>
+            <id>Class structure</id>
+          </State>
+          <State>
+            <id>Code maturity issues</id>
+          </State>
+          <State>
+            <id>Code quality toolsJavaScript</id>
+          </State>
+          <State>
+            <id>Code style issues</id>
+          </State>
+          <State>
+            <id>Code style issuesJavaScript</id>
+          </State>
+          <State>
+            <id>CodeSpring CoreSpring</id>
+          </State>
+          <State>
+            <id>Compiler issues</id>
+          </State>
+          <State>
+            <id>Control flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Cucumber Java</id>
+          </State>
+          <State>
             <id>DOM issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Data flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Declaration redundancy</id>
+          </State>
+          <State>
+            <id>Encapsulation issues</id>
+          </State>
+          <State>
+            <id>Error handling</id>
+          </State>
+          <State>
+            <id>Error handlingJavaScript</id>
+          </State>
+          <State>
+            <id>Faces Model</id>
+          </State>
+          <State>
+            <id>Finalization issues</id>
+          </State>
+          <State>
+            <id>GPath inspectionsGroovy</id>
           </State>
           <State>
             <id>GeneralJavaScript</id>
           </State>
           <State>
+            <id>Google Web Toolkit issues</id>
+          </State>
+          <State>
+            <id>Groovy</id>
+          </State>
+          <State>
+            <id>Hibernate Issues</id>
+          </State>
+          <State>
+            <id>Imports</id>
+          </State>
+          <State>
+            <id>Inheritance issues</id>
+          </State>
+          <State>
+            <id>Initialization issues</id>
+          </State>
+          <State>
+            <id>Internationalization issues</id>
+          </State>
+          <State>
+            <id>J2ME issues</id>
+          </State>
+          <State>
+            <id>JPA issues</id>
+          </State>
+          <State>
+            <id>JSP Inspections</id>
+          </State>
+          <State>
+            <id>JUnit issues</id>
+          </State>
+          <State>
+            <id>Java EE issues</id>
+          </State>
+          <State>
+            <id>Java language level issues</id>
+          </State>
+          <State>
+            <id>Java language level migration aids</id>
+          </State>
+          <State>
+            <id>JavaBeans issues</id>
+          </State>
+          <State>
+            <id>JavaFX</id>
+          </State>
+          <State>
             <id>JavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript function metricsJavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript validity issuesJavaScript</id>
           </State>
           <State>
             <id>Javadoc issues</id>
           </State>
           <State>
+            <id>Language Injection</id>
+          </State>
+          <State>
+            <id>Logging issues</id>
+          </State>
+          <State>
+            <id>Memory issues</id>
+          </State>
+          <State>
+            <id>Method metrics</id>
+          </State>
+          <State>
+            <id>Naming ConventionsGroovy</id>
+          </State>
+          <State>
             <id>Naming conventions</id>
+          </State>
+          <State>
+            <id>Naming conventionsJavaScript</id>
+          </State>
+          <State>
+            <id>Numeric issues</id>
+          </State>
+          <State>
+            <id>Performance issues</id>
+          </State>
+          <State>
+            <id>Plugin DevKit</id>
+          </State>
+          <State>
+            <id>Portability issues</id>
+          </State>
+          <State>
+            <id>Potentially confusing code constructsJavaScript</id>
+          </State>
+          <State>
+            <id>Probable bugs</id>
+          </State>
+          <State>
+            <id>Probable bugsGroovy</id>
+          </State>
+          <State>
+            <id>Probable bugsJavaScript</id>
+          </State>
+          <State>
+            <id>Properties Files</id>
+          </State>
+          <State>
+            <id>RESTful Web Service</id>
+          </State>
+          <State>
+            <id>Resource management issues</id>
+          </State>
+          <State>
+            <id>Security issues</id>
+          </State>
+          <State>
+            <id>Serialization issues</id>
+          </State>
+          <State>
+            <id>Spring</id>
+          </State>
+          <State>
+            <id>Spring CoreSpring</id>
+          </State>
+          <State>
+            <id>StyleGroovy</id>
+          </State>
+          <State>
+            <id>TestNG</id>
+          </State>
+          <State>
+            <id>Threading issues</id>
+          </State>
+          <State>
+            <id>Threading issuesGroovy</id>
+          </State>
+          <State>
+            <id>Visibility issues</id>
+          </State>
+          <State>
+            <id>Web Services</id>
+          </State>
+          <State>
+            <id>WebSocket issues</id>
           </State>
         </expanded-state>
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -179,8 +607,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sdk_generator" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemId" value="jnaoqi_generator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -189,34 +617,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sdk_generator" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemId" value="jnaoqi_generator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="generate" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PyTemp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+              <option name="myItemId" value="out" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sdk_generator" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemId" value="artifacts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="generate" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helpers" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemId" value="java_naoqi_sdk_linux64_jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -225,24 +639,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sdk_generator" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemId" value="jnaoqi_generator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="generate" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helpers" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="al" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -251,21 +653,44 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sdk_generator" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemId" value="jnaoqi_generator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="generate" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PyTemp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java-naoqi-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PyTemp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java-naoqi-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.aldebaran.qi.helpers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -275,20 +700,22 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="options.lastSelected" value="Errors" />
+    <property name="options.lastSelected" value="MavenSettings" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/generate/lib/qimessaging-2.1.0.19-atom.jar!/" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/generate/lib/libqi-java-2.1.3-linux64.jar!/" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.26303592" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8 (1)" />
     <property name="LayoutCode.rearrangeEntriesPython" value="false" />
+    <property name="LayoutCode.rearrangeEntries" value="false" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -296,10 +723,17 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.aldebaran.qi.helpers" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib" />
     </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.aldebaran.qimessaging.helpers" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/generate" />
       <recent name="$PROJECT_DIR$/generate/lib" />
     </key>
   </component>
@@ -308,6 +742,28 @@
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
       <method />
     </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
@@ -449,6 +905,15 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -541,6 +1006,29 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="JAR_PATH" value="$PROJECT_DIR$/generate/lib/libqi-java-2.1.3-android.jar" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -669,6 +1157,7 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/generator.py" />
       <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
@@ -689,6 +1178,7 @@
     <task active="true" id="Default" summary="Default task">
       <changelist id="ac5a9c8f-caf1-4e8c-8e3b-05e194fd79b9" name="Default" comment="" />
       <created>1412778969722</created>
+      <option name="number" value="Default" />
       <updated>1412778969722</updated>
       <workItem from="1412778971938" duration="2030000" />
       <workItem from="1413215060380" duration="1150000" />
@@ -713,72 +1203,58 @@
       <workItem from="1415206179363" duration="124000" />
       <workItem from="1415208186189" duration="2281000" />
       <workItem from="1415269304139" duration="293000" />
+      <workItem from="1423649604890" duration="1731000" />
+      <workItem from="1423651715645" duration="1527000" />
+      <workItem from="1424091543891" duration="3587000" />
+      <workItem from="1424164548607" duration="610000" />
+      <workItem from="1424182170377" duration="3777000" />
+      <workItem from="1424253482776" duration="24000" />
+      <workItem from="1424265510348" duration="2544000" />
+      <workItem from="1424337872804" duration="9410000" />
+      <workItem from="1424429826936" duration="9043000" />
+      <workItem from="1424695020511" duration="2638000" />
+      <workItem from="1424769566529" duration="290000" />
+      <workItem from="1424771969447" duration="12010000" />
+      <workItem from="1424856315906" duration="1303000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59237000" />
+    <option name="totallyTimeSpent" value="107731000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328125" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15379113" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24749643" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33012047" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328125" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27644232" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932693" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27228916" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15379113" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2759036" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23819743" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33012047" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15379113" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27710843" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17095852" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25107297" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2060241" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32771084" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932693" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16385542" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -800,16 +1276,216 @@
     <breakpoint-manager>
       <option name="time" value="6" />
     </breakpoint-manager>
+    <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALWorldRepresentation.java">
+    <entry file="file://$PROJECT_DIR$/generator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="6735">
-          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3338" max-vertical-offset="5265">
+          <caret line="241" column="31" selection-start-line="241" selection-start-column="31" selection-end-line="241" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="270">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="1155">
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/ALProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/ALProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="825">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/EventCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="240">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2887" max-vertical-offset="4725">
+          <caret line="219" column="50" selection-start-line="219" selection-start-column="50" selection-end-line="219" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/ALInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="225">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/ALProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="915">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/EventCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="240">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1356" max-vertical-offset="4725">
+          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="114" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/ALInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="225">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/ALProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/EventCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="240">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/SignalCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="585">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/EventCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="240">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/ALProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/EventCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="240">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="4725">
+          <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="4725">
+          <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4710">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/ALProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="735">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/ALInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="300">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3435" max-vertical-offset="4665">
+          <caret line="229" column="67" selection-start-line="229" selection-start-column="67" selection-end-line="229" selection-end-column="67" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/ALProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="705">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -818,11 +1494,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3435" max-vertical-offset="4665">
           <caret line="229" column="67" selection-start-line="229" selection-start-column="67" selection-end-line="229" selection-end-column="67" />
-          <folding />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/ALModule.java">
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/ALProxy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="705">
           <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
@@ -830,34 +1508,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALWorldRepresentation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="6165">
-          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/generator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3435" max-vertical-offset="4665">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4665">
           <caret line="229" column="67" selection-start-line="229" selection-start-column="67" selection-end-line="229" selection-end-column="67" />
-          <folding />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/ALModule.java">
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/ALProxy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="705">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALWorldRepresentation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="6165">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="705">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -866,22 +1530,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4665">
           <caret line="229" column="67" selection-start-line="229" selection-start-column="67" selection-end-line="229" selection-end-column="67" />
-          <folding />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/ALModule.java">
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/ALProxy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="705">
           <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/temp2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="705">
-          <caret line="7" column="95" selection-start-line="7" selection-start-column="95" selection-end-line="7" selection-end-column="95" />
         </state>
       </provider>
     </entry>
@@ -889,45 +1548,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4665">
           <caret line="229" column="67" selection-start-line="229" selection-start-column="67" selection-end-line="229" selection-end-column="67" />
-          <folding />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/ALModule.java">
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/ALProxy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="705">
           <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/temp2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="705">
-          <caret line="7" column="95" selection-start-line="7" selection-start-column="95" selection-end-line="7" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4665">
-          <caret line="229" column="67" selection-start-line="229" selection-start-column="67" selection-end-line="229" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/ALModule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="705">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/temp2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="705">
-          <caret line="7" column="95" selection-start-line="7" selection-start-column="95" selection-end-line="7" selection-end-column="95" />
         </state>
       </provider>
     </entry>
@@ -935,248 +1566,79 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3126" max-vertical-offset="4665">
           <caret line="224" column="42" selection-start-line="224" selection-start-column="42" selection-end-line="224" selection-end-column="42" />
-          <folding />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/LogManager.java">
+    <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1335">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ServiceDirectory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="696" max-vertical-offset="1995">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALFileManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1836" max-vertical-offset="3285">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALPanoramaCompass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.450805" vertical-offset="2553" max-vertical-offset="4080">
-          <caret line="220" column="0" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALAudioDevice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.593918" vertical-offset="3776" max-vertical-offset="8640">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALSensors.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.053667262" vertical-offset="0" max-vertical-offset="4170">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALSoundLocalization.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16100179" vertical-offset="0" max-vertical-offset="4620">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/PackageManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.6538463" vertical-offset="2208" max-vertical-offset="3240">
-          <caret line="178" column="6" selection-start-line="178" selection-start-column="6" selection-end-line="178" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALRobotHealthMonitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5025">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="802">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALMovementDetection.java">
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/SignalCallback.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9177103" vertical-offset="2370" max-vertical-offset="5925">
-          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALMemoryWatcher.java">
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/EventCallback.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4020" max-vertical-offset="5325">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALLauncher.java">
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/ALInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="3195">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALAudioPlayer.java">
+    <entry file="file://$PROJECT_DIR$/doc/stylesheet.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="11921" max-vertical-offset="12480">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALAudioRecorder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2021" max-vertical-offset="2580">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALAudioSourceLocalization.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3896" max-vertical-offset="4455">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALAutonomousLife.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="9371" max-vertical-offset="9930">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALAutonomousMoves.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4738" max-vertical-offset="5310">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALBacklightingDetection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4961" max-vertical-offset="5520">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALBarcodeReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4436" max-vertical-offset="4995">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALBehaviorManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2996" max-vertical-offset="6495">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALBodyTemperature.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2608" max-vertical-offset="3180">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALBonjour.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1468" max-vertical-offset="2040">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALChestButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2068" max-vertical-offset="2640">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALAnimatedSpeech.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="789" max-vertical-offset="7020">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALBattery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3540">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALColorBlobDetection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5981" max-vertical-offset="6540">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALMotion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="23325" max-vertical-offset="40665">
-          <caret line="1555" column="49" selection-start-line="1555" selection-start-column="49" selection-end-line="1555" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALBasicAwareness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="10305">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALMemory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9860936" vertical-offset="165" max-vertical-offset="9075">
-          <caret line="74" column="32" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/temp2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
-          <caret line="7" column="95" selection-start-line="7" selection-start-column="95" selection-end-line="7" selection-end-column="95" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
+          <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/generator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3111" max-vertical-offset="4650">
-          <caret line="229" column="67" selection-start-line="229" selection-start-column="67" selection-end-line="229" selection-end-column="67" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3338" max-vertical-offset="5265">
+          <caret line="241" column="31" selection-start-line="241" selection-start-column="31" selection-end-line="241" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1155">
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALWorldRepresentation.java">
+    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/ALProxy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="6165">
-          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALTextToSpeech.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1980" max-vertical-offset="7650">
-          <caret line="132" column="27" selection-start-line="132" selection-start-column="16" selection-end-line="132" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/ALModule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20522387" vertical-offset="0" max-vertical-offset="804">
-          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.16832918" vertical-offset="0" max-vertical-offset="825">
+          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -1187,7 +1649,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>jnaoqi-android:jar</last-edited>
+          <last-edited>java-naoqi-sdk-android:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1236,12 +1698,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>jnaoqi-atom</last-edited>
+          <last-edited>java-naoqi-sdk</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.26303592" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1261,7 +1722,18 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>qimessaging-2.1.0.19-atom</last-edited>
+          <last-edited>libqi-java-2.1.3-linux64</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.26303592" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1274,4 +1746,3 @@
     </states>
   </component>
 </project>
-

@@ -1,10 +1,16 @@
 import os
 import sys
+import shutil
 
 __author__ = 'epinault'
 
 from qi import Session
 import pprint
+
+from urllib2 import urlopen
+import bs4 as BeautifulSoup
+
+
 
 TEMPLATE_VOID = """
     /**
@@ -27,21 +33,28 @@ TEMPLATE_RETURN = """
         return (%(outtype)s)service.call("%(method)s"%(extraparams)s).get();
     }"""
 
-TEMPLATE_CLASS = """package com.aldebaran.qimessaging.helpers.al;
+TEMPLATE_CLASS = """/**
+ * Copyright (c) 2015 Aldebaran Robotics. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the COPYING file.
+ * Created by epinault and ekroeger
+ */
+package com.aldebaran.qi.helper.proxies;
 
-import com.aldebaran.qimessaging.CallError;
-import com.aldebaran.qimessaging.Session;
-import com.aldebaran.qimessaging.helpers.ALModule;
+import com.aldebaran.qi.CallError;
+import com.aldebaran.qi.Session;
+import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 import java.util.Map;
-import com.aldebaran.qimessaging.*;
+import com.aldebaran.qi.*;
 
 import java.util.List;
-
 /**
- * Created by erwan and emile on 01/05/2014.
- */
-public class %(module_name)s extends ALModule {
+* %(module_desc)s
+* @see <a href="%(module_link_overview)s">NAOqi APIs for %(module_name)s </a>
+*
+*/
+public class %(module_name)s extends ALProxy {
 
     public %(module_name)s(Session session) {
         super(session);
@@ -59,13 +72,15 @@ ALMEMORY_FIX = """public void addMapping(String param1, Map<String,String> param
 
 
 
-BLACKLIST_METHODS = set("registerEvent, unregisterEvent, metaObject, terminate, property, setProperty, registerEventWithSignature, _setDetectionMode, enableStats, enableTrace, __pCall, pCall, stats, properties".split(", "))
-BLACKLIST_MODULES = set("ALTabletService")
-
-doc = ""
+BLACKLIST_METHODS = set("registerEvent, unregisterEvent, metaObject, terminate, property, setProperty, registerEventWithSignature, enableStats, enableTrace, pCall, stats, properties".split(", "))
+BLACKLIST_MODULES = set("ALTabletService, ALFindPersonHead")
 
 OPENERS, CLOSERS = '([{<', ')]}>'
 EXPECTED_CLOSER = dict(zip(OPENERS, CLOSERS))
+
+linksDicOverview = {}
+linksDicApi = {}
+docURLRoot = "http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/"
 
 def get_subtrees(closer, symbols):
     trees = []
@@ -101,10 +116,10 @@ BASIC_TYPE = {
          "c": "Character",
          "s": "String",
          "v": "void",
-         "o": "com.aldebaran.qimessaging.Object",
-         "X": "java.lang.Object",
+         "o": "AnyObject",
+         "X": "Object",
          "b": "Boolean",
-         "m": "java.lang.Object",
+         "m": "Object",
          "f": "Float",
          "L":"Long",
          "l":"Long",
@@ -220,30 +235,36 @@ def native(method):
 def _iter_services(address):
     session = Session()
     session.connect('tcp://'+address+':9559')
-
+    print "Number of services : "+str(len(session.services()))
     for servicesDesc in session.services():
         module_name = servicesDesc["name"]
         if not module_name.startswith('_'):
             yield module_name, session.service(module_name)
 
 def generate_java(address):
-    directory = "generate/src/com/aldebaran/qimessaging/helpers/al"
-    if not os.path.exists(directory):
-        os.makedirs(directory)
+    directory = "generate/src/com/aldebaran/qi/helper/proxies"
+    if os.path.exists(directory):
+        shutil.rmtree(directory)
+
+    os.makedirs(directory)
 
     for module_name, service in _iter_services(address):
 
-        if module_name not in BLACKLIST_MODULES:
+        if module_name in linksDicOverview:
             content = ""
             meta = service.metaObject()
-            desc = meta["description"]
+            module_desc = meta["description"]
+            module_link_overview = docURLRoot+linksDicOverview[module_name]
+            # module_link_api = docURLRoot+linksDicApi[module_name]
             methods = meta["methods"]
 
             # print "Service %s" % (module_name)
             # print methods.values()
+            print module_name+" -- Number of methods : "+str(len(methods))
+
             for method in methods.values() :
                 # print native(method)
-                if method["name"] not in BLACKLIST_METHODS:
+                if method["name"] not in BLACKLIST_METHODS and not method["name"].startswith("_"):
                     content += translateFunc(method)+"\n"
 
             with open(directory+"/"+module_name + ".java", "w") as outfile:
@@ -296,11 +317,30 @@ def test():
     print translateFunc(EXAMPLE)
     print "================================"
 
+
+def fillLinksMap():
+    url = docURLRoot+"index.html"
+    print "Parse : "+url
+
+    html = urlopen(url).read()
+    soup = BeautifulSoup.BeautifulSoup(html)
+
+
+    elements = soup.findAll("li")
+
+    for element in elements:
+        key =  element.text.split(' ', 1)[0]
+        links = element.findAll("a")
+        if len(links) > 1:
+            # linksDicApi[key] = links[0]["href"]
+            linksDicOverview[key] = links[1]["href"]
+
 if __name__ == "__main__":
 
     if len(sys.argv) < 2:
         print "ip or name.local of the robot needed"
     else:
+        fillLinksMap()
         generate_java(sys.argv[1])
     # test()
     # find_errors()

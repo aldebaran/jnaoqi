@@ -3,14 +3,13 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PyTemp.iml" filepath="$PROJECT_DIR$/PyTemp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/generate/jnaoqi.iml" filepath="$PROJECT_DIR$/generate/jnaoqi.iml" />
-      <module fileurl="file://$PROJECT_DIR$/generate/jnaoqi-android.iml" filepath="$PROJECT_DIR$/generate/jnaoqi-android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/generate/jnaoqi-atom.iml" filepath="$PROJECT_DIR$/generate/jnaoqi-atom.iml" />
-      <module fileurl="file://$PROJECT_DIR$/generate/jnaoqi-linux32.iml" filepath="$PROJECT_DIR$/generate/jnaoqi-linux32.iml" />
-      <module fileurl="file://$PROJECT_DIR$/generate/jnaoqi-linux64.iml" filepath="$PROJECT_DIR$/generate/jnaoqi-linux64.iml" />
-      <module fileurl="file://$PROJECT_DIR$/generate/jnaoqi-mac64.iml" filepath="$PROJECT_DIR$/generate/jnaoqi-mac64.iml" />
-      <module fileurl="file://$PROJECT_DIR$/generate/jnaoqi-windows32.iml" filepath="$PROJECT_DIR$/generate/jnaoqi-windows32.iml" />
+      <module fileurl="file://$PROJECT_DIR$/generate/java-naoqi-sdk.iml" filepath="$PROJECT_DIR$/generate/java-naoqi-sdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/generate/java-naoqi-sdk-android.iml" filepath="$PROJECT_DIR$/generate/java-naoqi-sdk-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/generate/java-naoqi-sdk-atom.iml" filepath="$PROJECT_DIR$/generate/java-naoqi-sdk-atom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/generate/java-naoqi-sdk-linux32.iml" filepath="$PROJECT_DIR$/generate/java-naoqi-sdk-linux32.iml" />
+      <module fileurl="file://$PROJECT_DIR$/generate/java-naoqi-sdk-linux64.iml" filepath="$PROJECT_DIR$/generate/java-naoqi-sdk-linux64.iml" />
+      <module fileurl="file://$PROJECT_DIR$/generate/java-naoqi-sdk-mac64.iml" filepath="$PROJECT_DIR$/generate/java-naoqi-sdk-mac64.iml" />
+      <module fileurl="file://$PROJECT_DIR$/generate/java-naoqi-sdk-windows32.iml" filepath="$PROJECT_DIR$/generate/java-naoqi-sdk-windows32.iml" />
     </modules>
   </component>
 </project>
-

@@ -2,7 +2,7 @@
   <artifact type="jar" name="jnaoqi-atom:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/jnaoqi_atom_jar</output-path>
     <root id="archive" name="jnaoqi-atom.jar">
-      <element id="module-output" name="jnaoqi" />
+      <element id="module-output" name="java-naoqi-sdk" />
       <element id="extracted-dir" path="$PROJECT_DIR$/generate/lib/qimessaging-2.1.0.19-atom.jar" path-in-jar="/" />
     </root>
   </artifact>

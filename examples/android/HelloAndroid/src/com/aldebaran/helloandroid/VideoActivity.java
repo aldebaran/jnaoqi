@@ -10,6 +10,7 @@ import com.aldebaran.qimessaging.CallError;
 import com.aldebaran.qimessaging.Future;
 import com.aldebaran.qimessaging.Session;
 import com.aldebaran.qimessaging.helpers.al.ALVideoDevice;
+import com.aldebaran.helloandroid.R;
 
 import java.net.InetAddress;
 import java.nio.ByteBuffer;

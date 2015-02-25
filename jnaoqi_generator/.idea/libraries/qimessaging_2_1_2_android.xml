@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="qimessaging-2.1.2-android">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/generate/lib/qimessaging-2.1.2-android.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <NATIVE>
+      <root url="jar://$PROJECT_DIR$/generate/lib/qimessaging-2.1.2-android.jar!/" />
+    </NATIVE>
+    <SOURCES />
+  </library>
+</component>

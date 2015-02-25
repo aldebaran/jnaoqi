@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.aldebaran</groupId>
+    <artifactId>java-naoqi-sdk</artifactId>
+    <version>2.1.3</version>
+    <packaging>jar</packaging>
+    <name>JavaNaoqiSDK</name>
+    <description>Java SDK to control Nao robot family
+    </description>
+
+    <licenses>
+        <license>
+            <name>See COPYING</name>
+            <url>http://aldebaran.com</url>
+        </license>
+    </licenses>
+
+    <properties>
+        <jdk.version>1.6</jdk.version>
+    </properties>
+
+    <scm>
+        <connection>scm:git:ssh://git@git.aldebaran.lan/naoqi/tabletmanager.git</connection>
+        <developerConnection>scm:git:ssh://git@git.aldebaran.lan/naoqi/tabletmanager.git</developerConnection>
+    </scm>
+
+    <dependencies>
+    </dependencies>
+
+    <build>
+        <finalName>java-naoqi-sdk</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+
+            <!-- Make this jar executable -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <!-- DO NOT include log4j.properties file in your Jar -->
+                    <archive>
+                        <manifest>
+                            <!-- Jar file entry point -->
+                            <mainClass> com.aldebaran.qi.helper.ALProxy</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- Specify address of QiMessaging maven repository -->
+    <!--<url>http://maven.aldebaran.lan/maven/qimessaging-android</url>-->
+    <repositories>
+        <repository>
+            <id>local-repository</id>
+            <name>Native qimessaging library apklib repository</name>
+            <url>http://maven.aldebaran.lan/maven</url>
+        </repository>
+    </repositories>
+</project>

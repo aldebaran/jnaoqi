@@ -60,7 +60,7 @@ public class MyActivity extends Activity {
                                 ipAddress = inets[0].getHostAddress();
                         }
                         Log.i(TAG, "Ip address : " + ipAddress);
-                        session.connect("tcp://" + ipAddress + ":9559").sync(500, TimeUnit.MILLISECONDS);
+                        session.connect("tcp://" + ipAddress + ":9559").get(500, TimeUnit.MILLISECONDS);
                     } catch (Exception e) {
                         e.printStackTrace();
                         Log.e(TAG, "error", e);
