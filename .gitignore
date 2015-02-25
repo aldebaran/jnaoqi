@@ -6,3 +6,5 @@ jnaoqi_generator/PyTemp.iml
 *.class
 
 *.apk
+
+.idea
