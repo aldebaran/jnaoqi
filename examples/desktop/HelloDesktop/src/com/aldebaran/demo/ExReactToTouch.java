@@ -1,83 +1,99 @@
+/**
+ * Copyright (c) 2015 Aldebaran Robotics. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the COPYING file.
+ * Created by epinault on 11/05/2014.
+ */
 package com.aldebaran.demo;
 
-import com.aldebaran.qimessaging.*;
-import com.aldebaran.qimessaging.helpers.al.ALMemory;
-import com.aldebaran.qimessaging.helpers.al.ALMotion;
-import com.aldebaran.qimessaging.helpers.al.ALTextToSpeech;
-
-import java.lang.Object;
+import com.aldebaran.qi.Application;
+import com.aldebaran.qi.CallError;
+import com.aldebaran.qi.helper.EventCallback;
+import com.aldebaran.qi.helper.proxies.ALMemory;
+import com.aldebaran.qi.helper.proxies.ALTextToSpeech;
 
 /**
- * Created by epinault on 11/05/2014.
+ * This example show how the robot can listen to touch events:
+ * FrontTactilTouched, MiddleTactilTouched, RearTactilTouched, LeftBumperPressed
+ * and RightBumperPressed.
  */
 public class ExReactToTouch {
 
-
     private static ALMemory alMemory;
     private static ALTextToSpeech tts;
-    private static ALMotion motion;
     private static Application application;
 
     public static void main(String[] args) {
-        application = new Application();
-        Session session = new Session();
-        Future<Void> future = null;
+        String robotUrl = "tcp://" + RobotInfo.IP + ":" + RobotInfo.PORT;
+        application = new Application(args, robotUrl);
         try {
-	        future = session.connect("tcp://"+RobotIP.ip+":"+RobotIP.port);
+            application.start();
 
-            synchronized (future) {
-                future.wait(1000);
-            }
+            alMemory = new ALMemory(application.session());
+            tts = new ALTextToSpeech(application.session());
 
-            alMemory = new ALMemory(session);
-            tts = new ALTextToSpeech(session);
-            motion = new ALMotion(session);
+            alMemory.subscribeToEvent("FrontTactilTouched",
+                    new EventCallback<Float>() {
 
+                        @Override
+                        public void onEvent(Float touch)
+                                throws InterruptedException, CallError {
+                            if (touch == 1.0) {
+                                tts.setAsynchronous(true);
+                                tts.say("Front");
+                            }
+                        }
+                    });
+            alMemory.subscribeToEvent("MiddleTactilTouched",
+                    new EventCallback<Float>() {
 
-            alMemory.subscribeToEvent("FrontTactilTouched" , "onTouchFront::(f)", new Object() {
-	            public void onTouchFront(Float touch) throws InterruptedException, CallError {
-		            if(touch == 1.0) {
-			            tts.say("Hi");
-			            motion.wakeUp();
-		            }
-		            else {
-			            tts.say("Thank's you!");
-		            }
-	            }
-            });
-            alMemory.subscribeToEvent("MiddleTactilTouched" , "onTouchSynch::(f)", new Object() {
-	            public void onTouchAsynch(Float touch) throws InterruptedException, CallError {
-		            if(touch == 1.0) {
-			            tts.setAsynchronous(true);
-			            tts.say("Now I'm gonna rest because I'm really tired");
-			            motion.rest();
-		            }
-	            }
-            });
-            alMemory.subscribeToEvent("RearTactilTouched" , "onTouchAsynch::(f)", new Object() {
-	            public void onTouchSynch(Float touch) throws InterruptedException, CallError {
-		            if(touch == 1.0) {
-			            tts.say("Now I'm gonna rest because I'm really tired");
-			            motion.rest();
-		            }
-	            }
-            });
-            alMemory.subscribeToEvent("LeftBumperPressed" , "onEnd::(f)", new Object() {
-	            public void onEnd(Float touch) throws InterruptedException, CallError {
-		            if(touch == 1.0) {
-			            tts.say("Application is stopping");
-			            motion.rest();
-			            application.stop();
-		            }
-	            }
-            });
+                        @Override
+                        public void onEvent(Float touch)
+                                throws InterruptedException, CallError {
+                            if (touch == 1.0) {
+                                tts.setAsynchronous(true);
+                                tts.say("Middle");
+                            }
+                        }
+                    });
+            alMemory.subscribeToEvent("RearTactilTouched",
+                    new EventCallback<Float>() {
 
-	        tts.say("I am ready");
+                        @Override
+                        public void onEvent(Float touch)
+                                throws InterruptedException, CallError {
+                            if (touch == 1.0) {
+                                tts.say("Rear");
+                            }
+                        }
+                    });
+            alMemory.subscribeToEvent("LeftBumperPressed",
+                    new EventCallback<Integer>() {
+
+                        @Override
+                        public void onEvent(Integer touch)
+                                throws InterruptedException, CallError {
+                            if (touch > 0) {
+                                tts.say("Left bumper");
+                            }
+                        }
+                    });
+            alMemory.subscribeToEvent("RightBumperPressed",
+                    new EventCallback<Float>() {
+
+                        @Override
+                        public void onEvent(Float touch)
+                                throws InterruptedException, CallError {
+                            if (touch > 0) {
+                                tts.say("Right bumper");
+                            }
+                        }
+                    });
+
+            tts.say("I am ready");
             application.run();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
-
 }

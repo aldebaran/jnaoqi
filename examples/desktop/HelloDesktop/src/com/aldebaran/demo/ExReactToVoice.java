@@ -1,16 +1,27 @@
-package com.aldebaran.demo;
+/**
+ * Copyright (c) 2015 Aldebaran Robotics. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the COPYING file.
+ * Created by epinault on 11/05/2014.
+ */
 
-import com.aldebaran.qimessaging.Application;
-import com.aldebaran.qimessaging.CallError;
-import com.aldebaran.qimessaging.Future;
-import com.aldebaran.qimessaging.Session;
-import com.aldebaran.qimessaging.helpers.al.*;
+package com.aldebaran.demo;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.aldebaran.qi.Application;
+import com.aldebaran.qi.CallError;
+import com.aldebaran.qi.helper.EventCallback;
+import com.aldebaran.qi.helper.proxies.ALMemory;
+import com.aldebaran.qi.helper.proxies.ALMotion;
+import com.aldebaran.qi.helper.proxies.ALSpeechRecognition;
+import com.aldebaran.qi.helper.proxies.ALTextToSpeech;
+
 /**
- * Created by epinault on 11/05/2014.
+ * This example shows how the robot can obey to voice commands: 'wake up',
+ * 'come' and 'stop'. The application will be stopped when touching the middle
+ * tactile head sensor.
  */
 public class ExReactToVoice {
 
@@ -21,65 +32,68 @@ public class ExReactToVoice {
     private static ALMotion motion;
     private static ALSpeechRecognition alSpeechRecognition;
     private static ALTextToSpeech tts;
-    private static ALRobotPosture posture;
+    private static String APP_NAME = "DemoVoiceReaction";
 
     public static void main(String[] args) {
-        application = new Application();
-        Session session = new Session();
-        Future<Void> future = null;
+
+        application = new Application(args, RobotInfo.URL);
+
         try {
-	        future = session.connect("tcp://"+RobotIP.ip+":"+RobotIP.port);
+            application.start();
 
-            synchronized (future) {
-                future.wait(1000);
-            }
-
-            alMemory = new ALMemory(session);
-            motion = new ALMotion(session);
-            alSpeechRecognition = new ALSpeechRecognition(session);
-            tts = new ALTextToSpeech(session);
-            posture = new ALRobotPosture(session);
+            alMemory = new ALMemory(application.session());
+            motion = new ALMotion(application.session());
+            alSpeechRecognition = new ALSpeechRecognition(application.session());
+            tts = new ALTextToSpeech(application.session());
 
             ArrayList<String> listOfWords = new ArrayList<String>();
-            listOfWords.add("wake");
+            listOfWords.add("wake up");
             listOfWords.add("come");
             listOfWords.add("stop");
 
-            alSpeechRecognition.setVocabulary(listOfWords,false);
+            alSpeechRecognition.setVocabulary(listOfWords, false);
 
-            alSpeechRecognition.subscribe("demo2");
-            alMemory.subscribeToEvent("WordRecognized", "onWordRecognized::(m)", new Object() {
-                public void onWordRecognized(Object words) throws InterruptedException, CallError {
-                    String word = (String) ((List<Object>) words).get(0);
-                    System.out.println("Word " + word);
+            alSpeechRecognition.subscribe(APP_NAME);
+            alMemory.subscribeToEvent("WordRecognized",
+                    new EventCallback<List<Object>>() {
 
-                    if (word.equals("wake") && !isAwake) {
-                        tts.say("hi");
-                        alSpeechRecognition.pause(true);
-                        motion.wakeUp();
-                        alSpeechRecognition.pause(false);
-                        isAwake = true;
-                    } else if (word.equals("come") && isAwake) {
-                        motion.moveToward(0.6f, 0f, 0f);
-                    } else if (word.equals("stop") && isAwake) {
-                        motion.moveToward(0f, 0f, 0f);
-                    }
-                }
-            });
-            alMemory.subscribeToEvent("MiddleTactilTouched", "onEnd::(f)", new Object() {
-	            public void onEnd(Float touch) throws InterruptedException, CallError {
-		            if (touch == 1.0) {
-			            tts.say("Application is stopping");
-			            motion.rest();
-			            application.stop();
-			            alSpeechRecognition.unsubscribe("demo");
-		            }
-	            }
-            });
+                        @Override
+                        public void onEvent(List<Object> words)
+                                throws InterruptedException, CallError {
+                            String word = (String) words.get(0);
+                            System.out.println("Word " + word);
+
+                            if (word.equals("wake") && !isAwake) {
+                                tts.say("hi");
+                                alSpeechRecognition.pause(true);
+                                motion.wakeUp();
+                                alSpeechRecognition.pause(false);
+                                isAwake = true;
+                            } else if (word.equals("come") && isAwake) {
+                                motion.moveToward(0.6f, 0f, 0f);
+                            } else if (word.equals("stop") && isAwake) {
+                                motion.moveToward(0f, 0f, 0f);
+                            }
+                        }
+                    });
+            alMemory.subscribeToEvent("MiddleTactilTouched",
+                    new EventCallback<Float>() {
+
+                        @Override
+                        public void onEvent(Float touch)
+                                throws InterruptedException, CallError {
+                            if (touch == 1.0) {
+                                tts.say("Application is stopping");
+                                motion.rest();
+                                alSpeechRecognition.unsubscribe(APP_NAME);
+                                application.stop();
+
+                            }
+                        }
+                    });
             application.run();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
 }

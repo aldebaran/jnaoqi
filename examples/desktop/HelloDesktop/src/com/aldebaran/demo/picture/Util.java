@@ -1,15 +1,13 @@
 package com.aldebaran.demo.picture;
 
-import com.aldebaran.qimessaging.Future;
-import com.aldebaran.qimessaging.Session;
-
-import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.io.File;
+
+import javax.imageio.ImageIO;
 
 public class Util {
     private static final int HEIGHT = 640;
