@@ -12,150 +12,73 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac5a9c8f-caf1-4e8c-8e3b-05e194fd79b9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/lib/libqi-java-2.1.3-android.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/lib/libqi-java-2.1.3-linux64.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/ALInterface.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/ALProxy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../examples/android/RemoteNaoqi/app/src/main/java/com/aldebaran/remotenaoqi/ConnectFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/EventCallback.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../examples/desktop/HelloDesktop/src/com/aldebaran/demo/ExHelloWorldApplication.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../examples/android/RemoteNaoqi/app/src/main/java/com/aldebaran/remotenaoqi/FragmentHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../examples/android/RemoteNaoqi/RemoteNaoqi.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/SignalCallback.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../examples/android/RemoteNaoqi/app/app.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../examples/android/RemoteNaoqi/app/src/main/res/layout/fragment_connect.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/java_naoqi_sdk_android_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/java_naoqi_sdk_linux64_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/libqi_java_2_1_3_android.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/libqi_java_2_1_3_linux64.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/qimessaging_2_1_2_android.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/qimessaging_2_1_2_linux64.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/lib/qimessaging-2.1.0.19-atom.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/lib/qimessaging-2.1.0.19-linux32.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/lib/qimessaging-2.1.0.19-linux64.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/lib/qimessaging-2.1.0.19-mac64.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/lib/qimessaging-2.1.0.19-win32-vs2010.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/lib/qimessaging-2.1.1-android.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/ALInterface.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/ALModule.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALAnimatedSpeech.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALAudioDevice.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALAudioPlayer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALAudioRecorder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALAudioSourceLocalization.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALAutonomousLife.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALAutonomousMoves.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALBacklightingDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALBarcodeReader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALBasicAwareness.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALBattery.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALBehaviorManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALBodyTemperature.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALBonjour.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALChestButton.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALCloseObjectDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALColorBlobDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALConnectionManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALDarknessDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALDebug.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALDiagnosis.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALDialog.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALEngagementZones.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALFaceCharacteristics.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALFaceDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALFaceTracker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALFileManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALFrameManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALFsr.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALGazeAnalysis.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALInfrared.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALLandMarkDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALLaser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALLauncher.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALLeds.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALLocalization.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALLogger.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALMecaLogger.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALMemory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALMemoryWatcher.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALModularity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALMotion.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALMotionRecorder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALMovementDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALNavigation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALNotificationManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALPanoramaCompass.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALPeoplePerception.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALPhotoCapture.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALPodDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALPreferenceManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALPreferences.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALPythonBridge.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALRecharge.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALRedBallDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALRedBallTracker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALResourceManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALRobotHealthMonitor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALRobotModel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALRobotPosture.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALSegmentation3D.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALSensors.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALServiceManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALSittingPeopleDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALSonar.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALSoundDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALSoundLocalization.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALSpeechRecognition.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALStore.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALSystem.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALTelepathe.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALTextToSpeech.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALThinkingExpression.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALTouch.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALTracker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALUserSession.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALVideoDevice.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALVideoRecorder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALVisionRecognition.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALVisualCompass.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALVisualSpaceHistory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALVoiceEmotionAnalysis.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALWavingDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ALWorldRepresentation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/AudioFilterLoader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/DCM.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/LogManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/PackageManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/ServiceDirectory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/generate/src/com/aldebaran/qimessaging/helpers/al/Zik.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/generate/jnaoqi-android.iml" afterPath="$PROJECT_DIR$/generate/java-naoqi-sdk-android.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/generate/jnaoqi-atom.iml" afterPath="$PROJECT_DIR$/generate/java-naoqi-sdk-atom.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/generate/jnaoqi-linux32.iml" afterPath="$PROJECT_DIR$/generate/java-naoqi-sdk-linux32.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/generate/jnaoqi-linux64.iml" afterPath="$PROJECT_DIR$/generate/java-naoqi-sdk-linux64.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/generate/jnaoqi-mac64.iml" afterPath="$PROJECT_DIR$/generate/java-naoqi-sdk-mac64.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/generate/jnaoqi-windows32.iml" afterPath="$PROJECT_DIR$/generate/java-naoqi-sdk-windows32.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/generate/jnaoqi.iml" afterPath="$PROJECT_DIR$/generate/java-naoqi-sdk.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../examples/android/HelloAndroid/AndroidManifest.xml" afterPath="$PROJECT_DIR$/../examples/android/HelloAndroid/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../examples/desktop/HelloDesktop/src/com/aldebaran/demo/ExHelloWorld.java" afterPath="$PROJECT_DIR$/../examples/desktop/HelloDesktop/src/com/aldebaran/demo/ExHelloWorld.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../examples/android/HelloAndroid/HelloAndroid.iml" afterPath="$PROJECT_DIR$/../examples/android/HelloAndroid/HelloAndroid.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../examples/android/HelloAndroid/src/com/aldebaran/helloandroid/MyActivity.java" afterPath="$PROJECT_DIR$/../examples/android/HelloAndroid/src/com/aldebaran/helloandroid/MyActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../examples/android/HelloAndroid/src/com/aldebaran/helloandroid/VideoActivity.java" afterPath="$PROJECT_DIR$/../examples/android/HelloAndroid/src/com/aldebaran/helloandroid/VideoActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator.py" afterPath="$PROJECT_DIR$/generator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_android_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_android_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_atom_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_atom_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_linux32_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_linux32_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_linux64_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_linux64_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_mac64_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_mac64_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_windows32_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/jnaoqi_windows32_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../examples/android/HelloAndroid/.idea/vcs.xml" afterPath="$PROJECT_DIR$/../examples/android/HelloAndroid/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../examples/android/HelloAndroid/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../examples/android/HelloAndroid/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../examples/android/TestQi/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../examples/android/TestQi/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../examples/desktop/HelloDesktop/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../examples/desktop/HelloDesktop/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALAnimatedSpeech.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALAudioDevice.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALAudioPlayer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALAudioRecorder.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALAudioSourceLocalization.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALAutonomousLife.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALAutonomousMoves.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALBacklightingDetection.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALBarcodeReader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALBasicAwareness.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALBattery.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALBehaviorManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALBodyTemperature.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALChestButton.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALColorBlobDetection.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALConnectionManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALDarknessDetection.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALDiagnosis.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALDialog.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALEngagementZones.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALFaceCharacteristics.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALFaceDetection.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALFsr.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALGazeAnalysis.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALInfrared.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALKnowledge.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALLaser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALLauncher.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALLeds.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALLocalization.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALLogger.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALMemory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALMood.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALMotion.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALMotionRecorder.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALMovementDetection.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALNavigation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALNotificationManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALPeoplePerception.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALPhotoCapture.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALPreferenceManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALPreferences.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALRedBallDetection.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALResourceManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALRobotPosture.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALSensors.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALSittingPeopleDetection.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALSonar.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALSoundDetection.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALSoundLocalization.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALSpeechRecognition.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALStore.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALSystem.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALTactileGesture.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALTextToSpeech.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALTouch.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALTracker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALUserSession.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALVideoDevice.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALVideoRecorder.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALVisionRecognition.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALVisualCompass.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALVisualSpaceHistory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALWavingDetection.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/ALWorldRepresentation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/DCM.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generate/src/com/aldebaran/qi/helper/proxies/PackageManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PyTemp.iws" />
@@ -193,18 +116,6 @@
               <caret line="241" column="31" selection-start-line="241" selection-start-column="31" selection-end-line="241" selection-end-column="59" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="270">
-              <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -621,15 +532,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="artifacts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java_naoqi_sdk_linux64_jar" />
+              <option name="myItemId" value="generate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -646,6 +549,14 @@
               <option name="myItemId" value="generate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -657,7 +568,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="doc" />
+              <option name="myItemId" value="generate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proxies" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1215,16 +1138,23 @@
       <workItem from="1424695020511" duration="2638000" />
       <workItem from="1424769566529" duration="290000" />
       <workItem from="1424771969447" duration="12010000" />
-      <workItem from="1424856315906" duration="1303000" />
+      <workItem from="1424856315906" duration="1788000" />
     </task>
+    <task id="LOCAL-00001" summary="Update the generator with new apis and new name">
+      <created>1424860929740</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1424860929740</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107731000" />
+    <option name="totallyTimeSpent" value="108216000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1234,6 +1164,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27228916" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15379113" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -1245,13 +1176,12 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17095852" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25107297" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25107297" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2060241" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32771084" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932693" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16385542" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1271,6 +1201,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="Update the generator with new apis and new name" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update the generator with new apis and new name" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1289,16 +1221,6 @@
           <caret line="241" column="31" selection-start-line="241" selection-start-column="31" selection-end-line="241" selection-end-column="59" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="270">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1331,6 +1253,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="240">
           <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1348,6 +1271,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="225">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1363,6 +1287,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="240">
           <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1380,6 +1305,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="225">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1395,6 +1321,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="240">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1409,6 +1336,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="240">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1424,6 +1352,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="240">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1590,6 +1519,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
           <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1597,6 +1527,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1613,16 +1544,6 @@
           <caret line="241" column="31" selection-start-line="241" selection-start-column="31" selection-end-line="241" selection-end-column="59" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
