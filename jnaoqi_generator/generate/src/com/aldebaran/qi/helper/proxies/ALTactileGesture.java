@@ -26,15 +26,39 @@ public class ALTactileGesture extends ALProxy {
     }
 
     /**
-    * Set length of hold time.
+    * Set length of sequence time.
 
-        :param hold_time: Desired hold time, in seconds (Default: 0.8s)
+        :param sequence_time: Desired sequence time, in seconds (Default: 0.2s)
 
-        :returns: True if hold time successfully updated, RuntimeError otherwise.
+        :returns: True if sequence time successfully updated, RuntimeError otherwise.
     * 
     */
-    public Boolean setHoldTime(String param1) throws CallError, InterruptedException {
-        return (Boolean)service.call("setHoldTime", param1).get();
+    public Boolean setSequenceTime(String param1) throws CallError, InterruptedException {
+        return (Boolean)service.call("setSequenceTime", param1).get();
+    }
+
+    /**
+    * Get the sequence associated with a gesture name
+
+        :param sequence: Sequence you want the gesture name of
+
+        :returns: Sequence (as list of strings) if it exists, None otherwise
+    * 
+    */
+    public Object getGesture(List<String> param1) throws CallError, InterruptedException {
+        return (Object)service.call("getGesture", param1).get();
+    }
+
+    /**
+    * Update length of settling time.
+
+        :param settle_time: Desired settling time, in seconds (Default: 0.04s)
+
+        :returns: True if settle time successfully updated, RuntimeError otherwise.
+    * 
+    */
+    public Boolean setSettleTime(String param1) throws CallError, InterruptedException {
+        return (Boolean)service.call("setSettleTime", param1).get();
     }
 
     /**
@@ -45,42 +69,6 @@ public class ALTactileGesture extends ALProxy {
     */
     public Map<String, List<String>> getGestures() throws CallError, InterruptedException {
         return (Map<String, List<String>>)service.call("getGestures").get();
-    }
-
-    /**
-    * Set length of hold time.
-
-        :param hold_time: Desired hold time, in seconds (Default: 0.8s)
-
-        :returns: True if hold time successfully updated, RuntimeError otherwise.
-    * 
-    */
-    public Boolean setHoldTime(Float param1) throws CallError, InterruptedException {
-        return (Boolean)service.call("setHoldTime", param1).get();
-    }
-
-    /**
-    * Update length of sequence time.
-
-        :param sequence_time: Desired sequence time, in seconds (Default: 0.2s)
-
-        :returns: True if sequence time successfully updated, RuntimeError otherwise.
-    * 
-    */
-    public Boolean setSequenceTime(Float param1) throws CallError, InterruptedException {
-        return (Boolean)service.call("setSequenceTime", param1).get();
-    }
-
-    /**
-    * Set length of sequence time.
-
-        :param sequence_time: Desired sequence time, in seconds (Default: 0.2s)
-
-        :returns: True if sequence time successfully updated, RuntimeError otherwise.
-    * 
-    */
-    public Boolean setSequenceTime(String param1) throws CallError, InterruptedException {
-        return (Boolean)service.call("setSequenceTime", param1).get();
     }
 
     /**
@@ -97,15 +85,51 @@ public class ALTactileGesture extends ALProxy {
     }
 
     /**
-    * Update length of settling time.
+    * Set length of hold time.
 
-        :param settle_time: Desired settling time, in seconds (Default: 0.04s)
+        :param hold_time: Desired hold time, in seconds (Default: 0.8s)
 
-        :returns: True if settle time successfully updated, RuntimeError otherwise.
+        :returns: True if hold time successfully updated, RuntimeError otherwise.
     * 
     */
-    public Boolean setSettleTime(Float param1) throws CallError, InterruptedException {
-        return (Boolean)service.call("setSettleTime", param1).get();
+    public Boolean setHoldTime(Float param1) throws CallError, InterruptedException {
+        return (Boolean)service.call("setHoldTime", param1).get();
+    }
+
+    /**
+    * Get the sequence associated with a gesture name
+
+        :param sequence: Sequence you want the gesture name of
+
+        :returns: Sequence (as list of strings) if it exists, None otherwise
+    * 
+    */
+    public Object getGesture(String param1) throws CallError, InterruptedException {
+        return (Object)service.call("getGesture", param1).get();
+    }
+
+    /**
+    * Set length of hold time.
+
+        :param hold_time: Desired hold time, in seconds (Default: 0.8s)
+
+        :returns: True if hold time successfully updated, RuntimeError otherwise.
+    * 
+    */
+    public Boolean setHoldTime(String param1) throws CallError, InterruptedException {
+        return (Boolean)service.call("setHoldTime", param1).get();
+    }
+
+    /**
+    * Update length of sequence time.
+
+        :param sequence_time: Desired sequence time, in seconds (Default: 0.2s)
+
+        :returns: True if sequence time successfully updated, RuntimeError otherwise.
+    * 
+    */
+    public Boolean setSequenceTime(Float param1) throws CallError, InterruptedException {
+        return (Boolean)service.call("setSequenceTime", param1).get();
     }
 
     /**
@@ -116,7 +140,7 @@ public class ALTactileGesture extends ALProxy {
         :returns: True if settle time successfully updated, RuntimeError otherwise.
     * 
     */
-    public Boolean setSettleTime(String param1) throws CallError, InterruptedException {
+    public Boolean setSettleTime(Float param1) throws CallError, InterruptedException {
         return (Boolean)service.call("setSettleTime", param1).get();
     }
 
@@ -183,30 +207,6 @@ public class ALTactileGesture extends ALProxy {
     */
     public String createGesture(String param1) throws CallError, InterruptedException {
         return (String)service.call("createGesture", param1).get();
-    }
-
-    /**
-    * Get the sequence associated with a gesture name
-
-        :param sequence: Sequence you want the gesture name of
-
-        :returns: Sequence (as list of strings) if it exists, None otherwise
-    * 
-    */
-    public Object getGesture(List<String> param1) throws CallError, InterruptedException {
-        return (Object)service.call("getGesture", param1).get();
-    }
-
-    /**
-    * Get the sequence associated with a gesture name
-
-        :param sequence: Sequence you want the gesture name of
-
-        :returns: Sequence (as list of strings) if it exists, None otherwise
-    * 
-    */
-    public Object getGesture(String param1) throws CallError, InterruptedException {
-        return (Object)service.call("getGesture", param1).get();
     }
 
 }

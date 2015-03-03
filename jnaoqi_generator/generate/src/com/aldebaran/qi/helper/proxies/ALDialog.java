@@ -300,62 +300,48 @@ public class ALDialog extends ALProxy {
     }
 
     /**
-    * Is engine stoppable
+    * Callback when speech recognition recognized a word
     * 
-    * @return Is engine stoppable
     */
-    public Boolean getStoppable() throws CallError, InterruptedException {
-        return (Boolean)service.call("getStoppable").get();
-    }
-
-    /**
-    * Is engine stoppable
-    * 
-    * @param stoppable  set if engine can be stopped by user session
-    */
-    public void setStoppable(Boolean stoppable) throws CallError, InterruptedException{
+    public void wordRecognized(String param1, Object param2, String param3) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setStoppable", stoppable);
+            service.call("wordRecognized", param1, param2, param3);
         else
-            service.call("setStoppable", stoppable).get();
+            service.call("wordRecognized", param1, param2, param3).get();
     }
 
     /**
-    * The event will stop current TSS
+    * Callback when speech recognition recognized a word
     * 
-    * @param eventName  Event name
     */
-    public void addBlockingEvent(String eventName) throws CallError, InterruptedException{
+    public void addBlockingEvent(String param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("addBlockingEvent", eventName);
+            service.call("addBlockingEvent", param1);
         else
-            service.call("addBlockingEvent", eventName).get();
+            service.call("addBlockingEvent", param1).get();
     }
 
     /**
-    * Asr callback for recognized words
+    * Get loaded dialog list
     * 
-    * @param grammar  recognized grammar
-    * @param utterance Size  Utterance size
     */
-    public void wordsRecognizedCallback(Object grammar, Integer utteranceSize) throws CallError, InterruptedException{
+    public void wordsRecognizedCallback(Object param1, Integer param2) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("wordsRecognizedCallback", grammar, utteranceSize);
+            service.call("wordsRecognizedCallback", param1, param2);
         else
-            service.call("wordsRecognizedCallback", grammar, utteranceSize).get();
+            service.call("wordsRecognizedCallback", param1, param2).get();
     }
 
     /**
-    * End of utterance asr callback
+    * End of utterance callback
     * 
-    * @return true if reprocess buffer
     */
     public Boolean endOfUtteranceCallback() throws CallError, InterruptedException {
         return (Boolean)service.call("endOfUtteranceCallback").get();
     }
 
     /**
-    * Experimental: release engine after call of controlEngine
+    * releaseEngine
     * 
     */
     public void releaseEngine() throws CallError, InterruptedException{
@@ -366,28 +352,66 @@ public class ALDialog extends ALProxy {
     }
 
     /**
+    * controlEngine
+    * 
+    */
+    public List<String> controlEngine(String param1, String param2) throws CallError, InterruptedException {
+        return (List<String>)service.call("controlEngine", param1, param2).get();
+    }
+
+    /**
+    * Callback when dialog received a event
+    * 
+    */
+    public void eventReceived(String param1, Object param2, String param3) throws CallError, InterruptedException{
+        if (isAsynchronous)
+            service.call("eventReceived", param1, param2, param3);
+        else
+            service.call("eventReceived", param1, param2, param3).get();
+    }
+
+    /**
     * Callback when ASR status changes
     * 
-    * @param topicName  topic name
-    * @param tagName  tag name
     */
-    public void gotoTag(String topicName, String tagName) throws CallError, InterruptedException{
+    public void statusChanged(String param1, Object param2, String param3) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("gotoTag", topicName, tagName);
+            service.call("statusChanged", param1, param2, param3);
         else
-            service.call("gotoTag", topicName, tagName).get();
+            service.call("statusChanged", param1, param2, param3).get();
+    }
+
+    /**
+    * Callback when ASR status changes
+    * 
+    */
+    public void gotoTag(String param1, String param2) throws CallError, InterruptedException{
+        if (isAsynchronous)
+            service.call("gotoTag", param1, param2);
+        else
+            service.call("gotoTag", param1, param2).get();
     }
 
     /**
     * noPick
     * 
-    * @param topicName  Topic name
     */
-    public void noPick(String topicName) throws CallError, InterruptedException{
+    public void noPick(String param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("noPick", topicName);
+            service.call("noPick", param1);
         else
-            service.call("noPick", topicName).get();
+            service.call("noPick", param1).get();
+    }
+
+    /**
+    * Callback when remote connection changes
+    * 
+    */
+    public void connectionChanged(String param1, Object param2, String param3) throws CallError, InterruptedException{
+        if (isAsynchronous)
+            service.call("connectionChanged", param1, param2, param3);
+        else
+            service.call("connectionChanged", param1, param2, param3).get();
     }
 
     /**
@@ -402,70 +426,44 @@ public class ALDialog extends ALProxy {
     }
 
     /**
-    * Create a context
-    * 
-    */
-    public void createContext(String param1, String param2, String param3) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            service.call("createContext", param1, param2, param3);
-        else
-            service.call("createContext", param1, param2, param3).get();
-    }
-
-    /**
     * Load a topic
     * 
-    * @param topicPath  topic full path and filename
-    * @return Topic path and filename
     */
-    public String loadTopic(String topicPath) throws CallError, InterruptedException {
-        return (String)service.call("loadTopic", topicPath).get();
-    }
-
-    /**
-    * Load a topic
-    * 
-    * @param topicContent  topic content
-    * @return Topic name
-    */
-    public String loadTopicContent(String topicContent) throws CallError, InterruptedException {
-        return (String)service.call("loadTopicContent", topicContent).get();
+    public String loadTopic(String param1) throws CallError, InterruptedException {
+        return (String)service.call("loadTopic", param1).get();
     }
 
     /**
     * Activate a topic
     * 
-    * @param topicName  topic name
     */
-    public void deactivateTopic(String topicName) throws CallError, InterruptedException{
+    public void deactivateTopic(String param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("deactivateTopic", topicName);
+            service.call("deactivateTopic", param1);
         else
-            service.call("deactivateTopic", topicName).get();
+            service.call("deactivateTopic", param1).get();
     }
 
     /**
     * Activate a topic
     * 
-    * @param topicName  topic name
     */
-    public void activateTopic(String topicName) throws CallError, InterruptedException{
+    public void activateTopic(String param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("activateTopic", topicName);
+            service.call("activateTopic", param1);
         else
-            service.call("activateTopic", topicName).get();
+            service.call("activateTopic", param1).get();
     }
 
     /**
     * unload a dialog
     * 
-    * @param topicName  topic name
     */
-    public void unloadTopic(String topicName) throws CallError, InterruptedException{
+    public void unloadTopic(String param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("unloadTopic", topicName);
+            service.call("unloadTopic", param1);
         else
-            service.call("unloadTopic", topicName).get();
+            service.call("unloadTopic", param1).get();
     }
 
     /**
@@ -482,43 +480,39 @@ public class ALDialog extends ALProxy {
     /**
     * Give a sentence to the dialog and get the answer
     * 
-    * @param input  input string that simulate humain sentence
     */
-    public void forceInput(String input) throws CallError, InterruptedException{
+    public void forceInput(String param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("forceInput", input);
+            service.call("forceInput", param1);
         else
-            service.call("forceInput", input).get();
+            service.call("forceInput", param1).get();
     }
 
     /**
     * Give a sentence to the dialog and get the answer
     * 
-    * @param input  input string that simulate humain sentence
     */
-    public void tell(String input) throws CallError, InterruptedException{
+    public void tell(String param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("tell", input);
+            service.call("tell", param1);
         else
-            service.call("tell", input).get();
+            service.call("tell", param1).get();
     }
 
     /**
-    * Set the minimum confidence required to recognize words. Better to use confidence by asr model
+    * Set the minimum confidence required to recognize words
     * 
-    * @param threshold  input string that simulate humain sentence
     */
-    public void setASRConfidenceThreshold(Float threshold) throws CallError, InterruptedException{
+    public void setASRConfidenceThreshold(Float param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setASRConfidenceThreshold", threshold);
+            service.call("setASRConfidenceThreshold", param1);
         else
-            service.call("setASRConfidenceThreshold", threshold).get();
+            service.call("setASRConfidenceThreshold", param1).get();
     }
 
     /**
     * Get the minimum confidence required to recognize words
     * 
-    * @return current asr confidence
     */
     public Float getASRConfidenceThreshold() throws CallError, InterruptedException {
         return (Float)service.call("getASRConfidenceThreshold").get();
@@ -527,17 +521,16 @@ public class ALDialog extends ALProxy {
     /**
     * Open a session
     * 
-    * @param id  user id
     */
-    public void openSession(Integer id) throws CallError, InterruptedException{
+    public void openSession(Integer param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("openSession", id);
+            service.call("openSession", param1);
         else
-            service.call("openSession", id).get();
+            service.call("openSession", param1).get();
     }
 
     /**
-    * Close the current session
+    * Close the session
     * 
     */
     public void closeSession() throws CallError, InterruptedException{
@@ -550,26 +543,23 @@ public class ALDialog extends ALProxy {
     /**
     * change event's delay
     * 
-    * @param eventName  Event name
-    * @param Delay  Delay in second
     */
-    public void setDelay(String eventName, Integer Delay) throws CallError, InterruptedException{
+    public void setDelay(String param1, Integer param2) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setDelay", eventName, Delay);
+            service.call("setDelay", param1, param2);
         else
-            service.call("setDelay", eventName, Delay).get();
+            service.call("setDelay", param1, param2).get();
     }
 
     /**
     * Set how many scopes remains open
     * 
-    * @param numberOfScope  number of scope
     */
-    public void setNumberOfScopes(Integer numberOfScope) throws CallError, InterruptedException{
+    public void setNumberOfScopes(Integer param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setNumberOfScopes", numberOfScope);
+            service.call("setNumberOfScopes", param1);
         else
-            service.call("setNumberOfScopes", numberOfScope).get();
+            service.call("setNumberOfScopes", param1).get();
     }
 
     /**
@@ -578,7 +568,6 @@ public class ALDialog extends ALProxy {
     * @param conceptName  Name of the concept
     * @param language  Language of the concept
     * @param content  content of the concept
-    * @param store  Store concept in database if true
     */
     public void setConcept(String conceptName, String language, List<String> content) throws CallError, InterruptedException{
         if (isAsynchronous)
@@ -605,39 +594,45 @@ public class ALDialog extends ALProxy {
     /**
     * set the content of a dynamic concept
     * 
-    * @param conceptName  concept name
-    * @param language  language
-    * @param content  concept content
     */
-    public void setConceptKeepInCache(String conceptName, String language, List<String> content) throws CallError, InterruptedException{
+    public void setConceptKeepInCache(String param1, String param2, List<String> param3) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setConceptKeepInCache", conceptName, language, content);
+            service.call("setConceptKeepInCache", param1, param2, param3);
         else
-            service.call("setConceptKeepInCache", conceptName, language, content).get();
+            service.call("setConceptKeepInCache", param1, param2, param3).get();
+    }
+
+    /**
+    * Set push mode
+    * 
+    */
+    public void setPushMode(Integer param1) throws CallError, InterruptedException{
+        if (isAsynchronous)
+            service.call("setPushMode", param1);
+        else
+            service.call("setPushMode", param1).get();
     }
 
     /**
     * enableTriggerSentences
     * 
-    * @param enableTriggerSentences  Enable trigger sentences if true
     */
-    public void enableTriggerSentences(Boolean enableTriggerSentences) throws CallError, InterruptedException{
+    public void enableTriggerSentences(Boolean param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("enableTriggerSentences", enableTriggerSentences);
+            service.call("enableTriggerSentences", param1);
         else
-            service.call("enableTriggerSentences", enableTriggerSentences).get();
+            service.call("enableTriggerSentences", param1).get();
     }
 
     /**
     * enableCategory
     * 
-    * @param enableCategory  Enable category if true
     */
-    public void enableCategory(Boolean enableCategory) throws CallError, InterruptedException{
+    public void enableCategory(Boolean param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("enableCategory", enableCategory);
+            service.call("enableCategory", param1);
         else
-            service.call("enableCategory", enableCategory).get();
+            service.call("enableCategory", param1).get();
     }
 
     /**
@@ -665,56 +660,31 @@ public class ALDialog extends ALProxy {
     /**
     * Set the configuration of animated speech for the current dialog.
     * 
-    * @param animatedSpeechConfiguration  See animated speech documentation
     */
-    public void setAnimatedSpeechConfiguration(Object animatedSpeechConfiguration) throws CallError, InterruptedException{
+    public void setAnimatedSpeechConfiguration(Object param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setAnimatedSpeechConfiguration", animatedSpeechConfiguration);
+            service.call("setAnimatedSpeechConfiguration", param1);
         else
-            service.call("setAnimatedSpeechConfiguration", animatedSpeechConfiguration).get();
+            service.call("setAnimatedSpeechConfiguration", param1).get();
     }
 
     /**
     * Black list a list of application
     * 
-    * @param applicationList  List of applications that cannot be launched by dialog
     */
-    public void applicationBlackList(List<String> applicationList) throws CallError, InterruptedException{
+    public void applicationBlackList(List<String> param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("applicationBlackList", applicationList);
+            service.call("applicationBlackList", param1);
         else
-            service.call("applicationBlackList", applicationList).get();
+            service.call("applicationBlackList", param1).get();
     }
 
     /**
     * True if new content was installed
     * 
-    * @return True if content was updated since last compilation
     */
     public Boolean isContentNeedsUpdate() throws CallError, InterruptedException {
         return (Boolean)service.call("isContentNeedsUpdate").get();
-    }
-
-    /**
-    * change engagement mode
-    * 
-    */
-    public void pause() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            service.call("pause");
-        else
-            service.call("pause").get();
-    }
-
-    /**
-    * change engagement mode
-    * 
-    */
-    public void endPause() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            service.call("endPause");
-        else
-            service.call("endPause").get();
     }
 
     /**
@@ -740,61 +710,85 @@ public class ALDialog extends ALProxy {
     }
 
     /**
-    * setVariablePath redifine a variable name on the fly
+    * setVariablePath
     * 
-    * @param topic  Source topic name
-    * @param event  Event name
-    * @param path  New event name
     */
-    public void setVariablePath(String topic, String event, String path) throws CallError, InterruptedException{
+    public void setVariablePath(String param1, String param2, String param3) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setVariablePath", topic, event, path);
+            service.call("setVariablePath", param1, param2, param3);
         else
-            service.call("setVariablePath", topic, event, path).get();
+            service.call("setVariablePath", param1, param2, param3).get();
     }
 
     /**
     * setLanguage
     * 
-    * @param Language  Set dialog language (frf, enu, jpj...)
     */
-    public void setLanguage(String Language) throws CallError, InterruptedException{
+    public void setLanguage(String param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setLanguage", Language);
+            service.call("setLanguage", param1);
         else
-            service.call("setLanguage", Language).get();
+            service.call("setLanguage", param1).get();
     }
 
     /**
-    * dialogAnswered
+    * startUpdate
     * 
-    * @param variableName  variable name
-    * @param variableValue  variable value
-    * @param message  message
     */
-    public void dialogAnswered(String variableName, Object variableValue, String message) throws CallError, InterruptedException{
+    public void startUpdate(String param1, Object param2, String param3) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("dialogAnswered", variableName, variableValue, message);
+            service.call("startUpdate", param1, param2, param3);
         else
-            service.call("dialogAnswered", variableName, variableValue, message).get();
+            service.call("startUpdate", param1, param2, param3).get();
+    }
+
+    /**
+    * startUpdate
+    * 
+    */
+    public void startApp(String param1, Object param2, String param3) throws CallError, InterruptedException{
+        if (isAsynchronous)
+            service.call("startApp", param1, param2, param3);
+        else
+            service.call("startApp", param1, param2, param3).get();
+    }
+
+    /**
+    * packageInstalled
+    * 
+    */
+    public void packageInstalled(String param1, Object param2, String param3) throws CallError, InterruptedException{
+        if (isAsynchronous)
+            service.call("packageInstalled", param1, param2, param3);
+        else
+            service.call("packageInstalled", param1, param2, param3).get();
+    }
+
+    /**
+    * compilationFinished
+    * 
+    */
+    public void compilationFinished(String param1, Object param2, String param3) throws CallError, InterruptedException{
+        if (isAsynchronous)
+            service.call("compilationFinished", param1, param2, param3);
+        else
+            service.call("compilationFinished", param1, param2, param3).get();
     }
 
     /**
     * Give focus to a dialog
     * 
-    * @param topicName  Topic name
     */
-    public void setFocus(String topicName) throws CallError, InterruptedException{
+    public void setFocus(String param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setFocus", topicName);
+            service.call("setFocus", param1);
         else
-            service.call("setFocus", topicName).get();
+            service.call("setFocus", param1).get();
     }
 
     /**
     * Give focus to a dialog
     * 
-    * @return Current focus name
     */
     public String getFocus() throws CallError, InterruptedException {
         return (String)service.call("getFocus").get();
@@ -803,29 +797,25 @@ public class ALDialog extends ALProxy {
     /**
     * Set the focus to a topic and make a proposal
     * 
-    * @param topicName  Topic name
     */
-    public void gotoTopic(String topicName) throws CallError, InterruptedException{
+    public void gotoTopic(String param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("gotoTopic", topicName);
+            service.call("gotoTopic", param1);
         else
-            service.call("gotoTopic", topicName).get();
+            service.call("gotoTopic", param1).get();
     }
 
     /**
-    * List loaded topics
+    * Load precompiled file
     * 
-    * @param language  Language name
-    * @return List of loaded topics
     */
-    public List<String> getLoadedTopics(String language) throws CallError, InterruptedException {
-        return (List<String>)service.call("getLoadedTopics", language).get();
+    public List<String> getLoadedTopics(String param1) throws CallError, InterruptedException {
+        return (List<String>)service.call("getLoadedTopics", param1).get();
     }
 
     /**
-    * List loaded topics independent of language
+    * Load precompiled file
     * 
-    * @return List of loaded topics
     */
     public List<String> getAllLoadedTopics() throws CallError, InterruptedException {
         return (List<String>)service.call("getAllLoadedTopics").get();
@@ -834,7 +824,6 @@ public class ALDialog extends ALProxy {
     /**
     * Get activated topics
     * 
-    * @return List of activated topics
     */
     public List<String> getActivatedTopics() throws CallError, InterruptedException {
         return (List<String>)service.call("getActivatedTopics").get();
@@ -843,31 +832,27 @@ public class ALDialog extends ALProxy {
     /**
     * activate a tag
     * 
-    * @param tagName  tag name
-    * @param topicName  topic name
     */
-    public void activateTag(String tagName, String topicName) throws CallError, InterruptedException{
+    public void activateTag(String param1, String param2) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("activateTag", tagName, topicName);
+            service.call("activateTag", param1, param2);
         else
-            service.call("activateTag", tagName, topicName).get();
+            service.call("activateTag", param1, param2).get();
     }
 
     /**
     * deactivate a tag
     * 
-    * @param tagName  tag name
-    * @param topicName  topic name
     */
-    public void deactivateTag(String tagName, String topicName) throws CallError, InterruptedException{
+    public void deactivateTag(String param1, String param2) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("deactivateTag", tagName, topicName);
+            service.call("deactivateTag", param1, param2);
         else
-            service.call("deactivateTag", tagName, topicName).get();
+            service.call("deactivateTag", param1, param2).get();
     }
 
     /**
-    * Reset all engine
+    * fallback
     * 
     */
     public void resetAll() throws CallError, InterruptedException{
@@ -880,42 +865,33 @@ public class ALDialog extends ALProxy {
     /**
     * insert user data into dialog database
     * 
-    * @param variableName  Variable name
-    * @param variableValue  Variable value
-    * @param UserID  User ID
     */
-    public void insertUserData(String variableName, String variableValue, Integer UserID) throws CallError, InterruptedException{
+    public void insertUserData(String param1, String param2, Integer param3) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("insertUserData", variableName, variableValue, UserID);
+            service.call("insertUserData", param1, param2, param3);
         else
-            service.call("insertUserData", variableName, variableValue, UserID).get();
+            service.call("insertUserData", param1, param2, param3).get();
     }
 
     /**
     * get user data from dialog database
     * 
-    * @param variableName  Variable name
-    * @param UserID  User ID
-    * @return Value
     */
-    public String getUserData(String variableName, Integer UserID) throws CallError, InterruptedException {
-        return (String)service.call("getUserData", variableName, UserID).get();
+    public String getUserData(String param1, Integer param2) throws CallError, InterruptedException {
+        return (String)service.call("getUserData", param1, param2).get();
     }
 
     /**
     * get user data list from dialog database
     * 
-    * @param UserID  User ID
-    * @return Variable list
     */
-    public List<String> getUserDataList(Integer UserID) throws CallError, InterruptedException {
-        return (List<String>)service.call("getUserDataList", UserID).get();
+    public List<String> getUserDataList(Integer param1) throws CallError, InterruptedException {
+        return (List<String>)service.call("getUserDataList", param1).get();
     }
 
     /**
     * get user list from dialog database
     * 
-    * @return User list
     */
     public List<Integer> getUserList() throws CallError, InterruptedException {
         return (List<Integer>)service.call("getUserList").get();
@@ -924,13 +900,12 @@ public class ALDialog extends ALProxy {
     /**
     * remove a user from the database
     * 
-    * @param UserID  User ID
     */
-    public void removeUserData(Integer UserID) throws CallError, InterruptedException{
+    public void removeUserData(Integer param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("removeUserData", UserID);
+            service.call("removeUserData", param1);
         else
-            service.call("removeUserData", UserID).get();
+            service.call("removeUserData", param1).get();
     }
 
     /**
@@ -947,19 +922,17 @@ public class ALDialog extends ALProxy {
     /**
     * let the robot send log the cloud
     * 
-    * @param EnableLog  Enable log
     */
-    public void enableSendingLogToCloud(Boolean EnableLog) throws CallError, InterruptedException{
+    public void enableSendingLogToCloud(Boolean param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("enableSendingLogToCloud", EnableLog);
+            service.call("enableSendingLogToCloud", param1);
         else
-            service.call("enableSendingLogToCloud", EnableLog).get();
+            service.call("enableSendingLogToCloud", param1).get();
     }
 
     /**
     * check if the robot is sending the log to the cloud
     * 
-    * @return True if currently logging
     */
     public Boolean isSendingLogToCloud() throws CallError, InterruptedException {
         return (Boolean)service.call("isSendingLogToCloud").get();
@@ -988,28 +961,14 @@ public class ALDialog extends ALProxy {
     }
 
     /**
-    * mute dialog
-    * 
-    */
-    public void mute(Boolean param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            service.call("mute", param1);
-        else
-            service.call("mute", param1).get();
-    }
-
-    /**
     * Generate sentences
     * 
-    * @param destination  file destination
-    * @param topic  source topic
-    * @param language  source language
     */
-    public void generateSentences(String destination, String topic, String language) throws CallError, InterruptedException{
+    public void generateSentences(String param1, String param2, String param3) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("generateSentences", destination, topic, language);
+            service.call("generateSentences", param1, param2, param3);
         else
-            service.call("generateSentences", destination, topic, language).get();
+            service.call("generateSentences", param1, param2, param3).get();
     }
 
 }

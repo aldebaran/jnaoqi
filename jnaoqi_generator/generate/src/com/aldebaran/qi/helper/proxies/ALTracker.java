@@ -283,27 +283,6 @@ public class ALTracker extends ALProxy {
     }
 
     /**
-    * Set search process fraction max speed.
-    * 
-    * @param pFractionMaxSpeed  a fraction max speed.
-    */
-    public void setSearchFractionMaxSpeed(Float pFractionMaxSpeed) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            service.call("setSearchFractionMaxSpeed", pFractionMaxSpeed);
-        else
-            service.call("setSearchFractionMaxSpeed", pFractionMaxSpeed).get();
-    }
-
-    /**
-    * Get search process fraction max speed.
-    * 
-    * @return a fraction max speed.
-    */
-    public Float getSearchFractionMaxSpeed() throws CallError, InterruptedException {
-        return (Float)service.call("getSearchFractionMaxSpeed").get();
-    }
-
-    /**
     * Return true if the target search process is enabled.
     * 
     * @return If true the target search process is enabled.
@@ -568,17 +547,6 @@ public class ALTracker extends ALProxy {
             service.call("setEffector", pEffector);
         else
             service.call("setEffector", pEffector).get();
-    }
-
-    /**
-    * Initialize tracker parameters with default values.
-    * 
-    */
-    public void initialize() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            service.call("initialize");
-        else
-            service.call("initialize").get();
     }
 
     /**

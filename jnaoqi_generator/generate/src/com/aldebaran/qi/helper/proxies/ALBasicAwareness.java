@@ -58,16 +58,6 @@ public class ALBasicAwareness extends ALProxy {
     }
 
     /**
-    * Trigger a custom stimulus.
-    * 
-    * @param stimulusPosition  Position of the stimulus, in Frame World
-    * @return If someone was found, return value is its ID, else it's -1
-    */
-    public Integer triggerStimulus(List<Float> stimulusPosition) throws CallError, InterruptedException {
-        return (Integer)service.call("triggerStimulus", stimulusPosition).get();
-    }
-
-    /**
     * Reset all parameters, including enabled/disabled stimulus.
     * 
     */
@@ -85,7 +75,6 @@ public class ALBasicAwareness extends ALProxy {
  "LookStimulusSpeed" : Speed of head moves when looking at a stimulus, as fraction of max speed
  "LookBackSpeed" : Speed of head moves when looking back to previous position, as fraction of max speed
  "LookDownSpeed" : Speed of head moves when looking down to check for children, as fraction of max speed
- "TrackingSpeed" : Tracking speed
  "NobodyFoundTimeOut" : timeout to send HumanLost event when no blob is found, in seconds
  "MinTimeTracking" : Minimum Time for the robot to be focused on someone, without listening to other stimuli, in seconds
  "TimeSleepBeforeResumeMS" : Slept time before automatically resuming BasicAwareness when an automatic pause has been made, in milliseconds
@@ -139,7 +128,6 @@ public class ALBasicAwareness extends ALProxy {
  "LookStimulusSpeed" : Speed of head moves when looking at a stimulus, as fraction of max speed
  "LookBackSpeed" : Speed of head moves when looking back to previous position, as fraction of max speed
  "LookDownSpeed" : Speed of head moves when looking down to check for children, as fraction of max speed
- "TrackingSpeed" : Tracking speed
  "NobodyFoundTimeOut" : timeout to send HumanLost event when no blob is found, in seconds
  "MinTimeTracking" : Minimum Time for the robot to be focused on someone, without listening to other stimuli, in seconds
  "TimeSleepBeforeResumeMS" : Slept time before automatically resuming BasicAwareness when an automatic pause has been made, in milliseconds
@@ -175,7 +163,6 @@ public class ALBasicAwareness extends ALProxy {
  "LookStimulusSpeed" : Float in range [0.01;1]
  "LookBackSpeed" : Float in range [0.01;1]
  "LookDownSpeed" : Float in range [0.01;1]
- "TrackingSpeed" : Float in range [0.01;10]
  "NobodyFoundTimeOut" : Float > 0
  "MinTimeTracking" : Float in range [0;20]
  "TimeSleepBeforeResumeMS" : Int > 0

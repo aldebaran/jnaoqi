@@ -253,35 +253,5 @@ public class ALConnectionManager extends ALProxy {
         return (Object)service.call("interfaces").get();
     }
 
-    /**
-    * 
-    * 
-    */
-    public void provisionService(Map<String, String> param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            service.call("provisionService", param1);
-        else
-            service.call("provisionService", param1).get();
-    }
-
-    /**
-    * 
-    * 
-    */
-    public List<Map<String, String>> provisionedServices() throws CallError, InterruptedException {
-        return (List<Map<String, String>>)service.call("provisionedServices").get();
-    }
-
-    /**
-    * 
-    * 
-    */
-    public void removeProvisionedService(String param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            service.call("removeProvisionedService", param1);
-        else
-            service.call("removeProvisionedService", param1).get();
-    }
-
 }
     

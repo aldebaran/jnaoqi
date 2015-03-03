@@ -243,16 +243,6 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
-    * Get a value of an ALMemory key that is used in a condition, which is the value at the previous autonomous activity focus.
-    * 
-    * @param name  Name of the ALMemory key to get.  Will throw if key is not used in any activity conditions.
-    * @return An array of the ALValue of the memory key and timestamp of when it was set: [seconds, microseconds, value]
-    */
-    public Object getFocusContext(String name) throws CallError, InterruptedException {
-        return (Object)service.call("getFocusContext", name).get();
-    }
-
-    /**
     * Get a list of the order that activities that have been focused, and their time focused.
     * 
     * @param depth  How many items of history to report, starting from most recent.

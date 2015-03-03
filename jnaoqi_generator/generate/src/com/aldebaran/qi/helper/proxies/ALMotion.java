@@ -284,22 +284,6 @@ public class ALMotion extends ALProxy {
     }
 
     /**
-    * Interpolates a sequence of timed angles for several motors using bezier control points. This is a blocking call.
-    * 
-    * @param jointNames  A vector of joint names
-    * @param times  An ragged ALValue matrix of floats. Each line corresponding to a motor, and column element to a control point.
-    * @param controlPoints  An ALValue array of arrays each containing [float angle, Handle1, Handle2], where Handle is [int InterpolationType, float dAngle, float dTime] descibing the handle offsets relative to the angle and time of the point. The first bezier param describes the handle that controls the curve preceeding the point, the second describes the curve following the point.
-    * @param isAbsolute  A bool or a vector of bool. If true, the movement is described in absolute angles, else the angles are relative to the current angle.
-    * @param supportSequence  An alvalue containing a list of [nameEffector, timeList, isActiveList].
-    */
-    public void animation(List<String> jointNames, Object times, Object controlPoints, Object isAbsolute, Object supportSequence) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            service.call("animation", jointNames, times, controlPoints, isAbsolute, supportSequence);
-        else
-            service.call("animation", jointNames, times, controlPoints, isAbsolute, supportSequence).get();
-    }
-
-    /**
     * Sets angles. This is a non-blocking call.
     * 
     * @param names  The name or names of joints, chains, "Body", "JointActuators", "Joints" or "Actuators". 
@@ -311,20 +295,6 @@ public class ALMotion extends ALProxy {
             service.call("setAngles", names, angles, fractionMaxSpeed);
         else
             service.call("setAngles", names, angles, fractionMaxSpeed).get();
-    }
-
-    /**
-    * Sets angles. This is a non-blocking call.
-    * 
-    * @param names  The name or names of joints, chains, "Body", "JointActuators", "Joints" or "Actuators". 
-    * @param angles  One or more angles in radians
-    * @param fractionMaxSpeeds  The vector of fraction of maximum speed to use
-    */
-    public void setAngles(Object names, Object angles, List<Float> fractionMaxSpeeds) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            service.call("setAngles", names, angles, fractionMaxSpeeds);
-        else
-            service.call("setAngles", names, angles, fractionMaxSpeeds).get();
     }
 
     /**
@@ -1098,7 +1068,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     /**
     * UserFriendly Whole Body API: enable to keep balance in support polygon.
     * 
-    * @param isEnable  Enable Robot to keep balance.
+    * @param isEnable  Enable Nao to keep balance.
     * @param supportLeg  Name of the support leg: "Legs", "LLeg", "RLeg".
     */
     public void wbEnableBalanceConstraint(Boolean isEnable, String supportLeg) throws CallError, InterruptedException{
@@ -1113,21 +1083,12 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * 
     * @param supportLeg  Name of the support leg: "Legs", "LLeg", "RLeg".
     * @param duration  Time in seconds. Must be upper 0.5 s.
-    * @return A boolean of the success of the go to balance.
     */
-    public Boolean wbGoToBalance(String supportLeg, Float duration) throws CallError, InterruptedException {
-        return (Boolean)service.call("wbGoToBalance", supportLeg, duration).get();
-    }
-
-    /**
-    * Advanced Whole Body API: "Com" go to a desired support polygon. This is a blocking call.
-    * 
-    * @param supportLeg  Name of the support leg: "Legs", "LLeg", "RLeg".
-    * @param fractionMaxSpeed  The fraction of maximum speed to use.
-    * @return A boolean of the success of the go to balance.
-    */
-    public Boolean wbGoToBalanceWithSpeed(String supportLeg, Float fractionMaxSpeed) throws CallError, InterruptedException {
-        return (Boolean)service.call("wbGoToBalanceWithSpeed", supportLeg, fractionMaxSpeed).get();
+    public void wbGoToBalance(String supportLeg, Float duration) throws CallError, InterruptedException{
+        if (isAsynchronous)
+            service.call("wbGoToBalance", supportLeg, duration);
+        else
+            service.call("wbGoToBalance", supportLeg, duration).get();
     }
 
     /**
@@ -1452,17 +1413,6 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public List<Float> getCOM(String pName, Integer pSpace, Boolean pUseSensorValues) throws CallError, InterruptedException {
         return (List<Float>)service.call("getCOM", pName, pSpace, pUseSensorValues).get();
-    }
-
-    /**
-    * Gets the support polygon
-    * 
-    * @param pSpace  Task frame {FRAME_TORSO = 0, FRAME_WORLD = 1, FRAME_ROBOT = 2}.
-    * @param pUseSensorValues  If true, the sensor values will be used to determine the position.
-    * @return A vector containing the x,y coordinates of each of the outer points of the support polygon in specified frame.
-    */
-    public List<List<Float>> getSupportPolygon(Integer pSpace, Boolean pUseSensorValues) throws CallError, InterruptedException {
-        return (List<List<Float>>)service.call("getSupportPolygon", pSpace, pUseSensorValues).get();
     }
 
     /**

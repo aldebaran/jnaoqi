@@ -155,6 +155,15 @@ public class ALPeoplePerception extends ALProxy {
     }
 
     /**
+    * Gets the time after which a person, supposed to be in the field of view of the camera disappears if it has not been detected.
+    * 
+    * @return Time in seconds.
+    */
+    public Float getTimeBeforeVisiblePersonDisappears() throws CallError, InterruptedException {
+        return (Float)service.call("getTimeBeforeVisiblePersonDisappears").get();
+    }
+
+    /**
     * Turns face detection on or off.
     * 
     * @param enable  True to turn it on, False to turn it off.
@@ -164,15 +173,6 @@ public class ALPeoplePerception extends ALProxy {
             service.call("setFaceDetectionEnabled", enable);
         else
             service.call("setFaceDetectionEnabled", enable).get();
-    }
-
-    /**
-    * Gets the time after which a person, supposed to be in the field of view of the camera disappears if it has not been detected.
-    * 
-    * @return Time in seconds.
-    */
-    public Float getTimeBeforeVisiblePersonDisappears() throws CallError, InterruptedException {
-        return (Float)service.call("getTimeBeforeVisiblePersonDisappears").get();
     }
 
     /**

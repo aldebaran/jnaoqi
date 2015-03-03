@@ -332,36 +332,14 @@ public class ALNavigation extends ALProxy {
     }
 
     /**
-    *  Starts a loop to update the mapping of the free space around the robot. 
+    * .
     * 
     */
-    public void startFreeZoneUpdate() throws CallError, InterruptedException{
+    public void onTouchChanged(String param1, Object param2, String param3) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("startFreeZoneUpdate");
+            service.call("onTouchChanged", param1, param2, param3);
         else
-            service.call("startFreeZoneUpdate").get();
-    }
-
-    /**
-    * Stops and returns free zone.
-    * 
-    * @param desiredRadius  The radius of the space we want in meters [m].
-    * @param maximumDisplacement  The max distance we accept to move toreach the found place [m].
-    * @return Returns [errorCode, result radius (m), [worldMotionToRobotCenterX (m), worldMotionToRobotCenterY (m)]]
-    */
-    public Object stopAndComputeFreeZone(Float desiredRadius, Float maximumDisplacement) throws CallError, InterruptedException {
-        return (Object)service.call("stopAndComputeFreeZone", desiredRadius, maximumDisplacement).get();
-    }
-
-    /**
-    * Returns [errorCode, result radius[centerWorldMotionX, centerWorldMotionY]]
-    * 
-    * @param desiredRadius  The radius of the space we want in meters [m].
-    * @param maximumDisplacement  The max distance we accept to move toreach the found place [m].
-    * @return Returns [errorCode, result radius (m), [worldMotionToRobotCenterX (m), worldMotionToRobotCenterY (m)]]
-    */
-    public Object findFreeZone(Float desiredRadius, Float maximumDisplacement) throws CallError, InterruptedException {
-        return (Object)service.call("findFreeZone", desiredRadius, maximumDisplacement).get();
+            service.call("onTouchChanged", param1, param2, param3).get();
     }
 
 }

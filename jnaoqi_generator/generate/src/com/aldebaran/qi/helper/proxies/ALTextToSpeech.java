@@ -56,58 +56,12 @@ public class ALTextToSpeech extends ALProxy {
     }
 
     /**
-    * Shows the Dictionary.
-    * 
-    */
-    public void showDictionary() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            service.call("showDictionary");
-        else
-            service.call("showDictionary").get();
-    }
-
-    /**
-    * Unload the dictionary.
-    * 
-    * @param word  the word you wish to delete, does not have to be in japanese.
-    * @return bool: true if succeeded, false if failed
-    */
-    public Boolean deleteFromDictionary(String word, String param1) throws CallError, InterruptedException {
-        return (Boolean)service.call("deleteFromDictionary", word, param1).get();
-    }
-
-    /**
     * Get the locale associate to the current language.
     * 
     * @return A string with xx_XX format (region_country)
     */
     public String locale() throws CallError, InterruptedException {
         return (String)service.call("locale").get();
-    }
-
-    /**
-    * Add a word to the library
-    * 
-    * @param type  the type of word you wish to insert, does not have to be in japanese.
-    * @param word  the word you wish to insert, does not have to be in japanese.
-    * @param priority  the priority of the word.
-    * @param phonetic  the phonetic pronouciation in KATAKANA.
-    * @param accent  syllabus and accentuation
-    * @return bool: true if succeeded, false if failed
-    */
-    public Boolean addToDictionary(String type, String word, String priority, String phonetic, String accent) throws CallError, InterruptedException {
-        return (Boolean)service.call("addToDictionary", type, word, priority, phonetic, accent).get();
-    }
-
-    /**
-    * Add a word to the library
-    * 
-    * @param text  the text you wish to insert.
-    * @param toReplace  text to replace.
-    * @return bool: true if succeeded, false if failed
-    */
-    public Boolean addToDictionary(String text, String toReplace) throws CallError, InterruptedException {
-        return (Boolean)service.call("addToDictionary", text, toReplace).get();
     }
 
     /**
@@ -155,16 +109,6 @@ public class ALTextToSpeech extends ALProxy {
             service.call("disableNotifications");
         else
             service.call("disableNotifications").get();
-    }
-
-    /**
-    * Unload the dictionary.
-    * 
-    * @param word  the word you wish to delete, does not have to be in japanese.
-    * @return bool: true if succeeded, false if failed
-    */
-    public Boolean deleteFromDictionary(String word) throws CallError, InterruptedException {
-        return (Boolean)service.call("deleteFromDictionary", word).get();
     }
 
     /**

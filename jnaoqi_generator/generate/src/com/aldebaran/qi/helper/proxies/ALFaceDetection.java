@@ -213,13 +213,12 @@ It can be either:
     /**
     * deprecated
     * 
-    * @param enable  True/False
     */
-    public void enableRecognition(Boolean enable) throws CallError, InterruptedException{
+    public void enableRecognition(Boolean param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("enableRecognition", enable);
+            service.call("enableRecognition", param1);
         else
-            service.call("enableRecognition", enable).get();
+            service.call("enableRecognition", param1).get();
     }
 
     /**
@@ -234,13 +233,12 @@ It can be either:
     /**
     * deprecated
     * 
-    * @param enable  True/False
     */
-    public void enableTracking(Boolean enable) throws CallError, InterruptedException{
+    public void enableTracking(Boolean param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("enableTracking", enable);
+            service.call("enableTracking", param1);
         else
-            service.call("enableTracking", enable).get();
+            service.call("enableTracking", param1).get();
     }
 
     /**

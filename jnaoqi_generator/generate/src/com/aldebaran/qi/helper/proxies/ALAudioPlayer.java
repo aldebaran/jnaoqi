@@ -608,30 +608,5 @@ public class ALAudioPlayer extends ALProxy {
             service.call("playSine", frequence, gain, pan, duration).get();
     }
 
-    /**
-    * Remove pitch on the current file
-    * 
-    * @param id  Id returned by the loadFile function
-    */
-    public void disablePitch(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            service.call("disablePitch", id);
-        else
-            service.call("disablePitch", id).get();
-    }
-
-    /**
-    * Set a pith on the current playing file
-    * 
-    * @param id  Id returned by the loadFile function
-    * @param level  Pitch shifting to apply
-    */
-    public void setPitch(Integer id, Float level) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            service.call("setPitch", id, level);
-        else
-            service.call("setPitch", id, level).get();
-    }
-
 }
     

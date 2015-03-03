@@ -167,7 +167,7 @@ public class ALMotionRecorder extends ALProxy {
     * @param jointsToRecord  Names of joints that must be recorded
     * @param nbPoses  Default number of poses to record
     * @param extensionAllowed  Set to true to ignore nbPoses and keep recording new poses as long as record is not manually stopped
-    * @param mode  Indicates which interactive mode must be used. 1 : Use right bumper to enslave and left bumper to store the pose  (deprecated); 2 : Use head tap to store the pose
+    * @param mode  Indicates which interactive mode must be used. 1 : Use right bumper to enslave and left bumper to store the pose  (deprecated); 2 : Use chest button to store the pose
     */
     public void startInteractiveRecording(List<String> jointsToRecord, Integer nbPoses, Boolean extensionAllowed, Integer mode) throws CallError, InterruptedException{
         if (isAsynchronous)
