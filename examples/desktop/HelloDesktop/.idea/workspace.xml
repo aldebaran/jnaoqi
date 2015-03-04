@@ -2,144 +2,133 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="221bd41e-b0ee-4d86-90df-8b0f32ff6c7b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/libqi-java-2.1.3-android.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/libqi-java-2.1.3-linux64.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qi/helper/ALInterface.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qi/helper/ALProxy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qi/helper/EventCallback.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/aldebaran/demo/ExHelloWorldApplication.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qi/helper/SignalCallback.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/java_naoqi_sdk_android_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/java_naoqi_sdk_linux64_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/libraries/libqi_java_2_1_3_android.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/libraries/libqi_java_2_1_3_linux64.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/libraries/qimessaging_2_1_2_android.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/libraries/qimessaging_2_1_2_linux64.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/qimessaging-2.1.0.19-atom.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/qimessaging-2.1.0.19-linux32.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/qimessaging-2.1.0.19-linux64.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/qimessaging-2.1.0.19-mac64.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/qimessaging-2.1.0.19-win32-vs2010.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/qimessaging-2.1.1-android.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/ALInterface.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/ALModule.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALAnimatedSpeech.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALAudioDevice.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALAudioPlayer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALAudioRecorder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALAudioSourceLocalization.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALAutonomousLife.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALAutonomousMoves.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALBacklightingDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALBarcodeReader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALBasicAwareness.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALBattery.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALBehaviorManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALBodyTemperature.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALBonjour.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALChestButton.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALCloseObjectDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALColorBlobDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALConnectionManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALDarknessDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALDebug.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALDiagnosis.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALDialog.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALEngagementZones.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALFaceCharacteristics.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALFaceDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALFaceTracker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALFileManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALFrameManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALFsr.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALGazeAnalysis.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALInfrared.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALLandMarkDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALLaser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALLauncher.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALLeds.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALLocalization.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALLogger.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALMecaLogger.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALMemory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALMemoryWatcher.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALModularity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALMotion.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALMotionRecorder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALMovementDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALNavigation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALNotificationManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALPanoramaCompass.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALPeoplePerception.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALPhotoCapture.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALPodDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALPreferenceManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALPreferences.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALPythonBridge.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALRecharge.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALRedBallDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALRedBallTracker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALResourceManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALRobotHealthMonitor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALRobotModel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALRobotPosture.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALSegmentation3D.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALSensors.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALServiceManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALSittingPeopleDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALSonar.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALSoundDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALSoundLocalization.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALSpeechRecognition.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALStore.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALSystem.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALTelepathe.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALTextToSpeech.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALThinkingExpression.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALTouch.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALTracker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALUserSession.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALVideoDevice.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALVideoRecorder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALVisionRecognition.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALVisualCompass.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALVisualSpaceHistory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALVoiceEmotionAnalysis.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALWavingDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALWorldRepresentation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/AudioFilterLoader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/DCM.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/LogManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/PackageManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ServiceDirectory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/Zik.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/jnaoqi-android.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-android.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/jnaoqi-atom.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-atom.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/jnaoqi-linux32.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-linux32.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/jnaoqi-linux64.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-linux64.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/jnaoqi-mac64.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-mac64.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/jnaoqi-windows32.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-windows32.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/jnaoqi.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../android/HelloAndroid/AndroidManifest.xml" afterPath="$PROJECT_DIR$/../../android/HelloAndroid/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/aldebaran/demo/ExHelloWorld.java" afterPath="$PROJECT_DIR$/src/com/aldebaran/demo/ExHelloWorld.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../android/HelloAndroid/HelloAndroid.iml" afterPath="$PROJECT_DIR$/../../android/HelloAndroid/HelloAndroid.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../android/HelloAndroid/src/com/aldebaran/helloandroid/MyActivity.java" afterPath="$PROJECT_DIR$/../../android/HelloAndroid/src/com/aldebaran/helloandroid/MyActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../android/HelloAndroid/src/com/aldebaran/helloandroid/VideoActivity.java" afterPath="$PROJECT_DIR$/../../android/HelloAndroid/src/com/aldebaran/helloandroid/VideoActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generator.py" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_android_jar.xml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_android_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_atom_jar.xml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_atom_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_linux32_jar.xml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_linux32_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_linux64_jar.xml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_linux64_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_mac64_jar.xml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_mac64_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_windows32_jar.xml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_windows32_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/misc.xml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/modules.xml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../android/HelloAndroid/.idea/vcs.xml" afterPath="$PROJECT_DIR$/../../android/HelloAndroid/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/vcs.xml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../android/HelloAndroid/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../android/HelloAndroid/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../android/TestQi/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../android/TestQi/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/com_sun_mail_javax_mail_1_4_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/jnaoqi_mac64_2_1_0_19.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/org_twitter4j_twitter4j_core_4_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/activation-1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/javax.mail-1.4.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/twitter4j-core-4.0.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/twitter4j-media-support-4.0.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jars/jnaoqi-android-2.1.0.19.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jars/jnaoqi-atom-2.1.0.19.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jars/jnaoqi-linux32-2.1.0.19.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jars/jnaoqi-linux64-2.1.0.19.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jars/jnaoqi-mac64-2.1.0.19.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jars/jnaoqi-windows32-2.1.0.19.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/out/artifacts/java_naoqi_sdk_linux64_jar/java-naoqi-sdk-linux64.jar" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/libqi-java-2.1.3-android.jar" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/libqi-java-2.1.3-android.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/libqi-java-2.1.3-linux64.jar" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/libqi-java-2.1.3-linux64.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAnimatedSpeech.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAnimatedSpeech.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAudioDevice.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAudioDevice.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAudioPlayer.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAudioPlayer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAudioRecorder.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAudioRecorder.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAudioSourceLocalization.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAudioSourceLocalization.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAutonomousLife.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAutonomousLife.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAutonomousMoves.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAutonomousMoves.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBacklightingDetection.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBacklightingDetection.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBarcodeReader.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBarcodeReader.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBasicAwareness.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBasicAwareness.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBattery.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBattery.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBehaviorManager.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBehaviorManager.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBodyTemperature.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBodyTemperature.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALChestButton.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALChestButton.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALColorBlobDetection.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALColorBlobDetection.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALConnectionManager.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALConnectionManager.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALDarknessDetection.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALDarknessDetection.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALDiagnosis.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALDiagnosis.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALDialog.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALDialog.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALEngagementZones.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALEngagementZones.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALFaceCharacteristics.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALFaceCharacteristics.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALFaceDetection.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALFaceDetection.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALFsr.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALFsr.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALGazeAnalysis.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALGazeAnalysis.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALInfrared.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALInfrared.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/ALInterface.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/ALInterface.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALLaser.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALLaser.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALLauncher.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALLauncher.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALLeds.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALLeds.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALLocalization.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALLocalization.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALLogger.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALLogger.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALMemory.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALMemory.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALMotion.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALMotion.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALMotionRecorder.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALMotionRecorder.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALMovementDetection.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALMovementDetection.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALNavigation.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALNavigation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALNotificationManager.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALNotificationManager.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALPeoplePerception.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALPeoplePerception.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALPhotoCapture.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALPhotoCapture.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALPreferenceManager.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALPreferenceManager.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALPreferences.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALPreferences.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/ALProxy.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/ALProxy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALRedBallDetection.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALRedBallDetection.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALResourceManager.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALResourceManager.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALRobotPosture.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALRobotPosture.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSensors.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSensors.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSittingPeopleDetection.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSittingPeopleDetection.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSonar.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSonar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSoundDetection.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSoundDetection.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSoundLocalization.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSoundLocalization.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSpeechRecognition.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSpeechRecognition.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALStore.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALStore.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSystem.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSystem.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALTactileGesture.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALTactileGesture.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALTextToSpeech.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALTextToSpeech.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALTouch.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALTouch.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALTracker.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALTracker.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALUserSession.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALUserSession.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALVideoDevice.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALVideoDevice.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALVideoRecorder.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALVideoRecorder.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALVisionRecognition.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALVisionRecognition.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALVisualCompass.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALVisualCompass.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALVisualSpaceHistory.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALVisualSpaceHistory.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALWorldRepresentation.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALWorldRepresentation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/DCM.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/DCM.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/EventCallback.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/EventCallback.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HelloDesktop.iml" afterPath="$PROJECT_DIR$/HelloDesktop.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/PackageManager.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/PackageManager.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/aldebaran/demo/RobotInfo.java" afterPath="$PROJECT_DIR$/src/com/aldebaran/demo/RobotInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/SignalCallback.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/SignalCallback.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/allclasses-frame.html" afterPath="$PROJECT_DIR$/../../../javadoc/allclasses-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/allclasses-noframe.html" afterPath="$PROJECT_DIR$/../../../javadoc/allclasses-noframe.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/constant-values.html" afterPath="$PROJECT_DIR$/../../../javadoc/constant-values.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/deprecated-list.html" afterPath="$PROJECT_DIR$/../../../javadoc/deprecated-list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/help-doc.html" afterPath="$PROJECT_DIR$/../../../javadoc/help-doc.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-1.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-10.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-10.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-11.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-11.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-12.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-12.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-13.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-13.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-14.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-14.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-15.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-15.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-16.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-16.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-17.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-17.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-18.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-18.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-19.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-19.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-2.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-20.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-20.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-3.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-4.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-4.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-5.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-5.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-6.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-6.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-7.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-7.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-8.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-8.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-9.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-9.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index.html" afterPath="$PROJECT_DIR$/../../../javadoc/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-atom.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-atom.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-linux32.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-linux32.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-mac64.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-mac64.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-windows32.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-windows32.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/overview-frame.html" afterPath="$PROJECT_DIR$/../../../javadoc/overview-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/overview-summary.html" afterPath="$PROJECT_DIR$/../../../javadoc/overview-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/overview-tree.html" afterPath="$PROJECT_DIR$/../../../javadoc/overview-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/package-frame.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/package-frame.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/package-summary.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/package-summary.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/package-tree.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/package-tree.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/package-tree.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/workspace.xml" />
     </list>
     <list id="91f96988-3be8-44e7-9de6-99d028edb03b" name="New changelist" comment="" />
     <ignored path="HelloDesktop.iws" />
@@ -166,44 +155,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ExReactToTouch.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ExReactToTouch.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExReactToTouch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27306733" vertical-offset="186" max-vertical-offset="1140">
-              <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="915" max-vertical-offset="1440">
+              <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main1.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/Main1.java">
+      <file leaf-file-name="ExSmileDetector.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExSmileDetector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="480">
-              <caret line="11" column="41" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="3195">
+              <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExHelloWorld.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExHelloWorld.java">
+      <file leaf-file-name="RobotInfo.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/RobotInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="480">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.33665836" vertical-offset="0" max-vertical-offset="802">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExHelloWorldApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExHelloWorldApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="480">
-              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -211,18 +188,8 @@
       <file leaf-file-name="ExReactToSound.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExReactToSound.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="1470">
-              <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExDance.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExDance.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="2190">
-              <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1665">
+              <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -231,28 +198,8 @@
       <file leaf-file-name="ExBasicAwareness.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExBasicAwareness.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="1170">
+            <state vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="1395">
               <caret line="48" column="27" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ALModule.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/../../../jars/jnaoqi-mac64-2.1.0.19.jar!/com/aldebaran/qimessaging/helpers/ALModule.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="645">
-              <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExHelloJava.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExHelloJava.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="750">
-              <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -279,6 +226,7 @@
         <option value="$PROJECT_DIR$/src/com/aldebaran/demo/ExHelloJava.java" />
         <option value="$PROJECT_DIR$/src/com/aldebaran/demo/ExHelloWorld.java" />
         <option value="$PROJECT_DIR$/src/com/aldebaran/demo/ExHelloWorldApplication.java" />
+        <option value="$PROJECT_DIR$/src/com/aldebaran/demo/RobotInfo.java" />
       </list>
     </option>
   </component>
@@ -315,48 +263,43 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="HelloDesktop">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="HelloDesktop">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT=".idea">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Changed Files" />
+      </pane>
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HelloDesktop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jnaoqi-mac64-2.1.0.19" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jnaoqi-mac64-2.1.0.19.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HelloDesktop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jnaoqi-mac64-2.1.0.19" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jnaoqi-mac64-2.1.0.19.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="qimessaging" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="HelloDesktop" />
@@ -405,46 +348,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="HelloDesktop">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="HelloDesktop">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT=".idea">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExSmileDetector.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
-        <subPane subId="Changed Files" />
       </pane>
       <pane id="PackagesPane">
         <subPane>
@@ -472,8 +388,8 @@
     <property name="recentsLimit" value="5" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../jars/java-naoqi-sdk-2.1.3-android.jar!/" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="dynamic.classpath" value="false" />
@@ -523,7 +439,7 @@
       <recent name="com.aldebaran.demo" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ExSmileDetector">
+  <component name="RunManager" selected="Application.ExReactToTouch">
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -761,6 +677,7 @@
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="JAR_PATH" value="$PROJECT_DIR$/lib/activation-1.1.jar" />
       <envs />
       <method />
     </configuration>
@@ -891,69 +808,9 @@
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <configuration default="false" name="ExBasicAwareness" type="Application" factoryName="Application" singleton="true">
+    <configuration default="false" name="ExReactToTouch" type="Application" factoryName="Application" singleton="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="com.aldebaran.demo.ExBasicAwareness" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="HelloDesktop" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="ExDance" type="Application" factoryName="Application" singleton="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="com.aldebaran.demo.ExDance" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="HelloDesktop" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="ExHelloJava" type="Application" factoryName="Application" singleton="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="com.aldebaran.demo.ExHelloJava" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="HelloDesktop" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="ExHelloWorld" type="Application" factoryName="Application" singleton="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="com.aldebaran.demo.ExHelloWorld" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="HelloDesktop" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="ExPictureTwitter" type="Application" factoryName="Application" singleton="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="com.aldebaran.demo.ExPictureTwitter" />
+      <option name="MAIN_CLASS_NAME" value="com.aldebaran.demo.ExReactToTouch" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -968,114 +825,8 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="ExReactToSound" type="Application" factoryName="Application" singleton="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="com.aldebaran.demo.ExReactToSound" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="HelloDesktop" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="ExReactToVoice" type="Application" factoryName="Application" singleton="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="com.aldebaran.demo.ExReactToVoice" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="HelloDesktop" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="ExSmileDetector" type="Application" factoryName="Application" singleton="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="com.aldebaran.demo.ExSmileDetector" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="HelloDesktop" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Scenar1" type="Application" factoryName="Application" singleton="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="com.aldebaran.demo.ExScenar1" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="HelloDesktop" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="Main1" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="com.aldebaran.demo.Main1" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="HelloDesktop" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Main2" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="com.aldebaran.demo.Main2" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="HelloDesktop" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <list size="11">
-      <item index="0" class="java.lang.String" itemvalue="Application.ExBasicAwareness" />
-      <item index="1" class="java.lang.String" itemvalue="Application.ExDance" />
-      <item index="2" class="java.lang.String" itemvalue="Application.ExHelloJava" />
-      <item index="3" class="java.lang.String" itemvalue="Application.ExHelloWorld" />
-      <item index="4" class="java.lang.String" itemvalue="Application.ExPictureTwitter" />
-      <item index="5" class="java.lang.String" itemvalue="Application.ExReactToSound" />
-      <item index="6" class="java.lang.String" itemvalue="Application.ExReactToVoice" />
-      <item index="7" class="java.lang.String" itemvalue="Application.ExSmileDetector" />
-      <item index="8" class="java.lang.String" itemvalue="Application.Scenar1" />
-      <item index="9" class="java.lang.String" itemvalue="Application.Main1" />
-      <item index="10" class="java.lang.String" itemvalue="Application.Main2" />
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application.ExReactToTouch" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -1146,6 +897,8 @@
       <workItem from="1424181828408" duration="1509000" />
       <workItem from="1424342646313" duration="940000" />
       <workItem from="1424449572226" duration="1003000" />
+      <workItem from="1425401275235" duration="2521000" />
+      <workItem from="1425460096884" duration="501000" />
     </task>
     <task id="LOCAL-00001" summary="udpate project settings">
       <created>1400601976170</created>
@@ -1271,11 +1024,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143858000" />
+    <option name="totallyTimeSpent" value="146880000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1295,9 +1048,9 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15808298" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17596567" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27349398" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21445782" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26081425" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1351,24 +1104,67 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/picture/GetAccessToken.java">
+    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExReactToTouch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1080" max-vertical-offset="2340">
-          <caret line="72" column="17" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="915" max-vertical-offset="1440">
+          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/RobotIP.java">
+    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExSmileDetector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="525">
-          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="3195">
+          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExHelloWorld.java">
+    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/RobotInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="510">
-          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExReactToSound.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1665">
+          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExBasicAwareness.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="1395">
+          <caret line="48" column="27" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExReactToTouch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExReactToSound.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1665">
+          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExBasicAwareness.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="1395">
+          <caret line="48" column="27" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1386,13 +1182,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/picture/SendEmail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="251" max-vertical-offset="1125">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/picture/Picture.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="390">
@@ -1407,13 +1196,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExHelloWorld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="510">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExReactToTouch.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="645" max-vertical-offset="1230">
@@ -1425,13 +1207,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="1305">
           <caret line="56" column="31" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/twitter4j-media-support-4.0.1.jar!/twitter4j/media/ImageUploadFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.703125" vertical-offset="0" max-vertical-offset="448">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1463,13 +1238,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/twitter4j-core-4.0.1.jar!/twitter4j/TwitterFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="480">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HelloDesktop.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
@@ -1488,20 +1256,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
           <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/picture/SendEmail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="266" max-vertical-offset="975">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/picture/GetAccessToken.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1080" max-vertical-offset="2340">
-          <caret line="72" column="17" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1526,140 +1280,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../jars/jnaoqi-mac64-2.1.0.19.jar!/com/aldebaran/qimessaging/Session.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1110">
-          <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/Main2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
-          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../jars/jnaoqi-mac64-2.1.0.19.jar!/com/aldebaran/qimessaging/helpers/al/ALTextToSpeech.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.6" vertical-offset="0" max-vertical-offset="4800">
-          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExPictureTwitter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1056" max-vertical-offset="1860">
-          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../jars/jnaoqi-mac64-2.1.0.19.jar!/com/aldebaran/qimessaging/helpers/al/ALBasicAwareness.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4836" max-vertical-offset="5640">
-          <caret line="365" column="16" selection-start-line="365" selection-start-column="16" selection-end-line="365" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExSmileDetector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="406" max-vertical-offset="2295">
-          <caret line="134" column="33" selection-start-line="134" selection-start-column="33" selection-end-line="134" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../jars/jnaoqi-mac64-2.1.0.19.jar!/com/aldebaran/qimessaging/Tuple2.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="510">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../jars/jnaoqi-mac64-2.1.0.19.jar!/com/aldebaran/qimessaging/Tuple3.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="555">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../jars/jnaoqi-mac64-2.1.0.19.jar!/com/aldebaran/qimessaging/Tuple4.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="600">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../jars/jnaoqi-mac64-2.1.0.19.jar!/com/aldebaran/qimessaging/helpers/al/Zik.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="511" max-vertical-offset="1440">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../jars/jnaoqi-mac64-2.1.0.19.jar!/com/aldebaran/qimessaging/helpers/al/PackageManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2545692" vertical-offset="1200" max-vertical-offset="2025">
-          <caret line="107" column="9" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../jars/jnaoqi-mac64-2.1.0.19.jar!/com/aldebaran/qimessaging/Tuple1.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11553273" vertical-offset="0" max-vertical-offset="779">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExReactToVoice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="1365">
           <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/RobotIP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExHelloJava.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
-          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/Main1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <caret line="11" column="41" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../jars/jnaoqi-mac64-2.1.0.19.jar!/com/aldebaran/qimessaging/Callback.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11553273" vertical-offset="0" max-vertical-offset="779">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../jars/jnaoqi-mac64-2.1.0.19.jar!/com/aldebaran/qimessaging/Object.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3440308" vertical-offset="587" max-vertical-offset="1515">
-          <caret line="67" column="16" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExDance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2115">
-          <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1671,51 +1295,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExHelloWorld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../jars/jnaoqi-mac64-2.1.0.19.jar!/com/aldebaran/qimessaging/helpers/ALModule.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="645">
-          <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExReactToSound.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="1470">
-          <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1665">
+          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExHelloWorldApplication.java">
+    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExSmileDetector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../jars/jnaoqi-mac64-2.1.0.19.jar!/com/aldebaran/qimessaging/helpers/al/ALMemory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3328823" vertical-offset="384" max-vertical-offset="5655">
-          <caret line="49" column="21" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3195">
+          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/ExReactToTouch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27306733" vertical-offset="186" max-vertical-offset="1140">
-          <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="591" max-vertical-offset="1215">
+          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/aldebaran/demo/RobotInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33665836" vertical-offset="0" max-vertical-offset="802">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1749,7 +1356,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Python 2.7.5 (/usr/bin/python) interpreter library</last-edited>
+          <last-edited>java-naoqi-sdk-2.1.3-android</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1785,7 +1392,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>jnaoqi-mac64-2.1.0.19</last-edited>
+          <last-edited>com.sun.mail:javax.mail:1.4.4</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
