@@ -6,15 +6,18 @@ import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.aldebaran.qi.CallError;
+import com.aldebaran.qi.EmbeddedTools;
+import com.aldebaran.qi.Session;
 import com.aldebaran.qi.helper.proxies.ALMemory;
 import com.aldebaran.qi.helper.proxies.ALMotion;
 import com.aldebaran.qi.helper.proxies.ALRobotPosture;
 import com.aldebaran.qi.helper.proxies.ALTextToSpeech;
 
 import java.io.File;
-import java.net.InetAddress;
 import java.util.concurrent.TimeUnit;
 
 public class MyActivity extends Activity {
@@ -26,8 +29,9 @@ public class MyActivity extends Activity {
     private EditText ip;
     private Context context;
     private ALRobotPosture alPosture;
+	private Thread routine;
 
-    @Override
+	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context = this;
@@ -40,107 +44,132 @@ public class MyActivity extends Activity {
         ebt.loadEmbeddedLibraries();
     }
 
-    private void startServiceRoutine() {
+    private void startServiceRoutine(final String ipAddress) {
 
-        Thread routine = new Thread(new Runnable() {
+	   routine = new Thread(new Runnable() {
             @Override
             public void run() {
                 Looper.prepare();
-                if (ip.getText() != null && !ip.getText().toString().equals("")) {
                     session = new Session();
+	                session.onDisconnected("onDisconnected", this);
                     try {
-                        String ipAddress = ip.getText().toString();
-                        if (!ipAddress.contains(".")) {
-                            InetAddress[] inets = InetAddress.getAllByName(ipAddress);
-                            if (inets != null && inets.length > 0)
-                                ipAddress = inets[0].getHostAddress();
-                        }
-                        Log.i(TAG, "Ip address : " + ipAddress);
+	                    Log.i(TAG, "Ip address : " + ipAddress);
                         session.connect("tcp://" + ipAddress + ":9559").get(500, TimeUnit.MILLISECONDS);
+	                    alMotion = new ALMotion(session);
+	                    alMotion.setAsynchronous(true);
+	                    alSpeech = new ALTextToSpeech(session);
+	                    alSpeech.setAsynchronous(true);
+	                    alMemory = new ALMemory(session);
+	                    alPosture = new ALRobotPosture(session);
+	                    alPosture.setAsynchronous(true);
+	                    setButtonVisible(true);
                     } catch (Exception e) {
-                        e.printStackTrace();
-                        Log.e(TAG, "error", e);
-                    }
-                    alMotion = new ALMotion(session);
-                    alSpeech = new ALTextToSpeech(session);
-                    alSpeech.setAsynchronous(true);
-                    alMemory = new ALMemory(session);
-                    alPosture = new ALRobotPosture(session);
-                }
-                else {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(context, "Please enter a robot ip or a robot name", Toast.LENGTH_SHORT).show();
-                        }
+	                    setButtonVisible(false);
+	                    runOnUiThread(new Runnable() {
+		                    @Override
+		                    public void run() {
+			                    Toast.makeText(context, "The robot is unreachable", Toast.LENGTH_SHORT).show();
+	                    }
                     });
                 }
             }
-        });
 
+	        public void onDisconnected(String message) {
+		        runOnUiThread(new Runnable() {
+			        @Override
+			        public void run() {
+				        Toast.makeText(context, "Connection lost", Toast.LENGTH_SHORT).show();
+				        setButtonVisible(false);
+			        }
+		        });
+	        }
+        });
         routine.start();
     }
 
 
-    public void connect(View view) {
-        startServiceRoutine();
+	private void setButtonVisible(final boolean isVisible) {
+		runOnUiThread(new Runnable() {
+			@Override
+			public void run() {
+				findViewById(R.id.command1).setVisibility(isVisible ? View.VISIBLE : View.GONE);
+				findViewById(R.id.command2).setVisibility(isVisible ? View.VISIBLE : View.GONE);
+				findViewById(R.id.command3).setVisibility(isVisible ? View.VISIBLE : View.GONE);
+				if(isVisible) {
+					((Button)findViewById(R.id.connectButton)).setText("Disconnect");
+				}
+				else {
+					((Button)findViewById(R.id.connectButton)).setText("Connect");
+				}
+			}
+		});
+	}
+
+
+	public void connect(View view) {
+		Button button = (Button) view;
+		if (button.getText().equals("Connect")) {
+			if (ip.getText() != null
+					&& !ip.getText().toString().equals("")) {
+
+				String address = ip.getText().toString();
+				startServiceRoutine(address);
+			}
+			else {
+				Toast.makeText(context, "Please enter a robot ip or a robot name", Toast.LENGTH_SHORT).show();
+			}
+		}
+		else {
+			session.close();
+		}
     }
 
-    public void testApi(View view) {
-        try {
-            alMemory.subscribeToEvent("ALTextToSpeech/TextStarted", "onSpeech::(i)", this);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public void onHandController(View view) throws InterruptedException, CallError {
+	    Button button = (Button) view;
+	    if (button.getText().equals("Open Hand")) {
+            alMotion.openHand("RHand");
+            alMotion.openHand("LHand");
+		    button.setText("Close Hand");
+	    }
+	    else {
+            alMotion.closeHand("RHand");
+            alMotion.closeHand("LHand");
+		    button.setText("Open Hand");
+
+	    }
     }
 
-    public void onMessage(String message) {
-        final String messageToDisplay = "onMessage : " + message;
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-
-                Toast.makeText(context, "message : " + messageToDisplay, Toast.LENGTH_SHORT).show();
-            }
-        });
+    public void onRestController(View view) throws InterruptedException, CallError {
+	    Button button = (Button) view;
+	    if(button.getText().equals("Rest")) {
+            alSpeech.say("Rest");
+            alMotion.rest();
+		    button.setText("WakeUp");
+	    }
+	    else {
+		    alSpeech.say("Wake");
+		    alMotion.wakeUp();
+		    button.setText("Rest");
+	    }
     }
 
-    public void onSpeech(Integer message) {
-        final String messageToDisplay = "int : " + message;
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-
-                Toast.makeText(context, "onSpeech : " + messageToDisplay, Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-
-    public void onOpenHand(View view) throws InterruptedException, CallError {
-        alMotion.openHand("RHand");
-    }
-
-    public void onCloseHand(View view) throws InterruptedException, CallError {
-        alMotion.closeHand("RHand");
-    }
-
-    public void onWake(View view) throws InterruptedException, CallError {
-        alSpeech.say("Wake");
-        alMotion.wakeUp();
-        alPosture.goToPosture("Stand", 0.5f);
-    }
-
-    public void onRest(View view) throws InterruptedException, CallError {
-        alSpeech.say("Rest");
-        alMotion.rest();
-    }
+	public void onSitController(View view) throws InterruptedException, CallError {
+		Button button = (Button) view;
+		if (button.getText().equals("Sit")) {
+			alPosture.goToPosture("Sit", 0.5f);
+		    button.setText("Stand");
+		}
+		else {
+			alPosture.goToPosture("Stand", 0.5f);
+		    button.setText("Sit");
+		}
+	}
 
     private float velocityX = 0f;
     private float velocityY = 0f;
 
     public void onGoToFront(View view) throws InterruptedException, CallError {
-        velocityX += 0.1f;
+        velocityX += 0.2f;
         alMotion.moveToward(velocityX, velocityY, 0f);
     }
 
@@ -152,21 +181,23 @@ public class MyActivity extends Activity {
 
 
     public void onGoToLeft(View view) throws InterruptedException, CallError {
-        velocityY += 0.1f;
+        velocityY += 0.2f;
         alMotion.moveToward(velocityX, velocityY, 0f);
     }
 
     public void onGoToRight(View view) throws InterruptedException, CallError {
-        velocityY -= 0.1f;
+        velocityY -= 0.2f;
         alMotion.moveToward(velocityX, velocityY, 0f);
     }
 
     public void onGoToBack(View view) throws InterruptedException, CallError {
-        velocityX -= 0.1f;
+        velocityX -= 0.2f;
         alMotion.moveToward(velocityX, velocityY, 0f);
     }
 
-    public void onSit(View view) throws InterruptedException, CallError {
-        alPosture.goToPosture("Sit",0.5f);
-    }
+
+	public void say(View view) throws InterruptedException, CallError {
+		String text = ((EditText)findViewById(R.id.say_edit)).getText().toString();
+		alSpeech.say(text);
+	}
 }

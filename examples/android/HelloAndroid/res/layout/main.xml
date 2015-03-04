@@ -21,6 +21,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:onClick="connect"
+            android:id="@+id/connectButton"
             android:layout_height="wrap_content"
             android:text="Connect"/>
 
@@ -28,40 +29,57 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
+        android:id="@+id/command1"
+        android:visibility="gone"
         android:layout_height="wrap_content">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="rest"
-            android:onClick="onRest"/>
+            android:text="Rest"
+            android:onClick="onRestController"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="sit"
-            android:onClick="onSit"/>
+            android:text="Sit"
+            android:onClick="onSitController"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="wake"
-            android:onClick="onWake"/>
-        <Button
-            android:layout_width="wrap_content"
+            android:text="Open Hand"
+            android:onClick="onHandController"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:id="@+id/command3"
+        android:visibility="gone"
+        android:weightSum="3"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="0dp"
+            android:id="@+id/say_edit"
+            android:layout_weight="2"
             android:layout_height="wrap_content"
-            android:text="open Hand"
-            android:onClick="onOpenHand"/>
+            android:text="Hello"
+            android:hint="Text to say"/>
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:onClick="say"
+            android:id="@+id/say_button"
             android:layout_height="wrap_content"
-            android:text="close Hand"
-            android:onClick="onCloseHand"/>
+            android:text="Say"/>
+
     </LinearLayout>
 
     <GridLayout
         android:layout_width="wrap_content"
         android:columnCount="3"
-        android:layout_marginTop="20dp"
         android:rowCount="3"
+        android:visibility="gone"
         android:layout_gravity="center"
+        android:id="@+id/command2"
         android:layout_height="wrap_content">
         <ImageView
             android:layout_width="100dp"
@@ -70,7 +88,8 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:scaleType="fitXY"
-            android:onClick="onGoToFront"/>
+            android:onClick="onGoToFront"
+            android:src="@drawable/front"/>
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"/>
@@ -78,17 +97,20 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:scaleType="fitXY"
-            android:onClick="onGoToLeft"/>
+            android:onClick="onGoToLeft"
+            android:src="@drawable/left"/>
         <ImageButton
             android:layout_width="100dp"
             android:scaleType="fitXY"
             android:onClick="onStop"
-            android:layout_height="100dp"/>
+            android:layout_height="100dp"
+            android:src="@drawable/stop"/>
         <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:scaleType="fitXY"
-            android:onClick="onGoToRight"/>
+            android:onClick="onGoToRight"
+            android:src="@drawable/right"/>
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"/>
@@ -96,7 +118,8 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:scaleType="fitXY"
-            android:onClick="onGoToBack"/>
+            android:onClick="onGoToBack"
+            android:src="@drawable/back"/>
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"/>
