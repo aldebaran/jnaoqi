@@ -31,14 +31,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.aldebaran.helloandroid" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8dc59d9-9463-4482-9b1a-7cf13dcae601" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/layout/video.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/aldebaran/helloandroid/VideoActivity.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/aldebaran/helloandroid/MyActivity.java" afterPath="$PROJECT_DIR$/src/com/aldebaran/helloandroid/MyActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main.xml" afterPath="$PROJECT_DIR$/res/layout/main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="c8dc59d9-9463-4482-9b1a-7cf13dcae601" name="Default" comment="" />
     <ignored path="HelloAndroid.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -86,8 +79,8 @@
       <file leaf-file-name="MyActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/aldebaran/helloandroid/MyActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.22419354" vertical-offset="1459" max-vertical-offset="3000">
-              <caret line="96" column="49" selection-start-line="96" selection-start-column="49" selection-end-line="96" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.6467742" vertical-offset="1459" max-vertical-offset="3000">
+              <caret line="133" column="14" selection-start-line="133" selection-start-column="14" selection-end-line="133" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -897,7 +890,7 @@
       <workItem from="1424439489993" duration="170000" />
       <workItem from="1424450983425" duration="320000" />
       <workItem from="1425473525943" duration="8682000" />
-      <workItem from="1425490138142" duration="255000" />
+      <workItem from="1425490138142" duration="373000" />
     </task>
     <task id="LOCAL-00001" summary="delete unused file, update project conf">
       <created>1400601865505</created>
@@ -909,7 +902,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47575000" />
+    <option name="totallyTimeSpent" value="47693000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1397,8 +1390,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/aldebaran/helloandroid/MyActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.22419354" vertical-offset="1459" max-vertical-offset="3000">
-          <caret line="96" column="49" selection-start-line="96" selection-start-column="49" selection-end-line="96" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.6467742" vertical-offset="1459" max-vertical-offset="3000">
+          <caret line="133" column="14" selection-start-line="133" selection-start-column="14" selection-end-line="133" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
