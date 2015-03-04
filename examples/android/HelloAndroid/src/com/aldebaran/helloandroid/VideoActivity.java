@@ -5,12 +5,8 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
+import com.aldebaran.qi.helper.proxies.ALVideoDevice;
 import com.aldebaran.qimessaging.Application;
-import com.aldebaran.qimessaging.CallError;
-import com.aldebaran.qimessaging.Future;
-import com.aldebaran.qimessaging.Session;
-import com.aldebaran.qimessaging.helpers.al.ALVideoDevice;
-import com.aldebaran.helloandroid.R;
 
 import java.net.InetAddress;
 import java.nio.ByteBuffer;
@@ -45,7 +41,6 @@ public class VideoActivity extends Activity {
 
         Session session = new Session();
         application = new Application();
-        Future<Void> future = null;
         try {
 
             InetAddress[] inets = InetAddress.getAllByName(ROBOT_NAME);

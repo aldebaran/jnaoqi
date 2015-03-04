@@ -2,133 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="221bd41e-b0ee-4d86-90df-8b0f32ff6c7b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/com_sun_mail_javax_mail_1_4_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/jnaoqi_mac64_2_1_0_19.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/org_twitter4j_twitter4j_core_4_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/activation-1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/javax.mail-1.4.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/twitter4j-core-4.0.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/twitter4j-media-support-4.0.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jars/jnaoqi-android-2.1.0.19.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jars/jnaoqi-atom-2.1.0.19.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jars/jnaoqi-linux32-2.1.0.19.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jars/jnaoqi-linux64-2.1.0.19.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jars/jnaoqi-mac64-2.1.0.19.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jars/jnaoqi-windows32-2.1.0.19.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/out/artifacts/java_naoqi_sdk_linux64_jar/java-naoqi-sdk-linux64.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/libqi-java-2.1.3-android.jar" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/libqi-java-2.1.3-android.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/libqi-java-2.1.3-linux64.jar" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/libqi-java-2.1.3-linux64.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAnimatedSpeech.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAnimatedSpeech.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAudioDevice.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAudioDevice.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAudioPlayer.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAudioPlayer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAudioRecorder.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAudioRecorder.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAudioSourceLocalization.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAudioSourceLocalization.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAutonomousLife.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAutonomousLife.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAutonomousMoves.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALAutonomousMoves.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBacklightingDetection.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBacklightingDetection.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBarcodeReader.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBarcodeReader.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBasicAwareness.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBasicAwareness.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBattery.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBattery.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBehaviorManager.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBehaviorManager.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBodyTemperature.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALBodyTemperature.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALChestButton.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALChestButton.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALColorBlobDetection.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALColorBlobDetection.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALConnectionManager.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALConnectionManager.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALDarknessDetection.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALDarknessDetection.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALDiagnosis.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALDiagnosis.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALDialog.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALDialog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALEngagementZones.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALEngagementZones.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALFaceCharacteristics.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALFaceCharacteristics.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALFaceDetection.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALFaceDetection.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALFsr.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALFsr.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALGazeAnalysis.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALGazeAnalysis.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALInfrared.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALInfrared.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/ALInterface.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/ALInterface.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALLaser.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALLaser.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALLauncher.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALLauncher.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALLeds.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALLeds.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALLocalization.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALLocalization.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALLogger.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALLogger.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALMemory.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALMemory.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALMotion.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALMotion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALMotionRecorder.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALMotionRecorder.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALMovementDetection.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALMovementDetection.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALNavigation.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALNavigation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALNotificationManager.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALNotificationManager.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALPeoplePerception.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALPeoplePerception.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALPhotoCapture.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALPhotoCapture.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALPreferenceManager.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALPreferenceManager.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALPreferences.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALPreferences.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/ALProxy.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/ALProxy.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALRedBallDetection.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALRedBallDetection.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALResourceManager.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALResourceManager.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALRobotPosture.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALRobotPosture.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSensors.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSensors.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSittingPeopleDetection.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSittingPeopleDetection.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSonar.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSonar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSoundDetection.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSoundDetection.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSoundLocalization.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSoundLocalization.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSpeechRecognition.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSpeechRecognition.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALStore.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALStore.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSystem.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALSystem.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALTactileGesture.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALTactileGesture.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALTextToSpeech.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALTextToSpeech.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALTouch.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALTouch.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALTracker.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALTracker.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALUserSession.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALUserSession.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALVideoDevice.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALVideoDevice.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALVideoRecorder.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALVideoRecorder.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALVisionRecognition.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALVisionRecognition.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALVisualCompass.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALVisualCompass.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALVisualSpaceHistory.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALVisualSpaceHistory.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALWorldRepresentation.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/ALWorldRepresentation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/DCM.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/DCM.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/EventCallback.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/EventCallback.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HelloDesktop.iml" afterPath="$PROJECT_DIR$/HelloDesktop.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/PackageManager.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/PackageManager.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/aldebaran/demo/RobotInfo.java" afterPath="$PROJECT_DIR$/src/com/aldebaran/demo/RobotInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/SignalCallback.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/SignalCallback.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/allclasses-frame.html" afterPath="$PROJECT_DIR$/../../../javadoc/allclasses-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/allclasses-noframe.html" afterPath="$PROJECT_DIR$/../../../javadoc/allclasses-noframe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/constant-values.html" afterPath="$PROJECT_DIR$/../../../javadoc/constant-values.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/deprecated-list.html" afterPath="$PROJECT_DIR$/../../../javadoc/deprecated-list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/help-doc.html" afterPath="$PROJECT_DIR$/../../../javadoc/help-doc.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-1.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-10.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-10.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-11.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-11.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-12.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-12.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-13.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-13.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-14.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-14.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-15.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-15.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-16.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-16.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-17.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-17.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-18.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-18.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-19.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-19.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-2.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-20.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-20.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-3.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-4.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-4.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-5.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-5.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-6.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-6.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-7.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-7.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-8.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-8.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index-files/index-9.html" afterPath="$PROJECT_DIR$/../../../javadoc/index-files/index-9.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/index.html" afterPath="$PROJECT_DIR$/../../../javadoc/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-atom.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-atom.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-linux32.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-linux32.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-mac64.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-mac64.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-windows32.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-windows32.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/overview-frame.html" afterPath="$PROJECT_DIR$/../../../javadoc/overview-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/overview-summary.html" afterPath="$PROJECT_DIR$/../../../javadoc/overview-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/overview-tree.html" afterPath="$PROJECT_DIR$/../../../javadoc/overview-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/package-frame.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/package-frame.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/package-summary.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/package-summary.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/package-tree.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/package-tree.html" afterPath="$PROJECT_DIR$/../../../javadoc/com/aldebaran/qi/helper/proxies/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/target/MANIFEST.MF" afterPath="" />
     </list>
     <list id="91f96988-3be8-44e7-9de6-99d028edb03b" name="New changelist" comment="" />
     <ignored path="HelloDesktop.iws" />
@@ -898,7 +772,7 @@
       <workItem from="1424342646313" duration="940000" />
       <workItem from="1424449572226" duration="1003000" />
       <workItem from="1425401275235" duration="2521000" />
-      <workItem from="1425460096884" duration="501000" />
+      <workItem from="1425460096884" duration="1108000" />
     </task>
     <task id="LOCAL-00001" summary="udpate project settings">
       <created>1400601976170</created>
@@ -1024,11 +898,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146880000" />
+    <option name="totallyTimeSpent" value="147487000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1048,7 +922,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17596567" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17596567" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27349398" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />

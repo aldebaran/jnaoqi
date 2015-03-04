@@ -25,144 +25,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8dc59d9-9463-4482-9b1a-7cf13dcae601" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/libqi-java-2.1.3-android.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/libqi-java-2.1.3-linux64.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qi/helper/ALInterface.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qi/helper/ALProxy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qi/helper/EventCallback.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../desktop/HelloDesktop/src/com/aldebaran/demo/ExHelloWorldApplication.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qi/helper/SignalCallback.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/java_naoqi_sdk_android_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/java_naoqi_sdk_linux64_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/libraries/libqi_java_2_1_3_android.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/libraries/libqi_java_2_1_3_linux64.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/libraries/qimessaging_2_1_2_android.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/libraries/qimessaging_2_1_2_linux64.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/qimessaging-2.1.0.19-atom.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/qimessaging-2.1.0.19-linux32.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/qimessaging-2.1.0.19-linux64.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/qimessaging-2.1.0.19-mac64.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/qimessaging-2.1.0.19-win32-vs2010.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/qimessaging-2.1.1-android.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/ALInterface.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/ALModule.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALAnimatedSpeech.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALAudioDevice.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALAudioPlayer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALAudioRecorder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALAudioSourceLocalization.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALAutonomousLife.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALAutonomousMoves.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALBacklightingDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALBarcodeReader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALBasicAwareness.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALBattery.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALBehaviorManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALBodyTemperature.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALBonjour.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALChestButton.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALCloseObjectDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALColorBlobDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALConnectionManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALDarknessDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALDebug.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALDiagnosis.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALDialog.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALEngagementZones.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALFaceCharacteristics.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALFaceDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALFaceTracker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALFileManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALFrameManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALFsr.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALGazeAnalysis.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALInfrared.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALLandMarkDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALLaser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALLauncher.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALLeds.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALLocalization.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALLogger.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALMecaLogger.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALMemory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALMemoryWatcher.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALModularity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALMotion.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALMotionRecorder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALMovementDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALNavigation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALNotificationManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALPanoramaCompass.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALPeoplePerception.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALPhotoCapture.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALPodDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALPreferenceManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALPreferences.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALPythonBridge.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALRecharge.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALRedBallDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALRedBallTracker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALResourceManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALRobotHealthMonitor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALRobotModel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALRobotPosture.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALSegmentation3D.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALSensors.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALServiceManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALSittingPeopleDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALSonar.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALSoundDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALSoundLocalization.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALSpeechRecognition.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALStore.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALSystem.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALTelepathe.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALTextToSpeech.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALThinkingExpression.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALTouch.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALTracker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALUserSession.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALVideoDevice.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALVideoRecorder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALVisionRecognition.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALVisualCompass.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALVisualSpaceHistory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALVoiceEmotionAnalysis.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALWavingDetection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ALWorldRepresentation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/AudioFilterLoader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/DCM.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/LogManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/PackageManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/ServiceDirectory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qimessaging/helpers/al/Zik.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/jnaoqi-android.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-android.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/jnaoqi-atom.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-atom.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/jnaoqi-linux32.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-linux32.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/jnaoqi-linux64.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-linux64.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/jnaoqi-mac64.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-mac64.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/jnaoqi-windows32.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk-windows32.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/jnaoqi.iml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/java-naoqi-sdk.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/libqi-java-2.1.3-android.jar" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/libqi-java-2.1.3-android.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../desktop/HelloDesktop/src/com/aldebaran/demo/ExHelloWorld.java" afterPath="$PROJECT_DIR$/../../desktop/HelloDesktop/src/com/aldebaran/demo/ExHelloWorld.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HelloAndroid.iml" afterPath="$PROJECT_DIR$/HelloAndroid.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/aldebaran/helloandroid/MyActivity.java" afterPath="$PROJECT_DIR$/src/com/aldebaran/helloandroid/MyActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/aldebaran/helloandroid/VideoActivity.java" afterPath="$PROJECT_DIR$/src/com/aldebaran/helloandroid/VideoActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generator.py" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_android_jar.xml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_android_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_atom_jar.xml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_atom_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_linux32_jar.xml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_linux32_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_linux64_jar.xml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_linux64_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_mac64_jar.xml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_mac64_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_windows32_jar.xml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/artifacts/jnaoqi_windows32_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/misc.xml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/modules.xml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/vcs.xml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TestQi/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../TestQi/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../desktop/HelloDesktop/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../desktop/HelloDesktop/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/.idea/workspace.xml" />
     </list>
     <ignored path="HelloAndroid.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -191,8 +60,8 @@
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="450">
-              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+              <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -211,8 +80,8 @@
       <file leaf-file-name="MyActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/aldebaran/helloandroid/MyActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.10099751" vertical-offset="1716" max-vertical-offset="2520">
-              <caret line="123" column="26" selection-start-line="123" selection-start-column="16" selection-end-line="123" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.509434" vertical-offset="255" max-vertical-offset="2460">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -220,59 +89,65 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ALMotion.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/../../../jars/java-naoqi-sdk-2.1.3-android.jar!/com/aldebaran/qi/helper/proxies/ALMotion.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="14010">
+              <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#357#358#0" expanded="true" />
+                <element signature="e#387#388#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Session.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/../../../jars/java-naoqi-sdk-2.1.3-android.jar!/com/aldebaran/qimessaging/Session.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.6" vertical-offset="0" max-vertical-offset="1080">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="VideoActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/aldebaran/helloandroid/VideoActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="1695">
-              <caret line="54" column="46" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ALVideoDevice.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/../../../jars/jnaoqi-android-2.1.0.19.jar!/com/aldebaran/qimessaging/helpers/al/ALVideoDevice.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3877" max-vertical-offset="8145">
-              <caret line="285" column="72" selection-start-line="285" selection-start-column="72" selection-end-line="285" selection-end-column="72" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Future.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/../../../jars/jnaoqi-android-2.1.0.19.jar!/com/aldebaran/qimessaging/Future.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="1545">
-              <caret line="63" column="25" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="1830">
+              <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="video.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/video.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="255">
               <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="10" selection-end-column="38" />
               <folding />
             </state>
           </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="main.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="584" max-vertical-offset="1665">
               <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -289,8 +164,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/HelloAndroid.iml" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/aldebaran/helloandroid/VideoActivity.java" />
         <option value="$PROJECT_DIR$/src/com/aldebaran/helloandroid/MyActivity.java" />
       </list>
@@ -331,6 +206,20 @@
     <panes>
       <pane id="ProjectPane">
         <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HelloAndroid" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java-naoqi-sdk-2.1.3-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="HelloAndroid" />
@@ -713,22 +602,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method />
-    </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -750,6 +623,22 @@
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
       <method />
     </configuration>
     <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
@@ -935,6 +824,7 @@
       <workItem from="1424164551075" duration="778000" />
       <workItem from="1424439489993" duration="170000" />
       <workItem from="1424450983425" duration="320000" />
+      <workItem from="1425473525943" duration="1750000" />
     </task>
     <task id="LOCAL-00001" summary="delete unused file, update project conf">
       <created>1400601865505</created>
@@ -946,7 +836,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38638000" />
+    <option name="totallyTimeSpent" value="40388000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -966,22 +856,22 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32771084" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52048194" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10658083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23819743" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32650602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23782235" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3994911" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32771084" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1014,6 +904,28 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/res/layout/video.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="255">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="10" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="584" max-vertical-offset="1665">
+          <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/aldebaran/helloandroid/MyActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="2730">
@@ -1028,7 +940,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1935">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1040,26 +954,26 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/video.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="255">
           <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="10" selection-end-column="38" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1665">
           <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
     </entry>
     <entry file="jar://$USER_HOME$/Libraries/Android/sdk/platforms/android-19/android.jar!/android/widget/ImageView.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -1069,36 +983,36 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/video.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="255">
           <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="10" selection-end-column="38" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1380" max-vertical-offset="1665">
           <caret line="92" column="40" selection-start-line="92" selection-start-column="40" selection-end-line="92" selection-end-column="40" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="375">
           <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
@@ -1123,7 +1037,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1230" max-vertical-offset="1635">
           <caret line="82" column="8" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="38" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1135,25 +1051,25 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/video.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="255">
           <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="375">
           <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
@@ -1178,7 +1094,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="780" max-vertical-offset="1635">
           <caret line="82" column="8" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="38" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1190,25 +1108,25 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/video.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="255">
           <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="375">
           <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
@@ -1230,14 +1148,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="375">
           <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
@@ -1259,14 +1177,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="375">
           <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
@@ -1288,14 +1206,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="375">
           <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
@@ -1317,14 +1235,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="375">
           <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
@@ -1346,14 +1264,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="375">
           <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/Libraries/Android/sdk/platforms/android-19/android.jar!/android/graphics/BitmapFactory.class">
@@ -1364,14 +1282,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/video.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="255">
           <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="10" selection-end-column="38" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/Libraries/Android/sdk/platforms/android-19/android.jar!/android/widget/ImageView.class">
@@ -1384,28 +1302,6 @@
     <entry file="file://$PROJECT_DIR$/res/drawable-hdpi/ic_launcher.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../jars/jnaoqi-android-2.1.0.19.jar!/com/aldebaran/qimessaging/helpers/al/ALTextToSpeech.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="4800">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../jars/jnaoqi-android-2.1.0.19.jar!/com/aldebaran/qimessaging/helpers/ALModule.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.096525095" vertical-offset="0" max-vertical-offset="777">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gen/com/aldebaran/helloandroid/R.java">
@@ -1430,45 +1326,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../jars/jnaoqi-android-2.1.0.19.jar!/com/aldebaran/qimessaging/helpers/al/ALVideoDevice.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3877" max-vertical-offset="8145">
-          <caret line="285" column="72" selection-start-line="285" selection-start-column="72" selection-end-line="285" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../jars/jnaoqi-android-2.1.0.19.jar!/com/aldebaran/qimessaging/Future.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="1545">
-          <caret line="63" column="25" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="584" max-vertical-offset="1665">
           <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+          <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../jars/java-naoqi-sdk-2.1.3-android.jar!/com/aldebaran/qi/helper/proxies/ALMotion.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="14010">
+          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#357#358#0" expanded="true" />
+            <element signature="e#387#388#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/aldebaran/helloandroid/VideoActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="1695">
-          <caret line="54" column="46" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="1830">
+          <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../jars/java-naoqi-sdk-2.1.3-android.jar!/com/aldebaran/qimessaging/Session.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.6" vertical-offset="0" max-vertical-offset="1080">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/aldebaran/helloandroid/MyActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.10099751" vertical-offset="1716" max-vertical-offset="2520">
-          <caret line="123" column="26" selection-start-line="123" selection-start-column="16" selection-end-line="123" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.509434" vertical-offset="255" max-vertical-offset="2460">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -8,17 +8,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-import com.aldebaran.qimessaging.CallError;
-import com.aldebaran.qimessaging.EmbeddedTools;
-import com.aldebaran.qimessaging.Session;
-import com.aldebaran.qimessaging.helpers.al.ALMemory;
-import com.aldebaran.qimessaging.helpers.al.ALMotion;
-import com.aldebaran.qimessaging.helpers.al.ALRobotPosture;
-import com.aldebaran.qimessaging.helpers.al.ALTextToSpeech;
+import com.aldebaran.qi.helper.proxies.ALMemory;
+import com.aldebaran.qi.helper.proxies.ALMotion;
+import com.aldebaran.qi.helper.proxies.ALRobotPosture;
+import com.aldebaran.qi.helper.proxies.ALTextToSpeech;
 
 import java.io.File;
 import java.net.InetAddress;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public class MyActivity extends Activity {
