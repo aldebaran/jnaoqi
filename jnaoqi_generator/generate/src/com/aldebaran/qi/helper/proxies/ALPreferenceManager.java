@@ -30,7 +30,7 @@ public class ALPreferenceManager extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -39,9 +39,9 @@ public class ALPreferenceManager extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -49,7 +49,7 @@ public class ALPreferenceManager extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -58,9 +58,9 @@ public class ALPreferenceManager extends ALProxy {
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -69,7 +69,7 @@ public class ALPreferenceManager extends ALProxy {
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -78,7 +78,7 @@ public class ALPreferenceManager extends ALProxy {
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -87,7 +87,7 @@ public class ALPreferenceManager extends ALProxy {
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -97,7 +97,7 @@ public class ALPreferenceManager extends ALProxy {
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -106,7 +106,7 @@ public class ALPreferenceManager extends ALProxy {
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -117,7 +117,7 @@ public class ALPreferenceManager extends ALProxy {
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -127,7 +127,7 @@ public class ALPreferenceManager extends ALProxy {
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -137,9 +137,9 @@ public class ALPreferenceManager extends ALProxy {
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -148,7 +148,7 @@ public class ALPreferenceManager extends ALProxy {
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -158,7 +158,7 @@ public class ALPreferenceManager extends ALProxy {
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -169,7 +169,7 @@ public class ALPreferenceManager extends ALProxy {
     * @return corresponding preferences value
     */
     public Object getValue(String domain, String setting) throws CallError, InterruptedException {
-        return (Object)service.call("getValue", domain, setting).get();
+        return (Object)call("getValue", domain, setting).get();
     }
 
     /**
@@ -181,9 +181,9 @@ public class ALPreferenceManager extends ALProxy {
     */
     public void setValue(String domain, String setting, Object value) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setValue", domain, setting, value);
+            call("setValue", domain, setting, value);
         else
-            service.call("setValue", domain, setting, value).get();
+            call("setValue", domain, setting, value).get();
     }
 
     /**
@@ -193,7 +193,7 @@ public class ALPreferenceManager extends ALProxy {
     * @return a list of preferences names and values associated to the domain
     */
     public List<List<Object>> getValueList(String domain) throws CallError, InterruptedException {
-        return (List<List<Object>>)service.call("getValueList", domain).get();
+        return (List<List<Object>>)call("getValueList", domain).get();
     }
 
     /**
@@ -202,7 +202,7 @@ public class ALPreferenceManager extends ALProxy {
     * @return a list containing all the available domain names
     */
     public List<String> getDomainList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getDomainList").get();
+        return (List<String>)call("getDomainList").get();
     }
 
     /**
@@ -213,9 +213,9 @@ public class ALPreferenceManager extends ALProxy {
     */
     public void removeValue(String domain, String setting) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("removeValue", domain, setting);
+            call("removeValue", domain, setting);
         else
-            service.call("removeValue", domain, setting).get();
+            call("removeValue", domain, setting).get();
     }
 
     /**
@@ -225,9 +225,9 @@ public class ALPreferenceManager extends ALProxy {
     */
     public void removeDomainValues(String domain) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("removeDomainValues", domain);
+            call("removeDomainValues", domain);
         else
-            service.call("removeDomainValues", domain).get();
+            call("removeDomainValues", domain).get();
     }
 
     /**
@@ -240,9 +240,9 @@ public class ALPreferenceManager extends ALProxy {
     */
     public void importPrefFile(String domain, String applicationName, String filename, Boolean override) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("importPrefFile", domain, applicationName, filename, override);
+            call("importPrefFile", domain, applicationName, filename, override);
         else
-            service.call("importPrefFile", domain, applicationName, filename, override).get();
+            call("importPrefFile", domain, applicationName, filename, override).get();
     }
 
     /**
@@ -251,9 +251,9 @@ public class ALPreferenceManager extends ALProxy {
     */
     public void update() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("update");
+            call("update");
         else
-            service.call("update").get();
+            call("update").get();
     }
 
 }

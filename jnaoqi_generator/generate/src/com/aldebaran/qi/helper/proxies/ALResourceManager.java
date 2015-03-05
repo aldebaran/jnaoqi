@@ -33,9 +33,9 @@ public class ALResourceManager extends ALProxy {
     */
     public void createResourcesList(List<String> resourceGroupName, String resourceName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("createResourcesList", resourceGroupName, resourceName);
+            call("createResourcesList", resourceGroupName, resourceName);
         else
-            service.call("createResourcesList", resourceGroupName, resourceName).get();
+            call("createResourcesList", resourceGroupName, resourceName).get();
     }
 
     /**
@@ -43,7 +43,7 @@ public class ALResourceManager extends ALProxy {
     * 
     */
     public Object ownersGet() throws CallError, InterruptedException {
-        return (Object)service.call("ownersGet").get();
+        return (Object)call("ownersGet").get();
     }
 
     /**
@@ -51,7 +51,7 @@ public class ALResourceManager extends ALProxy {
     * 
     */
     public Object getResources() throws CallError, InterruptedException {
-        return (Object)service.call("getResources").get();
+        return (Object)call("getResources").get();
     }
 
     /**
@@ -59,7 +59,7 @@ public class ALResourceManager extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -68,9 +68,9 @@ public class ALResourceManager extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -78,7 +78,7 @@ public class ALResourceManager extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -87,9 +87,9 @@ public class ALResourceManager extends ALProxy {
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -98,7 +98,7 @@ public class ALResourceManager extends ALProxy {
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -107,7 +107,7 @@ public class ALResourceManager extends ALProxy {
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -116,7 +116,7 @@ public class ALResourceManager extends ALProxy {
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -126,7 +126,7 @@ public class ALResourceManager extends ALProxy {
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -135,7 +135,7 @@ public class ALResourceManager extends ALProxy {
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -146,7 +146,7 @@ public class ALResourceManager extends ALProxy {
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -156,7 +156,7 @@ public class ALResourceManager extends ALProxy {
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -166,9 +166,9 @@ public class ALResourceManager extends ALProxy {
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -177,7 +177,7 @@ public class ALResourceManager extends ALProxy {
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -187,7 +187,7 @@ public class ALResourceManager extends ALProxy {
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -200,9 +200,9 @@ public class ALResourceManager extends ALProxy {
     */
     public void waitForResource(String resourceName, String ownerName, String callbackName, Integer timeoutSeconds) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("waitForResource", resourceName, ownerName, callbackName, timeoutSeconds);
+            call("waitForResource", resourceName, ownerName, callbackName, timeoutSeconds);
         else
-            service.call("waitForResource", resourceName, ownerName, callbackName, timeoutSeconds).get();
+            call("waitForResource", resourceName, ownerName, callbackName, timeoutSeconds).get();
     }
 
     /**
@@ -215,9 +215,9 @@ public class ALResourceManager extends ALProxy {
     */
     public void acquireResource(String resourceName, String moduleName, String callbackName, Integer timeoutSeconds) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("acquireResource", resourceName, moduleName, callbackName, timeoutSeconds);
+            call("acquireResource", resourceName, moduleName, callbackName, timeoutSeconds);
         else
-            service.call("acquireResource", resourceName, moduleName, callbackName, timeoutSeconds).get();
+            call("acquireResource", resourceName, moduleName, callbackName, timeoutSeconds).get();
     }
 
     /**
@@ -225,7 +225,7 @@ public class ALResourceManager extends ALProxy {
     * 
     */
     public List<String> waitForOptionalResourcesTree(List<String> param1, String param2, String param3, Integer param4, List<String> param5) throws CallError, InterruptedException {
-        return (List<String>)service.call("waitForOptionalResourcesTree", param1, param2, param3, param4, param5).get();
+        return (List<String>)call("waitForOptionalResourcesTree", param1, param2, param3, param4, param5).get();
     }
 
     /**
@@ -238,9 +238,9 @@ public class ALResourceManager extends ALProxy {
     */
     public void waitForResourcesTree(List<String> resourceName, String moduleName, String callbackName, Integer timeoutSeconds) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("waitForResourcesTree", resourceName, moduleName, callbackName, timeoutSeconds);
+            call("waitForResourcesTree", resourceName, moduleName, callbackName, timeoutSeconds);
         else
-            service.call("waitForResourcesTree", resourceName, moduleName, callbackName, timeoutSeconds).get();
+            call("waitForResourcesTree", resourceName, moduleName, callbackName, timeoutSeconds).get();
     }
 
     /**
@@ -253,9 +253,9 @@ public class ALResourceManager extends ALProxy {
     */
     public void acquireResourcesTree(List<String> resourceName, String moduleName, String callbackName, Integer timeoutSeconds) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("acquireResourcesTree", resourceName, moduleName, callbackName, timeoutSeconds);
+            call("acquireResourcesTree", resourceName, moduleName, callbackName, timeoutSeconds);
         else
-            service.call("acquireResourcesTree", resourceName, moduleName, callbackName, timeoutSeconds).get();
+            call("acquireResourcesTree", resourceName, moduleName, callbackName, timeoutSeconds).get();
     }
 
     /**
@@ -266,7 +266,7 @@ public class ALResourceManager extends ALProxy {
     * @return True if all the specify resources are owned by the owner
     */
     public Boolean areResourcesOwnedBy(List<String> resourceNameList, String ownerName) throws CallError, InterruptedException {
-        return (Boolean)service.call("areResourcesOwnedBy", resourceNameList, ownerName).get();
+        return (Boolean)call("areResourcesOwnedBy", resourceNameList, ownerName).get();
     }
 
     /**
@@ -277,9 +277,9 @@ public class ALResourceManager extends ALProxy {
     */
     public void releaseResource(String resourceName, String ownerName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("releaseResource", resourceName, ownerName);
+            call("releaseResource", resourceName, ownerName);
         else
-            service.call("releaseResource", resourceName, ownerName).get();
+            call("releaseResource", resourceName, ownerName).get();
     }
 
     /**
@@ -290,9 +290,9 @@ public class ALResourceManager extends ALProxy {
     */
     public void releaseResources(List<String> resourceNames, String ownerName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("releaseResources", resourceNames, ownerName);
+            call("releaseResources", resourceNames, ownerName);
         else
-            service.call("releaseResources", resourceNames, ownerName).get();
+            call("releaseResources", resourceNames, ownerName).get();
     }
 
     /**
@@ -303,9 +303,9 @@ public class ALResourceManager extends ALProxy {
     */
     public void enableStateResource(String resourceName, Boolean enabled) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("enableStateResource", resourceName, enabled);
+            call("enableStateResource", resourceName, enabled);
         else
-            service.call("enableStateResource", resourceName, enabled).get();
+            call("enableStateResource", resourceName, enabled).get();
     }
 
     /**
@@ -314,7 +314,7 @@ public class ALResourceManager extends ALProxy {
     * @param resourceName  Resource name
     */
     public Boolean checkStateResourceFree(List<String> resourceName) throws CallError, InterruptedException {
-        return (Boolean)service.call("checkStateResourceFree", resourceName).get();
+        return (Boolean)call("checkStateResourceFree", resourceName).get();
     }
 
     /**
@@ -324,7 +324,7 @@ public class ALResourceManager extends ALProxy {
     * @return True if all the specify resources are free
     */
     public Boolean areResourcesFree(List<String> resourceNames) throws CallError, InterruptedException {
-        return (Boolean)service.call("areResourcesFree", resourceNames).get();
+        return (Boolean)call("areResourcesFree", resourceNames).get();
     }
 
     /**
@@ -334,7 +334,7 @@ public class ALResourceManager extends ALProxy {
     * @return True if the specify resources is free
     */
     public Boolean isResourceFree(String resourceNames) throws CallError, InterruptedException {
-        return (Boolean)service.call("isResourceFree", resourceNames).get();
+        return (Boolean)call("isResourceFree", resourceNames).get();
     }
 
     /**
@@ -345,9 +345,9 @@ public class ALResourceManager extends ALProxy {
     */
     public void createResource(String resourceName, String parentResourceName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("createResource", resourceName, parentResourceName);
+            call("createResource", resourceName, parentResourceName);
         else
-            service.call("createResource", resourceName, parentResourceName).get();
+            call("createResource", resourceName, parentResourceName).get();
     }
 
     /**
@@ -358,9 +358,9 @@ public class ALResourceManager extends ALProxy {
     */
     public void deleteResource(String resourceName, Boolean deleteChildResources) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("deleteResource", resourceName, deleteChildResources);
+            call("deleteResource", resourceName, deleteChildResources);
         else
-            service.call("deleteResource", resourceName, deleteChildResources).get();
+            call("deleteResource", resourceName, deleteChildResources).get();
     }
 
     /**
@@ -370,7 +370,7 @@ public class ALResourceManager extends ALProxy {
     * @param resourceName  Resource name
     */
     public Boolean isInGroup(String resourceGroupName, String resourceName) throws CallError, InterruptedException {
-        return (Boolean)service.call("isInGroup", resourceGroupName, resourceName).get();
+        return (Boolean)call("isInGroup", resourceGroupName, resourceName).get();
     }
 
 }

@@ -19,9 +19,9 @@ TEMPLATE_VOID = """
     */
     public %(outtype)s %(methodName)s(%(args)s) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("%(method)s"%(extraparams)s);
+            call("%(method)s"%(extraparams)s);
         else
-            service.call("%(method)s"%(extraparams)s).get();
+            call("%(method)s"%(extraparams)s).get();
     }"""
 
 TEMPLATE_RETURN = """
@@ -30,7 +30,7 @@ TEMPLATE_RETURN = """
     * %(method_params)s
     */
     public %(outtype)s %(methodName)s(%(args)s) throws CallError, InterruptedException {
-        return (%(outtype)s)service.call("%(method)s"%(extraparams)s).get();
+        return (%(outtype)s)call("%(method)s"%(extraparams)s).get();
     }"""
 
 TEMPLATE_CLASS = """/**
@@ -62,15 +62,6 @@ public class %(module_name)s extends ALProxy {
 %(content)s
 }
     """
-ALMEMORY_BUG = """public void addMapping(String param1, Map<String param2, String> param3) throws CallError, InterruptedException{
-          service.call("addMapping", param1, param2, param3).get();
-    }"""
-ALMEMORY_FIX = """public void addMapping(String param1, Map<String,String> param2) throws CallError, InterruptedException{
-          service.call("addMapping", param1, param2).get();
-    }"""
-
-
-
 
 BLACKLIST_METHODS = set("registerEvent, unregisterEvent, metaObject, terminate, property, setProperty, registerEventWithSignature, enableStats, enableTrace, pCall, stats, properties".split(", "))
 BLACKLIST_MODULES = set("ALTabletService, ALFindPersonHead")

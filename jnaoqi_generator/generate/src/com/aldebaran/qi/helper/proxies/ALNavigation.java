@@ -30,7 +30,7 @@ public class ALNavigation extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -39,9 +39,9 @@ public class ALNavigation extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -49,7 +49,7 @@ public class ALNavigation extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -58,9 +58,9 @@ public class ALNavigation extends ALProxy {
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -69,7 +69,7 @@ public class ALNavigation extends ALProxy {
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -78,7 +78,7 @@ public class ALNavigation extends ALProxy {
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -87,7 +87,7 @@ public class ALNavigation extends ALProxy {
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -97,7 +97,7 @@ public class ALNavigation extends ALProxy {
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -106,7 +106,7 @@ public class ALNavigation extends ALProxy {
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -117,7 +117,7 @@ public class ALNavigation extends ALProxy {
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -127,7 +127,7 @@ public class ALNavigation extends ALProxy {
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -137,9 +137,9 @@ public class ALNavigation extends ALProxy {
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -148,7 +148,7 @@ public class ALNavigation extends ALProxy {
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -158,7 +158,7 @@ public class ALNavigation extends ALProxy {
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -168,7 +168,7 @@ public class ALNavigation extends ALProxy {
     * @param y  The position along y axis [m].
     */
     public Boolean navigateTo(Float x, Float y) throws CallError, InterruptedException {
-        return (Boolean)service.call("navigateTo", x, y).get();
+        return (Boolean)call("navigateTo", x, y).get();
     }
 
     /**
@@ -179,7 +179,7 @@ public class ALNavigation extends ALProxy {
     * @param config  Configuration ALValue. For example, [["SpeedFactor", 0.5]] sets speedFactor to 0.5
     */
     public Boolean navigateTo(Float x, Float y, Object config) throws CallError, InterruptedException {
-        return (Boolean)service.call("navigateTo", x, y, config).get();
+        return (Boolean)call("navigateTo", x, y, config).get();
     }
 
     /**
@@ -190,7 +190,7 @@ public class ALNavigation extends ALProxy {
     * @param theta  Orientation of the robot (rad).
     */
     public Boolean navigateTo(Float x, Float y, Float theta) throws CallError, InterruptedException {
-        return (Boolean)service.call("navigateTo", x, y, theta).get();
+        return (Boolean)call("navigateTo", x, y, theta).get();
     }
 
     /**
@@ -202,7 +202,7 @@ public class ALNavigation extends ALProxy {
     * @param config  Configuration ALValue. For example, [["SpeedFactor", 0.5]] sets speedFactor to 0.5
     */
     public Boolean navigateTo(Float x, Float y, Float theta, Object config) throws CallError, InterruptedException {
-        return (Boolean)service.call("navigateTo", x, y, theta, config).get();
+        return (Boolean)call("navigateTo", x, y, theta, config).get();
     }
 
     /**
@@ -214,9 +214,9 @@ public class ALNavigation extends ALProxy {
     */
     public void moveTo(Float x, Float y, Float theta) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("moveTo", x, y, theta);
+            call("moveTo", x, y, theta);
         else
-            service.call("moveTo", x, y, theta).get();
+            call("moveTo", x, y, theta).get();
     }
 
     /**
@@ -229,9 +229,9 @@ public class ALNavigation extends ALProxy {
     */
     public void moveTo(Float x, Float y, Float theta, Object moveConfig) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("moveTo", x, y, theta, moveConfig);
+            call("moveTo", x, y, theta, moveConfig);
         else
-            service.call("moveTo", x, y, theta, moveConfig).get();
+            call("moveTo", x, y, theta, moveConfig).get();
     }
 
     /**
@@ -243,9 +243,9 @@ public class ALNavigation extends ALProxy {
     */
     public void move(Float x, Float y, Float theta) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("move", x, y, theta);
+            call("move", x, y, theta);
         else
-            service.call("move", x, y, theta).get();
+            call("move", x, y, theta).get();
     }
 
     /**
@@ -258,9 +258,9 @@ public class ALNavigation extends ALProxy {
     */
     public void move(Float x, Float y, Float theta, Object moveConfig) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("move", x, y, theta, moveConfig);
+            call("move", x, y, theta, moveConfig);
         else
-            service.call("move", x, y, theta, moveConfig).get();
+            call("move", x, y, theta, moveConfig).get();
     }
 
     /**
@@ -272,9 +272,9 @@ public class ALNavigation extends ALProxy {
     */
     public void moveToward(Float x, Float y, Float theta) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("moveToward", x, y, theta);
+            call("moveToward", x, y, theta);
         else
-            service.call("moveToward", x, y, theta).get();
+            call("moveToward", x, y, theta).get();
     }
 
     /**
@@ -287,9 +287,9 @@ public class ALNavigation extends ALProxy {
     */
     public void moveToward(Float x, Float y, Float theta, Object moveConfig) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("moveToward", x, y, theta, moveConfig);
+            call("moveToward", x, y, theta, moveConfig);
         else
-            service.call("moveToward", x, y, theta, moveConfig).get();
+            call("moveToward", x, y, theta, moveConfig).get();
     }
 
     /**
@@ -298,9 +298,9 @@ public class ALNavigation extends ALProxy {
     */
     public void setSecurityDistance(Float param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setSecurityDistance", param1);
+            call("setSecurityDistance", param1);
         else
-            service.call("setSecurityDistance", param1).get();
+            call("setSecurityDistance", param1).get();
     }
 
     /**
@@ -308,7 +308,7 @@ public class ALNavigation extends ALProxy {
     * 
     */
     public Float getSecurityDistance() throws CallError, InterruptedException {
-        return (Float)service.call("getSecurityDistance").get();
+        return (Float)call("getSecurityDistance").get();
     }
 
     /**
@@ -317,9 +317,9 @@ public class ALNavigation extends ALProxy {
     */
     public void stopNavigateTo() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stopNavigateTo");
+            call("stopNavigateTo");
         else
-            service.call("stopNavigateTo").get();
+            call("stopNavigateTo").get();
     }
 
     /**
@@ -328,7 +328,7 @@ public class ALNavigation extends ALProxy {
     * @param trajectory  An ALValue describing a trajectory.
     */
     public Boolean moveAlong(Object trajectory) throws CallError, InterruptedException {
-        return (Boolean)service.call("moveAlong", trajectory).get();
+        return (Boolean)call("moveAlong", trajectory).get();
     }
 
     /**
@@ -337,9 +337,9 @@ public class ALNavigation extends ALProxy {
     */
     public void onTouchChanged(String param1, Object param2, String param3) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("onTouchChanged", param1, param2, param3);
+            call("onTouchChanged", param1, param2, param3);
         else
-            service.call("onTouchChanged", param1, param2, param3).get();
+            call("onTouchChanged", param1, param2, param3).get();
     }
 
 }

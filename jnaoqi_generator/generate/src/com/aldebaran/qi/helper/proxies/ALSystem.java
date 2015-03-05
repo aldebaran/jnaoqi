@@ -30,7 +30,7 @@ public class ALSystem extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -39,9 +39,9 @@ public class ALSystem extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -49,7 +49,7 @@ public class ALSystem extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -58,9 +58,9 @@ public class ALSystem extends ALProxy {
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -69,7 +69,7 @@ public class ALSystem extends ALProxy {
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -78,7 +78,7 @@ public class ALSystem extends ALProxy {
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -87,7 +87,7 @@ public class ALSystem extends ALProxy {
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -97,7 +97,7 @@ public class ALSystem extends ALProxy {
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -106,7 +106,7 @@ public class ALSystem extends ALProxy {
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -117,7 +117,7 @@ public class ALSystem extends ALProxy {
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -127,7 +127,7 @@ public class ALSystem extends ALProxy {
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -137,9 +137,9 @@ public class ALSystem extends ALProxy {
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -148,7 +148,7 @@ public class ALSystem extends ALProxy {
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -158,7 +158,7 @@ public class ALSystem extends ALProxy {
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -168,7 +168,7 @@ public class ALSystem extends ALProxy {
     * @return A vector with all partions' infos
     */
     public List<Tuple4<String, String, Long, Long>> diskFree(Boolean all) throws CallError, InterruptedException {
-        return (List<Tuple4<String, String, Long, Long>>)service.call("diskFree", all).get();
+        return (List<Tuple4<String, String, Long, Long>>)call("diskFree", all).get();
     }
 
     /**
@@ -177,7 +177,7 @@ public class ALSystem extends ALProxy {
     * @return name of the robot
     */
     public String robotName() throws CallError, InterruptedException {
-        return (String)service.call("robotName").get();
+        return (String)call("robotName").get();
     }
 
     /**
@@ -187,7 +187,7 @@ public class ALSystem extends ALProxy {
     * @return whether the operation was successful
     */
     public Boolean setRobotName(String name) throws CallError, InterruptedException {
-        return (Boolean)service.call("setRobotName", name).get();
+        return (Boolean)call("setRobotName", name).get();
     }
 
     /**
@@ -196,7 +196,7 @@ public class ALSystem extends ALProxy {
     * @return icon of the robot
     */
     public Object robotIcon() throws CallError, InterruptedException {
-        return (Object)service.call("robotIcon").get();
+        return (Object)call("robotIcon").get();
     }
 
     /**
@@ -205,9 +205,9 @@ public class ALSystem extends ALProxy {
     */
     public void shutdown() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("shutdown");
+            call("shutdown");
         else
-            service.call("shutdown").get();
+            call("shutdown").get();
     }
 
     /**
@@ -216,9 +216,9 @@ public class ALSystem extends ALProxy {
     */
     public void reboot() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("reboot");
+            call("reboot");
         else
-            service.call("reboot").get();
+            call("reboot").get();
     }
 
     /**
@@ -227,7 +227,7 @@ public class ALSystem extends ALProxy {
     * @return running system version
     */
     public String systemVersion() throws CallError, InterruptedException {
-        return (String)service.call("systemVersion").get();
+        return (String)call("systemVersion").get();
     }
 
     /**
@@ -236,7 +236,7 @@ public class ALSystem extends ALProxy {
     * @return information about the system version
     */
     public Tuple3<String, String, String> systemInfo() throws CallError, InterruptedException {
-        return (Tuple3<String, String, String>)service.call("systemInfo").get();
+        return (Tuple3<String, String, String>)call("systemInfo").get();
     }
 
     /**
@@ -245,7 +245,7 @@ public class ALSystem extends ALProxy {
     * @return amount of available memory in heap
     */
     public Integer freeMemory() throws CallError, InterruptedException {
-        return (Integer)service.call("freeMemory").get();
+        return (Integer)call("freeMemory").get();
     }
 
     /**
@@ -254,7 +254,7 @@ public class ALSystem extends ALProxy {
     * @return amount of total memory in heap
     */
     public Integer totalMemory() throws CallError, InterruptedException {
-        return (Integer)service.call("totalMemory").get();
+        return (Integer)call("totalMemory").get();
     }
 
     /**
@@ -263,7 +263,7 @@ public class ALSystem extends ALProxy {
     * @return current timezone
     */
     public String timezone() throws CallError, InterruptedException {
-        return (String)service.call("timezone").get();
+        return (String)call("timezone").get();
     }
 
     /**
@@ -273,7 +273,7 @@ public class ALSystem extends ALProxy {
     * @return whether the operation was successful
     */
     public Boolean setTimezone(String timezone) throws CallError, InterruptedException {
-        return (Boolean)service.call("setTimezone", timezone).get();
+        return (Boolean)call("setTimezone", timezone).get();
     }
 
     /**
@@ -282,7 +282,7 @@ public class ALSystem extends ALProxy {
     * @return Previous system version before software update.
     */
     public String previousSystemVersion() throws CallError, InterruptedException {
-        return (String)service.call("previousSystemVersion").get();
+        return (String)call("previousSystemVersion").get();
     }
 
     /**
@@ -293,9 +293,9 @@ public class ALSystem extends ALProxy {
     */
     public void changePassword(String oldPassword, String newPassword) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("changePassword", oldPassword, newPassword);
+            call("changePassword", oldPassword, newPassword);
         else
-            service.call("changePassword", oldPassword, newPassword).get();
+            call("changePassword", oldPassword, newPassword).get();
     }
 
     /**
@@ -306,9 +306,9 @@ public class ALSystem extends ALProxy {
     */
     public void upgrade(String image, String checksum) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("upgrade", image, checksum);
+            call("upgrade", image, checksum);
         else
-            service.call("upgrade", image, checksum).get();
+            call("upgrade", image, checksum).get();
     }
 
 }

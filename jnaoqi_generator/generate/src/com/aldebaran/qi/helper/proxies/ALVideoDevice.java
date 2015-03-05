@@ -31,7 +31,7 @@ public class ALVideoDevice extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -40,9 +40,9 @@ public class ALVideoDevice extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -50,7 +50,7 @@ public class ALVideoDevice extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -59,9 +59,9 @@ public class ALVideoDevice extends ALProxy {
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -70,7 +70,7 @@ public class ALVideoDevice extends ALProxy {
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -79,7 +79,7 @@ public class ALVideoDevice extends ALProxy {
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -88,7 +88,7 @@ public class ALVideoDevice extends ALProxy {
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -98,7 +98,7 @@ public class ALVideoDevice extends ALProxy {
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -107,7 +107,7 @@ public class ALVideoDevice extends ALProxy {
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -118,7 +118,7 @@ public class ALVideoDevice extends ALProxy {
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -128,7 +128,7 @@ public class ALVideoDevice extends ALProxy {
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -138,9 +138,9 @@ public class ALVideoDevice extends ALProxy {
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -149,7 +149,7 @@ public class ALVideoDevice extends ALProxy {
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -159,7 +159,7 @@ public class ALVideoDevice extends ALProxy {
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -173,7 +173,7 @@ public class ALVideoDevice extends ALProxy {
     * @return Name under which the vision module is known from ALVideoDevice
     */
     public String subscribeCamera(String name, Integer cameraIndex, Integer resolution, Integer colorSpace, Integer fps) throws CallError, InterruptedException {
-        return (String)service.call("subscribeCamera", name, cameraIndex, resolution, colorSpace, fps).get();
+        return (String)call("subscribeCamera", name, cameraIndex, resolution, colorSpace, fps).get();
     }
 
     /**
@@ -187,7 +187,7 @@ public class ALVideoDevice extends ALProxy {
     * @return Name under which the vision module is known from ALVideoDevice
     */
     public String subscribeCameras(String name, Object cameraIndexes, Object resolutions, Object colorSpaces, Integer fps) throws CallError, InterruptedException {
-        return (String)service.call("subscribeCameras", name, cameraIndexes, resolutions, colorSpaces, fps).get();
+        return (String)call("subscribeCameras", name, cameraIndexes, resolutions, colorSpaces, fps).get();
     }
 
     /**
@@ -197,7 +197,7 @@ public class ALVideoDevice extends ALProxy {
     * @return True if success, false otherwise
     */
     public Boolean unsubscribe(String nameId) throws CallError, InterruptedException {
-        return (Boolean)service.call("unsubscribe", nameId).get();
+        return (Boolean)call("unsubscribe", nameId).get();
     }
 
     /**
@@ -205,7 +205,7 @@ public class ALVideoDevice extends ALProxy {
     * 
     */
     public Object getSubscribers() throws CallError, InterruptedException {
-        return (Object)service.call("getSubscribers").get();
+        return (Object)call("getSubscribers").get();
     }
 
     /**
@@ -213,7 +213,7 @@ public class ALVideoDevice extends ALProxy {
     * 
     */
     public Object getCameraIndexes() throws CallError, InterruptedException {
-        return (Object)service.call("getCameraIndexes").get();
+        return (Object)call("getCameraIndexes").get();
     }
 
     /**
@@ -222,7 +222,7 @@ public class ALVideoDevice extends ALProxy {
     * @return  0: top camera - 1: bottom camera
     */
     public Integer getActiveCamera() throws CallError, InterruptedException {
-        return (Integer)service.call("getActiveCamera").get();
+        return (Integer)call("getActiveCamera").get();
     }
 
     /**
@@ -231,7 +231,7 @@ public class ALVideoDevice extends ALProxy {
     * @param activeCamera   0: top camera - 1: bottom camera
     */
     public Boolean setActiveCamera(Integer activeCamera) throws CallError, InterruptedException {
-        return (Boolean)service.call("setActiveCamera", activeCamera).get();
+        return (Boolean)call("setActiveCamera", activeCamera).get();
     }
 
     /**
@@ -241,7 +241,7 @@ public class ALVideoDevice extends ALProxy {
     * @return  1(kOV7670): VGA camera - 2(kMT9M114): HD camera
     */
     public Integer getCameraModel(Integer cameraIndex) throws CallError, InterruptedException {
-        return (Integer)service.call("getCameraModel", cameraIndex).get();
+        return (Integer)call("getCameraModel", cameraIndex).get();
     }
 
     /**
@@ -251,7 +251,7 @@ public class ALVideoDevice extends ALProxy {
     * @return CameraTop - CameraBottom - CameraDepth
     */
     public String getCameraName(Integer cameraIndex) throws CallError, InterruptedException {
-        return (String)service.call("getCameraName", cameraIndex).get();
+        return (String)call("getCameraName", cameraIndex).get();
     }
 
     /**
@@ -260,7 +260,7 @@ public class ALVideoDevice extends ALProxy {
     * @param cameraIndex  Camera requested.
     */
     public Integer getFrameRate(Integer cameraIndex) throws CallError, InterruptedException {
-        return (Integer)service.call("getFrameRate", cameraIndex).get();
+        return (Integer)call("getFrameRate", cameraIndex).get();
     }
 
     /**
@@ -269,7 +269,7 @@ public class ALVideoDevice extends ALProxy {
     * @param cameraIndex  Camera requested.
     */
     public Integer getResolution(Integer cameraIndex) throws CallError, InterruptedException {
-        return (Integer)service.call("getResolution", cameraIndex).get();
+        return (Integer)call("getResolution", cameraIndex).get();
     }
 
     /**
@@ -278,7 +278,7 @@ public class ALVideoDevice extends ALProxy {
     * @param cameraIndex  Camera requested.
     */
     public Integer getColorSpace(Integer cameraIndex) throws CallError, InterruptedException {
-        return (Integer)service.call("getColorSpace", cameraIndex).get();
+        return (Integer)call("getColorSpace", cameraIndex).get();
     }
 
     /**
@@ -287,7 +287,7 @@ public class ALVideoDevice extends ALProxy {
     * @param cameraIndex  Camera requested.
     */
     public Float getHorizontalFOV(Integer cameraIndex) throws CallError, InterruptedException {
-        return (Float)service.call("getHorizontalFOV", cameraIndex).get();
+        return (Float)call("getHorizontalFOV", cameraIndex).get();
     }
 
     /**
@@ -296,7 +296,7 @@ public class ALVideoDevice extends ALProxy {
     * @param cameraIndex  Camera requested.
     */
     public Float getVerticalFOV(Integer cameraIndex) throws CallError, InterruptedException {
-        return (Float)service.call("getVerticalFOV", cameraIndex).get();
+        return (Float)call("getVerticalFOV", cameraIndex).get();
     }
 
     /**
@@ -306,7 +306,7 @@ public class ALVideoDevice extends ALProxy {
     * @param parameterId  Camera parameter requested.
     */
     public Integer getParameter(Integer cameraIndex, Integer parameterId) throws CallError, InterruptedException {
-        return (Integer)service.call("getParameter", cameraIndex, parameterId).get();
+        return (Integer)call("getParameter", cameraIndex, parameterId).get();
     }
 
     /**
@@ -316,7 +316,7 @@ public class ALVideoDevice extends ALProxy {
     * @param parameterId  Camera parameter requested.
     */
     public Object getParameterRange(Integer cameraIndex, Integer parameterId) throws CallError, InterruptedException {
-        return (Object)service.call("getParameterRange", cameraIndex, parameterId).get();
+        return (Object)call("getParameterRange", cameraIndex, parameterId).get();
     }
 
     /**
@@ -326,7 +326,7 @@ public class ALVideoDevice extends ALProxy {
     * @param parameterId  Camera parameter requested.
     */
     public Object getParameterInfo(Integer cameraIndex, Integer parameterId) throws CallError, InterruptedException {
-        return (Object)service.call("getParameterInfo", cameraIndex, parameterId).get();
+        return (Object)call("getParameterInfo", cameraIndex, parameterId).get();
     }
 
     /**
@@ -337,7 +337,7 @@ public class ALVideoDevice extends ALProxy {
     * @param value  value requested.
     */
     public Boolean setParameter(Integer cameraIndex, Integer parameterId, Integer value) throws CallError, InterruptedException {
-        return (Boolean)service.call("setParameter", cameraIndex, parameterId, value).get();
+        return (Boolean)call("setParameter", cameraIndex, parameterId, value).get();
     }
 
     /**
@@ -347,7 +347,7 @@ public class ALVideoDevice extends ALProxy {
     * @param parameterId  Camera parameter requested.
     */
     public Boolean setParameterToDefault(Integer cameraIndex, Integer parameterId) throws CallError, InterruptedException {
-        return (Boolean)service.call("setParameterToDefault", cameraIndex, parameterId).get();
+        return (Boolean)call("setParameterToDefault", cameraIndex, parameterId).get();
     }
 
     /**
@@ -356,7 +356,7 @@ public class ALVideoDevice extends ALProxy {
     * @param cameraIndex  Camera requested.
     */
     public Boolean setAllParametersToDefault(Integer cameraIndex) throws CallError, InterruptedException {
-        return (Boolean)service.call("setAllParametersToDefault", cameraIndex).get();
+        return (Boolean)call("setAllParametersToDefault", cameraIndex).get();
     }
 
     /**
@@ -364,7 +364,7 @@ public class ALVideoDevice extends ALProxy {
     * 
     */
     public Boolean openCamera(Integer param1) throws CallError, InterruptedException {
-        return (Boolean)service.call("openCamera", param1).get();
+        return (Boolean)call("openCamera", param1).get();
     }
 
     /**
@@ -372,7 +372,7 @@ public class ALVideoDevice extends ALProxy {
     * 
     */
     public Boolean closeCamera(Integer param1) throws CallError, InterruptedException {
-        return (Boolean)service.call("closeCamera", param1).get();
+        return (Boolean)call("closeCamera", param1).get();
     }
 
     /**
@@ -380,7 +380,7 @@ public class ALVideoDevice extends ALProxy {
     * 
     */
     public Boolean isCameraOpen(Integer param1) throws CallError, InterruptedException {
-        return (Boolean)service.call("isCameraOpen", param1).get();
+        return (Boolean)call("isCameraOpen", param1).get();
     }
 
     /**
@@ -388,7 +388,7 @@ public class ALVideoDevice extends ALProxy {
     * 
     */
     public Boolean startCamera(Integer param1) throws CallError, InterruptedException {
-        return (Boolean)service.call("startCamera", param1).get();
+        return (Boolean)call("startCamera", param1).get();
     }
 
     /**
@@ -396,7 +396,7 @@ public class ALVideoDevice extends ALProxy {
     * 
     */
     public Boolean stopCamera(Integer param1) throws CallError, InterruptedException {
-        return (Boolean)service.call("stopCamera", param1).get();
+        return (Boolean)call("stopCamera", param1).get();
     }
 
     /**
@@ -404,7 +404,7 @@ public class ALVideoDevice extends ALProxy {
     * 
     */
     public Boolean isCameraStarted(Integer param1) throws CallError, InterruptedException {
-        return (Boolean)service.call("isCameraStarted", param1).get();
+        return (Boolean)call("isCameraStarted", param1).get();
     }
 
     /**
@@ -412,7 +412,7 @@ public class ALVideoDevice extends ALProxy {
     * 
     */
     public Boolean resetCamera(Integer param1) throws CallError, InterruptedException {
-        return (Boolean)service.call("resetCamera", param1).get();
+        return (Boolean)call("resetCamera", param1).get();
     }
 
     /**
@@ -421,7 +421,7 @@ public class ALVideoDevice extends ALProxy {
     * @param cameraIndex  Camera requested.
     */
     public Boolean startFrameGrabber(Integer cameraIndex) throws CallError, InterruptedException {
-        return (Boolean)service.call("startFrameGrabber", cameraIndex).get();
+        return (Boolean)call("startFrameGrabber", cameraIndex).get();
     }
 
     /**
@@ -430,7 +430,7 @@ public class ALVideoDevice extends ALProxy {
     * @param cameraIndex  Camera requested.
     */
     public Boolean stopFrameGrabber(Integer cameraIndex) throws CallError, InterruptedException {
-        return (Boolean)service.call("stopFrameGrabber", cameraIndex).get();
+        return (Boolean)call("stopFrameGrabber", cameraIndex).get();
     }
 
     /**
@@ -439,7 +439,7 @@ public class ALVideoDevice extends ALProxy {
     * @param cameraIndex  Camera requested.
     */
     public Boolean isFrameGrabberOff(Integer cameraIndex) throws CallError, InterruptedException {
-        return (Boolean)service.call("isFrameGrabberOff", cameraIndex).get();
+        return (Boolean)call("isFrameGrabberOff", cameraIndex).get();
     }
 
     /**
@@ -447,7 +447,7 @@ public class ALVideoDevice extends ALProxy {
     * 
     */
     public Boolean hasDepthCamera() throws CallError, InterruptedException {
-        return (Boolean)service.call("hasDepthCamera").get();
+        return (Boolean)call("hasDepthCamera").get();
     }
 
     /**
@@ -456,7 +456,7 @@ public class ALVideoDevice extends ALProxy {
     * @param name  Name of the subscribing vision module
     */
     public Integer getFrameRate(String name) throws CallError, InterruptedException {
-        return (Integer)service.call("getFrameRate", name).get();
+        return (Integer)call("getFrameRate", name).get();
     }
 
     /**
@@ -466,7 +466,7 @@ public class ALVideoDevice extends ALProxy {
     * @param frameRate  Frame Rate requested.
     */
     public Boolean setFrameRate(String name, Integer frameRate) throws CallError, InterruptedException {
-        return (Boolean)service.call("setFrameRate", name, frameRate).get();
+        return (Boolean)call("setFrameRate", name, frameRate).get();
     }
 
     /**
@@ -475,7 +475,7 @@ public class ALVideoDevice extends ALProxy {
     * @param name  Name of the subscribing vision module
     */
     public Integer getActiveCamera(String name) throws CallError, InterruptedException {
-        return (Integer)service.call("getActiveCamera", name).get();
+        return (Integer)call("getActiveCamera", name).get();
     }
 
     /**
@@ -485,7 +485,7 @@ public class ALVideoDevice extends ALProxy {
     * @param cameraIndex  Camera requested.
     */
     public Boolean setActiveCamera(String name, Integer cameraIndex) throws CallError, InterruptedException {
-        return (Boolean)service.call("setActiveCamera", name, cameraIndex).get();
+        return (Boolean)call("setActiveCamera", name, cameraIndex).get();
     }
 
     /**
@@ -494,7 +494,7 @@ public class ALVideoDevice extends ALProxy {
     * @param name  Name of the subscribing vision module
     */
     public Integer getResolution(String name) throws CallError, InterruptedException {
-        return (Integer)service.call("getResolution", name).get();
+        return (Integer)call("getResolution", name).get();
     }
 
     /**
@@ -504,7 +504,7 @@ public class ALVideoDevice extends ALProxy {
     * @param resolution  Resolution requested.
     */
     public Boolean setResolution(String name, Integer resolution) throws CallError, InterruptedException {
-        return (Boolean)service.call("setResolution", name, resolution).get();
+        return (Boolean)call("setResolution", name, resolution).get();
     }
 
     /**
@@ -513,7 +513,7 @@ public class ALVideoDevice extends ALProxy {
     * @param name  Name of the subscribing vision module
     */
     public Integer getColorSpace(String name) throws CallError, InterruptedException {
-        return (Integer)service.call("getColorSpace", name).get();
+        return (Integer)call("getColorSpace", name).get();
     }
 
     /**
@@ -523,7 +523,7 @@ public class ALVideoDevice extends ALProxy {
     * @param colorSpace  Color Space requested.
     */
     public Boolean setColorSpace(String name, Integer colorSpace) throws CallError, InterruptedException {
-        return (Boolean)service.call("setColorSpace", name, colorSpace).get();
+        return (Boolean)call("setColorSpace", name, colorSpace).get();
     }
 
     /**
@@ -533,7 +533,7 @@ public class ALVideoDevice extends ALProxy {
     * @param parameterId  Camera parameter requested.
     */
     public Integer getCameraParameter(String name, Integer parameterId) throws CallError, InterruptedException {
-        return (Integer)service.call("getCameraParameter", name, parameterId).get();
+        return (Integer)call("getCameraParameter", name, parameterId).get();
     }
 
     /**
@@ -543,7 +543,7 @@ public class ALVideoDevice extends ALProxy {
     * @param parameterId  Camera parameter requested.
     */
     public Object getCameraParameterRange(String name, Integer parameterId) throws CallError, InterruptedException {
-        return (Object)service.call("getCameraParameterRange", name, parameterId).get();
+        return (Object)call("getCameraParameterRange", name, parameterId).get();
     }
 
     /**
@@ -553,7 +553,7 @@ public class ALVideoDevice extends ALProxy {
     * @param parameterId  Camera parameter requested.
     */
     public Object getCameraParameterInfo(String name, Integer parameterId) throws CallError, InterruptedException {
-        return (Object)service.call("getCameraParameterInfo", name, parameterId).get();
+        return (Object)call("getCameraParameterInfo", name, parameterId).get();
     }
 
     /**
@@ -564,7 +564,7 @@ public class ALVideoDevice extends ALProxy {
     * @param value  value requested.
     */
     public Boolean setCameraParameter(String name, Integer parameterId, Integer value) throws CallError, InterruptedException {
-        return (Boolean)service.call("setCameraParameter", name, parameterId, value).get();
+        return (Boolean)call("setCameraParameter", name, parameterId, value).get();
     }
 
     /**
@@ -574,7 +574,7 @@ public class ALVideoDevice extends ALProxy {
     * @param parameterId  Camera parameter requested.
     */
     public Boolean setCameraParameterToDefault(String name, Integer parameterId) throws CallError, InterruptedException {
-        return (Boolean)service.call("setCameraParameterToDefault", name, parameterId).get();
+        return (Boolean)call("setCameraParameterToDefault", name, parameterId).get();
     }
 
     /**
@@ -583,7 +583,7 @@ public class ALVideoDevice extends ALProxy {
     * @param name  Name of the subscribing vision module
     */
     public Boolean setAllCameraParametersToDefault(String name) throws CallError, InterruptedException {
-        return (Boolean)service.call("setAllCameraParametersToDefault", name).get();
+        return (Boolean)call("setAllCameraParametersToDefault", name).get();
     }
 
     /**
@@ -597,7 +597,7 @@ Warning: Release all kernel buffers before any action requesting a modification 
 Warning, image pointer is valid only for C++ dynamic library.
     */
     public Object getDirectRawImageLocal(String name) throws CallError, InterruptedException {
-        return (Object)service.call("getDirectRawImageLocal", name).get();
+        return (Object)call("getDirectRawImageLocal", name).get();
     }
 
     /**
@@ -621,7 +621,7 @@ Warning, image pointer is valid only for C++ dynamic library.
 
     */
     public Object getDirectRawImageRemote(String name) throws CallError, InterruptedException {
-        return (Object)service.call("getDirectRawImageRemote", name).get();
+        return (Object)call("getDirectRawImageRemote", name).get();
     }
 
     /**
@@ -632,7 +632,7 @@ Warning, image pointer is valid only for C++ dynamic library.
     * @return true if success
     */
     public Boolean releaseDirectRawImage(String name) throws CallError, InterruptedException {
-        return (Boolean)service.call("releaseDirectRawImage", name).get();
+        return (Boolean)call("releaseDirectRawImage", name).get();
     }
 
     /**
@@ -644,7 +644,7 @@ When image is not necessary anymore, a call to releaseImage() is requested.
     * @return Pointer of the locked image buffer, NULL if error.Warning, image pointer is valid only for C++ dynamic library.
     */
     public Object getImageLocal(String name) throws CallError, InterruptedException {
-        return (Object)service.call("getImageLocal", name).get();
+        return (Object)call("getImageLocal", name).get();
     }
 
     /**
@@ -668,7 +668,7 @@ When image is not necessary anymore, a call to releaseImage() is requested.
 
     */
     public Object getImageRemote(String name) throws CallError, InterruptedException {
-        return (Object)service.call("getImageRemote", name).get();
+        return (Object)call("getImageRemote", name).get();
     }
 
     /**
@@ -679,7 +679,7 @@ If G.V.M. had no locked image buffer, does nothing.
     * @return true if success
     */
     public Boolean releaseImage(String name) throws CallError, InterruptedException {
-        return (Boolean)service.call("releaseImage", name).get();
+        return (Boolean)call("releaseImage", name).get();
     }
 
     /**
@@ -688,7 +688,7 @@ If G.V.M. had no locked image buffer, does nothing.
     * @param name  Name of the subscribing vision module
     */
     public Object getActiveCameras(String name) throws CallError, InterruptedException {
-        return (Object)service.call("getActiveCameras", name).get();
+        return (Object)call("getActiveCameras", name).get();
     }
 
     /**
@@ -698,7 +698,7 @@ If G.V.M. had no locked image buffer, does nothing.
     * @param cameraIndexes  Cameras requested.
     */
     public Object setActiveCameras(String name, Object cameraIndexes) throws CallError, InterruptedException {
-        return (Object)service.call("setActiveCameras", name, cameraIndexes).get();
+        return (Object)call("setActiveCameras", name, cameraIndexes).get();
     }
 
     /**
@@ -707,7 +707,7 @@ If G.V.M. had no locked image buffer, does nothing.
     * @param name  Name of the subscribing vision module
     */
     public Object getResolutions(String name) throws CallError, InterruptedException {
-        return (Object)service.call("getResolutions", name).get();
+        return (Object)call("getResolutions", name).get();
     }
 
     /**
@@ -717,7 +717,7 @@ If G.V.M. had no locked image buffer, does nothing.
     * @param resolutions  Resolutions requested.
     */
     public Object setResolutions(String name, Object resolutions) throws CallError, InterruptedException {
-        return (Object)service.call("setResolutions", name, resolutions).get();
+        return (Object)call("setResolutions", name, resolutions).get();
     }
 
     /**
@@ -726,7 +726,7 @@ If G.V.M. had no locked image buffer, does nothing.
     * @param name  Name of the subscribing vision module
     */
     public Object getColorSpaces(String name) throws CallError, InterruptedException {
-        return (Object)service.call("getColorSpaces", name).get();
+        return (Object)call("getColorSpaces", name).get();
     }
 
     /**
@@ -736,7 +736,7 @@ If G.V.M. had no locked image buffer, does nothing.
     * @param colorSpaces  Color Spaces requested.
     */
     public Object setColorSpaces(String name, Object colorSpaces) throws CallError, InterruptedException {
-        return (Object)service.call("setColorSpaces", name, colorSpaces).get();
+        return (Object)call("setColorSpaces", name, colorSpaces).get();
     }
 
     /**
@@ -746,7 +746,7 @@ If G.V.M. had no locked image buffer, does nothing.
     * @param parameterId  Camera parameter requested.
     */
     public Object getCamerasParameter(String name, Integer parameterId) throws CallError, InterruptedException {
-        return (Object)service.call("getCamerasParameter", name, parameterId).get();
+        return (Object)call("getCamerasParameter", name, parameterId).get();
     }
 
     /**
@@ -757,7 +757,7 @@ If G.V.M. had no locked image buffer, does nothing.
     * @param values  values requested.
     */
     public Object setCamerasParameter(String name, Integer parameterId, Object values) throws CallError, InterruptedException {
-        return (Object)service.call("setCamerasParameter", name, parameterId, values).get();
+        return (Object)call("setCamerasParameter", name, parameterId, values).get();
     }
 
     /**
@@ -767,7 +767,7 @@ If G.V.M. had no locked image buffer, does nothing.
     * @param parameterId  Camera parameter requested.
     */
     public Object setCamerasParameterToDefault(String name, Integer parameterId) throws CallError, InterruptedException {
-        return (Object)service.call("setCamerasParameterToDefault", name, parameterId).get();
+        return (Object)call("setCamerasParameterToDefault", name, parameterId).get();
     }
 
     /**
@@ -781,7 +781,7 @@ Warning: Release all kernel buffers before any action requesting a modification 
 Warning, image pointer is valid only for C++ dynamic library.
     */
     public Object getDirectRawImagesLocal(String name) throws CallError, InterruptedException {
-        return (Object)service.call("getDirectRawImagesLocal", name).get();
+        return (Object)call("getDirectRawImagesLocal", name).get();
     }
 
     /**
@@ -805,7 +805,7 @@ Warning, image pointer is valid only for C++ dynamic library.
 
     */
     public Object getDirectRawImagesRemote(String name) throws CallError, InterruptedException {
-        return (Object)service.call("getDirectRawImagesRemote", name).get();
+        return (Object)call("getDirectRawImagesRemote", name).get();
     }
 
     /**
@@ -816,7 +816,7 @@ Warning, image pointer is valid only for C++ dynamic library.
     * @return true if success
     */
     public Object releaseDirectRawImages(String name) throws CallError, InterruptedException {
-        return (Object)service.call("releaseDirectRawImages", name).get();
+        return (Object)call("releaseDirectRawImages", name).get();
     }
 
     /**
@@ -828,7 +828,7 @@ When image is not necessary anymore, a call to releaseImage() is requested.
     * @return Array of pointer of the locked image buffer, NULL if error.Warning, image pointer is valid only for C++ dynamic library.
     */
     public Object getImagesLocal(String name) throws CallError, InterruptedException {
-        return (Object)service.call("getImagesLocal", name).get();
+        return (Object)call("getImagesLocal", name).get();
     }
 
     /**
@@ -852,7 +852,7 @@ When image is not necessary anymore, a call to releaseImage() is requested.
 
     */
     public Object getImagesRemote(String name) throws CallError, InterruptedException {
-        return (Object)service.call("getImagesRemote", name).get();
+        return (Object)call("getImagesRemote", name).get();
     }
 
     /**
@@ -863,7 +863,7 @@ If G.V.M. had no locked image buffer, does nothing.
     * @return true if success
     */
     public Object releaseImages(String name) throws CallError, InterruptedException {
-        return (Object)service.call("releaseImages", name).get();
+        return (Object)call("releaseImages", name).get();
     }
 
     /**
@@ -877,7 +877,7 @@ Actualy it take picture each time the vision module call getDirectRawImageRemote
     * @return true if success
     */
     public Boolean recordVideo(String id, String path, Integer totalNumber, Integer period) throws CallError, InterruptedException {
-        return (Boolean)service.call("recordVideo", id, path, totalNumber, period).get();
+        return (Boolean)call("recordVideo", id, path, totalNumber, period).get();
     }
 
     /**
@@ -887,7 +887,7 @@ Actualy it take picture each time the vision module call getDirectRawImageRemote
     * @return true if success
     */
     public Boolean stopVideo(String id) throws CallError, InterruptedException {
-        return (Boolean)service.call("stopVideo", id).get();
+        return (Boolean)call("stopVideo", id).get();
     }
 
     /**
@@ -895,7 +895,7 @@ Actualy it take picture each time the vision module call getDirectRawImageRemote
     * 
     */
     public List<Float> getAngularPositionFromImagePosition(Integer param1, List<Float> param2) throws CallError, InterruptedException {
-        return (List<Float>)service.call("getAngularPositionFromImagePosition", param1, param2).get();
+        return (List<Float>)call("getAngularPositionFromImagePosition", param1, param2).get();
     }
 
     /**
@@ -903,7 +903,7 @@ Actualy it take picture each time the vision module call getDirectRawImageRemote
     * 
     */
     public List<Float> getImagePositionFromAngularPosition(Integer param1, List<Float> param2) throws CallError, InterruptedException {
-        return (List<Float>)service.call("getImagePositionFromAngularPosition", param1, param2).get();
+        return (List<Float>)call("getImagePositionFromAngularPosition", param1, param2).get();
     }
 
     /**
@@ -911,7 +911,7 @@ Actualy it take picture each time the vision module call getDirectRawImageRemote
     * 
     */
     public List<Float> getAngularSizeFromImageSize(Integer param1, List<Float> param2) throws CallError, InterruptedException {
-        return (List<Float>)service.call("getAngularSizeFromImageSize", param1, param2).get();
+        return (List<Float>)call("getAngularSizeFromImageSize", param1, param2).get();
     }
 
     /**
@@ -919,7 +919,7 @@ Actualy it take picture each time the vision module call getDirectRawImageRemote
     * 
     */
     public List<Float> getImageSizeFromAngularSize(Integer param1, List<Float> param2) throws CallError, InterruptedException {
-        return (List<Float>)service.call("getImageSizeFromAngularSize", param1, param2).get();
+        return (List<Float>)call("getImageSizeFromAngularSize", param1, param2).get();
     }
 
     /**
@@ -927,7 +927,7 @@ Actualy it take picture each time the vision module call getDirectRawImageRemote
     * 
     */
     public List<Float> getImageInfoFromAngularInfo(Integer param1, List<Float> param2) throws CallError, InterruptedException {
-        return (List<Float>)service.call("getImageInfoFromAngularInfo", param1, param2).get();
+        return (List<Float>)call("getImageInfoFromAngularInfo", param1, param2).get();
     }
 
     /**
@@ -935,7 +935,7 @@ Actualy it take picture each time the vision module call getDirectRawImageRemote
     * 
     */
     public List<Float> getImageInfoFromAngularInfoWithResolution(Integer param1, List<Float> param2, Integer param3) throws CallError, InterruptedException {
-        return (List<Float>)service.call("getImageInfoFromAngularInfoWithResolution", param1, param2, param3).get();
+        return (List<Float>)call("getImageInfoFromAngularInfoWithResolution", param1, param2, param3).get();
     }
 
     /**
@@ -948,7 +948,7 @@ Actualy it take picture each time the vision module call getDirectRawImageRemote
     * @return true if the put succeeded
     */
     public Boolean putImage(Integer cameraIndex, Integer width, Integer height, Object imageBuffer) throws CallError, InterruptedException {
-        return (Boolean)service.call("putImage", cameraIndex, width, height, imageBuffer).get();
+        return (Boolean)call("putImage", cameraIndex, width, height, imageBuffer).get();
     }
 
     /**
@@ -958,7 +958,7 @@ Actualy it take picture each time the vision module call getDirectRawImageRemote
     * @return ALValue of expected parameters, [int resolution, int framerate]
     */
     public Object getExpectedImageParameters(Integer cameraIndex) throws CallError, InterruptedException {
-        return (Object)service.call("getExpectedImageParameters", cameraIndex).get();
+        return (Object)call("getExpectedImageParameters", cameraIndex).get();
     }
 
     /**
@@ -970,9 +970,9 @@ Actualy it take picture each time the vision module call getDirectRawImageRemote
     */
     public void onClientDisconnected(String eventName, Object eventContents, String message) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("onClientDisconnected", eventName, eventContents, message);
+            call("onClientDisconnected", eventName, eventContents, message);
         else
-            service.call("onClientDisconnected", eventName, eventContents, message).get();
+            call("onClientDisconnected", eventName, eventContents, message).get();
     }
 
     /**
@@ -986,7 +986,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * @return Name under which the G.V.M. is known from ALVideoDevice, 0 if failed.
     */
     public String subscribe(String gvmName, Integer resolution, Integer colorSpace, Integer fps) throws CallError, InterruptedException {
-        return (String)service.call("subscribe", gvmName, resolution, colorSpace, fps).get();
+        return (String)call("subscribe", gvmName, resolution, colorSpace, fps).get();
     }
 
     /**
@@ -996,9 +996,9 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     */
     public void unsubscribeAllInstances(String id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("unsubscribeAllInstances", id);
+            call("unsubscribeAllInstances", id);
         else
-            service.call("unsubscribeAllInstances", id).get();
+            call("unsubscribeAllInstances", id).get();
     }
 
     /**
@@ -1006,7 +1006,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * 
     */
     public Integer getVIMResolution() throws CallError, InterruptedException {
-        return (Integer)service.call("getVIMResolution").get();
+        return (Integer)call("getVIMResolution").get();
     }
 
     /**
@@ -1014,7 +1014,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * 
     */
     public Integer getVIMColorSpace() throws CallError, InterruptedException {
-        return (Integer)service.call("getVIMColorSpace").get();
+        return (Integer)call("getVIMColorSpace").get();
     }
 
     /**
@@ -1022,7 +1022,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * 
     */
     public Integer getVIMFrameRate() throws CallError, InterruptedException {
-        return (Integer)service.call("getVIMFrameRate").get();
+        return (Integer)call("getVIMFrameRate").get();
     }
 
     /**
@@ -1030,7 +1030,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * 
     */
     public Integer getGVMResolution(String param1) throws CallError, InterruptedException {
-        return (Integer)service.call("getGVMResolution", param1).get();
+        return (Integer)call("getGVMResolution", param1).get();
     }
 
     /**
@@ -1038,7 +1038,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * 
     */
     public Integer getGVMColorSpace(String param1) throws CallError, InterruptedException {
-        return (Integer)service.call("getGVMColorSpace", param1).get();
+        return (Integer)call("getGVMColorSpace", param1).get();
     }
 
     /**
@@ -1046,7 +1046,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * 
     */
     public Integer getGVMFrameRate(String param1) throws CallError, InterruptedException {
-        return (Integer)service.call("getGVMFrameRate", param1).get();
+        return (Integer)call("getGVMFrameRate", param1).get();
     }
 
     /**
@@ -1054,7 +1054,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * 
     */
     public Integer getCameraModelID() throws CallError, InterruptedException {
-        return (Integer)service.call("getCameraModelID").get();
+        return (Integer)call("getCameraModelID").get();
     }
 
     /**
@@ -1065,9 +1065,9 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     */
     public void setParam(Integer pParam, Integer pNewValue) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setParam", pParam, pNewValue);
+            call("setParam", pParam, pNewValue);
         else
-            service.call("setParam", pParam, pNewValue).get();
+            call("setParam", pParam, pNewValue).get();
     }
 
     /**
@@ -1079,9 +1079,9 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     */
     public void setParam(Integer pParam, Integer pNewValue, Integer pCameraIndex) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setParam", pParam, pNewValue, pCameraIndex);
+            call("setParam", pParam, pNewValue, pCameraIndex);
         else
-            service.call("setParam", pParam, pNewValue, pCameraIndex).get();
+            call("setParam", pParam, pNewValue, pCameraIndex).get();
     }
 
     /**
@@ -1090,7 +1090,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * @param pParam  Camera parameter requested.
     */
     public Integer getParam(Integer pParam) throws CallError, InterruptedException {
-        return (Integer)service.call("getParam", pParam).get();
+        return (Integer)call("getParam", pParam).get();
     }
 
     /**
@@ -1100,7 +1100,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * @param pCameraIndex  Camera requested.
     */
     public Integer getParam(Integer pParam, Integer pCameraIndex) throws CallError, InterruptedException {
-        return (Integer)service.call("getParam", pParam, pCameraIndex).get();
+        return (Integer)call("getParam", pParam, pCameraIndex).get();
     }
 
     /**
@@ -1109,9 +1109,9 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     */
     public void setParamDefault(Integer param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setParamDefault", param1);
+            call("setParamDefault", param1);
         else
-            service.call("setParamDefault", param1).get();
+            call("setParamDefault", param1).get();
     }
 
     /**
@@ -1119,7 +1119,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * 
     */
     public List<Float> getAngPosFromImgPos(List<Float> param1) throws CallError, InterruptedException {
-        return (List<Float>)service.call("getAngPosFromImgPos", param1).get();
+        return (List<Float>)call("getAngPosFromImgPos", param1).get();
     }
 
     /**
@@ -1127,7 +1127,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * 
     */
     public List<Float> getImgPosFromAngPos(List<Float> param1) throws CallError, InterruptedException {
-        return (List<Float>)service.call("getImgPosFromAngPos", param1).get();
+        return (List<Float>)call("getImgPosFromAngPos", param1).get();
     }
 
     /**
@@ -1135,7 +1135,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * 
     */
     public List<Float> getAngSizeFromImgSize(List<Float> param1) throws CallError, InterruptedException {
-        return (List<Float>)service.call("getAngSizeFromImgSize", param1).get();
+        return (List<Float>)call("getAngSizeFromImgSize", param1).get();
     }
 
     /**
@@ -1143,7 +1143,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * 
     */
     public List<Float> getImgSizeFromAngSize(List<Float> param1) throws CallError, InterruptedException {
-        return (List<Float>)service.call("getImgSizeFromAngSize", param1).get();
+        return (List<Float>)call("getImgSizeFromAngSize", param1).get();
     }
 
     /**
@@ -1151,7 +1151,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * 
     */
     public List<Float> getImgInfoFromAngInfo(List<Float> param1) throws CallError, InterruptedException {
-        return (List<Float>)service.call("getImgInfoFromAngInfo", param1).get();
+        return (List<Float>)call("getImgInfoFromAngInfo", param1).get();
     }
 
     /**
@@ -1159,7 +1159,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * 
     */
     public List<Float> getImgInfoFromAngInfoWithRes(List<Float> param1, Integer param2) throws CallError, InterruptedException {
-        return (List<Float>)service.call("getImgInfoFromAngInfoWithRes", param1, param2).get();
+        return (List<Float>)call("getImgInfoFromAngInfoWithRes", param1, param2).get();
     }
 
     /**
@@ -1167,7 +1167,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * 
     */
     public Object resolutionToSizes(Integer param1) throws CallError, InterruptedException {
-        return (Object)service.call("resolutionToSizes", param1).get();
+        return (Object)call("resolutionToSizes", param1).get();
     }
 
     /**
@@ -1175,7 +1175,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * 
     */
     public Integer sizesToResolution(Integer param1, Integer param2) throws CallError, InterruptedException {
-        return (Integer)service.call("sizesToResolution", param1, param2).get();
+        return (Integer)call("sizesToResolution", param1, param2).get();
     }
 
     /**
@@ -1184,7 +1184,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * @return ALValue of expected parameters, [int resolution, int framerate]
     */
     public Object getExpectedImageParameters() throws CallError, InterruptedException {
-        return (Object)service.call("getExpectedImageParameters").get();
+        return (Object)call("getExpectedImageParameters").get();
     }
 
     /**
@@ -1195,7 +1195,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * @return true if setSize worked
     */
     public Boolean setSimCamInputSize(Integer width, Integer height) throws CallError, InterruptedException {
-        return (Boolean)service.call("setSimCamInputSize", width, height).get();
+        return (Boolean)call("setSimCamInputSize", width, height).get();
     }
 
     /**
@@ -1205,7 +1205,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * @return true if the put succeeded
     */
     public Boolean putImage(Object imageBuffer) throws CallError, InterruptedException {
-        return (Boolean)service.call("putImage", imageBuffer).get();
+        return (Boolean)call("putImage", imageBuffer).get();
     }
 
     /**
@@ -1215,7 +1215,7 @@ Note that the first module subscribing to ALVideoDevice will launch it automatic
     * @return true if success
     */
     public Boolean startFrameGrabber() throws CallError, InterruptedException {
-        return (Boolean)service.call("startFrameGrabber").get();
+        return (Boolean)call("startFrameGrabber").get();
     }
 
     /**
@@ -1225,7 +1225,7 @@ Note that the last module unsubscribing to ALVideoDevice will launch it automati
     * @return true if success
     */
     public Boolean stopFrameGrabber() throws CallError, InterruptedException {
-        return (Boolean)service.call("stopFrameGrabber").get();
+        return (Boolean)call("stopFrameGrabber").get();
     }
 
     /**
@@ -1234,7 +1234,7 @@ Note that the last module unsubscribing to ALVideoDevice will launch it automati
     * @return true if off
     */
     public Integer isFrameGrabberOff() throws CallError, InterruptedException {
-        return (Integer)service.call("isFrameGrabberOff").get();
+        return (Integer)call("isFrameGrabberOff").get();
     }
 
     /**
@@ -1243,7 +1243,7 @@ Note that the last module unsubscribing to ALVideoDevice will launch it automati
     * @param cameraIndex  Camera requested.
     */
     public Float getHorizontalAperture(Integer cameraIndex) throws CallError, InterruptedException {
-        return (Float)service.call("getHorizontalAperture", cameraIndex).get();
+        return (Float)call("getHorizontalAperture", cameraIndex).get();
     }
 
     /**
@@ -1252,7 +1252,7 @@ Note that the last module unsubscribing to ALVideoDevice will launch it automati
     * @param cameraIndex  Camera requested.
     */
     public Float getVerticalAperture(Integer cameraIndex) throws CallError, InterruptedException {
-        return (Float)service.call("getVerticalAperture", cameraIndex).get();
+        return (Float)call("getVerticalAperture", cameraIndex).get();
     }
 
 }

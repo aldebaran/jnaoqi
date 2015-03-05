@@ -30,7 +30,7 @@ public class ALMotion extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -39,9 +39,9 @@ public class ALMotion extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -49,7 +49,7 @@ public class ALMotion extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -58,9 +58,9 @@ public class ALMotion extends ALProxy {
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -69,7 +69,7 @@ public class ALMotion extends ALProxy {
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -78,7 +78,7 @@ public class ALMotion extends ALProxy {
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -87,7 +87,7 @@ public class ALMotion extends ALProxy {
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -97,7 +97,7 @@ public class ALMotion extends ALProxy {
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -106,7 +106,7 @@ public class ALMotion extends ALProxy {
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -117,7 +117,7 @@ public class ALMotion extends ALProxy {
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -127,7 +127,7 @@ public class ALMotion extends ALProxy {
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -137,9 +137,9 @@ public class ALMotion extends ALProxy {
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -148,7 +148,7 @@ public class ALMotion extends ALProxy {
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -158,7 +158,7 @@ public class ALMotion extends ALProxy {
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -167,9 +167,9 @@ public class ALMotion extends ALProxy {
     */
     public void wakeUp() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("wakeUp");
+            call("wakeUp");
         else
-            service.call("wakeUp").get();
+            call("wakeUp").get();
     }
 
     /**
@@ -178,9 +178,9 @@ public class ALMotion extends ALProxy {
     */
     public void rest() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("rest");
+            call("rest");
         else
-            service.call("rest").get();
+            call("rest").get();
     }
 
     /**
@@ -189,9 +189,9 @@ public class ALMotion extends ALProxy {
     */
     public void rest(String param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("rest", param1);
+            call("rest", param1);
         else
-            service.call("rest", param1).get();
+            call("rest", param1).get();
     }
 
     /**
@@ -200,7 +200,7 @@ public class ALMotion extends ALProxy {
     * @return True if the robot is already wakeUp.
     */
     public Boolean robotIsWakeUp() throws CallError, InterruptedException {
-        return (Boolean)service.call("robotIsWakeUp").get();
+        return (Boolean)call("robotIsWakeUp").get();
     }
 
     /**
@@ -212,9 +212,9 @@ public class ALMotion extends ALProxy {
     */
     public void stiffnessInterpolation(Object names, Object stiffnessLists, Object timeLists) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stiffnessInterpolation", names, stiffnessLists, timeLists);
+            call("stiffnessInterpolation", names, stiffnessLists, timeLists);
         else
-            service.call("stiffnessInterpolation", names, stiffnessLists, timeLists).get();
+            call("stiffnessInterpolation", names, stiffnessLists, timeLists).get();
     }
 
     /**
@@ -225,9 +225,9 @@ public class ALMotion extends ALProxy {
     */
     public void setStiffnesses(Object names, Object stiffnesses) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setStiffnesses", names, stiffnesses);
+            call("setStiffnesses", names, stiffnesses);
         else
-            service.call("setStiffnesses", names, stiffnesses).get();
+            call("setStiffnesses", names, stiffnesses).get();
     }
 
     /**
@@ -237,7 +237,7 @@ public class ALMotion extends ALProxy {
     * @return One or more stiffnesses. 1.0 indicates maximum stiffness. 0.0 indicated minimum stiffness
     */
     public List<Float> getStiffnesses(Object jointName) throws CallError, InterruptedException {
-        return (List<Float>)service.call("getStiffnesses", jointName).get();
+        return (List<Float>)call("getStiffnesses", jointName).get();
     }
 
     /**
@@ -250,9 +250,9 @@ public class ALMotion extends ALProxy {
     */
     public void angleInterpolation(Object names, Object angleLists, Object timeLists, Boolean isAbsolute) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("angleInterpolation", names, angleLists, timeLists, isAbsolute);
+            call("angleInterpolation", names, angleLists, timeLists, isAbsolute);
         else
-            service.call("angleInterpolation", names, angleLists, timeLists, isAbsolute).get();
+            call("angleInterpolation", names, angleLists, timeLists, isAbsolute).get();
     }
 
     /**
@@ -264,9 +264,9 @@ public class ALMotion extends ALProxy {
     */
     public void angleInterpolationWithSpeed(Object names, Object targetAngles, Float maxSpeedFraction) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("angleInterpolationWithSpeed", names, targetAngles, maxSpeedFraction);
+            call("angleInterpolationWithSpeed", names, targetAngles, maxSpeedFraction);
         else
-            service.call("angleInterpolationWithSpeed", names, targetAngles, maxSpeedFraction).get();
+            call("angleInterpolationWithSpeed", names, targetAngles, maxSpeedFraction).get();
     }
 
     /**
@@ -278,9 +278,9 @@ public class ALMotion extends ALProxy {
     */
     public void angleInterpolationBezier(List<String> jointNames, Object times, Object controlPoints) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("angleInterpolationBezier", jointNames, times, controlPoints);
+            call("angleInterpolationBezier", jointNames, times, controlPoints);
         else
-            service.call("angleInterpolationBezier", jointNames, times, controlPoints).get();
+            call("angleInterpolationBezier", jointNames, times, controlPoints).get();
     }
 
     /**
@@ -292,9 +292,9 @@ public class ALMotion extends ALProxy {
     */
     public void setAngles(Object names, Object angles, Float fractionMaxSpeed) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setAngles", names, angles, fractionMaxSpeed);
+            call("setAngles", names, angles, fractionMaxSpeed);
         else
-            service.call("setAngles", names, angles, fractionMaxSpeed).get();
+            call("setAngles", names, angles, fractionMaxSpeed).get();
     }
 
     /**
@@ -306,9 +306,9 @@ public class ALMotion extends ALProxy {
     */
     public void changeAngles(Object names, Object changes, Float fractionMaxSpeed) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("changeAngles", names, changes, fractionMaxSpeed);
+            call("changeAngles", names, changes, fractionMaxSpeed);
         else
-            service.call("changeAngles", names, changes, fractionMaxSpeed).get();
+            call("changeAngles", names, changes, fractionMaxSpeed).get();
     }
 
     /**
@@ -319,7 +319,7 @@ public class ALMotion extends ALProxy {
     * @return Joint angles in radians.
     */
     public List<Float> getAngles(Object names, Boolean useSensors) throws CallError, InterruptedException {
-        return (List<Float>)service.call("getAngles", names, useSensors).get();
+        return (List<Float>)call("getAngles", names, useSensors).get();
     }
 
     /**
@@ -329,9 +329,9 @@ public class ALMotion extends ALProxy {
     */
     public void openHand(String handName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("openHand", handName);
+            call("openHand", handName);
         else
-            service.call("openHand", handName).get();
+            call("openHand", handName).get();
     }
 
     /**
@@ -341,9 +341,9 @@ public class ALMotion extends ALProxy {
     */
     public void closeHand(String handName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("closeHand", handName);
+            call("closeHand", handName);
         else
-            service.call("closeHand", handName).get();
+            call("closeHand", handName).get();
     }
 
     /**
@@ -355,9 +355,9 @@ public class ALMotion extends ALProxy {
     */
     public void move(Float x, Float y, Float theta) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("move", x, y, theta);
+            call("move", x, y, theta);
         else
-            service.call("move", x, y, theta).get();
+            call("move", x, y, theta).get();
     }
 
     /**
@@ -370,9 +370,9 @@ public class ALMotion extends ALProxy {
     */
     public void move(Float x, Float y, Float theta, Object moveConfig) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("move", x, y, theta, moveConfig);
+            call("move", x, y, theta, moveConfig);
         else
-            service.call("move", x, y, theta, moveConfig).get();
+            call("move", x, y, theta, moveConfig).get();
     }
 
     /**
@@ -384,9 +384,9 @@ public class ALMotion extends ALProxy {
     */
     public void moveToward(Float x, Float y, Float theta) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("moveToward", x, y, theta);
+            call("moveToward", x, y, theta);
         else
-            service.call("moveToward", x, y, theta).get();
+            call("moveToward", x, y, theta).get();
     }
 
     /**
@@ -399,9 +399,9 @@ public class ALMotion extends ALProxy {
     */
     public void moveToward(Float x, Float y, Float theta, Object moveConfig) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("moveToward", x, y, theta, moveConfig);
+            call("moveToward", x, y, theta, moveConfig);
         else
-            service.call("moveToward", x, y, theta, moveConfig).get();
+            call("moveToward", x, y, theta, moveConfig).get();
     }
 
     /**
@@ -414,9 +414,9 @@ public class ALMotion extends ALProxy {
     */
     public void setWalkTargetVelocity(Float x, Float y, Float theta, Float frequency) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setWalkTargetVelocity", x, y, theta, frequency);
+            call("setWalkTargetVelocity", x, y, theta, frequency);
         else
-            service.call("setWalkTargetVelocity", x, y, theta, frequency).get();
+            call("setWalkTargetVelocity", x, y, theta, frequency).get();
     }
 
     /**
@@ -430,9 +430,9 @@ public class ALMotion extends ALProxy {
     */
     public void setWalkTargetVelocity(Float x, Float y, Float theta, Float frequency, Object feetGaitConfig) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setWalkTargetVelocity", x, y, theta, frequency, feetGaitConfig);
+            call("setWalkTargetVelocity", x, y, theta, frequency, feetGaitConfig);
         else
-            service.call("setWalkTargetVelocity", x, y, theta, frequency, feetGaitConfig).get();
+            call("setWalkTargetVelocity", x, y, theta, frequency, feetGaitConfig).get();
     }
 
     /**
@@ -447,9 +447,9 @@ public class ALMotion extends ALProxy {
     */
     public void setWalkTargetVelocity(Float x, Float y, Float theta, Float frequency, Object leftFootMoveConfig, Object rightFootMoveConfig) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setWalkTargetVelocity", x, y, theta, frequency, leftFootMoveConfig, rightFootMoveConfig);
+            call("setWalkTargetVelocity", x, y, theta, frequency, leftFootMoveConfig, rightFootMoveConfig);
         else
-            service.call("setWalkTargetVelocity", x, y, theta, frequency, leftFootMoveConfig, rightFootMoveConfig).get();
+            call("setWalkTargetVelocity", x, y, theta, frequency, leftFootMoveConfig, rightFootMoveConfig).get();
     }
 
     /**
@@ -461,9 +461,9 @@ public class ALMotion extends ALProxy {
     */
     public void moveTo(Float x, Float y, Float theta) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("moveTo", x, y, theta);
+            call("moveTo", x, y, theta);
         else
-            service.call("moveTo", x, y, theta).get();
+            call("moveTo", x, y, theta).get();
     }
 
     /**
@@ -476,9 +476,9 @@ public class ALMotion extends ALProxy {
     */
     public void moveTo(Float x, Float y, Float theta, Float time) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("moveTo", x, y, theta, time);
+            call("moveTo", x, y, theta, time);
         else
-            service.call("moveTo", x, y, theta, time).get();
+            call("moveTo", x, y, theta, time).get();
     }
 
     /**
@@ -491,9 +491,9 @@ public class ALMotion extends ALProxy {
     */
     public void moveTo(Float x, Float y, Float theta, Object moveConfig) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("moveTo", x, y, theta, moveConfig);
+            call("moveTo", x, y, theta, moveConfig);
         else
-            service.call("moveTo", x, y, theta, moveConfig).get();
+            call("moveTo", x, y, theta, moveConfig).get();
     }
 
     /**
@@ -507,9 +507,9 @@ public class ALMotion extends ALProxy {
     */
     public void moveTo(Float x, Float y, Float theta, Float time, Object moveConfig) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("moveTo", x, y, theta, time, moveConfig);
+            call("moveTo", x, y, theta, time, moveConfig);
         else
-            service.call("moveTo", x, y, theta, time, moveConfig).get();
+            call("moveTo", x, y, theta, time, moveConfig).get();
     }
 
     /**
@@ -520,9 +520,9 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     */
     public void moveTo(Object controlPoint) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("moveTo", controlPoint);
+            call("moveTo", controlPoint);
         else
-            service.call("moveTo", controlPoint).get();
+            call("moveTo", controlPoint).get();
     }
 
     /**
@@ -534,9 +534,9 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     */
     public void moveTo(Object controlPoint, Object moveConfig) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("moveTo", controlPoint, moveConfig);
+            call("moveTo", controlPoint, moveConfig);
         else
-            service.call("moveTo", controlPoint, moveConfig).get();
+            call("moveTo", controlPoint, moveConfig).get();
     }
 
     /**
@@ -548,9 +548,9 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     */
     public void walkTo(Float x, Float y, Float theta) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("walkTo", x, y, theta);
+            call("walkTo", x, y, theta);
         else
-            service.call("walkTo", x, y, theta).get();
+            call("walkTo", x, y, theta).get();
     }
 
     /**
@@ -563,9 +563,9 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     */
     public void walkTo(Float x, Float y, Float theta, Object feetGaitConfig) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("walkTo", x, y, theta, feetGaitConfig);
+            call("walkTo", x, y, theta, feetGaitConfig);
         else
-            service.call("walkTo", x, y, theta, feetGaitConfig).get();
+            call("walkTo", x, y, theta, feetGaitConfig).get();
     }
 
     /**
@@ -575,9 +575,9 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     */
     public void walkTo(Object controlPoint) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("walkTo", controlPoint);
+            call("walkTo", controlPoint);
         else
-            service.call("walkTo", controlPoint).get();
+            call("walkTo", controlPoint).get();
     }
 
     /**
@@ -588,9 +588,9 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     */
     public void walkTo(Object controlPoint, Object feetGaitConfig) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("walkTo", controlPoint, feetGaitConfig);
+            call("walkTo", controlPoint, feetGaitConfig);
         else
-            service.call("walkTo", controlPoint, feetGaitConfig).get();
+            call("walkTo", controlPoint, feetGaitConfig).get();
     }
 
     /**
@@ -603,9 +603,9 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     */
     public void setFootSteps(List<String> legName, Object footSteps, List<Float> timeList, Boolean clearExisting) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setFootSteps", legName, footSteps, timeList, clearExisting);
+            call("setFootSteps", legName, footSteps, timeList, clearExisting);
         else
-            service.call("setFootSteps", legName, footSteps, timeList, clearExisting).get();
+            call("setFootSteps", legName, footSteps, timeList, clearExisting).get();
     }
 
     /**
@@ -618,9 +618,9 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     */
     public void setFootStepsWithSpeed(List<String> legName, Object footSteps, List<Float> fractionMaxSpeed, Boolean clearExisting) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setFootStepsWithSpeed", legName, footSteps, fractionMaxSpeed, clearExisting);
+            call("setFootStepsWithSpeed", legName, footSteps, fractionMaxSpeed, clearExisting);
         else
-            service.call("setFootStepsWithSpeed", legName, footSteps, fractionMaxSpeed, clearExisting).get();
+            call("setFootStepsWithSpeed", legName, footSteps, fractionMaxSpeed, clearExisting).get();
     }
 
     /**
@@ -629,7 +629,7 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     * @return Give two list of foot steps. The first one give the unchangeable foot step. The second list give the changeable foot steps. Il you use setFootSteps or setFootStepsWithSpeed with clearExisting parmater equal true, walk engine execute unchangeable foot step and remove the other.
     */
     public Object getFootSteps() throws CallError, InterruptedException {
-        return (Object)service.call("getFootSteps").get();
+        return (Object)call("getFootSteps").get();
     }
 
     /**
@@ -638,9 +638,9 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     */
     public void walkInit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("walkInit");
+            call("walkInit");
         else
-            service.call("walkInit").get();
+            call("walkInit").get();
     }
 
     /**
@@ -649,9 +649,9 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     */
     public void moveInit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("moveInit");
+            call("moveInit");
         else
-            service.call("moveInit").get();
+            call("moveInit").get();
     }
 
     /**
@@ -660,9 +660,9 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     */
     public void waitUntilWalkIsFinished() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("waitUntilWalkIsFinished");
+            call("waitUntilWalkIsFinished");
         else
-            service.call("waitUntilWalkIsFinished").get();
+            call("waitUntilWalkIsFinished").get();
     }
 
     /**
@@ -671,9 +671,9 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     */
     public void waitUntilMoveIsFinished() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("waitUntilMoveIsFinished");
+            call("waitUntilMoveIsFinished");
         else
-            service.call("waitUntilMoveIsFinished").get();
+            call("waitUntilMoveIsFinished").get();
     }
 
     /**
@@ -681,7 +681,7 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     * 
     */
     public Boolean walkIsActive() throws CallError, InterruptedException {
-        return (Boolean)service.call("walkIsActive").get();
+        return (Boolean)call("walkIsActive").get();
     }
 
     /**
@@ -690,7 +690,7 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     * @return True if move is active
     */
     public Boolean moveIsActive() throws CallError, InterruptedException {
-        return (Boolean)service.call("moveIsActive").get();
+        return (Boolean)call("moveIsActive").get();
     }
 
     /**
@@ -699,9 +699,9 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     */
     public void stopWalk() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stopWalk");
+            call("stopWalk");
         else
-            service.call("stopWalk").get();
+            call("stopWalk").get();
     }
 
     /**
@@ -711,9 +711,9 @@ This is a blocking call.
     */
     public void stopMove() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stopMove");
+            call("stopMove");
         else
-            service.call("stopMove").get();
+            call("stopMove").get();
     }
 
     /**
@@ -731,7 +731,7 @@ Gets the foot Gait config ("MaxStepX", "MaxStepY", "MaxStepTheta",  "MaxStepFreq
 
     */
     public Object getFootGaitConfig(String config) throws CallError, InterruptedException {
-        return (Object)service.call("getFootGaitConfig", config).get();
+        return (Object)call("getFootGaitConfig", config).get();
     }
 
     /**
@@ -741,7 +741,7 @@ Gets the foot Gait config ("MaxStepX", "MaxStepY", "MaxStepTheta",  "MaxStepFreq
     * @return An ALvalue with the move config
     */
     public Object getMoveConfig(String config) throws CallError, InterruptedException {
-        return (Object)service.call("getMoveConfig", config).get();
+        return (Object)call("getMoveConfig", config).get();
     }
 
     /**
@@ -751,7 +751,7 @@ Gets the foot Gait config ("MaxStepX", "MaxStepY", "MaxStepTheta",  "MaxStepFreq
     * @return A vector containing the World Absolute Robot Position. (Absolute Position X, Absolute Position Y, Absolute Angle Z)
     */
     public List<Float> getRobotPosition(Boolean useSensors) throws CallError, InterruptedException {
-        return (List<Float>)service.call("getRobotPosition", useSensors).get();
+        return (List<Float>)call("getRobotPosition", useSensors).get();
     }
 
     /**
@@ -763,7 +763,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @return A vector containing the World Absolute next Robot position.(Absolute Position X, Absolute Position Y, Absolute Angle Z)
     */
     public List<Float> getNextRobotPosition() throws CallError, InterruptedException {
-        return (List<Float>)service.call("getNextRobotPosition").get();
+        return (List<Float>)call("getNextRobotPosition").get();
     }
 
     /**
@@ -772,7 +772,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @return A vector containing the World Absolute Robot Velocity. (Absolute Velocity Translation X [m.s-1], Absolute Velocity Translation Y[m.s-1], Absolute Velocity Rotation WZ [rd.s-1])
     */
     public List<Float> getRobotVelocity() throws CallError, InterruptedException {
-        return (List<Float>)service.call("getRobotVelocity").get();
+        return (List<Float>)call("getRobotVelocity").get();
     }
 
     /**
@@ -781,7 +781,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @return True Arm Motions are controlled by the Walk Task.
     */
     public Object getWalkArmsEnabled() throws CallError, InterruptedException {
-        return (Object)service.call("getWalkArmsEnabled").get();
+        return (Object)call("getWalkArmsEnabled").get();
     }
 
     /**
@@ -792,9 +792,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void setWalkArmsEnabled(Boolean leftArmEnabled, Boolean rightArmEnabled) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setWalkArmsEnabled", leftArmEnabled, rightArmEnabled);
+            call("setWalkArmsEnabled", leftArmEnabled, rightArmEnabled);
         else
-            service.call("setWalkArmsEnabled", leftArmEnabled, rightArmEnabled).get();
+            call("setWalkArmsEnabled", leftArmEnabled, rightArmEnabled).get();
     }
 
     /**
@@ -804,7 +804,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @return For LArm and RArm true if the corresponding arm is enabled. For Arms, true if both are enabled. False otherwise.
     */
     public Boolean getMoveArmsEnabled(String chainName) throws CallError, InterruptedException {
-        return (Boolean)service.call("getMoveArmsEnabled", chainName).get();
+        return (Boolean)call("getMoveArmsEnabled", chainName).get();
     }
 
     /**
@@ -815,9 +815,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void setMoveArmsEnabled(Boolean leftArmEnabled, Boolean rightArmEnabled) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setMoveArmsEnabled", leftArmEnabled, rightArmEnabled);
+            call("setMoveArmsEnabled", leftArmEnabled, rightArmEnabled);
         else
-            service.call("setMoveArmsEnabled", leftArmEnabled, rightArmEnabled).get();
+            call("setMoveArmsEnabled", leftArmEnabled, rightArmEnabled).get();
     }
 
     /**
@@ -832,9 +832,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void positionInterpolation(String chainName, Integer space, Object path, Integer axisMask, Object durations, Boolean isAbsolute) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("positionInterpolation", chainName, space, path, axisMask, durations, isAbsolute);
+            call("positionInterpolation", chainName, space, path, axisMask, durations, isAbsolute);
         else
-            service.call("positionInterpolation", chainName, space, path, axisMask, durations, isAbsolute).get();
+            call("positionInterpolation", chainName, space, path, axisMask, durations, isAbsolute).get();
     }
 
     /**
@@ -849,9 +849,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void positionInterpolations(List<String> effectorNames, Integer taskSpaceForAllPaths, Object paths, Object axisMasks, Object relativeTimes, Boolean isAbsolute) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("positionInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes, isAbsolute);
+            call("positionInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes, isAbsolute);
         else
-            service.call("positionInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes, isAbsolute).get();
+            call("positionInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes, isAbsolute).get();
     }
 
     /**
@@ -865,9 +865,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void positionInterpolations(Object effectorNames, Object taskSpaceForAllPaths, Object paths, Object axisMasks, Object relativeTimes) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("positionInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes);
+            call("positionInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes);
         else
-            service.call("positionInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes).get();
+            call("positionInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes).get();
     }
 
     /**
@@ -881,9 +881,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void setPosition(String chainName, Integer space, List<Float> position, Float fractionMaxSpeed, Integer axisMask) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setPosition", chainName, space, position, fractionMaxSpeed, axisMask);
+            call("setPosition", chainName, space, position, fractionMaxSpeed, axisMask);
         else
-            service.call("setPosition", chainName, space, position, fractionMaxSpeed, axisMask).get();
+            call("setPosition", chainName, space, position, fractionMaxSpeed, axisMask).get();
     }
 
     /**
@@ -897,9 +897,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void setPositions(Object names, Object spaces, Object positions, Float fractionMaxSpeed, Object axisMask) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setPositions", names, spaces, positions, fractionMaxSpeed, axisMask);
+            call("setPositions", names, spaces, positions, fractionMaxSpeed, axisMask);
         else
-            service.call("setPositions", names, spaces, positions, fractionMaxSpeed, axisMask).get();
+            call("setPositions", names, spaces, positions, fractionMaxSpeed, axisMask).get();
     }
 
     /**
@@ -913,9 +913,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void changePosition(String effectorName, Integer space, List<Float> positionChange, Float fractionMaxSpeed, Integer axisMask) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("changePosition", effectorName, space, positionChange, fractionMaxSpeed, axisMask);
+            call("changePosition", effectorName, space, positionChange, fractionMaxSpeed, axisMask);
         else
-            service.call("changePosition", effectorName, space, positionChange, fractionMaxSpeed, axisMask).get();
+            call("changePosition", effectorName, space, positionChange, fractionMaxSpeed, axisMask).get();
     }
 
     /**
@@ -927,7 +927,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @return Vector containing the Position6D using meters and radians (x, y, z, wx, wy, wz)
     */
     public List<Float> getPosition(String name, Integer space, Boolean useSensorValues) throws CallError, InterruptedException {
-        return (List<Float>)service.call("getPosition", name, space, useSensorValues).get();
+        return (List<Float>)call("getPosition", name, space, useSensorValues).get();
     }
 
     /**
@@ -942,9 +942,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void transformInterpolation(String chainName, Integer space, Object path, Integer axisMask, Object duration, Boolean isAbsolute) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("transformInterpolation", chainName, space, path, axisMask, duration, isAbsolute);
+            call("transformInterpolation", chainName, space, path, axisMask, duration, isAbsolute);
         else
-            service.call("transformInterpolation", chainName, space, path, axisMask, duration, isAbsolute).get();
+            call("transformInterpolation", chainName, space, path, axisMask, duration, isAbsolute).get();
     }
 
     /**
@@ -959,9 +959,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void transformInterpolations(List<String> effectorNames, Integer taskSpaceForAllPaths, Object paths, Object axisMasks, Object relativeTimes, Boolean isAbsolute) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("transformInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes, isAbsolute);
+            call("transformInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes, isAbsolute);
         else
-            service.call("transformInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes, isAbsolute).get();
+            call("transformInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes, isAbsolute).get();
     }
 
     /**
@@ -975,9 +975,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void transformInterpolations(Object effectorNames, Object taskSpaceForAllPaths, Object paths, Object axisMasks, Object relativeTimes) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("transformInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes);
+            call("transformInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes);
         else
-            service.call("transformInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes).get();
+            call("transformInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes).get();
     }
 
     /**
@@ -991,9 +991,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void setTransform(String chainName, Integer space, List<Float> transform, Float fractionMaxSpeed, Integer axisMask) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setTransform", chainName, space, transform, fractionMaxSpeed, axisMask);
+            call("setTransform", chainName, space, transform, fractionMaxSpeed, axisMask);
         else
-            service.call("setTransform", chainName, space, transform, fractionMaxSpeed, axisMask).get();
+            call("setTransform", chainName, space, transform, fractionMaxSpeed, axisMask).get();
     }
 
     /**
@@ -1007,9 +1007,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void setTransforms(Object names, Object spaces, Object transforms, Float fractionMaxSpeed, Object axisMask) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setTransforms", names, spaces, transforms, fractionMaxSpeed, axisMask);
+            call("setTransforms", names, spaces, transforms, fractionMaxSpeed, axisMask);
         else
-            service.call("setTransforms", names, spaces, transforms, fractionMaxSpeed, axisMask).get();
+            call("setTransforms", names, spaces, transforms, fractionMaxSpeed, axisMask).get();
     }
 
     /**
@@ -1023,9 +1023,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void changeTransform(String chainName, Integer space, List<Float> transform, Float fractionMaxSpeed, Integer axisMask) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("changeTransform", chainName, space, transform, fractionMaxSpeed, axisMask);
+            call("changeTransform", chainName, space, transform, fractionMaxSpeed, axisMask);
         else
-            service.call("changeTransform", chainName, space, transform, fractionMaxSpeed, axisMask).get();
+            call("changeTransform", chainName, space, transform, fractionMaxSpeed, axisMask).get();
     }
 
     /**
@@ -1037,7 +1037,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @return Vector of 16 floats corresponding to the values of the matrix, line by line.
     */
     public List<Float> getTransform(String name, Integer space, Boolean useSensorValues) throws CallError, InterruptedException {
-        return (List<Float>)service.call("getTransform", name, space, useSensorValues).get();
+        return (List<Float>)call("getTransform", name, space, useSensorValues).get();
     }
 
     /**
@@ -1047,9 +1047,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void wbEnable(Boolean isEnabled) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("wbEnable", isEnabled);
+            call("wbEnable", isEnabled);
         else
-            service.call("wbEnable", isEnabled).get();
+            call("wbEnable", isEnabled).get();
     }
 
     /**
@@ -1060,9 +1060,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void wbFootState(String stateName, String supportLeg) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("wbFootState", stateName, supportLeg);
+            call("wbFootState", stateName, supportLeg);
         else
-            service.call("wbFootState", stateName, supportLeg).get();
+            call("wbFootState", stateName, supportLeg).get();
     }
 
     /**
@@ -1073,9 +1073,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void wbEnableBalanceConstraint(Boolean isEnable, String supportLeg) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("wbEnableBalanceConstraint", isEnable, supportLeg);
+            call("wbEnableBalanceConstraint", isEnable, supportLeg);
         else
-            service.call("wbEnableBalanceConstraint", isEnable, supportLeg).get();
+            call("wbEnableBalanceConstraint", isEnable, supportLeg).get();
     }
 
     /**
@@ -1086,9 +1086,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void wbGoToBalance(String supportLeg, Float duration) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("wbGoToBalance", supportLeg, duration);
+            call("wbGoToBalance", supportLeg, duration);
         else
-            service.call("wbGoToBalance", supportLeg, duration).get();
+            call("wbGoToBalance", supportLeg, duration).get();
     }
 
     /**
@@ -1099,9 +1099,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void wbEnableEffectorControl(String effectorName, Boolean isEnabled) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("wbEnableEffectorControl", effectorName, isEnabled);
+            call("wbEnableEffectorControl", effectorName, isEnabled);
         else
-            service.call("wbEnableEffectorControl", effectorName, isEnabled).get();
+            call("wbEnableEffectorControl", effectorName, isEnabled).get();
     }
 
     /**
@@ -1112,9 +1112,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void wbSetEffectorControl(String effectorName, Object targetCoordinate) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("wbSetEffectorControl", effectorName, targetCoordinate);
+            call("wbSetEffectorControl", effectorName, targetCoordinate);
         else
-            service.call("wbSetEffectorControl", effectorName, targetCoordinate).get();
+            call("wbSetEffectorControl", effectorName, targetCoordinate).get();
     }
 
     /**
@@ -1125,9 +1125,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void wbEnableEffectorOptimization(String effectorName, Boolean isActive) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("wbEnableEffectorOptimization", effectorName, isActive);
+            call("wbEnableEffectorOptimization", effectorName, isActive);
         else
-            service.call("wbEnableEffectorOptimization", effectorName, isActive).get();
+            call("wbEnableEffectorOptimization", effectorName, isActive).get();
     }
 
     /**
@@ -1138,7 +1138,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @return A bool which return always true.
     */
     public Boolean setCollisionProtectionEnabled(String pChainName, Boolean pEnable) throws CallError, InterruptedException {
-        return (Boolean)service.call("setCollisionProtectionEnabled", pChainName, pEnable).get();
+        return (Boolean)call("setCollisionProtectionEnabled", pChainName, pEnable).get();
     }
 
     /**
@@ -1148,7 +1148,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @return Return true is the collision protection of the given Arm is activated.
     */
     public Boolean getCollisionProtectionEnabled(String pChainName) throws CallError, InterruptedException {
-        return (Boolean)service.call("getCollisionProtectionEnabled", pChainName).get();
+        return (Boolean)call("getCollisionProtectionEnabled", pChainName).get();
     }
 
     /**
@@ -1159,9 +1159,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void setExternalCollisionProtectionEnabled(String pName, Boolean pEnable) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setExternalCollisionProtectionEnabled", pName, pEnable);
+            call("setExternalCollisionProtectionEnabled", pName, pEnable);
         else
-            service.call("setExternalCollisionProtectionEnabled", pName, pEnable).get();
+            call("setExternalCollisionProtectionEnabled", pName, pEnable).get();
     }
 
     /**
@@ -1172,7 +1172,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @return Vector containing the Position3D in meters (x, y, z)
     */
     public List<Float> getChainClosestObstaclePosition(String pName, Integer space) throws CallError, InterruptedException {
-        return (List<Float>)service.call("getChainClosestObstaclePosition", pName, space).get();
+        return (List<Float>)call("getChainClosestObstaclePosition", pName, space).get();
     }
 
     /**
@@ -1182,7 +1182,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @return Return true is the external collision protection of the given name is activated.
     */
     public Boolean getExternalCollisionProtectionEnabled(String pName) throws CallError, InterruptedException {
-        return (Boolean)service.call("getExternalCollisionProtectionEnabled", pName).get();
+        return (Boolean)call("getExternalCollisionProtectionEnabled", pName).get();
     }
 
     /**
@@ -1192,9 +1192,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void setOrthogonalSecurityDistance(Float securityDistance) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setOrthogonalSecurityDistance", securityDistance);
+            call("setOrthogonalSecurityDistance", securityDistance);
         else
-            service.call("setOrthogonalSecurityDistance", securityDistance).get();
+            call("setOrthogonalSecurityDistance", securityDistance).get();
     }
 
     /**
@@ -1203,7 +1203,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @return The current orthogonal security distance.
     */
     public Float getOrthogonalSecurityDistance() throws CallError, InterruptedException {
-        return (Float)service.call("getOrthogonalSecurityDistance").get();
+        return (Float)call("getOrthogonalSecurityDistance").get();
     }
 
     /**
@@ -1213,9 +1213,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void setTangentialSecurityDistance(Float securityDistance) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setTangentialSecurityDistance", securityDistance);
+            call("setTangentialSecurityDistance", securityDistance);
         else
-            service.call("setTangentialSecurityDistance", securityDistance).get();
+            call("setTangentialSecurityDistance", securityDistance).get();
     }
 
     /**
@@ -1224,7 +1224,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @return The current tangential security distance.
     */
     public Float getTangentialSecurityDistance() throws CallError, InterruptedException {
-        return (Float)service.call("getTangentialSecurityDistance").get();
+        return (Float)call("getTangentialSecurityDistance").get();
     }
 
     /**
@@ -1235,7 +1235,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
 
     */
     public String isCollision(String pChainName) throws CallError, InterruptedException {
-        return (String)service.call("isCollision", pChainName).get();
+        return (String)call("isCollision", pChainName).get();
     }
 
     /**
@@ -1246,9 +1246,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void setFallManagerEnabled(Boolean pEnable) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setFallManagerEnabled", pEnable);
+            call("setFallManagerEnabled", pEnable);
         else
-            service.call("setFallManagerEnabled", pEnable).get();
+            call("setFallManagerEnabled", pEnable).get();
     }
 
     /**
@@ -1258,7 +1258,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
 
     */
     public Boolean getFallManagerEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("getFallManagerEnabled").get();
+        return (Boolean)call("getFallManagerEnabled").get();
     }
 
     /**
@@ -1268,9 +1268,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void setPushRecoveryEnabled(Boolean pEnable) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setPushRecoveryEnabled", pEnable);
+            call("setPushRecoveryEnabled", pEnable);
         else
-            service.call("setPushRecoveryEnabled", pEnable).get();
+            call("setPushRecoveryEnabled", pEnable).get();
     }
 
     /**
@@ -1280,7 +1280,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
 
     */
     public Boolean getPushRecoveryEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("getPushRecoveryEnabled").get();
+        return (Boolean)call("getPushRecoveryEnabled").get();
     }
 
     /**
@@ -1290,9 +1290,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void setSmartStiffnessEnabled(Boolean pEnable) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setSmartStiffnessEnabled", pEnable);
+            call("setSmartStiffnessEnabled", pEnable);
         else
-            service.call("setSmartStiffnessEnabled", pEnable).get();
+            call("setSmartStiffnessEnabled", pEnable).get();
     }
 
     /**
@@ -1302,7 +1302,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
 
     */
     public Boolean getSmartStiffnessEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("getSmartStiffnessEnabled").get();
+        return (Boolean)call("getSmartStiffnessEnabled").get();
     }
 
     /**
@@ -1312,9 +1312,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void setDiagnosisEffectEnabled(Boolean pEnable) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setDiagnosisEffectEnabled", pEnable);
+            call("setDiagnosisEffectEnabled", pEnable);
         else
-            service.call("setDiagnosisEffectEnabled", pEnable).get();
+            call("setDiagnosisEffectEnabled", pEnable).get();
     }
 
     /**
@@ -1324,7 +1324,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
 
     */
     public Boolean getDiagnosisEffectEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("getDiagnosisEffectEnabled").get();
+        return (Boolean)call("getDiagnosisEffectEnabled").get();
     }
 
     /**
@@ -1334,7 +1334,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @return Vector of strings, one for each joint in the collection
     */
     public List<String> getJointNames(String name) throws CallError, InterruptedException {
-        return (List<String>)service.call("getJointNames", name).get();
+        return (List<String>)call("getJointNames", name).get();
     }
 
     /**
@@ -1344,7 +1344,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @return Vector of strings, one for each joint and actuator in the collection
     */
     public List<String> getBodyNames(String name) throws CallError, InterruptedException {
-        return (List<String>)service.call("getBodyNames", name).get();
+        return (List<String>)call("getBodyNames", name).get();
     }
 
     /**
@@ -1353,7 +1353,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @return Vector of sensor names
     */
     public List<String> getSensorNames() throws CallError, InterruptedException {
-        return (List<String>)service.call("getSensorNames").get();
+        return (List<String>)call("getSensorNames").get();
     }
 
     /**
@@ -1363,7 +1363,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @return Array of ALValue arrays containing the minAngle, maxAngle, maxVelocity and maxTorque for all the bodies specified.
     */
     public Object getLimits(String name) throws CallError, InterruptedException {
-        return (Object)service.call("getLimits", name).get();
+        return (Object)call("getLimits", name).get();
     }
 
     /**
@@ -1372,7 +1372,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @return Expressed in milliseconds
     */
     public Integer getMotionCycleTime() throws CallError, InterruptedException {
-        return (Integer)service.call("getMotionCycleTime").get();
+        return (Integer)call("getMotionCycleTime").get();
     }
 
     /**
@@ -1381,7 +1381,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @return ALValue arrays containing the robot parameter names and the robot parameter values.
     */
     public Object getRobotConfig() throws CallError, InterruptedException {
-        return (Object)service.call("getRobotConfig").get();
+        return (Object)call("getRobotConfig").get();
     }
 
     /**
@@ -1390,7 +1390,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @return A formated string
     */
     public String getSummary() throws CallError, InterruptedException {
-        return (String)service.call("getSummary").get();
+        return (String)call("getSummary").get();
     }
 
     /**
@@ -1400,7 +1400,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @return The mass in kg.
     */
     public Float getMass(String pName) throws CallError, InterruptedException {
-        return (Float)service.call("getMass", pName).get();
+        return (Float)call("getMass", pName).get();
     }
 
     /**
@@ -1412,7 +1412,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @return The COM position (meter).
     */
     public List<Float> getCOM(String pName, Integer pSpace, Boolean pUseSensorValues) throws CallError, InterruptedException {
-        return (List<Float>)service.call("getCOM", pName, pSpace, pUseSensorValues).get();
+        return (List<Float>)call("getCOM", pName, pSpace, pUseSensorValues).get();
     }
 
     /**
@@ -1422,9 +1422,9 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void setMotionConfig(Object config) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setMotionConfig", config);
+            call("setMotionConfig", config);
         else
-            service.call("setMotionConfig", config).get();
+            call("setMotionConfig", config).get();
     }
 
     /**
@@ -1439,9 +1439,9 @@ DEPRECATED Function. Please use ALTracker::lookAt.
     */
     public void updateTrackerTarget(Float pTargetPositionWy, Float pTargetPositionWz, Integer pTimeSinceDetectionMs, Boolean pUseOfWholeBody) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("updateTrackerTarget", pTargetPositionWy, pTargetPositionWz, pTimeSinceDetectionMs, pUseOfWholeBody);
+            call("updateTrackerTarget", pTargetPositionWy, pTargetPositionWz, pTimeSinceDetectionMs, pUseOfWholeBody);
         else
-            service.call("updateTrackerTarget", pTargetPositionWy, pTargetPositionWz, pTimeSinceDetectionMs, pUseOfWholeBody).get();
+            call("updateTrackerTarget", pTargetPositionWy, pTargetPositionWz, pTimeSinceDetectionMs, pUseOfWholeBody).get();
     }
 
     /**
@@ -1454,9 +1454,9 @@ Head breathing animation will work only if Leg animation is active.
     */
     public void setBreathEnabled(String pChain, Boolean pIsEnabled) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setBreathEnabled", pChain, pIsEnabled);
+            call("setBreathEnabled", pChain, pIsEnabled);
         else
-            service.call("setBreathEnabled", pChain, pIsEnabled).get();
+            call("setBreathEnabled", pChain, pIsEnabled).get();
     }
 
     /**
@@ -1468,7 +1468,7 @@ Chain name can be "Body", "Arms", "LArm", "RArm", "Legs" or "Head".
     * @return True if breathing animation is enabled on the chain.
     */
     public Boolean getBreathEnabled(String pChain) throws CallError, InterruptedException {
-        return (Boolean)service.call("getBreathEnabled", pChain).get();
+        return (Boolean)call("getBreathEnabled", pChain).get();
     }
 
     /**
@@ -1481,9 +1481,9 @@ pAmplitude is a float between 0 and 1 setting the amplitude of the breathing ani
     */
     public void setBreathConfig(Object pConfig) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setBreathConfig", pConfig);
+            call("setBreathConfig", pConfig);
         else
-            service.call("setBreathConfig", pConfig).get();
+            call("setBreathConfig", pConfig).get();
     }
 
     /**
@@ -1494,7 +1494,7 @@ bpm is the breathing frequency in beats per minute.
 amplitude is the normalized amplitude of the breathing animation, between 0 and 1.
     */
     public Object getBreathConfig() throws CallError, InterruptedException {
-        return (Object)service.call("getBreathConfig").get();
+        return (Object)call("getBreathConfig").get();
     }
 
     /**
@@ -1506,9 +1506,9 @@ Chain name can be "Body", "Arms", "LArm", "RArm", "Legs" or "Head".
     */
     public void setIdlePostureEnabled(String pChain, Boolean pIsEnabled) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setIdlePostureEnabled", pChain, pIsEnabled);
+            call("setIdlePostureEnabled", pChain, pIsEnabled);
         else
-            service.call("setIdlePostureEnabled", pChain, pIsEnabled).get();
+            call("setIdlePostureEnabled", pChain, pIsEnabled).get();
     }
 
     /**
@@ -1520,7 +1520,7 @@ Chain name can be "Body", "Arms", "LArm", "RArm", "Legs" or "Head".
     * @return True if breathing animation is enabled on the chain.
     */
     public Boolean getIdlePostureEnabled(String pChain) throws CallError, InterruptedException {
-        return (Boolean)service.call("getIdlePostureEnabled", pChain).get();
+        return (Boolean)call("getIdlePostureEnabled", pChain).get();
     }
 
     /**
@@ -1529,7 +1529,7 @@ Chain name can be "Body", "Arms", "LArm", "RArm", "Legs" or "Head".
     * @return An ALValue containing an ALValue for each task. The inner ALValue contains: Name, MotionID
     */
     public Object getTaskList() throws CallError, InterruptedException {
-        return (Object)service.call("getTaskList").get();
+        return (Object)call("getTaskList").get();
     }
 
     /**
@@ -1539,7 +1539,7 @@ Chain name can be "Body", "Arms", "LArm", "RArm", "Legs" or "Head".
     * @return True if the resources are available
     */
     public Boolean areResourcesAvailable(List<String> resourceNames) throws CallError, InterruptedException {
-        return (Boolean)service.call("areResourcesAvailable", resourceNames).get();
+        return (Boolean)call("areResourcesAvailable", resourceNames).get();
     }
 
     /**
@@ -1549,7 +1549,7 @@ Chain name can be "Body", "Arms", "LArm", "RArm", "Legs" or "Head".
     * @return Return true if the specified motionTaskId has been killed.
     */
     public Boolean killTask(Integer motionTaskID) throws CallError, InterruptedException {
-        return (Boolean)service.call("killTask", motionTaskID).get();
+        return (Boolean)call("killTask", motionTaskID).get();
     }
 
     /**
@@ -1559,9 +1559,9 @@ Chain name can be "Body", "Arms", "LArm", "RArm", "Legs" or "Head".
     */
     public void killTasksUsingResources(List<String> resourceNames) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("killTasksUsingResources", resourceNames);
+            call("killTasksUsingResources", resourceNames);
         else
-            service.call("killTasksUsingResources", resourceNames).get();
+            call("killTasksUsingResources", resourceNames).get();
     }
 
     /**
@@ -1570,9 +1570,9 @@ Chain name can be "Body", "Arms", "LArm", "RArm", "Legs" or "Head".
     */
     public void killWalk() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("killWalk");
+            call("killWalk");
         else
-            service.call("killWalk").get();
+            call("killWalk").get();
     }
 
     /**
@@ -1581,9 +1581,9 @@ Chain name can be "Body", "Arms", "LArm", "RArm", "Legs" or "Head".
     */
     public void killMove() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("killMove");
+            call("killMove");
         else
-            service.call("killMove").get();
+            call("killMove").get();
     }
 
     /**
@@ -1592,9 +1592,9 @@ Chain name can be "Body", "Arms", "LArm", "RArm", "Legs" or "Head".
     */
     public void killAll() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("killAll");
+            call("killAll");
         else
-            service.call("killAll").get();
+            call("killAll").get();
     }
 
     /**
@@ -1604,9 +1604,9 @@ Chain name can be "Body", "Arms", "LArm", "RArm", "Legs" or "Head".
     */
     public void setEnableNotifications(Boolean enable) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setEnableNotifications", enable);
+            call("setEnableNotifications", enable);
         else
-            service.call("setEnableNotifications", enable).get();
+            call("setEnableNotifications", enable).get();
     }
 
     /**
@@ -1615,7 +1615,7 @@ Chain name can be "Body", "Arms", "LArm", "RArm", "Legs" or "Head".
     * @return Return True if notifications are active.
     */
     public Boolean areNotificationsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("areNotificationsEnabled").get();
+        return (Boolean)call("areNotificationsEnabled").get();
     }
 
 }

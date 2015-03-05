@@ -30,7 +30,7 @@ public class ALLocalization extends ALProxy {
     * 
     */
     public Integer goToPosition(List<Float> param1) throws CallError, InterruptedException {
-        return (Integer)service.call("goToPosition", param1).get();
+        return (Integer)call("goToPosition", param1).get();
     }
 
     /**
@@ -38,7 +38,7 @@ public class ALLocalization extends ALProxy {
     * 
     */
     public Object getRobotOrientation() throws CallError, InterruptedException {
-        return (Object)service.call("getRobotOrientation").get();
+        return (Object)call("getRobotOrientation").get();
     }
 
     /**
@@ -46,7 +46,7 @@ public class ALLocalization extends ALProxy {
     * 
     */
     public Integer goToHome() throws CallError, InterruptedException {
-        return (Integer)service.call("goToHome").get();
+        return (Integer)call("goToHome").get();
     }
 
     /**
@@ -54,7 +54,7 @@ public class ALLocalization extends ALProxy {
     * 
     */
     public Object isInGivenZone(Float param1, Float param2, Float param3, Float param4) throws CallError, InterruptedException {
-        return (Object)service.call("isInGivenZone", param1, param2, param3, param4).get();
+        return (Object)call("isInGivenZone", param1, param2, param3, param4).get();
     }
 
     /**
@@ -62,7 +62,7 @@ public class ALLocalization extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -71,9 +71,9 @@ public class ALLocalization extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -81,7 +81,7 @@ public class ALLocalization extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -90,9 +90,9 @@ public class ALLocalization extends ALProxy {
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -101,7 +101,7 @@ public class ALLocalization extends ALProxy {
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -110,7 +110,7 @@ public class ALLocalization extends ALProxy {
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -119,7 +119,7 @@ public class ALLocalization extends ALProxy {
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -129,7 +129,7 @@ public class ALLocalization extends ALProxy {
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -138,7 +138,7 @@ public class ALLocalization extends ALProxy {
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -149,7 +149,7 @@ public class ALLocalization extends ALProxy {
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -159,7 +159,7 @@ public class ALLocalization extends ALProxy {
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -169,9 +169,9 @@ public class ALLocalization extends ALProxy {
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -180,7 +180,7 @@ public class ALLocalization extends ALProxy {
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -190,7 +190,7 @@ public class ALLocalization extends ALProxy {
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -198,7 +198,7 @@ public class ALLocalization extends ALProxy {
     * 
     */
     public String getMessageFromErrorCode(Integer param1) throws CallError, InterruptedException {
-        return (String)service.call("getMessageFromErrorCode", param1).get();
+        return (String)call("getMessageFromErrorCode", param1).get();
     }
 
     /**
@@ -207,9 +207,9 @@ public class ALLocalization extends ALProxy {
     */
     public void stopAll() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stopAll");
+            call("stopAll");
         else
-            service.call("stopAll").get();
+            call("stopAll").get();
     }
 
     /**
@@ -217,7 +217,7 @@ public class ALLocalization extends ALProxy {
     * 
     */
     public Integer learnHome() throws CallError, InterruptedException {
-        return (Integer)service.call("learnHome").get();
+        return (Integer)call("learnHome").get();
     }
 
     /**
@@ -225,7 +225,7 @@ public class ALLocalization extends ALProxy {
     * 
     */
     public Boolean isInCurrentHome() throws CallError, InterruptedException {
-        return (Boolean)service.call("isInCurrentHome").get();
+        return (Boolean)call("isInCurrentHome").get();
     }
 
     /**
@@ -233,7 +233,7 @@ public class ALLocalization extends ALProxy {
     * 
     */
     public Object getCurrentPanoramaDescriptor() throws CallError, InterruptedException {
-        return (Object)service.call("getCurrentPanoramaDescriptor").get();
+        return (Object)call("getCurrentPanoramaDescriptor").get();
     }
 
     /**
@@ -241,7 +241,7 @@ public class ALLocalization extends ALProxy {
     * 
     */
     public Object getFrame(Integer param1, String param2) throws CallError, InterruptedException {
-        return (Object)service.call("getFrame", param1, param2).get();
+        return (Object)call("getFrame", param1, param2).get();
     }
 
     /**
@@ -250,7 +250,7 @@ public class ALLocalization extends ALProxy {
     * @param pDirectory  Name of the directory
     */
     public Integer clear(String pDirectory) throws CallError, InterruptedException {
-        return (Integer)service.call("clear", pDirectory).get();
+        return (Integer)call("clear", pDirectory).get();
     }
 
     /**
@@ -259,7 +259,7 @@ public class ALLocalization extends ALProxy {
     * @param pDirectory  Name of the directory
     */
     public Integer load(String pDirectory) throws CallError, InterruptedException {
-        return (Integer)service.call("load", pDirectory).get();
+        return (Integer)call("load", pDirectory).get();
     }
 
     /**
@@ -268,7 +268,7 @@ public class ALLocalization extends ALProxy {
     * @param pDirectory  Name of the directory
     */
     public Integer save(String pDirectory) throws CallError, InterruptedException {
-        return (Integer)service.call("save", pDirectory).get();
+        return (Integer)call("save", pDirectory).get();
     }
 
     /**
@@ -276,7 +276,7 @@ public class ALLocalization extends ALProxy {
     * 
     */
     public Boolean isRelocalizationRequired() throws CallError, InterruptedException {
-        return (Boolean)service.call("isRelocalizationRequired").get();
+        return (Boolean)call("isRelocalizationRequired").get();
     }
 
     /**
@@ -284,7 +284,7 @@ public class ALLocalization extends ALProxy {
     * 
     */
     public Boolean isDataAvailable() throws CallError, InterruptedException {
-        return (Boolean)service.call("isDataAvailable").get();
+        return (Boolean)call("isDataAvailable").get();
     }
 
     /**
@@ -292,7 +292,7 @@ public class ALLocalization extends ALProxy {
     * 
     */
     public List<Float> getRobotPosition() throws CallError, InterruptedException {
-        return (List<Float>)service.call("getRobotPosition").get();
+        return (List<Float>)call("getRobotPosition").get();
     }
 
     /**
@@ -300,7 +300,7 @@ public class ALLocalization extends ALProxy {
     * 
     */
     public List<Float> getRobotPosition(Boolean param1) throws CallError, InterruptedException {
-        return (List<Float>)service.call("getRobotPosition", param1).get();
+        return (List<Float>)call("getRobotPosition", param1).get();
     }
 
     /**
@@ -308,7 +308,7 @@ public class ALLocalization extends ALProxy {
     * 
     */
     public Object getRobotOrientation(Boolean param1) throws CallError, InterruptedException {
-        return (Object)service.call("getRobotOrientation", param1).get();
+        return (Object)call("getRobotOrientation", param1).get();
     }
 
 }

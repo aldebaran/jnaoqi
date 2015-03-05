@@ -30,7 +30,7 @@ public class ALStore extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -39,9 +39,9 @@ public class ALStore extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -49,7 +49,7 @@ public class ALStore extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -57,7 +57,7 @@ public class ALStore extends ALProxy {
     * 
     */
     public Object add_notification(Object param1) throws CallError, InterruptedException {
-        return (Object)service.call("add_notification", param1).get();
+        return (Object)call("add_notification", param1).get();
     }
 
     /**
@@ -65,7 +65,7 @@ public class ALStore extends ALProxy {
     * 
     */
     public Object analyse() throws CallError, InterruptedException {
-        return (Object)service.call("analyse").get();
+        return (Object)call("analyse").get();
     }
 
     /**
@@ -73,7 +73,7 @@ public class ALStore extends ALProxy {
     * 
     */
     public Object assign(Object param1, Object param2) throws CallError, InterruptedException {
-        return (Object)service.call("assign", param1, param2).get();
+        return (Object)call("assign", param1, param2).get();
     }
 
     /**
@@ -81,7 +81,7 @@ public class ALStore extends ALProxy {
     * 
     */
     public Object checkUpdate() throws CallError, InterruptedException {
-        return (Object)service.call("checkUpdate").get();
+        return (Object)call("checkUpdate").get();
     }
 
     /**
@@ -89,7 +89,7 @@ public class ALStore extends ALProxy {
     * 
     */
     public Object download(Object param1) throws CallError, InterruptedException {
-        return (Object)service.call("download", param1).get();
+        return (Object)call("download", param1).get();
     }
 
     /**
@@ -97,7 +97,7 @@ public class ALStore extends ALProxy {
     * 
     */
     public Object getPackageInfo(Object param1) throws CallError, InterruptedException {
-        return (Object)service.call("getPackageInfo", param1).get();
+        return (Object)call("getPackageInfo", param1).get();
     }
 
     /**
@@ -105,7 +105,7 @@ public class ALStore extends ALProxy {
     * 
     */
     public Object install(Object param1, Object param2) throws CallError, InterruptedException {
-        return (Object)service.call("install", param1, param2).get();
+        return (Object)call("install", param1, param2).get();
     }
 
     /**
@@ -113,7 +113,7 @@ public class ALStore extends ALProxy {
     * 
     */
     public Object log_debug(Object param1) throws CallError, InterruptedException {
-        return (Object)service.call("log_debug", param1).get();
+        return (Object)call("log_debug", param1).get();
     }
 
     /**
@@ -121,7 +121,7 @@ public class ALStore extends ALProxy {
     * 
     */
     public Object log_error(Object param1) throws CallError, InterruptedException {
-        return (Object)service.call("log_error", param1).get();
+        return (Object)call("log_error", param1).get();
     }
 
     /**
@@ -129,7 +129,7 @@ public class ALStore extends ALProxy {
     * 
     */
     public Object log_info(Object param1) throws CallError, InterruptedException {
-        return (Object)service.call("log_info", param1).get();
+        return (Object)call("log_info", param1).get();
     }
 
     /**
@@ -137,7 +137,7 @@ public class ALStore extends ALProxy {
     * 
     */
     public Object log_warning(Object param1) throws CallError, InterruptedException {
-        return (Object)service.call("log_warning", param1).get();
+        return (Object)call("log_warning", param1).get();
     }
 
     /**
@@ -145,7 +145,7 @@ public class ALStore extends ALProxy {
     * 
     */
     public Object play_sound(Object param1) throws CallError, InterruptedException {
-        return (Object)service.call("play_sound", param1).get();
+        return (Object)call("play_sound", param1).get();
     }
 
     /**
@@ -153,7 +153,7 @@ public class ALStore extends ALProxy {
     * 
     */
     public Object status() throws CallError, InterruptedException {
-        return (Object)service.call("status").get();
+        return (Object)call("status").get();
     }
 
     /**
@@ -161,7 +161,7 @@ public class ALStore extends ALProxy {
     * 
     */
     public Object stopUpdate() throws CallError, InterruptedException {
-        return (Object)service.call("stopUpdate").get();
+        return (Object)call("stopUpdate").get();
     }
 
     /**
@@ -169,7 +169,7 @@ public class ALStore extends ALProxy {
     * 
     */
     public Object translate(Object param1) throws CallError, InterruptedException {
-        return (Object)service.call("translate", param1).get();
+        return (Object)call("translate", param1).get();
     }
 
     /**
@@ -177,7 +177,7 @@ public class ALStore extends ALProxy {
     * 
     */
     public Object update() throws CallError, InterruptedException {
-        return (Object)service.call("update").get();
+        return (Object)call("update").get();
     }
 
     /**
@@ -185,7 +185,7 @@ public class ALStore extends ALProxy {
     * 
     */
     public Object updateApps() throws CallError, InterruptedException {
-        return (Object)service.call("updateApps").get();
+        return (Object)call("updateApps").get();
     }
 
     /**
@@ -193,7 +193,7 @@ public class ALStore extends ALProxy {
     * 
     */
     public Object updateOnConnect() throws CallError, InterruptedException {
-        return (Object)service.call("updateOnConnect").get();
+        return (Object)call("updateOnConnect").get();
     }
 
     /**
@@ -201,7 +201,7 @@ public class ALStore extends ALProxy {
     * 
     */
     public Object updateSystem() throws CallError, InterruptedException {
-        return (Object)service.call("updateSystem").get();
+        return (Object)call("updateSystem").get();
     }
 
 }

@@ -32,7 +32,7 @@ public class ALBehaviorManager extends ALProxy {
     * @return The list of tags found.
     */
     public List<String> getTagList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getTagList").get();
+        return (List<String>)call("getTagList").get();
     }
 
     /**
@@ -42,9 +42,9 @@ public class ALBehaviorManager extends ALProxy {
     */
     public void addDefaultBehavior(String behavior) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("addDefaultBehavior", behavior);
+            call("addDefaultBehavior", behavior);
         else
-            service.call("addDefaultBehavior", behavior).get();
+            call("addDefaultBehavior", behavior).get();
     }
 
     /**
@@ -54,7 +54,7 @@ public class ALBehaviorManager extends ALProxy {
     * @return Returns true if it is a running behavior
     */
     public Boolean isBehaviorRunning(String behavior) throws CallError, InterruptedException {
-        return (Boolean)service.call("isBehaviorRunning", behavior).get();
+        return (Boolean)call("isBehaviorRunning", behavior).get();
     }
 
     /**
@@ -63,7 +63,7 @@ public class ALBehaviorManager extends ALProxy {
     * @return Return default behaviors
     */
     public List<String> getDefaultBehaviors() throws CallError, InterruptedException {
-        return (List<String>)service.call("getDefaultBehaviors").get();
+        return (List<String>)call("getDefaultBehaviors").get();
     }
 
     /**
@@ -72,9 +72,9 @@ public class ALBehaviorManager extends ALProxy {
     */
     public void playDefaultProject() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("playDefaultProject");
+            call("playDefaultProject");
         else
-            service.call("playDefaultProject").get();
+            call("playDefaultProject").get();
     }
 
     /**
@@ -83,7 +83,7 @@ public class ALBehaviorManager extends ALProxy {
     * @return Return running behaviors
     */
     public List<String> getRunningBehaviors() throws CallError, InterruptedException {
-        return (List<String>)service.call("getRunningBehaviors").get();
+        return (List<String>)call("getRunningBehaviors").get();
     }
 
     /**
@@ -93,7 +93,7 @@ public class ALBehaviorManager extends ALProxy {
     * @return The actual <package>/<behavior> path if found, else an empty string. Throws an ALERROR if two behavior names conflicted.
     */
     public String resolveBehaviorName(String name) throws CallError, InterruptedException {
-        return (String)service.call("resolveBehaviorName", name).get();
+        return (String)call("resolveBehaviorName", name).get();
     }
 
     /**
@@ -102,7 +102,7 @@ public class ALBehaviorManager extends ALProxy {
     * @return Return loaded behaviors
     */
     public List<String> getLoadedBehaviors() throws CallError, InterruptedException {
-        return (List<String>)service.call("getLoadedBehaviors").get();
+        return (List<String>)call("getLoadedBehaviors").get();
     }
 
     /**
@@ -112,7 +112,7 @@ public class ALBehaviorManager extends ALProxy {
     * @return The list of tags found.
     */
     public List<String> getBehaviorTags(String behavior) throws CallError, InterruptedException {
-        return (List<String>)service.call("getBehaviorTags", behavior).get();
+        return (List<String>)call("getBehaviorTags", behavior).get();
     }
 
     /**
@@ -122,7 +122,7 @@ public class ALBehaviorManager extends ALProxy {
     * @return The nature of the behavior.
     */
     public String getBehaviorNature(String behavior) throws CallError, InterruptedException {
-        return (String)service.call("getBehaviorNature", behavior).get();
+        return (String)call("getBehaviorNature", behavior).get();
     }
 
     /**
@@ -132,7 +132,7 @@ public class ALBehaviorManager extends ALProxy {
     * @return Returns true if it is a loaded behavior
     */
     public Boolean isBehaviorLoaded(String behavior) throws CallError, InterruptedException {
-        return (Boolean)service.call("isBehaviorLoaded", behavior).get();
+        return (Boolean)call("isBehaviorLoaded", behavior).get();
     }
 
     /**
@@ -142,9 +142,9 @@ public class ALBehaviorManager extends ALProxy {
     */
     public void removeDefaultBehavior(String behavior) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("removeDefaultBehavior", behavior);
+            call("removeDefaultBehavior", behavior);
         else
-            service.call("removeDefaultBehavior", behavior).get();
+            call("removeDefaultBehavior", behavior).get();
     }
 
     /**
@@ -152,7 +152,7 @@ public class ALBehaviorManager extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -161,9 +161,9 @@ public class ALBehaviorManager extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -171,7 +171,7 @@ public class ALBehaviorManager extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -180,9 +180,9 @@ public class ALBehaviorManager extends ALProxy {
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -191,7 +191,7 @@ public class ALBehaviorManager extends ALProxy {
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -200,7 +200,7 @@ public class ALBehaviorManager extends ALProxy {
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -209,7 +209,7 @@ public class ALBehaviorManager extends ALProxy {
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -219,7 +219,7 @@ public class ALBehaviorManager extends ALProxy {
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -228,7 +228,7 @@ public class ALBehaviorManager extends ALProxy {
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -239,7 +239,7 @@ public class ALBehaviorManager extends ALProxy {
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -249,7 +249,7 @@ public class ALBehaviorManager extends ALProxy {
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -259,9 +259,9 @@ public class ALBehaviorManager extends ALProxy {
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -270,7 +270,7 @@ public class ALBehaviorManager extends ALProxy {
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -280,7 +280,7 @@ public class ALBehaviorManager extends ALProxy {
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -293,7 +293,7 @@ DEPRECATED in favor of PackageManager.install.
     * @return true on success, false on failure.
     */
     public Boolean installBehavior(String localPath) throws CallError, InterruptedException {
-        return (Boolean)service.call("installBehavior", localPath).get();
+        return (Boolean)call("installBehavior", localPath).get();
     }
 
     /**
@@ -307,7 +307,7 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     * @return true on success, false on failure.
     */
     public Boolean installBehavior(String absolutePath, String localPath, Boolean overwrite) throws CallError, InterruptedException {
-        return (Boolean)service.call("installBehavior", absolutePath, localPath, overwrite).get();
+        return (Boolean)call("installBehavior", absolutePath, localPath, overwrite).get();
     }
 
     /**
@@ -317,7 +317,7 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     * @return Returns true if it was successfully loaded.
     */
     public Boolean preloadBehavior(String behavior) throws CallError, InterruptedException {
-        return (Boolean)service.call("preloadBehavior", behavior).get();
+        return (Boolean)call("preloadBehavior", behavior).get();
     }
 
     /**
@@ -327,9 +327,9 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     */
     public void startBehavior(String behavior) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("startBehavior", behavior);
+            call("startBehavior", behavior);
         else
-            service.call("startBehavior", behavior).get();
+            call("startBehavior", behavior).get();
     }
 
     /**
@@ -339,9 +339,9 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     */
     public void runBehavior(String behavior) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("runBehavior", behavior);
+            call("runBehavior", behavior);
         else
-            service.call("runBehavior", behavior).get();
+            call("runBehavior", behavior).get();
     }
 
     /**
@@ -351,9 +351,9 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     */
     public void stopBehavior(String behavior) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stopBehavior", behavior);
+            call("stopBehavior", behavior);
         else
-            service.call("stopBehavior", behavior).get();
+            call("stopBehavior", behavior).get();
     }
 
     /**
@@ -362,9 +362,9 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     */
     public void stopAllBehaviors() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stopAllBehaviors");
+            call("stopAllBehaviors");
         else
-            service.call("stopAllBehaviors").get();
+            call("stopAllBehaviors").get();
     }
 
     /**
@@ -373,7 +373,7 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     * @param behavior  Behavior name 
     */
     public Boolean removeBehavior(String behavior) throws CallError, InterruptedException {
-        return (Boolean)service.call("removeBehavior", behavior).get();
+        return (Boolean)call("removeBehavior", behavior).get();
     }
 
     /**
@@ -383,7 +383,7 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     * @return Returns true if it is a valid behavior
     */
     public Boolean isBehaviorInstalled(String name) throws CallError, InterruptedException {
-        return (Boolean)service.call("isBehaviorInstalled", name).get();
+        return (Boolean)call("isBehaviorInstalled", name).get();
     }
 
     /**
@@ -393,7 +393,7 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     * @return Returns true if it is an existing behavior
     */
     public Boolean isBehaviorPresent(String prefixedBehavior) throws CallError, InterruptedException {
-        return (Boolean)service.call("isBehaviorPresent", prefixedBehavior).get();
+        return (Boolean)call("isBehaviorPresent", prefixedBehavior).get();
     }
 
     /**
@@ -402,7 +402,7 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     * @return Returns the list of behaviors prefixed by their type (User/ or System/). DEPRECATED in favor of ALBehaviorManager.getInstalledBehaviors.
     */
     public List<String> getBehaviorNames() throws CallError, InterruptedException {
-        return (List<String>)service.call("getBehaviorNames").get();
+        return (List<String>)call("getBehaviorNames").get();
     }
 
     /**
@@ -411,7 +411,7 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     * @return Returns the list of user's behaviors prefixed by User/. DEPRECATED in favor of ALBehaviorManager.getInstalledBehaviors.
     */
     public List<String> getUserBehaviorNames() throws CallError, InterruptedException {
-        return (List<String>)service.call("getUserBehaviorNames").get();
+        return (List<String>)call("getUserBehaviorNames").get();
     }
 
     /**
@@ -420,7 +420,7 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     * @return Returns the list of system behaviors prefixed by System/. DEPRECATED in favor of ALBehaviorManager.getInstalledBehaviors.
     */
     public List<String> getSystemBehaviorNames() throws CallError, InterruptedException {
-        return (List<String>)service.call("getSystemBehaviorNames").get();
+        return (List<String>)call("getSystemBehaviorNames").get();
     }
 
     /**
@@ -429,7 +429,7 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     * @return Returns the behaviors list
     */
     public List<String> getInstalledBehaviors() throws CallError, InterruptedException {
-        return (List<String>)service.call("getInstalledBehaviors").get();
+        return (List<String>)call("getInstalledBehaviors").get();
     }
 
     /**
@@ -439,7 +439,7 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     * @return Returns the behaviors list
     */
     public List<String> getBehaviorsByTag(String tag) throws CallError, InterruptedException {
-        return (List<String>)service.call("getBehaviorsByTag", tag).get();
+        return (List<String>)call("getBehaviorsByTag", tag).get();
     }
 
 }

@@ -31,7 +31,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * @return The boolean value: true means it is enabled, false means it is disabled.
     */
     public Boolean isBodyTalkEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isBodyTalkEnabled").get();
+        return (Boolean)call("isBodyTalkEnabled").get();
     }
 
     /**
@@ -41,9 +41,9 @@ public class ALAnimatedSpeech extends ALProxy {
     */
     public void declareTagForAnimations(Object tagsToAnimations) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("declareTagForAnimations", tagsToAnimations);
+            call("declareTagForAnimations", tagsToAnimations);
         else
-            service.call("declareTagForAnimations", tagsToAnimations).get();
+            call("declareTagForAnimations", tagsToAnimations).get();
     }
 
     /**
@@ -52,7 +52,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * @return The boolean value: true means it is enabled, false means it is disabled.
     */
     public Boolean isBodyLanguageEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isBodyLanguageEnabled").get();
+        return (Boolean)call("isBodyLanguageEnabled").get();
     }
 
     /**
@@ -62,9 +62,9 @@ public class ALAnimatedSpeech extends ALProxy {
     */
     public void addTagsToWords(Object tagsToWords) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("addTagsToWords", tagsToWords);
+            call("addTagsToWords", tagsToWords);
         else
-            service.call("addTagsToWords", tagsToWords).get();
+            call("addTagsToWords", tagsToWords).get();
     }
 
     /**
@@ -72,7 +72,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -81,9 +81,9 @@ public class ALAnimatedSpeech extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -91,7 +91,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -100,9 +100,9 @@ public class ALAnimatedSpeech extends ALProxy {
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -111,7 +111,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -120,7 +120,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -129,7 +129,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -139,7 +139,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -148,7 +148,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -159,7 +159,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -169,7 +169,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -179,9 +179,9 @@ public class ALAnimatedSpeech extends ALProxy {
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -190,7 +190,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -200,7 +200,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -210,9 +210,9 @@ public class ALAnimatedSpeech extends ALProxy {
     */
     public void say(String text) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("say", text);
+            call("say", text);
         else
-            service.call("say", text).get();
+            call("say", text).get();
     }
 
     /**
@@ -223,9 +223,9 @@ public class ALAnimatedSpeech extends ALProxy {
     */
     public void say(String text, Object configuration) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("say", text, configuration);
+            call("say", text, configuration);
         else
-            service.call("say", text, configuration).get();
+            call("say", text, configuration).get();
     }
 
     /**
@@ -235,9 +235,9 @@ public class ALAnimatedSpeech extends ALProxy {
     */
     public void setBodyTalkEnabled(Boolean enable) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setBodyTalkEnabled", enable);
+            call("setBodyTalkEnabled", enable);
         else
-            service.call("setBodyTalkEnabled", enable).get();
+            call("setBodyTalkEnabled", enable).get();
     }
 
     /**
@@ -247,9 +247,9 @@ public class ALAnimatedSpeech extends ALProxy {
     */
     public void setBodyLanguageEnabled(Boolean enable) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setBodyLanguageEnabled", enable);
+            call("setBodyLanguageEnabled", enable);
         else
-            service.call("setBodyLanguageEnabled", enable).get();
+            call("setBodyLanguageEnabled", enable).get();
     }
 
     /**
@@ -261,9 +261,9 @@ public class ALAnimatedSpeech extends ALProxy {
     */
     public void setBodyLanguageModeFromStr(String stringBodyLanguageMode) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setBodyLanguageModeFromStr", stringBodyLanguageMode);
+            call("setBodyLanguageModeFromStr", stringBodyLanguageMode);
         else
-            service.call("setBodyLanguageModeFromStr", stringBodyLanguageMode).get();
+            call("setBodyLanguageModeFromStr", stringBodyLanguageMode).get();
     }
 
     /**
@@ -275,9 +275,9 @@ public class ALAnimatedSpeech extends ALProxy {
     */
     public void setBodyLanguageMode(Integer bodyLanguageMode) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setBodyLanguageMode", bodyLanguageMode);
+            call("setBodyLanguageMode", bodyLanguageMode);
         else
-            service.call("setBodyLanguageMode", bodyLanguageMode).get();
+            call("setBodyLanguageMode", bodyLanguageMode).get();
     }
 
     /**
@@ -288,7 +288,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * @return The current body language mode.
     */
     public String getBodyLanguageModeToStr() throws CallError, InterruptedException {
-        return (String)service.call("getBodyLanguageModeToStr").get();
+        return (String)call("getBodyLanguageModeToStr").get();
     }
 
     /**
@@ -299,7 +299,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * @return The current body language mode.
     */
     public Integer getBodyLanguageMode() throws CallError, InterruptedException {
-        return (Integer)service.call("getBodyLanguageMode").get();
+        return (Integer)call("getBodyLanguageMode").get();
     }
 
     /**
@@ -309,9 +309,9 @@ public class ALAnimatedSpeech extends ALProxy {
     */
     public void declareAnimationsPackage(String animationsPackage) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("declareAnimationsPackage", animationsPackage);
+            call("declareAnimationsPackage", animationsPackage);
         else
-            service.call("declareAnimationsPackage", animationsPackage).get();
+            call("declareAnimationsPackage", animationsPackage).get();
     }
 
 }

@@ -33,9 +33,9 @@ public class ALMemory extends ALProxy {
     */
     public void insertData(String key, String value) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("insertData", key, value);
+            call("insertData", key, value);
         else
-            service.call("insertData", key, value).get();
+            call("insertData", key, value).get();
     }
 
     /**
@@ -45,9 +45,9 @@ public class ALMemory extends ALProxy {
     */
     public void removeData(String key) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("removeData", key);
+            call("removeData", key);
         else
-            service.call("removeData", key).get();
+            call("removeData", key).get();
     }
 
     /**
@@ -57,7 +57,7 @@ public class ALMemory extends ALProxy {
     * @return List of subscriber names
     */
     public List<String> getSubscribers(String name) throws CallError, InterruptedException {
-        return (List<String>)service.call("getSubscribers", name).get();
+        return (List<String>)call("getSubscribers", name).get();
     }
 
     /**
@@ -67,9 +67,9 @@ public class ALMemory extends ALProxy {
     */
     public void removeMicroEvent(String name) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("removeMicroEvent", name);
+            call("removeMicroEvent", name);
         else
-            service.call("removeMicroEvent", name).get();
+            call("removeMicroEvent", name).get();
     }
 
     /**
@@ -81,9 +81,9 @@ public class ALMemory extends ALProxy {
     */
     public void subscribeToEvent(String name, String callbackModule, String callbackMethod) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("subscribeToEvent", name, callbackModule, callbackMethod);
+            call("subscribeToEvent", name, callbackModule, callbackMethod);
         else
-            service.call("subscribeToEvent", name, callbackModule, callbackMethod).get();
+            call("subscribeToEvent", name, callbackModule, callbackMethod).get();
     }
 
     /**
@@ -94,9 +94,9 @@ public class ALMemory extends ALProxy {
     */
     public void insertData(String key, Integer value) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("insertData", key, value);
+            call("insertData", key, value);
         else
-            service.call("insertData", key, value).get();
+            call("insertData", key, value).get();
     }
 
     /**
@@ -109,9 +109,9 @@ public class ALMemory extends ALProxy {
     */
     public void subscribeToMicroEvent(String name, String callbackModule, String callbackMessage, String callbackMethod) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("subscribeToMicroEvent", name, callbackModule, callbackMessage, callbackMethod);
+            call("subscribeToMicroEvent", name, callbackModule, callbackMessage, callbackMethod);
         else
-            service.call("subscribeToMicroEvent", name, callbackModule, callbackMessage, callbackMethod).get();
+            call("subscribeToMicroEvent", name, callbackModule, callbackMessage, callbackMethod).get();
     }
 
     /**
@@ -121,9 +121,9 @@ public class ALMemory extends ALProxy {
     */
     public void unregisterModuleReference(String moduleName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("unregisterModuleReference", moduleName);
+            call("unregisterModuleReference", moduleName);
         else
-            service.call("unregisterModuleReference", moduleName).get();
+            call("unregisterModuleReference", moduleName).get();
     }
 
     /**
@@ -134,9 +134,9 @@ public class ALMemory extends ALProxy {
     */
     public void unsubscribeToEvent(String name, String callbackModule) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("unsubscribeToEvent", name, callbackModule);
+            call("unsubscribeToEvent", name, callbackModule);
         else
-            service.call("unsubscribeToEvent", name, callbackModule).get();
+            call("unsubscribeToEvent", name, callbackModule).get();
     }
 
     /**
@@ -147,9 +147,9 @@ public class ALMemory extends ALProxy {
     */
     public void unsubscribeToMicroEvent(String name, String callbackModule) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("unsubscribeToMicroEvent", name, callbackModule);
+            call("unsubscribeToMicroEvent", name, callbackModule);
         else
-            service.call("unsubscribeToMicroEvent", name, callbackModule).get();
+            call("unsubscribeToMicroEvent", name, callbackModule).get();
     }
 
     /**
@@ -160,9 +160,9 @@ public class ALMemory extends ALProxy {
     */
     public void insertData(String key, Float value) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("insertData", key, value);
+            call("insertData", key, value);
         else
-            service.call("insertData", key, value).get();
+            call("insertData", key, value).get();
     }
 
     /**
@@ -173,9 +173,9 @@ public class ALMemory extends ALProxy {
     */
     public void setDescription(String name, String description) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setDescription", name, description);
+            call("setDescription", name, description);
         else
-            service.call("setDescription", name, description).get();
+            call("setDescription", name, description).get();
     }
 
     /**
@@ -185,7 +185,7 @@ public class ALMemory extends ALProxy {
     * @return an array of tuple (name, type, description) describing all keys.
     */
     public Object getDescriptionList(List<String> keylist) throws CallError, InterruptedException {
-        return (Object)service.call("getDescriptionList", keylist).get();
+        return (Object)call("getDescriptionList", keylist).get();
     }
 
     /**
@@ -197,9 +197,9 @@ public class ALMemory extends ALProxy {
     */
     public void addMapping(String serviceName, String signal, String event) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("addMapping", serviceName, signal, event);
+            call("addMapping", serviceName, signal, event);
         else
-            service.call("addMapping", serviceName, signal, event).get();
+            call("addMapping", serviceName, signal, event).get();
     }
 
     /**
@@ -210,9 +210,9 @@ public class ALMemory extends ALProxy {
     */
     public void addMapping(String serviceName, Map<String, String> signalEvent) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("addMapping", serviceName, signalEvent);
+            call("addMapping", serviceName, signalEvent);
         else
-            service.call("addMapping", serviceName, signalEvent).get();
+            call("addMapping", serviceName, signalEvent).get();
     }
 
     /**
@@ -223,9 +223,9 @@ public class ALMemory extends ALProxy {
     */
     public void insertData(String key, Object data) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("insertData", key, data);
+            call("insertData", key, data);
         else
-            service.call("insertData", key, data).get();
+            call("insertData", key, data).get();
     }
 
     /**
@@ -235,9 +235,9 @@ public class ALMemory extends ALProxy {
     */
     public void insertListData(Object list) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("insertListData", list);
+            call("insertListData", list);
         else
-            service.call("insertListData", list).get();
+            call("insertListData", list).get();
     }
 
     /**
@@ -247,7 +247,7 @@ public class ALMemory extends ALProxy {
     * @return String type: Data, Event, MicroEvent
     */
     public String getType(String key) throws CallError, InterruptedException {
-        return (String)service.call("getType", key).get();
+        return (String)call("getType", key).get();
     }
 
     /**
@@ -258,9 +258,9 @@ public class ALMemory extends ALProxy {
     */
     public void raiseEvent(String name, Object value) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("raiseEvent", name, value);
+            call("raiseEvent", name, value);
         else
-            service.call("raiseEvent", name, value).get();
+            call("raiseEvent", name, value).get();
     }
 
     /**
@@ -271,9 +271,9 @@ public class ALMemory extends ALProxy {
     */
     public void raiseMicroEvent(String name, Object value) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("raiseMicroEvent", name, value);
+            call("raiseMicroEvent", name, value);
         else
-            service.call("raiseMicroEvent", name, value).get();
+            call("raiseMicroEvent", name, value).get();
     }
 
     /**
@@ -283,9 +283,9 @@ public class ALMemory extends ALProxy {
     */
     public void removeEvent(String name) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("removeEvent", name);
+            call("removeEvent", name);
         else
-            service.call("removeEvent", name).get();
+            call("removeEvent", name).get();
     }
 
     /**
@@ -298,9 +298,9 @@ public class ALMemory extends ALProxy {
     */
     public void subscribeToEvent(String name, String callbackModule, String callbackMessage, String callbacMethod) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("subscribeToEvent", name, callbackModule, callbackMessage, callbacMethod);
+            call("subscribeToEvent", name, callbackModule, callbackMessage, callbacMethod);
         else
-            service.call("subscribeToEvent", name, callbackModule, callbackMessage, callbacMethod).get();
+            call("subscribeToEvent", name, callbackModule, callbackMessage, callbacMethod).get();
     }
 
     /**
@@ -308,7 +308,7 @@ public class ALMemory extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -317,9 +317,9 @@ public class ALMemory extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -327,7 +327,7 @@ public class ALMemory extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -336,9 +336,9 @@ public class ALMemory extends ALProxy {
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -347,7 +347,7 @@ public class ALMemory extends ALProxy {
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -356,7 +356,7 @@ public class ALMemory extends ALProxy {
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -365,7 +365,7 @@ public class ALMemory extends ALProxy {
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -375,7 +375,7 @@ public class ALMemory extends ALProxy {
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -384,7 +384,7 @@ public class ALMemory extends ALProxy {
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -395,7 +395,7 @@ public class ALMemory extends ALProxy {
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -405,7 +405,7 @@ public class ALMemory extends ALProxy {
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -415,9 +415,9 @@ public class ALMemory extends ALProxy {
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -426,7 +426,7 @@ public class ALMemory extends ALProxy {
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -436,7 +436,7 @@ public class ALMemory extends ALProxy {
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -446,9 +446,9 @@ public class ALMemory extends ALProxy {
     */
     public void declareEvent(String eventName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("declareEvent", eventName);
+            call("declareEvent", eventName);
         else
-            service.call("declareEvent", eventName).get();
+            call("declareEvent", eventName).get();
     }
 
     /**
@@ -459,9 +459,9 @@ public class ALMemory extends ALProxy {
     */
     public void declareEvent(String eventName, String extractorName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("declareEvent", eventName, extractorName);
+            call("declareEvent", eventName, extractorName);
         else
-            service.call("declareEvent", eventName, extractorName).get();
+            call("declareEvent", eventName, extractorName).get();
     }
 
     /**
@@ -471,7 +471,7 @@ public class ALMemory extends ALProxy {
     * @return The data as an ALValue. This can often be cast transparently into the original type.
     */
     public Object getData(String key) throws CallError, InterruptedException {
-        return (Object)service.call("getData", key).get();
+        return (Object)call("getData", key).get();
     }
 
     /**
@@ -482,7 +482,7 @@ public class ALMemory extends ALProxy {
     * @return The data as an ALValue
     */
     public Object getData(String key, Integer deprecatedParameter) throws CallError, InterruptedException {
-        return (Object)service.call("getData", key, deprecatedParameter).get();
+        return (Object)call("getData", key, deprecatedParameter).get();
     }
 
     /**
@@ -492,7 +492,7 @@ public class ALMemory extends ALProxy {
     * @return An AnyObject with a signal named "signal"
     */
     public AnyObject subscriber(String eventName) throws CallError, InterruptedException {
-        return (AnyObject)service.call("subscriber", eventName).get();
+        return (AnyObject)call("subscriber", eventName).get();
     }
 
     /**
@@ -502,7 +502,7 @@ public class ALMemory extends ALProxy {
     * @return A list of all the data key names that contain the given string.
     */
     public Object getTimestamp(String key) throws CallError, InterruptedException {
-        return (Object)service.call("getTimestamp", key).get();
+        return (Object)call("getTimestamp", key).get();
     }
 
     /**
@@ -512,7 +512,7 @@ public class ALMemory extends ALProxy {
     * @return A list of all the data key names that contain the given string.
     */
     public Object getEventHistory(String key) throws CallError, InterruptedException {
-        return (Object)service.call("getEventHistory", key).get();
+        return (Object)call("getEventHistory", key).get();
     }
 
     /**
@@ -522,7 +522,7 @@ public class ALMemory extends ALProxy {
     * @return A list of all the data key names that contain the given string.
     */
     public List<String> getDataList(String filter) throws CallError, InterruptedException {
-        return (List<String>)service.call("getDataList", filter).get();
+        return (List<String>)call("getDataList", filter).get();
     }
 
     /**
@@ -531,7 +531,7 @@ public class ALMemory extends ALProxy {
     * @return A list containing the keys in memory
     */
     public List<String> getDataListName() throws CallError, InterruptedException {
-        return (List<String>)service.call("getDataListName").get();
+        return (List<String>)call("getDataListName").get();
     }
 
     /**
@@ -542,7 +542,7 @@ public class ALMemory extends ALProxy {
     * @return an array containing all the retrieved data
     */
     public Object getDataOnChange(String key, Integer deprecatedParameter) throws CallError, InterruptedException {
-        return (Object)service.call("getDataOnChange", key, deprecatedParameter).get();
+        return (Object)call("getDataOnChange", key, deprecatedParameter).get();
     }
 
     /**
@@ -552,7 +552,7 @@ public class ALMemory extends ALProxy {
     * @return A pointer converted to int
     */
     public Object getDataPtr(String key) throws CallError, InterruptedException {
-        return (Object)service.call("getDataPtr", key).get();
+        return (Object)call("getDataPtr", key).get();
     }
 
     /**
@@ -561,7 +561,7 @@ public class ALMemory extends ALProxy {
     * @return A list containing the names of all events
     */
     public List<String> getEventList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getEventList").get();
+        return (List<String>)call("getEventList").get();
     }
 
     /**
@@ -571,7 +571,7 @@ public class ALMemory extends ALProxy {
     * @return A list containing the names of the events associated with the given extractor
     */
     public List<String> getExtractorEvent(String extractorName) throws CallError, InterruptedException {
-        return (List<String>)service.call("getExtractorEvent", extractorName).get();
+        return (List<String>)call("getExtractorEvent", extractorName).get();
     }
 
     /**
@@ -581,7 +581,7 @@ public class ALMemory extends ALProxy {
     * @return An array containing all the values corresponding to the given keys.
     */
     public Object getListData(Object keyList) throws CallError, InterruptedException {
-        return (Object)service.call("getListData", keyList).get();
+        return (Object)call("getListData", keyList).get();
     }
 
     /**
@@ -590,7 +590,7 @@ public class ALMemory extends ALProxy {
     * @return A list containing the names of all the microEvents
     */
     public List<String> getMicroEventList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMicroEventList").get();
+        return (List<String>)call("getMicroEventList").get();
     }
 
 }

@@ -31,7 +31,7 @@ public class ALVisualCompass extends ALProxy {
     * @return Current value of the resolution of the extractor
     */
     public Integer getResolution() throws CallError, InterruptedException {
-        return (Integer)service.call("getResolution").get();
+        return (Integer)call("getResolution").get();
     }
 
     /**
@@ -41,7 +41,7 @@ public class ALVisualCompass extends ALProxy {
     * @return True if the update succeeded, False if not
     */
     public Boolean setResolution(Integer resolution) throws CallError, InterruptedException {
-        return (Boolean)service.call("setResolution", resolution).get();
+        return (Boolean)call("setResolution", resolution).get();
     }
 
     /**
@@ -51,9 +51,9 @@ public class ALVisualCompass extends ALProxy {
     */
     public void enableReferenceRefresh(Boolean refresh) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("enableReferenceRefresh", refresh);
+            call("enableReferenceRefresh", refresh);
         else
-            service.call("enableReferenceRefresh", refresh).get();
+            call("enableReferenceRefresh", refresh).get();
     }
 
     /**
@@ -63,7 +63,7 @@ public class ALVisualCompass extends ALProxy {
  [1]: Number of keypoints matching.
     */
     public Object getMatchingQuality() throws CallError, InterruptedException {
-        return (Object)service.call("getMatchingQuality").get();
+        return (Object)call("getMatchingQuality").get();
     }
 
     /**
@@ -74,9 +74,9 @@ public class ALVisualCompass extends ALProxy {
     */
     public void setParameter(String paramName, Object value) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setParameter", paramName, value);
+            call("setParameter", paramName, value);
         else
-            service.call("setParameter", paramName, value).get();
+            call("setParameter", paramName, value).get();
     }
 
     /**
@@ -87,7 +87,7 @@ public class ALVisualCompass extends ALProxy {
     * @param theta  Rotation around the Z axis in radians [-3.1415 to 3.1415].
     */
     public Boolean moveTo(Float x, Float y, Float theta) throws CallError, InterruptedException {
-        return (Boolean)service.call("moveTo", x, y, theta).get();
+        return (Boolean)call("moveTo", x, y, theta).get();
     }
 
     /**
@@ -96,7 +96,7 @@ public class ALVisualCompass extends ALProxy {
     * @param x  Algebric distance along the X axis in meters.
     */
     public Boolean moveStraightTo(Float x) throws CallError, InterruptedException {
-        return (Boolean)service.call("moveStraightTo", x).get();
+        return (Boolean)call("moveStraightTo", x).get();
     }
 
     /**
@@ -105,7 +105,7 @@ public class ALVisualCompass extends ALProxy {
     * @return Current value of the framerate of the extractor
     */
     public Integer getFrameRate() throws CallError, InterruptedException {
-        return (Integer)service.call("getFrameRate").get();
+        return (Integer)call("getFrameRate").get();
     }
 
     /**
@@ -114,9 +114,9 @@ public class ALVisualCompass extends ALProxy {
     */
     public void waitUntilTargetReached() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("waitUntilTargetReached");
+            call("waitUntilTargetReached");
         else
-            service.call("waitUntilTargetReached").get();
+            call("waitUntilTargetReached").get();
     }
 
     /**
@@ -125,7 +125,7 @@ public class ALVisualCompass extends ALProxy {
     * @return Id of the current active camera of the extractor
     */
     public Integer getActiveCamera() throws CallError, InterruptedException {
-        return (Integer)service.call("getActiveCamera").get();
+        return (Integer)call("getActiveCamera").get();
     }
 
     /**
@@ -134,7 +134,7 @@ public class ALVisualCompass extends ALProxy {
     * @return True if the extractor is paused, False if not
     */
     public Boolean isPaused() throws CallError, InterruptedException {
-        return (Boolean)service.call("isPaused").get();
+        return (Boolean)call("isPaused").get();
     }
 
     /**
@@ -144,7 +144,7 @@ public class ALVisualCompass extends ALProxy {
     * @return True if the update succeeded, False if not
     */
     public Boolean setActiveCamera(Integer cameraId) throws CallError, InterruptedException {
-        return (Boolean)service.call("setActiveCamera", cameraId).get();
+        return (Boolean)call("setActiveCamera", cameraId).get();
     }
 
     /**
@@ -153,7 +153,7 @@ public class ALVisualCompass extends ALProxy {
     * @return True if the extractor is currently processing images, False if not
     */
     public Boolean isProcessing() throws CallError, InterruptedException {
-        return (Boolean)service.call("isProcessing").get();
+        return (Boolean)call("isProcessing").get();
     }
 
     /**
@@ -163,9 +163,9 @@ public class ALVisualCompass extends ALProxy {
     */
     public void pause(Boolean paused) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("pause", paused);
+            call("pause", paused);
         else
-            service.call("pause", paused).get();
+            call("pause", paused).get();
     }
 
     /**
@@ -174,7 +174,7 @@ public class ALVisualCompass extends ALProxy {
     * @return Reference image (formatted as the ALValue from getImageRemote of ALVideoDevice)
     */
     public Object getReferenceImage() throws CallError, InterruptedException {
-        return (Object)service.call("getReferenceImage").get();
+        return (Object)call("getReferenceImage").get();
     }
 
     /**
@@ -183,7 +183,7 @@ public class ALVisualCompass extends ALProxy {
     * @return True if the reference image has been successfully set
     */
     public Boolean setCurrentImageAsReference() throws CallError, InterruptedException {
-        return (Boolean)service.call("setCurrentImageAsReference").get();
+        return (Boolean)call("setCurrentImageAsReference").get();
     }
 
     /**
@@ -191,7 +191,7 @@ public class ALVisualCompass extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -200,9 +200,9 @@ public class ALVisualCompass extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -210,7 +210,7 @@ public class ALVisualCompass extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -219,9 +219,9 @@ public class ALVisualCompass extends ALProxy {
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -230,7 +230,7 @@ public class ALVisualCompass extends ALProxy {
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -239,7 +239,7 @@ public class ALVisualCompass extends ALProxy {
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -248,7 +248,7 @@ public class ALVisualCompass extends ALProxy {
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -258,7 +258,7 @@ public class ALVisualCompass extends ALProxy {
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -267,7 +267,7 @@ public class ALVisualCompass extends ALProxy {
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -278,7 +278,7 @@ public class ALVisualCompass extends ALProxy {
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -288,7 +288,7 @@ public class ALVisualCompass extends ALProxy {
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -298,9 +298,9 @@ public class ALVisualCompass extends ALProxy {
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -309,7 +309,7 @@ public class ALVisualCompass extends ALProxy {
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -319,7 +319,7 @@ public class ALVisualCompass extends ALProxy {
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -331,9 +331,9 @@ public class ALVisualCompass extends ALProxy {
     */
     public void subscribe(String name, Integer period, Float precision) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("subscribe", name, period, precision);
+            call("subscribe", name, period, precision);
         else
-            service.call("subscribe", name, period, precision).get();
+            call("subscribe", name, period, precision).get();
     }
 
     /**
@@ -343,9 +343,9 @@ public class ALVisualCompass extends ALProxy {
     */
     public void subscribe(String name) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("subscribe", name);
+            call("subscribe", name);
         else
-            service.call("subscribe", name).get();
+            call("subscribe", name).get();
     }
 
     /**
@@ -355,9 +355,9 @@ public class ALVisualCompass extends ALProxy {
     */
     public void unsubscribe(String name) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("unsubscribe", name);
+            call("unsubscribe", name);
         else
-            service.call("unsubscribe", name).get();
+            call("unsubscribe", name).get();
     }
 
     /**
@@ -368,9 +368,9 @@ public class ALVisualCompass extends ALProxy {
     */
     public void updatePeriod(String name, Integer period) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("updatePeriod", name, period);
+            call("updatePeriod", name, period);
         else
-            service.call("updatePeriod", name, period).get();
+            call("updatePeriod", name, period).get();
     }
 
     /**
@@ -381,9 +381,9 @@ public class ALVisualCompass extends ALProxy {
     */
     public void updatePrecision(String name, Float precision) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("updatePrecision", name, precision);
+            call("updatePrecision", name, precision);
         else
-            service.call("updatePrecision", name, precision).get();
+            call("updatePrecision", name, precision).get();
     }
 
     /**
@@ -392,7 +392,7 @@ public class ALVisualCompass extends ALProxy {
     * @return Refresh period (in milliseconds).
     */
     public Integer getCurrentPeriod() throws CallError, InterruptedException {
-        return (Integer)service.call("getCurrentPeriod").get();
+        return (Integer)call("getCurrentPeriod").get();
     }
 
     /**
@@ -401,7 +401,7 @@ public class ALVisualCompass extends ALProxy {
     * @return Precision of the extractor.
     */
     public Float getCurrentPrecision() throws CallError, InterruptedException {
-        return (Float)service.call("getCurrentPrecision").get();
+        return (Float)call("getCurrentPrecision").get();
     }
 
     /**
@@ -411,7 +411,7 @@ public class ALVisualCompass extends ALProxy {
     * @return Refresh period (in milliseconds).
     */
     public Integer getMyPeriod(String name) throws CallError, InterruptedException {
-        return (Integer)service.call("getMyPeriod", name).get();
+        return (Integer)call("getMyPeriod", name).get();
     }
 
     /**
@@ -421,7 +421,7 @@ public class ALVisualCompass extends ALProxy {
     * @return precision of the extractor
     */
     public Float getMyPrecision(String name) throws CallError, InterruptedException {
-        return (Float)service.call("getMyPrecision", name).get();
+        return (Float)call("getMyPrecision", name).get();
     }
 
     /**
@@ -430,7 +430,7 @@ public class ALVisualCompass extends ALProxy {
     * @return Array of names and parameters of all subscribers.
     */
     public Object getSubscribersInfo() throws CallError, InterruptedException {
-        return (Object)service.call("getSubscribersInfo").get();
+        return (Object)call("getSubscribersInfo").get();
     }
 
     /**
@@ -439,7 +439,7 @@ public class ALVisualCompass extends ALProxy {
     * @return Array of values updated by this extractor in ALMemory
     */
     public List<String> getOutputNames() throws CallError, InterruptedException {
-        return (List<String>)service.call("getOutputNames").get();
+        return (List<String>)call("getOutputNames").get();
     }
 
     /**
@@ -448,7 +448,7 @@ public class ALVisualCompass extends ALProxy {
     * @return Array of events updated by this extractor in ALMemory
     */
     public List<String> getEventList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getEventList").get();
+        return (List<String>)call("getEventList").get();
     }
 
     /**
@@ -457,7 +457,7 @@ public class ALVisualCompass extends ALProxy {
     * @return Array of events updated by this extractor in ALMemory
     */
     public List<String> getMemoryKeyList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMemoryKeyList").get();
+        return (List<String>)call("getMemoryKeyList").get();
     }
 
     /**
@@ -468,7 +468,7 @@ public class ALVisualCompass extends ALProxy {
     * @return True if the update succeeded, False if not
     */
     public Boolean setFrameRate(String subscriberName, Integer framerate) throws CallError, InterruptedException {
-        return (Boolean)service.call("setFrameRate", subscriberName, framerate).get();
+        return (Boolean)call("setFrameRate", subscriberName, framerate).get();
     }
 
     /**
@@ -478,7 +478,7 @@ public class ALVisualCompass extends ALProxy {
     * @return True if the update succeeded, False if not
     */
     public Boolean setFrameRate(Integer framerate) throws CallError, InterruptedException {
-        return (Boolean)service.call("setFrameRate", framerate).get();
+        return (Boolean)call("setFrameRate", framerate).get();
     }
 
 }

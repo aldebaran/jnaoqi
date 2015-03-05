@@ -30,7 +30,7 @@ public class PackageManager extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -39,9 +39,9 @@ public class PackageManager extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -49,7 +49,7 @@ public class PackageManager extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -57,7 +57,7 @@ public class PackageManager extends ALProxy {
     * 
     */
     public Boolean install(String param1) throws CallError, InterruptedException {
-        return (Boolean)service.call("install", param1).get();
+        return (Boolean)call("install", param1).get();
     }
 
     /**
@@ -65,7 +65,7 @@ public class PackageManager extends ALProxy {
     * 
     */
     public Boolean installCheckMd5(String param1, String param2) throws CallError, InterruptedException {
-        return (Boolean)service.call("installCheckMd5", param1, param2).get();
+        return (Boolean)call("installCheckMd5", param1, param2).get();
     }
 
     /**
@@ -74,9 +74,9 @@ public class PackageManager extends ALProxy {
     */
     public void setServiceDirectory(String param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setServiceDirectory", param1);
+            call("setServiceDirectory", param1);
         else
-            service.call("setServiceDirectory", param1).get();
+            call("setServiceDirectory", param1).get();
     }
 
     /**
@@ -84,7 +84,7 @@ public class PackageManager extends ALProxy {
     * 
     */
     public Boolean hasPackage(String param1) throws CallError, InterruptedException {
-        return (Boolean)service.call("hasPackage", param1).get();
+        return (Boolean)call("hasPackage", param1).get();
     }
 
     /**
@@ -92,7 +92,7 @@ public class PackageManager extends ALProxy {
     * 
     */
     public List<Tuple10<String, String, String, String, String, String, String, String, String, Map<String, Object>>> packages2() throws CallError, InterruptedException {
-        return (List<Tuple10<String, String, String, String, String, String, String, String, String, Map<String, Object>>>)service.call("packages2").get();
+        return (List<Tuple10<String, String, String, String, String, String, String, String, String, Map<String, Object>>>)call("packages2").get();
     }
 
     /**
@@ -100,7 +100,7 @@ public class PackageManager extends ALProxy {
     * 
     */
     public Tuple10<String, String, String, String, String, String, String, String, String, Map<String, Object>> package2(String param1) throws CallError, InterruptedException {
-        return (Tuple10<String, String, String, String, String, String, String, String, String, Map<String, Object>>)service.call("package2", param1).get();
+        return (Tuple10<String, String, String, String, String, String, String, String, String, Map<String, Object>>)call("package2", param1).get();
     }
 
     /**
@@ -108,7 +108,7 @@ public class PackageManager extends ALProxy {
     * 
     */
     public String packageIcon(String param1) throws CallError, InterruptedException {
-        return (String)service.call("packageIcon", param1).get();
+        return (String)call("packageIcon", param1).get();
     }
 
     /**
@@ -117,9 +117,9 @@ public class PackageManager extends ALProxy {
     */
     public void removePkg(String param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("removePkg", param1);
+            call("removePkg", param1);
         else
-            service.call("removePkg", param1).get();
+            call("removePkg", param1).get();
     }
 
     /**
@@ -127,7 +127,7 @@ public class PackageManager extends ALProxy {
     * 
     */
     public Object getPackages() throws CallError, InterruptedException {
-        return (Object)service.call("getPackages").get();
+        return (Object)call("getPackages").get();
     }
 
     /**
@@ -135,7 +135,7 @@ public class PackageManager extends ALProxy {
     * 
     */
     public List<Tuple20<String, String, String, String, String, String, String, String, Map<String, String>, Map<String, String>, List<String>, List<Tuple10<String, String, Map<String, String>, Map<String, String>, String, Map<String, List<String>>, Map<String, List<String>>, Map<String, List<String>>, Map<String, List<String>>, List<String>>>, List<Tuple5<String, String, String, String, Map<String, String>>>, String, List<Tuple5<String, String, String, String, String>>, List<Tuple2<String, String>>, List<Tuple3<String, String, Boolean>>, List<String>, List<Tuple3<String, String, Map<String, String>>>, List<String>>> packages() throws CallError, InterruptedException {
-        return (List<Tuple20<String, String, String, String, String, String, String, String, Map<String, String>, Map<String, String>, List<String>, List<Tuple10<String, String, Map<String, String>, Map<String, String>, String, Map<String, List<String>>, Map<String, List<String>>, Map<String, List<String>>, Map<String, List<String>>, List<String>>>, List<Tuple5<String, String, String, String, Map<String, String>>>, String, List<Tuple5<String, String, String, String, String>>, List<Tuple2<String, String>>, List<Tuple3<String, String, Boolean>>, List<String>, List<Tuple3<String, String, Map<String, String>>>, List<String>>>)service.call("packages").get();
+        return (List<Tuple20<String, String, String, String, String, String, String, String, Map<String, String>, Map<String, String>, List<String>, List<Tuple10<String, String, Map<String, String>, Map<String, String>, String, Map<String, List<String>>, Map<String, List<String>>, Map<String, List<String>>, Map<String, List<String>>, List<String>>>, List<Tuple5<String, String, String, String, Map<String, String>>>, String, List<Tuple5<String, String, String, String, String>>, List<Tuple2<String, String>>, List<Tuple3<String, String, Boolean>>, List<String>, List<Tuple3<String, String, Map<String, String>>>, List<String>>>)call("packages").get();
     }
 
     /**
@@ -143,7 +143,7 @@ public class PackageManager extends ALProxy {
     * 
     */
     public Tuple20<String, String, String, String, String, String, String, String, Map<String, String>, Map<String, String>, List<String>, List<Tuple10<String, String, Map<String, String>, Map<String, String>, String, Map<String, List<String>>, Map<String, List<String>>, Map<String, List<String>>, Map<String, List<String>>, List<String>>>, List<Tuple5<String, String, String, String, Map<String, String>>>, String, List<Tuple5<String, String, String, String, String>>, List<Tuple2<String, String>>, List<Tuple3<String, String, Boolean>>, List<String>, List<Tuple3<String, String, Map<String, String>>>, List<String>> getPackage2(String param1) throws CallError, InterruptedException {
-        return (Tuple20<String, String, String, String, String, String, String, String, Map<String, String>, Map<String, String>, List<String>, List<Tuple10<String, String, Map<String, String>, Map<String, String>, String, Map<String, List<String>>, Map<String, List<String>>, Map<String, List<String>>, Map<String, List<String>>, List<String>>>, List<Tuple5<String, String, String, String, Map<String, String>>>, String, List<Tuple5<String, String, String, String, String>>, List<Tuple2<String, String>>, List<Tuple3<String, String, Boolean>>, List<String>, List<Tuple3<String, String, Map<String, String>>>, List<String>>)service.call("package", param1).get();
+        return (Tuple20<String, String, String, String, String, String, String, String, Map<String, String>, Map<String, String>, List<String>, List<Tuple10<String, String, Map<String, String>, Map<String, String>, String, Map<String, List<String>>, Map<String, List<String>>, Map<String, List<String>>, Map<String, List<String>>, List<String>>>, List<Tuple5<String, String, String, String, Map<String, String>>>, String, List<Tuple5<String, String, String, String, String>>, List<Tuple2<String, String>>, List<Tuple3<String, String, Boolean>>, List<String>, List<Tuple3<String, String, Map<String, String>>>, List<String>>)call("package", param1).get();
     }
 
     /**
@@ -151,7 +151,7 @@ public class PackageManager extends ALProxy {
     * 
     */
     public Object getPackage(String param1) throws CallError, InterruptedException {
-        return (Object)service.call("getPackage", param1).get();
+        return (Object)call("getPackage", param1).get();
     }
 
     /**
@@ -159,7 +159,7 @@ public class PackageManager extends ALProxy {
     * 
     */
     public Object getPackageIcon(String param1) throws CallError, InterruptedException {
-        return (Object)service.call("getPackageIcon", param1).get();
+        return (Object)call("getPackageIcon", param1).get();
     }
 
     /**
@@ -167,7 +167,7 @@ public class PackageManager extends ALProxy {
     * 
     */
     public Integer install(String param1, String param2) throws CallError, InterruptedException {
-        return (Integer)service.call("install", param1, param2).get();
+        return (Integer)call("install", param1, param2).get();
     }
 
     /**
@@ -175,7 +175,7 @@ public class PackageManager extends ALProxy {
     * 
     */
     public Integer install(String param1, String param2, String param3) throws CallError, InterruptedException {
-        return (Integer)service.call("install", param1, param2, param3).get();
+        return (Integer)call("install", param1, param2, param3).get();
     }
 
     /**
@@ -183,7 +183,7 @@ public class PackageManager extends ALProxy {
     * 
     */
     public Integer remove(String param1) throws CallError, InterruptedException {
-        return (Integer)service.call("remove", param1).get();
+        return (Integer)call("remove", param1).get();
     }
 
 }

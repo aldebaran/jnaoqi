@@ -36,9 +36,9 @@ public class ALLeds extends ALProxy {
     */
     public void setIntensity(String name, Float intensity) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setIntensity", name, intensity);
+            call("setIntensity", name, intensity);
         else
-            service.call("setIntensity", name, intensity).get();
+            call("setIntensity", name, intensity).get();
     }
 
     /**
@@ -48,9 +48,9 @@ public class ALLeds extends ALProxy {
     */
     public void on(String name) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("on", name);
+            call("on", name);
         else
-            service.call("on", name).get();
+            call("on", name).get();
     }
 
     /**
@@ -62,9 +62,9 @@ public class ALLeds extends ALProxy {
     */
     public void rotateEyes(Integer rgb, Float timeForRotation, Float totalDuration) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("rotateEyes", rgb, timeForRotation, totalDuration);
+            call("rotateEyes", rgb, timeForRotation, totalDuration);
         else
-            service.call("rotateEyes", rgb, timeForRotation, totalDuration).get();
+            call("rotateEyes", rgb, timeForRotation, totalDuration).get();
     }
 
     /**
@@ -74,9 +74,9 @@ public class ALLeds extends ALProxy {
     */
     public void randomEyes(Float duration) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("randomEyes", duration);
+            call("randomEyes", duration);
         else
-            service.call("randomEyes", duration).get();
+            call("randomEyes", duration).get();
     }
 
     /**
@@ -86,9 +86,9 @@ public class ALLeds extends ALProxy {
     */
     public void rasta(Float duration) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("rasta", duration);
+            call("rasta", duration);
         else
-            service.call("rasta", duration).get();
+            call("rasta", duration).get();
     }
 
     /**
@@ -96,7 +96,7 @@ public class ALLeds extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -105,9 +105,9 @@ public class ALLeds extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -115,7 +115,7 @@ public class ALLeds extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -124,9 +124,9 @@ public class ALLeds extends ALProxy {
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -135,7 +135,7 @@ public class ALLeds extends ALProxy {
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -144,7 +144,7 @@ public class ALLeds extends ALProxy {
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -153,7 +153,7 @@ public class ALLeds extends ALProxy {
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -163,7 +163,7 @@ public class ALLeds extends ALProxy {
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -172,7 +172,7 @@ public class ALLeds extends ALProxy {
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -183,7 +183,7 @@ public class ALLeds extends ALProxy {
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -193,7 +193,7 @@ public class ALLeds extends ALProxy {
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -203,9 +203,9 @@ public class ALLeds extends ALProxy {
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -214,7 +214,7 @@ public class ALLeds extends ALProxy {
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -224,7 +224,7 @@ public class ALLeds extends ALProxy {
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -235,9 +235,9 @@ public class ALLeds extends ALProxy {
     */
     public void createGroup(String groupName, List<String> ledNames) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("createGroup", groupName, ledNames);
+            call("createGroup", groupName, ledNames);
         else
-            service.call("createGroup", groupName, ledNames).get();
+            call("createGroup", groupName, ledNames).get();
     }
 
     /**
@@ -249,9 +249,9 @@ public class ALLeds extends ALProxy {
     */
     public void earLedsSetAngle(Integer degrees, Float duration, Boolean leaveOnAtEnd) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("earLedsSetAngle", degrees, duration, leaveOnAtEnd);
+            call("earLedsSetAngle", degrees, duration, leaveOnAtEnd);
         else
-            service.call("earLedsSetAngle", degrees, duration, leaveOnAtEnd).get();
+            call("earLedsSetAngle", degrees, duration, leaveOnAtEnd).get();
     }
 
     /**
@@ -263,9 +263,9 @@ public class ALLeds extends ALProxy {
     */
     public void fade(String name, Float intensity, Float duration) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("fade", name, intensity, duration);
+            call("fade", name, intensity, duration);
         else
-            service.call("fade", name, intensity, duration).get();
+            call("fade", name, intensity, duration).get();
     }
 
     /**
@@ -277,9 +277,9 @@ public class ALLeds extends ALProxy {
     */
     public void fadeListRGB(String name, Object rgbList, Object timeList) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("fadeListRGB", name, rgbList, timeList);
+            call("fadeListRGB", name, rgbList, timeList);
         else
-            service.call("fadeListRGB", name, rgbList, timeList).get();
+            call("fadeListRGB", name, rgbList, timeList).get();
     }
 
     /**
@@ -293,9 +293,9 @@ public class ALLeds extends ALProxy {
     */
     public void fadeRGB(String name, Float red, Float green, Float blue, Float duration) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("fadeRGB", name, red, green, blue, duration);
+            call("fadeRGB", name, red, green, blue, duration);
         else
-            service.call("fadeRGB", name, red, green, blue, duration).get();
+            call("fadeRGB", name, red, green, blue, duration).get();
     }
 
     /**
@@ -307,9 +307,9 @@ public class ALLeds extends ALProxy {
     */
     public void fadeRGB(String name, String colorName, Float duration) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("fadeRGB", name, colorName, duration);
+            call("fadeRGB", name, colorName, duration);
         else
-            service.call("fadeRGB", name, colorName, duration).get();
+            call("fadeRGB", name, colorName, duration).get();
     }
 
     /**
@@ -321,9 +321,9 @@ public class ALLeds extends ALProxy {
     */
     public void fadeRGB(String name, Integer rgb, Float duration) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("fadeRGB", name, rgb, duration);
+            call("fadeRGB", name, rgb, duration);
         else
-            service.call("fadeRGB", name, rgb, duration).get();
+            call("fadeRGB", name, rgb, duration).get();
     }
 
     /**
@@ -333,9 +333,9 @@ public class ALLeds extends ALProxy {
     */
     public void reset(String name) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("reset", name);
+            call("reset", name);
         else
-            service.call("reset", name).get();
+            call("reset", name).get();
     }
 
     /**
@@ -345,7 +345,7 @@ public class ALLeds extends ALProxy {
     * @return The intensity of the LED or Group.
     */
     public Object getIntensity(String name) throws CallError, InterruptedException {
-        return (Object)service.call("getIntensity", name).get();
+        return (Object)call("getIntensity", name).get();
     }
 
     /**
@@ -354,7 +354,7 @@ public class ALLeds extends ALProxy {
     * @return A vector of LED names.
     */
     public List<String> listLEDs() throws CallError, InterruptedException {
-        return (List<String>)service.call("listLEDs").get();
+        return (List<String>)call("listLEDs").get();
     }
 
     /**
@@ -364,7 +364,7 @@ public class ALLeds extends ALProxy {
     * @return A vector of device names.
     */
     public List<String> listLED(String name) throws CallError, InterruptedException {
-        return (List<String>)service.call("listLED", name).get();
+        return (List<String>)call("listLED", name).get();
     }
 
     /**
@@ -374,7 +374,7 @@ public class ALLeds extends ALProxy {
     * @return A vector of string device names.
     */
     public List<String> listGroup(String groupName) throws CallError, InterruptedException {
-        return (List<String>)service.call("listGroup", groupName).get();
+        return (List<String>)call("listGroup", groupName).get();
     }
 
     /**
@@ -383,7 +383,7 @@ public class ALLeds extends ALProxy {
     * @return A vector of group names.
     */
     public List<String> listGroups() throws CallError, InterruptedException {
-        return (List<String>)service.call("listGroups").get();
+        return (List<String>)call("listGroups").get();
     }
 
     /**
@@ -393,9 +393,9 @@ public class ALLeds extends ALProxy {
     */
     public void off(String name) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("off", name);
+            call("off", name);
         else
-            service.call("off", name).get();
+            call("off", name).get();
     }
 
 }

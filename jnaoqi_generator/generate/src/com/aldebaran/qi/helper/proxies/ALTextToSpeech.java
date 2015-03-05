@@ -32,9 +32,9 @@ public class ALTextToSpeech extends ALProxy {
     */
     public void loadVoicePreference(String pPreferenceName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("loadVoicePreference", pPreferenceName);
+            call("loadVoicePreference", pPreferenceName);
         else
-            service.call("loadVoicePreference", pPreferenceName).get();
+            call("loadVoicePreference", pPreferenceName).get();
     }
 
     /**
@@ -43,7 +43,7 @@ public class ALTextToSpeech extends ALProxy {
     * @return  Array of std::string containing the voices installed on the system.
     */
     public List<String> getAvailableVoices() throws CallError, InterruptedException {
-        return (List<String>)service.call("getAvailableVoices").get();
+        return (List<String>)call("getAvailableVoices").get();
     }
 
     /**
@@ -52,7 +52,7 @@ public class ALTextToSpeech extends ALProxy {
     * @return Volume (integer between 0 and 100).
     */
     public Float getVolume() throws CallError, InterruptedException {
-        return (Float)service.call("getVolume").get();
+        return (Float)call("getVolume").get();
     }
 
     /**
@@ -61,7 +61,7 @@ public class ALTextToSpeech extends ALProxy {
     * @return A string with xx_XX format (region_country)
     */
     public String locale() throws CallError, InterruptedException {
-        return (String)service.call("locale").get();
+        return (String)call("locale").get();
     }
 
     /**
@@ -72,9 +72,9 @@ public class ALTextToSpeech extends ALProxy {
     */
     public void setLanguageDefaultVoice(String Language, String Voice) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setLanguageDefaultVoice", Language, Voice);
+            call("setLanguageDefaultVoice", Language, Voice);
         else
-            service.call("setLanguageDefaultVoice", Language, Voice).get();
+            call("setLanguageDefaultVoice", Language, Voice).get();
     }
 
     /**
@@ -84,9 +84,9 @@ public class ALTextToSpeech extends ALProxy {
     */
     public void setVolume(Float volume) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setVolume", volume);
+            call("setVolume", volume);
         else
-            service.call("setVolume", volume).get();
+            call("setVolume", volume).get();
     }
 
     /**
@@ -95,9 +95,9 @@ public class ALTextToSpeech extends ALProxy {
     */
     public void enableNotifications() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("enableNotifications");
+            call("enableNotifications");
         else
-            service.call("enableNotifications").get();
+            call("enableNotifications").get();
     }
 
     /**
@@ -106,9 +106,9 @@ public class ALTextToSpeech extends ALProxy {
     */
     public void disableNotifications() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("disableNotifications");
+            call("disableNotifications");
         else
-            service.call("disableNotifications").get();
+            call("disableNotifications").get();
     }
 
     /**
@@ -116,7 +116,7 @@ public class ALTextToSpeech extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -125,9 +125,9 @@ public class ALTextToSpeech extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -135,7 +135,7 @@ public class ALTextToSpeech extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -144,9 +144,9 @@ public class ALTextToSpeech extends ALProxy {
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -155,7 +155,7 @@ public class ALTextToSpeech extends ALProxy {
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -164,7 +164,7 @@ public class ALTextToSpeech extends ALProxy {
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -173,7 +173,7 @@ public class ALTextToSpeech extends ALProxy {
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -183,7 +183,7 @@ public class ALTextToSpeech extends ALProxy {
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -192,7 +192,7 @@ public class ALTextToSpeech extends ALProxy {
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -203,7 +203,7 @@ public class ALTextToSpeech extends ALProxy {
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -213,7 +213,7 @@ public class ALTextToSpeech extends ALProxy {
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -223,9 +223,9 @@ public class ALTextToSpeech extends ALProxy {
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -234,7 +234,7 @@ public class ALTextToSpeech extends ALProxy {
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -244,7 +244,7 @@ public class ALTextToSpeech extends ALProxy {
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -254,9 +254,9 @@ public class ALTextToSpeech extends ALProxy {
     */
     public void say(String stringToSay) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("say", stringToSay);
+            call("say", stringToSay);
         else
-            service.call("say", stringToSay).get();
+            call("say", stringToSay).get();
     }
 
     /**
@@ -267,9 +267,9 @@ public class ALTextToSpeech extends ALProxy {
     */
     public void say(String stringToSay, String language) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("say", stringToSay, language);
+            call("say", stringToSay, language);
         else
-            service.call("say", stringToSay, language).get();
+            call("say", stringToSay, language).get();
     }
 
     /**
@@ -280,9 +280,9 @@ public class ALTextToSpeech extends ALProxy {
     */
     public void sayToFile(String pStringToSay, String pFileName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("sayToFile", pStringToSay, pFileName);
+            call("sayToFile", pStringToSay, pFileName);
         else
-            service.call("sayToFile", pStringToSay, pFileName).get();
+            call("sayToFile", pStringToSay, pFileName).get();
     }
 
     /**
@@ -292,9 +292,9 @@ public class ALTextToSpeech extends ALProxy {
     */
     public void sayToFileAndPlay(String pStringToSay) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("sayToFileAndPlay", pStringToSay);
+            call("sayToFileAndPlay", pStringToSay);
         else
-            service.call("sayToFileAndPlay", pStringToSay).get();
+            call("sayToFileAndPlay", pStringToSay).get();
     }
 
     /**
@@ -303,9 +303,9 @@ public class ALTextToSpeech extends ALProxy {
     */
     public void stopAll() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stopAll");
+            call("stopAll");
         else
-            service.call("stopAll").get();
+            call("stopAll").get();
     }
 
     /**
@@ -315,9 +315,9 @@ public class ALTextToSpeech extends ALProxy {
     */
     public void setLanguage(String pLanguage) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setLanguage", pLanguage);
+            call("setLanguage", pLanguage);
         else
-            service.call("setLanguage", pLanguage).get();
+            call("setLanguage", pLanguage).get();
     }
 
     /**
@@ -326,7 +326,7 @@ public class ALTextToSpeech extends ALProxy {
     * @return Language of the current voice.
     */
     public String getLanguage() throws CallError, InterruptedException {
-        return (String)service.call("getLanguage").get();
+        return (String)call("getLanguage").get();
     }
 
     /**
@@ -336,7 +336,7 @@ public class ALTextToSpeech extends ALProxy {
     * @return Encoding of the specified language.
     */
     public String getLanguageEncoding(String pLanguage) throws CallError, InterruptedException {
-        return (String)service.call("getLanguageEncoding", pLanguage).get();
+        return (String)call("getLanguageEncoding", pLanguage).get();
     }
 
     /**
@@ -345,7 +345,7 @@ public class ALTextToSpeech extends ALProxy {
     * @return Array of std::string that contains the languages installed on the system.
     */
     public List<String> getAvailableLanguages() throws CallError, InterruptedException {
-        return (List<String>)service.call("getAvailableLanguages").get();
+        return (List<String>)call("getAvailableLanguages").get();
     }
 
     /**
@@ -354,7 +354,7 @@ public class ALTextToSpeech extends ALProxy {
     * @return Array of std::string that contains all the supported languages (may be installed or not).
     */
     public List<String> getSupportedLanguages() throws CallError, InterruptedException {
-        return (List<String>)service.call("getSupportedLanguages").get();
+        return (List<String>)call("getSupportedLanguages").get();
     }
 
     /**
@@ -364,9 +364,9 @@ public class ALTextToSpeech extends ALProxy {
     */
     public void resetSpeed() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("resetSpeed");
+            call("resetSpeed");
         else
-            service.call("resetSpeed").get();
+            call("resetSpeed").get();
     }
 
     /**
@@ -382,9 +382,9 @@ public class ALTextToSpeech extends ALProxy {
     */
     public void setParameter(String pEffectName, Float pEffectValue) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setParameter", pEffectName, pEffectValue);
+            call("setParameter", pEffectName, pEffectValue);
         else
-            service.call("setParameter", pEffectName, pEffectValue).get();
+            call("setParameter", pEffectName, pEffectValue).get();
     }
 
     /**
@@ -394,7 +394,7 @@ public class ALTextToSpeech extends ALProxy {
     * @return Value of the specified parameter
     */
     public Float getParameter(String pParameterName) throws CallError, InterruptedException {
-        return (Float)service.call("getParameter", pParameterName).get();
+        return (Float)call("getParameter", pParameterName).get();
     }
 
     /**
@@ -404,9 +404,9 @@ public class ALTextToSpeech extends ALProxy {
     */
     public void setVoice(String pVoiceID) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setVoice", pVoiceID);
+            call("setVoice", pVoiceID);
         else
-            service.call("setVoice", pVoiceID).get();
+            call("setVoice", pVoiceID).get();
     }
 
     /**
@@ -415,7 +415,7 @@ public class ALTextToSpeech extends ALProxy {
     * @return Name of the current voice
     */
     public String getVoice() throws CallError, InterruptedException {
-        return (String)service.call("getVoice").get();
+        return (String)call("getVoice").get();
     }
 
 }

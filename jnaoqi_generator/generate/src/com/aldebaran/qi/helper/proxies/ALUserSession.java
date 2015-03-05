@@ -33,7 +33,7 @@ public class ALUserSession extends ALProxy {
     * @return A map keyed by source_name of ALValues of the data.
     */
     public Map<String, Object> getUserData(Integer uid, String data_name) throws CallError, InterruptedException {
-        return (Map<String, Object>)service.call("getUserData", uid, data_name).get();
+        return (Map<String, Object>)call("getUserData", uid, data_name).get();
     }
 
     /**
@@ -44,7 +44,7 @@ public class ALUserSession extends ALProxy {
     * @return The string value of the binding ID for the user.
     */
     public String getUserBinding(Integer uid, String binding_name) throws CallError, InterruptedException {
-        return (String)service.call("getUserBinding", uid, binding_name).get();
+        return (String)call("getUserBinding", uid, binding_name).get();
     }
 
     /**
@@ -55,7 +55,7 @@ public class ALUserSession extends ALProxy {
     * @return The int IDs of the users with the passed binding_value.
     */
     public List<Integer> findUsersWithBinding(String binding_name, String binding_value) throws CallError, InterruptedException {
-        return (List<Integer>)service.call("findUsersWithBinding", binding_name, binding_value).get();
+        return (List<Integer>)call("findUsersWithBinding", binding_name, binding_value).get();
     }
 
     /**
@@ -65,7 +65,7 @@ public class ALUserSession extends ALProxy {
     * @return A bool, true if the source has been registered
     */
     public Boolean doesUserDataSourceExist(String source_name) throws CallError, InterruptedException {
-        return (Boolean)service.call("doesUserDataSourceExist", source_name).get();
+        return (Boolean)call("doesUserDataSourceExist", source_name).get();
     }
 
     /**
@@ -75,7 +75,7 @@ public class ALUserSession extends ALProxy {
     * @return A map of string binding names and their string values.
     */
     public Map<String, String> getUserBindings(Integer uid) throws CallError, InterruptedException {
-        return (Map<String, String>)service.call("getUserBindings", uid).get();
+        return (Map<String, String>)call("getUserBindings", uid).get();
     }
 
     /**
@@ -84,7 +84,7 @@ public class ALUserSession extends ALProxy {
     * @return A list of strings of each registered data source.
     */
     public List<String> getUserDataSources() throws CallError, InterruptedException {
-        return (List<String>)service.call("getUserDataSources").get();
+        return (List<String>)call("getUserDataSources").get();
     }
 
     /**
@@ -96,7 +96,7 @@ public class ALUserSession extends ALProxy {
     * @return ALValue of the data.
     */
     public Object getUserData(Integer uid, String data_name, String source_name) throws CallError, InterruptedException {
-        return (Object)service.call("getUserData", uid, data_name, source_name).get();
+        return (Object)call("getUserData", uid, data_name, source_name).get();
     }
 
     /**
@@ -109,9 +109,9 @@ public class ALUserSession extends ALProxy {
     */
     public void setUserData(Integer uid, String data_name, String source_name, Object data) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setUserData", uid, data_name, source_name, data);
+            call("setUserData", uid, data_name, source_name, data);
         else
-            service.call("setUserData", uid, data_name, source_name, data).get();
+            call("setUserData", uid, data_name, source_name, data).get();
     }
 
     /**
@@ -119,7 +119,7 @@ public class ALUserSession extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -128,9 +128,9 @@ public class ALUserSession extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -138,7 +138,7 @@ public class ALUserSession extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -147,9 +147,9 @@ public class ALUserSession extends ALProxy {
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -158,7 +158,7 @@ public class ALUserSession extends ALProxy {
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -167,7 +167,7 @@ public class ALUserSession extends ALProxy {
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -176,7 +176,7 @@ public class ALUserSession extends ALProxy {
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -186,7 +186,7 @@ public class ALUserSession extends ALProxy {
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -195,7 +195,7 @@ public class ALUserSession extends ALProxy {
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -206,7 +206,7 @@ public class ALUserSession extends ALProxy {
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -216,7 +216,7 @@ public class ALUserSession extends ALProxy {
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -226,9 +226,9 @@ public class ALUserSession extends ALProxy {
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -237,7 +237,7 @@ public class ALUserSession extends ALProxy {
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -247,7 +247,7 @@ public class ALUserSession extends ALProxy {
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -257,7 +257,7 @@ public class ALUserSession extends ALProxy {
     * @return A bool, true if all users exist.
     */
     public Boolean doUsersExist(List<Integer> user_list) throws CallError, InterruptedException {
-        return (Boolean)service.call("doUsersExist", user_list).get();
+        return (Boolean)call("doUsersExist", user_list).get();
     }
 
     /**
@@ -266,7 +266,7 @@ public class ALUserSession extends ALProxy {
     * @return A list of int user IDs.
     */
     public List<Integer> getUserList() throws CallError, InterruptedException {
-        return (List<Integer>)service.call("getUserList").get();
+        return (List<Integer>)call("getUserList").get();
     }
 
     /**
@@ -275,7 +275,7 @@ public class ALUserSession extends ALProxy {
     * @return An int of how many users exist
     */
     public Integer getNumUsers() throws CallError, InterruptedException {
-        return (Integer)service.call("getNumUsers").get();
+        return (Integer)call("getNumUsers").get();
     }
 
     /**
@@ -284,7 +284,7 @@ public class ALUserSession extends ALProxy {
     * @return The int ID of the focused user. -1 if no focused user.
     */
     public Integer getFocusedUser() throws CallError, InterruptedException {
-        return (Integer)service.call("getFocusedUser").get();
+        return (Integer)call("getFocusedUser").get();
     }
 
     /**
@@ -293,7 +293,7 @@ public class ALUserSession extends ALProxy {
     * @return A list of int IDs of each user with an open session.
     */
     public List<Integer> getOpenUserSessions() throws CallError, InterruptedException {
-        return (List<Integer>)service.call("getOpenUserSessions").get();
+        return (List<Integer>)call("getOpenUserSessions").get();
     }
 
     /**
@@ -303,7 +303,7 @@ public class ALUserSession extends ALProxy {
     * @return A bool, true if all users have open sessions.
     */
     public Boolean areUserSessionsOpen(List<Integer> user_list) throws CallError, InterruptedException {
-        return (Boolean)service.call("areUserSessionsOpen", user_list).get();
+        return (Boolean)call("areUserSessionsOpen", user_list).get();
     }
 
     /**
@@ -312,7 +312,7 @@ public class ALUserSession extends ALProxy {
     * @return A list of strings, one for each binding source.
     */
     public List<String> getBindingSources() throws CallError, InterruptedException {
-        return (List<String>)service.call("getBindingSources").get();
+        return (List<String>)call("getBindingSources").get();
     }
 
     /**
@@ -322,7 +322,7 @@ public class ALUserSession extends ALProxy {
     * @return A bool, true if a binding source exists.
     */
     public Boolean doesBindingSourceExist(String binding_name) throws CallError, InterruptedException {
-        return (Boolean)service.call("doesBindingSourceExist", binding_name).get();
+        return (Boolean)call("doesBindingSourceExist", binding_name).get();
     }
 
 }

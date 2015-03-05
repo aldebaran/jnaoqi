@@ -30,7 +30,7 @@ public class ALTracker extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -39,9 +39,9 @@ public class ALTracker extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -49,7 +49,7 @@ public class ALTracker extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -58,9 +58,9 @@ public class ALTracker extends ALProxy {
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -69,7 +69,7 @@ public class ALTracker extends ALProxy {
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -78,7 +78,7 @@ public class ALTracker extends ALProxy {
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -87,7 +87,7 @@ public class ALTracker extends ALProxy {
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -97,7 +97,7 @@ public class ALTracker extends ALProxy {
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -106,7 +106,7 @@ public class ALTracker extends ALProxy {
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -117,7 +117,7 @@ public class ALTracker extends ALProxy {
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -127,7 +127,7 @@ public class ALTracker extends ALProxy {
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -137,9 +137,9 @@ public class ALTracker extends ALProxy {
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -148,7 +148,7 @@ public class ALTracker extends ALProxy {
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -158,7 +158,7 @@ public class ALTracker extends ALProxy {
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -168,7 +168,7 @@ public class ALTracker extends ALProxy {
     * @return Vector of 3 floats corresponding to the target position 3D. 
     */
     public List<Float> getTargetPosition(Integer pFrame) throws CallError, InterruptedException {
-        return (List<Float>)service.call("getTargetPosition", pFrame).get();
+        return (List<Float>)call("getTargetPosition", pFrame).get();
     }
 
     /**
@@ -177,7 +177,7 @@ public class ALTracker extends ALProxy {
     * @return Vector of 6 floats corresponding to the robot position 6D.
     */
     public List<Float> getRobotPosition() throws CallError, InterruptedException {
-        return (List<Float>)service.call("getRobotPosition").get();
+        return (List<Float>)call("getRobotPosition").get();
     }
 
     /**
@@ -186,7 +186,7 @@ public class ALTracker extends ALProxy {
     * @return True if Tracker is running.
     */
     public Boolean isActive() throws CallError, InterruptedException {
-        return (Boolean)service.call("isActive").get();
+        return (Boolean)call("isActive").get();
     }
 
     /**
@@ -195,7 +195,7 @@ public class ALTracker extends ALProxy {
     * @return True if a new target was detected since the last getTargetPosition().
     */
     public Boolean isNewTargetDetected() throws CallError, InterruptedException {
-        return (Boolean)service.call("isNewTargetDetected").get();
+        return (Boolean)call("isNewTargetDetected").get();
     }
 
     /**
@@ -205,9 +205,9 @@ public class ALTracker extends ALProxy {
     */
     public void setRelativePosition(Object target) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setRelativePosition", target);
+            call("setRelativePosition", target);
         else
-            service.call("setRelativePosition", target).get();
+            call("setRelativePosition", target).get();
     }
 
     /**
@@ -216,7 +216,7 @@ public class ALTracker extends ALProxy {
     * @return The final goal of the tracking. Could be [distance, thresholdX, thresholdY] or with LandMarks target name [coordX, coordY, coordWz, thresholdX, thresholdY, thresholdWz].
     */
     public Object getRelativePosition() throws CallError, InterruptedException {
-        return (Object)service.call("getRelativePosition").get();
+        return (Object)call("getRelativePosition").get();
     }
 
     /**
@@ -226,9 +226,9 @@ public class ALTracker extends ALProxy {
     */
     public void setTargetCoordinates(Object pCoord) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setTargetCoordinates", pCoord);
+            call("setTargetCoordinates", pCoord);
         else
-            service.call("setTargetCoordinates", pCoord).get();
+            call("setTargetCoordinates", pCoord).get();
     }
 
     /**
@@ -237,7 +237,7 @@ public class ALTracker extends ALProxy {
     * @return objects coordinates.
     */
     public Object getTargetCoordinates() throws CallError, InterruptedException {
-        return (Object)service.call("getTargetCoordinates").get();
+        return (Object)call("getTargetCoordinates").get();
     }
 
     /**
@@ -247,9 +247,9 @@ public class ALTracker extends ALProxy {
     */
     public void setMode(String pMode) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setMode", pMode);
+            call("setMode", pMode);
         else
-            service.call("setMode", pMode).get();
+            call("setMode", pMode).get();
     }
 
     /**
@@ -258,7 +258,7 @@ public class ALTracker extends ALProxy {
     * @return The current tracker mode.
     */
     public String getMode() throws CallError, InterruptedException {
-        return (String)service.call("getMode").get();
+        return (String)call("getMode").get();
     }
 
     /**
@@ -267,7 +267,7 @@ public class ALTracker extends ALProxy {
     * @return List of predefined mode.
     */
     public List<String> getAvailableModes() throws CallError, InterruptedException {
-        return (List<String>)service.call("getAvailableModes").get();
+        return (List<String>)call("getAvailableModes").get();
     }
 
     /**
@@ -277,9 +277,9 @@ public class ALTracker extends ALProxy {
     */
     public void toggleSearch(Boolean pSearch) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("toggleSearch", pSearch);
+            call("toggleSearch", pSearch);
         else
-            service.call("toggleSearch", pSearch).get();
+            call("toggleSearch", pSearch).get();
     }
 
     /**
@@ -288,7 +288,7 @@ public class ALTracker extends ALProxy {
     * @return If true the target search process is enabled.
     */
     public Boolean isSearchEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isSearchEnabled").get();
+        return (Boolean)call("isSearchEnabled").get();
     }
 
     /**
@@ -297,9 +297,9 @@ public class ALTracker extends ALProxy {
     */
     public void stopTracker() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stopTracker");
+            call("stopTracker");
         else
-            service.call("stopTracker").get();
+            call("stopTracker").get();
     }
 
     /**
@@ -308,7 +308,7 @@ public class ALTracker extends ALProxy {
     * @return True if the target was lost.
     */
     public Boolean isTargetLost() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTargetLost").get();
+        return (Boolean)call("isTargetLost").get();
     }
 
     /**
@@ -318,9 +318,9 @@ public class ALTracker extends ALProxy {
     */
     public void track(String pTarget) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("track", pTarget);
+            call("track", pTarget);
         else
-            service.call("track", pTarget).get();
+            call("track", pTarget).get();
     }
 
     /**
@@ -330,9 +330,9 @@ public class ALTracker extends ALProxy {
     */
     public void trackEvent(String pEventName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("trackEvent", pEventName);
+            call("trackEvent", pEventName);
         else
-            service.call("trackEvent", pEventName).get();
+            call("trackEvent", pEventName).get();
     }
 
     /**
@@ -343,9 +343,9 @@ public class ALTracker extends ALProxy {
     */
     public void registerTarget(String pTarget, Object pParams) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("registerTarget", pTarget, pParams);
+            call("registerTarget", pTarget, pParams);
         else
-            service.call("registerTarget", pTarget, pParams).get();
+            call("registerTarget", pTarget, pParams).get();
     }
 
     /**
@@ -356,9 +356,9 @@ public class ALTracker extends ALProxy {
     */
     public void setExtractorPeriod(String pTarget, Integer pPeriod) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setExtractorPeriod", pTarget, pPeriod);
+            call("setExtractorPeriod", pTarget, pPeriod);
         else
-            service.call("setExtractorPeriod", pTarget, pPeriod).get();
+            call("setExtractorPeriod", pTarget, pPeriod).get();
     }
 
     /**
@@ -368,7 +368,7 @@ public class ALTracker extends ALProxy {
     * @return a period in milliseconds
     */
     public Integer getExtractorPeriod(String pTarget) throws CallError, InterruptedException {
-        return (Integer)service.call("getExtractorPeriod", pTarget).get();
+        return (Integer)call("getExtractorPeriod", pTarget).get();
     }
 
     /**
@@ -378,9 +378,9 @@ public class ALTracker extends ALProxy {
     */
     public void unregisterTarget(String pTarget) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("unregisterTarget", pTarget);
+            call("unregisterTarget", pTarget);
         else
-            service.call("unregisterTarget", pTarget).get();
+            call("unregisterTarget", pTarget).get();
     }
 
     /**
@@ -390,9 +390,9 @@ public class ALTracker extends ALProxy {
     */
     public void unregisterTargets(List<String> pTarget) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("unregisterTargets", pTarget);
+            call("unregisterTargets", pTarget);
         else
-            service.call("unregisterTargets", pTarget).get();
+            call("unregisterTargets", pTarget).get();
     }
 
     /**
@@ -401,9 +401,9 @@ public class ALTracker extends ALProxy {
     */
     public void unregisterAllTargets() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("unregisterAllTargets");
+            call("unregisterAllTargets");
         else
-            service.call("unregisterAllTargets").get();
+            call("unregisterAllTargets").get();
     }
 
     /**
@@ -412,7 +412,7 @@ public class ALTracker extends ALProxy {
     * @return Tracked target name.
     */
     public String getActiveTarget() throws CallError, InterruptedException {
-        return (String)service.call("getActiveTarget").get();
+        return (String)call("getActiveTarget").get();
     }
 
     /**
@@ -421,7 +421,7 @@ public class ALTracker extends ALProxy {
     * @return Supported targets names.
     */
     public List<String> getSupportedTargets() throws CallError, InterruptedException {
-        return (List<String>)service.call("getSupportedTargets").get();
+        return (List<String>)call("getSupportedTargets").get();
     }
 
     /**
@@ -430,7 +430,7 @@ public class ALTracker extends ALProxy {
     * @return Registered targets names.
     */
     public List<String> getRegisteredTargets() throws CallError, InterruptedException {
-        return (List<String>)service.call("getRegisteredTargets").get();
+        return (List<String>)call("getRegisteredTargets").get();
     }
 
     /**
@@ -444,9 +444,9 @@ public class ALTracker extends ALProxy {
     */
     public void lookAt(List<Float> pPosition, Integer pFrame, Float pFractionMaxSpeed, Boolean pUseWholeBody) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("lookAt", pPosition, pFrame, pFractionMaxSpeed, pUseWholeBody);
+            call("lookAt", pPosition, pFrame, pFractionMaxSpeed, pUseWholeBody);
         else
-            service.call("lookAt", pPosition, pFrame, pFractionMaxSpeed, pUseWholeBody).get();
+            call("lookAt", pPosition, pFrame, pFractionMaxSpeed, pUseWholeBody).get();
     }
 
     /**
@@ -460,9 +460,9 @@ public class ALTracker extends ALProxy {
     */
     public void pointAt(String pEffector, List<Float> pPosition, Integer pFrame, Float pFractionMaxSpeed) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("pointAt", pEffector, pPosition, pFrame, pFractionMaxSpeed);
+            call("pointAt", pEffector, pPosition, pFrame, pFractionMaxSpeed);
         else
-            service.call("pointAt", pEffector, pPosition, pFrame, pFractionMaxSpeed).get();
+            call("pointAt", pEffector, pPosition, pFrame, pFractionMaxSpeed).get();
     }
 
     /**
@@ -471,7 +471,7 @@ public class ALTracker extends ALProxy {
     * @return ALMotion GaitConfig
     */
     public Object getMoveConfig() throws CallError, InterruptedException {
-        return (Object)service.call("getMoveConfig").get();
+        return (Object)call("getMoveConfig").get();
     }
 
     /**
@@ -481,9 +481,9 @@ public class ALTracker extends ALProxy {
     */
     public void setMoveConfig(Object config) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setMoveConfig", config);
+            call("setMoveConfig", config);
         else
-            service.call("setMoveConfig", config).get();
+            call("setMoveConfig", config).get();
     }
 
     /**
@@ -492,7 +492,7 @@ public class ALTracker extends ALProxy {
     * @return time in milliseconds.
     */
     public Integer getTimeOut() throws CallError, InterruptedException {
-        return (Integer)service.call("getTimeOut").get();
+        return (Integer)call("getTimeOut").get();
     }
 
     /**
@@ -502,9 +502,9 @@ public class ALTracker extends ALProxy {
     */
     public void setTimeOut(Integer pTimeMs) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setTimeOut", pTimeMs);
+            call("setTimeOut", pTimeMs);
         else
-            service.call("setTimeOut", pTimeMs).get();
+            call("setTimeOut", pTimeMs).get();
     }
 
     /**
@@ -513,7 +513,7 @@ public class ALTracker extends ALProxy {
     * @return The maximum distance for target detection in meter.
     */
     public Float getMaximumDistanceDetection() throws CallError, InterruptedException {
-        return (Float)service.call("getMaximumDistanceDetection").get();
+        return (Float)call("getMaximumDistanceDetection").get();
     }
 
     /**
@@ -523,9 +523,9 @@ public class ALTracker extends ALProxy {
     */
     public void setMaximumDistanceDetection(Float pMaxDistance) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setMaximumDistanceDetection", pMaxDistance);
+            call("setMaximumDistanceDetection", pMaxDistance);
         else
-            service.call("setMaximumDistanceDetection", pMaxDistance).get();
+            call("setMaximumDistanceDetection", pMaxDistance).get();
     }
 
     /**
@@ -534,7 +534,7 @@ public class ALTracker extends ALProxy {
     * @return Active effector name. Could be: "Arms", "LArm", "RArm" or "None". 
     */
     public String getEffector() throws CallError, InterruptedException {
-        return (String)service.call("getEffector").get();
+        return (String)call("getEffector").get();
     }
 
     /**
@@ -544,9 +544,9 @@ public class ALTracker extends ALProxy {
     */
     public void setEffector(String pEffector) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setEffector", pEffector);
+            call("setEffector", pEffector);
         else
-            service.call("setEffector", pEffector).get();
+            call("setEffector", pEffector).get();
     }
 
     /**
@@ -559,9 +559,9 @@ public class ALTracker extends ALProxy {
     */
     public void lookAt(List<Float> pPosition, Float pFractionMaxSpeed, Boolean pUseWholeBody) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("lookAt", pPosition, pFractionMaxSpeed, pUseWholeBody);
+            call("lookAt", pPosition, pFractionMaxSpeed, pUseWholeBody);
         else
-            service.call("lookAt", pPosition, pFractionMaxSpeed, pUseWholeBody).get();
+            call("lookAt", pPosition, pFractionMaxSpeed, pUseWholeBody).get();
     }
 
     /**
@@ -574,9 +574,9 @@ public class ALTracker extends ALProxy {
     */
     public void pointAt(String pEffector, List<Float> pPosition, Float pFractionMaxSpeed) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("pointAt", pEffector, pPosition, pFractionMaxSpeed);
+            call("pointAt", pEffector, pPosition, pFractionMaxSpeed);
         else
-            service.call("pointAt", pEffector, pPosition, pFractionMaxSpeed).get();
+            call("pointAt", pEffector, pPosition, pFractionMaxSpeed).get();
     }
 
     /**
@@ -585,7 +585,7 @@ public class ALTracker extends ALProxy {
     * @return Vector of 3 floats corresponding to the target position 3D. 
     */
     public List<Float> getTargetPosition() throws CallError, InterruptedException {
-        return (List<Float>)service.call("getTargetPosition").get();
+        return (List<Float>)call("getTargetPosition").get();
     }
 
     /**
@@ -594,7 +594,7 @@ public class ALTracker extends ALProxy {
     * @return Valid targets names.
     */
     public List<String> getTargetNames() throws CallError, InterruptedException {
-        return (List<String>)service.call("getTargetNames").get();
+        return (List<String>)call("getTargetNames").get();
     }
 
     /**
@@ -603,7 +603,7 @@ public class ALTracker extends ALProxy {
     * @return Managed targets names.
     */
     public List<String> getManagedTargets() throws CallError, InterruptedException {
-        return (List<String>)service.call("getManagedTargets").get();
+        return (List<String>)call("getManagedTargets").get();
     }
 
     /**
@@ -614,9 +614,9 @@ public class ALTracker extends ALProxy {
     */
     public void addTarget(String pTarget, Object pParams) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("addTarget", pTarget, pParams);
+            call("addTarget", pTarget, pParams);
         else
-            service.call("addTarget", pTarget, pParams).get();
+            call("addTarget", pTarget, pParams).get();
     }
 
     /**
@@ -626,9 +626,9 @@ public class ALTracker extends ALProxy {
     */
     public void removeTarget(String pTarget) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("removeTarget", pTarget);
+            call("removeTarget", pTarget);
         else
-            service.call("removeTarget", pTarget).get();
+            call("removeTarget", pTarget).get();
     }
 
     /**
@@ -638,9 +638,9 @@ public class ALTracker extends ALProxy {
     */
     public void removeTargets(List<String> pTarget) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("removeTargets", pTarget);
+            call("removeTargets", pTarget);
         else
-            service.call("removeTargets", pTarget).get();
+            call("removeTargets", pTarget).get();
     }
 
     /**
@@ -649,9 +649,9 @@ public class ALTracker extends ALProxy {
     */
     public void removeAllTargets() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("removeAllTargets");
+            call("removeAllTargets");
         else
-            service.call("removeAllTargets").get();
+            call("removeAllTargets").get();
     }
 
     /**
@@ -661,9 +661,9 @@ public class ALTracker extends ALProxy {
     */
     public void addEffector(String pEffector) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("addEffector", pEffector);
+            call("addEffector", pEffector);
         else
-            service.call("addEffector", pEffector).get();
+            call("addEffector", pEffector).get();
     }
 
     /**
@@ -673,9 +673,9 @@ public class ALTracker extends ALProxy {
     */
     public void removeEffector(String pEffector) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("removeEffector", pEffector);
+            call("removeEffector", pEffector);
         else
-            service.call("removeEffector", pEffector).get();
+            call("removeEffector", pEffector).get();
     }
 
 }

@@ -30,7 +30,7 @@ public class DCM extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -39,9 +39,9 @@ public class DCM extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -49,7 +49,7 @@ public class DCM extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -58,9 +58,9 @@ public class DCM extends ALProxy {
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -69,7 +69,7 @@ public class DCM extends ALProxy {
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -78,7 +78,7 @@ public class DCM extends ALProxy {
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -87,7 +87,7 @@ public class DCM extends ALProxy {
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -97,7 +97,7 @@ public class DCM extends ALProxy {
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -106,7 +106,7 @@ public class DCM extends ALProxy {
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -117,7 +117,7 @@ public class DCM extends ALProxy {
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -127,7 +127,7 @@ public class DCM extends ALProxy {
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -137,9 +137,9 @@ public class DCM extends ALProxy {
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -148,7 +148,7 @@ public class DCM extends ALProxy {
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -158,7 +158,7 @@ public class DCM extends ALProxy {
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -168,9 +168,9 @@ public class DCM extends ALProxy {
     */
     public void set(Object commands) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("set", commands);
+            call("set", commands);
         else
-            service.call("set", commands).get();
+            call("set", commands).get();
     }
 
     /**
@@ -180,9 +180,9 @@ public class DCM extends ALProxy {
     */
     public void setAlias(Object commands) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setAlias", commands);
+            call("setAlias", commands);
         else
-            service.call("setAlias", commands).get();
+            call("setAlias", commands).get();
     }
 
     /**
@@ -194,9 +194,9 @@ public class DCM extends ALProxy {
     */
     public void setAlias(String name, Integer time, List<Float> commands) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setAlias", name, time, commands);
+            call("setAlias", name, time, commands);
         else
-            service.call("setAlias", name, time, commands).get();
+            call("setAlias", name, time, commands).get();
     }
 
     /**
@@ -206,7 +206,7 @@ public class DCM extends ALProxy {
     * @return An integer (could be signed) with the DCM time
     */
     public Integer getTime(Integer offset) throws CallError, InterruptedException {
-        return (Integer)service.call("getTime", offset).get();
+        return (Integer)call("getTime", offset).get();
     }
 
     /**
@@ -216,7 +216,7 @@ public class DCM extends ALProxy {
     * @return Same as pParams, but with the name removed if the actuator is not found
     */
     public Object createAlias(Object alias) throws CallError, InterruptedException {
-        return (Object)service.call("createAlias", alias).get();
+        return (Object)call("createAlias", alias).get();
     }
 
     /**
@@ -225,7 +225,7 @@ public class DCM extends ALProxy {
     * @return the STM base name for all device/sensors (1st string in the array) and all devices (2nd string in the array)
     */
     public Object getPrefix() throws CallError, InterruptedException {
-        return (Object)service.call("getPrefix").get();
+        return (Object)call("getPrefix").get();
     }
 
     /**
@@ -235,9 +235,9 @@ public class DCM extends ALProxy {
     */
     public void special(String result) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("special", result);
+            call("special", result);
         else
-            service.call("special", result).get();
+            call("special", result).get();
     }
 
     /**
@@ -247,9 +247,9 @@ public class DCM extends ALProxy {
     */
     public void calibration(Object calibrationInput) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("calibration", calibrationInput);
+            call("calibration", calibrationInput);
         else
-            service.call("calibration", calibrationInput).get();
+            call("calibration", calibrationInput).get();
     }
 
     /**
@@ -262,7 +262,7 @@ public class DCM extends ALProxy {
     * @return Nothing
     */
     public Integer preferences(String action, String target, String keyName, Object keyValue) throws CallError, InterruptedException {
-        return (Integer)service.call("preferences", action, target, keyName, keyValue).get();
+        return (Integer)call("preferences", action, target, keyName, keyValue).get();
     }
 
 }

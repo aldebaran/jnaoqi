@@ -30,7 +30,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public List<Float> getPosition6D(String param1, String param2) throws CallError, InterruptedException {
-        return (List<Float>)service.call("getPosition6D", param1, param2).get();
+        return (List<Float>)call("getPosition6D", param1, param2).get();
     }
 
     /**
@@ -38,7 +38,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Object selectWithOrder(String param1, String param2, String param3, String param4, String param5) throws CallError, InterruptedException {
-        return (Object)service.call("selectWithOrder", param1, param2, param3, param4, param5).get();
+        return (Object)call("selectWithOrder", param1, param2, param3, param4, param5).get();
     }
 
     /**
@@ -46,7 +46,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public String getObjectParentName(String param1) throws CallError, InterruptedException {
-        return (String)service.call("getObjectParentName", param1).get();
+        return (String)call("getObjectParentName", param1).get();
     }
 
     /**
@@ -54,7 +54,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Integer storeObjectWithReference(String param1, String param2, String param3, List<Float> param4, String param5, Object param6) throws CallError, InterruptedException {
-        return (Integer)service.call("storeObjectWithReference", param1, param2, param3, param4, param5, param6).get();
+        return (Integer)call("storeObjectWithReference", param1, param2, param3, param4, param5, param6).get();
     }
 
     /**
@@ -62,7 +62,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Integer storeObjectAttribute(String param1, String param2, Object param3) throws CallError, InterruptedException {
-        return (Integer)service.call("storeObjectAttribute", param1, param2, param3).get();
+        return (Integer)call("storeObjectAttribute", param1, param2, param3).get();
     }
 
     /**
@@ -70,7 +70,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public String getObjectCategory(String param1) throws CallError, InterruptedException {
-        return (String)service.call("getObjectCategory", param1).get();
+        return (String)call("getObjectCategory", param1).get();
     }
 
     /**
@@ -78,7 +78,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Integer updatePositionWithReference(String param1, String param2, List<Float> param3, Boolean param4) throws CallError, InterruptedException {
-        return (Integer)service.call("updatePositionWithReference", param1, param2, param3, param4).get();
+        return (Integer)call("updatePositionWithReference", param1, param2, param3, param4).get();
     }
 
     /**
@@ -86,7 +86,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Integer updateAttribute(String param1, String param2, String param3, Object param4) throws CallError, InterruptedException {
-        return (Integer)service.call("updateAttribute", param1, param2, param3, param4).get();
+        return (Integer)call("updateAttribute", param1, param2, param3, param4).get();
     }
 
     /**
@@ -94,7 +94,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Object getPosition(String param1, String param2) throws CallError, InterruptedException {
-        return (Object)service.call("getPosition", param1, param2).get();
+        return (Object)call("getPosition", param1, param2).get();
     }
 
     /**
@@ -102,7 +102,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public List<Float> getPosition6DAtTime(String param1, String param2, Integer param3, Integer param4) throws CallError, InterruptedException {
-        return (List<Float>)service.call("getPosition6DAtTime", param1, param2, param3, param4).get();
+        return (List<Float>)call("getPosition6DAtTime", param1, param2, param3, param4).get();
     }
 
     /**
@@ -110,7 +110,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public String getRootName() throws CallError, InterruptedException {
-        return (String)service.call("getRootName").get();
+        return (String)call("getRootName").get();
     }
 
     /**
@@ -118,7 +118,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public List<String> getObjectsInCategory(String param1) throws CallError, InterruptedException {
-        return (List<String>)service.call("getObjectsInCategory", param1).get();
+        return (List<String>)call("getObjectsInCategory", param1).get();
     }
 
     /**
@@ -126,7 +126,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Integer save() throws CallError, InterruptedException {
-        return (Integer)service.call("save").get();
+        return (Integer)call("save").get();
     }
 
     /**
@@ -134,7 +134,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Object select(String param1, String param2, String param3, String param4) throws CallError, InterruptedException {
-        return (Object)service.call("select", param1, param2, param3, param4).get();
+        return (Object)call("select", param1, param2, param3, param4).get();
     }
 
     /**
@@ -142,7 +142,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Integer storeObject(String param1, String param2, List<Float> param3, String param4, Object param5) throws CallError, InterruptedException {
-        return (Integer)service.call("storeObject", param1, param2, param3, param4, param5).get();
+        return (Integer)call("storeObject", param1, param2, param3, param4, param5).get();
     }
 
     /**
@@ -150,7 +150,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Integer updatePosition(String param1, List<Float> param2, Boolean param3) throws CallError, InterruptedException {
-        return (Integer)service.call("updatePosition", param1, param2, param3).get();
+        return (Integer)call("updatePosition", param1, param2, param3).get();
     }
 
     /**
@@ -158,7 +158,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -167,9 +167,9 @@ public class ALWorldRepresentation extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -177,7 +177,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -186,9 +186,9 @@ public class ALWorldRepresentation extends ALProxy {
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -197,7 +197,7 @@ public class ALWorldRepresentation extends ALProxy {
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -206,7 +206,7 @@ public class ALWorldRepresentation extends ALProxy {
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -215,7 +215,7 @@ public class ALWorldRepresentation extends ALProxy {
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -225,7 +225,7 @@ public class ALWorldRepresentation extends ALProxy {
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -234,7 +234,7 @@ public class ALWorldRepresentation extends ALProxy {
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -245,7 +245,7 @@ public class ALWorldRepresentation extends ALProxy {
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -255,7 +255,7 @@ public class ALWorldRepresentation extends ALProxy {
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -265,9 +265,9 @@ public class ALWorldRepresentation extends ALProxy {
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -276,7 +276,7 @@ public class ALWorldRepresentation extends ALProxy {
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -286,7 +286,7 @@ public class ALWorldRepresentation extends ALProxy {
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -294,7 +294,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Integer addAttributeToCategory(String param1, String param2, Object param3) throws CallError, InterruptedException {
-        return (Integer)service.call("addAttributeToCategory", param1, param2, param3).get();
+        return (Integer)call("addAttributeToCategory", param1, param2, param3).get();
     }
 
     /**
@@ -302,7 +302,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Integer clearObject(String param1) throws CallError, InterruptedException {
-        return (Integer)service.call("clearObject", param1).get();
+        return (Integer)call("clearObject", param1).get();
     }
 
     /**
@@ -310,7 +310,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Integer clearOldPositions(String param1, Integer param2) throws CallError, InterruptedException {
-        return (Integer)service.call("clearOldPositions", param1, param2).get();
+        return (Integer)call("clearOldPositions", param1, param2).get();
     }
 
     /**
@@ -318,7 +318,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Integer createObjectCategory(String param1, Boolean param2) throws CallError, InterruptedException {
-        return (Integer)service.call("createObjectCategory", param1, param2).get();
+        return (Integer)call("createObjectCategory", param1, param2).get();
     }
 
     /**
@@ -326,7 +326,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Integer removeObjectCategory(String param1) throws CallError, InterruptedException {
-        return (Integer)service.call("removeObjectCategory", param1).get();
+        return (Integer)call("removeObjectCategory", param1).get();
     }
 
     /**
@@ -334,7 +334,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Boolean objectCategoryExists(String param1) throws CallError, InterruptedException {
-        return (Boolean)service.call("objectCategoryExists", param1).get();
+        return (Boolean)call("objectCategoryExists", param1).get();
     }
 
     /**
@@ -342,7 +342,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Integer deleteObjectAttribute(String param1, String param2, String param3) throws CallError, InterruptedException {
-        return (Integer)service.call("deleteObjectAttribute", param1, param2, param3).get();
+        return (Integer)call("deleteObjectAttribute", param1, param2, param3).get();
     }
 
     /**
@@ -350,7 +350,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Boolean findObject(String param1) throws CallError, InterruptedException {
-        return (Boolean)service.call("findObject", param1).get();
+        return (Boolean)call("findObject", param1).get();
     }
 
     /**
@@ -358,7 +358,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Integer load() throws CallError, InterruptedException {
-        return (Integer)service.call("load").get();
+        return (Integer)call("load").get();
     }
 
     /**
@@ -366,7 +366,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Object getAttributesFromCategory(String param1) throws CallError, InterruptedException {
-        return (Object)service.call("getAttributesFromCategory", param1).get();
+        return (Object)call("getAttributesFromCategory", param1).get();
     }
 
     /**
@@ -374,7 +374,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public List<String> getChildrenNames(String param1) throws CallError, InterruptedException {
-        return (List<String>)service.call("getChildrenNames", param1).get();
+        return (List<String>)call("getChildrenNames", param1).get();
     }
 
     /**
@@ -382,7 +382,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public List<String> getObjectNames() throws CallError, InterruptedException {
-        return (List<String>)service.call("getObjectNames").get();
+        return (List<String>)call("getObjectNames").get();
     }
 
     /**
@@ -390,7 +390,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Object getObjectAttributes(String param1) throws CallError, InterruptedException {
-        return (Object)service.call("getObjectAttributes", param1).get();
+        return (Object)call("getObjectAttributes", param1).get();
     }
 
     /**
@@ -398,7 +398,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Object getObjectAttributeValues(String param1, String param2, Integer param3) throws CallError, InterruptedException {
-        return (Object)service.call("getObjectAttributeValues", param1, param2, param3).get();
+        return (Object)call("getObjectAttributeValues", param1, param2, param3).get();
     }
 
     /**
@@ -406,7 +406,7 @@ public class ALWorldRepresentation extends ALProxy {
     * 
     */
     public Object getObjectLatestAttributes(String param1, Integer param2) throws CallError, InterruptedException {
-        return (Object)service.call("getObjectLatestAttributes", param1, param2).get();
+        return (Object)call("getObjectLatestAttributes", param1, param2).get();
     }
 
 }

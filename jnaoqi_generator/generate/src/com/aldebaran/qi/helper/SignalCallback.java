@@ -9,9 +9,23 @@ package com.aldebaran.qi.helper;
 import com.aldebaran.qi.AnyObject;
 import com.aldebaran.qi.CallError;
 
+/**
+ * Callback when an Signal is raised
+ * */
 public abstract class SignalCallback<T> {
-	public abstract void onSignal(T value) throws InterruptedException, CallError;
 
+	/**
+	 * Call when an Signal is raised
+	 *
+	 * @param value the value return by the signal, you can get the type in aldebaran doc
+	 * */
+ 	public abstract void onSignal(T value) throws InterruptedException, CallError;
+
+	/**
+	 * Get the equivalence between Java type and naoqi type
+	 * @param tClass The java class of type you want to convert
+	 * @return the Naoqi type
+	 * */
 	public String getNaoqiType(Class<T> tClass) {
 
 		if(tClass == String.class)

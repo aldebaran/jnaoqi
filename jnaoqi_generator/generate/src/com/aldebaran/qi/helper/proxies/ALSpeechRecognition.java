@@ -31,7 +31,7 @@ public class ALSpeechRecognition extends ALProxy {
     * @return Current language used by the speech recognition engine.
     */
     public String getLanguage() throws CallError, InterruptedException {
-        return (String)service.call("getLanguage").get();
+        return (String)call("getLanguage").get();
     }
 
     /**
@@ -41,9 +41,9 @@ public class ALSpeechRecognition extends ALProxy {
     */
     public void setWordListAsVocabulary(List<String> vocabulary) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setWordListAsVocabulary", vocabulary);
+            call("setWordListAsVocabulary", vocabulary);
         else
-            service.call("setWordListAsVocabulary", vocabulary).get();
+            call("setWordListAsVocabulary", vocabulary).get();
     }
 
     /**
@@ -53,9 +53,9 @@ public class ALSpeechRecognition extends ALProxy {
     */
     public void setAudioExpression(Boolean setOrNot) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setAudioExpression", setOrNot);
+            call("setAudioExpression", setOrNot);
         else
-            service.call("setAudioExpression", setOrNot).get();
+            call("setAudioExpression", setOrNot).get();
     }
 
     /**
@@ -65,9 +65,9 @@ public class ALSpeechRecognition extends ALProxy {
     */
     public void pause(Boolean pause) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("pause", pause);
+            call("pause", pause);
         else
-            service.call("pause", pause).get();
+            call("pause", pause).get();
     }
 
     /**
@@ -76,9 +76,9 @@ public class ALSpeechRecognition extends ALProxy {
     */
     public void compile(String param1, String param2, String param3) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("compile", param1, param2, param3);
+            call("compile", param1, param2, param3);
         else
-            service.call("compile", param1, param2, param3).get();
+            call("compile", param1, param2, param3).get();
     }
 
     /**
@@ -88,9 +88,9 @@ public class ALSpeechRecognition extends ALProxy {
     */
     public void setLanguage(String languageName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setLanguage", languageName);
+            call("setLanguage", languageName);
         else
-            service.call("setLanguage", languageName).get();
+            call("setLanguage", languageName).get();
     }
 
     /**
@@ -100,9 +100,9 @@ public class ALSpeechRecognition extends ALProxy {
     */
     public void removeContext(String contextName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("removeContext", contextName);
+            call("removeContext", contextName);
         else
-            service.call("removeContext", contextName).get();
+            call("removeContext", contextName).get();
     }
 
     /**
@@ -111,9 +111,9 @@ public class ALSpeechRecognition extends ALProxy {
     */
     public void removeAllContext() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("removeAllContext");
+            call("removeAllContext");
         else
-            service.call("removeAllContext").get();
+            call("removeAllContext").get();
     }
 
     /**
@@ -122,9 +122,9 @@ public class ALSpeechRecognition extends ALProxy {
     */
     public void pushContexts() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("pushContexts");
+            call("pushContexts");
         else
-            service.call("pushContexts").get();
+            call("pushContexts").get();
     }
 
     /**
@@ -133,9 +133,9 @@ public class ALSpeechRecognition extends ALProxy {
     */
     public void popContexts() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("popContexts");
+            call("popContexts");
         else
-            service.call("popContexts").get();
+            call("popContexts").get();
     }
 
     /**
@@ -144,7 +144,7 @@ public class ALSpeechRecognition extends ALProxy {
     * @param saveName  Name under which to save
     */
     public Boolean saveContextSet(String saveName) throws CallError, InterruptedException {
-        return (Boolean)service.call("saveContextSet", saveName).get();
+        return (Boolean)call("saveContextSet", saveName).get();
     }
 
     /**
@@ -154,9 +154,9 @@ public class ALSpeechRecognition extends ALProxy {
     */
     public void eraseContextSet(String saveName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("eraseContextSet", saveName);
+            call("eraseContextSet", saveName);
         else
-            service.call("eraseContextSet", saveName).get();
+            call("eraseContextSet", saveName).get();
     }
 
     /**
@@ -167,9 +167,9 @@ public class ALSpeechRecognition extends ALProxy {
     */
     public void activateRule(String contextName, String ruleName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("activateRule", contextName, ruleName);
+            call("activateRule", contextName, ruleName);
         else
-            service.call("activateRule", contextName, ruleName).get();
+            call("activateRule", contextName, ruleName).get();
     }
 
     /**
@@ -180,9 +180,9 @@ public class ALSpeechRecognition extends ALProxy {
     */
     public void deactivateRule(String contextName, String ruleName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("deactivateRule", contextName, ruleName);
+            call("deactivateRule", contextName, ruleName);
         else
-            service.call("deactivateRule", contextName, ruleName).get();
+            call("deactivateRule", contextName, ruleName).get();
     }
 
     /**
@@ -192,9 +192,9 @@ public class ALSpeechRecognition extends ALProxy {
     */
     public void activateAllRules(String contextName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("activateAllRules", contextName);
+            call("activateAllRules", contextName);
         else
-            service.call("activateAllRules", contextName).get();
+            call("activateAllRules", contextName).get();
     }
 
     /**
@@ -204,9 +204,9 @@ public class ALSpeechRecognition extends ALProxy {
     */
     public void deactivateAllRules(String contextName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("deactivateAllRules", contextName);
+            call("deactivateAllRules", contextName);
         else
-            service.call("deactivateAllRules", contextName).get();
+            call("deactivateAllRules", contextName).get();
     }
 
     /**
@@ -218,9 +218,9 @@ public class ALSpeechRecognition extends ALProxy {
     */
     public void setContextParam(String contextName, String paramName, Float value) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setContextParam", contextName, paramName, value);
+            call("setContextParam", contextName, paramName, value);
         else
-            service.call("setContextParam", contextName, paramName, value).get();
+            call("setContextParam", contextName, paramName, value).get();
     }
 
     /**
@@ -231,7 +231,7 @@ public class ALSpeechRecognition extends ALProxy {
     * @return Value of the fetched parameter
     */
     public Float getContextParam(String contextName, String paramName) throws CallError, InterruptedException {
-        return (Float)service.call("getContextParam", contextName, paramName).get();
+        return (Float)call("getContextParam", contextName, paramName).get();
     }
 
     /**
@@ -243,9 +243,9 @@ public class ALSpeechRecognition extends ALProxy {
     */
     public void addWordListToSlot(String contextName, String slotName, List<String> wordList) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("addWordListToSlot", contextName, slotName, wordList);
+            call("addWordListToSlot", contextName, slotName, wordList);
         else
-            service.call("addWordListToSlot", contextName, slotName, wordList).get();
+            call("addWordListToSlot", contextName, slotName, wordList).get();
     }
 
     /**
@@ -256,9 +256,9 @@ public class ALSpeechRecognition extends ALProxy {
     */
     public void removeWordListFromSlot(String contextName, String slotName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("removeWordListFromSlot", contextName, slotName);
+            call("removeWordListFromSlot", contextName, slotName);
         else
-            service.call("removeWordListFromSlot", contextName, slotName).get();
+            call("removeWordListFromSlot", contextName, slotName).get();
     }
 
     /**
@@ -268,7 +268,7 @@ public class ALSpeechRecognition extends ALProxy {
     * @param typeName  Type of the required rules.
     */
     public List<String> getRules(String contextName, String typeName) throws CallError, InterruptedException {
-        return (List<String>)service.call("getRules", contextName, typeName).get();
+        return (List<String>)call("getRules", contextName, typeName).get();
     }
 
     /**
@@ -277,7 +277,7 @@ public class ALSpeechRecognition extends ALProxy {
     * @return Array of strings that contains the list of the installed languages.
     */
     public List<String> getAvailableLanguages() throws CallError, InterruptedException {
-        return (List<String>)service.call("getAvailableLanguages").get();
+        return (List<String>)call("getAvailableLanguages").get();
     }
 
     /**
@@ -287,9 +287,9 @@ public class ALSpeechRecognition extends ALProxy {
     */
     public void loadVocabulary(String vocabularyFile) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("loadVocabulary", vocabularyFile);
+            call("loadVocabulary", vocabularyFile);
         else
-            service.call("loadVocabulary", vocabularyFile).get();
+            call("loadVocabulary", vocabularyFile).get();
     }
 
     /**
@@ -305,9 +305,9 @@ The parameters that can be set and the corresponding values are:
     */
     public void setParameter(String paramName, Float paramValue) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setParameter", paramName, paramValue);
+            call("setParameter", paramName, paramValue);
         else
-            service.call("setParameter", paramName, paramValue).get();
+            call("setParameter", paramName, paramValue).get();
     }
 
     /**
@@ -315,7 +315,7 @@ The parameters that can be set and the corresponding values are:
     * 
     */
     public Boolean getAudioExpression() throws CallError, InterruptedException {
-        return (Boolean)service.call("getAudioExpression").get();
+        return (Boolean)call("getAudioExpression").get();
     }
 
     /**
@@ -331,9 +331,9 @@ The parameters that can be set and the corresponding values are:
     */
     public void setParameter(String paramName, Boolean paramValue) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setParameter", paramName, paramValue);
+            call("setParameter", paramName, paramValue);
         else
-            service.call("setParameter", paramName, paramValue).get();
+            call("setParameter", paramName, paramValue).get();
     }
 
     /**
@@ -343,7 +343,7 @@ The parameters that can be set and the corresponding values are:
     * @return Value of the parameter.
     */
     public Float getParameter(String paramName) throws CallError, InterruptedException {
-        return (Float)service.call("getParameter", paramName).get();
+        return (Float)call("getParameter", paramName).get();
     }
 
     /**
@@ -354,9 +354,9 @@ The parameters that can be set and the corresponding values are:
     */
     public void setVocabulary(List<String> vocabulary, Boolean enabledWordSpotting) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setVocabulary", vocabulary, enabledWordSpotting);
+            call("setVocabulary", vocabulary, enabledWordSpotting);
         else
-            service.call("setVocabulary", vocabulary, enabledWordSpotting).get();
+            call("setVocabulary", vocabulary, enabledWordSpotting).get();
     }
 
     /**
@@ -366,9 +366,9 @@ The parameters that can be set and the corresponding values are:
     */
     public void loadContextSet(String saveName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("loadContextSet", saveName);
+            call("loadContextSet", saveName);
         else
-            service.call("loadContextSet", saveName).get();
+            call("loadContextSet", saveName).get();
     }
 
     /**
@@ -379,9 +379,9 @@ The parameters that can be set and the corresponding values are:
     */
     public void addContext(String pathToLCFFile, String contextName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("addContext", pathToLCFFile, contextName);
+            call("addContext", pathToLCFFile, contextName);
         else
-            service.call("addContext", pathToLCFFile, contextName).get();
+            call("addContext", pathToLCFFile, contextName).get();
     }
 
     /**
@@ -389,7 +389,7 @@ The parameters that can be set and the corresponding values are:
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -398,9 +398,9 @@ The parameters that can be set and the corresponding values are:
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -408,7 +408,7 @@ The parameters that can be set and the corresponding values are:
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -417,9 +417,9 @@ The parameters that can be set and the corresponding values are:
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -428,7 +428,7 @@ The parameters that can be set and the corresponding values are:
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -437,7 +437,7 @@ The parameters that can be set and the corresponding values are:
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -446,7 +446,7 @@ The parameters that can be set and the corresponding values are:
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -456,7 +456,7 @@ The parameters that can be set and the corresponding values are:
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -465,7 +465,7 @@ The parameters that can be set and the corresponding values are:
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -476,7 +476,7 @@ The parameters that can be set and the corresponding values are:
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -486,7 +486,7 @@ The parameters that can be set and the corresponding values are:
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -496,9 +496,9 @@ The parameters that can be set and the corresponding values are:
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -507,7 +507,7 @@ The parameters that can be set and the corresponding values are:
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -517,7 +517,7 @@ The parameters that can be set and the corresponding values are:
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -529,9 +529,9 @@ The parameters that can be set and the corresponding values are:
     */
     public void subscribe(String name, Integer period, Float precision) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("subscribe", name, period, precision);
+            call("subscribe", name, period, precision);
         else
-            service.call("subscribe", name, period, precision).get();
+            call("subscribe", name, period, precision).get();
     }
 
     /**
@@ -541,9 +541,9 @@ The parameters that can be set and the corresponding values are:
     */
     public void subscribe(String name) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("subscribe", name);
+            call("subscribe", name);
         else
-            service.call("subscribe", name).get();
+            call("subscribe", name).get();
     }
 
     /**
@@ -553,9 +553,9 @@ The parameters that can be set and the corresponding values are:
     */
     public void unsubscribe(String name) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("unsubscribe", name);
+            call("unsubscribe", name);
         else
-            service.call("unsubscribe", name).get();
+            call("unsubscribe", name).get();
     }
 
     /**
@@ -566,9 +566,9 @@ The parameters that can be set and the corresponding values are:
     */
     public void updatePeriod(String name, Integer period) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("updatePeriod", name, period);
+            call("updatePeriod", name, period);
         else
-            service.call("updatePeriod", name, period).get();
+            call("updatePeriod", name, period).get();
     }
 
     /**
@@ -579,9 +579,9 @@ The parameters that can be set and the corresponding values are:
     */
     public void updatePrecision(String name, Float precision) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("updatePrecision", name, precision);
+            call("updatePrecision", name, precision);
         else
-            service.call("updatePrecision", name, precision).get();
+            call("updatePrecision", name, precision).get();
     }
 
     /**
@@ -590,7 +590,7 @@ The parameters that can be set and the corresponding values are:
     * @return Refresh period (in milliseconds).
     */
     public Integer getCurrentPeriod() throws CallError, InterruptedException {
-        return (Integer)service.call("getCurrentPeriod").get();
+        return (Integer)call("getCurrentPeriod").get();
     }
 
     /**
@@ -599,7 +599,7 @@ The parameters that can be set and the corresponding values are:
     * @return Precision of the extractor.
     */
     public Float getCurrentPrecision() throws CallError, InterruptedException {
-        return (Float)service.call("getCurrentPrecision").get();
+        return (Float)call("getCurrentPrecision").get();
     }
 
     /**
@@ -609,7 +609,7 @@ The parameters that can be set and the corresponding values are:
     * @return Refresh period (in milliseconds).
     */
     public Integer getMyPeriod(String name) throws CallError, InterruptedException {
-        return (Integer)service.call("getMyPeriod", name).get();
+        return (Integer)call("getMyPeriod", name).get();
     }
 
     /**
@@ -619,7 +619,7 @@ The parameters that can be set and the corresponding values are:
     * @return precision of the extractor
     */
     public Float getMyPrecision(String name) throws CallError, InterruptedException {
-        return (Float)service.call("getMyPrecision", name).get();
+        return (Float)call("getMyPrecision", name).get();
     }
 
     /**
@@ -628,7 +628,7 @@ The parameters that can be set and the corresponding values are:
     * @return Array of names and parameters of all subscribers.
     */
     public Object getSubscribersInfo() throws CallError, InterruptedException {
-        return (Object)service.call("getSubscribersInfo").get();
+        return (Object)call("getSubscribersInfo").get();
     }
 
     /**
@@ -637,7 +637,7 @@ The parameters that can be set and the corresponding values are:
     * @return Array of values updated by this extractor in ALMemory
     */
     public List<String> getOutputNames() throws CallError, InterruptedException {
-        return (List<String>)service.call("getOutputNames").get();
+        return (List<String>)call("getOutputNames").get();
     }
 
     /**
@@ -646,7 +646,7 @@ The parameters that can be set and the corresponding values are:
     * @return Array of events updated by this extractor in ALMemory
     */
     public List<String> getEventList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getEventList").get();
+        return (List<String>)call("getEventList").get();
     }
 
     /**
@@ -655,7 +655,7 @@ The parameters that can be set and the corresponding values are:
     * @return Array of events updated by this extractor in ALMemory
     */
     public List<String> getMemoryKeyList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMemoryKeyList").get();
+        return (List<String>)call("getMemoryKeyList").get();
     }
 
     /**
@@ -665,9 +665,9 @@ The parameters that can be set and the corresponding values are:
     */
     public void setVisualExpression(Boolean setOrNot) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setVisualExpression", setOrNot);
+            call("setVisualExpression", setOrNot);
         else
-            service.call("setVisualExpression", setOrNot).get();
+            call("setVisualExpression", setOrNot).get();
     }
 
     /**
@@ -677,9 +677,9 @@ The parameters that can be set and the corresponding values are:
     */
     public void setVisualExpressionMode(Integer mode) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setVisualExpressionMode", mode);
+            call("setVisualExpressionMode", mode);
         else
-            service.call("setVisualExpressionMode", mode).get();
+            call("setVisualExpressionMode", mode).get();
     }
 
 }

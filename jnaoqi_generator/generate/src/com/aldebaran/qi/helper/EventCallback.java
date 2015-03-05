@@ -9,11 +9,13 @@ package com.aldebaran.qi.helper;
 import com.aldebaran.qi.CallError;
 
 /**
- * Callback when an Event raised
+ * Callback when an Event is raised
  * */
 public abstract class EventCallback<T> {
 	/**
 	 * Call when an Event is raised
+	 *
+	 * @param value the value return by the event, you can get the type in aldebaran doc
 	 * */
 	public abstract void onEvent(T value) throws InterruptedException, CallError;
 }

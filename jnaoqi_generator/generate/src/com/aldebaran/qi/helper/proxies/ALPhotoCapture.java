@@ -31,7 +31,7 @@ public class ALPhotoCapture extends ALProxy {
     * @return Current picture format.
     */
     public String getPictureFormat() throws CallError, InterruptedException {
-        return (String)service.call("getPictureFormat").get();
+        return (String)call("getPictureFormat").get();
     }
 
     /**
@@ -40,7 +40,7 @@ public class ALPhotoCapture extends ALProxy {
     * @return True or False.
     */
     public Boolean isHalfPressed() throws CallError, InterruptedException {
-        return (Boolean)service.call("isHalfPressed").get();
+        return (Boolean)call("isHalfPressed").get();
     }
 
     /**
@@ -49,7 +49,7 @@ public class ALPhotoCapture extends ALProxy {
     * @return True or False.
     */
     public Boolean isHalfPressEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isHalfPressEnabled").get();
+        return (Boolean)call("isHalfPressEnabled").get();
     }
 
     /**
@@ -57,7 +57,7 @@ public class ALPhotoCapture extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -66,9 +66,9 @@ public class ALPhotoCapture extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -76,7 +76,7 @@ public class ALPhotoCapture extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -85,9 +85,9 @@ public class ALPhotoCapture extends ALProxy {
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -96,7 +96,7 @@ public class ALPhotoCapture extends ALProxy {
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -105,7 +105,7 @@ public class ALPhotoCapture extends ALProxy {
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -114,7 +114,7 @@ public class ALPhotoCapture extends ALProxy {
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -124,7 +124,7 @@ public class ALPhotoCapture extends ALProxy {
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -133,7 +133,7 @@ public class ALPhotoCapture extends ALProxy {
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -144,7 +144,7 @@ public class ALPhotoCapture extends ALProxy {
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -154,7 +154,7 @@ public class ALPhotoCapture extends ALProxy {
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -164,9 +164,9 @@ public class ALPhotoCapture extends ALProxy {
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -175,7 +175,7 @@ public class ALPhotoCapture extends ALProxy {
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -185,7 +185,7 @@ public class ALPhotoCapture extends ALProxy {
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -195,9 +195,9 @@ public class ALPhotoCapture extends ALProxy {
     */
     public void setHalfPressEnabled(Boolean enable) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setHalfPressEnabled", enable);
+            call("setHalfPressEnabled", enable);
         else
-            service.call("setHalfPressEnabled", enable).get();
+            call("setHalfPressEnabled", enable).get();
     }
 
     /**
@@ -206,7 +206,7 @@ public class ALPhotoCapture extends ALProxy {
     * @return True if eveything went well, False otherwise.
     */
     public Boolean halfPress() throws CallError, InterruptedException {
-        return (Boolean)service.call("halfPress").get();
+        return (Boolean)call("halfPress").get();
     }
 
     /**
@@ -217,7 +217,7 @@ public class ALPhotoCapture extends ALProxy {
     * @return Full file name of the picture saved on the disk: [filename]
     */
     public Object takePicture(String folderPath, String fileName) throws CallError, InterruptedException {
-        return (Object)service.call("takePicture", folderPath, fileName).get();
+        return (Object)call("takePicture", folderPath, fileName).get();
     }
 
     /**
@@ -229,7 +229,7 @@ public class ALPhotoCapture extends ALProxy {
     * @return Full file name of the picture saved on the disk: [filename]
     */
     public Object takePicture(String folderPath, String fileName, Boolean overwrite) throws CallError, InterruptedException {
-        return (Object)service.call("takePicture", folderPath, fileName, overwrite).get();
+        return (Object)call("takePicture", folderPath, fileName, overwrite).get();
     }
 
     /**
@@ -241,7 +241,7 @@ public class ALPhotoCapture extends ALProxy {
     * @return List of all saved files: [[filename1, filename2...]]
     */
     public Object takePictures(Integer numberOfPictures, String folderPath, String fileName) throws CallError, InterruptedException {
-        return (Object)service.call("takePictures", numberOfPictures, folderPath, fileName).get();
+        return (Object)call("takePictures", numberOfPictures, folderPath, fileName).get();
     }
 
     /**
@@ -254,7 +254,7 @@ public class ALPhotoCapture extends ALProxy {
     * @return List of all saved files: [[filename1, filename2...]]
     */
     public Object takePictures(Integer numberOfPictures, String folderPath, String fileName, Boolean overwrite) throws CallError, InterruptedException {
-        return (Object)service.call("takePictures", numberOfPictures, folderPath, fileName, overwrite).get();
+        return (Object)call("takePictures", numberOfPictures, folderPath, fileName, overwrite).get();
     }
 
     /**
@@ -264,9 +264,9 @@ public class ALPhotoCapture extends ALProxy {
     */
     public void setCameraID(Integer cameraID) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setCameraID", cameraID);
+            call("setCameraID", cameraID);
         else
-            service.call("setCameraID", cameraID).get();
+            call("setCameraID", cameraID).get();
     }
 
     /**
@@ -276,9 +276,9 @@ public class ALPhotoCapture extends ALProxy {
     */
     public void setResolution(Integer resolution) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setResolution", resolution);
+            call("setResolution", resolution);
         else
-            service.call("setResolution", resolution).get();
+            call("setResolution", resolution).get();
     }
 
     /**
@@ -288,9 +288,9 @@ public class ALPhotoCapture extends ALProxy {
     */
     public void setColorSpace(Integer colorSpace) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setColorSpace", colorSpace);
+            call("setColorSpace", colorSpace);
         else
-            service.call("setColorSpace", colorSpace).get();
+            call("setColorSpace", colorSpace).get();
     }
 
     /**
@@ -300,9 +300,9 @@ public class ALPhotoCapture extends ALProxy {
     */
     public void setCaptureInterval(Integer captureInterval) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setCaptureInterval", captureInterval);
+            call("setCaptureInterval", captureInterval);
         else
-            service.call("setCaptureInterval", captureInterval).get();
+            call("setCaptureInterval", captureInterval).get();
     }
 
     /**
@@ -312,9 +312,9 @@ public class ALPhotoCapture extends ALProxy {
     */
     public void setPictureFormat(String pictureFormat) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setPictureFormat", pictureFormat);
+            call("setPictureFormat", pictureFormat);
         else
-            service.call("setPictureFormat", pictureFormat).get();
+            call("setPictureFormat", pictureFormat).get();
     }
 
     /**
@@ -323,7 +323,7 @@ public class ALPhotoCapture extends ALProxy {
     * @return Current camera ID.
     */
     public Integer getCameraID() throws CallError, InterruptedException {
-        return (Integer)service.call("getCameraID").get();
+        return (Integer)call("getCameraID").get();
     }
 
     /**
@@ -332,7 +332,7 @@ public class ALPhotoCapture extends ALProxy {
     * @return Current frame resolution.
     */
     public Integer getResolution() throws CallError, InterruptedException {
-        return (Integer)service.call("getResolution").get();
+        return (Integer)call("getResolution").get();
     }
 
     /**
@@ -341,7 +341,7 @@ public class ALPhotoCapture extends ALProxy {
     * @return Current color space.
     */
     public Integer getColorSpace() throws CallError, InterruptedException {
-        return (Integer)service.call("getColorSpace").get();
+        return (Integer)call("getColorSpace").get();
     }
 
     /**
@@ -350,7 +350,7 @@ public class ALPhotoCapture extends ALProxy {
     * @return Current delay (in ms) between two pictures.
     */
     public Integer getCaptureInterval() throws CallError, InterruptedException {
-        return (Integer)service.call("getCaptureInterval").get();
+        return (Integer)call("getCaptureInterval").get();
     }
 
 }

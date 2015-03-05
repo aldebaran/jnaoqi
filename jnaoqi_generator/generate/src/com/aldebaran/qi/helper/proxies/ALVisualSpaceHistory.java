@@ -31,9 +31,9 @@ public class ALVisualSpaceHistory extends ALProxy {
     */
     public void resetGrid() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("resetGrid");
+            call("resetGrid");
         else
-            service.call("resetGrid").get();
+            call("resetGrid").get();
     }
 
     /**
@@ -41,7 +41,7 @@ public class ALVisualSpaceHistory extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -50,9 +50,9 @@ public class ALVisualSpaceHistory extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -60,7 +60,7 @@ public class ALVisualSpaceHistory extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -69,9 +69,9 @@ public class ALVisualSpaceHistory extends ALProxy {
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -80,7 +80,7 @@ public class ALVisualSpaceHistory extends ALProxy {
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -89,7 +89,7 @@ public class ALVisualSpaceHistory extends ALProxy {
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -98,7 +98,7 @@ public class ALVisualSpaceHistory extends ALProxy {
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -108,7 +108,7 @@ public class ALVisualSpaceHistory extends ALProxy {
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -117,7 +117,7 @@ public class ALVisualSpaceHistory extends ALProxy {
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -128,7 +128,7 @@ public class ALVisualSpaceHistory extends ALProxy {
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -138,7 +138,7 @@ public class ALVisualSpaceHistory extends ALProxy {
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -148,9 +148,9 @@ public class ALVisualSpaceHistory extends ALProxy {
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -159,7 +159,7 @@ public class ALVisualSpaceHistory extends ALProxy {
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -169,7 +169,7 @@ public class ALVisualSpaceHistory extends ALProxy {
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -181,9 +181,9 @@ public class ALVisualSpaceHistory extends ALProxy {
     */
     public void subscribe(String name, Integer period, Float precision) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("subscribe", name, period, precision);
+            call("subscribe", name, period, precision);
         else
-            service.call("subscribe", name, period, precision).get();
+            call("subscribe", name, period, precision).get();
     }
 
     /**
@@ -193,9 +193,9 @@ public class ALVisualSpaceHistory extends ALProxy {
     */
     public void subscribe(String name) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("subscribe", name);
+            call("subscribe", name);
         else
-            service.call("subscribe", name).get();
+            call("subscribe", name).get();
     }
 
     /**
@@ -205,9 +205,9 @@ public class ALVisualSpaceHistory extends ALProxy {
     */
     public void unsubscribe(String name) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("unsubscribe", name);
+            call("unsubscribe", name);
         else
-            service.call("unsubscribe", name).get();
+            call("unsubscribe", name).get();
     }
 
     /**
@@ -218,9 +218,9 @@ public class ALVisualSpaceHistory extends ALProxy {
     */
     public void updatePeriod(String name, Integer period) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("updatePeriod", name, period);
+            call("updatePeriod", name, period);
         else
-            service.call("updatePeriod", name, period).get();
+            call("updatePeriod", name, period).get();
     }
 
     /**
@@ -231,9 +231,9 @@ public class ALVisualSpaceHistory extends ALProxy {
     */
     public void updatePrecision(String name, Float precision) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("updatePrecision", name, precision);
+            call("updatePrecision", name, precision);
         else
-            service.call("updatePrecision", name, precision).get();
+            call("updatePrecision", name, precision).get();
     }
 
     /**
@@ -242,7 +242,7 @@ public class ALVisualSpaceHistory extends ALProxy {
     * @return Refresh period (in milliseconds).
     */
     public Integer getCurrentPeriod() throws CallError, InterruptedException {
-        return (Integer)service.call("getCurrentPeriod").get();
+        return (Integer)call("getCurrentPeriod").get();
     }
 
     /**
@@ -251,7 +251,7 @@ public class ALVisualSpaceHistory extends ALProxy {
     * @return Precision of the extractor.
     */
     public Float getCurrentPrecision() throws CallError, InterruptedException {
-        return (Float)service.call("getCurrentPrecision").get();
+        return (Float)call("getCurrentPrecision").get();
     }
 
     /**
@@ -261,7 +261,7 @@ public class ALVisualSpaceHistory extends ALProxy {
     * @return Refresh period (in milliseconds).
     */
     public Integer getMyPeriod(String name) throws CallError, InterruptedException {
-        return (Integer)service.call("getMyPeriod", name).get();
+        return (Integer)call("getMyPeriod", name).get();
     }
 
     /**
@@ -271,7 +271,7 @@ public class ALVisualSpaceHistory extends ALProxy {
     * @return precision of the extractor
     */
     public Float getMyPrecision(String name) throws CallError, InterruptedException {
-        return (Float)service.call("getMyPrecision", name).get();
+        return (Float)call("getMyPrecision", name).get();
     }
 
     /**
@@ -280,7 +280,7 @@ public class ALVisualSpaceHistory extends ALProxy {
     * @return Array of names and parameters of all subscribers.
     */
     public Object getSubscribersInfo() throws CallError, InterruptedException {
-        return (Object)service.call("getSubscribersInfo").get();
+        return (Object)call("getSubscribersInfo").get();
     }
 
     /**
@@ -289,7 +289,7 @@ public class ALVisualSpaceHistory extends ALProxy {
     * @return Array of values updated by this extractor in ALMemory
     */
     public List<String> getOutputNames() throws CallError, InterruptedException {
-        return (List<String>)service.call("getOutputNames").get();
+        return (List<String>)call("getOutputNames").get();
     }
 
     /**
@@ -298,7 +298,7 @@ public class ALVisualSpaceHistory extends ALProxy {
     * @return Array of events updated by this extractor in ALMemory
     */
     public List<String> getEventList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getEventList").get();
+        return (List<String>)call("getEventList").get();
     }
 
     /**
@@ -307,7 +307,7 @@ public class ALVisualSpaceHistory extends ALProxy {
     * @return Array of events updated by this extractor in ALMemory
     */
     public List<String> getMemoryKeyList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMemoryKeyList").get();
+        return (List<String>)call("getMemoryKeyList").get();
     }
 
     /**
@@ -317,9 +317,9 @@ public class ALVisualSpaceHistory extends ALProxy {
     */
     public void setGridPrecision(Float precision) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setGridPrecision", precision);
+            call("setGridPrecision", precision);
         else
-            service.call("setGridPrecision", precision).get();
+            call("setGridPrecision", precision).get();
     }
 
     /**
@@ -328,7 +328,7 @@ public class ALVisualSpaceHistory extends ALProxy {
     * @return Grid precision
     */
     public Float getGridPrecision() throws CallError, InterruptedException {
-        return (Float)service.call("getGridPrecision").get();
+        return (Float)call("getGridPrecision").get();
     }
 
 }

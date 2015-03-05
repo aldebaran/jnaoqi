@@ -31,9 +31,9 @@ public class ALAudioDevice extends ALProxy {
     */
     public void flushAudioOutputs() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("flushAudioOutputs");
+            call("flushAudioOutputs");
         else
-            service.call("flushAudioOutputs").get();
+            call("flushAudioOutputs").get();
     }
 
     /**
@@ -46,9 +46,9 @@ public class ALAudioDevice extends ALProxy {
     */
     public void playSine(Integer frequence, Integer gain, Integer pan, Float duration) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("playSine", frequence, gain, pan, duration);
+            call("playSine", frequence, gain, pan, duration);
         else
-            service.call("playSine", frequence, gain, pan, duration).get();
+            call("playSine", frequence, gain, pan, duration).get();
     }
 
     /**
@@ -57,9 +57,9 @@ public class ALAudioDevice extends ALProxy {
     */
     public void enableEnergyComputation() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("enableEnergyComputation");
+            call("enableEnergyComputation");
         else
-            service.call("enableEnergyComputation").get();
+            call("enableEnergyComputation").get();
     }
 
     /**
@@ -68,7 +68,7 @@ public class ALAudioDevice extends ALProxy {
     * @return True if audio inputs are closed / False otherwise
     */
     public Boolean isInputClosed() throws CallError, InterruptedException {
-        return (Boolean)service.call("isInputClosed").get();
+        return (Boolean)call("isInputClosed").get();
     }
 
     /**
@@ -77,7 +77,7 @@ public class ALAudioDevice extends ALProxy {
     * @return energy of the left microphone signal
     */
     public Float getLeftMicEnergy() throws CallError, InterruptedException {
-        return (Float)service.call("getLeftMicEnergy").get();
+        return (Float)call("getLeftMicEnergy").get();
     }
 
     /**
@@ -86,7 +86,7 @@ public class ALAudioDevice extends ALProxy {
     * @return energy of the right microphone signal
     */
     public Float getRightMicEnergy() throws CallError, InterruptedException {
-        return (Float)service.call("getRightMicEnergy").get();
+        return (Float)call("getRightMicEnergy").get();
     }
 
     /**
@@ -95,7 +95,7 @@ public class ALAudioDevice extends ALProxy {
     * @return energy of the front microphone signal
     */
     public Float getFrontMicEnergy() throws CallError, InterruptedException {
-        return (Float)service.call("getFrontMicEnergy").get();
+        return (Float)call("getFrontMicEnergy").get();
     }
 
     /**
@@ -104,7 +104,7 @@ public class ALAudioDevice extends ALProxy {
     * @return energy of the rear microphone signal
     */
     public Float getRearMicEnergy() throws CallError, InterruptedException {
-        return (Float)service.call("getRearMicEnergy").get();
+        return (Float)call("getRearMicEnergy").get();
     }
 
     /**
@@ -118,9 +118,9 @@ public class ALAudioDevice extends ALProxy {
     */
     public void setClientPreferences(String name, Integer sampleRate, Object channelsVector, Integer deinterleaved, Integer timeStamp) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setClientPreferences", name, sampleRate, channelsVector, deinterleaved, timeStamp);
+            call("setClientPreferences", name, sampleRate, channelsVector, deinterleaved, timeStamp);
         else
-            service.call("setClientPreferences", name, sampleRate, channelsVector, deinterleaved, timeStamp).get();
+            call("setClientPreferences", name, sampleRate, channelsVector, deinterleaved, timeStamp).get();
     }
 
     /**
@@ -129,9 +129,9 @@ public class ALAudioDevice extends ALProxy {
     */
     public void muteAudioOut(Boolean param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("muteAudioOut", param1);
+            call("muteAudioOut", param1);
         else
-            service.call("muteAudioOut", param1).get();
+            call("muteAudioOut", param1).get();
     }
 
     /**
@@ -140,7 +140,7 @@ public class ALAudioDevice extends ALProxy {
     * @return 1 if true / 0 otherwise
     */
     public Boolean isAudioOutMuted() throws CallError, InterruptedException {
-        return (Boolean)service.call("isAudioOutMuted").get();
+        return (Boolean)call("isAudioOutMuted").get();
     }
 
     /**
@@ -149,7 +149,7 @@ public class ALAudioDevice extends ALProxy {
     * @return True if audio outputs are closed / False otherwise
     */
     public Boolean isOutputClosed() throws CallError, InterruptedException {
-        return (Boolean)service.call("isOutputClosed").get();
+        return (Boolean)call("isOutputClosed").get();
     }
 
     /**
@@ -162,9 +162,9 @@ public class ALAudioDevice extends ALProxy {
     */
     public void setClientPreferences(String name, Integer sampleRate, Integer channelsConfiguration, Integer deinterleaved) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setClientPreferences", name, sampleRate, channelsConfiguration, deinterleaved);
+            call("setClientPreferences", name, sampleRate, channelsConfiguration, deinterleaved);
         else
-            service.call("setClientPreferences", name, sampleRate, channelsConfiguration, deinterleaved).get();
+            call("setClientPreferences", name, sampleRate, channelsConfiguration, deinterleaved).get();
     }
 
     /**
@@ -173,9 +173,9 @@ public class ALAudioDevice extends ALProxy {
     */
     public void disableEnergyComputation() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("disableEnergyComputation");
+            call("disableEnergyComputation");
         else
-            service.call("disableEnergyComputation").get();
+            call("disableEnergyComputation").get();
     }
 
     /**
@@ -183,7 +183,7 @@ public class ALAudioDevice extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -192,9 +192,9 @@ public class ALAudioDevice extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -202,7 +202,7 @@ public class ALAudioDevice extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -211,9 +211,9 @@ public class ALAudioDevice extends ALProxy {
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -222,7 +222,7 @@ public class ALAudioDevice extends ALProxy {
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -231,7 +231,7 @@ public class ALAudioDevice extends ALProxy {
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -240,7 +240,7 @@ public class ALAudioDevice extends ALProxy {
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -250,7 +250,7 @@ public class ALAudioDevice extends ALProxy {
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -259,7 +259,7 @@ public class ALAudioDevice extends ALProxy {
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -270,7 +270,7 @@ public class ALAudioDevice extends ALProxy {
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -280,7 +280,7 @@ public class ALAudioDevice extends ALProxy {
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -290,9 +290,9 @@ public class ALAudioDevice extends ALProxy {
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -301,7 +301,7 @@ public class ALAudioDevice extends ALProxy {
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -311,7 +311,7 @@ public class ALAudioDevice extends ALProxy {
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -321,9 +321,9 @@ public class ALAudioDevice extends ALProxy {
     */
     public void subscribe(String pModule) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("subscribe", pModule);
+            call("subscribe", pModule);
         else
-            service.call("subscribe", pModule).get();
+            call("subscribe", pModule).get();
     }
 
     /**
@@ -333,9 +333,9 @@ public class ALAudioDevice extends ALProxy {
     */
     public void unsubscribe(String pModule) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("unsubscribe", pModule);
+            call("unsubscribe", pModule);
         else
-            service.call("unsubscribe", pModule).get();
+            call("unsubscribe", pModule).get();
     }
 
     /**
@@ -347,7 +347,7 @@ You must pass to this function a pointer to the stereo buffer to send, and the n
     * @return True if the operation is successfull - False otherwise
     */
     public Boolean sendLocalBufferToOutput(Integer nbOfFrames, Integer pBuffer) throws CallError, InterruptedException {
-        return (Boolean)service.call("sendLocalBufferToOutput", nbOfFrames, pBuffer).get();
+        return (Boolean)call("sendLocalBufferToOutput", nbOfFrames, pBuffer).get();
     }
 
     /**
@@ -359,7 +359,7 @@ You must pass to this function the stereo buffer you want to send as an ALValue 
     * @return True if the operation is successfull - False otherwise
     */
     public Boolean sendRemoteBufferToOutput(Integer nbOfFrames, Object pBuffer) throws CallError, InterruptedException {
-        return (Boolean)service.call("sendRemoteBufferToOutput", nbOfFrames, pBuffer).get();
+        return (Boolean)call("sendRemoteBufferToOutput", nbOfFrames, pBuffer).get();
     }
 
     /**
@@ -369,9 +369,9 @@ You must pass to this function the stereo buffer you want to send as an ALValue 
     */
     public void setFileAsInput(String pFileName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setFileAsInput", pFileName);
+            call("setFileAsInput", pFileName);
         else
-            service.call("setFileAsInput", pFileName).get();
+            call("setFileAsInput", pFileName).get();
     }
 
     /**
@@ -384,9 +384,9 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
     */
     public void setParameter(String pParamName, Integer pParamValue) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setParameter", pParamName, pParamValue);
+            call("setParameter", pParamName, pParamValue);
         else
-            service.call("setParameter", pParamName, pParamValue).get();
+            call("setParameter", pParamName, pParamValue).get();
     }
 
     /**
@@ -396,7 +396,7 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
     * @return value of the specified parameter
     */
     public Integer getParameter(String pParamName) throws CallError, InterruptedException {
-        return (Integer)service.call("getParameter", pParamName).get();
+        return (Integer)call("getParameter", pParamName).get();
     }
 
     /**
@@ -406,9 +406,9 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
     */
     public void startMicrophonesRecording(String pFileName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("startMicrophonesRecording", pFileName);
+            call("startMicrophonesRecording", pFileName);
         else
-            service.call("startMicrophonesRecording", pFileName).get();
+            call("startMicrophonesRecording", pFileName).get();
     }
 
     /**
@@ -417,9 +417,9 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
     */
     public void stopMicrophonesRecording() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stopMicrophonesRecording");
+            call("stopMicrophonesRecording");
         else
-            service.call("stopMicrophonesRecording").get();
+            call("stopMicrophonesRecording").get();
     }
 
     /**
@@ -429,9 +429,9 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
     */
     public void setOutputVolume(Integer volume) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setOutputVolume", volume);
+            call("setOutputVolume", volume);
         else
-            service.call("setOutputVolume", volume).get();
+            call("setOutputVolume", volume).get();
     }
 
     /**
@@ -440,7 +440,7 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
     * @return outputVolume of the system
     */
     public Integer getOutputVolume() throws CallError, InterruptedException {
-        return (Integer)service.call("getOutputVolume").get();
+        return (Integer)call("getOutputVolume").get();
     }
 
     /**
@@ -449,9 +449,9 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
     */
     public void openAudioInputs() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("openAudioInputs");
+            call("openAudioInputs");
         else
-            service.call("openAudioInputs").get();
+            call("openAudioInputs").get();
     }
 
     /**
@@ -460,9 +460,9 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
     */
     public void openAudioOutputs() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("openAudioOutputs");
+            call("openAudioOutputs");
         else
-            service.call("openAudioOutputs").get();
+            call("openAudioOutputs").get();
     }
 
     /**
@@ -471,9 +471,9 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
     */
     public void closeAudioInputs() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("closeAudioInputs");
+            call("closeAudioInputs");
         else
-            service.call("closeAudioInputs").get();
+            call("closeAudioInputs").get();
     }
 
     /**
@@ -482,9 +482,9 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
     */
     public void closeAudioOutputs() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("closeAudioOutputs");
+            call("closeAudioOutputs");
         else
-            service.call("closeAudioOutputs").get();
+            call("closeAudioOutputs").get();
     }
 
 }

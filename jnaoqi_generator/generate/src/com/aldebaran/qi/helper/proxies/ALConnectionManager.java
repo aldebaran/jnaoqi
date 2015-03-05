@@ -30,7 +30,7 @@ public class ALConnectionManager extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -39,9 +39,9 @@ public class ALConnectionManager extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -49,7 +49,7 @@ public class ALConnectionManager extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -57,7 +57,7 @@ public class ALConnectionManager extends ALProxy {
     * 
     */
     public Object services() throws CallError, InterruptedException {
-        return (Object)service.call("services").get();
+        return (Object)call("services").get();
     }
 
     /**
@@ -65,7 +65,7 @@ public class ALConnectionManager extends ALProxy {
     * 
     */
     public Object serviceName(String param1) throws CallError, InterruptedException {
-        return (Object)service.call("service", param1).get();
+        return (Object)call("service", param1).get();
     }
 
     /**
@@ -74,9 +74,9 @@ public class ALConnectionManager extends ALProxy {
     */
     public void scan(String param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("scan", param1);
+            call("scan", param1);
         else
-            service.call("scan", param1).get();
+            call("scan", param1).get();
     }
 
     /**
@@ -85,9 +85,9 @@ public class ALConnectionManager extends ALProxy {
     */
     public void scan() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("scan");
+            call("scan");
         else
-            service.call("scan").get();
+            call("scan").get();
     }
 
     /**
@@ -96,9 +96,9 @@ public class ALConnectionManager extends ALProxy {
     */
     public void setServiceConfiguration(Object param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setServiceConfiguration", param1);
+            call("setServiceConfiguration", param1);
         else
-            service.call("setServiceConfiguration", param1).get();
+            call("setServiceConfiguration", param1).get();
     }
 
     /**
@@ -107,9 +107,9 @@ public class ALConnectionManager extends ALProxy {
     */
     public void setServiceInput(Object param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setServiceInput", param1);
+            call("setServiceInput", param1);
         else
-            service.call("setServiceInput", param1).get();
+            call("setServiceInput", param1).get();
     }
 
     /**
@@ -117,7 +117,7 @@ public class ALConnectionManager extends ALProxy {
     * 
     */
     public String state() throws CallError, InterruptedException {
-        return (String)service.call("state").get();
+        return (String)call("state").get();
     }
 
     /**
@@ -126,9 +126,9 @@ public class ALConnectionManager extends ALProxy {
     */
     public void forget(String param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("forget", param1);
+            call("forget", param1);
         else
-            service.call("forget", param1).get();
+            call("forget", param1).get();
     }
 
     /**
@@ -137,9 +137,9 @@ public class ALConnectionManager extends ALProxy {
     */
     public void connect(String param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("connect", param1);
+            call("connect", param1);
         else
-            service.call("connect", param1).get();
+            call("connect", param1).get();
     }
 
     /**
@@ -148,9 +148,9 @@ public class ALConnectionManager extends ALProxy {
     */
     public void disconnect(String param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("disconnect", param1);
+            call("disconnect", param1);
         else
-            service.call("disconnect", param1).get();
+            call("disconnect", param1).get();
     }
 
     /**
@@ -158,7 +158,7 @@ public class ALConnectionManager extends ALProxy {
     * 
     */
     public Object technologies() throws CallError, InterruptedException {
-        return (Object)service.call("technologies").get();
+        return (Object)call("technologies").get();
     }
 
     /**
@@ -167,9 +167,9 @@ public class ALConnectionManager extends ALProxy {
     */
     public void enableTethering(String param1, String param2, String param3) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("enableTethering", param1, param2, param3);
+            call("enableTethering", param1, param2, param3);
         else
-            service.call("enableTethering", param1, param2, param3).get();
+            call("enableTethering", param1, param2, param3).get();
     }
 
     /**
@@ -178,9 +178,9 @@ public class ALConnectionManager extends ALProxy {
     */
     public void enableTethering(String param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("enableTethering", param1);
+            call("enableTethering", param1);
         else
-            service.call("enableTethering", param1).get();
+            call("enableTethering", param1).get();
     }
 
     /**
@@ -189,9 +189,9 @@ public class ALConnectionManager extends ALProxy {
     */
     public void disableTethering(String param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("disableTethering", param1);
+            call("disableTethering", param1);
         else
-            service.call("disableTethering", param1).get();
+            call("disableTethering", param1).get();
     }
 
     /**
@@ -199,7 +199,7 @@ public class ALConnectionManager extends ALProxy {
     * 
     */
     public Boolean getTetheringEnable(String param1) throws CallError, InterruptedException {
-        return (Boolean)service.call("getTetheringEnable", param1).get();
+        return (Boolean)call("getTetheringEnable", param1).get();
     }
 
     /**
@@ -207,7 +207,7 @@ public class ALConnectionManager extends ALProxy {
     * 
     */
     public String tetheringName(String param1) throws CallError, InterruptedException {
-        return (String)service.call("tetheringName", param1).get();
+        return (String)call("tetheringName", param1).get();
     }
 
     /**
@@ -215,7 +215,7 @@ public class ALConnectionManager extends ALProxy {
     * 
     */
     public String tetheringPassphrase(String param1) throws CallError, InterruptedException {
-        return (String)service.call("tetheringPassphrase", param1).get();
+        return (String)call("tetheringPassphrase", param1).get();
     }
 
     /**
@@ -223,7 +223,7 @@ public class ALConnectionManager extends ALProxy {
     * 
     */
     public List<String> countries() throws CallError, InterruptedException {
-        return (List<String>)service.call("countries").get();
+        return (List<String>)call("countries").get();
     }
 
     /**
@@ -232,9 +232,9 @@ public class ALConnectionManager extends ALProxy {
     */
     public void setCountry(String param1) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setCountry", param1);
+            call("setCountry", param1);
         else
-            service.call("setCountry", param1).get();
+            call("setCountry", param1).get();
     }
 
     /**
@@ -242,7 +242,7 @@ public class ALConnectionManager extends ALProxy {
     * 
     */
     public String country() throws CallError, InterruptedException {
-        return (String)service.call("country").get();
+        return (String)call("country").get();
     }
 
     /**
@@ -250,7 +250,7 @@ public class ALConnectionManager extends ALProxy {
     * 
     */
     public Object interfaces() throws CallError, InterruptedException {
-        return (Object)service.call("interfaces").get();
+        return (Object)call("interfaces").get();
     }
 
 }

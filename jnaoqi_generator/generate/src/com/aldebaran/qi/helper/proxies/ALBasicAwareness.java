@@ -32,9 +32,9 @@ public class ALBasicAwareness extends ALProxy {
     */
     public void setEngagementMode(String modeName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setEngagementMode", modeName);
+            call("setEngagementMode", modeName);
         else
-            service.call("setEngagementMode", modeName).get();
+            call("setEngagementMode", modeName).get();
     }
 
     /**
@@ -44,7 +44,7 @@ public class ALBasicAwareness extends ALProxy {
     * @return true if the robot succeeded to engage the person, else false.
     */
     public Boolean engagePerson(Integer engagePerson) throws CallError, InterruptedException {
-        return (Boolean)service.call("engagePerson", engagePerson).get();
+        return (Boolean)call("engagePerson", engagePerson).get();
     }
 
     /**
@@ -54,7 +54,7 @@ public class ALBasicAwareness extends ALProxy {
     * @return Boolean value for status enabled/disabled
     */
     public Boolean isStimulusDetectionEnabled(String stimulusName) throws CallError, InterruptedException {
-        return (Boolean)service.call("isStimulusDetectionEnabled", stimulusName).get();
+        return (Boolean)call("isStimulusDetectionEnabled", stimulusName).get();
     }
 
     /**
@@ -63,9 +63,9 @@ public class ALBasicAwareness extends ALProxy {
     */
     public void resetAllParameters() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("resetAllParameters");
+            call("resetAllParameters");
         else
-            service.call("resetAllParameters").get();
+            call("resetAllParameters").get();
     }
 
     /**
@@ -109,7 +109,7 @@ public class ALBasicAwareness extends ALProxy {
     * @return ALValue format for required parameter
     */
     public Object getParameter(String paramName) throws CallError, InterruptedException {
-        return (Object)service.call("getParameter", paramName).get();
+        return (Object)call("getParameter", paramName).get();
     }
 
     /**
@@ -118,7 +118,7 @@ public class ALBasicAwareness extends ALProxy {
     * @return Name of current engagement mode as a string
     */
     public String getEngagementMode() throws CallError, InterruptedException {
-        return (String)service.call("getEngagementMode").get();
+        return (String)call("getEngagementMode").get();
     }
 
     /**
@@ -197,9 +197,9 @@ public class ALBasicAwareness extends ALProxy {
     */
     public void setParameter(String paramName, Object newVal) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setParameter", paramName, newVal);
+            call("setParameter", paramName, newVal);
         else
-            service.call("setParameter", paramName, newVal).get();
+            call("setParameter", paramName, newVal).get();
     }
 
     /**
@@ -209,9 +209,9 @@ public class ALBasicAwareness extends ALProxy {
     */
     public void setTrackingMode(String modeName) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setTrackingMode", modeName);
+            call("setTrackingMode", modeName);
         else
-            service.call("setTrackingMode", modeName).get();
+            call("setTrackingMode", modeName).get();
     }
 
     /**
@@ -220,7 +220,7 @@ public class ALBasicAwareness extends ALProxy {
     * @return Name of current tracking mode as a string
     */
     public String getTrackingMode() throws CallError, InterruptedException {
-        return (String)service.call("getTrackingMode").get();
+        return (String)call("getTrackingMode").get();
     }
 
     /**
@@ -228,7 +228,7 @@ public class ALBasicAwareness extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -237,9 +237,9 @@ public class ALBasicAwareness extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -247,7 +247,7 @@ public class ALBasicAwareness extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -256,9 +256,9 @@ public class ALBasicAwareness extends ALProxy {
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -267,7 +267,7 @@ public class ALBasicAwareness extends ALProxy {
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -276,7 +276,7 @@ public class ALBasicAwareness extends ALProxy {
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -285,7 +285,7 @@ public class ALBasicAwareness extends ALProxy {
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -295,7 +295,7 @@ public class ALBasicAwareness extends ALProxy {
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -304,7 +304,7 @@ public class ALBasicAwareness extends ALProxy {
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -315,7 +315,7 @@ public class ALBasicAwareness extends ALProxy {
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -325,7 +325,7 @@ public class ALBasicAwareness extends ALProxy {
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -335,9 +335,9 @@ public class ALBasicAwareness extends ALProxy {
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -346,7 +346,7 @@ public class ALBasicAwareness extends ALProxy {
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -356,7 +356,7 @@ public class ALBasicAwareness extends ALProxy {
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -365,9 +365,9 @@ public class ALBasicAwareness extends ALProxy {
     */
     public void startAwareness() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("startAwareness");
+            call("startAwareness");
         else
-            service.call("startAwareness").get();
+            call("startAwareness").get();
     }
 
     /**
@@ -376,9 +376,9 @@ public class ALBasicAwareness extends ALProxy {
     */
     public void stopAwareness() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stopAwareness");
+            call("stopAwareness");
         else
-            service.call("stopAwareness").get();
+            call("stopAwareness").get();
     }
 
     /**
@@ -387,7 +387,7 @@ public class ALBasicAwareness extends ALProxy {
     * @return Boolean value, true if running else false
     */
     public Boolean isAwarenessRunning() throws CallError, InterruptedException {
-        return (Boolean)service.call("isAwarenessRunning").get();
+        return (Boolean)call("isAwarenessRunning").get();
     }
 
     /**
@@ -398,9 +398,9 @@ public class ALBasicAwareness extends ALProxy {
     */
     public void setStimulusDetectionEnabled(String stimulusName, Boolean isStimulusDetectionEnabled) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setStimulusDetectionEnabled", stimulusName, isStimulusDetectionEnabled);
+            call("setStimulusDetectionEnabled", stimulusName, isStimulusDetectionEnabled);
         else
-            service.call("setStimulusDetectionEnabled", stimulusName, isStimulusDetectionEnabled).get();
+            call("setStimulusDetectionEnabled", stimulusName, isStimulusDetectionEnabled).get();
     }
 
 }

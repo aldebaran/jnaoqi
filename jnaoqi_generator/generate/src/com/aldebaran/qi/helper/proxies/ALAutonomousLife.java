@@ -31,9 +31,9 @@ public class ALAutonomousLife extends ALProxy {
     */
     public void stopAll() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stopAll");
+            call("stopAll");
         else
-            service.call("stopAll").get();
+            call("stopAll").get();
     }
 
     /**
@@ -42,7 +42,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return A list of pairs, each pair is StateName/PreviousEnteredTime
     */
     public List<Tuple2<String, Integer>> getStateHistory() throws CallError, InterruptedException {
-        return (List<Tuple2<String, Integer>>)service.call("getStateHistory").get();
+        return (List<Tuple2<String, Integer>>)call("getStateHistory").get();
     }
 
     /**
@@ -51,7 +51,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return The name of the focused activity
     */
     public String focusedActivity() throws CallError, InterruptedException {
-        return (String)service.call("focusedActivity").get();
+        return (String)call("focusedActivity").get();
     }
 
     /**
@@ -61,7 +61,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return A list of pairs, each pair is StateName/PreviousEnteredTime
     */
     public List<Tuple2<String, Integer>> getStateHistory(Integer depth) throws CallError, InterruptedException {
-        return (List<Tuple2<String, Integer>>)service.call("getStateHistory", depth).get();
+        return (List<Tuple2<String, Integer>>)call("getStateHistory", depth).get();
     }
 
     /**
@@ -70,7 +70,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return The int time in seconds as Autonomous Life sees it
     */
     public Integer getLifeTime() throws CallError, InterruptedException {
-        return (Integer)service.call("getLifeTime").get();
+        return (Integer)call("getLifeTime").get();
     }
 
     /**
@@ -81,9 +81,9 @@ public class ALAutonomousLife extends ALProxy {
     */
     public void switchFocus(String activity_name, Integer flags) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("switchFocus", activity_name, flags);
+            call("switchFocus", activity_name, flags);
         else
-            service.call("switchFocus", activity_name, flags).get();
+            call("switchFocus", activity_name, flags).get();
     }
 
     /**
@@ -92,9 +92,9 @@ public class ALAutonomousLife extends ALProxy {
     */
     public void stopMonitoringLaunchpadConditions() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stopMonitoringLaunchpadConditions");
+            call("stopMonitoringLaunchpadConditions");
         else
-            service.call("stopMonitoringLaunchpadConditions").get();
+            call("stopMonitoringLaunchpadConditions").get();
     }
 
     /**
@@ -103,7 +103,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return True if AutonomousLaunchpad is monitoring ALMemory and reporting conditional triggers.
     */
     public Boolean isMonitoringLaunchpadConditions() throws CallError, InterruptedException {
-        return (Boolean)service.call("isMonitoringLaunchpadConditions").get();
+        return (Boolean)call("isMonitoringLaunchpadConditions").get();
     }
 
     /**
@@ -114,9 +114,9 @@ public class ALAutonomousLife extends ALProxy {
     */
     public void setLaunchpadPluginEnabled(String plugin_name, Boolean enabled) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setLaunchpadPluginEnabled", plugin_name, enabled);
+            call("setLaunchpadPluginEnabled", plugin_name, enabled);
         else
-            service.call("setLaunchpadPluginEnabled", plugin_name, enabled).get();
+            call("setLaunchpadPluginEnabled", plugin_name, enabled).get();
     }
 
     /**
@@ -125,7 +125,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return A list of strings of enabled plugins.
     */
     public List<String> getEnabledLaunchpadPlugins() throws CallError, InterruptedException {
-        return (List<String>)service.call("getEnabledLaunchpadPlugins").get();
+        return (List<String>)call("getEnabledLaunchpadPlugins").get();
     }
 
     /**
@@ -134,9 +134,9 @@ public class ALAutonomousLife extends ALProxy {
     */
     public void stopFocus() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stopFocus");
+            call("stopFocus");
         else
-            service.call("stopFocus").get();
+            call("stopFocus").get();
     }
 
     /**
@@ -146,7 +146,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return A list of strings of the plugins belonging to the group.
     */
     public List<String> getLaunchpadPluginsForGroup(String group) throws CallError, InterruptedException {
-        return (List<String>)service.call("getLaunchpadPluginsForGroup", group).get();
+        return (List<String>)call("getLaunchpadPluginsForGroup", group).get();
     }
 
     /**
@@ -156,9 +156,9 @@ public class ALAutonomousLife extends ALProxy {
     */
     public void setRobotOffsetFromFloor(Float offset) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setRobotOffsetFromFloor", offset);
+            call("setRobotOffsetFromFloor", offset);
         else
-            service.call("setRobotOffsetFromFloor", offset).get();
+            call("setRobotOffsetFromFloor", offset).get();
     }
 
     /**
@@ -167,7 +167,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return Current vertical offset (in meters)
     */
     public Float getRobotOffsetFromFloor() throws CallError, InterruptedException {
-        return (Float)service.call("getRobotOffsetFromFloor").get();
+        return (Float)call("getRobotOffsetFromFloor").get();
     }
 
     /**
@@ -178,9 +178,9 @@ public class ALAutonomousLife extends ALProxy {
     */
     public void setSafeguardEnabled(String name, Boolean enabled) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setSafeguardEnabled", name, enabled);
+            call("setSafeguardEnabled", name, enabled);
         else
-            service.call("setSafeguardEnabled", name, enabled).get();
+            call("setSafeguardEnabled", name, enabled).get();
     }
 
     /**
@@ -190,7 +190,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return True if life handles the safeguard.
     */
     public Boolean isSafeguardEnabled(String name) throws CallError, InterruptedException {
-        return (Boolean)service.call("isSafeguardEnabled", name).get();
+        return (Boolean)call("isSafeguardEnabled", name).get();
     }
 
     /**
@@ -200,7 +200,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return Possible values are: solitary, interactive
     */
     public String getActivityNature(String activity_name) throws CallError, InterruptedException {
-        return (String)service.call("getActivityNature", activity_name).get();
+        return (String)call("getActivityNature", activity_name).get();
     }
 
     /**
@@ -209,7 +209,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return A map of activity names, with a cooresponding map of  "prevStartTime", "prevCompletionTime", "startCount", "totalDuration". Times are 0 for unlaunched Activities
     */
     public Map<String, Map<String, Integer>> getActivityStatistics() throws CallError, InterruptedException {
-        return (Map<String, Map<String, Integer>>)service.call("getActivityStatistics").get();
+        return (Map<String, Map<String, Integer>>)call("getActivityStatistics").get();
     }
 
     /**
@@ -219,9 +219,9 @@ public class ALAutonomousLife extends ALProxy {
     */
     public void switchFocus(String activity_name) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("switchFocus", activity_name);
+            call("switchFocus", activity_name);
         else
-            service.call("switchFocus", activity_name).get();
+            call("switchFocus", activity_name).get();
     }
 
     /**
@@ -230,7 +230,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return A map of activity names, with a cooresponding map of  "prevStartTime", "prevCompletionTime", "startCount", "totalDuration". Times are 0 for unlaunched Activities
     */
     public Map<String, Map<String, Integer>> getAutonomousActivityStatistics() throws CallError, InterruptedException {
-        return (Map<String, Map<String, Integer>>)service.call("getAutonomousActivityStatistics").get();
+        return (Map<String, Map<String, Integer>>)call("getAutonomousActivityStatistics").get();
     }
 
     /**
@@ -239,7 +239,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return A list of pairs, each pair is ActivityName/PreviousFocusedTime
     */
     public List<Tuple2<String, Integer>> getFocusHistory() throws CallError, InterruptedException {
-        return (List<Tuple2<String, Integer>>)service.call("getFocusHistory").get();
+        return (List<Tuple2<String, Integer>>)call("getFocusHistory").get();
     }
 
     /**
@@ -249,7 +249,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return A list of pairs, each pair is ActivityName/PreviousFocusedTime
     */
     public List<Tuple2<String, Integer>> getFocusHistory(Integer depth) throws CallError, InterruptedException {
-        return (List<Tuple2<String, Integer>>)service.call("getFocusHistory", depth).get();
+        return (List<Tuple2<String, Integer>>)call("getFocusHistory", depth).get();
     }
 
     /**
@@ -258,9 +258,9 @@ public class ALAutonomousLife extends ALProxy {
     */
     public void startMonitoringLaunchpadConditions() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("startMonitoringLaunchpadConditions");
+            call("startMonitoringLaunchpadConditions");
         else
-            service.call("startMonitoringLaunchpadConditions").get();
+            call("startMonitoringLaunchpadConditions").get();
     }
 
     /**
@@ -268,7 +268,7 @@ public class ALAutonomousLife extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -277,9 +277,9 @@ public class ALAutonomousLife extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -287,7 +287,7 @@ public class ALAutonomousLife extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -296,9 +296,9 @@ public class ALAutonomousLife extends ALProxy {
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -307,7 +307,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -316,7 +316,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -325,7 +325,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -335,7 +335,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -344,7 +344,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -355,7 +355,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -365,7 +365,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -375,9 +375,9 @@ public class ALAutonomousLife extends ALProxy {
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -386,7 +386,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -396,7 +396,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -406,9 +406,9 @@ public class ALAutonomousLife extends ALProxy {
     */
     public void setState(String state) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("setState", state);
+            call("setState", state);
         else
-            service.call("setState", state).get();
+            call("setState", state).get();
     }
 
     /**
@@ -417,7 +417,7 @@ public class ALAutonomousLife extends ALProxy {
     * @return Can be: solitary, interactive, safeguard, disabled
     */
     public String getState() throws CallError, InterruptedException {
-        return (String)service.call("getState").get();
+        return (String)call("getState").get();
     }
 
 }

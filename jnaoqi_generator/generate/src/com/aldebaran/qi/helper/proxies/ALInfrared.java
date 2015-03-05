@@ -30,7 +30,7 @@ public class ALInfrared extends ALProxy {
     * 
     */
     public Boolean isStatsEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isStatsEnabled").get();
+        return (Boolean)call("isStatsEnabled").get();
     }
 
     /**
@@ -39,9 +39,9 @@ public class ALInfrared extends ALProxy {
     */
     public void clearStats() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("clearStats");
+            call("clearStats");
         else
-            service.call("clearStats").get();
+            call("clearStats").get();
     }
 
     /**
@@ -49,7 +49,7 @@ public class ALInfrared extends ALProxy {
     * 
     */
     public Boolean isTraceEnabled() throws CallError, InterruptedException {
-        return (Boolean)service.call("isTraceEnabled").get();
+        return (Boolean)call("isTraceEnabled").get();
     }
 
     /**
@@ -58,9 +58,9 @@ public class ALInfrared extends ALProxy {
     */
     public void exit() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("exit");
+            call("exit");
         else
-            service.call("exit").get();
+            call("exit").get();
     }
 
     /**
@@ -69,7 +69,7 @@ public class ALInfrared extends ALProxy {
     * @return A string containing the version of the module.
     */
     public String version() throws CallError, InterruptedException {
-        return (String)service.call("version").get();
+        return (String)call("version").get();
     }
 
     /**
@@ -78,7 +78,7 @@ public class ALInfrared extends ALProxy {
     * @return returns true
     */
     public Boolean ping() throws CallError, InterruptedException {
-        return (Boolean)service.call("ping").get();
+        return (Boolean)call("ping").get();
     }
 
     /**
@@ -87,7 +87,7 @@ public class ALInfrared extends ALProxy {
     * @return An array of method names.
     */
     public List<String> getMethodList() throws CallError, InterruptedException {
-        return (List<String>)service.call("getMethodList").get();
+        return (List<String>)call("getMethodList").get();
     }
 
     /**
@@ -97,7 +97,7 @@ public class ALInfrared extends ALProxy {
     * @return A structure containing the method's description.
     */
     public Object getMethodHelp(String methodName) throws CallError, InterruptedException {
-        return (Object)service.call("getMethodHelp", methodName).get();
+        return (Object)call("getMethodHelp", methodName).get();
     }
 
     /**
@@ -106,7 +106,7 @@ public class ALInfrared extends ALProxy {
     * @return A structure describing the module.
     */
     public Object getModuleHelp() throws CallError, InterruptedException {
-        return (Object)service.call("getModuleHelp").get();
+        return (Object)call("getModuleHelp").get();
     }
 
     /**
@@ -117,7 +117,7 @@ public class ALInfrared extends ALProxy {
     * @return True if the timeout period terminated. False if the method returned.
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
-        return (Boolean)service.call("wait", id, timeoutPeriod).get();
+        return (Boolean)call("wait", id, timeoutPeriod).get();
     }
 
     /**
@@ -127,7 +127,7 @@ public class ALInfrared extends ALProxy {
     * @return True if the method is currently running
     */
     public Boolean isRunning(Integer id) throws CallError, InterruptedException {
-        return (Boolean)service.call("isRunning", id).get();
+        return (Boolean)call("isRunning", id).get();
     }
 
     /**
@@ -137,9 +137,9 @@ public class ALInfrared extends ALProxy {
     */
     public void stop(Integer id) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("stop", id);
+            call("stop", id);
         else
-            service.call("stop", id).get();
+            call("stop", id).get();
     }
 
     /**
@@ -148,7 +148,7 @@ public class ALInfrared extends ALProxy {
     * @return The name of the parent broker.
     */
     public String getBrokerName() throws CallError, InterruptedException {
-        return (String)service.call("getBrokerName").get();
+        return (String)call("getBrokerName").get();
     }
 
     /**
@@ -158,7 +158,7 @@ public class ALInfrared extends ALProxy {
     * @return A string that summarises the usage of the method.
     */
     public String getUsage(String name) throws CallError, InterruptedException {
-        return (String)service.call("getUsage", name).get();
+        return (String)call("getUsage", name).get();
     }
 
     /**
@@ -168,9 +168,9 @@ public class ALInfrared extends ALProxy {
     */
     public void initReception(Integer RepeatThreshold) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("initReception", RepeatThreshold);
+            call("initReception", RepeatThreshold);
         else
-            service.call("initReception", RepeatThreshold).get();
+            call("initReception", RepeatThreshold).get();
     }
 
     /**
@@ -181,9 +181,9 @@ public class ALInfrared extends ALProxy {
     */
     public void sendRemoteKey(String Remote, String Key) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("sendRemoteKey", Remote, Key);
+            call("sendRemoteKey", Remote, Key);
         else
-            service.call("sendRemoteKey", Remote, Key).get();
+            call("sendRemoteKey", Remote, Key).get();
     }
 
     /**
@@ -195,9 +195,9 @@ public class ALInfrared extends ALProxy {
     */
     public void sendRemoteKeyWithTime(String Remote, String Key, Integer pTimeMs) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("sendRemoteKeyWithTime", Remote, Key, pTimeMs);
+            call("sendRemoteKeyWithTime", Remote, Key, pTimeMs);
         else
-            service.call("sendRemoteKeyWithTime", Remote, Key, pTimeMs).get();
+            call("sendRemoteKeyWithTime", Remote, Key, pTimeMs).get();
     }
 
     /**
@@ -207,9 +207,9 @@ public class ALInfrared extends ALProxy {
     */
     public void sendIpAddress(String IP) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("sendIpAddress", IP);
+            call("sendIpAddress", IP);
         else
-            service.call("sendIpAddress", IP).get();
+            call("sendIpAddress", IP).get();
     }
 
     /**
@@ -219,9 +219,9 @@ public class ALInfrared extends ALProxy {
     */
     public void send8(Integer Octet) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("send8", Octet);
+            call("send8", Octet);
         else
-            service.call("send8", Octet).get();
+            call("send8", Octet).get();
     }
 
     /**
@@ -231,9 +231,9 @@ public class ALInfrared extends ALProxy {
     */
     public void send32(String Data_IR) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("send32", Data_IR);
+            call("send32", Data_IR);
         else
-            service.call("send32", Data_IR).get();
+            call("send32", Data_IR).get();
     }
 
     /**
@@ -246,9 +246,9 @@ public class ALInfrared extends ALProxy {
     */
     public void send32(Integer Octet1, Integer Octet2, Integer Octet3, Integer Octet4) throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("send32", Octet1, Octet2, Octet3, Octet4);
+            call("send32", Octet1, Octet2, Octet3, Octet4);
         else
-            service.call("send32", Octet1, Octet2, Octet3, Octet4).get();
+            call("send32", Octet1, Octet2, Octet3, Octet4).get();
     }
 
     /**
@@ -257,9 +257,9 @@ public class ALInfrared extends ALProxy {
     */
     public void confRemoteRecordSave() throws CallError, InterruptedException{
         if (isAsynchronous)
-            service.call("confRemoteRecordSave");
+            call("confRemoteRecordSave");
         else
-            service.call("confRemoteRecordSave").get();
+            call("confRemoteRecordSave").get();
     }
 
 }
