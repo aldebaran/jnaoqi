@@ -2,7 +2,7 @@
  * Copyright (c) 2015 Aldebaran Robotics. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the COPYING file.
- * Created by epinault and ekroeger
+ * Created by epinault and tcruz
  */
 package com.aldebaran.qi.helper.proxies;
 
@@ -16,7 +16,7 @@ import com.aldebaran.qi.*;
 import java.util.List;
 /**
 * ALSpeechRecognition gives access to the embedded voice recognition system. It can be dynamically modified. This class allows user to load the current words list that should be recognized. The result of the recognition engine is located in the ALMemory's key: "WordRecognized". The structure of the result is an array :  [ (string) word , (float) confidence ]
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/audio/alspeechrecognition.html#alspeechrecognition">NAOqi APIs for ALSpeechRecognition </a>
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/audio/alspeechrecognition.html#alspeechrecognition">NAOqi APIs for ALSpeechRecognition </a>
 *
 */
 public class ALSpeechRecognition extends ALProxy {

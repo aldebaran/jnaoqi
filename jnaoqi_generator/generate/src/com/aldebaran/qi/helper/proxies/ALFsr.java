@@ -2,7 +2,7 @@
  * Copyright (c) 2015 Aldebaran Robotics. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the COPYING file.
- * Created by epinault and ekroeger
+ * Created by epinault and tcruz
  */
 package com.aldebaran.qi.helper.proxies;
 
@@ -25,7 +25,7 @@ Also some fast access Memory key are available :
  leftFootTotalWeight (the average weight on the left foot in Kg)
  rightFootTotalWeight (the average weight on the right foot in Kg)
 
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/sensors/alfsr.html#alfsr">NAOqi APIs for ALFsr </a>
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/sensors/alfsr.html#alfsr">NAOqi APIs for ALFsr </a>
 *
 */
 public class ALFsr extends ALProxy {

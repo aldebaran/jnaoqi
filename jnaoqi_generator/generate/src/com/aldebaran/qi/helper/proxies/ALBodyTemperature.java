@@ -2,7 +2,7 @@
  * Copyright (c) 2015 Aldebaran Robotics. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the COPYING file.
- * Created by epinault and ekroeger
+ * Created by epinault and tcruz
  */
 package com.aldebaran.qi.helper.proxies;
 
@@ -17,7 +17,7 @@ import java.util.List;
 /**
 * Deals with motor temperature.
 A event name HotJointDetected is raised when at least one motor has higher temperature.
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/sensors/albodytemperature.html#albodytemperature">NAOqi APIs for ALBodyTemperature </a>
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/sensors/albodytemperature.html#albodytemperature">NAOqi APIs for ALBodyTemperature </a>
 *
 */
 public class ALBodyTemperature extends ALProxy {

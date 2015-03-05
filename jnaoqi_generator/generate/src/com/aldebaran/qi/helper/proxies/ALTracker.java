@@ -2,7 +2,7 @@
  * Copyright (c) 2015 Aldebaran Robotics. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the COPYING file.
- * Created by epinault and ekroeger
+ * Created by epinault and tcruz
  */
 package com.aldebaran.qi.helper.proxies;
 
@@ -16,7 +16,7 @@ import com.aldebaran.qi.*;
 import java.util.List;
 /**
 * Use ALTracker module to make the robot track an object or a person with head and arms or not.
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/trackers/altracker.html#altracker">NAOqi APIs for ALTracker </a>
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/trackers/altracker.html#altracker">NAOqi APIs for ALTracker </a>
 *
 */
 public class ALTracker extends ALProxy {

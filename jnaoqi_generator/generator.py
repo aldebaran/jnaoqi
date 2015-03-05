@@ -37,7 +37,7 @@ TEMPLATE_CLASS = """/**
  * Copyright (c) 2015 Aldebaran Robotics. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the COPYING file.
- * Created by epinault and ekroeger
+ * Created by epinault and tcruz
  */
 package com.aldebaran.qi.helper.proxies;
 
@@ -80,7 +80,8 @@ EXPECTED_CLOSER = dict(zip(OPENERS, CLOSERS))
 
 linksDicOverview = {}
 linksDicApi = {}
-docURLRoot = "http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/"
+docURLRoot = "http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/"
+#docURLRoot = "http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/"
 
 def get_subtrees(closer, symbols):
     trees = []

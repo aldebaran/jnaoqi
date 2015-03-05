@@ -2,7 +2,7 @@
  * Copyright (c) 2015 Aldebaran Robotics. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the COPYING file.
- * Created by epinault and ekroeger
+ * Created by epinault and tcruz
  */
 package com.aldebaran.qi.helper.proxies;
 
@@ -16,7 +16,7 @@ import com.aldebaran.qi.*;
 import java.util.List;
 /**
 * This module enables to compue the engagement zones of detected people or detected movements
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/peopleperception/alengagementzones.html#alengagementzones">NAOqi APIs for ALEngagementZones </a>
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/peopleperception/alengagementzones.html#alengagementzones">NAOqi APIs for ALEngagementZones </a>
 *
 */
 public class ALEngagementZones extends ALProxy {

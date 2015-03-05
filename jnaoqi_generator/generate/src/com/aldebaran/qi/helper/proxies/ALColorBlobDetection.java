@@ -2,7 +2,7 @@
  * Copyright (c) 2015 Aldebaran Robotics. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the COPYING file.
- * Created by epinault and ekroeger
+ * Created by epinault and tcruz
  */
 package com.aldebaran.qi.helper.proxies;
 
@@ -18,7 +18,7 @@ import java.util.List;
 * ALColorBlobDetection is a module which can detect blobs of a certain color.
   The output value is written in ALMemory has a Tracker microEvent.
  
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/vision/alcolorblobdetection.html#alcolorblobdetection">NAOqi APIs for ALColorBlobDetection </a>
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/vision/alcolorblobdetection.html#alcolorblobdetection">NAOqi APIs for ALColorBlobDetection </a>
 *
 */
 public class ALColorBlobDetection extends ALProxy {

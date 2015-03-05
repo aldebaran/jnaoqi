@@ -2,7 +2,7 @@
  * Copyright (c) 2015 Aldebaran Robotics. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the COPYING file.
- * Created by epinault and ekroeger
+ * Created by epinault and tcruz
  */
 package com.aldebaran.qi.helper.proxies;
 
@@ -16,7 +16,7 @@ import com.aldebaran.qi.*;
 import java.util.List;
 /**
 * The ALAudioDevice module allows other modules to access to the sound data of the nao's microphones, and to send sound toward its loudspeakers  The way to receive or send the audio data depends whether the modules are local (dynamic library) or remote (executable).
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/audio/alaudiodevice.html#alaudiodevice">NAOqi APIs for ALAudioDevice </a>
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/audio/alaudiodevice.html#alaudiodevice">NAOqi APIs for ALAudioDevice </a>
 *
 */
 public class ALAudioDevice extends ALProxy {

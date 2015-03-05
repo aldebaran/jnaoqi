@@ -2,7 +2,7 @@
  * Copyright (c) 2015 Aldebaran Robotics. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the COPYING file.
- * Created by epinault and ekroeger
+ * Created by epinault and tcruz
  */
 package com.aldebaran.qi.helper.proxies;
 
@@ -19,7 +19,7 @@ import java.util.List;
 Groups of LEDs typically include face LEDs, ear LEDs etc. It is also possible to control each LED separately (for example, each of the 8 LEDs in one NAO's eyes).
 There are three primary colors of LEDs available - red, green and blue, so it is possible to combine them to obtain different colors. The ears contain blue LEDs only.
 It is possible to control the LED's intensity (between 0 and 100%).
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/sensors/alleds.html#alleds">NAOqi APIs for ALLeds </a>
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/sensors/alleds.html#alleds">NAOqi APIs for ALLeds </a>
 *
 */
 public class ALLeds extends ALProxy {

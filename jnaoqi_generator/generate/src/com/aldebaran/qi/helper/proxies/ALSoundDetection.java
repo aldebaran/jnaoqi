@@ -2,7 +2,7 @@
  * Copyright (c) 2015 Aldebaran Robotics. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the COPYING file.
- * Created by epinault and ekroeger
+ * Created by epinault and tcruz
  */
 package com.aldebaran.qi.helper.proxies;
 
@@ -20,7 +20,7 @@ import java.util.List;
  One event is created when nao locates a sound source : ALSoundDetection/SoundLocated.
  ALSoundDetection/SoundLocated : [ [time(sec), time(usec)], [azimuth, elevation, confidence, (optional: energy)] , [Head Position[6D]] ] 
 
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/audio/alsounddetection.html#alsounddetection">NAOqi APIs for ALSoundDetection </a>
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/audio/alsounddetection.html#alsounddetection">NAOqi APIs for ALSoundDetection </a>
 *
 */
 public class ALSoundDetection extends ALProxy {

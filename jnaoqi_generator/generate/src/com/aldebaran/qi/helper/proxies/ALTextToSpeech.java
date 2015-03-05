@@ -2,7 +2,7 @@
  * Copyright (c) 2015 Aldebaran Robotics. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the COPYING file.
- * Created by epinault and ekroeger
+ * Created by epinault and tcruz
  */
 package com.aldebaran.qi.helper.proxies;
 
@@ -16,7 +16,7 @@ import com.aldebaran.qi.*;
 import java.util.List;
 /**
 * This module embeds a speech synthetizer whose role is to convert text commands into sound waves that are then either sent to Nao's loudspeakers or written into a file. This service supports several languages and some parameters of the synthetizer can be tuned to change each language's synthetic voice.
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/audio/altexttospeech.html#altexttospeech">NAOqi APIs for ALTextToSpeech </a>
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/audio/altexttospeech.html#altexttospeech">NAOqi APIs for ALTextToSpeech </a>
 *
 */
 public class ALTextToSpeech extends ALProxy {

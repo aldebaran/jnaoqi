@@ -2,7 +2,7 @@
  * Copyright (c) 2015 Aldebaran Robotics. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the COPYING file.
- * Created by epinault and ekroeger
+ * Created by epinault and tcruz
  */
 package com.aldebaran.qi.helper.proxies;
 
@@ -31,7 +31,7 @@ import java.util.List;
   Tag camera_info_robotFrame = [x, y, z, wx, wy, wz] in FRAME_ROBOT (see motion documentation)
   Tag camera_id = id of the active camera (see videodevice documentation)
 
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/vision/alredballdetection.html#alredballdetection">NAOqi APIs for ALRedBallDetection </a>
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/vision/alredballdetection.html#alredballdetection">NAOqi APIs for ALRedBallDetection </a>
 *
 */
 public class ALRedBallDetection extends ALProxy {

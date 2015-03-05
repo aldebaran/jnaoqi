@@ -2,7 +2,7 @@
  * Copyright (c) 2015 Aldebaran Robotics. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the COPYING file.
- * Created by epinault and ekroeger
+ * Created by epinault and tcruz
  */
 package com.aldebaran.qi.helper.proxies;
 
@@ -16,7 +16,7 @@ import com.aldebaran.qi.*;
 import java.util.List;
 /**
 * This module allows the search for barcodes in the camera image.
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/vision/albarcodereader.html#albarcodereader">NAOqi APIs for ALBarcodeReader </a>
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/vision/albarcodereader.html#albarcodereader">NAOqi APIs for ALBarcodeReader </a>
 *
 */
 public class ALBarcodeReader extends ALProxy {

@@ -2,7 +2,7 @@
  * Copyright (c) 2015 Aldebaran Robotics. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the COPYING file.
- * Created by epinault and ekroeger
+ * Created by epinault and tcruz
  */
 package com.aldebaran.qi.helper.proxies;
 
@@ -16,7 +16,7 @@ import com.aldebaran.qi.*;
 import java.util.List;
 /**
 * This module enables to detect if the robot is in a dark environment
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/vision/aldarknessdetection.html#aldarknessdetection">NAOqi APIs for ALDarknessDetection </a>
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/vision/aldarknessdetection.html#aldarknessdetection">NAOqi APIs for ALDarknessDetection </a>
 *
 */
 public class ALDarknessDetection extends ALProxy {

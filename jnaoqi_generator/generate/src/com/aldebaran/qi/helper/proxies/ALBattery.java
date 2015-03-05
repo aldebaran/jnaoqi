@@ -2,7 +2,7 @@
  * Copyright (c) 2015 Aldebaran Robotics. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the COPYING file.
- * Created by epinault and ekroeger
+ * Created by epinault and tcruz
  */
 package com.aldebaran.qi.helper.proxies;
 
@@ -22,7 +22,7 @@ A event name BatteryFullChargedFlagChanged is raised when the flag battery is fu
 A event name BatteryDisChargingFlagChanged is raised when the flag battery is disCharging (bool) changed.
 A event name BatteryChargeChanged is raised when the battery level percentage (int) changed.
 
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/sensors/albattery.html#albattery">NAOqi APIs for ALBattery </a>
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/sensors/albattery.html#albattery">NAOqi APIs for ALBattery </a>
 *
 */
 public class ALBattery extends ALProxy {

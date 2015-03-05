@@ -2,7 +2,7 @@
  * Copyright (c) 2015 Aldebaran Robotics. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the COPYING file.
- * Created by epinault and ekroeger
+ * Created by epinault and tcruz
  */
 
 package com.aldebaran.qi.helper;
@@ -25,11 +25,11 @@ public class ALProxy {
         try {
             service = session.service(getClass().getSimpleName());
             if(alInterface != null)
-                alInterface.onALModuleReady();
+                alInterface.onProxyReady();
 	        subscribers = new HashMap<Long, AnyObject>();
         } catch (Exception e) {
             if(alInterface != null)
-                alInterface.onALModuleException(e);
+                alInterface.onProxyException(e);
         }
     }
 

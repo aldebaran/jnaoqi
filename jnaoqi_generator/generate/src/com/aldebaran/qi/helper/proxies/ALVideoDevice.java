@@ -2,7 +2,7 @@
  * Copyright (c) 2015 Aldebaran Robotics. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the COPYING file.
- * Created by epinault and ekroeger
+ * Created by epinault and tcruz
  */
 package com.aldebaran.qi.helper.proxies;
 
@@ -17,7 +17,7 @@ import java.util.List;
 /**
 * ALVideoDevice, formerly called Video Input systemis architectured in order to provide every module related to vision, called vision module, a direct access to raw images from video source, or an access to images transformed in the requested format.
   Extension name of the methods providing images depends on wether modules are local (dynamic library) or remote (executable).
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/vision/alvideodevice.html#alvideodevice">NAOqi APIs for ALVideoDevice </a>
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/vision/alvideodevice.html#alvideodevice">NAOqi APIs for ALVideoDevice </a>
 *
 */
 public class ALVideoDevice extends ALProxy {

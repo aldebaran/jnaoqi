@@ -2,7 +2,7 @@
  * Copyright (c) 2015 Aldebaran Robotics. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the COPYING file.
- * Created by epinault and ekroeger
+ * Created by epinault and tcruz
  */
 package com.aldebaran.qi.helper.proxies;
 
@@ -16,7 +16,7 @@ import com.aldebaran.qi.*;
 import java.util.List;
 /**
 * ALMotionRecorder is a very specific module for real-time motion recording in Choregraphe. Users can get a simpler interface for motion recording by using the Animation Mode. ALMotionRecorder also supports recording modes using bumpers or torso button, and selective motion replay.
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/motion/almotionrecorder.html#almotionrecorder">NAOqi APIs for ALMotionRecorder </a>
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/motion/almotionrecorder.html#almotionrecorder">NAOqi APIs for ALMotionRecorder </a>
 *
 */
 public class ALMotionRecorder extends ALProxy {

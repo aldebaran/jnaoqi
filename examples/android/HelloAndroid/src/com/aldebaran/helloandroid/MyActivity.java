@@ -10,15 +10,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.aldebaran.qi.CallError;
-import com.aldebaran.qi.EmbeddedTools;
 import com.aldebaran.qi.Session;
 import com.aldebaran.qi.helper.proxies.ALMemory;
 import com.aldebaran.qi.helper.proxies.ALMotion;
 import com.aldebaran.qi.helper.proxies.ALRobotPosture;
 import com.aldebaran.qi.helper.proxies.ALTextToSpeech;
-
-import java.io.File;
-import java.util.concurrent.TimeUnit;
 
 public class MyActivity extends Activity {
     private static final String TAG = "MyActivity";
@@ -37,11 +33,6 @@ public class MyActivity extends Activity {
         context = this;
         setContentView(R.layout.main);
         ip = (EditText) findViewById(R.id.robot_ip_edit);
-
-        EmbeddedTools ebt = new EmbeddedTools();
-        File cacheDir = getApplicationContext().getCacheDir();
-        ebt.overrideTempDirectory(cacheDir);
-        ebt.loadEmbeddedLibraries();
     }
 
     private void startServiceRoutine(final String ipAddress) {
@@ -54,7 +45,7 @@ public class MyActivity extends Activity {
 	                session.onDisconnected("onDisconnected", this);
                     try {
 	                    Log.i(TAG, "Ip address : " + ipAddress);
-                        session.connect("tcp://" + ipAddress + ":9559").get(500, TimeUnit.MILLISECONDS);
+                        session.connect("tcp://" + ipAddress + ":9559").get();
 	                    alMotion = new ALMotion(session);
 	                    alMotion.setAsynchronous(true);
 	                    alSpeech = new ALTextToSpeech(session);
