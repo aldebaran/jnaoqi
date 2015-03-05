@@ -13,12 +13,13 @@ public interface ALInterface {
 
 	/**
 	 * Callback when the proxy is ready
-	 * */
-    public void onProxyReady();
+	 *
+	 * @param name name of the proxy ready */
+    public void onProxyReady(String name);
 
 	/**
 	 * Callback when the proxy throw an exception
-	 * @param e exception thrown
-	 * */
-     public void onProxyException(Exception e);
+	 * @param name name of the proxy throwing an error
+	 * @param e exception thrown */
+     public void onProxyException(String name, Exception e);
 }

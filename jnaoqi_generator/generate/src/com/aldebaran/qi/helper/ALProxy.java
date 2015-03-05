@@ -23,6 +23,9 @@ public class ALProxy {
 	/** Naoqi Service proxy */
     protected AnyObject service;
 
+	/** Naoqi Service name */
+	protected String name;
+
 	/** is the proxy run asynchronously  */
     protected boolean isAsynchronous = false;
 
@@ -38,14 +41,16 @@ public class ALProxy {
 	 * */
     public ALProxy(Session session) {
         try {
-            service = session.service(getClass().getSimpleName());
+	        name = getClass().getSimpleName();
+            service = session.service(name);
             if(alInterface != null)
-                alInterface.onProxyReady();
+                alInterface.onProxyReady(name);
 	        subscribers = new HashMap<Long, AnyObject>();
         } catch (Exception e) {
             if(alInterface != null)
-                alInterface.onProxyException(e);
+                alInterface.onProxyException(name, e);
         }
+
     }
 
 	/**
@@ -55,13 +60,14 @@ public class ALProxy {
 	 * */
 	public ALProxy(Session session, String serviceName) {
 		try {
+			name = serviceName;
 			service = session.service(serviceName);
 			if(alInterface != null)
-				alInterface.onProxyReady();
+				alInterface.onProxyReady(name);
 			subscribers = new HashMap<Long, AnyObject>();
 		} catch (Exception e) {
 			if(alInterface != null)
-				alInterface.onProxyException(e);
+				alInterface.onProxyException(name, e);
 		}
 	}
 
@@ -70,6 +76,8 @@ public class ALProxy {
 	 * @return a subscriber object
 	 * */
 	public AnyObject subscriber(String eventName) throws CallError, InterruptedException {
+		if (service == null)
+			throw new CallError();
 		return (AnyObject)service.call("subscriber", eventName).get();
 	}
 
@@ -128,6 +136,8 @@ public class ALProxy {
 	 * @return id to identify the signal subscription
 	 * */
 	public long connect(String signal, String signature, Object callback) throws Exception {
+		if (service == null)
+			throw new CallError();
 		return service.connect(signal,signature, callback);
 	}
 
@@ -139,6 +149,8 @@ public class ALProxy {
 	 * @return id to identify the event subscription
 	 * */
 	public long connect(String signal, Class<?> theClass, SignalCallback callback) throws Exception {
+		if (service == null)
+			throw new CallError();
 		return service.connect(signal, "onSignal::("+callback.getNaoqiType(theClass)+")", callback);
 	}
 
@@ -147,6 +159,8 @@ public class ALProxy {
 	 * @param eventID id of the signal subscription
 	 * */
 	public void disconnect(long eventID) throws InterruptedException, CallError {
+		if (service == null)
+			throw new CallError();
 		service.disconnect(eventID);
 	}
 
@@ -156,6 +170,8 @@ public class ALProxy {
 	 * @param args args to give to this method
 	 * @return a Future, use get on it to have the result */
 	public <T> Future<T> call(String method, Object... args) throws CallError {
+		if (service == null)
+			throw new CallError();
 		return service.call(method, args);
 	}
 
@@ -174,4 +190,10 @@ public class ALProxy {
 	public void setAsynchronous(boolean isAsynchronous) {
 		this.isAsynchronous = isAsynchronous;
 	}
+
+	/**Is proxy create and ready*/
+	public boolean isProxyReady() {
+		return service != null;
+	}
+
 }

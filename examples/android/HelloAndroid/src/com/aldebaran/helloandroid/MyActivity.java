@@ -11,16 +11,16 @@ import android.widget.EditText;
 import android.widget.Toast;
 import com.aldebaran.qi.CallError;
 import com.aldebaran.qi.Session;
-import com.aldebaran.qi.helper.proxies.ALMemory;
+import com.aldebaran.qi.helper.ALInterface;
+import com.aldebaran.qi.helper.ALProxy;
 import com.aldebaran.qi.helper.proxies.ALMotion;
 import com.aldebaran.qi.helper.proxies.ALRobotPosture;
 import com.aldebaran.qi.helper.proxies.ALTextToSpeech;
 
-public class MyActivity extends Activity {
+public class MyActivity extends Activity implements ALInterface {
     private static final String TAG = "MyActivity";
     private ALMotion alMotion;
     private ALTextToSpeech alSpeech;
-    private ALMemory alMemory;
     private Session session;
     private EditText ip;
     private Context context;
@@ -33,6 +33,7 @@ public class MyActivity extends Activity {
         context = this;
         setContentView(R.layout.main);
         ip = (EditText) findViewById(R.id.robot_ip_edit);
+		ALProxy.alInterface = this;
     }
 
     private void startServiceRoutine(final String ipAddress) {
@@ -50,9 +51,9 @@ public class MyActivity extends Activity {
 	                    alMotion.setAsynchronous(true);
 	                    alSpeech = new ALTextToSpeech(session);
 	                    alSpeech.setAsynchronous(true);
-	                    alMemory = new ALMemory(session);
 	                    alPosture = new ALRobotPosture(session);
 	                    alPosture.setAsynchronous(true);
+
 	                    setButtonVisible(true);
                     } catch (Exception e) {
 	                    setButtonVisible(false);
@@ -190,5 +191,15 @@ public class MyActivity extends Activity {
 	public void say(View view) throws InterruptedException, CallError {
 		String text = ((EditText)findViewById(R.id.say_edit)).getText().toString();
 		alSpeech.say(text);
+	}
+
+	@Override
+	public void onProxyReady() {
+		Log.i(TAG, "I am ready");
+	}
+
+	@Override
+	public void onProxyException(Exception e) {
+		Log.e(TAG, "error", e);
 	}
 }
