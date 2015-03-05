@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Build-Jdk: 1.6.0_65
+Built-By: epinault
+Created-By: IntelliJ IDEA
+Main-Class: com.aldebaran.qi.helper.ALProxy
+
