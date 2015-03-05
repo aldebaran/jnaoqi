@@ -9,3 +9,5 @@ jnaoqi_generator/PyTemp.iml
 
 .idea
 jnaoqi_generator/.idea
+jnaoqi_generator/generate/.idea
+jnaoqi_generator/generate/target

@@ -31,13 +31,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.aldebaran.helloandroid" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8dc59d9-9463-4482-9b1a-7cf13dcae601" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/target/MANIFEST.MF" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qi/helper/ALInterface.java" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qi/helper/ALInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qi/helper/ALProxy.java" afterPath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/src/com/aldebaran/qi/helper/ALProxy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/aldebaran/helloandroid/MyActivity.java" afterPath="$PROJECT_DIR$/src/com/aldebaran/helloandroid/MyActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="c8dc59d9-9463-4482-9b1a-7cf13dcae601" name="Default" comment="" />
     <ignored path="HelloAndroid.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -794,7 +788,7 @@
       <workItem from="1425473525943" duration="8682000" />
       <workItem from="1425490138142" duration="373000" />
       <workItem from="1425548501496" duration="2317000" />
-      <workItem from="1425554789967" duration="5692000" />
+      <workItem from="1425554789967" duration="5751000" />
     </task>
     <task id="LOCAL-00001" summary="delete unused file, update project conf">
       <created>1400601865505</created>
@@ -812,7 +806,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55702000" />
+    <option name="totallyTimeSpent" value="55761000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
