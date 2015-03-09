@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">My Aldebaran Application</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="robot_ip">Robot\'s IP address</string>
+    <string name="default_ip">192.168.43.68</string>
+    <string name="rest">Rest</string>
+    <string name="wake">Wake up</string>
+    <string name="sit">Sit</string>
+    <string name="stand">Stand</string>
+    <string name="say">Say</string>
+    <string name="open_hand">Open hands</string>
+    <string name="close_hand">Close hands</string>
+
+    <string name="connecting_message">Please wait. Trying to connect.</string>
+    <string name="connected">Successfully connected.</string>
+    <string name="not_connected">Could not connect.</string>
+    <string name="connection_lost">Connection lost.</string>
+
+</resources>
