@@ -57,19 +57,22 @@
      </LinearLayout>
     <RelativeLayout
         android:id="@+id/moving_layout"
-        android:visibility="visible"
+        android:visibility="gone"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:layout_below="@id/tts_layout"
         android:layout_above="@id/motion_layout">
         <ImageButton
             android:id="@+id/center_button"
+            android:layout_margin="10dp"
+            android:padding="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onStop"
             android:layout_centerInParent="true"
             android:src="@drawable/ic_move_stop"/>
         <ImageButton
+            android:padding="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/center_button"
@@ -77,6 +80,7 @@
             android:onClick="onGoToBack"
             android:src="@drawable/ic_move_back"/>
         <ImageButton
+            android:padding="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@id/center_button"
@@ -84,6 +88,7 @@
             android:onClick="onGoToFront"
             android:src="@drawable/ic_move_front"/>
         <ImageButton
+            android:padding="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@id/center_button"
@@ -92,6 +97,7 @@
             android:onClick="onGoToRight"
             android:src="@drawable/ic_move_left"/>
         <ImageButton
+            android:padding="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/center_button"
