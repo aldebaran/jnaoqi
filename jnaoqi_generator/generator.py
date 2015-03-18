@@ -41,12 +41,11 @@ TEMPLATE_CLASS = """/**
  */
 package com.aldebaran.qi.helper.proxies;
 
-import com.aldebaran.qi.CallError;
-import com.aldebaran.qi.Session;
-import com.aldebaran.qi.helper.ALProxy;
+import com.aldebaran.qi.*;
+import com.aldebaran.qi.helper.*;
 import java.util.List;
 import java.util.Map;
-import com.aldebaran.qi.*;
+
 
 import java.util.List;
 /**
@@ -54,9 +53,9 @@ import java.util.List;
 * @see <a href="%(module_link_overview)s">NAOqi APIs for %(module_name)s </a>
 *
 */
-public class %(module_name)s extends ALProxy {
+public class %(module_name)s extends %(module_parent)s {
 
-    public %(module_name)s(Session session) {
+    public %(module_name)s(Session session) throws Exception{
         super(session);
     }
 %(content)s
@@ -257,6 +256,11 @@ def generate_java(address):
             for method in methods.values() :
                 # print native(method)
                 if method["name"] not in BLACKLIST_METHODS and not method["name"].startswith("_"):
+                    if module_name == "ALMemory":
+                        module_parent = "ALMemoryHelper"
+                    else:
+                        module_parent = "ALProxy"
+
                     content += translateFunc(method)+"\n"
 
             with open(directory+"/"+module_name + ".java", "w") as outfile:

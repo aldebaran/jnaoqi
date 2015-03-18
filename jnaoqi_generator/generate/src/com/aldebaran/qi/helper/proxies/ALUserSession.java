@@ -9,11 +9,9 @@ package com.aldebaran.qi.helper.proxies;
 import com.aldebaran.qi.CallError;
 import com.aldebaran.qi.Session;
 import com.aldebaran.qi.helper.ALProxy;
-import java.util.List;
-import java.util.Map;
-import com.aldebaran.qi.*;
 
 import java.util.List;
+import java.util.Map;
 /**
 * Manages the state of active users, and the bindings to their data.
 * @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/core/alusersession.html#alusersession">NAOqi APIs for ALUserSession </a>
@@ -21,7 +19,7 @@ import java.util.List;
 */
 public class ALUserSession extends ALProxy {
 
-    public ALUserSession(Session session) {
+    public ALUserSession(Session session) throws Exception{
         super(session);
     }
 

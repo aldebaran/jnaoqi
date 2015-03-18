@@ -9,9 +9,6 @@ package com.aldebaran.qi.helper.proxies;
 import com.aldebaran.qi.CallError;
 import com.aldebaran.qi.Session;
 import com.aldebaran.qi.helper.ALProxy;
-import java.util.List;
-import java.util.Map;
-import com.aldebaran.qi.*;
 
 import java.util.List;
 /**
@@ -30,7 +27,7 @@ Also some fast access Memory key are available :
 */
 public class ALFsr extends ALProxy {
 
-    public ALFsr(Session session) {
+    public ALFsr(Session session) throws Exception{
         super(session);
     }
 

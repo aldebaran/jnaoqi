@@ -9,9 +9,6 @@ package com.aldebaran.qi.helper.proxies;
 import com.aldebaran.qi.CallError;
 import com.aldebaran.qi.Session;
 import com.aldebaran.qi.helper.ALProxy;
-import java.util.List;
-import java.util.Map;
-import com.aldebaran.qi.*;
 
 import java.util.List;
 /**
@@ -22,7 +19,7 @@ import java.util.List;
 */
 public class ALSensors extends ALProxy {
 
-    public ALSensors(Session session) {
+    public ALSensors(Session session) throws Exception{
         super(session);
     }
 

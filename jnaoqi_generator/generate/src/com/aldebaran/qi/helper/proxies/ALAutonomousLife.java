@@ -8,12 +8,11 @@ package com.aldebaran.qi.helper.proxies;
 
 import com.aldebaran.qi.CallError;
 import com.aldebaran.qi.Session;
+import com.aldebaran.qi.Tuple2;
 import com.aldebaran.qi.helper.ALProxy;
-import java.util.List;
-import java.util.Map;
-import com.aldebaran.qi.*;
 
 import java.util.List;
+import java.util.Map;
 /**
 * Manages the focused Activity and Autonomous Life state
 * @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/core/autonomouslife.html#autonomouslife">NAOqi APIs for ALAutonomousLife </a>
@@ -21,7 +20,7 @@ import java.util.List;
 */
 public class ALAutonomousLife extends ALProxy {
 
-    public ALAutonomousLife(Session session) {
+    public ALAutonomousLife(Session session) throws Exception{
         super(session);
     }
 

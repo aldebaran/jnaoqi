@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.aldebaran.qi.CallError;
+import com.aldebaran.qi.Callback;
+import com.aldebaran.qi.Future;
 import com.aldebaran.qi.Session;
 import com.aldebaran.qi.helper.ALInterface;
 import com.aldebaran.qi.helper.ALProxy;

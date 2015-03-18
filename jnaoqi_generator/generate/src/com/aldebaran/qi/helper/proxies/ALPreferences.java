@@ -9,9 +9,6 @@ package com.aldebaran.qi.helper.proxies;
 import com.aldebaran.qi.CallError;
 import com.aldebaran.qi.Session;
 import com.aldebaran.qi.helper.ALProxy;
-import java.util.List;
-import java.util.Map;
-import com.aldebaran.qi.*;
 
 import java.util.List;
 /**
@@ -26,7 +23,7 @@ pParams[3] (optional) The name of the data when inserted into memory.
 */
 public class ALPreferences extends ALProxy {
 
-    public ALPreferences(Session session) {
+    public ALPreferences(Session session) throws Exception{
         super(session);
     }
 

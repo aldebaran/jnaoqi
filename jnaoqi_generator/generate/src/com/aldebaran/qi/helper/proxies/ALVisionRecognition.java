@@ -9,9 +9,6 @@ package com.aldebaran.qi.helper.proxies;
 import com.aldebaran.qi.CallError;
 import com.aldebaran.qi.Session;
 import com.aldebaran.qi.helper.ALProxy;
-import java.util.List;
-import java.util.Map;
-import com.aldebaran.qi.*;
 
 import java.util.List;
 /**
@@ -37,7 +34,7 @@ and boundary_points = [[x0,y0], [x1,y1], ..., [xN,yN]]
 */
 public class ALVisionRecognition extends ALProxy {
 
-    public ALVisionRecognition(Session session) {
+    public ALVisionRecognition(Session session) throws Exception{
         super(session);
     }
 

@@ -6,14 +6,11 @@
  */
 package com.aldebaran.qi.helper.proxies;
 
-import com.aldebaran.qi.CallError;
-import com.aldebaran.qi.Session;
-import com.aldebaran.qi.helper.ALProxy;
-import java.util.List;
-import java.util.Map;
 import com.aldebaran.qi.*;
+import com.aldebaran.qi.helper.ALProxy;
 
 import java.util.List;
+import java.util.Map;
 /**
 * 
 * @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/core/packagemanager.html#packagemanager">NAOqi APIs for PackageManager </a>
@@ -21,7 +18,7 @@ import java.util.List;
 */
 public class PackageManager extends ALProxy {
 
-    public PackageManager(Session session) {
+    public PackageManager(Session session) throws Exception{
         super(session);
     }
 

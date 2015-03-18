@@ -9,11 +9,6 @@ package com.aldebaran.qi.helper.proxies;
 import com.aldebaran.qi.CallError;
 import com.aldebaran.qi.Session;
 import com.aldebaran.qi.helper.ALProxy;
-import java.util.List;
-import java.util.Map;
-import com.aldebaran.qi.*;
-
-import java.util.List;
 /**
 * 
 * @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/core/alstore.html#alstore">NAOqi APIs for ALStore </a>
@@ -21,7 +16,7 @@ import java.util.List;
 */
 public class ALStore extends ALProxy {
 
-    public ALStore(Session session) {
+    public ALStore(Session session) throws Exception{
         super(session);
     }
 

@@ -9,9 +9,6 @@ package com.aldebaran.qi.helper.proxies;
 import com.aldebaran.qi.CallError;
 import com.aldebaran.qi.Session;
 import com.aldebaran.qi.helper.ALProxy;
-import java.util.List;
-import java.util.Map;
-import com.aldebaran.qi.*;
 
 import java.util.List;
 /**
@@ -27,7 +24,7 @@ A event name BatteryChargeChanged is raised when the battery level percentage (i
 */
 public class ALBattery extends ALProxy {
 
-    public ALBattery(Session session) {
+    public ALBattery(Session session) throws Exception{
         super(session);
     }
 
