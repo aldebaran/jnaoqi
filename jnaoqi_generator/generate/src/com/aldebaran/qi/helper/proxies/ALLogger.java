@@ -35,10 +35,7 @@ public class ALLogger extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -54,10 +51,7 @@ public class ALLogger extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -133,10 +127,7 @@ public class ALLogger extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -166,10 +157,7 @@ public class ALLogger extends ALProxy {
     * @param message  Log Message.
     */
     public void fatal(String moduleName, String message) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("fatal", moduleName, message);
-        else
-            call("fatal", moduleName, message).get();
+        call("fatal", moduleName, message).get();
     }
 
     /**
@@ -180,10 +168,7 @@ public class ALLogger extends ALProxy {
     * @param message  Log Message.
     */
     public void error(String moduleName, String message) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("error", moduleName, message);
-        else
-            call("error", moduleName, message).get();
+        call("error", moduleName, message).get();
     }
 
     /**
@@ -193,10 +178,7 @@ public class ALLogger extends ALProxy {
     * @param message  Log Message.
     */
     public void warn(String moduleName, String message) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("warn", moduleName, message);
-        else
-            call("warn", moduleName, message).get();
+        call("warn", moduleName, message).get();
     }
 
     /**
@@ -207,10 +189,7 @@ public class ALLogger extends ALProxy {
     * @param message  Log Message.
     */
     public void info(String moduleName, String message) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("info", moduleName, message);
-        else
-            call("info", moduleName, message).get();
+        call("info", moduleName, message).get();
     }
 
     /**
@@ -221,10 +200,7 @@ public class ALLogger extends ALProxy {
     * @param message  Log Message.
     */
     public void debug(String moduleName, String message) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("debug", moduleName, message);
-        else
-            call("debug", moduleName, message).get();
+        call("debug", moduleName, message).get();
     }
 
     /**
@@ -232,10 +208,7 @@ public class ALLogger extends ALProxy {
     * 
     */
     public void setVerbosity(String param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setVerbosity", param1);
-        else
-            call("setVerbosity", param1).get();
+        call("setVerbosity", param1).get();
     }
 
     /**
@@ -251,10 +224,7 @@ public class ALLogger extends ALProxy {
     * 
     */
     public void logInFile(String param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("logInFile", param1);
-        else
-            call("logInFile", param1).get();
+        call("logInFile", param1).get();
     }
 
     /**
@@ -262,10 +232,7 @@ public class ALLogger extends ALProxy {
     * 
     */
     public void logInForwarder(String param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("logInForwarder", param1);
-        else
-            call("logInForwarder", param1).get();
+        call("logInForwarder", param1).get();
     }
 
     /**
@@ -273,10 +240,7 @@ public class ALLogger extends ALProxy {
     * 
     */
     public void removeHandler(String param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("removeHandler", param1);
-        else
-            call("removeHandler", param1).get();
+        call("removeHandler", param1).get();
     }
 
 }

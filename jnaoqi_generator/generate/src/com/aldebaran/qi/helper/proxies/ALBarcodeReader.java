@@ -101,10 +101,7 @@ public class ALBarcodeReader extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -120,10 +117,7 @@ public class ALBarcodeReader extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -199,10 +193,7 @@ public class ALBarcodeReader extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -232,10 +223,7 @@ public class ALBarcodeReader extends ALProxy {
     * @param precision  Precision of the extractor if relevant.
     */
     public void subscribe(String name, Integer period, Float precision) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("subscribe", name, period, precision);
-        else
-            call("subscribe", name, period, precision).get();
+        call("subscribe", name, period, precision).get();
     }
 
     /**
@@ -244,10 +232,7 @@ public class ALBarcodeReader extends ALProxy {
     * @param name  Name of the module which subscribes.
     */
     public void subscribe(String name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("subscribe", name);
-        else
-            call("subscribe", name).get();
+        call("subscribe", name).get();
     }
 
     /**
@@ -256,10 +241,7 @@ public class ALBarcodeReader extends ALProxy {
     * @param name  Name of the module which had subscribed.
     */
     public void unsubscribe(String name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("unsubscribe", name);
-        else
-            call("unsubscribe", name).get();
+        call("unsubscribe", name).get();
     }
 
     /**
@@ -269,10 +251,7 @@ public class ALBarcodeReader extends ALProxy {
     * @param period  Refresh period (in milliseconds).
     */
     public void updatePeriod(String name, Integer period) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("updatePeriod", name, period);
-        else
-            call("updatePeriod", name, period).get();
+        call("updatePeriod", name, period).get();
     }
 
     /**
@@ -282,10 +261,7 @@ public class ALBarcodeReader extends ALProxy {
     * @param precision  Precision of the extractor.
     */
     public void updatePrecision(String name, Float precision) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("updatePrecision", name, precision);
-        else
-            call("updatePrecision", name, precision).get();
+        call("updatePrecision", name, precision).get();
     }
 
     /**
@@ -377,10 +353,7 @@ public class ALBarcodeReader extends ALProxy {
     * @param status  New pause satus
     */
     public void pause(Boolean status) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("pause", status);
-        else
-            call("pause", status).get();
+        call("pause", status).get();
     }
 
 }

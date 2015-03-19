@@ -26,10 +26,6 @@ public abstract class ALProxy {
 	/** Naoqi Service name */
 	protected String name;
 
-	/** is the proxy run asynchronously  */
-    protected boolean isAsynchronous = false;
-
-
 	/**
 	 * Create a new proxy using the class name as the service name
 	 * @param session session connect to a robot
@@ -104,14 +100,6 @@ public abstract class ALProxy {
 
 	public void setService(AnyObject service) {
 		this.service = service;
-	}
-
-	public boolean isAsynchronous() {
-		return isAsynchronous;
-	}
-
-	public void setAsynchronous(boolean isAsynchronous) {
-		this.isAsynchronous = isAsynchronous;
 	}
 
 	/**Is proxy create and ready*/

@@ -35,10 +35,7 @@ public class ALInfrared extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -54,10 +51,7 @@ public class ALInfrared extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -133,10 +127,7 @@ public class ALInfrared extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -164,10 +155,7 @@ public class ALInfrared extends ALProxy {
     * @param RepeatThreshold  Give the keep-pressing threshold after which the repetition of a key is taken into consideration.
     */
     public void initReception(Integer RepeatThreshold) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("initReception", RepeatThreshold);
-        else
-            call("initReception", RepeatThreshold).get();
+        call("initReception", RepeatThreshold).get();
     }
 
     /**
@@ -177,10 +165,7 @@ public class ALInfrared extends ALProxy {
     * @param Key  IR remote control key name.
     */
     public void sendRemoteKey(String Remote, String Key) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("sendRemoteKey", Remote, Key);
-        else
-            call("sendRemoteKey", Remote, Key).get();
+        call("sendRemoteKey", Remote, Key).get();
     }
 
     /**
@@ -191,10 +176,7 @@ public class ALInfrared extends ALProxy {
     * @param pTimeMs  The time in ms when the remote key must be send. 0 deals like sendRemoteKey
     */
     public void sendRemoteKeyWithTime(String Remote, String Key, Integer pTimeMs) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("sendRemoteKeyWithTime", Remote, Key, pTimeMs);
-        else
-            call("sendRemoteKeyWithTime", Remote, Key, pTimeMs).get();
+        call("sendRemoteKeyWithTime", Remote, Key, pTimeMs).get();
     }
 
     /**
@@ -203,10 +185,7 @@ public class ALInfrared extends ALProxy {
     * @param IP  IP adress to send through IR.
     */
     public void sendIpAddress(String IP) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("sendIpAddress", IP);
-        else
-            call("sendIpAddress", IP).get();
+        call("sendIpAddress", IP).get();
     }
 
     /**
@@ -215,10 +194,7 @@ public class ALInfrared extends ALProxy {
     * @param Octet  octet to send through IR.
     */
     public void send8(Integer Octet) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("send8", Octet);
-        else
-            call("send8", Octet).get();
+        call("send8", Octet).get();
     }
 
     /**
@@ -227,10 +203,7 @@ public class ALInfrared extends ALProxy {
     * @param Data_IR  4 octets to send through IR.
     */
     public void send32(String Data_IR) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("send32", Data_IR);
-        else
-            call("send32", Data_IR).get();
+        call("send32", Data_IR).get();
     }
 
     /**
@@ -242,10 +215,7 @@ public class ALInfrared extends ALProxy {
     * @param Octet4  Octet 4 to send through IR.
     */
     public void send32(Integer Octet1, Integer Octet2, Integer Octet3, Integer Octet4) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("send32", Octet1, Octet2, Octet3, Octet4);
-        else
-            call("send32", Octet1, Octet2, Octet3, Octet4).get();
+        call("send32", Octet1, Octet2, Octet3, Octet4).get();
     }
 
     /**
@@ -253,10 +223,7 @@ public class ALInfrared extends ALProxy {
     * 
     */
     public void confRemoteRecordSave() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("confRemoteRecordSave");
-        else
-            call("confRemoteRecordSave").get();
+        call("confRemoteRecordSave").get();
     }
 
 }

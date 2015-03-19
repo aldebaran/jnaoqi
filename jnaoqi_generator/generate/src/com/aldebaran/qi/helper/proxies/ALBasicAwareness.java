@@ -28,10 +28,7 @@ public class ALBasicAwareness extends ALProxy {
     * @param modeName  Name of the mode
     */
     public void setEngagementMode(String modeName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setEngagementMode", modeName);
-        else
-            call("setEngagementMode", modeName).get();
+        call("setEngagementMode", modeName).get();
     }
 
     /**
@@ -59,10 +56,7 @@ public class ALBasicAwareness extends ALProxy {
     * 
     */
     public void resetAllParameters() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("resetAllParameters");
-        else
-            call("resetAllParameters").get();
+        call("resetAllParameters").get();
     }
 
     /**
@@ -193,10 +187,7 @@ public class ALBasicAwareness extends ALProxy {
  
     */
     public void setParameter(String paramName, Object newVal) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setParameter", paramName, newVal);
-        else
-            call("setParameter", paramName, newVal).get();
+        call("setParameter", paramName, newVal).get();
     }
 
     /**
@@ -205,10 +196,7 @@ public class ALBasicAwareness extends ALProxy {
     * @param modeName  Name of the mode
     */
     public void setTrackingMode(String modeName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setTrackingMode", modeName);
-        else
-            call("setTrackingMode", modeName).get();
+        call("setTrackingMode", modeName).get();
     }
 
     /**
@@ -233,10 +221,7 @@ public class ALBasicAwareness extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -252,10 +237,7 @@ public class ALBasicAwareness extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -331,10 +313,7 @@ public class ALBasicAwareness extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -361,10 +340,7 @@ public class ALBasicAwareness extends ALProxy {
     * 
     */
     public void startAwareness() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("startAwareness");
-        else
-            call("startAwareness").get();
+        call("startAwareness").get();
     }
 
     /**
@@ -372,10 +348,7 @@ public class ALBasicAwareness extends ALProxy {
     * 
     */
     public void stopAwareness() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stopAwareness");
-        else
-            call("stopAwareness").get();
+        call("stopAwareness").get();
     }
 
     /**
@@ -394,10 +367,7 @@ public class ALBasicAwareness extends ALProxy {
     * @param isStimulusDetectionEnabled  Boolean value: true to enable, false to disable.
     */
     public void setStimulusDetectionEnabled(String stimulusName, Boolean isStimulusDetectionEnabled) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setStimulusDetectionEnabled", stimulusName, isStimulusDetectionEnabled);
-        else
-            call("setStimulusDetectionEnabled", stimulusName, isStimulusDetectionEnabled).get();
+        call("setStimulusDetectionEnabled", stimulusName, isStimulusDetectionEnabled).get();
     }
 
 }

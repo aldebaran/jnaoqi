@@ -35,10 +35,7 @@ public class PackageManager extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -70,10 +67,7 @@ public class PackageManager extends ALProxy {
     * 
     */
     public void setServiceDirectory(String param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setServiceDirectory", param1);
-        else
-            call("setServiceDirectory", param1).get();
+        call("setServiceDirectory", param1).get();
     }
 
     /**
@@ -113,10 +107,7 @@ public class PackageManager extends ALProxy {
     * 
     */
     public void removePkg(String param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("removePkg", param1);
-        else
-            call("removePkg", param1).get();
+        call("removePkg", param1).get();
     }
 
     /**
@@ -139,7 +130,7 @@ public class PackageManager extends ALProxy {
     * 
     * 
     */
-    public Tuple20<String, String, String, String, String, String, String, String, Map<String, String>, Map<String, String>, List<String>, List<Tuple10<String, String, Map<String, String>, Map<String, String>, String, Map<String, List<String>>, Map<String, List<String>>, Map<String, List<String>>, Map<String, List<String>>, List<String>>>, List<Tuple5<String, String, String, String, Map<String, String>>>, String, List<Tuple5<String, String, String, String, String>>, List<Tuple2<String, String>>, List<Tuple3<String, String, Boolean>>, List<String>, List<Tuple3<String, String, Map<String, String>>>, List<String>> getPackage2(String param1) throws CallError, InterruptedException {
+    public Tuple20<String, String, String, String, String, String, String, String, Map<String, String>, Map<String, String>, List<String>, List<Tuple10<String, String, Map<String, String>, Map<String, String>, String, Map<String, List<String>>, Map<String, List<String>>, Map<String, List<String>>, Map<String, List<String>>, List<String>>>, List<Tuple5<String, String, String, String, Map<String, String>>>, String, List<Tuple5<String, String, String, String, String>>, List<Tuple2<String, String>>, List<Tuple3<String, String, Boolean>>, List<String>, List<Tuple3<String, String, Map<String, String>>>, List<String>> package1(String param1) throws CallError, InterruptedException {
         return (Tuple20<String, String, String, String, String, String, String, String, Map<String, String>, Map<String, String>, List<String>, List<Tuple10<String, String, Map<String, String>, Map<String, String>, String, Map<String, List<String>>, Map<String, List<String>>, Map<String, List<String>>, Map<String, List<String>>, List<String>>>, List<Tuple5<String, String, String, String, Map<String, String>>>, String, List<Tuple5<String, String, String, String, String>>, List<Tuple2<String, String>>, List<Tuple3<String, String, Boolean>>, List<String>, List<Tuple3<String, String, Map<String, String>>>, List<String>>)call("package", param1).get();
     }
 

@@ -37,10 +37,7 @@ public class ALSystem extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -56,10 +53,7 @@ public class ALSystem extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -135,10 +129,7 @@ public class ALSystem extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -203,10 +194,7 @@ public class ALSystem extends ALProxy {
     * 
     */
     public void shutdown() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("shutdown");
-        else
-            call("shutdown").get();
+        call("shutdown").get();
     }
 
     /**
@@ -214,10 +202,7 @@ public class ALSystem extends ALProxy {
     * 
     */
     public void reboot() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("reboot");
-        else
-            call("reboot").get();
+        call("reboot").get();
     }
 
     /**
@@ -291,10 +276,7 @@ public class ALSystem extends ALProxy {
     * @param new password  The new user password.
     */
     public void changePassword(String oldPassword, String newPassword) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("changePassword", oldPassword, newPassword);
-        else
-            call("changePassword", oldPassword, newPassword).get();
+        call("changePassword", oldPassword, newPassword).get();
     }
 
     /**
@@ -304,10 +286,7 @@ public class ALSystem extends ALProxy {
     * @param checksum  Local path to a md5 checksum file, or empty string for no verification
     */
     public void upgrade(String image, String checksum) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("upgrade", image, checksum);
-        else
-            call("upgrade", image, checksum).get();
+        call("upgrade", image, checksum).get();
     }
 
 }

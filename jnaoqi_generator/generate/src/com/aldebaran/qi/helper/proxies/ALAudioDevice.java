@@ -27,10 +27,7 @@ public class ALAudioDevice extends ALProxy {
     * 
     */
     public void flushAudioOutputs() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("flushAudioOutputs");
-        else
-            call("flushAudioOutputs").get();
+        call("flushAudioOutputs").get();
     }
 
     /**
@@ -42,10 +39,7 @@ public class ALAudioDevice extends ALProxy {
     * @param duration  Duration of the sine wave in seconds
     */
     public void playSine(Integer frequence, Integer gain, Integer pan, Float duration) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("playSine", frequence, gain, pan, duration);
-        else
-            call("playSine", frequence, gain, pan, duration).get();
+        call("playSine", frequence, gain, pan, duration).get();
     }
 
     /**
@@ -53,10 +47,7 @@ public class ALAudioDevice extends ALProxy {
     * 
     */
     public void enableEnergyComputation() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("enableEnergyComputation");
-        else
-            call("enableEnergyComputation").get();
+        call("enableEnergyComputation").get();
     }
 
     /**
@@ -114,10 +105,7 @@ public class ALAudioDevice extends ALProxy {
     * @param timeStamp  parameter indicating if audio timestamps are sent to the processSound or processSoundRemote functions - 0 : no - 1 : yes 
     */
     public void setClientPreferences(String name, Integer sampleRate, Object channelsVector, Integer deinterleaved, Integer timeStamp) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setClientPreferences", name, sampleRate, channelsVector, deinterleaved, timeStamp);
-        else
-            call("setClientPreferences", name, sampleRate, channelsVector, deinterleaved, timeStamp).get();
+        call("setClientPreferences", name, sampleRate, channelsVector, deinterleaved, timeStamp).get();
     }
 
     /**
@@ -125,10 +113,7 @@ public class ALAudioDevice extends ALProxy {
     * 
     */
     public void muteAudioOut(Boolean param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("muteAudioOut", param1);
-        else
-            call("muteAudioOut", param1).get();
+        call("muteAudioOut", param1).get();
     }
 
     /**
@@ -158,10 +143,7 @@ public class ALAudioDevice extends ALProxy {
     * @param deinterleaved  indicates if the microphones data sent to the process function are interleaved or not - 0 : interleaved - 1 : deinterleaved 
     */
     public void setClientPreferences(String name, Integer sampleRate, Integer channelsConfiguration, Integer deinterleaved) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setClientPreferences", name, sampleRate, channelsConfiguration, deinterleaved);
-        else
-            call("setClientPreferences", name, sampleRate, channelsConfiguration, deinterleaved).get();
+        call("setClientPreferences", name, sampleRate, channelsConfiguration, deinterleaved).get();
     }
 
     /**
@@ -169,10 +151,7 @@ public class ALAudioDevice extends ALProxy {
     * 
     */
     public void disableEnergyComputation() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("disableEnergyComputation");
-        else
-            call("disableEnergyComputation").get();
+        call("disableEnergyComputation").get();
     }
 
     /**
@@ -188,10 +167,7 @@ public class ALAudioDevice extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -207,10 +183,7 @@ public class ALAudioDevice extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -286,10 +259,7 @@ public class ALAudioDevice extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -317,10 +287,7 @@ public class ALAudioDevice extends ALProxy {
     * @param pModule  Name of the module
     */
     public void subscribe(String pModule) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("subscribe", pModule);
-        else
-            call("subscribe", pModule).get();
+        call("subscribe", pModule).get();
     }
 
     /**
@@ -329,10 +296,7 @@ public class ALAudioDevice extends ALProxy {
     * @param pModule  Name of the module
     */
     public void unsubscribe(String pModule) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("unsubscribe", pModule);
-        else
-            call("unsubscribe", pModule).get();
+        call("unsubscribe", pModule).get();
     }
 
     /**
@@ -365,10 +329,7 @@ You must pass to this function the stereo buffer you want to send as an ALValue 
     * @param pFileName  Name of the input file.
     */
     public void setFileAsInput(String pFileName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setFileAsInput", pFileName);
-        else
-            call("setFileAsInput", pFileName).get();
+        call("setFileAsInput", pFileName).get();
     }
 
     /**
@@ -380,10 +341,7 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
     * @param pParamValue  The value to which the specified parameter should be set.
     */
     public void setParameter(String pParamName, Integer pParamValue) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setParameter", pParamName, pParamValue);
-        else
-            call("setParameter", pParamName, pParamValue).get();
+        call("setParameter", pParamName, pParamValue).get();
     }
 
     /**
@@ -402,10 +360,7 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
     * @param pFileName  Name of the file where to record the sound.
     */
     public void startMicrophonesRecording(String pFileName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("startMicrophonesRecording", pFileName);
-        else
-            call("startMicrophonesRecording", pFileName).get();
+        call("startMicrophonesRecording", pFileName).get();
     }
 
     /**
@@ -413,10 +368,7 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
     * 
     */
     public void stopMicrophonesRecording() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stopMicrophonesRecording");
-        else
-            call("stopMicrophonesRecording").get();
+        call("stopMicrophonesRecording").get();
     }
 
     /**
@@ -425,10 +377,7 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
     * @param volume  Volume [0-100].
     */
     public void setOutputVolume(Integer volume) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setOutputVolume", volume);
-        else
-            call("setOutputVolume", volume).get();
+        call("setOutputVolume", volume).get();
     }
 
     /**
@@ -445,10 +394,7 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
     * 
     */
     public void openAudioInputs() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("openAudioInputs");
-        else
-            call("openAudioInputs").get();
+        call("openAudioInputs").get();
     }
 
     /**
@@ -456,10 +402,7 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
     * 
     */
     public void openAudioOutputs() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("openAudioOutputs");
-        else
-            call("openAudioOutputs").get();
+        call("openAudioOutputs").get();
     }
 
     /**
@@ -467,10 +410,7 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
     * 
     */
     public void closeAudioInputs() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("closeAudioInputs");
-        else
-            call("closeAudioInputs").get();
+        call("closeAudioInputs").get();
     }
 
     /**
@@ -478,10 +418,7 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
     * 
     */
     public void closeAudioOutputs() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("closeAudioOutputs");
-        else
-            call("closeAudioOutputs").get();
+        call("closeAudioOutputs").get();
     }
 
 }

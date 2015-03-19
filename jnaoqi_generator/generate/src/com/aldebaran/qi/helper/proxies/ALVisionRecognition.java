@@ -62,10 +62,7 @@ public class ALVisionRecognition extends ALProxy {
     * 
     */
     public void clearCurrentDatabase() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearCurrentDatabase");
-        else
-            call("clearCurrentDatabase").get();
+        call("clearCurrentDatabase").get();
     }
 
     /**
@@ -75,10 +72,7 @@ public class ALVisionRecognition extends ALProxy {
     * @param paramValue  Value of the resolution as an integer: 0(QQVGA) 1(QVGA) 2(VGA)
     */
     public void setParam(String paramName, Object paramValue) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setParam", paramName, paramValue);
-        else
-            call("setParam", paramName, paramValue).get();
+        call("setParam", paramName, paramValue).get();
     }
 
     /**
@@ -88,10 +82,7 @@ public class ALVisionRecognition extends ALProxy {
     * @param value  New value
     */
     public void setParameter(String paramName, Object value) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setParameter", paramName, value);
-        else
-            call("setParameter", paramName, value).get();
+        call("setParameter", paramName, value).get();
     }
 
     /**
@@ -114,10 +105,7 @@ public class ALVisionRecognition extends ALProxy {
     * @param iMaxOutObjs  number of desired objects to be detected.
     */
     public void setMaxOutObjs(Integer iMaxOutObjs) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setMaxOutObjs", iMaxOutObjs);
-        else
-            call("setMaxOutObjs", iMaxOutObjs).get();
+        call("setMaxOutObjs", iMaxOutObjs).get();
     }
 
     /**
@@ -190,10 +178,7 @@ public class ALVisionRecognition extends ALProxy {
     * @param paused  New pause satus
     */
     public void pause(Boolean paused) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("pause", paused);
-        else
-            call("pause", paused).get();
+        call("pause", paused).get();
     }
 
     /**
@@ -214,10 +199,7 @@ public class ALVisionRecognition extends ALProxy {
     * @param image  The image that will be searched for known objects.
     */
     public void detectFromFile(String image) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("detectFromFile", image);
-        else
-            call("detectFromFile", image).get();
+        call("detectFromFile", image).get();
     }
 
     /**
@@ -243,10 +225,7 @@ public class ALVisionRecognition extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -262,10 +241,7 @@ public class ALVisionRecognition extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -341,10 +317,7 @@ public class ALVisionRecognition extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -374,10 +347,7 @@ public class ALVisionRecognition extends ALProxy {
     * @param precision  Precision of the extractor if relevant.
     */
     public void subscribe(String name, Integer period, Float precision) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("subscribe", name, period, precision);
-        else
-            call("subscribe", name, period, precision).get();
+        call("subscribe", name, period, precision).get();
     }
 
     /**
@@ -386,10 +356,7 @@ public class ALVisionRecognition extends ALProxy {
     * @param name  Name of the module which subscribes.
     */
     public void subscribe(String name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("subscribe", name);
-        else
-            call("subscribe", name).get();
+        call("subscribe", name).get();
     }
 
     /**
@@ -398,10 +365,7 @@ public class ALVisionRecognition extends ALProxy {
     * @param name  Name of the module which had subscribed.
     */
     public void unsubscribe(String name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("unsubscribe", name);
-        else
-            call("unsubscribe", name).get();
+        call("unsubscribe", name).get();
     }
 
     /**
@@ -411,10 +375,7 @@ public class ALVisionRecognition extends ALProxy {
     * @param period  Refresh period (in milliseconds).
     */
     public void updatePeriod(String name, Integer period) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("updatePeriod", name, period);
-        else
-            call("updatePeriod", name, period).get();
+        call("updatePeriod", name, period).get();
     }
 
     /**
@@ -424,10 +385,7 @@ public class ALVisionRecognition extends ALProxy {
     * @param precision  Precision of the extractor.
     */
     public void updatePrecision(String name, Float precision) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("updatePrecision", name, precision);
-        else
-            call("updatePrecision", name, precision).get();
+        call("updatePrecision", name, precision).get();
     }
 
     /**

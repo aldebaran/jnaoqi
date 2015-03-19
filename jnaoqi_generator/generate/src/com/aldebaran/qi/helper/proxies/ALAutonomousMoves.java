@@ -35,10 +35,7 @@ public class ALAutonomousMoves extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -54,10 +51,7 @@ public class ALAutonomousMoves extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -133,10 +127,7 @@ public class ALAutonomousMoves extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -163,10 +154,7 @@ public class ALAutonomousMoves extends ALProxy {
     * 
     */
     public void startSmallDisplacements() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("startSmallDisplacements");
-        else
-            call("startSmallDisplacements").get();
+        call("startSmallDisplacements").get();
     }
 
     /**
@@ -174,10 +162,7 @@ public class ALAutonomousMoves extends ALProxy {
     * 
     */
     public void stopSmallDisplacements() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stopSmallDisplacements");
-        else
-            call("stopSmallDisplacements").get();
+        call("stopSmallDisplacements").get();
     }
 
     /**
@@ -186,10 +171,7 @@ public class ALAutonomousMoves extends ALProxy {
     * @param enable  The boolean value: true to enable, false to disable.
     */
     public void setExpressiveListeningEnabled(Boolean enable) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setExpressiveListeningEnabled", enable);
-        else
-            call("setExpressiveListeningEnabled", enable).get();
+        call("setExpressiveListeningEnabled", enable).get();
     }
 
     /**
@@ -207,10 +189,7 @@ public class ALAutonomousMoves extends ALProxy {
     * @param strategy  The autonomous background posture strategy. ("none" or "backToNeutral")
     */
     public void setBackgroundStrategy(String strategy) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setBackgroundStrategy", strategy);
-        else
-            call("setBackgroundStrategy", strategy).get();
+        call("setBackgroundStrategy", strategy).get();
     }
 
     /**

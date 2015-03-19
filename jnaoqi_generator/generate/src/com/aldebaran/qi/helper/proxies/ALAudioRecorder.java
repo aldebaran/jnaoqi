@@ -35,10 +35,7 @@ public class ALAudioRecorder extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -54,10 +51,7 @@ public class ALAudioRecorder extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -133,10 +127,7 @@ public class ALAudioRecorder extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -167,10 +158,7 @@ public class ALAudioRecorder extends ALProxy {
     * @param channels  vector of booleans.
     */
     public void startMicrophonesRecording(String filename, String type, Integer samplerate, Object channels) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("startMicrophonesRecording", filename, type, samplerate, channels);
-        else
-            call("startMicrophonesRecording", filename, type, samplerate, channels).get();
+        call("startMicrophonesRecording", filename, type, samplerate, channels).get();
     }
 
     /**
@@ -178,10 +166,7 @@ public class ALAudioRecorder extends ALProxy {
     * 
     */
     public void stopMicrophonesRecording() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stopMicrophonesRecording");
-        else
-            call("stopMicrophonesRecording").get();
+        call("stopMicrophonesRecording").get();
     }
 
 }

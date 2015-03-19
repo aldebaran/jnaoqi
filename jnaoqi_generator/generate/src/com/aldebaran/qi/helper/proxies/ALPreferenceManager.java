@@ -35,10 +35,7 @@ public class ALPreferenceManager extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -54,10 +51,7 @@ public class ALPreferenceManager extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -133,10 +127,7 @@ public class ALPreferenceManager extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -177,10 +168,7 @@ public class ALPreferenceManager extends ALProxy {
     * @param value  Preference value
     */
     public void setValue(String domain, String setting, Object value) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setValue", domain, setting, value);
-        else
-            call("setValue", domain, setting, value).get();
+        call("setValue", domain, setting, value).get();
     }
 
     /**
@@ -209,10 +197,7 @@ public class ALPreferenceManager extends ALProxy {
     * @param setting  Preference setting
     */
     public void removeValue(String domain, String setting) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("removeValue", domain, setting);
-        else
-            call("removeValue", domain, setting).get();
+        call("removeValue", domain, setting).get();
     }
 
     /**
@@ -221,10 +206,7 @@ public class ALPreferenceManager extends ALProxy {
     * @param domain  Preference domain
     */
     public void removeDomainValues(String domain) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("removeDomainValues", domain);
-        else
-            call("removeDomainValues", domain).get();
+        call("removeDomainValues", domain).get();
     }
 
     /**
@@ -236,10 +218,7 @@ public class ALPreferenceManager extends ALProxy {
     * @param override  Set this to true if you want to override preferences that already exist with preferences in imported XML file
     */
     public void importPrefFile(String domain, String applicationName, String filename, Boolean override) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("importPrefFile", domain, applicationName, filename, override);
-        else
-            call("importPrefFile", domain, applicationName, filename, override).get();
+        call("importPrefFile", domain, applicationName, filename, override).get();
     }
 
     /**
@@ -247,10 +226,7 @@ public class ALPreferenceManager extends ALProxy {
     * 
     */
     public void update() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("update");
-        else
-            call("update").get();
+        call("update").get();
     }
 
 }

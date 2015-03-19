@@ -35,10 +35,7 @@ public class ALMotionRecorder extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -54,10 +51,7 @@ public class ALMotionRecorder extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -133,10 +127,7 @@ public class ALMotionRecorder extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -167,10 +158,7 @@ public class ALMotionRecorder extends ALProxy {
     * @param mode  Indicates which interactive mode must be used. 1 : Use right bumper to enslave and left bumper to store the pose  (deprecated); 2 : Use chest button to store the pose
     */
     public void startInteractiveRecording(List<String> jointsToRecord, Integer nbPoses, Boolean extensionAllowed, Integer mode) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("startInteractiveRecording", jointsToRecord, nbPoses, extensionAllowed, mode);
-        else
-            call("startInteractiveRecording", jointsToRecord, nbPoses, extensionAllowed, mode).get();
+        call("startInteractiveRecording", jointsToRecord, nbPoses, extensionAllowed, mode).get();
     }
 
     /**
@@ -184,10 +172,7 @@ public class ALMotionRecorder extends ALProxy {
     * @param replayData  An ALValue holding data for replayed joints. It holds two ALValues. The first one is an ALValue where each line corresponds to a joint, and column elements are times of control points The second one is also an ALValue where each line corresponds to a joint, but column elements are arrays containing [float angle, Handle1, Handle2] elements, where Handle is [int InterpolationType, float dAngle, float dTime] describing the handle offsets relative to the angle and time of the point. The first bezier param describes the handle that controls the curve preceding the point, the second describes the curve following the point.
     */
     public void startPeriodicRecording(List<String> jointsToRecord, Integer nbPoses, Boolean extensionAllowed, Float timeStep, List<String> jointsToReplay, Object replayData) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("startPeriodicRecording", jointsToRecord, nbPoses, extensionAllowed, timeStep, jointsToReplay, replayData);
-        else
-            call("startPeriodicRecording", jointsToRecord, nbPoses, extensionAllowed, timeStep, jointsToReplay, replayData).get();
+        call("startPeriodicRecording", jointsToRecord, nbPoses, extensionAllowed, timeStep, jointsToReplay, replayData).get();
     }
 
     /**
@@ -207,10 +192,7 @@ public class ALMotionRecorder extends ALProxy {
     * @param message  The message give when subscribing.
     */
     public void dataChanged(String dataName, Object data, String message) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("dataChanged", dataName, data, message);
-        else
-            call("dataChanged", dataName, data, message).get();
+        call("dataChanged", dataName, data, message).get();
     }
 
 }

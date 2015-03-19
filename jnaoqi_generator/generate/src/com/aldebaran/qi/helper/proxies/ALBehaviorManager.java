@@ -38,10 +38,7 @@ public class ALBehaviorManager extends ALProxy {
     * @param behavior  Behavior name 
     */
     public void addDefaultBehavior(String behavior) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("addDefaultBehavior", behavior);
-        else
-            call("addDefaultBehavior", behavior).get();
+        call("addDefaultBehavior", behavior).get();
     }
 
     /**
@@ -68,10 +65,7 @@ public class ALBehaviorManager extends ALProxy {
     * 
     */
     public void playDefaultProject() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("playDefaultProject");
-        else
-            call("playDefaultProject").get();
+        call("playDefaultProject").get();
     }
 
     /**
@@ -138,10 +132,7 @@ public class ALBehaviorManager extends ALProxy {
     * @param behavior  Behavior name 
     */
     public void removeDefaultBehavior(String behavior) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("removeDefaultBehavior", behavior);
-        else
-            call("removeDefaultBehavior", behavior).get();
+        call("removeDefaultBehavior", behavior).get();
     }
 
     /**
@@ -157,10 +148,7 @@ public class ALBehaviorManager extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -176,10 +164,7 @@ public class ALBehaviorManager extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -255,10 +240,7 @@ public class ALBehaviorManager extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -323,10 +305,7 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     * @param behavior  Behavior name 
     */
     public void startBehavior(String behavior) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("startBehavior", behavior);
-        else
-            call("startBehavior", behavior).get();
+        call("startBehavior", behavior).get();
     }
 
     /**
@@ -335,10 +314,7 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     * @param behavior  Behavior name 
     */
     public void runBehavior(String behavior) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("runBehavior", behavior);
-        else
-            call("runBehavior", behavior).get();
+        call("runBehavior", behavior).get();
     }
 
     /**
@@ -347,10 +323,7 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     * @param behavior  Behavior name 
     */
     public void stopBehavior(String behavior) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stopBehavior", behavior);
-        else
-            call("stopBehavior", behavior).get();
+        call("stopBehavior", behavior).get();
     }
 
     /**
@@ -358,10 +331,7 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     * 
     */
     public void stopAllBehaviors() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stopAllBehaviors");
-        else
-            call("stopAllBehaviors").get();
+        call("stopAllBehaviors").get();
     }
 
     /**

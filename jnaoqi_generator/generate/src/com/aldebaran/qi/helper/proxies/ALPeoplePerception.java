@@ -55,10 +55,7 @@ public class ALPeoplePerception extends ALProxy {
     * @param enable  True to turn it on, False to turn it off.
     */
     public void setFastModeEnabled(Boolean enable) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setFastModeEnabled", enable);
-        else
-            call("setFastModeEnabled", enable).get();
+        call("setFastModeEnabled", enable).get();
     }
 
     /**
@@ -67,10 +64,7 @@ public class ALPeoplePerception extends ALProxy {
     * @param enable  True to turn it on, False to turn it off.
     */
     public void setGraphicalDisplayEnabled(Boolean enable) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setGraphicalDisplayEnabled", enable);
-        else
-            call("setGraphicalDisplayEnabled", enable).get();
+        call("setGraphicalDisplayEnabled", enable).get();
     }
 
     /**
@@ -88,10 +82,7 @@ public class ALPeoplePerception extends ALProxy {
     * @param height  Minimum height in meters.
     */
     public void setMinimumBodyHeight(Float height) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setMinimumBodyHeight", height);
-        else
-            call("setMinimumBodyHeight", height).get();
+        call("setMinimumBodyHeight", height).get();
     }
 
     /**
@@ -100,10 +91,7 @@ public class ALPeoplePerception extends ALProxy {
     * @param height  Maximum height in meters.
     */
     public void setMaximumBodyHeight(Float height) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setMaximumBodyHeight", height);
-        else
-            call("setMaximumBodyHeight", height).get();
+        call("setMaximumBodyHeight", height).get();
     }
 
     /**
@@ -112,10 +100,7 @@ public class ALPeoplePerception extends ALProxy {
     * @param enable  True to turn it on, False to turn it off.
     */
     public void setMovementDetectionEnabled(Boolean enable) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setMovementDetectionEnabled", enable);
-        else
-            call("setMovementDetectionEnabled", enable).get();
+        call("setMovementDetectionEnabled", enable).get();
     }
 
     /**
@@ -124,10 +109,7 @@ public class ALPeoplePerception extends ALProxy {
     * @param seconds  Time in seconds.
     */
     public void setTimeBeforePersonDisappears(Float seconds) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setTimeBeforePersonDisappears", seconds);
-        else
-            call("setTimeBeforePersonDisappears", seconds).get();
+        call("setTimeBeforePersonDisappears", seconds).get();
     }
 
     /**
@@ -136,10 +118,7 @@ public class ALPeoplePerception extends ALProxy {
     * @param seconds  Time in seconds.
     */
     public void setTimeBeforeVisiblePersonDisappears(Float seconds) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setTimeBeforeVisiblePersonDisappears", seconds);
-        else
-            call("setTimeBeforeVisiblePersonDisappears", seconds).get();
+        call("setTimeBeforeVisiblePersonDisappears", seconds).get();
     }
 
     /**
@@ -166,10 +145,7 @@ public class ALPeoplePerception extends ALProxy {
     * @param enable  True to turn it on, False to turn it off.
     */
     public void setFaceDetectionEnabled(Boolean enable) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setFaceDetectionEnabled", enable);
-        else
-            call("setFaceDetectionEnabled", enable).get();
+        call("setFaceDetectionEnabled", enable).get();
     }
 
     /**
@@ -213,10 +189,7 @@ public class ALPeoplePerception extends ALProxy {
     * 
     */
     public void resetPopulation() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("resetPopulation");
-        else
-            call("resetPopulation").get();
+        call("resetPopulation").get();
     }
 
     /**
@@ -225,10 +198,7 @@ public class ALPeoplePerception extends ALProxy {
     * @param range  Maximum range in meters.
     */
     public void setMaximumDetectionRange(Float range) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setMaximumDetectionRange", range);
-        else
-            call("setMaximumDetectionRange", range).get();
+        call("setMaximumDetectionRange", range).get();
     }
 
     /**
@@ -244,10 +214,7 @@ public class ALPeoplePerception extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -263,10 +230,7 @@ public class ALPeoplePerception extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -342,10 +306,7 @@ public class ALPeoplePerception extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -375,10 +336,7 @@ public class ALPeoplePerception extends ALProxy {
     * @param precision  Precision of the extractor if relevant.
     */
     public void subscribe(String name, Integer period, Float precision) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("subscribe", name, period, precision);
-        else
-            call("subscribe", name, period, precision).get();
+        call("subscribe", name, period, precision).get();
     }
 
     /**
@@ -387,10 +345,7 @@ public class ALPeoplePerception extends ALProxy {
     * @param name  Name of the module which subscribes.
     */
     public void subscribe(String name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("subscribe", name);
-        else
-            call("subscribe", name).get();
+        call("subscribe", name).get();
     }
 
     /**
@@ -399,10 +354,7 @@ public class ALPeoplePerception extends ALProxy {
     * @param name  Name of the module which had subscribed.
     */
     public void unsubscribe(String name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("unsubscribe", name);
-        else
-            call("unsubscribe", name).get();
+        call("unsubscribe", name).get();
     }
 
     /**
@@ -412,10 +364,7 @@ public class ALPeoplePerception extends ALProxy {
     * @param period  Refresh period (in milliseconds).
     */
     public void updatePeriod(String name, Integer period) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("updatePeriod", name, period);
-        else
-            call("updatePeriod", name, period).get();
+        call("updatePeriod", name, period).get();
     }
 
     /**
@@ -425,10 +374,7 @@ public class ALPeoplePerception extends ALProxy {
     * @param precision  Precision of the extractor.
     */
     public void updatePrecision(String name, Float precision) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("updatePrecision", name, precision);
-        else
-            call("updatePrecision", name, precision).get();
+        call("updatePrecision", name, precision).get();
     }
 
     /**
@@ -520,10 +466,7 @@ public class ALPeoplePerception extends ALProxy {
     * @param status  New pause satus
     */
     public void pause(Boolean status) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("pause", status);
-        else
-            call("pause", status).get();
+        call("pause", status).get();
     }
 
 }

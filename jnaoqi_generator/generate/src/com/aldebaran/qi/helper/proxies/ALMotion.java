@@ -35,10 +35,7 @@ public class ALMotion extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -54,10 +51,7 @@ public class ALMotion extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -133,10 +127,7 @@ public class ALMotion extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -163,10 +154,7 @@ public class ALMotion extends ALProxy {
     * 
     */
     public void wakeUp() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("wakeUp");
-        else
-            call("wakeUp").get();
+        call("wakeUp").get();
     }
 
     /**
@@ -174,10 +162,7 @@ public class ALMotion extends ALProxy {
     * 
     */
     public void rest() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("rest");
-        else
-            call("rest").get();
+        call("rest").get();
     }
 
     /**
@@ -185,10 +170,7 @@ public class ALMotion extends ALProxy {
     * 
     */
     public void rest(String param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("rest", param1);
-        else
-            call("rest", param1).get();
+        call("rest", param1).get();
     }
 
     /**
@@ -208,10 +190,7 @@ public class ALMotion extends ALProxy {
     * @param timeLists  A time, list of times or list of list of times.
     */
     public void stiffnessInterpolation(Object names, Object stiffnessLists, Object timeLists) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stiffnessInterpolation", names, stiffnessLists, timeLists);
-        else
-            call("stiffnessInterpolation", names, stiffnessLists, timeLists).get();
+        call("stiffnessInterpolation", names, stiffnessLists, timeLists).get();
     }
 
     /**
@@ -221,10 +200,7 @@ public class ALMotion extends ALProxy {
     * @param stiffnesses  One or more stiffnesses between zero and one.
     */
     public void setStiffnesses(Object names, Object stiffnesses) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setStiffnesses", names, stiffnesses);
-        else
-            call("setStiffnesses", names, stiffnesses).get();
+        call("setStiffnesses", names, stiffnesses).get();
     }
 
     /**
@@ -246,10 +222,7 @@ public class ALMotion extends ALProxy {
     * @param isAbsolute  If true, the movement is described in absolute angles, else the angles are relative to the current angle.
     */
     public void angleInterpolation(Object names, Object angleLists, Object timeLists, Boolean isAbsolute) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("angleInterpolation", names, angleLists, timeLists, isAbsolute);
-        else
-            call("angleInterpolation", names, angleLists, timeLists, isAbsolute).get();
+        call("angleInterpolation", names, angleLists, timeLists, isAbsolute).get();
     }
 
     /**
@@ -260,10 +233,7 @@ public class ALMotion extends ALProxy {
     * @param maxSpeedFraction  A fraction.
     */
     public void angleInterpolationWithSpeed(Object names, Object targetAngles, Float maxSpeedFraction) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("angleInterpolationWithSpeed", names, targetAngles, maxSpeedFraction);
-        else
-            call("angleInterpolationWithSpeed", names, targetAngles, maxSpeedFraction).get();
+        call("angleInterpolationWithSpeed", names, targetAngles, maxSpeedFraction).get();
     }
 
     /**
@@ -274,10 +244,7 @@ public class ALMotion extends ALProxy {
     * @param controlPoints  An ALValue array of arrays each containing [float angle, Handle1, Handle2], where Handle is [int InterpolationType, float dAngle, float dTime] descibing the handle offsets relative to the angle and time of the point. The first bezier param describes the handle that controls the curve preceeding the point, the second describes the curve following the point.
     */
     public void angleInterpolationBezier(List<String> jointNames, Object times, Object controlPoints) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("angleInterpolationBezier", jointNames, times, controlPoints);
-        else
-            call("angleInterpolationBezier", jointNames, times, controlPoints).get();
+        call("angleInterpolationBezier", jointNames, times, controlPoints).get();
     }
 
     /**
@@ -288,10 +255,7 @@ public class ALMotion extends ALProxy {
     * @param fractionMaxSpeed  The fraction of maximum speed to use
     */
     public void setAngles(Object names, Object angles, Float fractionMaxSpeed) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setAngles", names, angles, fractionMaxSpeed);
-        else
-            call("setAngles", names, angles, fractionMaxSpeed).get();
+        call("setAngles", names, angles, fractionMaxSpeed).get();
     }
 
     /**
@@ -302,10 +266,7 @@ public class ALMotion extends ALProxy {
     * @param fractionMaxSpeed  The fraction of maximum speed to use
     */
     public void changeAngles(Object names, Object changes, Float fractionMaxSpeed) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("changeAngles", names, changes, fractionMaxSpeed);
-        else
-            call("changeAngles", names, changes, fractionMaxSpeed).get();
+        call("changeAngles", names, changes, fractionMaxSpeed).get();
     }
 
     /**
@@ -325,10 +286,7 @@ public class ALMotion extends ALProxy {
     * @param handName  The name of the hand. Could be: "RHand or "LHand"
     */
     public void openHand(String handName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("openHand", handName);
-        else
-            call("openHand", handName).get();
+        call("openHand", handName).get();
     }
 
     /**
@@ -337,10 +295,7 @@ public class ALMotion extends ALProxy {
     * @param handName  The name of the hand. Could be: "RHand" or "LHand"
     */
     public void closeHand(String handName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("closeHand", handName);
-        else
-            call("closeHand", handName).get();
+        call("closeHand", handName).get();
     }
 
     /**
@@ -351,10 +306,7 @@ public class ALMotion extends ALProxy {
     * @param theta  The velocity around z axis [rd.s-1].
     */
     public void move(Float x, Float y, Float theta) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("move", x, y, theta);
-        else
-            call("move", x, y, theta).get();
+        call("move", x, y, theta).get();
     }
 
     /**
@@ -366,10 +318,7 @@ public class ALMotion extends ALProxy {
     * @param moveConfig  An ALValue with custom move configuration.
     */
     public void move(Float x, Float y, Float theta, Object moveConfig) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("move", x, y, theta, moveConfig);
-        else
-            call("move", x, y, theta, moveConfig).get();
+        call("move", x, y, theta, moveConfig).get();
     }
 
     /**
@@ -380,10 +329,7 @@ public class ALMotion extends ALProxy {
     * @param theta  The normalized velocity around z axis (between -1 and 1).
     */
     public void moveToward(Float x, Float y, Float theta) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("moveToward", x, y, theta);
-        else
-            call("moveToward", x, y, theta).get();
+        call("moveToward", x, y, theta).get();
     }
 
     /**
@@ -395,10 +341,7 @@ public class ALMotion extends ALProxy {
     * @param moveConfig  An ALValue with custom move configuration.
     */
     public void moveToward(Float x, Float y, Float theta, Object moveConfig) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("moveToward", x, y, theta, moveConfig);
-        else
-            call("moveToward", x, y, theta, moveConfig).get();
+        call("moveToward", x, y, theta, moveConfig).get();
     }
 
     /**
@@ -410,10 +353,7 @@ public class ALMotion extends ALProxy {
     * @param frequency  Fraction of MaxStepFrequency [0.0 to 1.0]
     */
     public void setWalkTargetVelocity(Float x, Float y, Float theta, Float frequency) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setWalkTargetVelocity", x, y, theta, frequency);
-        else
-            call("setWalkTargetVelocity", x, y, theta, frequency).get();
+        call("setWalkTargetVelocity", x, y, theta, frequency).get();
     }
 
     /**
@@ -426,10 +366,7 @@ public class ALMotion extends ALProxy {
     * @param feetGaitConfig  An ALValue with the custom gait configuration for both feet
     */
     public void setWalkTargetVelocity(Float x, Float y, Float theta, Float frequency, Object feetGaitConfig) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setWalkTargetVelocity", x, y, theta, frequency, feetGaitConfig);
-        else
-            call("setWalkTargetVelocity", x, y, theta, frequency, feetGaitConfig).get();
+        call("setWalkTargetVelocity", x, y, theta, frequency, feetGaitConfig).get();
     }
 
     /**
@@ -443,10 +380,7 @@ public class ALMotion extends ALProxy {
     * @param rightFootMoveConfig  An ALValue with custom move configuration for the right foot
     */
     public void setWalkTargetVelocity(Float x, Float y, Float theta, Float frequency, Object leftFootMoveConfig, Object rightFootMoveConfig) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setWalkTargetVelocity", x, y, theta, frequency, leftFootMoveConfig, rightFootMoveConfig);
-        else
-            call("setWalkTargetVelocity", x, y, theta, frequency, leftFootMoveConfig, rightFootMoveConfig).get();
+        call("setWalkTargetVelocity", x, y, theta, frequency, leftFootMoveConfig, rightFootMoveConfig).get();
     }
 
     /**
@@ -457,10 +391,7 @@ public class ALMotion extends ALProxy {
     * @param theta  The position around z axis [rd].
     */
     public void moveTo(Float x, Float y, Float theta) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("moveTo", x, y, theta);
-        else
-            call("moveTo", x, y, theta).get();
+        call("moveTo", x, y, theta).get();
     }
 
     /**
@@ -472,10 +403,7 @@ public class ALMotion extends ALProxy {
     * @param time  The time to reach the target position [s].
     */
     public void moveTo(Float x, Float y, Float theta, Float time) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("moveTo", x, y, theta, time);
-        else
-            call("moveTo", x, y, theta, time).get();
+        call("moveTo", x, y, theta, time).get();
     }
 
     /**
@@ -487,10 +415,7 @@ public class ALMotion extends ALProxy {
     * @param moveConfig  An ALValue with custom move configuration.
     */
     public void moveTo(Float x, Float y, Float theta, Object moveConfig) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("moveTo", x, y, theta, moveConfig);
-        else
-            call("moveTo", x, y, theta, moveConfig).get();
+        call("moveTo", x, y, theta, moveConfig).get();
     }
 
     /**
@@ -503,10 +428,7 @@ public class ALMotion extends ALProxy {
     * @param moveConfig  An ALValue with custom move configuration.
     */
     public void moveTo(Float x, Float y, Float theta, Float time, Object moveConfig) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("moveTo", x, y, theta, time, moveConfig);
-        else
-            call("moveTo", x, y, theta, time, moveConfig).get();
+        call("moveTo", x, y, theta, time, moveConfig).get();
     }
 
     /**
@@ -516,10 +438,7 @@ public class ALMotion extends ALProxy {
 Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN, yN, thetaN]
     */
     public void moveTo(Object controlPoint) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("moveTo", controlPoint);
-        else
-            call("moveTo", controlPoint).get();
+        call("moveTo", controlPoint).get();
     }
 
     /**
@@ -530,10 +449,7 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     * @param moveConfig  An ALValue with custom move configuration.
     */
     public void moveTo(Object controlPoint, Object moveConfig) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("moveTo", controlPoint, moveConfig);
-        else
-            call("moveTo", controlPoint, moveConfig).get();
+        call("moveTo", controlPoint, moveConfig).get();
     }
 
     /**
@@ -544,10 +460,7 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     * @param theta  Rotation around the Z axis in radians [-3.1415 to 3.1415].
     */
     public void walkTo(Float x, Float y, Float theta) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("walkTo", x, y, theta);
-        else
-            call("walkTo", x, y, theta).get();
+        call("walkTo", x, y, theta).get();
     }
 
     /**
@@ -559,10 +472,7 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     * @param feetGaitConfig  An ALValue with the custom gait configuration for both feet.
     */
     public void walkTo(Float x, Float y, Float theta, Object feetGaitConfig) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("walkTo", x, y, theta, feetGaitConfig);
-        else
-            call("walkTo", x, y, theta, feetGaitConfig).get();
+        call("walkTo", x, y, theta, feetGaitConfig).get();
     }
 
     /**
@@ -571,10 +481,7 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     * @param controlPoint  An ALValue with all the control point in NAO SPACE[[x1,y1,theta1], ..., [xN,yN,thetaN]
     */
     public void walkTo(Object controlPoint) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("walkTo", controlPoint);
-        else
-            call("walkTo", controlPoint).get();
+        call("walkTo", controlPoint).get();
     }
 
     /**
@@ -584,10 +491,7 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     * @param feetGaitConfig  An ALValue with the custom gait configuration for both feet
     */
     public void walkTo(Object controlPoint, Object feetGaitConfig) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("walkTo", controlPoint, feetGaitConfig);
-        else
-            call("walkTo", controlPoint, feetGaitConfig).get();
+        call("walkTo", controlPoint, feetGaitConfig).get();
     }
 
     /**
@@ -599,10 +503,7 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     * @param clearExisting  Clear existing foot steps.
     */
     public void setFootSteps(List<String> legName, Object footSteps, List<Float> timeList, Boolean clearExisting) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setFootSteps", legName, footSteps, timeList, clearExisting);
-        else
-            call("setFootSteps", legName, footSteps, timeList, clearExisting).get();
+        call("setFootSteps", legName, footSteps, timeList, clearExisting).get();
     }
 
     /**
@@ -614,10 +515,7 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     * @param clearExisting  Clear existing foot steps.
     */
     public void setFootStepsWithSpeed(List<String> legName, Object footSteps, List<Float> fractionMaxSpeed, Boolean clearExisting) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setFootStepsWithSpeed", legName, footSteps, fractionMaxSpeed, clearExisting);
-        else
-            call("setFootStepsWithSpeed", legName, footSteps, fractionMaxSpeed, clearExisting).get();
+        call("setFootStepsWithSpeed", legName, footSteps, fractionMaxSpeed, clearExisting).get();
     }
 
     /**
@@ -634,10 +532,7 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     * 
     */
     public void walkInit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("walkInit");
-        else
-            call("walkInit").get();
+        call("walkInit").get();
     }
 
     /**
@@ -645,10 +540,7 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     * 
     */
     public void moveInit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("moveInit");
-        else
-            call("moveInit").get();
+        call("moveInit").get();
     }
 
     /**
@@ -656,10 +548,7 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     * 
     */
     public void waitUntilWalkIsFinished() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("waitUntilWalkIsFinished");
-        else
-            call("waitUntilWalkIsFinished").get();
+        call("waitUntilWalkIsFinished").get();
     }
 
     /**
@@ -667,10 +556,7 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     * 
     */
     public void waitUntilMoveIsFinished() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("waitUntilMoveIsFinished");
-        else
-            call("waitUntilMoveIsFinished").get();
+        call("waitUntilMoveIsFinished").get();
     }
 
     /**
@@ -695,10 +581,7 @@ Each control point is relative to the previous one. [[x1, y1, theta1], ..., [xN,
     * 
     */
     public void stopWalk() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stopWalk");
-        else
-            call("stopWalk").get();
+        call("stopWalk").get();
     }
 
     /**
@@ -707,10 +590,7 @@ This is a blocking call.
     * 
     */
     public void stopMove() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stopMove");
-        else
-            call("stopMove").get();
+        call("stopMove").get();
     }
 
     /**
@@ -788,10 +668,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param rightArmEnabled  if true Right Arm mMotions are controlled by the Walk Task
     */
     public void setWalkArmsEnabled(Boolean leftArmEnabled, Boolean rightArmEnabled) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setWalkArmsEnabled", leftArmEnabled, rightArmEnabled);
-        else
-            call("setWalkArmsEnabled", leftArmEnabled, rightArmEnabled).get();
+        call("setWalkArmsEnabled", leftArmEnabled, rightArmEnabled).get();
     }
 
     /**
@@ -811,10 +688,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param rightArmEnabled  if true Right Arm mMotions are controlled by the Move Task
     */
     public void setMoveArmsEnabled(Boolean leftArmEnabled, Boolean rightArmEnabled) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setMoveArmsEnabled", leftArmEnabled, rightArmEnabled);
-        else
-            call("setMoveArmsEnabled", leftArmEnabled, rightArmEnabled).get();
+        call("setMoveArmsEnabled", leftArmEnabled, rightArmEnabled).get();
     }
 
     /**
@@ -828,10 +702,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param isAbsolute  If true, the movement is absolute else relative
     */
     public void positionInterpolation(String chainName, Integer space, Object path, Integer axisMask, Object durations, Boolean isAbsolute) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("positionInterpolation", chainName, space, path, axisMask, durations, isAbsolute);
-        else
-            call("positionInterpolation", chainName, space, path, axisMask, durations, isAbsolute).get();
+        call("positionInterpolation", chainName, space, path, axisMask, durations, isAbsolute).get();
     }
 
     /**
@@ -845,10 +716,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param isAbsolute  If true, the movement is absolute else relative
     */
     public void positionInterpolations(List<String> effectorNames, Integer taskSpaceForAllPaths, Object paths, Object axisMasks, Object relativeTimes, Boolean isAbsolute) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("positionInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes, isAbsolute);
-        else
-            call("positionInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes, isAbsolute).get();
+        call("positionInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes, isAbsolute).get();
     }
 
     /**
@@ -861,10 +729,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param relativeTimes  Vector of times in seconds corresponding to the path points
     */
     public void positionInterpolations(Object effectorNames, Object taskSpaceForAllPaths, Object paths, Object axisMasks, Object relativeTimes) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("positionInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes);
-        else
-            call("positionInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes).get();
+        call("positionInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes).get();
     }
 
     /**
@@ -877,10 +742,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param axisMask  Axis mask. True for axes that you wish to control. e.g. 7 for position only, 56 for rotation only and 63 for both 
     */
     public void setPosition(String chainName, Integer space, List<Float> position, Float fractionMaxSpeed, Integer axisMask) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setPosition", chainName, space, position, fractionMaxSpeed, axisMask);
-        else
-            call("setPosition", chainName, space, position, fractionMaxSpeed, axisMask).get();
+        call("setPosition", chainName, space, position, fractionMaxSpeed, axisMask).get();
     }
 
     /**
@@ -893,10 +755,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param axisMask  Axis mask. True for axes that you wish to control. e.g. 7 for position only, 56 for rotation only and 63 for both 
     */
     public void setPositions(Object names, Object spaces, Object positions, Float fractionMaxSpeed, Object axisMask) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setPositions", names, spaces, positions, fractionMaxSpeed, axisMask);
-        else
-            call("setPositions", names, spaces, positions, fractionMaxSpeed, axisMask).get();
+        call("setPositions", names, spaces, positions, fractionMaxSpeed, axisMask).get();
     }
 
     /**
@@ -909,10 +768,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param axisMask  Axis mask. True for axes that you wish to control. e.g. 7 for position only, 56 for rotation only and 63 for both 
     */
     public void changePosition(String effectorName, Integer space, List<Float> positionChange, Float fractionMaxSpeed, Integer axisMask) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("changePosition", effectorName, space, positionChange, fractionMaxSpeed, axisMask);
-        else
-            call("changePosition", effectorName, space, positionChange, fractionMaxSpeed, axisMask).get();
+        call("changePosition", effectorName, space, positionChange, fractionMaxSpeed, axisMask).get();
     }
 
     /**
@@ -938,10 +794,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param isAbsolute  If true, the movement is absolute else relative
     */
     public void transformInterpolation(String chainName, Integer space, Object path, Integer axisMask, Object duration, Boolean isAbsolute) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("transformInterpolation", chainName, space, path, axisMask, duration, isAbsolute);
-        else
-            call("transformInterpolation", chainName, space, path, axisMask, duration, isAbsolute).get();
+        call("transformInterpolation", chainName, space, path, axisMask, duration, isAbsolute).get();
     }
 
     /**
@@ -955,10 +808,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param isAbsolute  If true, the movement is absolute else relative
     */
     public void transformInterpolations(List<String> effectorNames, Integer taskSpaceForAllPaths, Object paths, Object axisMasks, Object relativeTimes, Boolean isAbsolute) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("transformInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes, isAbsolute);
-        else
-            call("transformInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes, isAbsolute).get();
+        call("transformInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes, isAbsolute).get();
     }
 
     /**
@@ -971,10 +821,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param relativeTimes  Vector of times in seconds corresponding to the path points
     */
     public void transformInterpolations(Object effectorNames, Object taskSpaceForAllPaths, Object paths, Object axisMasks, Object relativeTimes) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("transformInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes);
-        else
-            call("transformInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes).get();
+        call("transformInterpolations", effectorNames, taskSpaceForAllPaths, paths, axisMasks, relativeTimes).get();
     }
 
     /**
@@ -987,10 +834,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param axisMask  Axis mask. True for axes that you wish to control. e.g. 7 for position only, 56 for rotation only and 63 for both 
     */
     public void setTransform(String chainName, Integer space, List<Float> transform, Float fractionMaxSpeed, Integer axisMask) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setTransform", chainName, space, transform, fractionMaxSpeed, axisMask);
-        else
-            call("setTransform", chainName, space, transform, fractionMaxSpeed, axisMask).get();
+        call("setTransform", chainName, space, transform, fractionMaxSpeed, axisMask).get();
     }
 
     /**
@@ -1003,10 +847,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param axisMask  Axis mask. True for axes that you wish to control. e.g. 7 for position only, 56 for rotation only and 63 for both 
     */
     public void setTransforms(Object names, Object spaces, Object transforms, Float fractionMaxSpeed, Object axisMask) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setTransforms", names, spaces, transforms, fractionMaxSpeed, axisMask);
-        else
-            call("setTransforms", names, spaces, transforms, fractionMaxSpeed, axisMask).get();
+        call("setTransforms", names, spaces, transforms, fractionMaxSpeed, axisMask).get();
     }
 
     /**
@@ -1019,10 +860,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param axisMask  Axis mask. True for axes that you wish to control. e.g. 7 for position only, 56 for rotation only and 63 for both 
     */
     public void changeTransform(String chainName, Integer space, List<Float> transform, Float fractionMaxSpeed, Integer axisMask) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("changeTransform", chainName, space, transform, fractionMaxSpeed, axisMask);
-        else
-            call("changeTransform", chainName, space, transform, fractionMaxSpeed, axisMask).get();
+        call("changeTransform", chainName, space, transform, fractionMaxSpeed, axisMask).get();
     }
 
     /**
@@ -1043,10 +881,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param isEnabled  Active / Disactive Whole Body Balancer.
     */
     public void wbEnable(Boolean isEnabled) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("wbEnable", isEnabled);
-        else
-            call("wbEnable", isEnabled).get();
+        call("wbEnable", isEnabled).get();
     }
 
     /**
@@ -1056,10 +891,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param supportLeg  Name of the foot. "LLeg", "RLeg" or "Legs".
     */
     public void wbFootState(String stateName, String supportLeg) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("wbFootState", stateName, supportLeg);
-        else
-            call("wbFootState", stateName, supportLeg).get();
+        call("wbFootState", stateName, supportLeg).get();
     }
 
     /**
@@ -1069,10 +901,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param supportLeg  Name of the support leg: "Legs", "LLeg", "RLeg".
     */
     public void wbEnableBalanceConstraint(Boolean isEnable, String supportLeg) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("wbEnableBalanceConstraint", isEnable, supportLeg);
-        else
-            call("wbEnableBalanceConstraint", isEnable, supportLeg).get();
+        call("wbEnableBalanceConstraint", isEnable, supportLeg).get();
     }
 
     /**
@@ -1082,10 +911,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param duration  Time in seconds. Must be upper 0.5 s.
     */
     public void wbGoToBalance(String supportLeg, Float duration) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("wbGoToBalance", supportLeg, duration);
-        else
-            call("wbGoToBalance", supportLeg, duration).get();
+        call("wbGoToBalance", supportLeg, duration).get();
     }
 
     /**
@@ -1095,10 +921,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param isEnabled  Active / Disactive Effector Control.
     */
     public void wbEnableEffectorControl(String effectorName, Boolean isEnabled) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("wbEnableEffectorControl", effectorName, isEnabled);
-        else
-            call("wbEnableEffectorControl", effectorName, isEnabled).get();
+        call("wbEnableEffectorControl", effectorName, isEnabled).get();
     }
 
     /**
@@ -1108,10 +931,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param targetCoordinate  "Head" is controlled in rotation (WX, WY, WZ). "LArm" and "RArm" are controlled in position (X, Y, Z). TargetCoordinate must be absolute and expressed in FRAME_ROBOT. If the desired position/orientation is unfeasible, target is resize to the nearest feasible motion.
     */
     public void wbSetEffectorControl(String effectorName, Object targetCoordinate) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("wbSetEffectorControl", effectorName, targetCoordinate);
-        else
-            call("wbSetEffectorControl", effectorName, targetCoordinate).get();
+        call("wbSetEffectorControl", effectorName, targetCoordinate).get();
     }
 
     /**
@@ -1121,10 +941,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param isActive  if true, the effector control is taken in acount in the optimization criteria.
     */
     public void wbEnableEffectorOptimization(String effectorName, Boolean isActive) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("wbEnableEffectorOptimization", effectorName, isActive);
-        else
-            call("wbEnableEffectorOptimization", effectorName, isActive).get();
+        call("wbEnableEffectorOptimization", effectorName, isActive).get();
     }
 
     /**
@@ -1155,10 +972,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param pEnable  Activate or disactivate the anticollision of the desired name.
     */
     public void setExternalCollisionProtectionEnabled(String pName, Boolean pEnable) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setExternalCollisionProtectionEnabled", pName, pEnable);
-        else
-            call("setExternalCollisionProtectionEnabled", pName, pEnable).get();
+        call("setExternalCollisionProtectionEnabled", pName, pEnable).get();
     }
 
     /**
@@ -1188,10 +1002,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param securityDistance  The orthogonal security distance.
     */
     public void setOrthogonalSecurityDistance(Float securityDistance) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setOrthogonalSecurityDistance", securityDistance);
-        else
-            call("setOrthogonalSecurityDistance", securityDistance).get();
+        call("setOrthogonalSecurityDistance", securityDistance).get();
     }
 
     /**
@@ -1209,10 +1020,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param securityDistance  The tangential security distance.
     */
     public void setTangentialSecurityDistance(Float securityDistance) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setTangentialSecurityDistance", securityDistance);
-        else
-            call("setTangentialSecurityDistance", securityDistance).get();
+        call("setTangentialSecurityDistance", securityDistance).get();
     }
 
     /**
@@ -1242,10 +1050,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param pEnable  Activate or disactivate the smart stiffness.
     */
     public void setFallManagerEnabled(Boolean pEnable) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setFallManagerEnabled", pEnable);
-        else
-            call("setFallManagerEnabled", pEnable).get();
+        call("setFallManagerEnabled", pEnable).get();
     }
 
     /**
@@ -1264,10 +1069,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param pEnable  Enable the push recovery.
     */
     public void setPushRecoveryEnabled(Boolean pEnable) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setPushRecoveryEnabled", pEnable);
-        else
-            call("setPushRecoveryEnabled", pEnable).get();
+        call("setPushRecoveryEnabled", pEnable).get();
     }
 
     /**
@@ -1286,10 +1088,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param pEnable  Activate or disactivate the smart stiffness.
     */
     public void setSmartStiffnessEnabled(Boolean pEnable) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setSmartStiffnessEnabled", pEnable);
-        else
-            call("setSmartStiffnessEnabled", pEnable).get();
+        call("setSmartStiffnessEnabled", pEnable).get();
     }
 
     /**
@@ -1308,10 +1107,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param pEnable  Enable or disable the diagnosis effect.
     */
     public void setDiagnosisEffectEnabled(Boolean pEnable) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setDiagnosisEffectEnabled", pEnable);
-        else
-            call("setDiagnosisEffectEnabled", pEnable).get();
+        call("setDiagnosisEffectEnabled", pEnable).get();
     }
 
     /**
@@ -1418,10 +1214,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * @param config  Internal: An array of ALValues [i][0]: name, [i][1]: value
     */
     public void setMotionConfig(Object config) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setMotionConfig", config);
-        else
-            call("setMotionConfig", config).get();
+        call("setMotionConfig", config).get();
     }
 
     /**
@@ -1435,10 +1228,7 @@ DEPRECATED Function. Please use ALTracker::lookAt.
     * @param pUseOfWholeBody  If true, the target is follow in cartesian space by the Head with whole Body constraints.
     */
     public void updateTrackerTarget(Float pTargetPositionWy, Float pTargetPositionWz, Integer pTimeSinceDetectionMs, Boolean pUseOfWholeBody) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("updateTrackerTarget", pTargetPositionWy, pTargetPositionWz, pTimeSinceDetectionMs, pUseOfWholeBody);
-        else
-            call("updateTrackerTarget", pTargetPositionWy, pTargetPositionWz, pTimeSinceDetectionMs, pUseOfWholeBody).get();
+        call("updateTrackerTarget", pTargetPositionWy, pTargetPositionWz, pTimeSinceDetectionMs, pUseOfWholeBody).get();
     }
 
     /**
@@ -1450,10 +1240,7 @@ Head breathing animation will work only if Leg animation is active.
     * @param pIsEnabled  Enables / disables the chain.
     */
     public void setBreathEnabled(String pChain, Boolean pIsEnabled) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setBreathEnabled", pChain, pIsEnabled);
-        else
-            call("setBreathEnabled", pChain, pIsEnabled).get();
+        call("setBreathEnabled", pChain, pIsEnabled).get();
     }
 
     /**
@@ -1477,10 +1264,7 @@ pBpm is a float between 10 and 50 setting the breathing frequency in beats per m
 pAmplitude is a float between 0 and 1 setting the amplitude of the breathing animation.
     */
     public void setBreathConfig(Object pConfig) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setBreathConfig", pConfig);
-        else
-            call("setBreathConfig", pConfig).get();
+        call("setBreathConfig", pConfig).get();
     }
 
     /**
@@ -1502,10 +1286,7 @@ Chain name can be "Body", "Arms", "LArm", "RArm", "Legs" or "Head".
     * @param pIsEnabled  Enables / disables the chain.
     */
     public void setIdlePostureEnabled(String pChain, Boolean pIsEnabled) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setIdlePostureEnabled", pChain, pIsEnabled);
-        else
-            call("setIdlePostureEnabled", pChain, pIsEnabled).get();
+        call("setIdlePostureEnabled", pChain, pIsEnabled).get();
     }
 
     /**
@@ -1555,10 +1336,7 @@ Chain name can be "Body", "Arms", "LArm", "RArm", "Legs" or "Head".
     * @param resourceNames  A vector of resource joint names
     */
     public void killTasksUsingResources(List<String> resourceNames) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("killTasksUsingResources", resourceNames);
-        else
-            call("killTasksUsingResources", resourceNames).get();
+        call("killTasksUsingResources", resourceNames).get();
     }
 
     /**
@@ -1566,10 +1344,7 @@ Chain name can be "Body", "Arms", "LArm", "RArm", "Legs" or "Head".
     * 
     */
     public void killWalk() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("killWalk");
-        else
-            call("killWalk").get();
+        call("killWalk").get();
     }
 
     /**
@@ -1577,10 +1352,7 @@ Chain name can be "Body", "Arms", "LArm", "RArm", "Legs" or "Head".
     * 
     */
     public void killMove() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("killMove");
-        else
-            call("killMove").get();
+        call("killMove").get();
     }
 
     /**
@@ -1588,10 +1360,7 @@ Chain name can be "Body", "Arms", "LArm", "RArm", "Legs" or "Head".
     * 
     */
     public void killAll() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("killAll");
-        else
-            call("killAll").get();
+        call("killAll").get();
     }
 
     /**
@@ -1600,10 +1369,7 @@ Chain name can be "Body", "Arms", "LArm", "RArm", "Legs" or "Head".
     * @param enable  If True enable notifications. If False disable notifications.
     */
     public void setEnableNotifications(Boolean enable) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setEnableNotifications", enable);
-        else
-            call("setEnableNotifications", enable).get();
+        call("setEnableNotifications", enable).get();
     }
 
     /**

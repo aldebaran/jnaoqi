@@ -37,10 +37,7 @@ public class ALSpeechRecognition extends ALProxy {
     * @param vocabulary  List of words that should be recognized
     */
     public void setWordListAsVocabulary(List<String> vocabulary) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setWordListAsVocabulary", vocabulary);
-        else
-            call("setWordListAsVocabulary", vocabulary).get();
+        call("setWordListAsVocabulary", vocabulary).get();
     }
 
     /**
@@ -49,10 +46,7 @@ public class ALSpeechRecognition extends ALProxy {
     * @param setOrNot  Enable (true) or disable it (false).
     */
     public void setAudioExpression(Boolean setOrNot) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setAudioExpression", setOrNot);
-        else
-            call("setAudioExpression", setOrNot).get();
+        call("setAudioExpression", setOrNot).get();
     }
 
     /**
@@ -61,10 +55,7 @@ public class ALSpeechRecognition extends ALProxy {
     * @param pause  Boolean to enable or disable pause of the speech recognition engine.
     */
     public void pause(Boolean pause) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("pause", pause);
-        else
-            call("pause", pause).get();
+        call("pause", pause).get();
     }
 
     /**
@@ -72,10 +63,7 @@ public class ALSpeechRecognition extends ALProxy {
     * 
     */
     public void compile(String param1, String param2, String param3) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("compile", param1, param2, param3);
-        else
-            call("compile", param1, param2, param3).get();
+        call("compile", param1, param2, param3).get();
     }
 
     /**
@@ -84,10 +72,7 @@ public class ALSpeechRecognition extends ALProxy {
     * @param languageName  Name of the language in English.
     */
     public void setLanguage(String languageName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setLanguage", languageName);
-        else
-            call("setLanguage", languageName).get();
+        call("setLanguage", languageName).get();
     }
 
     /**
@@ -96,10 +81,7 @@ public class ALSpeechRecognition extends ALProxy {
     * @param contextName  Name of the context to remove from the speech recognition engine.
     */
     public void removeContext(String contextName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("removeContext", contextName);
-        else
-            call("removeContext", contextName).get();
+        call("removeContext", contextName).get();
     }
 
     /**
@@ -107,10 +89,7 @@ public class ALSpeechRecognition extends ALProxy {
     * 
     */
     public void removeAllContext() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("removeAllContext");
-        else
-            call("removeAllContext").get();
+        call("removeAllContext").get();
     }
 
     /**
@@ -118,10 +97,7 @@ public class ALSpeechRecognition extends ALProxy {
     * 
     */
     public void pushContexts() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("pushContexts");
-        else
-            call("pushContexts").get();
+        call("pushContexts").get();
     }
 
     /**
@@ -129,10 +105,7 @@ public class ALSpeechRecognition extends ALProxy {
     * 
     */
     public void popContexts() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("popContexts");
-        else
-            call("popContexts").get();
+        call("popContexts").get();
     }
 
     /**
@@ -150,10 +123,7 @@ public class ALSpeechRecognition extends ALProxy {
     * @param saveName  Name under which the context set is saved
     */
     public void eraseContextSet(String saveName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("eraseContextSet", saveName);
-        else
-            call("eraseContextSet", saveName).get();
+        call("eraseContextSet", saveName).get();
     }
 
     /**
@@ -163,10 +133,7 @@ public class ALSpeechRecognition extends ALProxy {
     * @param ruleName  Name of the rule to activate.
     */
     public void activateRule(String contextName, String ruleName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("activateRule", contextName, ruleName);
-        else
-            call("activateRule", contextName, ruleName).get();
+        call("activateRule", contextName, ruleName).get();
     }
 
     /**
@@ -176,10 +143,7 @@ public class ALSpeechRecognition extends ALProxy {
     * @param ruleName  Name of the rule to deactivate.
     */
     public void deactivateRule(String contextName, String ruleName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("deactivateRule", contextName, ruleName);
-        else
-            call("deactivateRule", contextName, ruleName).get();
+        call("deactivateRule", contextName, ruleName).get();
     }
 
     /**
@@ -188,10 +152,7 @@ public class ALSpeechRecognition extends ALProxy {
     * @param contextName  Name of the context to modify.
     */
     public void activateAllRules(String contextName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("activateAllRules", contextName);
-        else
-            call("activateAllRules", contextName).get();
+        call("activateAllRules", contextName).get();
     }
 
     /**
@@ -200,10 +161,7 @@ public class ALSpeechRecognition extends ALProxy {
     * @param contextName  Name of the context to modify.
     */
     public void deactivateAllRules(String contextName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("deactivateAllRules", contextName);
-        else
-            call("deactivateAllRules", contextName).get();
+        call("deactivateAllRules", contextName).get();
     }
 
     /**
@@ -214,10 +172,7 @@ public class ALSpeechRecognition extends ALProxy {
     * @param value  New parameter value
     */
     public void setContextParam(String contextName, String paramName, Float value) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setContextParam", contextName, paramName, value);
-        else
-            call("setContextParam", contextName, paramName, value).get();
+        call("setContextParam", contextName, paramName, value).get();
     }
 
     /**
@@ -239,10 +194,7 @@ public class ALSpeechRecognition extends ALProxy {
     * @param wordList  List of words to insert in the slot.
     */
     public void addWordListToSlot(String contextName, String slotName, List<String> wordList) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("addWordListToSlot", contextName, slotName, wordList);
-        else
-            call("addWordListToSlot", contextName, slotName, wordList).get();
+        call("addWordListToSlot", contextName, slotName, wordList).get();
     }
 
     /**
@@ -252,10 +204,7 @@ public class ALSpeechRecognition extends ALProxy {
     * @param slotName  Name of the slot to modify.
     */
     public void removeWordListFromSlot(String contextName, String slotName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("removeWordListFromSlot", contextName, slotName);
-        else
-            call("removeWordListFromSlot", contextName, slotName).get();
+        call("removeWordListFromSlot", contextName, slotName).get();
     }
 
     /**
@@ -283,10 +232,7 @@ public class ALSpeechRecognition extends ALProxy {
     * @param vocabularyFile  Name of the lxd file containing the vocabulary
     */
     public void loadVocabulary(String vocabularyFile) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("loadVocabulary", vocabularyFile);
-        else
-            call("loadVocabulary", vocabularyFile).get();
+        call("loadVocabulary", vocabularyFile).get();
     }
 
     /**
@@ -301,10 +247,7 @@ The parameters that can be set and the corresponding values are:
     * @param paramValue  Value of the parameter.
     */
     public void setParameter(String paramName, Float paramValue) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setParameter", paramName, paramValue);
-        else
-            call("setParameter", paramName, paramValue).get();
+        call("setParameter", paramName, paramValue).get();
     }
 
     /**
@@ -327,10 +270,7 @@ The parameters that can be set and the corresponding values are:
     * @param paramValue  Value of the parameter.
     */
     public void setParameter(String paramName, Boolean paramValue) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setParameter", paramName, paramValue);
-        else
-            call("setParameter", paramName, paramValue).get();
+        call("setParameter", paramName, paramValue).get();
     }
 
     /**
@@ -350,10 +290,7 @@ The parameters that can be set and the corresponding values are:
     * @param enabledWordSpotting  If disabled, the engine expects to hear one of the specified words, nothing more, nothing less. If enabled, the specified words can be pronounced in the middle of a whole speech stream, the engine will try to spot them.
     */
     public void setVocabulary(List<String> vocabulary, Boolean enabledWordSpotting) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setVocabulary", vocabulary, enabledWordSpotting);
-        else
-            call("setVocabulary", vocabulary, enabledWordSpotting).get();
+        call("setVocabulary", vocabulary, enabledWordSpotting).get();
     }
 
     /**
@@ -362,10 +299,7 @@ The parameters that can be set and the corresponding values are:
     * @param saveName  Name under which the context set is saved
     */
     public void loadContextSet(String saveName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("loadContextSet", saveName);
-        else
-            call("loadContextSet", saveName).get();
+        call("loadContextSet", saveName).get();
     }
 
     /**
@@ -375,10 +309,7 @@ The parameters that can be set and the corresponding values are:
     * @param contextName  Name of the context of your choice.
     */
     public void addContext(String pathToLCFFile, String contextName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("addContext", pathToLCFFile, contextName);
-        else
-            call("addContext", pathToLCFFile, contextName).get();
+        call("addContext", pathToLCFFile, contextName).get();
     }
 
     /**
@@ -394,10 +325,7 @@ The parameters that can be set and the corresponding values are:
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -413,10 +341,7 @@ The parameters that can be set and the corresponding values are:
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -492,10 +417,7 @@ The parameters that can be set and the corresponding values are:
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -525,10 +447,7 @@ The parameters that can be set and the corresponding values are:
     * @param precision  Precision of the extractor if relevant.
     */
     public void subscribe(String name, Integer period, Float precision) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("subscribe", name, period, precision);
-        else
-            call("subscribe", name, period, precision).get();
+        call("subscribe", name, period, precision).get();
     }
 
     /**
@@ -537,10 +456,7 @@ The parameters that can be set and the corresponding values are:
     * @param name  Name of the module which subscribes.
     */
     public void subscribe(String name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("subscribe", name);
-        else
-            call("subscribe", name).get();
+        call("subscribe", name).get();
     }
 
     /**
@@ -549,10 +465,7 @@ The parameters that can be set and the corresponding values are:
     * @param name  Name of the module which had subscribed.
     */
     public void unsubscribe(String name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("unsubscribe", name);
-        else
-            call("unsubscribe", name).get();
+        call("unsubscribe", name).get();
     }
 
     /**
@@ -562,10 +475,7 @@ The parameters that can be set and the corresponding values are:
     * @param period  Refresh period (in milliseconds).
     */
     public void updatePeriod(String name, Integer period) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("updatePeriod", name, period);
-        else
-            call("updatePeriod", name, period).get();
+        call("updatePeriod", name, period).get();
     }
 
     /**
@@ -575,10 +485,7 @@ The parameters that can be set and the corresponding values are:
     * @param precision  Precision of the extractor.
     */
     public void updatePrecision(String name, Float precision) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("updatePrecision", name, precision);
-        else
-            call("updatePrecision", name, precision).get();
+        call("updatePrecision", name, precision).get();
     }
 
     /**
@@ -661,10 +568,7 @@ The parameters that can be set and the corresponding values are:
     * @param setOrNot  Enable (true) or disable it (false).
     */
     public void setVisualExpression(Boolean setOrNot) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setVisualExpression", setOrNot);
-        else
-            call("setVisualExpression", setOrNot).get();
+        call("setVisualExpression", setOrNot).get();
     }
 
     /**
@@ -673,10 +577,7 @@ The parameters that can be set and the corresponding values are:
     * @param mode  animation mode: 0: deactivated, 1: eyes, 2: ears, 3: full
     */
     public void setVisualExpressionMode(Integer mode) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setVisualExpressionMode", mode);
-        else
-            call("setVisualExpressionMode", mode).get();
+        call("setVisualExpressionMode", mode).get();
     }
 
 }

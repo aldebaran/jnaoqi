@@ -28,10 +28,7 @@ public class ALTextToSpeech extends ALProxy {
     * @param pPreferenceName  Name of the voice preference.
     */
     public void loadVoicePreference(String pPreferenceName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("loadVoicePreference", pPreferenceName);
-        else
-            call("loadVoicePreference", pPreferenceName).get();
+        call("loadVoicePreference", pPreferenceName).get();
     }
 
     /**
@@ -68,10 +65,7 @@ public class ALTextToSpeech extends ALProxy {
     * @param Voice  The voice among those available on your robot as a String
     */
     public void setLanguageDefaultVoice(String Language, String Voice) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setLanguageDefaultVoice", Language, Voice);
-        else
-            call("setLanguageDefaultVoice", Language, Voice).get();
+        call("setLanguageDefaultVoice", Language, Voice).get();
     }
 
     /**
@@ -80,10 +74,7 @@ public class ALTextToSpeech extends ALProxy {
     * @param volume  Volume (between 0.0 and 1.0).
     */
     public void setVolume(Float volume) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setVolume", volume);
-        else
-            call("setVolume", volume).get();
+        call("setVolume", volume).get();
     }
 
     /**
@@ -91,10 +82,7 @@ public class ALTextToSpeech extends ALProxy {
     * 
     */
     public void enableNotifications() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("enableNotifications");
-        else
-            call("enableNotifications").get();
+        call("enableNotifications").get();
     }
 
     /**
@@ -102,10 +90,7 @@ public class ALTextToSpeech extends ALProxy {
     * 
     */
     public void disableNotifications() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("disableNotifications");
-        else
-            call("disableNotifications").get();
+        call("disableNotifications").get();
     }
 
     /**
@@ -121,10 +106,7 @@ public class ALTextToSpeech extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -140,10 +122,7 @@ public class ALTextToSpeech extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -219,10 +198,7 @@ public class ALTextToSpeech extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -250,10 +226,7 @@ public class ALTextToSpeech extends ALProxy {
     * @param stringToSay  Text to say, encoded in UTF-8.
     */
     public void say(String stringToSay) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("say", stringToSay);
-        else
-            call("say", stringToSay).get();
+        call("say", stringToSay).get();
     }
 
     /**
@@ -263,10 +236,7 @@ public class ALTextToSpeech extends ALProxy {
     * @param language  Language used to say the text.
     */
     public void say(String stringToSay, String language) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("say", stringToSay, language);
-        else
-            call("say", stringToSay, language).get();
+        call("say", stringToSay, language).get();
     }
 
     /**
@@ -276,10 +246,7 @@ public class ALTextToSpeech extends ALProxy {
     * @param pFileName  RAW file where to store the generated signal. The signal is encoded with a sample rate of 22050Hz, format S16_LE, 2 channels.
     */
     public void sayToFile(String pStringToSay, String pFileName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("sayToFile", pStringToSay, pFileName);
-        else
-            call("sayToFile", pStringToSay, pFileName).get();
+        call("sayToFile", pStringToSay, pFileName).get();
     }
 
     /**
@@ -288,10 +255,7 @@ public class ALTextToSpeech extends ALProxy {
     * @param pStringToSay  Text to say, encoded in UTF-8.
     */
     public void sayToFileAndPlay(String pStringToSay) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("sayToFileAndPlay", pStringToSay);
-        else
-            call("sayToFileAndPlay", pStringToSay).get();
+        call("sayToFileAndPlay", pStringToSay).get();
     }
 
     /**
@@ -299,10 +263,7 @@ public class ALTextToSpeech extends ALProxy {
     * 
     */
     public void stopAll() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stopAll");
-        else
-            call("stopAll").get();
+        call("stopAll").get();
     }
 
     /**
@@ -311,10 +272,7 @@ public class ALTextToSpeech extends ALProxy {
     * @param pLanguage  Language name. Must belong to the languages available in TTS (can be obtained with the getAvailableLanguages method).  It should be an identifier std::string.
     */
     public void setLanguage(String pLanguage) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setLanguage", pLanguage);
-        else
-            call("setLanguage", pLanguage).get();
+        call("setLanguage", pLanguage).get();
     }
 
     /**
@@ -360,10 +318,7 @@ public class ALTextToSpeech extends ALProxy {
     * @param pEffectName  Name of the parameter.
     */
     public void resetSpeed() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("resetSpeed");
-        else
-            call("resetSpeed").get();
+        call("resetSpeed").get();
     }
 
     /**
@@ -378,10 +333,7 @@ public class ALTextToSpeech extends ALProxy {
     * @param pEffectValue  Value of the parameter.
     */
     public void setParameter(String pEffectName, Float pEffectValue) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setParameter", pEffectName, pEffectValue);
-        else
-            call("setParameter", pEffectName, pEffectValue).get();
+        call("setParameter", pEffectName, pEffectValue).get();
     }
 
     /**
@@ -400,10 +352,7 @@ public class ALTextToSpeech extends ALProxy {
     * @param pVoiceID  The voice (as a std::string).
     */
     public void setVoice(String pVoiceID) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setVoice", pVoiceID);
-        else
-            call("setVoice", pVoiceID).get();
+        call("setVoice", pVoiceID).get();
     }
 
     /**

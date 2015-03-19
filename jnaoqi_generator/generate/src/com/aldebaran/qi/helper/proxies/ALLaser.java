@@ -35,10 +35,7 @@ public class ALLaser extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -54,10 +51,7 @@ public class ALLaser extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -133,10 +127,7 @@ public class ALLaser extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -163,10 +154,7 @@ public class ALLaser extends ALProxy {
     * 
     */
     public void laserOFF() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("laserOFF");
-        else
-            call("laserOFF").get();
+        call("laserOFF").get();
     }
 
     /**
@@ -174,10 +162,7 @@ public class ALLaser extends ALProxy {
     * 
     */
     public void laserON() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("laserON");
-        else
-            call("laserON").get();
+        call("laserON").get();
     }
 
     /**
@@ -187,10 +172,7 @@ public class ALLaser extends ALProxy {
     * @param angle_max_f  float containing the max value in rad, this value must be lower than 2.092349795 
     */
     public void setOpeningAngle(Float angle_min_f, Float angle_max_f) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setOpeningAngle", angle_min_f, angle_max_f);
-        else
-            call("setOpeningAngle", angle_min_f, angle_max_f).get();
+        call("setOpeningAngle", angle_min_f, angle_max_f).get();
     }
 
     /**
@@ -200,10 +182,7 @@ public class ALLaser extends ALProxy {
     * @param length_max_l  int containing the max length that the laser will detect(mm), this value must be lower than 5600 mm
     */
     public void setDetectingLength(Integer length_min_l, Integer length_max_l) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setDetectingLength", length_min_l, length_max_l);
-        else
-            call("setDetectingLength", length_min_l, length_max_l).get();
+        call("setDetectingLength", length_min_l, length_max_l).get();
     }
 
 }

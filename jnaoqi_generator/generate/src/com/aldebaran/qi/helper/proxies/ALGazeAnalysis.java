@@ -55,10 +55,7 @@ public class ALGazeAnalysis extends ALProxy {
     * @param tolerance  New value of the tolerance (between 0 and 1).
     */
     public void setTolerance(Float tolerance) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setTolerance", tolerance);
-        else
-            call("setTolerance", tolerance).get();
+        call("setTolerance", tolerance).get();
     }
 
     /**
@@ -67,10 +64,7 @@ public class ALGazeAnalysis extends ALProxy {
     * @param status  True to turn it on, False to turn it off.
     */
     public void setFaceAnalysisEnabled(Boolean status) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setFaceAnalysisEnabled", status);
-        else
-            call("setFaceAnalysisEnabled", status).get();
+        call("setFaceAnalysisEnabled", status).get();
     }
 
     /**
@@ -86,10 +80,7 @@ public class ALGazeAnalysis extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -105,10 +96,7 @@ public class ALGazeAnalysis extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -184,10 +172,7 @@ public class ALGazeAnalysis extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -217,10 +202,7 @@ public class ALGazeAnalysis extends ALProxy {
     * @param precision  Precision of the extractor if relevant.
     */
     public void subscribe(String name, Integer period, Float precision) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("subscribe", name, period, precision);
-        else
-            call("subscribe", name, period, precision).get();
+        call("subscribe", name, period, precision).get();
     }
 
     /**
@@ -229,10 +211,7 @@ public class ALGazeAnalysis extends ALProxy {
     * @param name  Name of the module which subscribes.
     */
     public void subscribe(String name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("subscribe", name);
-        else
-            call("subscribe", name).get();
+        call("subscribe", name).get();
     }
 
     /**
@@ -241,10 +220,7 @@ public class ALGazeAnalysis extends ALProxy {
     * @param name  Name of the module which had subscribed.
     */
     public void unsubscribe(String name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("unsubscribe", name);
-        else
-            call("unsubscribe", name).get();
+        call("unsubscribe", name).get();
     }
 
     /**
@@ -254,10 +230,7 @@ public class ALGazeAnalysis extends ALProxy {
     * @param period  Refresh period (in milliseconds).
     */
     public void updatePeriod(String name, Integer period) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("updatePeriod", name, period);
-        else
-            call("updatePeriod", name, period).get();
+        call("updatePeriod", name, period).get();
     }
 
     /**
@@ -267,10 +240,7 @@ public class ALGazeAnalysis extends ALProxy {
     * @param precision  Precision of the extractor.
     */
     public void updatePrecision(String name, Float precision) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("updatePrecision", name, precision);
-        else
-            call("updatePrecision", name, precision).get();
+        call("updatePrecision", name, precision).get();
     }
 
     /**
@@ -362,10 +332,7 @@ public class ALGazeAnalysis extends ALProxy {
     * @param status  New pause satus
     */
     public void pause(Boolean status) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("pause", status);
-        else
-            call("pause", status).get();
+        call("pause", status).get();
     }
 
 }

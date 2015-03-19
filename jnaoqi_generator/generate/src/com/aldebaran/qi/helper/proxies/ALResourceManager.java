@@ -29,10 +29,7 @@ public class ALResourceManager extends ALProxy {
     * @param resourceName  Resource name
     */
     public void createResourcesList(List<String> resourceGroupName, String resourceName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("createResourcesList", resourceGroupName, resourceName);
-        else
-            call("createResourcesList", resourceGroupName, resourceName).get();
+        call("createResourcesList", resourceGroupName, resourceName).get();
     }
 
     /**
@@ -64,10 +61,7 @@ public class ALResourceManager extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -83,10 +77,7 @@ public class ALResourceManager extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -162,10 +153,7 @@ public class ALResourceManager extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -196,10 +184,7 @@ public class ALResourceManager extends ALProxy {
     * @param timeoutSeconds  Timeout in seconds
     */
     public void waitForResource(String resourceName, String ownerName, String callbackName, Integer timeoutSeconds) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("waitForResource", resourceName, ownerName, callbackName, timeoutSeconds);
-        else
-            call("waitForResource", resourceName, ownerName, callbackName, timeoutSeconds).get();
+        call("waitForResource", resourceName, ownerName, callbackName, timeoutSeconds).get();
     }
 
     /**
@@ -211,10 +196,7 @@ public class ALResourceManager extends ALProxy {
     * @param timeoutSeconds  Timeout in seconds
     */
     public void acquireResource(String resourceName, String moduleName, String callbackName, Integer timeoutSeconds) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("acquireResource", resourceName, moduleName, callbackName, timeoutSeconds);
-        else
-            call("acquireResource", resourceName, moduleName, callbackName, timeoutSeconds).get();
+        call("acquireResource", resourceName, moduleName, callbackName, timeoutSeconds).get();
     }
 
     /**
@@ -234,10 +216,7 @@ public class ALResourceManager extends ALProxy {
     * @param timeoutSeconds  Timeout in seconds
     */
     public void waitForResourcesTree(List<String> resourceName, String moduleName, String callbackName, Integer timeoutSeconds) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("waitForResourcesTree", resourceName, moduleName, callbackName, timeoutSeconds);
-        else
-            call("waitForResourcesTree", resourceName, moduleName, callbackName, timeoutSeconds).get();
+        call("waitForResourcesTree", resourceName, moduleName, callbackName, timeoutSeconds).get();
     }
 
     /**
@@ -249,10 +228,7 @@ public class ALResourceManager extends ALProxy {
     * @param timeoutSeconds  Timeout in seconds
     */
     public void acquireResourcesTree(List<String> resourceName, String moduleName, String callbackName, Integer timeoutSeconds) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("acquireResourcesTree", resourceName, moduleName, callbackName, timeoutSeconds);
-        else
-            call("acquireResourcesTree", resourceName, moduleName, callbackName, timeoutSeconds).get();
+        call("acquireResourcesTree", resourceName, moduleName, callbackName, timeoutSeconds).get();
     }
 
     /**
@@ -273,10 +249,7 @@ public class ALResourceManager extends ALProxy {
     * @param ownerName  Existing owner name
     */
     public void releaseResource(String resourceName, String ownerName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("releaseResource", resourceName, ownerName);
-        else
-            call("releaseResource", resourceName, ownerName).get();
+        call("releaseResource", resourceName, ownerName).get();
     }
 
     /**
@@ -286,10 +259,7 @@ public class ALResourceManager extends ALProxy {
     * @param ownerName  Owner name
     */
     public void releaseResources(List<String> resourceNames, String ownerName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("releaseResources", resourceNames, ownerName);
-        else
-            call("releaseResources", resourceNames, ownerName).get();
+        call("releaseResources", resourceNames, ownerName).get();
     }
 
     /**
@@ -299,10 +269,7 @@ public class ALResourceManager extends ALProxy {
     * @param enabled  True to enable, false to disable
     */
     public void enableStateResource(String resourceName, Boolean enabled) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("enableStateResource", resourceName, enabled);
-        else
-            call("enableStateResource", resourceName, enabled).get();
+        call("enableStateResource", resourceName, enabled).get();
     }
 
     /**
@@ -341,10 +308,7 @@ public class ALResourceManager extends ALProxy {
     * @param parentResourceName  Parent resource name or empty string for root resource
     */
     public void createResource(String resourceName, String parentResourceName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("createResource", resourceName, parentResourceName);
-        else
-            call("createResource", resourceName, parentResourceName).get();
+        call("createResource", resourceName, parentResourceName).get();
     }
 
     /**
@@ -354,10 +318,7 @@ public class ALResourceManager extends ALProxy {
     * @param deleteChildResources  DEPRECATED: Delete child resources if true
     */
     public void deleteResource(String resourceName, Boolean deleteChildResources) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("deleteResource", resourceName, deleteChildResources);
-        else
-            call("deleteResource", resourceName, deleteChildResources).get();
+        call("deleteResource", resourceName, deleteChildResources).get();
     }
 
     /**

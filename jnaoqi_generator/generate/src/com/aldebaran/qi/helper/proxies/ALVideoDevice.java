@@ -36,10 +36,7 @@ public class ALVideoDevice extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -55,10 +52,7 @@ public class ALVideoDevice extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -134,10 +128,7 @@ public class ALVideoDevice extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -966,10 +957,7 @@ Actualy it take picture each time the vision module call getDirectRawImageRemote
     * @param message  The message give when subscribing.
     */
     public void onClientDisconnected(String eventName, Object eventContents, String message) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("onClientDisconnected", eventName, eventContents, message);
-        else
-            call("onClientDisconnected", eventName, eventContents, message).get();
+        call("onClientDisconnected", eventName, eventContents, message).get();
     }
 
     /**
@@ -992,10 +980,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * @param id  Root name of the G.V.M. (e.g. with the example above this will be VisionModule).
     */
     public void unsubscribeAllInstances(String id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("unsubscribeAllInstances", id);
-        else
-            call("unsubscribeAllInstances", id).get();
+        call("unsubscribeAllInstances", id).get();
     }
 
     /**
@@ -1061,10 +1046,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * @param pNewValue  value requested.
     */
     public void setParam(Integer pParam, Integer pNewValue) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setParam", pParam, pNewValue);
-        else
-            call("setParam", pParam, pNewValue).get();
+        call("setParam", pParam, pNewValue).get();
     }
 
     /**
@@ -1075,10 +1057,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * @param pCameraIndex  Camera requested.
     */
     public void setParam(Integer pParam, Integer pNewValue, Integer pCameraIndex) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setParam", pParam, pNewValue, pCameraIndex);
-        else
-            call("setParam", pParam, pNewValue, pCameraIndex).get();
+        call("setParam", pParam, pNewValue, pCameraIndex).get();
     }
 
     /**
@@ -1105,10 +1084,7 @@ Returns the name under which the G.V.M. is registered to ALVideoDevice (useful w
     * 
     */
     public void setParamDefault(Integer param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setParamDefault", param1);
-        else
-            call("setParamDefault", param1).get();
+        call("setParamDefault", param1).get();
     }
 
     /**

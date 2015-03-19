@@ -47,10 +47,7 @@ public class ALFaceDetection extends ALProxy {
     * @param enable  True/False
     */
     public void setRecognitionEnabled(Boolean enable) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setRecognitionEnabled", enable);
-        else
-            call("setRecognitionEnabled", enable).get();
+        call("setRecognitionEnabled", enable).get();
     }
 
     /**
@@ -69,10 +66,7 @@ public class ALFaceDetection extends ALProxy {
     * @param value  New value
     */
     public void setParameter(String paramName, Object value) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setParameter", paramName, value);
-        else
-            call("setParameter", paramName, value).get();
+        call("setParameter", paramName, value).get();
     }
 
     /**
@@ -81,10 +75,7 @@ public class ALFaceDetection extends ALProxy {
     * @param enable  True/False
     */
     public void setTrackingEnabled(Boolean enable) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setTrackingEnabled", enable);
-        else
-            call("setTrackingEnabled", enable).get();
+        call("setTrackingEnabled", enable).get();
     }
 
     /**
@@ -201,10 +192,7 @@ It can be either:
     * @param paused  New pause satus
     */
     public void pause(Boolean paused) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("pause", paused);
-        else
-            call("pause", paused).get();
+        call("pause", paused).get();
     }
 
     /**
@@ -212,10 +200,7 @@ It can be either:
     * 
     */
     public void enableRecognition(Boolean param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("enableRecognition", param1);
-        else
-            call("enableRecognition", param1).get();
+        call("enableRecognition", param1).get();
     }
 
     /**
@@ -232,10 +217,7 @@ It can be either:
     * 
     */
     public void enableTracking(Boolean param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("enableTracking", param1);
-        else
-            call("enableTracking", param1).get();
+        call("enableTracking", param1).get();
     }
 
     /**
@@ -251,10 +233,7 @@ It can be either:
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -270,10 +249,7 @@ It can be either:
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -349,10 +325,7 @@ It can be either:
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -382,10 +355,7 @@ It can be either:
     * @param precision  Precision of the extractor if relevant.
     */
     public void subscribe(String name, Integer period, Float precision) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("subscribe", name, period, precision);
-        else
-            call("subscribe", name, period, precision).get();
+        call("subscribe", name, period, precision).get();
     }
 
     /**
@@ -394,10 +364,7 @@ It can be either:
     * @param name  Name of the module which subscribes.
     */
     public void subscribe(String name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("subscribe", name);
-        else
-            call("subscribe", name).get();
+        call("subscribe", name).get();
     }
 
     /**
@@ -406,10 +373,7 @@ It can be either:
     * @param name  Name of the module which had subscribed.
     */
     public void unsubscribe(String name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("unsubscribe", name);
-        else
-            call("unsubscribe", name).get();
+        call("unsubscribe", name).get();
     }
 
     /**
@@ -419,10 +383,7 @@ It can be either:
     * @param period  Refresh period (in milliseconds).
     */
     public void updatePeriod(String name, Integer period) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("updatePeriod", name, period);
-        else
-            call("updatePeriod", name, period).get();
+        call("updatePeriod", name, period).get();
     }
 
     /**
@@ -432,10 +393,7 @@ It can be either:
     * @param precision  Precision of the extractor.
     */
     public void updatePrecision(String name, Float precision) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("updatePrecision", name, precision);
-        else
-            call("updatePrecision", name, precision).get();
+        call("updatePrecision", name, precision).get();
     }
 
     /**

@@ -35,10 +35,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -54,10 +51,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -133,10 +127,7 @@ public class ALDialog extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -166,10 +157,7 @@ public class ALDialog extends ALProxy {
     * @param precision  Precision of the extractor if relevant.
     */
     public void subscribe(String name, Integer period, Float precision) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("subscribe", name, period, precision);
-        else
-            call("subscribe", name, period, precision).get();
+        call("subscribe", name, period, precision).get();
     }
 
     /**
@@ -178,10 +166,7 @@ public class ALDialog extends ALProxy {
     * @param name  Name of the module which subscribes.
     */
     public void subscribe(String name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("subscribe", name);
-        else
-            call("subscribe", name).get();
+        call("subscribe", name).get();
     }
 
     /**
@@ -190,10 +175,7 @@ public class ALDialog extends ALProxy {
     * @param name  Name of the module which had subscribed.
     */
     public void unsubscribe(String name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("unsubscribe", name);
-        else
-            call("unsubscribe", name).get();
+        call("unsubscribe", name).get();
     }
 
     /**
@@ -203,10 +185,7 @@ public class ALDialog extends ALProxy {
     * @param period  Refresh period (in milliseconds).
     */
     public void updatePeriod(String name, Integer period) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("updatePeriod", name, period);
-        else
-            call("updatePeriod", name, period).get();
+        call("updatePeriod", name, period).get();
     }
 
     /**
@@ -216,10 +195,7 @@ public class ALDialog extends ALProxy {
     * @param precision  Precision of the extractor.
     */
     public void updatePrecision(String name, Float precision) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("updatePrecision", name, precision);
-        else
-            call("updatePrecision", name, precision).get();
+        call("updatePrecision", name, precision).get();
     }
 
     /**
@@ -301,10 +277,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void wordRecognized(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("wordRecognized", param1, param2, param3);
-        else
-            call("wordRecognized", param1, param2, param3).get();
+        call("wordRecognized", param1, param2, param3).get();
     }
 
     /**
@@ -312,10 +285,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void addBlockingEvent(String param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("addBlockingEvent", param1);
-        else
-            call("addBlockingEvent", param1).get();
+        call("addBlockingEvent", param1).get();
     }
 
     /**
@@ -323,10 +293,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void wordsRecognizedCallback(Object param1, Integer param2) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("wordsRecognizedCallback", param1, param2);
-        else
-            call("wordsRecognizedCallback", param1, param2).get();
+        call("wordsRecognizedCallback", param1, param2).get();
     }
 
     /**
@@ -342,10 +309,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void releaseEngine() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("releaseEngine");
-        else
-            call("releaseEngine").get();
+        call("releaseEngine").get();
     }
 
     /**
@@ -361,10 +325,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void eventReceived(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("eventReceived", param1, param2, param3);
-        else
-            call("eventReceived", param1, param2, param3).get();
+        call("eventReceived", param1, param2, param3).get();
     }
 
     /**
@@ -372,10 +333,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void statusChanged(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("statusChanged", param1, param2, param3);
-        else
-            call("statusChanged", param1, param2, param3).get();
+        call("statusChanged", param1, param2, param3).get();
     }
 
     /**
@@ -383,10 +341,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void gotoTag(String param1, String param2) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("gotoTag", param1, param2);
-        else
-            call("gotoTag", param1, param2).get();
+        call("gotoTag", param1, param2).get();
     }
 
     /**
@@ -394,10 +349,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void noPick(String param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("noPick", param1);
-        else
-            call("noPick", param1).get();
+        call("noPick", param1).get();
     }
 
     /**
@@ -405,10 +357,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void connectionChanged(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("connectionChanged", param1, param2, param3);
-        else
-            call("connectionChanged", param1, param2, param3).get();
+        call("connectionChanged", param1, param2, param3).get();
     }
 
     /**
@@ -416,10 +365,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void compileAll() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("compileAll");
-        else
-            call("compileAll").get();
+        call("compileAll").get();
     }
 
     /**
@@ -435,10 +381,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void deactivateTopic(String param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("deactivateTopic", param1);
-        else
-            call("deactivateTopic", param1).get();
+        call("deactivateTopic", param1).get();
     }
 
     /**
@@ -446,10 +389,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void activateTopic(String param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("activateTopic", param1);
-        else
-            call("activateTopic", param1).get();
+        call("activateTopic", param1).get();
     }
 
     /**
@@ -457,10 +397,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void unloadTopic(String param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("unloadTopic", param1);
-        else
-            call("unloadTopic", param1).get();
+        call("unloadTopic", param1).get();
     }
 
     /**
@@ -468,10 +405,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void forceOutput() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("forceOutput");
-        else
-            call("forceOutput").get();
+        call("forceOutput").get();
     }
 
     /**
@@ -479,10 +413,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void forceInput(String param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("forceInput", param1);
-        else
-            call("forceInput", param1).get();
+        call("forceInput", param1).get();
     }
 
     /**
@@ -490,10 +421,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void tell(String param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("tell", param1);
-        else
-            call("tell", param1).get();
+        call("tell", param1).get();
     }
 
     /**
@@ -501,10 +429,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void setASRConfidenceThreshold(Float param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setASRConfidenceThreshold", param1);
-        else
-            call("setASRConfidenceThreshold", param1).get();
+        call("setASRConfidenceThreshold", param1).get();
     }
 
     /**
@@ -520,10 +445,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void openSession(Integer param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("openSession", param1);
-        else
-            call("openSession", param1).get();
+        call("openSession", param1).get();
     }
 
     /**
@@ -531,10 +453,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void closeSession() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("closeSession");
-        else
-            call("closeSession").get();
+        call("closeSession").get();
     }
 
     /**
@@ -542,10 +461,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void setDelay(String param1, Integer param2) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setDelay", param1, param2);
-        else
-            call("setDelay", param1, param2).get();
+        call("setDelay", param1, param2).get();
     }
 
     /**
@@ -553,10 +469,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void setNumberOfScopes(Integer param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setNumberOfScopes", param1);
-        else
-            call("setNumberOfScopes", param1).get();
+        call("setNumberOfScopes", param1).get();
     }
 
     /**
@@ -567,10 +480,7 @@ public class ALDialog extends ALProxy {
     * @param content  content of the concept
     */
     public void setConcept(String conceptName, String language, List<String> content) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setConcept", conceptName, language, content);
-        else
-            call("setConcept", conceptName, language, content).get();
+        call("setConcept", conceptName, language, content).get();
     }
 
     /**
@@ -582,10 +492,7 @@ public class ALDialog extends ALProxy {
     * @param store  determine if the concept will be save in the database
     */
     public void setConcept(String conceptName, String language, List<String> content, Boolean store) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setConcept", conceptName, language, content, store);
-        else
-            call("setConcept", conceptName, language, content, store).get();
+        call("setConcept", conceptName, language, content, store).get();
     }
 
     /**
@@ -593,10 +500,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void setConceptKeepInCache(String param1, String param2, List<String> param3) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setConceptKeepInCache", param1, param2, param3);
-        else
-            call("setConceptKeepInCache", param1, param2, param3).get();
+        call("setConceptKeepInCache", param1, param2, param3).get();
     }
 
     /**
@@ -604,10 +508,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void setPushMode(Integer param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setPushMode", param1);
-        else
-            call("setPushMode", param1).get();
+        call("setPushMode", param1).get();
     }
 
     /**
@@ -615,10 +516,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void enableTriggerSentences(Boolean param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("enableTriggerSentences", param1);
-        else
-            call("enableTriggerSentences", param1).get();
+        call("enableTriggerSentences", param1).get();
     }
 
     /**
@@ -626,10 +524,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void enableCategory(Boolean param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("enableCategory", param1);
-        else
-            call("enableCategory", param1).get();
+        call("enableCategory", param1).get();
     }
 
     /**
@@ -637,10 +532,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void startPush() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("startPush");
-        else
-            call("startPush").get();
+        call("startPush").get();
     }
 
     /**
@@ -648,10 +540,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void stopPush() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stopPush");
-        else
-            call("stopPush").get();
+        call("stopPush").get();
     }
 
     /**
@@ -659,10 +548,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void setAnimatedSpeechConfiguration(Object param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setAnimatedSpeechConfiguration", param1);
-        else
-            call("setAnimatedSpeechConfiguration", param1).get();
+        call("setAnimatedSpeechConfiguration", param1).get();
     }
 
     /**
@@ -670,10 +556,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void applicationBlackList(List<String> param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("applicationBlackList", param1);
-        else
-            call("applicationBlackList", param1).get();
+        call("applicationBlackList", param1).get();
     }
 
     /**
@@ -689,10 +572,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void runDialog() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("runDialog");
-        else
-            call("runDialog").get();
+        call("runDialog").get();
     }
 
     /**
@@ -700,10 +580,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void stopDialog() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stopDialog");
-        else
-            call("stopDialog").get();
+        call("stopDialog").get();
     }
 
     /**
@@ -711,10 +588,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void setVariablePath(String param1, String param2, String param3) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setVariablePath", param1, param2, param3);
-        else
-            call("setVariablePath", param1, param2, param3).get();
+        call("setVariablePath", param1, param2, param3).get();
     }
 
     /**
@@ -722,10 +596,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void setLanguage(String param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setLanguage", param1);
-        else
-            call("setLanguage", param1).get();
+        call("setLanguage", param1).get();
     }
 
     /**
@@ -733,10 +604,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void startUpdate(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("startUpdate", param1, param2, param3);
-        else
-            call("startUpdate", param1, param2, param3).get();
+        call("startUpdate", param1, param2, param3).get();
     }
 
     /**
@@ -744,10 +612,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void startApp(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("startApp", param1, param2, param3);
-        else
-            call("startApp", param1, param2, param3).get();
+        call("startApp", param1, param2, param3).get();
     }
 
     /**
@@ -755,10 +620,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void packageInstalled(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("packageInstalled", param1, param2, param3);
-        else
-            call("packageInstalled", param1, param2, param3).get();
+        call("packageInstalled", param1, param2, param3).get();
     }
 
     /**
@@ -766,10 +628,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void compilationFinished(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("compilationFinished", param1, param2, param3);
-        else
-            call("compilationFinished", param1, param2, param3).get();
+        call("compilationFinished", param1, param2, param3).get();
     }
 
     /**
@@ -777,10 +636,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void setFocus(String param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setFocus", param1);
-        else
-            call("setFocus", param1).get();
+        call("setFocus", param1).get();
     }
 
     /**
@@ -796,10 +652,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void gotoTopic(String param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("gotoTopic", param1);
-        else
-            call("gotoTopic", param1).get();
+        call("gotoTopic", param1).get();
     }
 
     /**
@@ -831,10 +684,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void activateTag(String param1, String param2) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("activateTag", param1, param2);
-        else
-            call("activateTag", param1, param2).get();
+        call("activateTag", param1, param2).get();
     }
 
     /**
@@ -842,10 +692,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void deactivateTag(String param1, String param2) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("deactivateTag", param1, param2);
-        else
-            call("deactivateTag", param1, param2).get();
+        call("deactivateTag", param1, param2).get();
     }
 
     /**
@@ -853,10 +700,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void resetAll() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("resetAll");
-        else
-            call("resetAll").get();
+        call("resetAll").get();
     }
 
     /**
@@ -864,10 +708,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void insertUserData(String param1, String param2, Integer param3) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("insertUserData", param1, param2, param3);
-        else
-            call("insertUserData", param1, param2, param3).get();
+        call("insertUserData", param1, param2, param3).get();
     }
 
     /**
@@ -899,10 +740,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void removeUserData(Integer param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("removeUserData", param1);
-        else
-            call("removeUserData", param1).get();
+        call("removeUserData", param1).get();
     }
 
     /**
@@ -910,10 +748,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void clearConcepts() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearConcepts");
-        else
-            call("clearConcepts").get();
+        call("clearConcepts").get();
     }
 
     /**
@@ -921,10 +756,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void enableSendingLogToCloud(Boolean param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("enableSendingLogToCloud", param1);
-        else
-            call("enableSendingLogToCloud", param1).get();
+        call("enableSendingLogToCloud", param1).get();
     }
 
     /**
@@ -940,10 +772,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void enableLogAudio(Boolean param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("enableLogAudio", param1);
-        else
-            call("enableLogAudio", param1).get();
+        call("enableLogAudio", param1).get();
     }
 
     /**
@@ -951,10 +780,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void deleteSerializationFiles() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("deleteSerializationFiles");
-        else
-            call("deleteSerializationFiles").get();
+        call("deleteSerializationFiles").get();
     }
 
     /**
@@ -962,10 +788,7 @@ public class ALDialog extends ALProxy {
     * 
     */
     public void generateSentences(String param1, String param2, String param3) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("generateSentences", param1, param2, param3);
-        else
-            call("generateSentences", param1, param2, param3).get();
+        call("generateSentences", param1, param2, param3).get();
     }
 
 }

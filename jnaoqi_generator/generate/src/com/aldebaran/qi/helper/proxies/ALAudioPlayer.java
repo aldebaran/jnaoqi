@@ -35,10 +35,7 @@ public class ALAudioPlayer extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -54,10 +51,7 @@ public class ALAudioPlayer extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -133,10 +127,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -164,10 +155,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param fileName  Path of the sound file
     */
     public void playFile(String fileName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("playFile", fileName);
-        else
-            call("playFile", fileName).get();
+        call("playFile", fileName).get();
     }
 
     /**
@@ -178,10 +166,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param pan  audio balance of the sound file (-1.0 : left / 1.0 : right / 0.0 : centered)
     */
     public void playFile(String fileName, Float volume, Float pan) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("playFile", fileName, volume, pan);
-        else
-            call("playFile", fileName, volume, pan).get();
+        call("playFile", fileName, volume, pan).get();
     }
 
     /**
@@ -190,10 +175,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param fileName  Name of the file without extension
     */
     public void playSoundSetFile(String fileName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("playSoundSetFile", fileName);
-        else
-            call("playSoundSetFile", fileName).get();
+        call("playSoundSetFile", fileName).get();
     }
 
     /**
@@ -203,10 +185,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param fileName  Name of the file without extension
     */
     public void playSoundSetFile(String soundSetName, String fileName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("playSoundSetFile", soundSetName, fileName);
-        else
-            call("playSoundSetFile", soundSetName, fileName).get();
+        call("playSoundSetFile", soundSetName, fileName).get();
     }
 
     /**
@@ -220,10 +199,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param loop  specify if the file must be played in loop
     */
     public void playSoundSetFile(String soundSetName, String fileName, Float position, Float volume, Float pan, Boolean loop) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("playSoundSetFile", soundSetName, fileName, position, volume, pan, loop);
-        else
-            call("playSoundSetFile", soundSetName, fileName, position, volume, pan, loop).get();
+        call("playSoundSetFile", soundSetName, fileName, position, volume, pan, loop).get();
     }
 
     /**
@@ -236,10 +212,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param loop  specify if the file must be played in loop
     */
     public void playSoundSetFile(String fileName, Float position, Float volume, Float pan, Boolean loop) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("playSoundSetFile", fileName, position, volume, pan, loop);
-        else
-            call("playSoundSetFile", fileName, position, volume, pan, loop).get();
+        call("playSoundSetFile", fileName, position, volume, pan, loop).get();
     }
 
     /**
@@ -248,10 +221,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param setName  name of the set
     */
     public void loadSoundSet(String setName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("loadSoundSet", setName);
-        else
-            call("loadSoundSet", setName).get();
+        call("loadSoundSet", setName).get();
     }
 
     /**
@@ -260,10 +230,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param setName  name of the set
     */
     public void unloadSoundSet(String setName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("unloadSoundSet", setName);
-        else
-            call("unloadSoundSet", setName).get();
+        call("unloadSoundSet", setName).get();
     }
 
     /**
@@ -316,10 +283,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param fileName  Path of the sound file
     */
     public void playFileInLoop(String fileName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("playFileInLoop", fileName);
-        else
-            call("playFileInLoop", fileName).get();
+        call("playFileInLoop", fileName).get();
     }
 
     /**
@@ -330,10 +294,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param pan  audio balance of the sound file (-1.0 : left / 1.0 : right)
     */
     public void playFileInLoop(String fileName, Float volume, Float pan) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("playFileInLoop", fileName, volume, pan);
-        else
-            call("playFileInLoop", fileName, volume, pan).get();
+        call("playFileInLoop", fileName, volume, pan).get();
     }
 
     /**
@@ -343,10 +304,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param position  Position in second where the playing has to begin
     */
     public void playFileFromPosition(String fileName, Float position) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("playFileFromPosition", fileName, position);
-        else
-            call("playFileFromPosition", fileName, position).get();
+        call("playFileFromPosition", fileName, position).get();
     }
 
     /**
@@ -358,10 +316,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param pan  audio balance of the sound file (-1.0 : left / 1.0 : right)
     */
     public void playFileFromPosition(String fileName, Float position, Float volume, Float pan) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("playFileFromPosition", fileName, position, volume, pan);
-        else
-            call("playFileFromPosition", fileName, position, volume, pan).get();
+        call("playFileFromPosition", fileName, position, volume, pan).get();
     }
 
     /**
@@ -371,10 +326,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param position  Position in the file (in second)
     */
     public void goTo(Integer playId, Float position) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("goTo", playId, position);
-        else
-            call("goTo", playId, position).get();
+        call("goTo", playId, position).get();
     }
 
     /**
@@ -382,10 +334,7 @@ public class ALAudioPlayer extends ALProxy {
     * 
     */
     public void stopAll() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stopAll");
-        else
-            call("stopAll").get();
+        call("stopAll").get();
     }
 
     /**
@@ -394,10 +343,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param id  Id of the process that is playing the file you want to put in pause
     */
     public void pause(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("pause", id);
-        else
-            call("pause", id).get();
+        call("pause", id).get();
     }
 
     /**
@@ -407,10 +353,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param volume  Volume - range 0.0 to 1.0
     */
     public void setVolume(Integer id, Float volume) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setVolume", id, volume);
-        else
-            call("setVolume", id, volume).get();
+        call("setVolume", id, volume).get();
     }
 
     /**
@@ -419,10 +362,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param volume  Volume - range 0.0 to 1.0
     */
     public void setMasterVolume(Float volume) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setMasterVolume", volume);
-        else
-            call("setMasterVolume", volume).get();
+        call("setMasterVolume", volume).get();
     }
 
     /**
@@ -449,10 +389,7 @@ public class ALAudioPlayer extends ALProxy {
     * 
     */
     public void setPanorama(Float param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setPanorama", param1);
-        else
-            call("setPanorama", param1).get();
+        call("setPanorama", param1).get();
     }
 
     /**
@@ -471,10 +408,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param id  Id returned by the loadFile function
     */
     public void unloadFile(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("unloadFile", id);
-        else
-            call("unloadFile", id).get();
+        call("unloadFile", id).get();
     }
 
     /**
@@ -482,10 +416,7 @@ public class ALAudioPlayer extends ALProxy {
     * 
     */
     public void unloadAllFiles() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("unloadAllFiles");
-        else
-            call("unloadAllFiles").get();
+        call("unloadAllFiles").get();
     }
 
     /**
@@ -512,10 +443,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param id  Id returned by the loadFile function
     */
     public void play(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("play", id);
-        else
-            call("play", id).get();
+        call("play", id).get();
     }
 
     /**
@@ -526,10 +454,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param pan  audio balance of the sound file (-1.0 : left / 1.0 : right)
     */
     public void play(Integer id, Float volume, Float pan) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("play", id, volume, pan);
-        else
-            call("play", id, volume, pan).get();
+        call("play", id, volume, pan).get();
     }
 
     /**
@@ -538,10 +463,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param id  Id returned by the loadFile function
     */
     public void playInLoop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("playInLoop", id);
-        else
-            call("playInLoop", id).get();
+        call("playInLoop", id).get();
     }
 
     /**
@@ -552,10 +474,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param pan  audio balance of the sound file (-1.0 : left / 1.0 : right)
     */
     public void playInLoop(Integer id, Float volume, Float pan) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("playInLoop", id, volume, pan);
-        else
-            call("playInLoop", id, volume, pan).get();
+        call("playInLoop", id, volume, pan).get();
     }
 
     /**
@@ -564,10 +483,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param streamName  Path of the web audio stream
     */
     public void playWebStream(String streamName, Float param1, Float param2) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("playWebStream", streamName, param1, param2);
-        else
-            call("playWebStream", streamName, param1, param2).get();
+        call("playWebStream", streamName, param1, param2).get();
     }
 
     /**
@@ -599,10 +515,7 @@ public class ALAudioPlayer extends ALProxy {
     * @param duration  Duration of the sine wave in seconds
     */
     public void playSine(Integer frequence, Integer gain, Integer pan, Float duration) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("playSine", frequence, gain, pan, duration);
-        else
-            call("playSine", frequence, gain, pan, duration).get();
+        call("playSine", frequence, gain, pan, duration).get();
     }
 
 }

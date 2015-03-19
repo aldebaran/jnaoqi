@@ -35,10 +35,7 @@ public class ALNavigation extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -54,10 +51,7 @@ public class ALNavigation extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -133,10 +127,7 @@ public class ALNavigation extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -210,10 +201,7 @@ public class ALNavigation extends ALProxy {
     * @param theta  The angle around z axis [rad].
     */
     public void moveTo(Float x, Float y, Float theta) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("moveTo", x, y, theta);
-        else
-            call("moveTo", x, y, theta).get();
+        call("moveTo", x, y, theta).get();
     }
 
     /**
@@ -225,10 +213,7 @@ public class ALNavigation extends ALProxy {
     * @param moveConfig  An ALValue with custom move configuration.
     */
     public void moveTo(Float x, Float y, Float theta, Object moveConfig) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("moveTo", x, y, theta, moveConfig);
-        else
-            call("moveTo", x, y, theta, moveConfig).get();
+        call("moveTo", x, y, theta, moveConfig).get();
     }
 
     /**
@@ -239,10 +224,7 @@ public class ALNavigation extends ALProxy {
     * @param theta  The anglular speed around z axis [rad.s-1].
     */
     public void move(Float x, Float y, Float theta) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("move", x, y, theta);
-        else
-            call("move", x, y, theta).get();
+        call("move", x, y, theta).get();
     }
 
     /**
@@ -254,10 +236,7 @@ public class ALNavigation extends ALProxy {
     * @param moveConfig  An ALValue with custom move configuration.
     */
     public void move(Float x, Float y, Float theta, Object moveConfig) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("move", x, y, theta, moveConfig);
-        else
-            call("move", x, y, theta, moveConfig).get();
+        call("move", x, y, theta, moveConfig).get();
     }
 
     /**
@@ -268,10 +247,7 @@ public class ALNavigation extends ALProxy {
     * @param theta  The anglular speed around z axis [0.0-1.0].
     */
     public void moveToward(Float x, Float y, Float theta) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("moveToward", x, y, theta);
-        else
-            call("moveToward", x, y, theta).get();
+        call("moveToward", x, y, theta).get();
     }
 
     /**
@@ -283,10 +259,7 @@ public class ALNavigation extends ALProxy {
     * @param moveConfig  An ALValue with custom move configuration.
     */
     public void moveToward(Float x, Float y, Float theta, Object moveConfig) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("moveToward", x, y, theta, moveConfig);
-        else
-            call("moveToward", x, y, theta, moveConfig).get();
+        call("moveToward", x, y, theta, moveConfig).get();
     }
 
     /**
@@ -294,10 +267,7 @@ public class ALNavigation extends ALProxy {
     * 
     */
     public void setSecurityDistance(Float param1) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setSecurityDistance", param1);
-        else
-            call("setSecurityDistance", param1).get();
+        call("setSecurityDistance", param1).get();
     }
 
     /**
@@ -313,10 +283,7 @@ public class ALNavigation extends ALProxy {
     * 
     */
     public void stopNavigateTo() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stopNavigateTo");
-        else
-            call("stopNavigateTo").get();
+        call("stopNavigateTo").get();
     }
 
     /**
@@ -333,10 +300,7 @@ public class ALNavigation extends ALProxy {
     * 
     */
     public void onTouchChanged(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("onTouchChanged", param1, param2, param3);
-        else
-            call("onTouchChanged", param1, param2, param3).get();
+        call("onTouchChanged", param1, param2, param3).get();
     }
 
 }

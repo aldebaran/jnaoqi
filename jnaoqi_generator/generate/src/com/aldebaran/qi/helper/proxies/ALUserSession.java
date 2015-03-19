@@ -106,10 +106,7 @@ public class ALUserSession extends ALProxy {
     * @param data  ALValue of the data.
     */
     public void setUserData(Integer uid, String data_name, String source_name, Object data) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setUserData", uid, data_name, source_name, data);
-        else
-            call("setUserData", uid, data_name, source_name, data).get();
+        call("setUserData", uid, data_name, source_name, data).get();
     }
 
     /**
@@ -125,10 +122,7 @@ public class ALUserSession extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -144,10 +138,7 @@ public class ALUserSession extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -223,10 +214,7 @@ public class ALUserSession extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**

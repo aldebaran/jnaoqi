@@ -55,10 +55,7 @@ public class ALEngagementZones extends ALProxy {
     * @param distance  New first distance (in meters) for delimitation (nearest limit), it should be positive and smaller than the second distance
     */
     public void setFirstLimitDistance(Float distance) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setFirstLimitDistance", distance);
-        else
-            call("setFirstLimitDistance", distance).get();
+        call("setFirstLimitDistance", distance).get();
     }
 
     /**
@@ -67,10 +64,7 @@ public class ALEngagementZones extends ALProxy {
     * @param distance  New second distance (in meters) for delimitation (furthest limit), it should be positive and bigger than the first distance
     */
     public void setSecondLimitDistance(Float distance) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setSecondLimitDistance", distance);
-        else
-            call("setSecondLimitDistance", distance).get();
+        call("setSecondLimitDistance", distance).get();
     }
 
     /**
@@ -88,10 +82,7 @@ public class ALEngagementZones extends ALProxy {
     * @param angle  New angle (in degrees) for delimitation, it should be below 180
     */
     public void setLimitAngle(Float angle) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setLimitAngle", angle);
-        else
-            call("setLimitAngle", angle).get();
+        call("setLimitAngle", angle).get();
     }
 
     /**
@@ -132,10 +123,7 @@ public class ALEngagementZones extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -151,10 +139,7 @@ public class ALEngagementZones extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -230,10 +215,7 @@ public class ALEngagementZones extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -263,10 +245,7 @@ public class ALEngagementZones extends ALProxy {
     * @param precision  Precision of the extractor if relevant.
     */
     public void subscribe(String name, Integer period, Float precision) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("subscribe", name, period, precision);
-        else
-            call("subscribe", name, period, precision).get();
+        call("subscribe", name, period, precision).get();
     }
 
     /**
@@ -275,10 +254,7 @@ public class ALEngagementZones extends ALProxy {
     * @param name  Name of the module which subscribes.
     */
     public void subscribe(String name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("subscribe", name);
-        else
-            call("subscribe", name).get();
+        call("subscribe", name).get();
     }
 
     /**
@@ -287,10 +263,7 @@ public class ALEngagementZones extends ALProxy {
     * @param name  Name of the module which had subscribed.
     */
     public void unsubscribe(String name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("unsubscribe", name);
-        else
-            call("unsubscribe", name).get();
+        call("unsubscribe", name).get();
     }
 
     /**
@@ -300,10 +273,7 @@ public class ALEngagementZones extends ALProxy {
     * @param period  Refresh period (in milliseconds).
     */
     public void updatePeriod(String name, Integer period) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("updatePeriod", name, period);
-        else
-            call("updatePeriod", name, period).get();
+        call("updatePeriod", name, period).get();
     }
 
     /**
@@ -313,10 +283,7 @@ public class ALEngagementZones extends ALProxy {
     * @param precision  Precision of the extractor.
     */
     public void updatePrecision(String name, Float precision) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("updatePrecision", name, precision);
-        else
-            call("updatePrecision", name, precision).get();
+        call("updatePrecision", name, precision).get();
     }
 
     /**
@@ -408,10 +375,7 @@ public class ALEngagementZones extends ALProxy {
     * @param status  New pause satus
     */
     public void pause(Boolean status) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("pause", status);
-        else
-            call("pause", status).get();
+        call("pause", status).get();
     }
 
 }

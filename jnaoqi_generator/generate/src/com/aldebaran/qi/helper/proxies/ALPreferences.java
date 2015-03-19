@@ -40,10 +40,7 @@ public class ALPreferences extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -59,10 +56,7 @@ public class ALPreferences extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -138,10 +132,7 @@ public class ALPreferences extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -182,10 +173,7 @@ public class ALPreferences extends ALProxy {
     * @param ignoreMemoryNames  If true all memory names will be removed before saving.
     */
     public void writePrefFile(String fileName, Object prefs, Boolean ignoreMemoryNames) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("writePrefFile", fileName, prefs, ignoreMemoryNames);
-        else
-            call("writePrefFile", fileName, prefs, ignoreMemoryNames).get();
+        call("writePrefFile", fileName, prefs, ignoreMemoryNames).get();
     }
 
     /**
@@ -194,10 +182,7 @@ public class ALPreferences extends ALProxy {
     * @param fileName  Name of the module associated to the preference.
     */
     public void removePrefFile(String fileName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("removePrefFile", fileName);
-        else
-            call("removePrefFile", fileName).get();
+        call("removePrefFile", fileName).get();
     }
 
     /**

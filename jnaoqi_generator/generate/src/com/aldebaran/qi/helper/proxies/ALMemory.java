@@ -31,10 +31,7 @@ public class ALMemory extends ALMemoryHelper {
     * @param value  The string to be inserted
     */
     public void insertData(String key, String value) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("insertData", key, value);
-        else
-            call("insertData", key, value).get();
+        call("insertData", key, value).get();
     }
 
     /**
@@ -43,10 +40,7 @@ public class ALMemory extends ALMemoryHelper {
     * @param key  Name of the data to be removed.
     */
     public void removeData(String key) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("removeData", key);
-        else
-            call("removeData", key).get();
+        call("removeData", key).get();
     }
 
     /**
@@ -65,10 +59,7 @@ public class ALMemory extends ALMemoryHelper {
     * @param name  Name of the event to remove.
     */
     public void removeMicroEvent(String name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("removeMicroEvent", name);
-        else
-            call("removeMicroEvent", name).get();
+        call("removeMicroEvent", name).get();
     }
 
     /**
@@ -79,10 +70,7 @@ public class ALMemory extends ALMemoryHelper {
     * @param callbackMethod  Name of the module's method to call when a data is changed
     */
     public void subscribeToEvent(String name, String callbackModule, String callbackMethod) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("subscribeToEvent", name, callbackModule, callbackMethod);
-        else
-            call("subscribeToEvent", name, callbackModule, callbackMethod).get();
+        call("subscribeToEvent", name, callbackModule, callbackMethod).get();
     }
 
     /**
@@ -92,10 +80,7 @@ public class ALMemory extends ALMemoryHelper {
     * @param value  The int to be inserted
     */
     public void insertData(String key, Integer value) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("insertData", key, value);
-        else
-            call("insertData", key, value).get();
+        call("insertData", key, value).get();
     }
 
     /**
@@ -107,10 +92,7 @@ public class ALMemory extends ALMemoryHelper {
     * @param callbackMethod  Name of the module's method to call when a data is changed
     */
     public void subscribeToMicroEvent(String name, String callbackModule, String callbackMessage, String callbackMethod) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("subscribeToMicroEvent", name, callbackModule, callbackMessage, callbackMethod);
-        else
-            call("subscribeToMicroEvent", name, callbackModule, callbackMessage, callbackMethod).get();
+        call("subscribeToMicroEvent", name, callbackModule, callbackMessage, callbackMethod).get();
     }
 
     /**
@@ -119,10 +101,7 @@ public class ALMemory extends ALMemoryHelper {
     * @param moduleName  Name of the departing module.
     */
     public void unregisterModuleReference(String moduleName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("unregisterModuleReference", moduleName);
-        else
-            call("unregisterModuleReference", moduleName).get();
+        call("unregisterModuleReference", moduleName).get();
     }
 
     /**
@@ -132,10 +111,7 @@ public class ALMemory extends ALMemoryHelper {
     * @param callbackModule  The name of the module that was given when subscribing.
     */
     public void unsubscribeToEvent(String name, String callbackModule) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("unsubscribeToEvent", name, callbackModule);
-        else
-            call("unsubscribeToEvent", name, callbackModule).get();
+        call("unsubscribeToEvent", name, callbackModule).get();
     }
 
     /**
@@ -145,10 +121,7 @@ public class ALMemory extends ALMemoryHelper {
     * @param callbackModule  The name of the module that was given when subscribing.
     */
     public void unsubscribeToMicroEvent(String name, String callbackModule) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("unsubscribeToMicroEvent", name, callbackModule);
-        else
-            call("unsubscribeToMicroEvent", name, callbackModule).get();
+        call("unsubscribeToMicroEvent", name, callbackModule).get();
     }
 
     /**
@@ -158,10 +131,7 @@ public class ALMemory extends ALMemoryHelper {
     * @param value  The float to be inserted
     */
     public void insertData(String key, Float value) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("insertData", key, value);
-        else
-            call("insertData", key, value).get();
+        call("insertData", key, value).get();
     }
 
     /**
@@ -171,10 +141,7 @@ public class ALMemory extends ALMemoryHelper {
     * @param description  The description of the event (text format).
     */
     public void setDescription(String name, String description) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setDescription", name, description);
-        else
-            call("setDescription", name, description).get();
+        call("setDescription", name, description).get();
     }
 
     /**
@@ -195,10 +162,7 @@ public class ALMemory extends ALMemoryHelper {
     * @param event  Name of the event
     */
     public void addMapping(String serviceName, String signal, String event) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("addMapping", serviceName, signal, event);
-        else
-            call("addMapping", serviceName, signal, event).get();
+        call("addMapping", serviceName, signal, event).get();
     }
 
     /**
@@ -208,10 +172,7 @@ public class ALMemory extends ALMemoryHelper {
     * @param signalEvent  A map of signal corresponding to event
     */
     public void addMapping(String serviceName, Map<String, String> signalEvent) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("addMapping", serviceName, signalEvent);
-        else
-            call("addMapping", serviceName, signalEvent).get();
+        call("addMapping", serviceName, signalEvent).get();
     }
 
     /**
@@ -221,10 +182,7 @@ public class ALMemory extends ALMemoryHelper {
     * @param data  The ALValue to be inserted. This could contain a basic type, or a more complex array. See the ALValue documentation for more information.
     */
     public void insertData(String key, Object data) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("insertData", key, data);
-        else
-            call("insertData", key, data).get();
+        call("insertData", key, data).get();
     }
 
     /**
@@ -233,10 +191,7 @@ public class ALMemory extends ALMemoryHelper {
     * @param list  An ALValue list of the form [[Key, Value],...]. Each item will be inserted.
     */
     public void insertListData(Object list) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("insertListData", list);
-        else
-            call("insertListData", list).get();
+        call("insertListData", list).get();
     }
 
     /**
@@ -256,10 +211,7 @@ public class ALMemory extends ALMemoryHelper {
     * @param value  The data associated with the event. This could contain a basic type, or a more complex array. See the ALValue documentation for more information.
     */
     public void raiseEvent(String name, Object value) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("raiseEvent", name, value);
-        else
-            call("raiseEvent", name, value).get();
+        call("raiseEvent", name, value).get();
     }
 
     /**
@@ -269,10 +221,7 @@ public class ALMemory extends ALMemoryHelper {
     * @param value  The data associated with the event. This could contain a basic type, or a more complex array. See the ALValue documentation for more information.
     */
     public void raiseMicroEvent(String name, Object value) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("raiseMicroEvent", name, value);
-        else
-            call("raiseMicroEvent", name, value).get();
+        call("raiseMicroEvent", name, value).get();
     }
 
     /**
@@ -281,10 +230,7 @@ public class ALMemory extends ALMemoryHelper {
     * @param name  Name of the event to remove.
     */
     public void removeEvent(String name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("removeEvent", name);
-        else
-            call("removeEvent", name).get();
+        call("removeEvent", name).get();
     }
 
     /**
@@ -296,10 +242,7 @@ public class ALMemory extends ALMemoryHelper {
     * @param callbacMethod  Name of the module's method to call when a data is changed
     */
     public void subscribeToEvent(String name, String callbackModule, String callbackMessage, String callbacMethod) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("subscribeToEvent", name, callbackModule, callbackMessage, callbacMethod);
-        else
-            call("subscribeToEvent", name, callbackModule, callbackMessage, callbacMethod).get();
+        call("subscribeToEvent", name, callbackModule, callbackMessage, callbacMethod).get();
     }
 
     /**
@@ -315,10 +258,7 @@ public class ALMemory extends ALMemoryHelper {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -334,10 +274,7 @@ public class ALMemory extends ALMemoryHelper {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -413,10 +350,7 @@ public class ALMemory extends ALMemoryHelper {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -444,10 +378,7 @@ public class ALMemory extends ALMemoryHelper {
     * @param eventName  The name of the event
     */
     public void declareEvent(String eventName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("declareEvent", eventName);
-        else
-            call("declareEvent", eventName).get();
+        call("declareEvent", eventName).get();
     }
 
     /**
@@ -457,10 +388,7 @@ public class ALMemory extends ALMemoryHelper {
     * @param extractorName  The name of the extractor capable of creating the event
     */
     public void declareEvent(String eventName, String extractorName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("declareEvent", eventName, extractorName);
-        else
-            call("declareEvent", eventName, extractorName).get();
+        call("declareEvent", eventName, extractorName).get();
     }
 
     /**

@@ -62,10 +62,7 @@ public class ALPhotoCapture extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -81,10 +78,7 @@ public class ALPhotoCapture extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -160,10 +154,7 @@ public class ALPhotoCapture extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -191,10 +182,7 @@ public class ALPhotoCapture extends ALProxy {
     * @param enable  True to enable, false to disable.
     */
     public void setHalfPressEnabled(Boolean enable) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setHalfPressEnabled", enable);
-        else
-            call("setHalfPressEnabled", enable).get();
+        call("setHalfPressEnabled", enable).get();
     }
 
     /**
@@ -260,10 +248,7 @@ public class ALPhotoCapture extends ALProxy {
     * @param cameraID  ID of the camera to use.
     */
     public void setCameraID(Integer cameraID) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setCameraID", cameraID);
-        else
-            call("setCameraID", cameraID).get();
+        call("setCameraID", cameraID).get();
     }
 
     /**
@@ -272,10 +257,7 @@ public class ALPhotoCapture extends ALProxy {
     * @param resolution  New frame resolution.
     */
     public void setResolution(Integer resolution) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setResolution", resolution);
-        else
-            call("setResolution", resolution).get();
+        call("setResolution", resolution).get();
     }
 
     /**
@@ -284,10 +266,7 @@ public class ALPhotoCapture extends ALProxy {
     * @param colorSpace  New color space.
     */
     public void setColorSpace(Integer colorSpace) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setColorSpace", colorSpace);
-        else
-            call("setColorSpace", colorSpace).get();
+        call("setColorSpace", colorSpace).get();
     }
 
     /**
@@ -296,10 +275,7 @@ public class ALPhotoCapture extends ALProxy {
     * @param captureInterval  New delay (in ms) between two pictures.
     */
     public void setCaptureInterval(Integer captureInterval) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setCaptureInterval", captureInterval);
-        else
-            call("setCaptureInterval", captureInterval).get();
+        call("setCaptureInterval", captureInterval).get();
     }
 
     /**
@@ -308,10 +284,7 @@ public class ALPhotoCapture extends ALProxy {
     * @param pictureFormat  New extension used to save pictures.
     */
     public void setPictureFormat(String pictureFormat) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setPictureFormat", pictureFormat);
-        else
-            call("setPictureFormat", pictureFormat).get();
+        call("setPictureFormat", pictureFormat).get();
     }
 
     /**

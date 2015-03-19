@@ -50,10 +50,7 @@ public class ALColorBlobDetection extends ALProxy {
     * @param span  The span of the object in meters
     */
     public void setObjectProperties(Integer minSize, Float span) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setObjectProperties", minSize, span);
-        else
-            call("setObjectProperties", minSize, span).get();
+        call("setObjectProperties", minSize, span).get();
     }
 
     /**
@@ -64,10 +61,7 @@ public class ALColorBlobDetection extends ALProxy {
     * @param shape  The shape of the object
     */
     public void setObjectProperties(Integer minSize, Float span, String shape) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setObjectProperties", minSize, span, shape);
-        else
-            call("setObjectProperties", minSize, span, shape).get();
+        call("setObjectProperties", minSize, span, shape).get();
     }
 
     /**
@@ -77,10 +71,7 @@ public class ALColorBlobDetection extends ALProxy {
     * @param value  New value
     */
     public void setParameter(String paramName, Object value) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setParameter", paramName, value);
-        else
-            call("setParameter", paramName, value).get();
+        call("setParameter", paramName, value).get();
     }
 
     /**
@@ -98,10 +89,7 @@ public class ALColorBlobDetection extends ALProxy {
     * @param mode  Whether the exposure is auto or not
     */
     public void setAutoExposure(Boolean mode) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setAutoExposure", mode);
-        else
-            call("setAutoExposure", mode).get();
+        call("setAutoExposure", mode).get();
     }
 
     /**
@@ -156,10 +144,7 @@ public class ALColorBlobDetection extends ALProxy {
     * @param paused  New pause satus
     */
     public void pause(Boolean paused) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("pause", paused);
-        else
-            call("pause", paused).get();
+        call("pause", paused).get();
     }
 
     /**
@@ -171,10 +156,7 @@ public class ALColorBlobDetection extends ALProxy {
     * @param colorThres  The color threshold
     */
     public void setColor(Integer r, Integer g, Integer b, Integer colorThres) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setColor", r, g, b, colorThres);
-        else
-            call("setColor", r, g, b, colorThres).get();
+        call("setColor", r, g, b, colorThres).get();
     }
 
     /**
@@ -199,10 +181,7 @@ public class ALColorBlobDetection extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -218,10 +197,7 @@ public class ALColorBlobDetection extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -297,10 +273,7 @@ public class ALColorBlobDetection extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -330,10 +303,7 @@ public class ALColorBlobDetection extends ALProxy {
     * @param precision  Precision of the extractor if relevant.
     */
     public void subscribe(String name, Integer period, Float precision) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("subscribe", name, period, precision);
-        else
-            call("subscribe", name, period, precision).get();
+        call("subscribe", name, period, precision).get();
     }
 
     /**
@@ -342,10 +312,7 @@ public class ALColorBlobDetection extends ALProxy {
     * @param name  Name of the module which subscribes.
     */
     public void subscribe(String name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("subscribe", name);
-        else
-            call("subscribe", name).get();
+        call("subscribe", name).get();
     }
 
     /**
@@ -354,10 +321,7 @@ public class ALColorBlobDetection extends ALProxy {
     * @param name  Name of the module which had subscribed.
     */
     public void unsubscribe(String name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("unsubscribe", name);
-        else
-            call("unsubscribe", name).get();
+        call("unsubscribe", name).get();
     }
 
     /**
@@ -367,10 +331,7 @@ public class ALColorBlobDetection extends ALProxy {
     * @param period  Refresh period (in milliseconds).
     */
     public void updatePeriod(String name, Integer period) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("updatePeriod", name, period);
-        else
-            call("updatePeriod", name, period).get();
+        call("updatePeriod", name, period).get();
     }
 
     /**
@@ -380,10 +341,7 @@ public class ALColorBlobDetection extends ALProxy {
     * @param precision  Precision of the extractor.
     */
     public void updatePrecision(String name, Float precision) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("updatePrecision", name, precision);
-        else
-            call("updatePrecision", name, precision).get();
+        call("updatePrecision", name, precision).get();
     }
 
     /**

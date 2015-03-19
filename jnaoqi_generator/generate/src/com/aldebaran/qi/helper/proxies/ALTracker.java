@@ -35,10 +35,7 @@ public class ALTracker extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -54,10 +51,7 @@ public class ALTracker extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -133,10 +127,7 @@ public class ALTracker extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -201,10 +192,7 @@ public class ALTracker extends ALProxy {
     * @param target  Set the final goal of the tracking. Could be [distance, thresholdX, thresholdY] or with LandMarks target name [coordX, coordY, coordWz, thresholdX, thresholdY, thresholdWz].
     */
     public void setRelativePosition(Object target) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setRelativePosition", target);
-        else
-            call("setRelativePosition", target).get();
+        call("setRelativePosition", target).get();
     }
 
     /**
@@ -222,10 +210,7 @@ public class ALTracker extends ALProxy {
     * @param pCoord  objects coordinates.
     */
     public void setTargetCoordinates(Object pCoord) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setTargetCoordinates", pCoord);
-        else
-            call("setTargetCoordinates", pCoord).get();
+        call("setTargetCoordinates", pCoord).get();
     }
 
     /**
@@ -243,10 +228,7 @@ public class ALTracker extends ALProxy {
     * @param pMode  a predefined mode.
     */
     public void setMode(String pMode) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setMode", pMode);
-        else
-            call("setMode", pMode).get();
+        call("setMode", pMode).get();
     }
 
     /**
@@ -273,10 +255,7 @@ public class ALTracker extends ALProxy {
     * @param pSearch  If true and if the target is lost, the robot moves the head in order to find the target. If false and if the target is lost the robot does not move.
     */
     public void toggleSearch(Boolean pSearch) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("toggleSearch", pSearch);
-        else
-            call("toggleSearch", pSearch).get();
+        call("toggleSearch", pSearch).get();
     }
 
     /**
@@ -293,10 +272,7 @@ public class ALTracker extends ALProxy {
     * 
     */
     public void stopTracker() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stopTracker");
-        else
-            call("stopTracker").get();
+        call("stopTracker").get();
     }
 
     /**
@@ -314,10 +290,7 @@ public class ALTracker extends ALProxy {
     * @param pTarget  a predefined target to track.Could be "RedBall", "Face", "LandMark", "LandMarks", "People" or "Sound".
     */
     public void track(String pTarget) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("track", pTarget);
-        else
-            call("track", pTarget).get();
+        call("track", pTarget).get();
     }
 
     /**
@@ -326,10 +299,7 @@ public class ALTracker extends ALProxy {
     * @param pEventName  a event name to track.
     */
     public void trackEvent(String pEventName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("trackEvent", pEventName);
-        else
-            call("trackEvent", pEventName).get();
+        call("trackEvent", pEventName).get();
     }
 
     /**
@@ -339,10 +309,7 @@ public class ALTracker extends ALProxy {
     * @param pParams  a target parameters. (RedBall : set diameter of ball.
     */
     public void registerTarget(String pTarget, Object pParams) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("registerTarget", pTarget, pParams);
-        else
-            call("registerTarget", pTarget, pParams).get();
+        call("registerTarget", pTarget, pParams).get();
     }
 
     /**
@@ -352,10 +319,7 @@ public class ALTracker extends ALProxy {
     * @param pPeriod  a period in milliseconds
     */
     public void setExtractorPeriod(String pTarget, Integer pPeriod) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setExtractorPeriod", pTarget, pPeriod);
-        else
-            call("setExtractorPeriod", pTarget, pPeriod).get();
+        call("setExtractorPeriod", pTarget, pPeriod).get();
     }
 
     /**
@@ -374,10 +338,7 @@ public class ALTracker extends ALProxy {
     * @param pTarget  a predefined target to remove.Could be "RedBall", "Face", "LandMark", "LandMarks", "People" or "Sound".
     */
     public void unregisterTarget(String pTarget) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("unregisterTarget", pTarget);
-        else
-            call("unregisterTarget", pTarget).get();
+        call("unregisterTarget", pTarget).get();
     }
 
     /**
@@ -386,10 +347,7 @@ public class ALTracker extends ALProxy {
     * @param pTarget  a predefined target list to remove.Could be "RedBall", "Face", "LandMark", "LandMarks", "People" or "Sound".
     */
     public void unregisterTargets(List<String> pTarget) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("unregisterTargets", pTarget);
-        else
-            call("unregisterTargets", pTarget).get();
+        call("unregisterTargets", pTarget).get();
     }
 
     /**
@@ -397,10 +355,7 @@ public class ALTracker extends ALProxy {
     * 
     */
     public void unregisterAllTargets() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("unregisterAllTargets");
-        else
-            call("unregisterAllTargets").get();
+        call("unregisterAllTargets").get();
     }
 
     /**
@@ -440,10 +395,7 @@ public class ALTracker extends ALProxy {
     * @param pUseWholeBody  If true, use whole body constraints.
     */
     public void lookAt(List<Float> pPosition, Integer pFrame, Float pFractionMaxSpeed, Boolean pUseWholeBody) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("lookAt", pPosition, pFrame, pFractionMaxSpeed, pUseWholeBody);
-        else
-            call("lookAt", pPosition, pFrame, pFractionMaxSpeed, pUseWholeBody).get();
+        call("lookAt", pPosition, pFrame, pFractionMaxSpeed, pUseWholeBody).get();
     }
 
     /**
@@ -456,10 +408,7 @@ public class ALTracker extends ALProxy {
     * @param pFractionMaxSpeed  The fraction of maximum speed to use. Must be between 0 and 1.
     */
     public void pointAt(String pEffector, List<Float> pPosition, Integer pFrame, Float pFractionMaxSpeed) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("pointAt", pEffector, pPosition, pFrame, pFractionMaxSpeed);
-        else
-            call("pointAt", pEffector, pPosition, pFrame, pFractionMaxSpeed).get();
+        call("pointAt", pEffector, pPosition, pFrame, pFractionMaxSpeed).get();
     }
 
     /**
@@ -477,10 +426,7 @@ public class ALTracker extends ALProxy {
     * @param config  ALMotion GaitConfig
     */
     public void setMoveConfig(Object config) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setMoveConfig", config);
-        else
-            call("setMoveConfig", config).get();
+        call("setMoveConfig", config).get();
     }
 
     /**
@@ -498,10 +444,7 @@ public class ALTracker extends ALProxy {
     * @param pTimeMs  time in milliseconds.
     */
     public void setTimeOut(Integer pTimeMs) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setTimeOut", pTimeMs);
-        else
-            call("setTimeOut", pTimeMs).get();
+        call("setTimeOut", pTimeMs).get();
     }
 
     /**
@@ -519,10 +462,7 @@ public class ALTracker extends ALProxy {
     * @param pMaxDistance  The maximum distance for target detection in meter.
     */
     public void setMaximumDistanceDetection(Float pMaxDistance) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setMaximumDistanceDetection", pMaxDistance);
-        else
-            call("setMaximumDistanceDetection", pMaxDistance).get();
+        call("setMaximumDistanceDetection", pMaxDistance).get();
     }
 
     /**
@@ -540,10 +480,7 @@ public class ALTracker extends ALProxy {
     * @param pEffector  Name of effector. Could be: "Arms", "LArm", "RArm" or "None". 
     */
     public void setEffector(String pEffector) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setEffector", pEffector);
-        else
-            call("setEffector", pEffector).get();
+        call("setEffector", pEffector).get();
     }
 
     /**
@@ -555,10 +492,7 @@ public class ALTracker extends ALProxy {
     * @param pUseWholeBody  If true, use whole body constraints.
     */
     public void lookAt(List<Float> pPosition, Float pFractionMaxSpeed, Boolean pUseWholeBody) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("lookAt", pPosition, pFractionMaxSpeed, pUseWholeBody);
-        else
-            call("lookAt", pPosition, pFractionMaxSpeed, pUseWholeBody).get();
+        call("lookAt", pPosition, pFractionMaxSpeed, pUseWholeBody).get();
     }
 
     /**
@@ -570,10 +504,7 @@ public class ALTracker extends ALProxy {
     * @param pFractionMaxSpeed  The fraction of maximum speed to use. Must be between 0 and 1.
     */
     public void pointAt(String pEffector, List<Float> pPosition, Float pFractionMaxSpeed) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("pointAt", pEffector, pPosition, pFractionMaxSpeed);
-        else
-            call("pointAt", pEffector, pPosition, pFractionMaxSpeed).get();
+        call("pointAt", pEffector, pPosition, pFractionMaxSpeed).get();
     }
 
     /**
@@ -610,10 +541,7 @@ public class ALTracker extends ALProxy {
     * @param pParams  a target parameters. (RedBall : set diameter of ball.
     */
     public void addTarget(String pTarget, Object pParams) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("addTarget", pTarget, pParams);
-        else
-            call("addTarget", pTarget, pParams).get();
+        call("addTarget", pTarget, pParams).get();
     }
 
     /**
@@ -622,10 +550,7 @@ public class ALTracker extends ALProxy {
     * @param pTarget  a predefined target to remove.Could be "RedBall", "Face", "LandMark", "LandMarks", "People" or "Sound".
     */
     public void removeTarget(String pTarget) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("removeTarget", pTarget);
-        else
-            call("removeTarget", pTarget).get();
+        call("removeTarget", pTarget).get();
     }
 
     /**
@@ -634,10 +559,7 @@ public class ALTracker extends ALProxy {
     * @param pTarget  a predefined target list to remove.Could be "RedBall", "Face", "LandMark", "LandMarks", "People" or "Sound".
     */
     public void removeTargets(List<String> pTarget) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("removeTargets", pTarget);
-        else
-            call("removeTargets", pTarget).get();
+        call("removeTargets", pTarget).get();
     }
 
     /**
@@ -645,10 +567,7 @@ public class ALTracker extends ALProxy {
     * 
     */
     public void removeAllTargets() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("removeAllTargets");
-        else
-            call("removeAllTargets").get();
+        call("removeAllTargets").get();
     }
 
     /**
@@ -657,10 +576,7 @@ public class ALTracker extends ALProxy {
     * @param pEffector  Name of effector. Could be: "Arms", "LArm" or "RArm". 
     */
     public void addEffector(String pEffector) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("addEffector", pEffector);
-        else
-            call("addEffector", pEffector).get();
+        call("addEffector", pEffector).get();
     }
 
     /**
@@ -669,10 +585,7 @@ public class ALTracker extends ALProxy {
     * @param pEffector  Name of effector. Could be: "Arms", "LArm" or "RArm". 
     */
     public void removeEffector(String pEffector) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("removeEffector", pEffector);
-        else
-            call("removeEffector", pEffector).get();
+        call("removeEffector", pEffector).get();
     }
 
 }

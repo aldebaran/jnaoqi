@@ -35,10 +35,7 @@ public class ALVideoRecorder extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -54,10 +51,7 @@ public class ALVideoRecorder extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -133,10 +127,7 @@ public class ALVideoRecorder extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -165,10 +156,7 @@ public class ALVideoRecorder extends ALProxy {
     * @param fileName  Filename used to save the video.
     */
     public void startRecording(String folderPath, String fileName) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("startRecording", folderPath, fileName);
-        else
-            call("startRecording", folderPath, fileName).get();
+        call("startRecording", folderPath, fileName).get();
     }
 
     /**
@@ -179,10 +167,7 @@ public class ALVideoRecorder extends ALProxy {
     * @param overwrite  If false and the filename already exists, an exception is thrown.
     */
     public void startRecording(String folderPath, String fileName, Boolean overwrite) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("startRecording", folderPath, fileName, overwrite);
-        else
-            call("startRecording", folderPath, fileName, overwrite).get();
+        call("startRecording", folderPath, fileName, overwrite).get();
     }
 
     /**
@@ -209,10 +194,7 @@ public class ALVideoRecorder extends ALProxy {
     * @param cameraID  ID of the camera to use.
     */
     public void setCameraID(Integer cameraID) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setCameraID", cameraID);
-        else
-            call("setCameraID", cameraID).get();
+        call("setCameraID", cameraID).get();
     }
 
     /**
@@ -221,10 +203,7 @@ public class ALVideoRecorder extends ALProxy {
     * @param resolution  New frame resolution.
     */
     public void setResolution(Integer resolution) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setResolution", resolution);
-        else
-            call("setResolution", resolution).get();
+        call("setResolution", resolution).get();
     }
 
     /**
@@ -233,10 +212,7 @@ public class ALVideoRecorder extends ALProxy {
     * @param colorSpace  New color space.
     */
     public void setColorSpace(Integer colorSpace) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setColorSpace", colorSpace);
-        else
-            call("setColorSpace", colorSpace).get();
+        call("setColorSpace", colorSpace).get();
     }
 
     /**
@@ -245,10 +221,7 @@ public class ALVideoRecorder extends ALProxy {
     * @param frameRate  New frame rate.
     */
     public void setFrameRate(Float frameRate) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setFrameRate", frameRate);
-        else
-            call("setFrameRate", frameRate).get();
+        call("setFrameRate", frameRate).get();
     }
 
     /**
@@ -257,10 +230,7 @@ public class ALVideoRecorder extends ALProxy {
     * @param videoFormat  New video format.
     */
     public void setVideoFormat(String videoFormat) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setVideoFormat", videoFormat);
-        else
-            call("setVideoFormat", videoFormat).get();
+        call("setVideoFormat", videoFormat).get();
     }
 
     /**

@@ -32,10 +32,7 @@ public class ALLeds extends ALProxy {
     * @param intensity  The intensity of the LED or Group (a value between 0 and 1).
     */
     public void setIntensity(String name, Float intensity) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setIntensity", name, intensity);
-        else
-            call("setIntensity", name, intensity).get();
+        call("setIntensity", name, intensity).get();
     }
 
     /**
@@ -44,10 +41,7 @@ public class ALLeds extends ALProxy {
     * @param name  The name of the LED or Group.
     */
     public void on(String name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("on", name);
-        else
-            call("on", name).get();
+        call("on", name).get();
     }
 
     /**
@@ -58,10 +52,7 @@ public class ALLeds extends ALProxy {
     * @param totalDuration  Approximate duration of the animation in seconds.
     */
     public void rotateEyes(Integer rgb, Float timeForRotation, Float totalDuration) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("rotateEyes", rgb, timeForRotation, totalDuration);
-        else
-            call("rotateEyes", rgb, timeForRotation, totalDuration).get();
+        call("rotateEyes", rgb, timeForRotation, totalDuration).get();
     }
 
     /**
@@ -70,10 +61,7 @@ public class ALLeds extends ALProxy {
     * @param duration  Approximate duration of the animation in seconds.
     */
     public void randomEyes(Float duration) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("randomEyes", duration);
-        else
-            call("randomEyes", duration).get();
+        call("randomEyes", duration).get();
     }
 
     /**
@@ -82,10 +70,7 @@ public class ALLeds extends ALProxy {
     * @param duration  Approximate duration of the animation in seconds.
     */
     public void rasta(Float duration) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("rasta", duration);
-        else
-            call("rasta", duration).get();
+        call("rasta", duration).get();
     }
 
     /**
@@ -101,10 +86,7 @@ public class ALLeds extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -120,10 +102,7 @@ public class ALLeds extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -199,10 +178,7 @@ public class ALLeds extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -231,10 +207,7 @@ public class ALLeds extends ALProxy {
     * @param ledNames  A vector of the names of the LEDs in the group.
     */
     public void createGroup(String groupName, List<String> ledNames) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("createGroup", groupName, ledNames);
-        else
-            call("createGroup", groupName, ledNames).get();
+        call("createGroup", groupName, ledNames).get();
     }
 
     /**
@@ -245,10 +218,7 @@ public class ALLeds extends ALProxy {
     * @param leaveOnAtEnd  If true the last led is left on at the end of the animation.
     */
     public void earLedsSetAngle(Integer degrees, Float duration, Boolean leaveOnAtEnd) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("earLedsSetAngle", degrees, duration, leaveOnAtEnd);
-        else
-            call("earLedsSetAngle", degrees, duration, leaveOnAtEnd).get();
+        call("earLedsSetAngle", degrees, duration, leaveOnAtEnd).get();
     }
 
     /**
@@ -259,10 +229,7 @@ public class ALLeds extends ALProxy {
     * @param duration  The duration of the fade in seconds
     */
     public void fade(String name, Float intensity, Float duration) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("fade", name, intensity, duration);
-        else
-            call("fade", name, intensity, duration).get();
+        call("fade", name, intensity, duration).get();
     }
 
     /**
@@ -273,10 +240,7 @@ public class ALLeds extends ALProxy {
     * @param timeList  List of time to go to given intensity.
     */
     public void fadeListRGB(String name, Object rgbList, Object timeList) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("fadeListRGB", name, rgbList, timeList);
-        else
-            call("fadeListRGB", name, rgbList, timeList).get();
+        call("fadeListRGB", name, rgbList, timeList).get();
     }
 
     /**
@@ -289,10 +253,7 @@ public class ALLeds extends ALProxy {
     * @param duration  Time used to fade in seconds.
     */
     public void fadeRGB(String name, Float red, Float green, Float blue, Float duration) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("fadeRGB", name, red, green, blue, duration);
-        else
-            call("fadeRGB", name, red, green, blue, duration).get();
+        call("fadeRGB", name, red, green, blue, duration).get();
     }
 
     /**
@@ -303,10 +264,7 @@ public class ALLeds extends ALProxy {
     * @param duration  Time used to fade in seconds.
     */
     public void fadeRGB(String name, String colorName, Float duration) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("fadeRGB", name, colorName, duration);
-        else
-            call("fadeRGB", name, colorName, duration).get();
+        call("fadeRGB", name, colorName, duration).get();
     }
 
     /**
@@ -317,10 +275,7 @@ public class ALLeds extends ALProxy {
     * @param duration  Time used to fade in seconds.
     */
     public void fadeRGB(String name, Integer rgb, Float duration) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("fadeRGB", name, rgb, duration);
-        else
-            call("fadeRGB", name, rgb, duration).get();
+        call("fadeRGB", name, rgb, duration).get();
     }
 
     /**
@@ -329,10 +284,7 @@ public class ALLeds extends ALProxy {
     * @param name  The name of the LED or Group (for now, only "AllLeds" are implemented).
     */
     public void reset(String name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("reset", name);
-        else
-            call("reset", name).get();
+        call("reset", name).get();
     }
 
     /**
@@ -389,10 +341,7 @@ public class ALLeds extends ALProxy {
     * @param name  The name of the LED or Group.
     */
     public void off(String name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("off", name);
-        else
-            call("off", name).get();
+        call("off", name).get();
     }
 
 }

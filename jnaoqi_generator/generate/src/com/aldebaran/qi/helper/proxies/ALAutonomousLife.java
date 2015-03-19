@@ -29,10 +29,7 @@ public class ALAutonomousLife extends ALProxy {
     * 
     */
     public void stopAll() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stopAll");
-        else
-            call("stopAll").get();
+        call("stopAll").get();
     }
 
     /**
@@ -79,10 +76,7 @@ public class ALAutonomousLife extends ALProxy {
     * @param flags  Flags for focus changing. STOP_CURRENT or STOP_AND_STACK_CURRENT
     */
     public void switchFocus(String activity_name, Integer flags) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("switchFocus", activity_name, flags);
-        else
-            call("switchFocus", activity_name, flags).get();
+        call("switchFocus", activity_name, flags).get();
     }
 
     /**
@@ -90,10 +84,7 @@ public class ALAutonomousLife extends ALProxy {
     * 
     */
     public void stopMonitoringLaunchpadConditions() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stopMonitoringLaunchpadConditions");
-        else
-            call("stopMonitoringLaunchpadConditions").get();
+        call("stopMonitoringLaunchpadConditions").get();
     }
 
     /**
@@ -112,10 +103,7 @@ public class ALAutonomousLife extends ALProxy {
     * @param enabled  Whether or not to enable this plugin
     */
     public void setLaunchpadPluginEnabled(String plugin_name, Boolean enabled) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setLaunchpadPluginEnabled", plugin_name, enabled);
-        else
-            call("setLaunchpadPluginEnabled", plugin_name, enabled).get();
+        call("setLaunchpadPluginEnabled", plugin_name, enabled).get();
     }
 
     /**
@@ -132,10 +120,7 @@ public class ALAutonomousLife extends ALProxy {
     * 
     */
     public void stopFocus() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stopFocus");
-        else
-            call("stopFocus").get();
+        call("stopFocus").get();
     }
 
     /**
@@ -154,10 +139,7 @@ public class ALAutonomousLife extends ALProxy {
     * @param offset  The new vertical offset (in meters)
     */
     public void setRobotOffsetFromFloor(Float offset) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setRobotOffsetFromFloor", offset);
-        else
-            call("setRobotOffsetFromFloor", offset).get();
+        call("setRobotOffsetFromFloor", offset).get();
     }
 
     /**
@@ -176,10 +158,7 @@ public class ALAutonomousLife extends ALProxy {
     * @param enabled  True if life handles the safeguard.
     */
     public void setSafeguardEnabled(String name, Boolean enabled) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setSafeguardEnabled", name, enabled);
-        else
-            call("setSafeguardEnabled", name, enabled).get();
+        call("setSafeguardEnabled", name, enabled).get();
     }
 
     /**
@@ -217,10 +196,7 @@ public class ALAutonomousLife extends ALProxy {
     * @param activity_name  The package_name/activity_name to run
     */
     public void switchFocus(String activity_name) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("switchFocus", activity_name);
-        else
-            call("switchFocus", activity_name).get();
+        call("switchFocus", activity_name).get();
     }
 
     /**
@@ -256,10 +232,7 @@ public class ALAutonomousLife extends ALProxy {
     * 
     */
     public void startMonitoringLaunchpadConditions() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("startMonitoringLaunchpadConditions");
-        else
-            call("startMonitoringLaunchpadConditions").get();
+        call("startMonitoringLaunchpadConditions").get();
     }
 
     /**
@@ -275,10 +248,7 @@ public class ALAutonomousLife extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -294,10 +264,7 @@ public class ALAutonomousLife extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -373,10 +340,7 @@ public class ALAutonomousLife extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -404,10 +368,7 @@ public class ALAutonomousLife extends ALProxy {
     * @param state  The possible states of AutonomousLife are: interactive, solitary, safeguard, disabled
     */
     public void setState(String state) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setState", state);
-        else
-            call("setState", state).get();
+        call("setState", state).get();
     }
 
     /**

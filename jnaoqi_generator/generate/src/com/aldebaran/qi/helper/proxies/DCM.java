@@ -35,10 +35,7 @@ public class DCM extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -54,10 +51,7 @@ public class DCM extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -133,10 +127,7 @@ public class DCM extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -164,10 +155,7 @@ public class DCM extends ALProxy {
     * @param commands  AL::ALValue with all data
     */
     public void set(Object commands) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("set", commands);
-        else
-            call("set", commands).get();
+        call("set", commands).get();
     }
 
     /**
@@ -176,10 +164,7 @@ public class DCM extends ALProxy {
     * @param commands  AL::ALValue with all data
     */
     public void setAlias(Object commands) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setAlias", commands);
-        else
-            call("setAlias", commands).get();
+        call("setAlias", commands).get();
     }
 
     /**
@@ -190,10 +175,7 @@ public class DCM extends ALProxy {
     * @param commands  std::vector<float> with all commands
     */
     public void setAlias(String name, Integer time, List<Float> commands) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setAlias", name, time, commands);
-        else
-            call("setAlias", name, time, commands).get();
+        call("setAlias", name, time, commands).get();
     }
 
     /**
@@ -231,10 +213,7 @@ public class DCM extends ALProxy {
     * @param result  one string and could be Reset, Version, Chain, Diagnostic, Config
     */
     public void special(String result) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("special", result);
-        else
-            call("special", result).get();
+        call("special", result).get();
     }
 
     /**
@@ -243,10 +222,7 @@ public class DCM extends ALProxy {
     * @param calibrationInput  A complex ALValue. See red documentation
     */
     public void calibration(Object calibrationInput) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("calibration", calibrationInput);
-        else
-            call("calibration", calibrationInput).get();
+        call("calibration", calibrationInput).get();
     }
 
     /**

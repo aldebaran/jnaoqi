@@ -18,10 +18,7 @@ TEMPLATE_VOID = """
     * %(method_params)s
     */
     public %(outtype)s %(methodName)s(%(args)s) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("%(method)s"%(extraparams)s);
-        else
-            call("%(method)s"%(extraparams)s).get();
+        call("%(method)s"%(extraparams)s).get();
     }"""
 
 TEMPLATE_RETURN = """
@@ -187,15 +184,15 @@ def translateArgument(signatures, paraminfo):
 
 def cleanJavaName(name):
     if name == "package":
-        return "getPackage2"
+        return "package1"
     if name == "int":
         return "integer"
     if name == "string":
         return "string1"
     if name == "service":
         return "serviceName"
-    else:
-        return name
+
+    return name
 
 
 def translateFunc(methodData):

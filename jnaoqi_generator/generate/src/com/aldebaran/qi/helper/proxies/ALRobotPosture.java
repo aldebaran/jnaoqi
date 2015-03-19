@@ -35,10 +35,7 @@ public class ALRobotPosture extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -54,10 +51,7 @@ public class ALRobotPosture extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -133,10 +127,7 @@ public class ALRobotPosture extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -194,10 +185,7 @@ public class ALRobotPosture extends ALProxy {
     * 
     */
     public void stopMove() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stopMove");
-        else
-            call("stopMove").get();
+        call("stopMove").get();
     }
 
     /**
@@ -222,10 +210,7 @@ public class ALRobotPosture extends ALProxy {
     * @param pMaxTryNumber  Number of retry if goToPosture fail.
     */
     public void setMaxTryNumber(Integer pMaxTryNumber) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setMaxTryNumber", pMaxTryNumber);
-        else
-            call("setMaxTryNumber", pMaxTryNumber).get();
+        call("setMaxTryNumber", pMaxTryNumber).get();
     }
 
     /**

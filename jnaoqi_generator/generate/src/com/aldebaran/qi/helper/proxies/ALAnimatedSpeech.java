@@ -37,10 +37,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * @param tagsToAnimations  Map of Tags to Animations.
     */
     public void declareTagForAnimations(Object tagsToAnimations) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("declareTagForAnimations", tagsToAnimations);
-        else
-            call("declareTagForAnimations", tagsToAnimations).get();
+        call("declareTagForAnimations", tagsToAnimations).get();
     }
 
     /**
@@ -58,10 +55,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * @param tagsToWords  Map of tags to words.
     */
     public void addTagsToWords(Object tagsToWords) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("addTagsToWords", tagsToWords);
-        else
-            call("addTagsToWords", tagsToWords).get();
+        call("addTagsToWords", tagsToWords).get();
     }
 
     /**
@@ -77,10 +71,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * 
     */
     public void clearStats() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("clearStats");
-        else
-            call("clearStats").get();
+        call("clearStats").get();
     }
 
     /**
@@ -96,10 +87,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * 
     */
     public void exit() throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("exit");
-        else
-            call("exit").get();
+        call("exit").get();
     }
 
     /**
@@ -175,10 +163,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * @param id  the ID of the method to wait for
     */
     public void stop(Integer id) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("stop", id);
-        else
-            call("stop", id).get();
+        call("stop", id).get();
     }
 
     /**
@@ -206,10 +191,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * @param text  An annotated text (for example: "Hello. ^start(Hey_1) My name is NAO").
     */
     public void say(String text) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("say", text);
-        else
-            call("say", text).get();
+        call("say", text).get();
     }
 
     /**
@@ -219,10 +201,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * @param configuration  The animated speech configuration.
     */
     public void say(String text, Object configuration) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("say", text, configuration);
-        else
-            call("say", text, configuration).get();
+        call("say", text, configuration).get();
     }
 
     /**
@@ -231,10 +210,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * @param enable  The boolean value: true to enable, false to disable.
     */
     public void setBodyTalkEnabled(Boolean enable) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setBodyTalkEnabled", enable);
-        else
-            call("setBodyTalkEnabled", enable).get();
+        call("setBodyTalkEnabled", enable).get();
     }
 
     /**
@@ -243,10 +219,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * @param enable  The boolean value: true to enable, false to disable.
     */
     public void setBodyLanguageEnabled(Boolean enable) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setBodyLanguageEnabled", enable);
-        else
-            call("setBodyLanguageEnabled", enable).get();
+        call("setBodyLanguageEnabled", enable).get();
     }
 
     /**
@@ -257,10 +230,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * @param stringBodyLanguageMode  The choosen body language mode.
     */
     public void setBodyLanguageModeFromStr(String stringBodyLanguageMode) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setBodyLanguageModeFromStr", stringBodyLanguageMode);
-        else
-            call("setBodyLanguageModeFromStr", stringBodyLanguageMode).get();
+        call("setBodyLanguageModeFromStr", stringBodyLanguageMode).get();
     }
 
     /**
@@ -271,10 +241,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * @param bodyLanguageMode  The choosen body language mode.
     */
     public void setBodyLanguageMode(Integer bodyLanguageMode) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("setBodyLanguageMode", bodyLanguageMode);
-        else
-            call("setBodyLanguageMode", bodyLanguageMode).get();
+        call("setBodyLanguageMode", bodyLanguageMode).get();
     }
 
     /**
@@ -305,10 +272,7 @@ public class ALAnimatedSpeech extends ALProxy {
     * @param animationsPackage  The new package that contains animations.
     */
     public void declareAnimationsPackage(String animationsPackage) throws CallError, InterruptedException{
-        if (isAsynchronous)
-            call("declareAnimationsPackage", animationsPackage);
-        else
-            call("declareAnimationsPackage", animationsPackage).get();
+        call("declareAnimationsPackage", animationsPackage).get();
     }
 
 }
