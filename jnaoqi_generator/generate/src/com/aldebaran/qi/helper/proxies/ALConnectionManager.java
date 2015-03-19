@@ -58,7 +58,7 @@ public class ALConnectionManager extends ALProxy {
     * 
     * 
     */
-    public Object serviceName(String param1) throws CallError, InterruptedException {
+    public Object service(String param1) throws CallError, InterruptedException {
         return (Object)call("service", param1).get();
     }
 

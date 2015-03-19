@@ -161,8 +161,8 @@ public class ALMemory extends ALMemoryHelper {
     * @param signal  Name of the signal
     * @param event  Name of the event
     */
-    public void addMapping(String serviceName, String signal, String event) throws CallError, InterruptedException{
-        call("addMapping", serviceName, signal, event).get();
+    public void addMapping(String service, String signal, String event) throws CallError, InterruptedException{
+        call("addMapping", service, signal, event).get();
     }
 
     /**
@@ -171,8 +171,8 @@ public class ALMemory extends ALMemoryHelper {
     * @param service  Name of the service
     * @param signalEvent  A map of signal corresponding to event
     */
-    public void addMapping(String serviceName, Map<String, String> signalEvent) throws CallError, InterruptedException{
-        call("addMapping", serviceName, signalEvent).get();
+    public void addMapping(String service, Map<String, String> signalEvent) throws CallError, InterruptedException{
+        call("addMapping", service, signalEvent).get();
     }
 
     /**

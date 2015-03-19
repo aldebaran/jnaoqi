@@ -185,12 +185,12 @@ def translateArgument(signatures, paraminfo):
 def cleanJavaName(name):
     if name == "package":
         return "package1"
-    if name == "int":
-        return "integer"
-    if name == "string":
-        return "string1"
-    if name == "service":
-        return "serviceName"
+    # if name == "int":
+    #     return "integer"
+    # if name == "string":
+    #     return "string1"
+    # if name == "service":
+    #     return "serviceName"
 
     return name
 
