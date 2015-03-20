@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * This module allows you log errors, warnings, and info stdout or a file. The verbosity level allow you to  customize the output.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/core/allogger.html#allogger">NAOqi APIs for ALLogger </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/core/allogger.html#allogger">NAOqi APIs for ALLogger </a>
 *
 */
 public class ALLogger extends ALProxy {

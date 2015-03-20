@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 /**
 * Manages the focused Activity and Autonomous Life state
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/core/autonomouslife.html#autonomouslife">NAOqi APIs for ALAutonomousLife </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/core/autonomouslife.html#autonomouslife">NAOqi APIs for ALAutonomousLife </a>
 *
 */
 public class ALAutonomousLife extends ALProxy {

@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * Manage robot resources: Synchronize movement, led, sound. Run specific actions when another behavior wants your resources
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/core/alresourcemanager.html#alresourcemanager">NAOqi APIs for ALResourceManager </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/core/alresourcemanager.html#alresourcemanager">NAOqi APIs for ALResourceManager </a>
 *
 */
 public class ALResourceManager extends ALProxy {

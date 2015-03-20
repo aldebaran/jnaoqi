@@ -15,7 +15,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * 
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/core/alsystem.html#alsystem">NAOqi APIs for ALSystem </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/core/alsystem.html#alsystem">NAOqi APIs for ALSystem </a>
 *
 */
 public class ALSystem extends ALProxy {

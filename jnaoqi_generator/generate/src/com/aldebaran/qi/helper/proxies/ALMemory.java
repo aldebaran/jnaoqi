@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 /**
 * ALMemory provides a centralized memory that can be used to store and retrieve named values. It also acts as a hub for the distribution of event notifications.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/core/almemory.html#almemory">NAOqi APIs for ALMemory </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/core/almemory.html#almemory">NAOqi APIs for ALMemory </a>
 *
 */
 public class ALMemory extends ALMemoryHelper {

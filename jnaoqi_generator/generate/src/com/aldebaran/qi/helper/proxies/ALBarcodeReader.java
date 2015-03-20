@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * This module allows the search for barcodes in the camera image.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/vision/albarcodereader.html#albarcodereader">NAOqi APIs for ALBarcodeReader </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/vision/albarcodereader.html#albarcodereader">NAOqi APIs for ALBarcodeReader </a>
 *
 */
 public class ALBarcodeReader extends ALProxy {

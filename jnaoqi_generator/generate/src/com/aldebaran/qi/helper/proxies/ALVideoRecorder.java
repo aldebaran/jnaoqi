@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * This module provides methods to record videos and store them on disk.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/vision/alvideorecorder.html#alvideorecorder">NAOqi APIs for ALVideoRecorder </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/vision/alvideorecorder.html#alvideorecorder">NAOqi APIs for ALVideoRecorder </a>
 *
 */
 public class ALVideoRecorder extends ALProxy {

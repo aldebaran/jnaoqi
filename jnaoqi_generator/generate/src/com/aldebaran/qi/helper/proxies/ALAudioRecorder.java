@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * This module records NAO's microphones signals into sound files.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/audio/alaudiorecorder.html#alaudiorecorder">NAOqi APIs for ALAudioRecorder </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/audio/alaudiorecorder.html#alaudiorecorder">NAOqi APIs for ALAudioRecorder </a>
 *
 */
 public class ALAudioRecorder extends ALProxy {

@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * This module is dedicated to Aldebaran Robots Diagnosis.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/diagnosis/aldiagnosis.html#aldiagnosis">NAOqi APIs for ALDiagnosis </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/diagnosis/aldiagnosis.html#aldiagnosis">NAOqi APIs for ALDiagnosis </a>
 *
 */
 public class ALDiagnosis extends ALProxy {

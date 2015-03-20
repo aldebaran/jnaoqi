@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * This module is dedicated to inform if the robot is touched [joints or button]
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/sensors/altouch.html#altouch">NAOqi APIs for ALTouch </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/sensors/altouch.html#altouch">NAOqi APIs for ALTouch </a>
 *
 */
 public class ALTouch extends ALProxy {

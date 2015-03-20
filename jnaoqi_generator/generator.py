@@ -67,8 +67,8 @@ EXPECTED_CLOSER = dict(zip(OPENERS, CLOSERS))
 
 linksDicOverview = {}
 linksDicApi = {}
-docURLRoot = "http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/"
-#docURLRoot = "http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/"
+# docURLRoot = "http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/"
+docURLRoot = "http://doc.aldebaran.com/2-1/naoqi/"
 
 def get_subtrees(closer, symbols):
     trees = []

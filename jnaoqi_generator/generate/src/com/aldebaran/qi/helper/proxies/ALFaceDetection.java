@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * 
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/peopleperception/alfacedetection.html#alfacedetection">NAOqi APIs for ALFaceDetection </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/peopleperception/alfacedetection.html#alfacedetection">NAOqi APIs for ALFaceDetection </a>
 *
 */
 public class ALFaceDetection extends ALProxy {

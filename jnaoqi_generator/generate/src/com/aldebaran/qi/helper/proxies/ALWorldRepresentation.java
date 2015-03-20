@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * 
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/core/worldrepresentation.html#alworldrepresentation">NAOqi APIs for ALWorldRepresentation </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/core/worldrepresentation.html#alworldrepresentation">NAOqi APIs for ALWorldRepresentation </a>
 *
 */
 public class ALWorldRepresentation extends ALProxy {

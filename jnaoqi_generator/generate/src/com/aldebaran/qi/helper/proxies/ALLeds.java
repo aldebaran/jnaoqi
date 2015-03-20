@@ -16,7 +16,7 @@ import java.util.List;
 Groups of LEDs typically include face LEDs, ear LEDs etc. It is also possible to control each LED separately (for example, each of the 8 LEDs in one NAO's eyes).
 There are three primary colors of LEDs available - red, green and blue, so it is possible to combine them to obtain different colors. The ears contain blue LEDs only.
 It is possible to control the LED's intensity (between 0 and 100%).
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/sensors/alleds.html#alleds">NAOqi APIs for ALLeds </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/sensors/alleds.html#alleds">NAOqi APIs for ALLeds </a>
 *
 */
 public class ALLeds extends ALProxy {

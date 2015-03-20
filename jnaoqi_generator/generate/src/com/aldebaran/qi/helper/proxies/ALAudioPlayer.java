@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * This module allows to play wav and mp3 files on NAO
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/audio/alaudioplayer.html#alaudioplayer">NAOqi APIs for ALAudioPlayer </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/audio/alaudioplayer.html#alaudioplayer">NAOqi APIs for ALAudioPlayer </a>
 *
 */
 public class ALAudioPlayer extends ALProxy {

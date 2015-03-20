@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * This module computes the direction of the look of a person from the orientation of his/her face. It is then possible to know if the person looks at the robot or not.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/peopleperception/algazeanalysis.html#algazeanalysis">NAOqi APIs for ALGazeAnalysis </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/peopleperception/algazeanalysis.html#algazeanalysis">NAOqi APIs for ALGazeAnalysis </a>
 *
 */
 public class ALGazeAnalysis extends ALProxy {

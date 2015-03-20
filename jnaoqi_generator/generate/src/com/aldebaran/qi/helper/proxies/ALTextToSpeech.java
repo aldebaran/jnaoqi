@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * This module embeds a speech synthetizer whose role is to convert text commands into sound waves that are then either sent to Nao's loudspeakers or written into a file. This service supports several languages and some parameters of the synthetizer can be tuned to change each language's synthetic voice.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/audio/altexttospeech.html#altexttospeech">NAOqi APIs for ALTextToSpeech </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/audio/altexttospeech.html#altexttospeech">NAOqi APIs for ALTextToSpeech </a>
 *
 */
 public class ALTextToSpeech extends ALProxy {

@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * Use ALRobotPosture module to make the robot go tothe asked posture.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/motion/alrobotposture.html#alrobotposture">NAOqi APIs for ALRobotPosture </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/motion/alrobotposture.html#alrobotposture">NAOqi APIs for ALRobotPosture </a>
 *
 */
 public class ALRobotPosture extends ALProxy {

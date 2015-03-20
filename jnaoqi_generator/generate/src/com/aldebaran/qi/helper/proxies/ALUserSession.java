@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 /**
 * Manages the state of active users, and the bindings to their data.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/core/alusersession.html#alusersession">NAOqi APIs for ALUserSession </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/core/alusersession.html#alusersession">NAOqi APIs for ALUserSession </a>
 *
 */
 public class ALUserSession extends ALProxy {

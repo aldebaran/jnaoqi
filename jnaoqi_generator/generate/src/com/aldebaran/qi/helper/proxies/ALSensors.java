@@ -14,7 +14,7 @@ import java.util.List;
 /**
 * Deals with sensors. 
  Activate the events : "BodyStiffnessChanged".
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/sensors/alsensors.html#alsensors">NAOqi APIs for ALSensors </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/sensors/alsensors.html#alsensors">NAOqi APIs for ALSensors </a>
 *
 */
 public class ALSensors extends ALProxy {

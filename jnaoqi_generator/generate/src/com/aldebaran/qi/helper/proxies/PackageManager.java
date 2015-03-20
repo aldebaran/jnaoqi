@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 /**
 * 
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/core/packagemanager.html#packagemanager">NAOqi APIs for PackageManager </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/core/packagemanager.html#packagemanager">NAOqi APIs for PackageManager </a>
 *
 */
 public class PackageManager extends ALProxy {

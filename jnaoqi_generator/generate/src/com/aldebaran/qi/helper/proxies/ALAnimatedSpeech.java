@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * The Animated Speech module makes NAO interpret a text annotated with behaviors.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/audio/alanimatedspeech.html#alanimatedspeech">NAOqi APIs for ALAnimatedSpeech </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/audio/alanimatedspeech.html#alanimatedspeech">NAOqi APIs for ALAnimatedSpeech </a>
 *
 */
 public class ALAnimatedSpeech extends ALProxy {

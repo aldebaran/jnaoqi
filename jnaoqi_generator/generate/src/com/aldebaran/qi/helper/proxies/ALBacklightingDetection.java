@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * This module enables to check if the image of the camera is backlit
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/vision/albacklightingdetection.html#albacklightingdetection">NAOqi APIs for ALBacklightingDetection </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/vision/albacklightingdetection.html#albacklightingdetection">NAOqi APIs for ALBacklightingDetection </a>
 *
 */
 public class ALBacklightingDetection extends ALProxy {

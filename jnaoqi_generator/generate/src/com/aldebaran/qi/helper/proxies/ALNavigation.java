@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * Use ALNavigation module to make the robot go safely to the asked pose2D.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/motion/alnavigation.html#alnavigation">NAOqi APIs for ALNavigation </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/motion/alnavigation.html#alnavigation">NAOqi APIs for ALNavigation </a>
 *
 */
 public class ALNavigation extends ALProxy {

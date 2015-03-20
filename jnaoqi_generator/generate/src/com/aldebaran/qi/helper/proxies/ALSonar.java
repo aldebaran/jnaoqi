@@ -14,7 +14,7 @@ import java.util.List;
 /**
 * Deals with ultrasonic sensors.
 
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/sensors/alsonar.html#alsonar">NAOqi APIs for ALSonar </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/sensors/alsonar.html#alsonar">NAOqi APIs for ALSonar </a>
 *
 */
 public class ALSonar extends ALProxy {

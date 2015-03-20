@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * Use ALTracker module to make the robot track an object or a person with head and arms or not.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/trackers/altracker.html#altracker">NAOqi APIs for ALTracker </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/trackers/altracker.html#altracker">NAOqi APIs for ALTracker </a>
 *
 */
 public class ALTracker extends ALProxy {

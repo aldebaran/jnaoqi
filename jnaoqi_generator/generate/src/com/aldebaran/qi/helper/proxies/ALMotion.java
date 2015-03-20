@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * ALMotion provides methods that help make Nao move. It contains commands for manipulating joint angles, joint stiffness, and a higher level API for controling walks.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/motion/almotion.html#almotion">NAOqi APIs for ALMotion </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/motion/almotion.html#almotion">NAOqi APIs for ALMotion </a>
 *
 */
 public class ALMotion extends ALProxy {

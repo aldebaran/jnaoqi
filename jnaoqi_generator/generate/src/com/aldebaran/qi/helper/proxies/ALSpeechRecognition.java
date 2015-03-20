@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * ALSpeechRecognition gives access to the embedded voice recognition system. It can be dynamically modified. This class allows user to load the current words list that should be recognized. The result of the recognition engine is located in the ALMemory's key: "WordRecognized". The structure of the result is an array :  [ (string) word , (float) confidence ]
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/audio/alspeechrecognition.html#alspeechrecognition">NAOqi APIs for ALSpeechRecognition </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/audio/alspeechrecognition.html#alspeechrecognition">NAOqi APIs for ALSpeechRecognition </a>
 *
 */
 public class ALSpeechRecognition extends ALProxy {

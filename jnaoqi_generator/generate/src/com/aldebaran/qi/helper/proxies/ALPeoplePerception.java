@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * This module controls the People Perception flow and pushes information about detected people in ALMemory.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/peopleperception/alpeopleperception.html#alpeopleperception">NAOqi APIs for ALPeoplePerception </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/peopleperception/alpeopleperception.html#alpeopleperception">NAOqi APIs for ALPeoplePerception </a>
 *
 */
 public class ALPeoplePerception extends ALProxy {

@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * This module provides methods to take pictures and store them on disk.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/vision/alphotocapture.html#alphotocapture">NAOqi APIs for ALPhotoCapture </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/vision/alphotocapture.html#alphotocapture">NAOqi APIs for ALPhotoCapture </a>
 *
 */
 public class ALPhotoCapture extends ALProxy {

@@ -11,7 +11,7 @@ import com.aldebaran.qi.Session;
 import com.aldebaran.qi.helper.ALProxy;
 /**
 * 
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/core/alstore.html#alstore">NAOqi APIs for ALStore </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/core/alstore.html#alstore">NAOqi APIs for ALStore </a>
 *
 */
 public class ALStore extends ALProxy {

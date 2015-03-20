@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * This module enables to detect if the robot is in a dark environment
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/vision/aldarknessdetection.html#aldarknessdetection">NAOqi APIs for ALDarknessDetection </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/vision/aldarknessdetection.html#aldarknessdetection">NAOqi APIs for ALDarknessDetection </a>
 *
 */
 public class ALDarknessDetection extends ALProxy {

@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * This module works with Linux Infrared Remote Control (LIRC) in order to emit/receive IR remotes keys or to emit/receive IR information to/from an other Nao.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/sensors/alinfrared.html#alinfrared">NAOqi APIs for ALInfrared </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/sensors/alinfrared.html#alinfrared">NAOqi APIs for ALInfrared </a>
 *
 */
 public class ALInfrared extends ALProxy {

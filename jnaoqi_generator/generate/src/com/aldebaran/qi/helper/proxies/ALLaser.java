@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * Allow control over Hokuyo laser when available on Nao's head.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/sensors/allaser.html#allaser">NAOqi APIs for ALLaser </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/sensors/allaser.html#allaser">NAOqi APIs for ALLaser </a>
 *
 */
 public class ALLaser extends ALProxy {

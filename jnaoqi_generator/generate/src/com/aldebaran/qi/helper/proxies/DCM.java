@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * Manage link with devices (sensors and actuators). See specific documentation.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/sensors/dcm.html#dcm">NAOqi APIs for DCM </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/sensors/dcm.html#dcm">NAOqi APIs for DCM </a>
 *
 */
 public class DCM extends ALProxy {

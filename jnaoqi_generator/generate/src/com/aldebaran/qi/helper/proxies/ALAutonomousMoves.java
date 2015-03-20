@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * Module that manage the background moves automatically started by the robot.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/motion/autonomousmoves.html#autonomousmoves">NAOqi APIs for ALAutonomousMoves </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/motion/autonomousmoves.html#autonomousmoves">NAOqi APIs for ALAutonomousMoves </a>
 *
 */
 public class ALAutonomousMoves extends ALProxy {

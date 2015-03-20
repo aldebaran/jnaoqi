@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * 
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/vision/almovementdetection.html#almovementdetection">NAOqi APIs for ALMovementDetection </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/vision/almovementdetection.html#almovementdetection">NAOqi APIs for ALMovementDetection </a>
 *
 */
 public class ALMovementDetection extends ALProxy {

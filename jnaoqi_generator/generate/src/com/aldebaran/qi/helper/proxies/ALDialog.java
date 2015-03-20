@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * ALDialog is the dialog module. It allows loading a dialog file (.top), starts/stops/loads/unloads the dialog
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/audio/dialog/aldialog.html#aldialog">NAOqi APIs for ALDialog </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/audio/dialog/aldialog.html#aldialog">NAOqi APIs for ALDialog </a>
 *
 */
 public class ALDialog extends ALProxy {

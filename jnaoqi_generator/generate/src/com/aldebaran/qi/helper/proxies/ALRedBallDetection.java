@@ -28,7 +28,7 @@ import java.util.List;
   Tag camera_info_robotFrame = [x, y, z, wx, wy, wz] in FRAME_ROBOT (see motion documentation)
   Tag camera_id = id of the active camera (see videodevice documentation)
 
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/vision/alredballdetection.html#alredballdetection">NAOqi APIs for ALRedBallDetection </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/vision/alredballdetection.html#alredballdetection">NAOqi APIs for ALRedBallDetection </a>
 *
 */
 public class ALRedBallDetection extends ALProxy {

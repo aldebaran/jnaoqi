@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * 
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/core/alpreferencemanager.html#alpreferencemanager">NAOqi APIs for ALPreferenceManager </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/core/alpreferencemanager.html#alpreferencemanager">NAOqi APIs for ALPreferenceManager </a>
 *
 */
 public class ALPreferenceManager extends ALProxy {

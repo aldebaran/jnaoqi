@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * 
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/vision/alvisualcompass.html#alvisualcompass">NAOqi APIs for ALVisualCompass </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/vision/alvisualcompass.html#alvisualcompass">NAOqi APIs for ALVisualCompass </a>
 *
 */
 public class ALVisualCompass extends ALProxy {

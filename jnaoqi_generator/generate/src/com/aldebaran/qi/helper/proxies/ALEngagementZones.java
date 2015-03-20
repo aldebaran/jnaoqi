@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * This module enables to compue the engagement zones of detected people or detected movements
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/peopleperception/alengagementzones.html#alengagementzones">NAOqi APIs for ALEngagementZones </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/peopleperception/alengagementzones.html#alengagementzones">NAOqi APIs for ALEngagementZones </a>
 *
 */
 public class ALEngagementZones extends ALProxy {

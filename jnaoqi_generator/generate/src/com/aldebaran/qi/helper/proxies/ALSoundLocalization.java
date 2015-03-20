@@ -17,7 +17,7 @@ import java.util.List;
  One event is created when nao locates a sound source : ALSoundLocalization/SoundLocated.
  ALSoundLocalization/SoundLocated : [ [time(sec), time(usec)], [azimuth, elevation, confidence, (optional: energy)] , [Head Position[6D]] ] 
 
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/audio/alsoundlocalization.html#alsoundlocalization">NAOqi APIs for ALSoundLocalization </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/audio/alsoundlocalization.html#alsoundlocalization">NAOqi APIs for ALSoundLocalization </a>
 *
 */
 public class ALSoundLocalization extends ALProxy {

@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * Notification manager: Handle all notifications on the robot.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/notificationmanager/index.html#alnotificationmanager">NAOqi APIs for ALNotificationManager </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/notificationmanager/index.html#alnotificationmanager">NAOqi APIs for ALNotificationManager </a>
 *
 */
 public class ALNotificationManager extends ALProxy {

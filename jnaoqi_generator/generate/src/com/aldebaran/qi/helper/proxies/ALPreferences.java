@@ -18,7 +18,7 @@ pParams[0] Name of the preference;
 pParams[1] Description of the preference; 
 pParams[2] The value of the preference (can contain other preferences); 
 pParams[3] (optional) The name of the data when inserted into memory.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/core/alpreferences.html#alpreferences">NAOqi APIs for ALPreferences </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/core/alpreferences.html#alpreferences">NAOqi APIs for ALPreferences </a>
 *
 */
 public class ALPreferences extends ALProxy {

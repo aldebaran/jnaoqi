@@ -14,7 +14,7 @@ import java.util.List;
 /**
 * This module is intended to manage behaviors. With this module, you can load, start, stop behaviors, add default behaviors or remove them. 
 
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/core/albehaviormanager.html#albehaviormanager">NAOqi APIs for ALBehaviorManager </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/core/albehaviormanager.html#albehaviormanager">NAOqi APIs for ALBehaviorManager </a>
 *
 */
 public class ALBehaviorManager extends ALProxy {

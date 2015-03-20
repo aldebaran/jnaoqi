@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * This module enables to extract information from the characteristics of the faces of detected people.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/peopleperception/alfacecharacteristics.html#alfacecharacteristics">NAOqi APIs for ALFaceCharacteristics </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/peopleperception/alfacecharacteristics.html#alfacecharacteristics">NAOqi APIs for ALFaceCharacteristics </a>
 *
 */
 public class ALFaceCharacteristics extends ALProxy {

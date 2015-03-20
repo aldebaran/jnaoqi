@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * VisualSpaceHistory module
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/vision/alvisualspacehistory.html#alvisualspacehistory">NAOqi APIs for ALVisualSpaceHistory </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/vision/alvisualspacehistory.html#alvisualspacehistory">NAOqi APIs for ALVisualSpaceHistory </a>
 *
 */
 public class ALVisualSpaceHistory extends ALProxy {

@@ -15,7 +15,7 @@ import java.util.List;
 * ALColorBlobDetection is a module which can detect blobs of a certain color.
   The output value is written in ALMemory has a Tracker microEvent.
  
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/vision/alcolorblobdetection.html#alcolorblobdetection">NAOqi APIs for ALColorBlobDetection </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/vision/alcolorblobdetection.html#alcolorblobdetection">NAOqi APIs for ALColorBlobDetection </a>
 *
 */
 public class ALColorBlobDetection extends ALProxy {

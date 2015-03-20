@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * The ALAudioDevice module allows other modules to access to the sound data of the nao's microphones, and to send sound toward its loudspeakers  The way to receive or send the audio data depends whether the modules are local (dynamic library) or remote (executable).
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/audio/alaudiodevice.html#alaudiodevice">NAOqi APIs for ALAudioDevice </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/audio/alaudiodevice.html#alaudiodevice">NAOqi APIs for ALAudioDevice </a>
 *
 */
 public class ALAudioDevice extends ALProxy {

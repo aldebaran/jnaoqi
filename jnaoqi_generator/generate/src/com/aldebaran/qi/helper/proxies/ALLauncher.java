@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * ALlauncher allows to link dynamicaly with library, run executable, unload library, check if module is loaded...
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/core/allauncher.html#allauncher">NAOqi APIs for ALLauncher </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/core/allauncher.html#allauncher">NAOqi APIs for ALLauncher </a>
 *
 */
 public class ALLauncher extends ALProxy {

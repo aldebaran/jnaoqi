@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * Handle chest button activity.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/sensors/alchestbutton.html#alchestbutton">NAOqi APIs for ALChestButton </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/sensors/alchestbutton.html#alchestbutton">NAOqi APIs for ALChestButton </a>
 *
 */
 public class ALChestButton extends ALProxy {

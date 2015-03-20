@@ -29,7 +29,7 @@ and boundary_points = [[x0,y0], [x1,y1], ..., [xN,yN]]
 - ratio represents the number of keypoints found for the object in the current frame divided by the number of keypoints found during the learning stage. 
 - boundary_points is a list of points coordinates in angle values representing the reprojection in the current image of the boundaries selected during the learning stage. 
 
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/vision/alvisionrecognition.html#alvisionrecognition">NAOqi APIs for ALVisionRecognition </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/vision/alvisionrecognition.html#alvisionrecognition">NAOqi APIs for ALVisionRecognition </a>
 *
 */
 public class ALVisionRecognition extends ALProxy {

@@ -14,7 +14,7 @@ import java.util.List;
 /**
 * Deals with motor temperature.
 A event name HotJointDetected is raised when at least one motor has higher temperature.
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/sensors/albodytemperature.html#albodytemperature">NAOqi APIs for ALBodyTemperature </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/sensors/albodytemperature.html#albodytemperature">NAOqi APIs for ALBodyTemperature </a>
 *
 */
 public class ALBodyTemperature extends ALProxy {

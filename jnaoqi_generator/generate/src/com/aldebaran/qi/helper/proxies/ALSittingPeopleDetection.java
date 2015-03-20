@@ -13,7 +13,7 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * This module contains ...
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.1/aldeb-doc/naoqi/peopleperception/alsittingpeopledetection.html#alsittingpeopledetection">NAOqi APIs for ALSittingPeopleDetection </a>
+* @see <a href="http://doc.aldebaran.com/2-1/naoqi/peopleperception/alsittingpeopledetection.html#alsittingpeopledetection">NAOqi APIs for ALSittingPeopleDetection </a>
 *
 */
 public class ALSittingPeopleDetection extends ALProxy {
