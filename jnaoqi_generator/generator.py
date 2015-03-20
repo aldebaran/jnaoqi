@@ -60,7 +60,7 @@ public class %(module_name)s extends %(module_parent)s {
     """
 
 BLACKLIST_METHODS = set("registerEvent, unregisterEvent, metaObject, terminate, property, setProperty, registerEventWithSignature, enableStats, enableTrace, pCall, stats, properties".split(", "))
-BLACKLIST_MODULES = set("ALTabletService, ALFindPersonHead")
+BLACKLIST_MODULES = set("ALTabletService, ALFindPersonHead".split(", "))
 
 OPENERS, CLOSERS = '([{<', ')]}>'
 EXPECTED_CLOSER = dict(zip(OPENERS, CLOSERS))
@@ -235,10 +235,9 @@ def generate_java(address):
         shutil.rmtree(directory)
 
     os.makedirs(directory)
-
     for module_name, service in _iter_services(address):
 
-        if module_name in linksDicOverview:
+        if module_name in linksDicOverview and module_name not in BLACKLIST_MODULES:
             content = ""
             meta = service.metaObject()
             module_desc = meta["description"]
