@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,17 +12,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.aldebaran.qi.Application;
 import com.aldebaran.qi.CallError;
 import com.aldebaran.qi.Session;
-import com.aldebaran.qi.helper.ALInterface;
-import com.aldebaran.qi.helper.ALProxy;
-import com.aldebaran.qi.helper.proxies.ALMemory;
 import com.aldebaran.qi.helper.proxies.ALMotion;
 import com.aldebaran.qi.helper.proxies.ALRobotPosture;
 import com.aldebaran.qi.helper.proxies.ALTextToSpeech;
@@ -36,7 +29,7 @@ import com.aldebaran.qi.helper.proxies.ALTextToSpeech;
  * The class implements ALInterface in order to be able to know if a given ALProxy could be correctly
  * created with the given session.
  */
-public class MainActivity extends FragmentActivity implements ALInterface{
+public class MainActivity extends FragmentActivity{
 
     private static final String TAG = "MyActivity";
     private Session session;
@@ -65,34 +58,23 @@ public class MainActivity extends FragmentActivity implements ALInterface{
         if (session != null) {
             Log.i(TAG, "showing fragment");
             // Call onProxyReady when a ALProxy is correctly initiated, or onProxyException otherwise.
-            ALProxy.alInterface = this;
-            // Create an instance of the needed ALProxy: ALMotion, ALTextToSpeech and ALRobotPosture
-            motion = new ALMotion(session);
-            // Calls should be done in asynchronous, by default this is false.
-            motion.setAsynchronous(true);
-            speech = new ALTextToSpeech(session);
-            speech.setAsynchronous(true);
-            posture = new ALRobotPosture(session);
-            posture.setAsynchronous(true);
-            getSupportFragmentManager().beginTransaction().show(this.placeholderFragment).commit();
-
-            try {
-                setButtonsLabels();
-            } catch (Exception e) {
+           try {
+               // Create an instance of the needed ALProxy: ALMotion, ALTextToSpeech and ALRobotPosture
+               motion = new ALMotion(session);
+               speech = new ALTextToSpeech(session);
+               posture = new ALRobotPosture(session);
+               if (motion != null)
+                   setMotionLayoutVisible();
+               if (speech != null)
+                   setSpeechLayoutVisible();
+               if (posture != null)
+                   setPostureLayoutVisible();
+               getSupportFragmentManager().beginTransaction().show(this.placeholderFragment).commit();
+           }
+           catch(Exception e){
                 e.printStackTrace();
-            }
+           }
         }
-    }
-
-    private void setButtonsLabels() throws Exception{
-        if (motion.robotIsWakeUp() == true)
-            ((Button) findViewById(R.id.rest_wake_button)).setText(getString(R.string.rest));
-        else
-            ((Button) findViewById(R.id.rest_wake_button)).setText(getString(R.string.wake));
-        if (posture.getPosture() == "Stand")
-            ((Button) findViewById(R.id.sit_stand_button)).setText(getString(R.string.sit));
-        else
-            ((Button) findViewById(R.id.sit_stand_button)).setText(getString(R.string.stand));
     }
 
     public void hidePlaceHolderFragment(){
@@ -100,7 +82,6 @@ public class MainActivity extends FragmentActivity implements ALInterface{
                 .hide(this.placeholderFragment)
                 .commit();
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -158,26 +139,7 @@ public class MainActivity extends FragmentActivity implements ALInterface{
     }
 
     public void onRestController(View view){
-        try{
-            Button button = (Button) view;
-            if(button.getText().equals(getString(R.string.rest))) {
-                if (speech != null)
-                    speech.say(getString(R.string.rest));
-                    motion.rest();
-
-                button.setText(getString(R.string.wake));
-            }
-            else {
-                if (speech != null)
-                    speech.say(getString(R.string.wake));
-                motion.wakeUp();
-                button.setText(getString(R.string.rest));
-            }
-        } catch (CallError callError) {
-            callError.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        new RestWakeUpTask(motion, speech, getString(R.string.rest), getString(R.string.wake)).execute(view);
     }
 
     public void onSitController(View view){
@@ -203,36 +165,55 @@ public class MainActivity extends FragmentActivity implements ALInterface{
 
     public void onGoToFront(View view) throws InterruptedException, CallError {
         velocityX += 0.2f;
-        motion.moveToward(velocityX, velocityY, 0f);
+        new MoveTask(motion).execute(velocityX, velocityY);
     }
 
     public void onStop(View view) throws InterruptedException, CallError {
         velocityX = 0f;
         velocityY = 0f;
-        motion.moveToward(velocityX, velocityY, 0f);
+        new MoveTask(motion).execute(velocityX, velocityY);
     }
 
     public void onGoToLeft(View view) throws InterruptedException, CallError {
         velocityY += 0.2f;
-        motion.moveToward(velocityX, velocityY, 0f);
+        new MoveTask(motion).execute(velocityX, velocityY);
     }
 
     public void onGoToRight(View view) throws InterruptedException, CallError {
         velocityY -= 0.2f;
-        motion.moveToward(velocityX, velocityY, 0f);
+        new MoveTask(motion).execute(velocityX, velocityY);
     }
 
     public void onGoToBack(View view) throws InterruptedException, CallError {
         velocityX -= 0.2f;
-        motion.moveToward(velocityX, velocityY, 0f);
+        new MoveTask(motion).execute(velocityX, velocityY);
     }
 
 
     public void say(View view) throws InterruptedException, CallError {
         String text = ((EditText)findViewById(R.id.text_to_say)).getText().toString();
-        speech.say(text);
+        new SpeechTask(speech).execute(text);
     }
 
+    private void setMotionLayoutVisible() throws Exception{
+        findViewById(R.id.moving_layout).setVisibility(View.VISIBLE);
+        findViewById(R.id.motion_layout).setVisibility(View.VISIBLE);
+        if (motion.robotIsWakeUp() == true)
+            ((Button) findViewById(R.id.rest_wake_button)).setText(getString(R.string.rest));
+        else
+            ((Button) findViewById(R.id.rest_wake_button)).setText(getString(R.string.wake));
+    }
+    private void setSpeechLayoutVisible(){
+        findViewById(R.id.tts_layout).setVisibility(View.VISIBLE);
+    }
+    private void setPostureLayoutVisible()throws Exception{
+        findViewById(R.id.sit_stand_button).setVisibility(View.VISIBLE);
+        if (posture.getPosture() == "Stand")
+            ((Button) findViewById(R.id.sit_stand_button)).setText(getString(R.string.sit));
+        else
+            ((Button) findViewById(R.id.sit_stand_button)).setText(getString(R.string.stand));
+    }
+    /*
     @Override
     public void onProxyReady(String name) {
 
@@ -256,6 +237,7 @@ public class MainActivity extends FragmentActivity implements ALInterface{
             speech = null;
         }
     }
+    */
 
     /**
      * A placeholder fragment containing a simple view.
