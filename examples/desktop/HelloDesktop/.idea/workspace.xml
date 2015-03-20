@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="221bd41e-b0ee-4d86-90df-8b0f32ff6c7b" name="Default" comment="Update example package and add example to sounds">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jars/java-naoqi-sdk-2.1.4-android.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jars/java-naoqi-sdk-2.1.4-atom.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jars/java-naoqi-sdk-2.1.4-linux32.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jars/java-naoqi-sdk-2.1.4-linux64.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jars/java-naoqi-sdk-2.1.4-mac64.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jars/java-naoqi-sdk-2.1.4-windows32.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/libqi-java-2.1.3-android.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/libqi-java-2.1.3-atom.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/libqi-java-2.1.3-linux32.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/libqi-java-2.1.3-linux64.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/libqi-java-2.1.3-mac64.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../jnaoqi_generator/generate/lib/libqi-java-2.1.3-win32.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="221bd41e-b0ee-4d86-90df-8b0f32ff6c7b" name="Default" comment="Update example package and add example to sounds" />
     <list id="91f96988-3be8-44e7-9de6-99d028edb03b" name="New changelist" comment="" />
     <ignored path="HelloDesktop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -946,7 +932,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
