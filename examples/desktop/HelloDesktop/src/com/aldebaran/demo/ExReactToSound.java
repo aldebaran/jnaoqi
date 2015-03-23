@@ -28,8 +28,7 @@ public class ExReactToSound {
 
     private static Application application;
 
-    private static ALMemory alMemory;
-    private static ALSoundLocalization sound;
+	private static ALSoundLocalization sound;
     private static ALMotion motion;
 
     public static void main(String[] args) {
@@ -37,78 +36,78 @@ public class ExReactToSound {
         application = new Application(args, RobotInfo.URL);
         try {
             application.start();
-            alMemory = new ALMemory(application.session());
+	        ALMemory alMemory = new ALMemory(application.session());
             sound = new ALSoundLocalization(application.session());
             motion = new ALMotion(application.session());
             motion.wakeUp();
             sound.subscribe("demo");
             alMemory.subscribeToEvent("ALSoundLocalization/SoundLocated",
-                    new EventCallback<ArrayList<?>>() {
-                        ArrayList<Float> torsoCoord;
-                        ArrayList<Float> soundParam;
-                        float azimuth;
-                        float elevation;
-                        float confidence;
+		            new EventCallback<ArrayList<?>>() {
+			            ArrayList<Float> torsoCoord;
+			            ArrayList<Float> soundParam;
+			            float azimuth;
+			            float elevation;
+			            float confidence;
 
-                        @SuppressWarnings("unchecked")
-                        @Override
-                        public void onEvent(ArrayList<?> sound)
-                                throws InterruptedException, CallError {
+			            @SuppressWarnings("unchecked")
+			            @Override
+			            public void onEvent(ArrayList<?> sound)
+					            throws InterruptedException, CallError {
 
-                            if (sound != null && sound.size() >= 3) {
-                                soundParam = (ArrayList<Float>) sound.get(1);
-                                // torsoCoord is a 6 dimensional vector
-                                // containing [x, y, z, Wx,
-                                // Wy, Wz], where Wx is the rotation around X
-                                // axis, etc.
-                                torsoCoord = (ArrayList<Float>) sound.get(2);
-                                System.out.println("" + torsoCoord);
+				            if (sound != null && sound.size() >= 3) {
+					            soundParam = (ArrayList<Float>) sound.get(1);
+					            // torsoCoord is a 6 dimensional vector
+					            // containing [x, y, z, Wx,
+					            // Wy, Wz], where Wx is the rotation around X
+					            // axis, etc.
+					            torsoCoord = (ArrayList<Float>) sound.get(2);
+					            System.out.println("" + torsoCoord);
 
-                                if (soundParam.size() >= 4) {
-                                    azimuth = soundParam.get(0)
-                                            + torsoCoord.get(5);
-                                    elevation = soundParam.get(1)
-                                            + torsoCoord.get(4);
+					            if (soundParam.size() >= 4) {
+						            azimuth = soundParam.get(0)
+								            + torsoCoord.get(5);
+						            elevation = soundParam.get(1)
+								            + torsoCoord.get(4);
 
-                                    confidence = soundParam.get(3);
-                                    System.out.println(" Level: "
-                                            + soundParam.get(3) + "isMoving "
-                                            + motion.moveIsActive());
+						            confidence = soundParam.get(3);
+						            System.out.println(" Level: "
+								            + soundParam.get(3) + "isMoving "
+								            + motion.moveIsActive());
 
-                                    if (confidence > 0.3) {
-                                        // limitate neck movement.
-                                        if (azimuth > 1.0)
-                                            azimuth = 1.0f;
-                                        else if (azimuth < -1.0)
-                                            azimuth = -1.0f;
-                                        System.out.println("azimuth " + azimuth
-                                                + " elevation " + elevation);
-                                        List<String> names = new ArrayList<String>();
-                                        names.add("HeadYaw");
-                                        names.add("HeadPitch");
-                                        List<Float> angles = new ArrayList<Float>();
-                                        angles.add(azimuth);
-                                        angles.add(elevation);
-                                        motion.setAngles(names, angles, 0.3f);
-                                    }
-                                }
-                            }
-                        }
-                    });
+						            if (confidence > 0.3) {
+							            // limitate neck movement.
+							            if (azimuth > 1.0)
+								            azimuth = 1.0f;
+							            else if (azimuth < -1.0)
+								            azimuth = -1.0f;
+							            System.out.println("azimuth " + azimuth
+									            + " elevation " + elevation);
+							            List<String> names = new ArrayList<String>();
+							            names.add("HeadYaw");
+							            names.add("HeadPitch");
+							            List<Float> angles = new ArrayList<Float>();
+							            angles.add(azimuth);
+							            angles.add(elevation);
+							            motion.setAngles(names, angles, 0.3f);
+						            }
+					            }
+				            }
+			            }
+		            });
 
             alMemory.subscribeToEvent("MiddleTactilTouched",
-                    new EventCallback<Float>() {
+		            new EventCallback<Float>() {
 
-                        @Override
-                        public void onEvent(Float touch)
-                                throws InterruptedException, CallError {
-                            if (touch == 1.0) {
-                                sound.unsubscribe("demo");
-                                motion.rest();
-                                application.stop();
-                            }
-                        }
-                    });
+			            @Override
+			            public void onEvent(Float touch)
+					            throws InterruptedException, CallError {
+				            if (touch == 1.0) {
+					            sound.unsubscribe("demo");
+					            motion.rest();
+					            application.stop();
+				            }
+			            }
+		            });
 
             application.run();
         } catch (Exception e) {

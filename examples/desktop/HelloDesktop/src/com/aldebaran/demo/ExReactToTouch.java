@@ -19,69 +19,42 @@ import com.aldebaran.qi.helper.proxies.ALTextToSpeech;
  */
 public class ExReactToTouch {
 
-    private static ALMemory alMemory;
-    private static ALTextToSpeech tts;
-    private static Application application;
+	private static ALTextToSpeech tts;
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
         String robotUrl = "tcp://" + RobotInfo.IP + ":" + RobotInfo.PORT;
-        application = new Application(args, robotUrl);
+		Application application = new Application(args, robotUrl);
         try {
             application.start();
 
-            alMemory = new ALMemory(application.session());
+	        ALMemory alMemory = new ALMemory(application.session());
             tts = new ALTextToSpeech(application.session());
 
 	        alMemory.subscribeToEvent("FrontTactilTouched", (touch) -> {
-		        if ((float)touch == 1.0) {
+		        if ((float) touch == 1.0) {
 			        tts.say("Front");
 		        }
 	        });
-
-            alMemory.subscribeToEvent("MiddleTactilTouched",
-                    new EventCallback<Float>() {
-
-                        @Override
-                        public void onEvent(Float touch)
-                                throws InterruptedException, CallError {
-                            if (touch == 1.0) {
-                                tts.say("Middle");
-                            }
-                        }
-                    });
-            alMemory.subscribeToEvent("RearTactilTouched",
-                    new EventCallback<Float>() {
-
-                        @Override
-                        public void onEvent(Float touch)
-                                throws InterruptedException, CallError {
-                            if (touch == 1.0) {
-                                tts.say("Rear");
-                            }
-                        }
-                    });
-            alMemory.subscribeToEvent("LeftBumperPressed",
-                    new EventCallback<Integer>() {
-
-                        @Override
-                        public void onEvent(Integer touch)
-                                throws InterruptedException, CallError {
-                            if (touch > 0) {
-                                tts.say("Left bumper");
-                            }
-                        }
-                    });
-            alMemory.subscribeToEvent("RightBumperPressed",
-                    new EventCallback<Float>() {
-
-                        @Override
-                        public void onEvent(Float touch)
-                                throws InterruptedException, CallError {
-                            if (touch > 0) {
-                                tts.say("Right bumper");
-                            }
-                        }
-                    });
+            alMemory.subscribeToEvent("MiddleTactilTouched", (touch) -> {
+	            if ((float) touch == 1.0) {
+		            tts.say("Middle");
+	            }
+            });
+            alMemory.subscribeToEvent("RearTactilTouched", (touch) -> {
+	            if ((float) touch == 1.0) {
+		            tts.say("Rear");
+	            }
+            });;
+            alMemory.subscribeToEvent("LeftBumperPressed", (touch) -> {
+	            if ((float) touch == 1.0) {
+		            tts.say("Left bumper");
+	            }
+            });
+            alMemory.subscribeToEvent("RightBumperPressed", (touch) -> {
+	            if ((float) touch == 1.0) {
+		            tts.say("Right bumper");
+	            }
+            });
 
             tts.say("I am ready");
             application.run();
