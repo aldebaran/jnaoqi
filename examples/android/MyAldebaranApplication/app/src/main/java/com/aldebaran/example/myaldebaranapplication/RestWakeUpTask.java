@@ -1,6 +1,7 @@
 package com.aldebaran.example.myaldebaranapplication;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.view.View;
 import android.widget.Button;
@@ -11,37 +12,43 @@ import com.aldebaran.qi.helper.proxies.ALMotion;
 import com.aldebaran.qi.helper.proxies.ALTextToSpeech;
 
 /**
- * Created by root on 20/03/15.
+ * Created by Thalia on 20/03/15.
  */
 public class RestWakeUpTask extends AsyncTask<View, Void, String>{
     ALMotion motion;
     ALTextToSpeech speech;
     Activity activity;
-    String rest, wakeUp;
     Button button;
+    ProgressDialog dialog;
 
-    public RestWakeUpTask(ALMotion motion, ALTextToSpeech speech, String rest, String wakeUp){
+    public RestWakeUpTask(ALMotion motion, ALTextToSpeech speech, Activity activity){
         this.motion = motion;
         this.speech = speech;
-        this.rest = rest;
-        this.wakeUp = wakeUp;
         this.activity = activity;
+        dialog = new ProgressDialog(activity);
+    }
+
+    @Override
+    protected void onPreExecute() {
+        this.dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        this.dialog.setMessage(activity.getString(R.string.wait_message));
+        this.dialog.show();
     }
     @Override
     protected String doInBackground(View... params) {
         button = (Button) params[0];
             try {
-                if(button.getText().equals(this.rest)) {
+                if(button.getText().equals(activity.getString(R.string.rest))) {
                     if (speech != null)
-                        speech.say(rest);
+                        speech.say(activity.getString(R.string.rest));
                     motion.rest();
-                    return this.wakeUp;
+                    return activity.getString(R.string.wake);
                 }
                 else {
                     if (speech != null)
-                        speech.say(wakeUp);
+                        speech.say(activity.getString(R.string.wake));
                     motion.wakeUp();
-                    return this.rest;
+                    return activity.getString(R.string.rest);
                 }
             } catch (CallError callError) {
                 callError.printStackTrace();
@@ -52,6 +59,10 @@ public class RestWakeUpTask extends AsyncTask<View, Void, String>{
     }
     @Override
     protected void onPostExecute(String result) {
-        button.setText(this.wakeUp);
+        if (result != null)
+            button.setText(result);
+        if (dialog.isShowing()) {
+            dialog.dismiss();
+        }
     }
 }

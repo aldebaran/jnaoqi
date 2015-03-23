@@ -139,25 +139,11 @@ public class MainActivity extends FragmentActivity{
     }
 
     public void onRestController(View view){
-        new RestWakeUpTask(motion, speech, getString(R.string.rest), getString(R.string.wake)).execute(view);
+        new RestWakeUpTask(motion, speech, this).execute(view);
     }
 
     public void onSitController(View view){
-        try{
-            Button button = (Button) view;
-            if (button.getText().equals(getString(R.string.sit))) {
-                posture.goToPosture("Sit", 0.5f);
-                button.setText(getString(R.string.stand));
-            }
-            else {
-                posture.goToPosture("Stand", 0.5f);
-                button.setText(getString(R.string.sit));
-            }
-        } catch (CallError callError) {
-            callError.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        new PostureTask(posture, this).execute(view);
     }
 
     private float velocityX = 0f;
@@ -213,31 +199,6 @@ public class MainActivity extends FragmentActivity{
         else
             ((Button) findViewById(R.id.sit_stand_button)).setText(getString(R.string.stand));
     }
-    /*
-    @Override
-    public void onProxyReady(String name) {
-
-        Log.i(TAG, "Ready " + name);
-        if (name.equals("ALMotion")){
-            findViewById(R.id.moving_layout).setVisibility(View.VISIBLE);
-            findViewById(R.id.motion_layout).setVisibility(View.VISIBLE);
-        }
-        else if (name.equals("ALTextToSpeech")){
-            findViewById(R.id.tts_layout).setVisibility(View.VISIBLE);
-        }
-        else if (name.equals("ALRobotPosture")){
-            findViewById(R.id.sit_stand_button).setVisibility(View.VISIBLE);
-        }
-    }
-
-    @Override
-    public void onProxyException(String name, Exception e) {
-        Log.e(TAG, "error " + name, e);
-        if (name == "ALTextToSpeech"){
-            speech = null;
-        }
-    }
-    */
 
     /**
      * A placeholder fragment containing a simple view.

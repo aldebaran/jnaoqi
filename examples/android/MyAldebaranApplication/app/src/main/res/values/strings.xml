@@ -17,6 +17,7 @@
     <string name="close_hand">Close hands</string>
 
     <string name="connecting_message">Please wait. Trying to connect.</string>
+    <string name="wait_message">Executing your order.</string>
     <string name="connected">Successfully connected.</string>
     <string name="not_connected">Could not connect.</string>
     <string name="connection_lost">Connection lost.</string>
