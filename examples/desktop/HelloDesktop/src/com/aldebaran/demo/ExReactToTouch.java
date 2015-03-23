@@ -8,8 +8,6 @@ package com.aldebaran.demo;
 
 import com.aldebaran.qi.Application;
 import com.aldebaran.qi.CallError;
-import com.aldebaran.qi.Session;
-import com.aldebaran.qi.helper.ALProxy;
 import com.aldebaran.qi.helper.EventCallback;
 import com.aldebaran.qi.helper.proxies.ALMemory;
 import com.aldebaran.qi.helper.proxies.ALTextToSpeech;
@@ -34,17 +32,12 @@ public class ExReactToTouch {
             alMemory = new ALMemory(application.session());
             tts = new ALTextToSpeech(application.session());
 
-            alMemory.subscribeToEvent("FrontTactilTouched",
-                    new EventCallback<Float>() {
+	        alMemory.subscribeToEvent("FrontTactilTouched", (touch) -> {
+		        if ((float)touch == 1.0) {
+			        tts.say("Front");
+		        }
+	        });
 
-                        @Override
-                        public void onEvent(Float touch)
-                                throws InterruptedException, CallError {
-                            if (touch == 1.0) {
-                                tts.say("Front");
-                            }
-                        }
-                    });
             alMemory.subscribeToEvent("MiddleTactilTouched",
                     new EventCallback<Float>() {
 

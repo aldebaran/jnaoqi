@@ -70,7 +70,33 @@ public abstract class ALProxy {
 	public long connect(String signal, Class<?> theClass, SignalCallback callback) throws Exception {
 		if (service == null)
 			throw new CallError();
-		return service.connect(signal, "onSignal::("+callback.getNaoqiType(theClass)+")", callback);
+		return service.connect(signal, "onSignal::("+getNaoqiType(theClass)+")", callback);
+	}
+
+	/**
+	 * Get the equivalence between Java type and naoqi type
+	 * @param tClass The java class of type you want to convert
+	 * @return the Naoqi type
+	 * */
+	public String getNaoqiType(Class<?> tClass) {
+
+		if(tClass == String.class)
+			return "s";
+		if(tClass == Integer.class)
+			return "i";
+		if(tClass == Character.class)
+			return "c";
+		if(tClass == Void.class)
+			return "v";
+		if(tClass == AnyObject.class)
+			return "o";
+		if(tClass == Boolean.class)
+			return "b";
+		if(tClass == Float.class)
+			return "f";
+		if(tClass == Long.class)
+			return "l";
+		else return "m";
 	}
 
 	/**
