@@ -6,9 +6,13 @@
  */
 package com.aldebaran.qi.helper.proxies;
 
-import com.aldebaran.qi.CallError;
-import com.aldebaran.qi.Session;
-import com.aldebaran.qi.helper.ALProxy;
+import com.aldebaran.qi.*;
+import com.aldebaran.qi.helper.*;
+import java.util.List;
+import java.util.Map;
+
+
+import java.util.List;
 /**
 * 
 * @see <a href="http://doc.aldebaran.com/2-1/naoqi/core/alstore.html#alstore">NAOqi APIs for ALStore </a>
@@ -16,8 +20,21 @@ import com.aldebaran.qi.helper.ALProxy;
 */
 public class ALStore extends ALProxy {
 
+    private AsyncALStore asyncProxy;
+
     public ALStore(Session session) throws Exception{
         super(session);
+        asyncProxy = new AsyncALStore();
+	    asyncProxy.setService(getService());
+    }
+
+    /**
+     * Get the async version of this proxy
+     *
+	 * @return a AsyncALStore object
+	 */
+    public AsyncALStore async() {
+        return asyncProxy;
     }
 
     /**
@@ -196,5 +213,190 @@ public class ALStore extends ALProxy {
         return (Object)call("updateSystem").get();
     }
 
+
+    public class AsyncALStore extends ALProxy {
+
+        protected AsyncALStore(){
+            super();
+        }
+    
+    /**
+    * 
+    * 
+    */
+    public Future<Boolean> isStatsEnabled() throws CallError, InterruptedException {
+        return call("isStatsEnabled");
+    }
+
+    /**
+    * 
+    * 
+    * @return The Future
+    */
+    public Future<Void> clearStats() throws CallError, InterruptedException{
+        return call("clearStats");
+    }
+
+    /**
+    * 
+    * 
+    */
+    public Future<Boolean> isTraceEnabled() throws CallError, InterruptedException {
+        return call("isTraceEnabled");
+    }
+
+    /**
+    *  Add a Robot Notification 
+    * 
+    */
+    public Future<Object> add_notification(Object param1) throws CallError, InterruptedException {
+        return call("add_notification", param1);
+    }
+
+    /**
+    *  Analyse the actions to take 
+    * 
+    */
+    public Future<Object> analyse() throws CallError, InterruptedException {
+        return call("analyse");
+    }
+
+    /**
+    *  Assign the Robot to a User 
+    * 
+    */
+    public Future<Object> assign(Object param1, Object param2) throws CallError, InterruptedException {
+        return call("assign", param1, param2);
+    }
+
+    /**
+    *  Check Updates From the Store 
+    * 
+    */
+    public Future<Object> checkUpdate() throws CallError, InterruptedException {
+        return call("checkUpdate");
+    }
+
+    /**
+    *  Download a Package to a path if not already present 
+    * 
+    */
+    public Future<Object> download(Object param1) throws CallError, InterruptedException {
+        return call("download", param1);
+    }
+
+    /**
+    *  Get a Package Info from the Packages List 
+    * 
+    */
+    public Future<Object> getPackageInfo(Object param1) throws CallError, InterruptedException {
+        return call("getPackageInfo", param1);
+    }
+
+    /**
+    * Install the pkg with the PackageManager 
+    * 
+    */
+    public Future<Object> install(Object param1, Object param2) throws CallError, InterruptedException {
+        return call("install", param1, param2);
+    }
+
+    /**
+    *  Log a Debugging Message 
+    * 
+    */
+    public Future<Object> log_debug(Object param1) throws CallError, InterruptedException {
+        return call("log_debug", param1);
+    }
+
+    /**
+    *  Log an Error Message 
+    * 
+    */
+    public Future<Object> log_error(Object param1) throws CallError, InterruptedException {
+        return call("log_error", param1);
+    }
+
+    /**
+    *  Log an Information Message 
+    * 
+    */
+    public Future<Object> log_info(Object param1) throws CallError, InterruptedException {
+        return call("log_info", param1);
+    }
+
+    /**
+    *  Log a Warning Message 
+    * 
+    */
+    public Future<Object> log_warning(Object param1) throws CallError, InterruptedException {
+        return call("log_warning", param1);
+    }
+
+    /**
+    *  Play a Sound using the Audio Player 
+    * 
+    */
+    public Future<Object> play_sound(Object param1) throws CallError, InterruptedException {
+        return call("play_sound", param1);
+    }
+
+    /**
+    *  Get the status of the update 
+    * 
+    */
+    public Future<Object> status() throws CallError, InterruptedException {
+        return call("status");
+    }
+
+    /**
+    *  Stop the current update process 
+    * 
+    */
+    public Future<Object> stopUpdate() throws CallError, InterruptedException {
+        return call("stopUpdate");
+    }
+
+    /**
+    *  Translate a massage using the Translator 
+    * 
+    */
+    public Future<Object> translate(Object param1) throws CallError, InterruptedException {
+        return call("translate", param1);
+    }
+
+    /**
+    *  Launch Update if not already running 
+    * 
+    */
+    public Future<Object> update() throws CallError, InterruptedException {
+        return call("update");
+    }
+
+    /**
+    *  Update the Applications 
+    * 
+    */
+    public Future<Object> updateApps() throws CallError, InterruptedException {
+        return call("updateApps");
+    }
+
+    /**
+    *  Subscribe to the Connect Event to Update just After 
+    * 
+    */
+    public Future<Object> updateOnConnect() throws CallError, InterruptedException {
+        return call("updateOnConnect");
+    }
+
+    /**
+    *  Update the System 
+    * 
+    */
+    public Future<Object> updateSystem() throws CallError, InterruptedException {
+        return call("updateSystem");
+    }
+
+    }
 }
     

@@ -6,9 +6,11 @@
  */
 package com.aldebaran.qi.helper.proxies;
 
-import com.aldebaran.qi.CallError;
-import com.aldebaran.qi.Session;
-import com.aldebaran.qi.helper.ALProxy;
+import com.aldebaran.qi.*;
+import com.aldebaran.qi.helper.*;
+import java.util.List;
+import java.util.Map;
+
 
 import java.util.List;
 /**
@@ -18,8 +20,21 @@ import java.util.List;
 */
 public class ALInfrared extends ALProxy {
 
+    private AsyncALInfrared asyncProxy;
+
     public ALInfrared(Session session) throws Exception{
         super(session);
+        asyncProxy = new AsyncALInfrared();
+	    asyncProxy.setService(getService());
+    }
+
+    /**
+     * Get the async version of this proxy
+     *
+	 * @return a AsyncALInfrared object
+	 */
+    public AsyncALInfrared async() {
+        return asyncProxy;
     }
 
     /**
@@ -226,5 +241,228 @@ public class ALInfrared extends ALProxy {
         call("confRemoteRecordSave").get();
     }
 
+
+    public class AsyncALInfrared extends ALProxy {
+
+        protected AsyncALInfrared(){
+            super();
+        }
+    
+    /**
+    * 
+    * 
+    */
+    public Future<Boolean> isStatsEnabled() throws CallError, InterruptedException {
+        return call("isStatsEnabled");
+    }
+
+    /**
+    * 
+    * 
+    * @return The Future
+    */
+    public Future<Void> clearStats() throws CallError, InterruptedException{
+        return call("clearStats");
+    }
+
+    /**
+    * 
+    * 
+    */
+    public Future<Boolean> isTraceEnabled() throws CallError, InterruptedException {
+        return call("isTraceEnabled");
+    }
+
+    /**
+    * Exits and unregisters the module.
+    * 
+    * @return The Future
+    */
+    public Future<Void> exit() throws CallError, InterruptedException{
+        return call("exit");
+    }
+
+    /**
+    * Returns the version of the module.
+    * 
+    * @return A string containing the version of the module.
+    */
+    public Future<String> version() throws CallError, InterruptedException {
+        return call("version");
+    }
+
+    /**
+    * Just a ping. Always returns true
+    * 
+    * @return returns true
+    */
+    public Future<Boolean> ping() throws CallError, InterruptedException {
+        return call("ping");
+    }
+
+    /**
+    * Retrieves the module's method list.
+    * 
+    * @return An array of method names.
+    */
+    public Future<List<String>> getMethodList() throws CallError, InterruptedException {
+        return call("getMethodList");
+    }
+
+    /**
+    * Retrieves a method's description.
+    * 
+    * @param methodName  The name of the method.
+    * @return A structure containing the method's description.
+    */
+    public Future<Object> getMethodHelp(String methodName) throws CallError, InterruptedException {
+        return call("getMethodHelp", methodName);
+    }
+
+    /**
+    * Retrieves the module's description.
+    * 
+    * @return A structure describing the module.
+    */
+    public Future<Object> getModuleHelp() throws CallError, InterruptedException {
+        return call("getModuleHelp");
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post'
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @param timeoutPeriod  The timeout period in ms. To wait indefinately, use a timeoutPeriod of zero.
+    * @return True if the timeout period terminated. False if the method returned.
+    */
+    public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
+        return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Returns true if the method is currently running.
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return True if the method is currently running
+    */
+    public Future<Boolean> isRunning(Integer id) throws CallError, InterruptedException {
+        return call("isRunning", id);
+    }
+
+    /**
+    * returns true if the method is currently running
+    * 
+    * @param id  the ID of the method to wait for
+    * @return The Future
+    */
+    public Future<Void> stop(Integer id) throws CallError, InterruptedException{
+        return call("stop", id);
+    }
+
+    /**
+    * Gets the name of the parent broker.
+    * 
+    * @return The name of the parent broker.
+    */
+    public Future<String> getBrokerName() throws CallError, InterruptedException {
+        return call("getBrokerName");
+    }
+
+    /**
+    * Gets the method usage string. This summarises how to use the method.
+    * 
+    * @param name  The name of the method.
+    * @return A string that summarises the usage of the method.
+    */
+    public Future<String> getUsage(String name) throws CallError, InterruptedException {
+        return call("getUsage", name);
+    }
+
+    /**
+    * Init IR reception (connect as a client to the LIRC daemon).
+    * 
+    * @param RepeatThreshold  Give the keep-pressing threshold after which the repetition of a key is taken into consideration.
+    * @return The Future
+    */
+    public Future<Void> initReception(Integer RepeatThreshold) throws CallError, InterruptedException{
+        return call("initReception", RepeatThreshold);
+    }
+
+    /**
+    * Simulate a remote control (Nao as a remote control).
+    * 
+    * @param Remote  IR remote control name.
+    * @param Key  IR remote control key name.
+    * @return The Future
+    */
+    public Future<Void> sendRemoteKey(String Remote, String Key) throws CallError, InterruptedException{
+        return call("sendRemoteKey", Remote, Key);
+    }
+
+    /**
+    * Simulate a remote control (Nao as a remote control).
+    * 
+    * @param Remote  IR remote control name.
+    * @param Key  IR remote control key name.
+    * @param pTimeMs  The time in ms when the remote key must be send. 0 deals like sendRemoteKey
+    * @return The Future
+    */
+    public Future<Void> sendRemoteKeyWithTime(String Remote, String Key, Integer pTimeMs) throws CallError, InterruptedException{
+        return call("sendRemoteKeyWithTime", Remote, Key, pTimeMs);
+    }
+
+    /**
+    * Send an IP by IR.
+    * 
+    * @param IP  IP adress to send through IR.
+    * @return The Future
+    */
+    public Future<Void> sendIpAddress(String IP) throws CallError, InterruptedException{
+        return call("sendIpAddress", IP);
+    }
+
+    /**
+    * Send 1 octet by IR.
+    * 
+    * @param Octet  octet to send through IR.
+    * @return The Future
+    */
+    public Future<Void> send8(Integer Octet) throws CallError, InterruptedException{
+        return call("send8", Octet);
+    }
+
+    /**
+    * Send 4 octets by IR.
+    * 
+    * @param Data_IR  4 octets to send through IR.
+    * @return The Future
+    */
+    public Future<Void> send32(String Data_IR) throws CallError, InterruptedException{
+        return call("send32", Data_IR);
+    }
+
+    /**
+    * Send 4 octets by IR.
+    * 
+    * @param Octet1  Octet 1 to send through IR.
+    * @param Octet2  Octet 2 to send through IR.
+    * @param Octet3  Octet 3 to send through IR.
+    * @param Octet4  Octet 4 to send through IR.
+    * @return The Future
+    */
+    public Future<Void> send32(Integer Octet1, Integer Octet2, Integer Octet3, Integer Octet4) throws CallError, InterruptedException{
+        return call("send32", Octet1, Octet2, Octet3, Octet4);
+    }
+
+    /**
+    * Rewrite the LIRC daemon configuration file (lircd.conf) with everyremotes configuration concatenated, and reload it in LIRC daemons
+    * 
+    * @return The Future
+    */
+    public Future<Void> confRemoteRecordSave() throws CallError, InterruptedException{
+        return call("confRemoteRecordSave");
+    }
+
+    }
 }
     

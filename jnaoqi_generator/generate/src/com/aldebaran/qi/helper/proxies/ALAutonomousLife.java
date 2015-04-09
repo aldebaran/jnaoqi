@@ -6,13 +6,13 @@
  */
 package com.aldebaran.qi.helper.proxies;
 
-import com.aldebaran.qi.CallError;
-import com.aldebaran.qi.Session;
-import com.aldebaran.qi.Tuple2;
-import com.aldebaran.qi.helper.ALProxy;
-
+import com.aldebaran.qi.*;
+import com.aldebaran.qi.helper.*;
 import java.util.List;
 import java.util.Map;
+
+
+import java.util.List;
 /**
 * Manages the focused Activity and Autonomous Life state
 * @see <a href="http://doc.aldebaran.com/2-1/naoqi/core/autonomouslife.html#autonomouslife">NAOqi APIs for ALAutonomousLife </a>
@@ -20,8 +20,21 @@ import java.util.Map;
 */
 public class ALAutonomousLife extends ALProxy {
 
+    private AsyncALAutonomousLife asyncProxy;
+
     public ALAutonomousLife(Session session) throws Exception{
         super(session);
+        asyncProxy = new AsyncALAutonomousLife();
+	    asyncProxy.setService(getService());
+    }
+
+    /**
+     * Get the async version of this proxy
+     *
+	 * @return a AsyncALAutonomousLife object
+	 */
+    public AsyncALAutonomousLife async() {
+        return asyncProxy;
     }
 
     /**
@@ -380,5 +393,382 @@ public class ALAutonomousLife extends ALProxy {
         return (String)call("getState").get();
     }
 
+
+    public class AsyncALAutonomousLife extends ALProxy {
+
+        protected AsyncALAutonomousLife(){
+            super();
+        }
+    
+    /**
+    * Stops the focused activity and clears stack of activities
+    * 
+    * @return The Future
+    */
+    public Future<Void> stopAll() throws CallError, InterruptedException{
+        return call("stopAll");
+    }
+
+    /**
+    * Get a list of the order that states that have been entered, and their time entered.
+    * 
+    * @return A list of pairs, each pair is StateName/PreviousEnteredTime
+    */
+    public Future<List<Tuple2<String, Integer>>> getStateHistory() throws CallError, InterruptedException {
+        return call("getStateHistory");
+    }
+
+    /**
+    * Returns the currently focused activity
+    * 
+    * @return The name of the focused activity
+    */
+    public Future<String> focusedActivity() throws CallError, InterruptedException {
+        return call("focusedActivity");
+    }
+
+    /**
+    * Get a list of the order that states that have been entered, and their time entered.
+    * 
+    * @param depth  How many items of history to report, starting from most recent.
+    * @return A list of pairs, each pair is StateName/PreviousEnteredTime
+    */
+    public Future<List<Tuple2<String, Integer>>> getStateHistory(Integer depth) throws CallError, InterruptedException {
+        return call("getStateHistory", depth);
+    }
+
+    /**
+    * Get the time in seconds as life sees it.  Based on gettimeofday()
+    * 
+    * @return The int time in seconds as Autonomous Life sees it
+    */
+    public Future<Integer> getLifeTime() throws CallError, InterruptedException {
+        return call("getLifeTime");
+    }
+
+    /**
+    * Set an activity as running with user focus
+    * 
+    * @param activity_name  The package_name/activity_name to run
+    * @param flags  Flags for focus changing. STOP_CURRENT or STOP_AND_STACK_CURRENT
+    * @return The Future
+    */
+    public Future<Void> switchFocus(String activity_name, Integer flags) throws CallError, InterruptedException{
+        return call("switchFocus", activity_name, flags);
+    }
+
+    /**
+    * Stop monitoring ALMemory and reporting conditional triggers with AutonomousLaunchpad.
+    * 
+    * @return The Future
+    */
+    public Future<Void> stopMonitoringLaunchpadConditions() throws CallError, InterruptedException{
+        return call("stopMonitoringLaunchpadConditions");
+    }
+
+    /**
+    * Gets running status of AutonomousLaunchpad
+    * 
+    * @return True if AutonomousLaunchpad is monitoring ALMemory and reporting conditional triggers.
+    */
+    public Future<Boolean> isMonitoringLaunchpadConditions() throws CallError, InterruptedException {
+        return call("isMonitoringLaunchpadConditions");
+    }
+
+    /**
+    * Temporarily enables/disables AutonomousLaunchpad Plugins
+    * 
+    * @param plugin_name  The name of the plugin to enable/disable
+    * @param enabled  Whether or not to enable this plugin
+    * @return The Future
+    */
+    public Future<Void> setLaunchpadPluginEnabled(String plugin_name, Boolean enabled) throws CallError, InterruptedException{
+        return call("setLaunchpadPluginEnabled", plugin_name, enabled);
+    }
+
+    /**
+    * Get a list of enabled AutonomousLaunchpad Plugins.  Enabled plugins will run when AutonomousLaunchpad is started
+    * 
+    * @return A list of strings of enabled plugins.
+    */
+    public Future<List<String>> getEnabledLaunchpadPlugins() throws CallError, InterruptedException {
+        return call("getEnabledLaunchpadPlugins");
+    }
+
+    /**
+    * Stops the focused activity. If another activity is stacked it will be started.
+    * 
+    * @return The Future
+    */
+    public Future<Void> stopFocus() throws CallError, InterruptedException{
+        return call("stopFocus");
+    }
+
+    /**
+    * Get a list of AutonomousLaunchpad Plugins that belong to specified group
+    * 
+    * @param group  The group to search for the plugins
+    * @return A list of strings of the plugins belonging to the group.
+    */
+    public Future<List<String>> getLaunchpadPluginsForGroup(String group) throws CallError, InterruptedException {
+        return call("getLaunchpadPluginsForGroup", group);
+    }
+
+    /**
+    * Set the vertical offset (in meters) of the base of the robot with respect to the floor
+    * 
+    * @param offset  The new vertical offset (in meters)
+    * @return The Future
+    */
+    public Future<Void> setRobotOffsetFromFloor(Float offset) throws CallError, InterruptedException{
+        return call("setRobotOffsetFromFloor", offset);
+    }
+
+    /**
+    * Get the vertical offset (in meters) of the base of the robot with respect to the floor
+    * 
+    * @return Current vertical offset (in meters)
+    */
+    public Future<Float> getRobotOffsetFromFloor() throws CallError, InterruptedException {
+        return call("getRobotOffsetFromFloor");
+    }
+
+    /**
+    * Set if a given safeguard will be handled by Autonomous Life or not.
+    * 
+    * @param name  Name of the safeguard to consider: RobotPushed, RobotFell,CriticalDiagnosis, CriticalTemperature
+    * @param enabled  True if life handles the safeguard.
+    * @return The Future
+    */
+    public Future<Void> setSafeguardEnabled(String name, Boolean enabled) throws CallError, InterruptedException{
+        return call("setSafeguardEnabled", name, enabled);
+    }
+
+    /**
+    * Get if a given safeguard will be handled by Autonomous Life or not.
+    * 
+    * @param name  Name of the safeguard to consider: RobotPushed, RobotFell,CriticalDiagnosis, CriticalTemperature
+    * @return True if life handles the safeguard.
+    */
+    public Future<Boolean> isSafeguardEnabled(String name) throws CallError, InterruptedException {
+        return call("isSafeguardEnabled", name);
+    }
+
+    /**
+    * Returns the nature of an activity
+    * 
+    * @param activity_name  The package_name/activity_name to check
+    * @return Possible values are: solitary, interactive
+    */
+    public Future<String> getActivityNature(String activity_name) throws CallError, InterruptedException {
+        return call("getActivityNature", activity_name);
+    }
+
+    /**
+    * Get launch count, last completion time, etc for activities.
+    * 
+    * @return A map of activity names, with a cooresponding map of  "prevStartTime", "prevCompletionTime", "startCount", "totalDuration". Times are 0 for unlaunched Activities
+    */
+    public Future<Map<String, Map<String, Integer>>> getActivityStatistics() throws CallError, InterruptedException {
+        return call("getActivityStatistics");
+    }
+
+    /**
+    * Set an activity as running with user focus
+    * 
+    * @param activity_name  The package_name/activity_name to run
+    * @return The Future
+    */
+    public Future<Void> switchFocus(String activity_name) throws CallError, InterruptedException{
+        return call("switchFocus", activity_name);
+    }
+
+    /**
+    * Get launch count, last completion time, etc for activities with autonomous launch trigger conditions.
+    * 
+    * @return A map of activity names, with a cooresponding map of  "prevStartTime", "prevCompletionTime", "startCount", "totalDuration". Times are 0 for unlaunched Activities
+    */
+    public Future<Map<String, Map<String, Integer>>> getAutonomousActivityStatistics() throws CallError, InterruptedException {
+        return call("getAutonomousActivityStatistics");
+    }
+
+    /**
+    * Get a list of the order that activities that have been focused, and their time focused.
+    * 
+    * @return A list of pairs, each pair is ActivityName/PreviousFocusedTime
+    */
+    public Future<List<Tuple2<String, Integer>>> getFocusHistory() throws CallError, InterruptedException {
+        return call("getFocusHistory");
+    }
+
+    /**
+    * Get a list of the order that activities that have been focused, and their time focused.
+    * 
+    * @param depth  How many items of history to report, starting from most recent.
+    * @return A list of pairs, each pair is ActivityName/PreviousFocusedTime
+    */
+    public Future<List<Tuple2<String, Integer>>> getFocusHistory(Integer depth) throws CallError, InterruptedException {
+        return call("getFocusHistory", depth);
+    }
+
+    /**
+    * Start monitoring ALMemory and reporting conditional triggers with AutonomousLaunchpad.
+    * 
+    * @return The Future
+    */
+    public Future<Void> startMonitoringLaunchpadConditions() throws CallError, InterruptedException{
+        return call("startMonitoringLaunchpadConditions");
+    }
+
+    /**
+    * 
+    * 
+    */
+    public Future<Boolean> isStatsEnabled() throws CallError, InterruptedException {
+        return call("isStatsEnabled");
+    }
+
+    /**
+    * 
+    * 
+    * @return The Future
+    */
+    public Future<Void> clearStats() throws CallError, InterruptedException{
+        return call("clearStats");
+    }
+
+    /**
+    * 
+    * 
+    */
+    public Future<Boolean> isTraceEnabled() throws CallError, InterruptedException {
+        return call("isTraceEnabled");
+    }
+
+    /**
+    * Exits and unregisters the module.
+    * 
+    * @return The Future
+    */
+    public Future<Void> exit() throws CallError, InterruptedException{
+        return call("exit");
+    }
+
+    /**
+    * Returns the version of the module.
+    * 
+    * @return A string containing the version of the module.
+    */
+    public Future<String> version() throws CallError, InterruptedException {
+        return call("version");
+    }
+
+    /**
+    * Just a ping. Always returns true
+    * 
+    * @return returns true
+    */
+    public Future<Boolean> ping() throws CallError, InterruptedException {
+        return call("ping");
+    }
+
+    /**
+    * Retrieves the module's method list.
+    * 
+    * @return An array of method names.
+    */
+    public Future<List<String>> getMethodList() throws CallError, InterruptedException {
+        return call("getMethodList");
+    }
+
+    /**
+    * Retrieves a method's description.
+    * 
+    * @param methodName  The name of the method.
+    * @return A structure containing the method's description.
+    */
+    public Future<Object> getMethodHelp(String methodName) throws CallError, InterruptedException {
+        return call("getMethodHelp", methodName);
+    }
+
+    /**
+    * Retrieves the module's description.
+    * 
+    * @return A structure describing the module.
+    */
+    public Future<Object> getModuleHelp() throws CallError, InterruptedException {
+        return call("getModuleHelp");
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post'
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @param timeoutPeriod  The timeout period in ms. To wait indefinately, use a timeoutPeriod of zero.
+    * @return True if the timeout period terminated. False if the method returned.
+    */
+    public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
+        return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Returns true if the method is currently running.
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return True if the method is currently running
+    */
+    public Future<Boolean> isRunning(Integer id) throws CallError, InterruptedException {
+        return call("isRunning", id);
+    }
+
+    /**
+    * returns true if the method is currently running
+    * 
+    * @param id  the ID of the method to wait for
+    * @return The Future
+    */
+    public Future<Void> stop(Integer id) throws CallError, InterruptedException{
+        return call("stop", id);
+    }
+
+    /**
+    * Gets the name of the parent broker.
+    * 
+    * @return The name of the parent broker.
+    */
+    public Future<String> getBrokerName() throws CallError, InterruptedException {
+        return call("getBrokerName");
+    }
+
+    /**
+    * Gets the method usage string. This summarises how to use the method.
+    * 
+    * @param name  The name of the method.
+    * @return A string that summarises the usage of the method.
+    */
+    public Future<String> getUsage(String name) throws CallError, InterruptedException {
+        return call("getUsage", name);
+    }
+
+    /**
+    * Programatically control the state of Autonomous Life
+    * 
+    * @param state  The possible states of AutonomousLife are: interactive, solitary, safeguard, disabled
+    * @return The Future
+    */
+    public Future<Void> setState(String state) throws CallError, InterruptedException{
+        return call("setState", state);
+    }
+
+    /**
+    * Returns the current state of AutonomousLife
+    * 
+    * @return Can be: solitary, interactive, safeguard, disabled
+    */
+    public Future<String> getState() throws CallError, InterruptedException {
+        return call("getState");
+    }
+
+    }
 }
     

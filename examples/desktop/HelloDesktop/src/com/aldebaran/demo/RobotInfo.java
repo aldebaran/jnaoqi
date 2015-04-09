@@ -10,8 +10,10 @@ public class RobotInfo {
     // public static String port = "56114"; //
 
 //    public static String IP = "naonao.local";
-    public static String IP = "nao.local";
-    public static String PORT = "9559";
+    public static String IP = "127.0.0.1";
+//    public static String IP = "wao.local";
+//    public static String PORT = "9559";
+    public static String PORT = "54233";
     public static String URL = "tcp://" + IP + ":" + PORT;
 
 

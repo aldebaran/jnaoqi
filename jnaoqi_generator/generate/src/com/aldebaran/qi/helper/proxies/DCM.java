@@ -6,9 +6,11 @@
  */
 package com.aldebaran.qi.helper.proxies;
 
-import com.aldebaran.qi.CallError;
-import com.aldebaran.qi.Session;
-import com.aldebaran.qi.helper.ALProxy;
+import com.aldebaran.qi.*;
+import com.aldebaran.qi.helper.*;
+import java.util.List;
+import java.util.Map;
+
 
 import java.util.List;
 /**
@@ -18,8 +20,21 @@ import java.util.List;
 */
 public class DCM extends ALProxy {
 
+    private AsyncDCM asyncProxy;
+
     public DCM(Session session) throws Exception{
         super(session);
+        asyncProxy = new AsyncDCM();
+	    asyncProxy.setService(getService());
+    }
+
+    /**
+     * Get the async version of this proxy
+     *
+	 * @return a AsyncDCM object
+	 */
+    public AsyncDCM async() {
+        return asyncProxy;
     }
 
     /**
@@ -238,5 +253,237 @@ public class DCM extends ALProxy {
         return (Integer)call("preferences", action, target, keyName, keyValue).get();
     }
 
+
+    public class AsyncDCM extends ALProxy {
+
+        protected AsyncDCM(){
+            super();
+        }
+    
+    /**
+    * 
+    * 
+    */
+    public Future<Boolean> isStatsEnabled() throws CallError, InterruptedException {
+        return call("isStatsEnabled");
+    }
+
+    /**
+    * 
+    * 
+    * @return The Future
+    */
+    public Future<Void> clearStats() throws CallError, InterruptedException{
+        return call("clearStats");
+    }
+
+    /**
+    * 
+    * 
+    */
+    public Future<Boolean> isTraceEnabled() throws CallError, InterruptedException {
+        return call("isTraceEnabled");
+    }
+
+    /**
+    * Exits and unregisters the module.
+    * 
+    * @return The Future
+    */
+    public Future<Void> exit() throws CallError, InterruptedException{
+        return call("exit");
+    }
+
+    /**
+    * Returns the version of the module.
+    * 
+    * @return A string containing the version of the module.
+    */
+    public Future<String> version() throws CallError, InterruptedException {
+        return call("version");
+    }
+
+    /**
+    * Just a ping. Always returns true
+    * 
+    * @return returns true
+    */
+    public Future<Boolean> ping() throws CallError, InterruptedException {
+        return call("ping");
+    }
+
+    /**
+    * Retrieves the module's method list.
+    * 
+    * @return An array of method names.
+    */
+    public Future<List<String>> getMethodList() throws CallError, InterruptedException {
+        return call("getMethodList");
+    }
+
+    /**
+    * Retrieves a method's description.
+    * 
+    * @param methodName  The name of the method.
+    * @return A structure containing the method's description.
+    */
+    public Future<Object> getMethodHelp(String methodName) throws CallError, InterruptedException {
+        return call("getMethodHelp", methodName);
+    }
+
+    /**
+    * Retrieves the module's description.
+    * 
+    * @return A structure describing the module.
+    */
+    public Future<Object> getModuleHelp() throws CallError, InterruptedException {
+        return call("getModuleHelp");
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post'
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @param timeoutPeriod  The timeout period in ms. To wait indefinately, use a timeoutPeriod of zero.
+    * @return True if the timeout period terminated. False if the method returned.
+    */
+    public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
+        return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Returns true if the method is currently running.
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return True if the method is currently running
+    */
+    public Future<Boolean> isRunning(Integer id) throws CallError, InterruptedException {
+        return call("isRunning", id);
+    }
+
+    /**
+    * returns true if the method is currently running
+    * 
+    * @param id  the ID of the method to wait for
+    * @return The Future
+    */
+    public Future<Void> stop(Integer id) throws CallError, InterruptedException{
+        return call("stop", id);
+    }
+
+    /**
+    * Gets the name of the parent broker.
+    * 
+    * @return The name of the parent broker.
+    */
+    public Future<String> getBrokerName() throws CallError, InterruptedException {
+        return call("getBrokerName");
+    }
+
+    /**
+    * Gets the method usage string. This summarises how to use the method.
+    * 
+    * @param name  The name of the method.
+    * @return A string that summarises the usage of the method.
+    */
+    public Future<String> getUsage(String name) throws CallError, InterruptedException {
+        return call("getUsage", name);
+    }
+
+    /**
+    * Call this function to send a timed-command list to an actuator
+    * 
+    * @param commands  AL::ALValue with all data
+    * @return The Future
+    */
+    public Future<Void> set(Object commands) throws CallError, InterruptedException{
+        return call("set", commands);
+    }
+
+    /**
+    * Call this function to send timed-command list to an alias (list of actuators)
+    * 
+    * @param commands  AL::ALValue with all data
+    * @return The Future
+    */
+    public Future<Void> setAlias(Object commands) throws CallError, InterruptedException{
+        return call("setAlias", commands);
+    }
+
+    /**
+    * Call this function to send timed-command list to an alias (list of actuators) with "ClearAll" merge startegy
+    * 
+    * @param name  alias name
+    * @param time  time for the timed command
+    * @param commands  std::vector<float> with all commands
+    * @return The Future
+    */
+    public Future<Void> setAlias(String name, Integer time, List<Float> commands) throws CallError, InterruptedException{
+        return call("setAlias", name, time, commands);
+    }
+
+    /**
+    * Return the DCM time
+    * 
+    * @param offset  optional time in ms (signed) to add/remove
+    * @return An integer (could be signed) with the DCM time
+    */
+    public Future<Integer> getTime(Integer offset) throws CallError, InterruptedException {
+        return call("getTime", offset);
+    }
+
+    /**
+    * Create or change an alias (list of actuators)
+    * 
+    * @param alias  Alias name and description
+    * @return Same as pParams, but with the name removed if the actuator is not found
+    */
+    public Future<Object> createAlias(Object alias) throws CallError, InterruptedException {
+        return call("createAlias", alias);
+    }
+
+    /**
+    * Return the STM base name
+    * 
+    * @return the STM base name for all device/sensors (1st string in the array) and all devices (2nd string in the array)
+    */
+    public Future<Object> getPrefix() throws CallError, InterruptedException {
+        return call("getPrefix");
+    }
+
+    /**
+    * Special DCM commands
+    * 
+    * @param result  one string and could be Reset, Version, Chain, Diagnostic, Config
+    * @return The Future
+    */
+    public Future<Void> special(String result) throws CallError, InterruptedException{
+        return call("special", result);
+    }
+
+    /**
+    * Calibration of a joint
+    * 
+    * @param calibrationInput  A complex ALValue. See red documentation
+    * @return The Future
+    */
+    public Future<Void> calibration(Object calibrationInput) throws CallError, InterruptedException{
+        return call("calibration", calibrationInput);
+    }
+
+    /**
+    * Save updated value from DCM in XML pref file
+    * 
+    * @param action  string : 'Save' 'Load' 'Add'
+    * @param target  string : 'Chest' 'Head' 'Main' 'All' 
+    * @param keyName  The name of the key if action = 'Add'.
+    * @param keyValue  The ALVAlue of the key to add
+    * @return Nothing
+    */
+    public Future<Integer> preferences(String action, String target, String keyName, Object keyValue) throws CallError, InterruptedException {
+        return call("preferences", action, target, keyName, keyValue);
+    }
+
+    }
 }
     

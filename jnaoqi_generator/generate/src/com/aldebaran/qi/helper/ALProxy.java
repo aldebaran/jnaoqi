@@ -12,9 +12,6 @@ import com.aldebaran.qi.CallError;
 import com.aldebaran.qi.Future;
 import com.aldebaran.qi.Session;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Generic class to manage a proxy
  * */
@@ -35,6 +32,12 @@ public abstract class ALProxy {
         service = session.service(name);
 
     }
+
+	/**
+	 * Create a new proxy
+	 * */
+	public ALProxy() {
+	}
 
 	/**
 	 * Create a new proxy

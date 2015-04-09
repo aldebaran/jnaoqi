@@ -52,14 +52,56 @@ import java.util.List;
 */
 public class %(module_name)s extends %(module_parent)s {
 
+    private Async%(module_name)s asyncProxy;
+
     public %(module_name)s(Session session) throws Exception{
         super(session);
+        asyncProxy = new Async%(module_name)s();
+	    asyncProxy.setService(getService());
+    }
+
+    /**
+     * Get the async version of this proxy
+     *
+	 * @return a Async%(module_name)s object
+	 */
+    public Async%(module_name)s async() {
+        return asyncProxy;
     }
 %(content)s
+
+    public class Async%(module_name)s extends %(module_parent)s {
+
+        protected Async%(module_name)s(){
+            super();
+        }
+    %(content_async)s
+    }
 }
     """
 
-BLACKLIST_METHODS = set("registerEvent, unregisterEvent, metaObject, terminate, property, setProperty, registerEventWithSignature, enableStats, enableTrace, pCall, stats, properties".split(", "))
+
+TEMPLATE_VOID_ASYNC = """
+    /**
+    * %(method_desc)s
+    * %(method_params)s
+    * @return The Future
+    */
+    public Future<Void> %(methodName)s(%(args)s) throws CallError, InterruptedException{
+        return call("%(method)s"%(extraparams)s);
+    }"""
+
+TEMPLATE_RETURN_ASYNC = """
+    /**
+    * %(method_desc)s
+    * %(method_params)s
+    */
+    public Future<%(outtype)s> %(methodName)s(%(args)s) throws CallError, InterruptedException {
+        return call("%(method)s"%(extraparams)s);
+    }"""
+
+
+BLACKLIST_METHODS = set("registerEvent, unregisterEvent, metaObject, terminate, property, setProperty, registerEventWithSignature, enableStats, enableTrace, pCall, stats, properties, subscriber".split(", "))
 BLACKLIST_MODULES = set("ALTabletService, ALFindPersonHead".split(", "))
 
 OPENERS, CLOSERS = '([{<', ')]}>'
@@ -195,7 +237,7 @@ def cleanJavaName(name):
     return name
 
 
-def translateFunc(methodData):
+def translateFunc(methodData, isAsync):
     # return "     " + translate(method["returnSignature"]) + " " + method["name"] + "(" +  translateArgument(method["parametersSignature"], method["parameters"]) + ")"
     outtype = translate(methodData["returnSignature"])
     method = methodData["name"]
@@ -210,11 +252,18 @@ def translateFunc(methodData):
         method_params += "\n    * @param "+param["name"]+"  "+param["description"]
 
     if outtype == "void":
-        return TEMPLATE_VOID % locals()
+        if isAsync:
+            return TEMPLATE_VOID_ASYNC % locals()
+        else:
+            return TEMPLATE_VOID % locals()
     else:
         if methodData["returnDescription"]:
             method_params += "\n    * @return "+methodData["returnDescription"]
-        return TEMPLATE_RETURN % locals()
+
+        if isAsync:
+            return TEMPLATE_RETURN_ASYNC % locals()
+        else:
+            return TEMPLATE_RETURN % locals()
 
 def native(method):
     return "     " + method["returnSignature"] + " " + method["name"] +  method["parametersSignature"]
@@ -239,6 +288,7 @@ def generate_java(address):
 
         if module_name in linksDicOverview and module_name not in BLACKLIST_MODULES:
             content = ""
+            content_async=""
             meta = service.metaObject()
             module_desc = meta["description"]
             module_link_overview = docURLRoot+linksDicOverview[module_name]
@@ -257,7 +307,8 @@ def generate_java(address):
                     else:
                         module_parent = "ALProxy"
 
-                    content += translateFunc(method)+"\n"
+                    content += translateFunc(method, False)+"\n"
+                    content_async += translateFunc(method, True)+"\n"
 
             with open(directory+"/"+module_name + ".java", "w") as outfile:
                 outfile.write(TEMPLATE_CLASS % locals())

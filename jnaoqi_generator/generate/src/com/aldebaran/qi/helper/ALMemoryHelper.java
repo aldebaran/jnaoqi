@@ -20,6 +20,10 @@ public abstract class ALMemoryHelper extends ALProxy{
 		subscribers = new HashMap<Long, AnyObject>();
 	}
 
+	public ALMemoryHelper() {
+		subscribers = new HashMap<Long, AnyObject>();
+	}
+
 	/** Get a subscriber object for an event
 	 * @param eventName name of the event
 	 * @return a subscriber object

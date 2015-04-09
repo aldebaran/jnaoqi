@@ -6,12 +6,13 @@
  */
 package com.aldebaran.qi.helper.proxies;
 
-import com.aldebaran.qi.CallError;
-import com.aldebaran.qi.Session;
-import com.aldebaran.qi.helper.ALProxy;
-
+import com.aldebaran.qi.*;
+import com.aldebaran.qi.helper.*;
 import java.util.List;
 import java.util.Map;
+
+
+import java.util.List;
 /**
 * Manages the state of active users, and the bindings to their data.
 * @see <a href="http://doc.aldebaran.com/2-1/naoqi/core/alusersession.html#alusersession">NAOqi APIs for ALUserSession </a>
@@ -19,8 +20,21 @@ import java.util.Map;
 */
 public class ALUserSession extends ALProxy {
 
+    private AsyncALUserSession asyncProxy;
+
     public ALUserSession(Session session) throws Exception{
         super(session);
+        asyncProxy = new AsyncALUserSession();
+	    asyncProxy.setService(getService());
+    }
+
+    /**
+     * Get the async version of this proxy
+     *
+	 * @return a AsyncALUserSession object
+	 */
+    public AsyncALUserSession async() {
+        return asyncProxy;
     }
 
     /**
@@ -311,5 +325,305 @@ public class ALUserSession extends ALProxy {
         return (Boolean)call("doesBindingSourceExist", binding_name).get();
     }
 
+
+    public class AsyncALUserSession extends ALProxy {
+
+        protected AsyncALUserSession(){
+            super();
+        }
+    
+    /**
+    * Get some data about a user.  Will throw if it does not exist
+    * 
+    * @param uid  The int ID of the user whose data to get.
+    * @param data_name  The key of the data to get.
+    * @return A map keyed by source_name of ALValues of the data.
+    */
+    public Future<Map<String, Object>> getUserData(Integer uid, String data_name) throws CallError, InterruptedException {
+        return call("getUserData", uid, data_name);
+    }
+
+    /**
+    * Get the a specific source a user is bound to.
+    * 
+    * @param uid  The int ID of the user.
+    * @param binding_name  The string name of the binding source.
+    * @return The string value of the binding ID for the user.
+    */
+    public Future<String> getUserBinding(Integer uid, String binding_name) throws CallError, InterruptedException {
+        return call("getUserBinding", uid, binding_name);
+    }
+
+    /**
+    * Get the sources a user is bound to.
+    * 
+    * @param binding_name  The string name of the binding source.
+    * @param binding_value  The string ID of the user at the binding source.
+    * @return The int IDs of the users with the passed binding_value.
+    */
+    public Future<List<Integer>> findUsersWithBinding(String binding_name, String binding_value) throws CallError, InterruptedException {
+        return call("findUsersWithBinding", binding_name, binding_value);
+    }
+
+    /**
+    * Check if a data source has been registered.
+    * 
+    * @param source_name  The string name of the data source.
+    * @return A bool, true if the source has been registered
+    */
+    public Future<Boolean> doesUserDataSourceExist(String source_name) throws CallError, InterruptedException {
+        return call("doesUserDataSourceExist", source_name);
+    }
+
+    /**
+    * Get the sources a user is bound to.
+    * 
+    * @param uid  The int ID of the user.
+    * @return A map of string binding names and their string values.
+    */
+    public Future<Map<String, String>> getUserBindings(Integer uid) throws CallError, InterruptedException {
+        return call("getUserBindings", uid);
+    }
+
+    /**
+    * Check what data sources have been registered.
+    * 
+    * @return A list of strings of each registered data source.
+    */
+    public Future<List<String>> getUserDataSources() throws CallError, InterruptedException {
+        return call("getUserDataSources");
+    }
+
+    /**
+    * Get some data about a user.  Will throw if it does not exist
+    * 
+    * @param uid  The int ID of the user whose data to get.
+    * @param data_name  The key of the data to get.
+    * @param source_name  The string name of the data source.
+    * @return ALValue of the data.
+    */
+    public Future<Object> getUserData(Integer uid, String data_name, String source_name) throws CallError, InterruptedException {
+        return call("getUserData", uid, data_name, source_name);
+    }
+
+    /**
+    * Set some data about a user.  Will throw if user does not exist
+    * 
+    * @param uid  The int ID of the user whose data to set.
+    * @param data_name  The key of the data to set.
+    * @param source_name  The string name of the data source.
+    * @param data  ALValue of the data.
+    * @return The Future
+    */
+    public Future<Void> setUserData(Integer uid, String data_name, String source_name, Object data) throws CallError, InterruptedException{
+        return call("setUserData", uid, data_name, source_name, data);
+    }
+
+    /**
+    * 
+    * 
+    */
+    public Future<Boolean> isStatsEnabled() throws CallError, InterruptedException {
+        return call("isStatsEnabled");
+    }
+
+    /**
+    * 
+    * 
+    * @return The Future
+    */
+    public Future<Void> clearStats() throws CallError, InterruptedException{
+        return call("clearStats");
+    }
+
+    /**
+    * 
+    * 
+    */
+    public Future<Boolean> isTraceEnabled() throws CallError, InterruptedException {
+        return call("isTraceEnabled");
+    }
+
+    /**
+    * Exits and unregisters the module.
+    * 
+    * @return The Future
+    */
+    public Future<Void> exit() throws CallError, InterruptedException{
+        return call("exit");
+    }
+
+    /**
+    * Returns the version of the module.
+    * 
+    * @return A string containing the version of the module.
+    */
+    public Future<String> version() throws CallError, InterruptedException {
+        return call("version");
+    }
+
+    /**
+    * Just a ping. Always returns true
+    * 
+    * @return returns true
+    */
+    public Future<Boolean> ping() throws CallError, InterruptedException {
+        return call("ping");
+    }
+
+    /**
+    * Retrieves the module's method list.
+    * 
+    * @return An array of method names.
+    */
+    public Future<List<String>> getMethodList() throws CallError, InterruptedException {
+        return call("getMethodList");
+    }
+
+    /**
+    * Retrieves a method's description.
+    * 
+    * @param methodName  The name of the method.
+    * @return A structure containing the method's description.
+    */
+    public Future<Object> getMethodHelp(String methodName) throws CallError, InterruptedException {
+        return call("getMethodHelp", methodName);
+    }
+
+    /**
+    * Retrieves the module's description.
+    * 
+    * @return A structure describing the module.
+    */
+    public Future<Object> getModuleHelp() throws CallError, InterruptedException {
+        return call("getModuleHelp");
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post'
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @param timeoutPeriod  The timeout period in ms. To wait indefinately, use a timeoutPeriod of zero.
+    * @return True if the timeout period terminated. False if the method returned.
+    */
+    public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
+        return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Returns true if the method is currently running.
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return True if the method is currently running
+    */
+    public Future<Boolean> isRunning(Integer id) throws CallError, InterruptedException {
+        return call("isRunning", id);
+    }
+
+    /**
+    * returns true if the method is currently running
+    * 
+    * @param id  the ID of the method to wait for
+    * @return The Future
+    */
+    public Future<Void> stop(Integer id) throws CallError, InterruptedException{
+        return call("stop", id);
+    }
+
+    /**
+    * Gets the name of the parent broker.
+    * 
+    * @return The name of the parent broker.
+    */
+    public Future<String> getBrokerName() throws CallError, InterruptedException {
+        return call("getBrokerName");
+    }
+
+    /**
+    * Gets the method usage string. This summarises how to use the method.
+    * 
+    * @param name  The name of the method.
+    * @return A string that summarises the usage of the method.
+    */
+    public Future<String> getUsage(String name) throws CallError, InterruptedException {
+        return call("getUsage", name);
+    }
+
+    /**
+    * Check if users exist in db.
+    * 
+    * @param user_list  A list of int ID of the users to check.
+    * @return A bool, true if all users exist.
+    */
+    public Future<Boolean> doUsersExist(List<Integer> user_list) throws CallError, InterruptedException {
+        return call("doUsersExist", user_list);
+    }
+
+    /**
+    * Get a full list of the users.
+    * 
+    * @return A list of int user IDs.
+    */
+    public Future<List<Integer>> getUserList() throws CallError, InterruptedException {
+        return call("getUserList");
+    }
+
+    /**
+    * Get the count of users in db.
+    * 
+    * @return An int of how many users exist
+    */
+    public Future<Integer> getNumUsers() throws CallError, InterruptedException {
+        return call("getNumUsers");
+    }
+
+    /**
+    * Get which user has the robot's focus.
+    * 
+    * @return The int ID of the focused user. -1 if no focused user.
+    */
+    public Future<Integer> getFocusedUser() throws CallError, InterruptedException {
+        return call("getFocusedUser");
+    }
+
+    /**
+    * Get which users have an open session.
+    * 
+    * @return A list of int IDs of each user with an open session.
+    */
+    public Future<List<Integer>> getOpenUserSessions() throws CallError, InterruptedException {
+        return call("getOpenUserSessions");
+    }
+
+    /**
+    * Check if users have an open session.
+    * 
+    * @param user_list  A list of int IDs of each user to check.
+    * @return A bool, true if all users have open sessions.
+    */
+    public Future<Boolean> areUserSessionsOpen(List<Integer> user_list) throws CallError, InterruptedException {
+        return call("areUserSessionsOpen", user_list);
+    }
+
+    /**
+    * The list of binding sources  that have been applied to UserSession
+    * 
+    * @return A list of strings, one for each binding source.
+    */
+    public Future<List<String>> getBindingSources() throws CallError, InterruptedException {
+        return call("getBindingSources");
+    }
+
+    /**
+    * Query if a particular has been applied to UserSession
+    * 
+    * @param binding_name  The string name of the binding source.
+    * @return A bool, true if a binding source exists.
+    */
+    public Future<Boolean> doesBindingSourceExist(String binding_name) throws CallError, InterruptedException {
+        return call("doesBindingSourceExist", binding_name);
+    }
+
+    }
 }
     

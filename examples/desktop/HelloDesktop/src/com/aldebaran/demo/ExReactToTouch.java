@@ -7,10 +7,7 @@
 package com.aldebaran.demo;
 
 import com.aldebaran.qi.Application;
-import com.aldebaran.qi.CallError;
-import com.aldebaran.qi.helper.EventCallback;
-import com.aldebaran.qi.helper.proxies.ALMemory;
-import com.aldebaran.qi.helper.proxies.ALTextToSpeech;
+import com.aldebaran.qi.helper.proxies.*;
 
 /**
  * This example show how the robot can listen to touch events:
@@ -29,28 +26,29 @@ public class ExReactToTouch {
 
 	        ALMemory alMemory = new ALMemory(application.session());
             tts = new ALTextToSpeech(application.session());
+	        ALBehaviorManager alBehaviorManager = new ALBehaviorManager()
 
-	        alMemory.subscribeToEvent("FrontTactilTouched", (touch) -> {
+	        alMemory.subscribeToEvent("FrontTactilTouched", touch -> {
 		        if ((float) touch == 1.0) {
 			        tts.say("Front");
 		        }
 	        });
-            alMemory.subscribeToEvent("MiddleTactilTouched", (touch) -> {
+            alMemory.subscribeToEvent("MiddleTactilTouched", touch -> {
 	            if ((float) touch == 1.0) {
 		            tts.say("Middle");
 	            }
             });
-            alMemory.subscribeToEvent("RearTactilTouched", (touch) -> {
+            alMemory.subscribeToEvent("RearTactilTouched", touch -> {
 	            if ((float) touch == 1.0) {
 		            tts.say("Rear");
 	            }
             });;
-            alMemory.subscribeToEvent("LeftBumperPressed", (touch) -> {
+            alMemory.subscribeToEvent("LeftBumperPressed", touch -> {
 	            if ((float) touch == 1.0) {
 		            tts.say("Left bumper");
 	            }
             });
-            alMemory.subscribeToEvent("RightBumperPressed", (touch) -> {
+            alMemory.subscribeToEvent("RightBumperPressed", touch -> {
 	            if ((float) touch == 1.0) {
 		            tts.say("Right bumper");
 	            }
