@@ -43,7 +43,7 @@ public class ExReactToVoice {
 
             alMemory = new ALMemory(application.session());
             motion = new ALMotion(application.session());
-//            alSpeechRecognition = new ALSpeechRecognition(application.session());
+            alSpeechRecognition = new ALSpeechRecognition(application.session());
             tts = new ALTextToSpeech(application.session());
 
             ArrayList<String> listOfWords = new ArrayList<String>();
@@ -51,9 +51,9 @@ public class ExReactToVoice {
             listOfWords.add("come");
             listOfWords.add("stop");
 
-//            alSpeechRecognition.setVocabulary(listOfWords, false);
+            alSpeechRecognition.setVocabulary(listOfWords, false);
 
-//            alSpeechRecognition.subscribe(APP_NAME);
+            alSpeechRecognition.subscribe(APP_NAME);
             alMemory.subscribeToEvent("WordRecognized",
                     new EventCallback<List<Object>>() {
 
@@ -65,9 +65,9 @@ public class ExReactToVoice {
 
                             if (word.equals("wake") && !isAwake) {
                                 tts.say("hi");
-//                                alSpeechRecognition.pause(true);
+                                alSpeechRecognition.pause(true);
                                 motion.wakeUp();
-//                                alSpeechRecognition.pause(false);
+                                alSpeechRecognition.pause(false);
                                 isAwake = true;
                             } else if (word.equals("come") && isAwake) {
                                 motion.moveToward(0.6f, 0f, 0f);
@@ -85,7 +85,7 @@ public class ExReactToVoice {
                             if (touch == 1.0) {
                                 tts.say("Application is stopping");
                                 motion.rest();
-//                                alSpeechRecognition.unsubscribe(APP_NAME);
+                                alSpeechRecognition.unsubscribe(APP_NAME);
                                 application.stop();
 
                             }
