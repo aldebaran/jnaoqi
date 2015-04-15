@@ -6,13 +6,10 @@
  */
 package com.aldebaran.qi.helper.proxies;
 
-import com.aldebaran.qi.*;
-import com.aldebaran.qi.helper.*;
-import java.util.List;
-import java.util.Map;
-
-
-import java.util.List;
+import com.aldebaran.qi.CallError;
+import com.aldebaran.qi.Future;
+import com.aldebaran.qi.Session;
+import com.aldebaran.qi.helper.ALProxy;
 /**
 * 
 * @see <a href="http://doc.aldebaran.com/2-1/naoqi/core/alstore.html#alstore">NAOqi APIs for ALStore </a>

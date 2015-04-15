@@ -6,13 +6,13 @@
  */
 package com.aldebaran.qi.helper.proxies;
 
-import com.aldebaran.qi.*;
-import com.aldebaran.qi.helper.*;
+import com.aldebaran.qi.CallError;
+import com.aldebaran.qi.Future;
+import com.aldebaran.qi.Session;
+import com.aldebaran.qi.helper.ALProxy;
+
 import java.util.List;
 import java.util.Map;
-
-
-import java.util.List;
 /**
 * Manages the state of active users, and the bindings to their data.
 * @see <a href="http://doc.aldebaran.com/2-1/naoqi/core/alusersession.html#alusersession">NAOqi APIs for ALUserSession </a>
