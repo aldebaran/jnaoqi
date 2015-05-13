@@ -14,8 +14,8 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * This module contains ...
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/peopleperception/alsittingpeopledetection.html#alsittingpeopledetection">NAOqi APIs for ALSittingPeopleDetection </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/peopleperception/alsittingpeopledetection.html#alsittingpeopledetection">NAOqi APIs for ALSittingPeopleDetection </a>
+* NAOqi V2.4.x
 */
 public class ALSittingPeopleDetection extends ALProxy {
 
@@ -37,12 +37,21 @@ public class ALSittingPeopleDetection extends ALProxy {
     }
 
     /**
-    * Gets extractor running status
+    * Changes the pause status of the extractor
     * 
-    * @return True if the extractor is currently processing images, False if not
+    * @param status  New pause satus
     */
-    public Boolean isProcessing() throws CallError, InterruptedException {
-        return (Boolean)call("isProcessing").get();
+    public void pause(Boolean status) throws CallError, InterruptedException{
+        call("pause", status).get();
+    }
+
+    /**
+    * Sets sitting threshold
+    * 
+    * @param threshold  float, face height (in meter) from the ground under which we consider thatsomeone is sitting.
+    */
+    public void setSittingThreshold(Float threshold) throws CallError, InterruptedException{
+        call("setSittingThreshold", threshold).get();
     }
 
     /**
@@ -55,12 +64,12 @@ public class ALSittingPeopleDetection extends ALProxy {
     }
 
     /**
-    * Sets sitting threshold
+    * Gets extractor running status
     * 
-    * @param threshold  float, face height (in meter) from the ground under which we consider thatsomeone is sitting.
+    * @return True if the extractor is currently processing images, False if not
     */
-    public void setSittingThreshold(Float threshold) throws CallError, InterruptedException{
-        call("setSittingThreshold", threshold).get();
+    public Boolean isProcessing() throws CallError, InterruptedException {
+        return (Boolean)call("isProcessing").get();
     }
 
     /**
@@ -150,6 +159,15 @@ public class ALSittingPeopleDetection extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
     }
 
     /**
@@ -322,15 +340,6 @@ public class ALSittingPeopleDetection extends ALProxy {
         return (Boolean)call("isPaused").get();
     }
 
-    /**
-    * Changes the pause status of the extractor
-    * 
-    * @param status  New pause satus
-    */
-    public void pause(Boolean status) throws CallError, InterruptedException{
-        call("pause", status).get();
-    }
-
 
     public class AsyncALSittingPeopleDetection extends ALProxy {
 
@@ -339,12 +348,23 @@ public class ALSittingPeopleDetection extends ALProxy {
         }
     
     /**
-    * Gets extractor running status
+    * Changes the pause status of the extractor
     * 
-    * @return True if the extractor is currently processing images, False if not
+    * @param status  New pause satus
+    * @return The Future
     */
-    public Future<Boolean> isProcessing() throws CallError, InterruptedException {
-        return call("isProcessing");
+    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
+        return call("pause", status);
+    }
+
+    /**
+    * Sets sitting threshold
+    * 
+    * @param threshold  float, face height (in meter) from the ground under which we consider thatsomeone is sitting.
+    * @return The Future
+    */
+    public Future<Void> setSittingThreshold(Float threshold) throws CallError, InterruptedException{
+        return call("setSittingThreshold", threshold);
     }
 
     /**
@@ -357,13 +377,12 @@ public class ALSittingPeopleDetection extends ALProxy {
     }
 
     /**
-    * Sets sitting threshold
+    * Gets extractor running status
     * 
-    * @param threshold  float, face height (in meter) from the ground under which we consider thatsomeone is sitting.
-    * @return The Future
+    * @return True if the extractor is currently processing images, False if not
     */
-    public Future<Void> setSittingThreshold(Float threshold) throws CallError, InterruptedException{
-        return call("setSittingThreshold", threshold);
+    public Future<Boolean> isProcessing() throws CallError, InterruptedException {
+        return call("isProcessing");
     }
 
     /**
@@ -455,6 +474,16 @@ public class ALSittingPeopleDetection extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
     }
 
     /**
@@ -631,16 +660,6 @@ public class ALSittingPeopleDetection extends ALProxy {
     */
     public Future<Boolean> isPaused() throws CallError, InterruptedException {
         return call("isPaused");
-    }
-
-    /**
-    * Changes the pause status of the extractor
-    * 
-    * @param status  New pause satus
-    * @return The Future
-    */
-    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
-        return call("pause", status);
     }
 
     }

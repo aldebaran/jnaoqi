@@ -14,8 +14,8 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * Use ALRobotPosture module to make the robot go tothe asked posture.
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/motion/alrobotposture.html#alrobotposture">NAOqi APIs for ALRobotPosture </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/motion/alrobotposture.html#alrobotposture">NAOqi APIs for ALRobotPosture </a>
+* NAOqi V2.4.x
 */
 public class ALRobotPosture extends ALProxy {
 
@@ -123,6 +123,15 @@ public class ALRobotPosture extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
     }
 
     /**
@@ -331,6 +340,16 @@ public class ALRobotPosture extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
     }
 
     /**

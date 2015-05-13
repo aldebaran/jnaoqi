@@ -13,42 +13,81 @@ import com.aldebaran.qi.helper.ALProxy;
 
 import java.util.List;
 /**
-* ALRedBallDetection is a module which can detect red ball based on color saturation.
-  The output value is written in ALMemory in the redBallDetected microEvent.
-   It contains an array of tags, with the following format.
-  [ [time_info], [ball_info], [camera_info_torsoFrame] [camera_info_robotFrame] [camera_id] ]
- 
-   Tag time_info = [timestamp_seconds, timestamp_microseconds]
-  The time Stamp when image was taken.
-
-   Tag ball_info = [ballAngleWz, ballAngleWy, ballSizeInRadianX, ballSizeInRadianY]
-  ballAngleWz and ballAngleWy are the angular coordinates in camera angles  (in radians), corresponding to the direct (counter-clokwise) rotations along  the Z axis and the Y axis.
-  ballSizeInRadianX and ballSizeInRadianY correspond to the size of the ball in camera angles.
-
-   Tag camera_info_torsoFrame = [x, y, z, wx, wy, wz] in FRAME_TORSO (see motion documentation)
-  Tag camera_info_robotFrame = [x, y, z, wx, wy, wz] in FRAME_ROBOT (see motion documentation)
-  Tag camera_id = id of the active camera (see videodevice documentation)
-
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/vision/alredballdetection.html#alredballdetection">NAOqi APIs for ALRedBallDetection </a>
+* This module enables to detect if a person is waving at the robot. To be detected as waving, a person must be looking at the robot.
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/peopleperception/alwavingdetection.html#alwavingdetection">NAOqi APIs for ALWavingDetection </a>
 * NAOqi V2.4.x
 */
-public class ALRedBallDetection extends ALProxy {
+public class ALWavingDetection extends ALProxy {
 
-    private AsyncALRedBallDetection asyncProxy;
+    private AsyncALWavingDetection asyncProxy;
 
-    public ALRedBallDetection(Session session) throws Exception{
+    public ALWavingDetection(Session session) throws Exception{
         super(session);
-        asyncProxy = new AsyncALRedBallDetection();
+        asyncProxy = new AsyncALWavingDetection();
 	    asyncProxy.setService(getService());
     }
 
     /**
      * Get the async version of this proxy
      *
-	 * @return a AsyncALRedBallDetection object
+	 * @return a AsyncALWavingDetection object
 	 */
-    public AsyncALRedBallDetection async() {
+    public AsyncALWavingDetection async() {
         return asyncProxy;
+    }
+
+    /**
+    * Set minimum size of movement for waving detection
+    * 
+    * @param sensitivity  New minimum size (in meters), between 0.05m and 0.3m
+    */
+    public void setMinSize(Float sensitivity) throws CallError, InterruptedException{
+        call("setMinSize", sensitivity).get();
+    }
+
+    /**
+    * Changes the pause status of the extractor
+    * 
+    * @param status  New pause satus
+    */
+    public void pause(Boolean status) throws CallError, InterruptedException{
+        call("pause", status).get();
+    }
+
+    /**
+    * Set maximum distance for waving detection
+    * 
+    * @param maxDistance  New maximum distance (in meters), between 0.5m and 3m
+    */
+    public void setMaxDistance(Float maxDistance) throws CallError, InterruptedException{
+        call("setMaxDistance", maxDistance).get();
+    }
+
+    /**
+    * Get maximum distance for waving detection
+    * 
+    * @return Current maximum distance (in meters)
+    */
+    public Float getMaxDistance() throws CallError, InterruptedException {
+        return (Float)call("getMaxDistance").get();
+    }
+
+    /**
+    * Get minimum size of movement for waving detection
+    * 
+    * @return Current minimum size (in meters)
+    */
+    public Float getMinSize() throws CallError, InterruptedException {
+        return (Float)call("getMinSize").get();
+    }
+
+    /**
+    * Gets extractor running status
+    * 
+    * @return True if the extractor is currently processing images, False if not
+    */
+    public Boolean isProcessing() throws CallError, InterruptedException {
+        return (Boolean)call("isProcessing").get();
     }
 
     /**
@@ -310,13 +349,79 @@ public class ALRedBallDetection extends ALProxy {
         return (List<String>)call("getMemoryKeyList").get();
     }
 
+    /**
+    * Gets extractor pause status
+    * 
+    * @return True if the extractor is paused, False if not
+    */
+    public Boolean isPaused() throws CallError, InterruptedException {
+        return (Boolean)call("isPaused").get();
+    }
 
-    public class AsyncALRedBallDetection extends ALProxy {
 
-        protected AsyncALRedBallDetection(){
+    public class AsyncALWavingDetection extends ALProxy {
+
+        protected AsyncALWavingDetection(){
             super();
         }
     
+    /**
+    * Set minimum size of movement for waving detection
+    * 
+    * @param sensitivity  New minimum size (in meters), between 0.05m and 0.3m
+    * @return The Future
+    */
+    public Future<Void> setMinSize(Float sensitivity) throws CallError, InterruptedException{
+        return call("setMinSize", sensitivity);
+    }
+
+    /**
+    * Changes the pause status of the extractor
+    * 
+    * @param status  New pause satus
+    * @return The Future
+    */
+    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
+        return call("pause", status);
+    }
+
+    /**
+    * Set maximum distance for waving detection
+    * 
+    * @param maxDistance  New maximum distance (in meters), between 0.5m and 3m
+    * @return The Future
+    */
+    public Future<Void> setMaxDistance(Float maxDistance) throws CallError, InterruptedException{
+        return call("setMaxDistance", maxDistance);
+    }
+
+    /**
+    * Get maximum distance for waving detection
+    * 
+    * @return Current maximum distance (in meters)
+    */
+    public Future<Float> getMaxDistance() throws CallError, InterruptedException {
+        return call("getMaxDistance");
+    }
+
+    /**
+    * Get minimum size of movement for waving detection
+    * 
+    * @return Current minimum size (in meters)
+    */
+    public Future<Float> getMinSize() throws CallError, InterruptedException {
+        return call("getMinSize");
+    }
+
+    /**
+    * Gets extractor running status
+    * 
+    * @return True if the extractor is currently processing images, False if not
+    */
+    public Future<Boolean> isProcessing() throws CallError, InterruptedException {
+        return call("isProcessing");
+    }
+
     /**
     * 
     * 
@@ -583,6 +688,15 @@ public class ALRedBallDetection extends ALProxy {
     */
     public Future<List<String>> getMemoryKeyList() throws CallError, InterruptedException {
         return call("getMemoryKeyList");
+    }
+
+    /**
+    * Gets extractor pause status
+    * 
+    * @return True if the extractor is paused, False if not
+    */
+    public Future<Boolean> isPaused() throws CallError, InterruptedException {
+        return call("isPaused");
     }
 
     }

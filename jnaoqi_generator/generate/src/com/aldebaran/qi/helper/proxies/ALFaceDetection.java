@@ -14,8 +14,8 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * 
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/peopleperception/alfacedetection.html#alfacedetection">NAOqi APIs for ALFaceDetection </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/peopleperception/alfacedetection.html#alfacedetection">NAOqi APIs for ALFaceDetection </a>
+* NAOqi V2.4.x
 */
 public class ALFaceDetection extends ALProxy {
 
@@ -37,22 +37,40 @@ public class ALFaceDetection extends ALProxy {
     }
 
     /**
-    * Gets extractor resolution
+    * Gets extractor framerate
     * 
-    * @return Current value of the resolution of the extractor
+    * @return Current value of the framerate of the extractor
     */
-    public Integer getResolution() throws CallError, InterruptedException {
-        return (Integer)call("getResolution").get();
+    public Integer getFrameRate() throws CallError, InterruptedException {
+        return (Integer)call("getFrameRate").get();
     }
 
     /**
-    * Sets extractor resolution
+    * Changes the pause status of the extractor
     * 
-    * @param resolution  New resolution
+    * @param paused  New pause satus
+    */
+    public void pause(Boolean paused) throws CallError, InterruptedException{
+        call("pause", paused).get();
+    }
+
+    /**
+    * Sets the extractor framerate for all the subscribers
+    * 
+    * @param framerate  New framerate
     * @return True if the update succeeded, False if not
     */
-    public Boolean setResolution(Integer resolution) throws CallError, InterruptedException {
-        return (Boolean)call("setResolution", resolution).get();
+    public Boolean setFrameRate(Integer framerate) throws CallError, InterruptedException {
+        return (Boolean)call("setFrameRate", framerate).get();
+    }
+
+    /**
+    * deprecated
+    * 
+    * @param enable  True/False
+    */
+    public void enableRecognition(Boolean enable) throws CallError, InterruptedException{
+        call("enableRecognition", enable).get();
     }
 
     /**
@@ -65,22 +83,22 @@ public class ALFaceDetection extends ALProxy {
     }
 
     /**
-    * Returns if recognition is enabled.
+    * Sets extractor active camera
     * 
-    * @return True/False
+    * @param cameraId  Id of the camera that will become the active camera
+    * @return True if the update succeeded, False if not
     */
-    public Boolean isRecognitionEnabled() throws CallError, InterruptedException {
-        return (Boolean)call("isRecognitionEnabled").get();
+    public Boolean setActiveCamera(Integer cameraId) throws CallError, InterruptedException {
+        return (Boolean)call("setActiveCamera", cameraId).get();
     }
 
     /**
-    * DEPRECATED: Sets pause and resolution
+    * deprecated
     * 
-    * @param paramName  Name of the parameter to set
-    * @param value  New value
+    * @param enable  True/False
     */
-    public void setParameter(String paramName, Object value) throws CallError, InterruptedException{
-        call("setParameter", paramName, value).get();
+    public void enableTracking(Boolean enable) throws CallError, InterruptedException{
+        call("enableTracking", enable).get();
     }
 
     /**
@@ -122,22 +140,22 @@ public class ALFaceDetection extends ALProxy {
     }
 
     /**
-    * Delete from the database all faces instances of a person.
+    * DEPRECATED: Sets pause and resolution
     * 
-    * @param pId  The name of the person to forget
-    * @return true if the operation succeeds
+    * @param paramName  Name of the parameter to set
+    * @param value  New value
     */
-    public Boolean forgetPerson(String pId) throws CallError, InterruptedException {
-        return (Boolean)call("forgetPerson", pId).get();
+    public void setParameter(String paramName, Object value) throws CallError, InterruptedException{
+        call("setParameter", paramName, value).get();
     }
 
     /**
-    * Gets extractor framerate
+    * Remove all faces from the database.
     * 
-    * @return Current value of the framerate of the extractor
+    * @return true if the operation succeeds
     */
-    public Integer getFrameRate() throws CallError, InterruptedException {
-        return (Integer)call("getFrameRate").get();
+    public Boolean clearDatabase() throws CallError, InterruptedException {
+        return (Boolean)call("clearDatabase").get();
     }
 
     /**
@@ -164,12 +182,31 @@ It can be either:
     }
 
     /**
+    * Gets extractor resolution
+    * 
+    * @return Current value of the resolution of the extractor
+    */
+    public Integer getResolution() throws CallError, InterruptedException {
+        return (Integer)call("getResolution").get();
+    }
+
+    /**
     * Gets extractor active camera
     * 
     * @return Id of the current active camera of the extractor
     */
     public Integer getActiveCamera() throws CallError, InterruptedException {
         return (Integer)call("getActiveCamera").get();
+    }
+
+    /**
+    * Sets extractor resolution
+    * 
+    * @param resolution  New resolution
+    * @return True if the update succeeded, False if not
+    */
+    public Boolean setResolution(Integer resolution) throws CallError, InterruptedException {
+        return (Boolean)call("setResolution", resolution).get();
     }
 
     /**
@@ -182,16 +219,6 @@ It can be either:
     }
 
     /**
-    * Sets extractor active camera
-    * 
-    * @param cameraId  Id of the camera that will become the active camera
-    * @return True if the update succeeded, False if not
-    */
-    public Boolean setActiveCamera(Integer cameraId) throws CallError, InterruptedException {
-        return (Boolean)call("setActiveCamera", cameraId).get();
-    }
-
-    /**
     * Gets extractor running status
     * 
     * @return True if the extractor is currently processing images, False if not
@@ -201,37 +228,22 @@ It can be either:
     }
 
     /**
-    * Changes the pause status of the extractor
+    * Delete from the database all faces instances of a person.
     * 
-    * @param paused  New pause satus
-    */
-    public void pause(Boolean paused) throws CallError, InterruptedException{
-        call("pause", paused).get();
-    }
-
-    /**
-    * deprecated
-    * 
-    */
-    public void enableRecognition(Boolean param1) throws CallError, InterruptedException{
-        call("enableRecognition", param1).get();
-    }
-
-    /**
-    * Remove all faces from the database.
-    * 
+    * @param pId  The name of the person to forget
     * @return true if the operation succeeds
     */
-    public Boolean clearDatabase() throws CallError, InterruptedException {
-        return (Boolean)call("clearDatabase").get();
+    public Boolean forgetPerson(String pId) throws CallError, InterruptedException {
+        return (Boolean)call("forgetPerson", pId).get();
     }
 
     /**
-    * deprecated
+    * Returns if recognition is enabled.
     * 
+    * @return True/False
     */
-    public void enableTracking(Boolean param1) throws CallError, InterruptedException{
-        call("enableTracking", param1).get();
+    public Boolean isRecognitionEnabled() throws CallError, InterruptedException {
+        return (Boolean)call("isRecognitionEnabled").get();
     }
 
     /**
@@ -321,6 +333,15 @@ It can be either:
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
     }
 
     /**
@@ -495,16 +516,6 @@ It can be either:
         return (Boolean)call("setFrameRate", subscriberName, framerate).get();
     }
 
-    /**
-    * Sets the extractor framerate for all the subscribers
-    * 
-    * @param framerate  New framerate
-    * @return True if the update succeeded, False if not
-    */
-    public Boolean setFrameRate(Integer framerate) throws CallError, InterruptedException {
-        return (Boolean)call("setFrameRate", framerate).get();
-    }
-
 
     public class AsyncALFaceDetection extends ALProxy {
 
@@ -513,22 +524,42 @@ It can be either:
         }
     
     /**
-    * Gets extractor resolution
+    * Gets extractor framerate
     * 
-    * @return Current value of the resolution of the extractor
+    * @return Current value of the framerate of the extractor
     */
-    public Future<Integer> getResolution() throws CallError, InterruptedException {
-        return call("getResolution");
+    public Future<Integer> getFrameRate() throws CallError, InterruptedException {
+        return call("getFrameRate");
     }
 
     /**
-    * Sets extractor resolution
+    * Changes the pause status of the extractor
     * 
-    * @param resolution  New resolution
+    * @param paused  New pause satus
+    * @return The Future
+    */
+    public Future<Void> pause(Boolean paused) throws CallError, InterruptedException{
+        return call("pause", paused);
+    }
+
+    /**
+    * Sets the extractor framerate for all the subscribers
+    * 
+    * @param framerate  New framerate
     * @return True if the update succeeded, False if not
     */
-    public Future<Boolean> setResolution(Integer resolution) throws CallError, InterruptedException {
-        return call("setResolution", resolution);
+    public Future<Boolean> setFrameRate(Integer framerate) throws CallError, InterruptedException {
+        return call("setFrameRate", framerate);
+    }
+
+    /**
+    * deprecated
+    * 
+    * @param enable  True/False
+    * @return The Future
+    */
+    public Future<Void> enableRecognition(Boolean enable) throws CallError, InterruptedException{
+        return call("enableRecognition", enable);
     }
 
     /**
@@ -542,23 +573,23 @@ It can be either:
     }
 
     /**
-    * Returns if recognition is enabled.
+    * Sets extractor active camera
     * 
-    * @return True/False
+    * @param cameraId  Id of the camera that will become the active camera
+    * @return True if the update succeeded, False if not
     */
-    public Future<Boolean> isRecognitionEnabled() throws CallError, InterruptedException {
-        return call("isRecognitionEnabled");
+    public Future<Boolean> setActiveCamera(Integer cameraId) throws CallError, InterruptedException {
+        return call("setActiveCamera", cameraId);
     }
 
     /**
-    * DEPRECATED: Sets pause and resolution
+    * deprecated
     * 
-    * @param paramName  Name of the parameter to set
-    * @param value  New value
+    * @param enable  True/False
     * @return The Future
     */
-    public Future<Void> setParameter(String paramName, Object value) throws CallError, InterruptedException{
-        return call("setParameter", paramName, value);
+    public Future<Void> enableTracking(Boolean enable) throws CallError, InterruptedException{
+        return call("enableTracking", enable);
     }
 
     /**
@@ -601,22 +632,23 @@ It can be either:
     }
 
     /**
-    * Delete from the database all faces instances of a person.
+    * DEPRECATED: Sets pause and resolution
     * 
-    * @param pId  The name of the person to forget
-    * @return true if the operation succeeds
+    * @param paramName  Name of the parameter to set
+    * @param value  New value
+    * @return The Future
     */
-    public Future<Boolean> forgetPerson(String pId) throws CallError, InterruptedException {
-        return call("forgetPerson", pId);
+    public Future<Void> setParameter(String paramName, Object value) throws CallError, InterruptedException{
+        return call("setParameter", paramName, value);
     }
 
     /**
-    * Gets extractor framerate
+    * Remove all faces from the database.
     * 
-    * @return Current value of the framerate of the extractor
+    * @return true if the operation succeeds
     */
-    public Future<Integer> getFrameRate() throws CallError, InterruptedException {
-        return call("getFrameRate");
+    public Future<Boolean> clearDatabase() throws CallError, InterruptedException {
+        return call("clearDatabase");
     }
 
     /**
@@ -643,12 +675,31 @@ It can be either:
     }
 
     /**
+    * Gets extractor resolution
+    * 
+    * @return Current value of the resolution of the extractor
+    */
+    public Future<Integer> getResolution() throws CallError, InterruptedException {
+        return call("getResolution");
+    }
+
+    /**
     * Gets extractor active camera
     * 
     * @return Id of the current active camera of the extractor
     */
     public Future<Integer> getActiveCamera() throws CallError, InterruptedException {
         return call("getActiveCamera");
+    }
+
+    /**
+    * Sets extractor resolution
+    * 
+    * @param resolution  New resolution
+    * @return True if the update succeeded, False if not
+    */
+    public Future<Boolean> setResolution(Integer resolution) throws CallError, InterruptedException {
+        return call("setResolution", resolution);
     }
 
     /**
@@ -661,16 +712,6 @@ It can be either:
     }
 
     /**
-    * Sets extractor active camera
-    * 
-    * @param cameraId  Id of the camera that will become the active camera
-    * @return True if the update succeeded, False if not
-    */
-    public Future<Boolean> setActiveCamera(Integer cameraId) throws CallError, InterruptedException {
-        return call("setActiveCamera", cameraId);
-    }
-
-    /**
     * Gets extractor running status
     * 
     * @return True if the extractor is currently processing images, False if not
@@ -680,40 +721,22 @@ It can be either:
     }
 
     /**
-    * Changes the pause status of the extractor
+    * Delete from the database all faces instances of a person.
     * 
-    * @param paused  New pause satus
-    * @return The Future
-    */
-    public Future<Void> pause(Boolean paused) throws CallError, InterruptedException{
-        return call("pause", paused);
-    }
-
-    /**
-    * deprecated
-    * 
-    * @return The Future
-    */
-    public Future<Void> enableRecognition(Boolean param1) throws CallError, InterruptedException{
-        return call("enableRecognition", param1);
-    }
-
-    /**
-    * Remove all faces from the database.
-    * 
+    * @param pId  The name of the person to forget
     * @return true if the operation succeeds
     */
-    public Future<Boolean> clearDatabase() throws CallError, InterruptedException {
-        return call("clearDatabase");
+    public Future<Boolean> forgetPerson(String pId) throws CallError, InterruptedException {
+        return call("forgetPerson", pId);
     }
 
     /**
-    * deprecated
+    * Returns if recognition is enabled.
     * 
-    * @return The Future
+    * @return True/False
     */
-    public Future<Void> enableTracking(Boolean param1) throws CallError, InterruptedException{
-        return call("enableTracking", param1);
+    public Future<Boolean> isRecognitionEnabled() throws CallError, InterruptedException {
+        return call("isRecognitionEnabled");
     }
 
     /**
@@ -805,6 +828,16 @@ It can be either:
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
     }
 
     /**
@@ -983,16 +1016,6 @@ It can be either:
     */
     public Future<Boolean> setFrameRate(String subscriberName, Integer framerate) throws CallError, InterruptedException {
         return call("setFrameRate", subscriberName, framerate);
-    }
-
-    /**
-    * Sets the extractor framerate for all the subscribers
-    * 
-    * @param framerate  New framerate
-    * @return True if the update succeeded, False if not
-    */
-    public Future<Boolean> setFrameRate(Integer framerate) throws CallError, InterruptedException {
-        return call("setFrameRate", framerate);
     }
 
     }

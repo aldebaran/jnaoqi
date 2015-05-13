@@ -13,42 +13,45 @@ import com.aldebaran.qi.helper.ALProxy;
 
 import java.util.List;
 /**
-* ALRedBallDetection is a module which can detect red ball based on color saturation.
-  The output value is written in ALMemory in the redBallDetected microEvent.
-   It contains an array of tags, with the following format.
-  [ [time_info], [ball_info], [camera_info_torsoFrame] [camera_info_robotFrame] [camera_id] ]
- 
-   Tag time_info = [timestamp_seconds, timestamp_microseconds]
-  The time Stamp when image was taken.
-
-   Tag ball_info = [ballAngleWz, ballAngleWy, ballSizeInRadianX, ballSizeInRadianY]
-  ballAngleWz and ballAngleWy are the angular coordinates in camera angles  (in radians), corresponding to the direct (counter-clokwise) rotations along  the Z axis and the Y axis.
-  ballSizeInRadianX and ballSizeInRadianY correspond to the size of the ball in camera angles.
-
-   Tag camera_info_torsoFrame = [x, y, z, wx, wy, wz] in FRAME_TORSO (see motion documentation)
-  Tag camera_info_robotFrame = [x, y, z, wx, wy, wz] in FRAME_ROBOT (see motion documentation)
-  Tag camera_id = id of the active camera (see videodevice documentation)
-
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/vision/alredballdetection.html#alredballdetection">NAOqi APIs for ALRedBallDetection </a>
+* 
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/vision/alcloseobjectdetection.html#alcloseobjectdetection">NAOqi APIs for ALCloseObjectDetection </a>
 * NAOqi V2.4.x
 */
-public class ALRedBallDetection extends ALProxy {
+public class ALCloseObjectDetection extends ALProxy {
 
-    private AsyncALRedBallDetection asyncProxy;
+    private AsyncALCloseObjectDetection asyncProxy;
 
-    public ALRedBallDetection(Session session) throws Exception{
+    public ALCloseObjectDetection(Session session) throws Exception{
         super(session);
-        asyncProxy = new AsyncALRedBallDetection();
+        asyncProxy = new AsyncALCloseObjectDetection();
 	    asyncProxy.setService(getService());
     }
 
     /**
      * Get the async version of this proxy
      *
-	 * @return a AsyncALRedBallDetection object
+	 * @return a AsyncALCloseObjectDetection object
 	 */
-    public AsyncALRedBallDetection async() {
+    public AsyncALCloseObjectDetection async() {
         return asyncProxy;
+    }
+
+    /**
+    * Changes the pause status of the extractor
+    * 
+    * @param status  New pause satus
+    */
+    public void pause(Boolean status) throws CallError, InterruptedException{
+        call("pause", status).get();
+    }
+
+    /**
+    * Gets extractor running status
+    * 
+    * @return True if the extractor is currently processing images, False if not
+    */
+    public Boolean isProcessing() throws CallError, InterruptedException {
+        return (Boolean)call("isProcessing").get();
     }
 
     /**
@@ -310,13 +313,41 @@ public class ALRedBallDetection extends ALProxy {
         return (List<String>)call("getMemoryKeyList").get();
     }
 
+    /**
+    * Gets extractor pause status
+    * 
+    * @return True if the extractor is paused, False if not
+    */
+    public Boolean isPaused() throws CallError, InterruptedException {
+        return (Boolean)call("isPaused").get();
+    }
 
-    public class AsyncALRedBallDetection extends ALProxy {
 
-        protected AsyncALRedBallDetection(){
+    public class AsyncALCloseObjectDetection extends ALProxy {
+
+        protected AsyncALCloseObjectDetection(){
             super();
         }
     
+    /**
+    * Changes the pause status of the extractor
+    * 
+    * @param status  New pause satus
+    * @return The Future
+    */
+    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
+        return call("pause", status);
+    }
+
+    /**
+    * Gets extractor running status
+    * 
+    * @return True if the extractor is currently processing images, False if not
+    */
+    public Future<Boolean> isProcessing() throws CallError, InterruptedException {
+        return call("isProcessing");
+    }
+
     /**
     * 
     * 
@@ -583,6 +614,15 @@ public class ALRedBallDetection extends ALProxy {
     */
     public Future<List<String>> getMemoryKeyList() throws CallError, InterruptedException {
         return call("getMemoryKeyList");
+    }
+
+    /**
+    * Gets extractor pause status
+    * 
+    * @return True if the extractor is paused, False if not
+    */
+    public Future<Boolean> isPaused() throws CallError, InterruptedException {
+        return call("isPaused");
     }
 
     }

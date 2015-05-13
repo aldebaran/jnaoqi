@@ -14,8 +14,8 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * Handle chest button activity.
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/sensors/alchestbutton.html#alchestbutton">NAOqi APIs for ALChestButton </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/sensors/alchestbutton.html#alchestbutton">NAOqi APIs for ALChestButton </a>
+* NAOqi V2.4.x
 */
 public class ALChestButton extends ALProxy {
 
@@ -123,6 +123,15 @@ public class ALChestButton extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
     }
 
     /**
@@ -259,6 +268,16 @@ public class ALChestButton extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
     }
 
     /**

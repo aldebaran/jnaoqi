@@ -14,8 +14,8 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * 
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/vision/alvisualcompass.html#alvisualcompass">NAOqi APIs for ALVisualCompass </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/vision/alvisualcompass.html#alvisualcompass">NAOqi APIs for ALVisualCompass </a>
+* NAOqi V2.4.x
 */
 public class ALVisualCompass extends ALProxy {
 
@@ -37,22 +37,40 @@ public class ALVisualCompass extends ALProxy {
     }
 
     /**
-    * Gets extractor resolution
+    * Gets extractor framerate
     * 
-    * @return Current value of the resolution of the extractor
+    * @return Current value of the framerate of the extractor
     */
-    public Integer getResolution() throws CallError, InterruptedException {
-        return (Integer)call("getResolution").get();
+    public Integer getFrameRate() throws CallError, InterruptedException {
+        return (Integer)call("getFrameRate").get();
     }
 
     /**
-    * Sets extractor resolution
+    * Changes the pause status of the extractor
     * 
-    * @param resolution  New resolution
+    * @param paused  New pause satus
+    */
+    public void pause(Boolean paused) throws CallError, InterruptedException{
+        call("pause", paused).get();
+    }
+
+    /**
+    * Sets the extractor framerate for all the subscribers
+    * 
+    * @param framerate  New framerate
     * @return True if the update succeeded, False if not
     */
-    public Boolean setResolution(Integer resolution) throws CallError, InterruptedException {
-        return (Boolean)call("setResolution", resolution).get();
+    public Boolean setFrameRate(Integer framerate) throws CallError, InterruptedException {
+        return (Boolean)call("setFrameRate", framerate).get();
+    }
+
+    /**
+    * Returns an ALValue containing the image used as a reference.
+    * 
+    * @return Reference image (formatted as the ALValue from getImageRemote of ALVideoDevice)
+    */
+    public Object getReferenceImage() throws CallError, InterruptedException {
+        return (Object)call("getReferenceImage").get();
     }
 
     /**
@@ -65,23 +83,22 @@ public class ALVisualCompass extends ALProxy {
     }
 
     /**
-    * Returns the reliability of the matching and the compass deviation computations.
+    * Sets extractor active camera
     * 
-    * @return [0]: Percentage of the matched keypoints that are used to compute the deviation (significant if over 50%) 
- [1]: Number of keypoints matching.
+    * @param cameraId  Id of the camera that will become the active camera
+    * @return True if the update succeeded, False if not
     */
-    public Object getMatchingQuality() throws CallError, InterruptedException {
-        return (Object)call("getMatchingQuality").get();
+    public Boolean setActiveCamera(Integer cameraId) throws CallError, InterruptedException {
+        return (Boolean)call("setActiveCamera", cameraId).get();
     }
 
     /**
-    * DEPRECATED: Sets pause and resolution
+    * Sets the reference image for the compass.
     * 
-    * @param paramName  Name of the parameter to set
-    * @param value  New value
+    * @return True if the reference image has been successfully set
     */
-    public void setParameter(String paramName, Object value) throws CallError, InterruptedException{
-        call("setParameter", paramName, value).get();
+    public Boolean setCurrentImageAsReference() throws CallError, InterruptedException {
+        return (Boolean)call("setCurrentImageAsReference").get();
     }
 
     /**
@@ -105,12 +122,13 @@ public class ALVisualCompass extends ALProxy {
     }
 
     /**
-    * Gets extractor framerate
+    * DEPRECATED: Sets pause and resolution
     * 
-    * @return Current value of the framerate of the extractor
+    * @param paramName  Name of the parameter to set
+    * @param value  New value
     */
-    public Integer getFrameRate() throws CallError, InterruptedException {
-        return (Integer)call("getFrameRate").get();
+    public void setParameter(String paramName, Object value) throws CallError, InterruptedException{
+        call("setParameter", paramName, value).get();
     }
 
     /**
@@ -119,6 +137,15 @@ public class ALVisualCompass extends ALProxy {
     */
     public void waitUntilTargetReached() throws CallError, InterruptedException{
         call("waitUntilTargetReached").get();
+    }
+
+    /**
+    * Gets extractor resolution
+    * 
+    * @return Current value of the resolution of the extractor
+    */
+    public Integer getResolution() throws CallError, InterruptedException {
+        return (Integer)call("getResolution").get();
     }
 
     /**
@@ -131,22 +158,22 @@ public class ALVisualCompass extends ALProxy {
     }
 
     /**
+    * Sets extractor resolution
+    * 
+    * @param resolution  New resolution
+    * @return True if the update succeeded, False if not
+    */
+    public Boolean setResolution(Integer resolution) throws CallError, InterruptedException {
+        return (Boolean)call("setResolution", resolution).get();
+    }
+
+    /**
     * Gets extractor pause status
     * 
     * @return True if the extractor is paused, False if not
     */
     public Boolean isPaused() throws CallError, InterruptedException {
         return (Boolean)call("isPaused").get();
-    }
-
-    /**
-    * Sets extractor active camera
-    * 
-    * @param cameraId  Id of the camera that will become the active camera
-    * @return True if the update succeeded, False if not
-    */
-    public Boolean setActiveCamera(Integer cameraId) throws CallError, InterruptedException {
-        return (Boolean)call("setActiveCamera", cameraId).get();
     }
 
     /**
@@ -159,30 +186,13 @@ public class ALVisualCompass extends ALProxy {
     }
 
     /**
-    * Changes the pause status of the extractor
+    * Returns the reliability of the matching and the compass deviation computations.
     * 
-    * @param paused  New pause satus
+    * @return [0]: Percentage of the matched keypoints that are used to compute the deviation (significant if over 50%) 
+ [1]: Number of keypoints matching.
     */
-    public void pause(Boolean paused) throws CallError, InterruptedException{
-        call("pause", paused).get();
-    }
-
-    /**
-    * Returns an ALValue containing the image used as a reference.
-    * 
-    * @return Reference image (formatted as the ALValue from getImageRemote of ALVideoDevice)
-    */
-    public Object getReferenceImage() throws CallError, InterruptedException {
-        return (Object)call("getReferenceImage").get();
-    }
-
-    /**
-    * Sets the reference image for the compass.
-    * 
-    * @return True if the reference image has been successfully set
-    */
-    public Boolean setCurrentImageAsReference() throws CallError, InterruptedException {
-        return (Boolean)call("setCurrentImageAsReference").get();
+    public Object getMatchingQuality() throws CallError, InterruptedException {
+        return (Object)call("getMatchingQuality").get();
     }
 
     /**
@@ -272,6 +282,15 @@ public class ALVisualCompass extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
     }
 
     /**
@@ -446,16 +465,6 @@ public class ALVisualCompass extends ALProxy {
         return (Boolean)call("setFrameRate", subscriberName, framerate).get();
     }
 
-    /**
-    * Sets the extractor framerate for all the subscribers
-    * 
-    * @param framerate  New framerate
-    * @return True if the update succeeded, False if not
-    */
-    public Boolean setFrameRate(Integer framerate) throws CallError, InterruptedException {
-        return (Boolean)call("setFrameRate", framerate).get();
-    }
-
 
     public class AsyncALVisualCompass extends ALProxy {
 
@@ -464,22 +473,41 @@ public class ALVisualCompass extends ALProxy {
         }
     
     /**
-    * Gets extractor resolution
+    * Gets extractor framerate
     * 
-    * @return Current value of the resolution of the extractor
+    * @return Current value of the framerate of the extractor
     */
-    public Future<Integer> getResolution() throws CallError, InterruptedException {
-        return call("getResolution");
+    public Future<Integer> getFrameRate() throws CallError, InterruptedException {
+        return call("getFrameRate");
     }
 
     /**
-    * Sets extractor resolution
+    * Changes the pause status of the extractor
     * 
-    * @param resolution  New resolution
+    * @param paused  New pause satus
+    * @return The Future
+    */
+    public Future<Void> pause(Boolean paused) throws CallError, InterruptedException{
+        return call("pause", paused);
+    }
+
+    /**
+    * Sets the extractor framerate for all the subscribers
+    * 
+    * @param framerate  New framerate
     * @return True if the update succeeded, False if not
     */
-    public Future<Boolean> setResolution(Integer resolution) throws CallError, InterruptedException {
-        return call("setResolution", resolution);
+    public Future<Boolean> setFrameRate(Integer framerate) throws CallError, InterruptedException {
+        return call("setFrameRate", framerate);
+    }
+
+    /**
+    * Returns an ALValue containing the image used as a reference.
+    * 
+    * @return Reference image (formatted as the ALValue from getImageRemote of ALVideoDevice)
+    */
+    public Future<Object> getReferenceImage() throws CallError, InterruptedException {
+        return call("getReferenceImage");
     }
 
     /**
@@ -493,24 +521,22 @@ public class ALVisualCompass extends ALProxy {
     }
 
     /**
-    * Returns the reliability of the matching and the compass deviation computations.
+    * Sets extractor active camera
     * 
-    * @return [0]: Percentage of the matched keypoints that are used to compute the deviation (significant if over 50%) 
- [1]: Number of keypoints matching.
+    * @param cameraId  Id of the camera that will become the active camera
+    * @return True if the update succeeded, False if not
     */
-    public Future<Object> getMatchingQuality() throws CallError, InterruptedException {
-        return call("getMatchingQuality");
+    public Future<Boolean> setActiveCamera(Integer cameraId) throws CallError, InterruptedException {
+        return call("setActiveCamera", cameraId);
     }
 
     /**
-    * DEPRECATED: Sets pause and resolution
+    * Sets the reference image for the compass.
     * 
-    * @param paramName  Name of the parameter to set
-    * @param value  New value
-    * @return The Future
+    * @return True if the reference image has been successfully set
     */
-    public Future<Void> setParameter(String paramName, Object value) throws CallError, InterruptedException{
-        return call("setParameter", paramName, value);
+    public Future<Boolean> setCurrentImageAsReference() throws CallError, InterruptedException {
+        return call("setCurrentImageAsReference");
     }
 
     /**
@@ -534,12 +560,14 @@ public class ALVisualCompass extends ALProxy {
     }
 
     /**
-    * Gets extractor framerate
+    * DEPRECATED: Sets pause and resolution
     * 
-    * @return Current value of the framerate of the extractor
+    * @param paramName  Name of the parameter to set
+    * @param value  New value
+    * @return The Future
     */
-    public Future<Integer> getFrameRate() throws CallError, InterruptedException {
-        return call("getFrameRate");
+    public Future<Void> setParameter(String paramName, Object value) throws CallError, InterruptedException{
+        return call("setParameter", paramName, value);
     }
 
     /**
@@ -552,12 +580,31 @@ public class ALVisualCompass extends ALProxy {
     }
 
     /**
+    * Gets extractor resolution
+    * 
+    * @return Current value of the resolution of the extractor
+    */
+    public Future<Integer> getResolution() throws CallError, InterruptedException {
+        return call("getResolution");
+    }
+
+    /**
     * Gets extractor active camera
     * 
     * @return Id of the current active camera of the extractor
     */
     public Future<Integer> getActiveCamera() throws CallError, InterruptedException {
         return call("getActiveCamera");
+    }
+
+    /**
+    * Sets extractor resolution
+    * 
+    * @param resolution  New resolution
+    * @return True if the update succeeded, False if not
+    */
+    public Future<Boolean> setResolution(Integer resolution) throws CallError, InterruptedException {
+        return call("setResolution", resolution);
     }
 
     /**
@@ -570,16 +617,6 @@ public class ALVisualCompass extends ALProxy {
     }
 
     /**
-    * Sets extractor active camera
-    * 
-    * @param cameraId  Id of the camera that will become the active camera
-    * @return True if the update succeeded, False if not
-    */
-    public Future<Boolean> setActiveCamera(Integer cameraId) throws CallError, InterruptedException {
-        return call("setActiveCamera", cameraId);
-    }
-
-    /**
     * Gets extractor running status
     * 
     * @return True if the extractor is currently processing images, False if not
@@ -589,31 +626,13 @@ public class ALVisualCompass extends ALProxy {
     }
 
     /**
-    * Changes the pause status of the extractor
+    * Returns the reliability of the matching and the compass deviation computations.
     * 
-    * @param paused  New pause satus
-    * @return The Future
+    * @return [0]: Percentage of the matched keypoints that are used to compute the deviation (significant if over 50%) 
+ [1]: Number of keypoints matching.
     */
-    public Future<Void> pause(Boolean paused) throws CallError, InterruptedException{
-        return call("pause", paused);
-    }
-
-    /**
-    * Returns an ALValue containing the image used as a reference.
-    * 
-    * @return Reference image (formatted as the ALValue from getImageRemote of ALVideoDevice)
-    */
-    public Future<Object> getReferenceImage() throws CallError, InterruptedException {
-        return call("getReferenceImage");
-    }
-
-    /**
-    * Sets the reference image for the compass.
-    * 
-    * @return True if the reference image has been successfully set
-    */
-    public Future<Boolean> setCurrentImageAsReference() throws CallError, InterruptedException {
-        return call("setCurrentImageAsReference");
+    public Future<Object> getMatchingQuality() throws CallError, InterruptedException {
+        return call("getMatchingQuality");
     }
 
     /**
@@ -705,6 +724,16 @@ public class ALVisualCompass extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
     }
 
     /**
@@ -883,16 +912,6 @@ public class ALVisualCompass extends ALProxy {
     */
     public Future<Boolean> setFrameRate(String subscriberName, Integer framerate) throws CallError, InterruptedException {
         return call("setFrameRate", subscriberName, framerate);
-    }
-
-    /**
-    * Sets the extractor framerate for all the subscribers
-    * 
-    * @param framerate  New framerate
-    * @return True if the update succeeded, False if not
-    */
-    public Future<Boolean> setFrameRate(Integer framerate) throws CallError, InterruptedException {
-        return call("setFrameRate", framerate);
     }
 
     }

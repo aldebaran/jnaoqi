@@ -23,8 +23,8 @@ Also some fast access Memory key are available :
  leftFootTotalWeight (the average weight on the left foot in Kg)
  rightFootTotalWeight (the average weight on the right foot in Kg)
 
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/sensors/alfsr.html#alfsr">NAOqi APIs for ALFsr </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/sensors/alfsr.html#alfsr">NAOqi APIs for ALFsr </a>
+* NAOqi V2.4.x
 */
 public class ALFsr extends ALProxy {
 
@@ -132,6 +132,15 @@ public class ALFsr extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
     }
 
     /**
@@ -268,6 +277,16 @@ public class ALFsr extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
     }
 
     /**

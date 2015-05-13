@@ -15,8 +15,8 @@ import java.util.List;
 /**
 * ALVideoDevice, formerly called Video Input systemis architectured in order to provide every module related to vision, called vision module, a direct access to raw images from video source, or an access to images transformed in the requested format.
   Extension name of the methods providing images depends on wether modules are local (dynamic library) or remote (executable).
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/vision/alvideodevice.html#alvideodevice">NAOqi APIs for ALVideoDevice </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/vision/alvideodevice.html#alvideodevice">NAOqi APIs for ALVideoDevice </a>
+* NAOqi V2.4.x
 */
 public class ALVideoDevice extends ALProxy {
 
@@ -124,6 +124,15 @@ public class ALVideoDevice extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
     }
 
     /**
@@ -1338,6 +1347,16 @@ Note that the last module unsubscribing to ALVideoDevice will launch it automati
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
     }
 
     /**

@@ -14,8 +14,8 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * ALMotion provides methods that help make Nao move. It contains commands for manipulating joint angles, joint stiffness, and a higher level API for controling walks.
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/motion/almotion.html#almotion">NAOqi APIs for ALMotion </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/motion/almotion.html#almotion">NAOqi APIs for ALMotion </a>
+* NAOqi V2.4.x
 */
 public class ALMotion extends ALProxy {
 
@@ -123,6 +123,15 @@ public class ALMotion extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
     }
 
     /**
@@ -262,6 +271,19 @@ public class ALMotion extends ALProxy {
     }
 
     /**
+    * Interpolates a sequence of timed angles for several motors using bezier control points. This is a blocking call.
+    * 
+    * @param jointNames  A vector of joint names
+    * @param times  An ragged ALValue matrix of floats. Each line corresponding to a motor, and column element to a control point.
+    * @param controlPoints  An ALValue array of arrays each containing [float angle, Handle1, Handle2], where Handle is [int InterpolationType, float dAngle, float dTime] descibing the handle offsets relative to the angle and time of the point. The first bezier param describes the handle that controls the curve preceeding the point, the second describes the curve following the point.
+    * @param isAbsolute  A bool or a vector of bool. If true, the movement is described in absolute angles, else the angles are relative to the current angle.
+    * @param supportSequence  An alvalue containing a list of [nameEffector, timeList, isActiveList].
+    */
+    public void animation(List<String> jointNames, Object times, Object controlPoints, Object isAbsolute, Object supportSequence) throws CallError, InterruptedException{
+        call("animation", jointNames, times, controlPoints, isAbsolute, supportSequence).get();
+    }
+
+    /**
     * Sets angles. This is a non-blocking call.
     * 
     * @param names  The name or names of joints, chains, "Body", "JointActuators", "Joints" or "Actuators". 
@@ -270,6 +292,17 @@ public class ALMotion extends ALProxy {
     */
     public void setAngles(Object names, Object angles, Float fractionMaxSpeed) throws CallError, InterruptedException{
         call("setAngles", names, angles, fractionMaxSpeed).get();
+    }
+
+    /**
+    * Sets angles. This is a non-blocking call.
+    * 
+    * @param names  The name or names of joints, chains, "Body", "JointActuators", "Joints" or "Actuators". 
+    * @param angles  One or more angles in radians
+    * @param fractionMaxSpeeds  The vector of fraction of maximum speed to use
+    */
+    public void setAngles(Object names, Object angles, List<Float> fractionMaxSpeeds) throws CallError, InterruptedException{
+        call("setAngles", names, angles, fractionMaxSpeeds).get();
     }
 
     /**
@@ -911,7 +944,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     /**
     * UserFriendly Whole Body API: enable to keep balance in support polygon.
     * 
-    * @param isEnable  Enable Nao to keep balance.
+    * @param isEnable  Enable Robot to keep balance.
     * @param supportLeg  Name of the support leg: "Legs", "LLeg", "RLeg".
     */
     public void wbEnableBalanceConstraint(Boolean isEnable, String supportLeg) throws CallError, InterruptedException{
@@ -923,9 +956,21 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * 
     * @param supportLeg  Name of the support leg: "Legs", "LLeg", "RLeg".
     * @param duration  Time in seconds. Must be upper 0.5 s.
+    * @return A boolean of the success of the go to balance.
     */
-    public void wbGoToBalance(String supportLeg, Float duration) throws CallError, InterruptedException{
-        call("wbGoToBalance", supportLeg, duration).get();
+    public Boolean wbGoToBalance(String supportLeg, Float duration) throws CallError, InterruptedException {
+        return (Boolean)call("wbGoToBalance", supportLeg, duration).get();
+    }
+
+    /**
+    * Advanced Whole Body API: "Com" go to a desired support polygon. This is a blocking call.
+    * 
+    * @param supportLeg  Name of the support leg: "Legs", "LLeg", "RLeg".
+    * @param fractionMaxSpeed  The fraction of maximum speed to use.
+    * @return A boolean of the success of the go to balance.
+    */
+    public Boolean wbGoToBalanceWithSpeed(String supportLeg, Float fractionMaxSpeed) throws CallError, InterruptedException {
+        return (Boolean)call("wbGoToBalanceWithSpeed", supportLeg, fractionMaxSpeed).get();
     }
 
     /**
@@ -1223,26 +1268,23 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     }
 
     /**
+    * Gets the support polygon
+    * 
+    * @param pSpace  Task frame {FRAME_TORSO = 0, FRAME_WORLD = 1, FRAME_ROBOT = 2}.
+    * @param pUseSensorValues  If true, the sensor values will be used to determine the position.
+    * @return A vector containing the x,y coordinates of each of the outer points of the support polygon in specified frame.
+    */
+    public List<List<Float>> getSupportPolygon(Integer pSpace, Boolean pUseSensorValues) throws CallError, InterruptedException {
+        return (List<List<Float>>)call("getSupportPolygon", pSpace, pUseSensorValues).get();
+    }
+
+    /**
     * Internal Use.
     * 
     * @param config  Internal: An array of ALValues [i][0]: name, [i][1]: value
     */
     public void setMotionConfig(Object config) throws CallError, InterruptedException{
         call("setMotionConfig", config).get();
-    }
-
-    /**
-    * Update the target to follow by the head of NAO.
-DEPRECATED Function. Please use ALTracker::lookAt.
-
-    * 
-    * @param pTargetPositionWy  The target position wy in FRAME_ROBOT
-    * @param pTargetPositionWz  The target position wz in  FRAME_ROBOT
-    * @param pTimeSinceDetectionMs  The time in Ms since the target was detected
-    * @param pUseOfWholeBody  If true, the target is follow in cartesian space by the Head with whole Body constraints.
-    */
-    public void updateTrackerTarget(Float pTargetPositionWy, Float pTargetPositionWz, Integer pTimeSinceDetectionMs, Boolean pUseOfWholeBody) throws CallError, InterruptedException{
-        call("updateTrackerTarget", pTargetPositionWy, pTargetPositionWz, pTimeSinceDetectionMs, pUseOfWholeBody).get();
     }
 
     /**
@@ -1494,6 +1536,16 @@ Chain name can be "Body", "Arms", "LArm", "RArm", "Legs" or "Head".
     }
 
     /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
+    }
+
+    /**
     * Returns true if the method is currently running.
     * 
     * @param id  The ID of the method that was returned when calling the method using 'post'
@@ -1639,6 +1691,20 @@ Chain name can be "Body", "Arms", "LArm", "RArm", "Legs" or "Head".
     }
 
     /**
+    * Interpolates a sequence of timed angles for several motors using bezier control points. This is a blocking call.
+    * 
+    * @param jointNames  A vector of joint names
+    * @param times  An ragged ALValue matrix of floats. Each line corresponding to a motor, and column element to a control point.
+    * @param controlPoints  An ALValue array of arrays each containing [float angle, Handle1, Handle2], where Handle is [int InterpolationType, float dAngle, float dTime] descibing the handle offsets relative to the angle and time of the point. The first bezier param describes the handle that controls the curve preceeding the point, the second describes the curve following the point.
+    * @param isAbsolute  A bool or a vector of bool. If true, the movement is described in absolute angles, else the angles are relative to the current angle.
+    * @param supportSequence  An alvalue containing a list of [nameEffector, timeList, isActiveList].
+    * @return The Future
+    */
+    public Future<Void> animation(List<String> jointNames, Object times, Object controlPoints, Object isAbsolute, Object supportSequence) throws CallError, InterruptedException{
+        return call("animation", jointNames, times, controlPoints, isAbsolute, supportSequence);
+    }
+
+    /**
     * Sets angles. This is a non-blocking call.
     * 
     * @param names  The name or names of joints, chains, "Body", "JointActuators", "Joints" or "Actuators". 
@@ -1648,6 +1714,18 @@ Chain name can be "Body", "Arms", "LArm", "RArm", "Legs" or "Head".
     */
     public Future<Void> setAngles(Object names, Object angles, Float fractionMaxSpeed) throws CallError, InterruptedException{
         return call("setAngles", names, angles, fractionMaxSpeed);
+    }
+
+    /**
+    * Sets angles. This is a non-blocking call.
+    * 
+    * @param names  The name or names of joints, chains, "Body", "JointActuators", "Joints" or "Actuators". 
+    * @param angles  One or more angles in radians
+    * @param fractionMaxSpeeds  The vector of fraction of maximum speed to use
+    * @return The Future
+    */
+    public Future<Void> setAngles(Object names, Object angles, List<Float> fractionMaxSpeeds) throws CallError, InterruptedException{
+        return call("setAngles", names, angles, fractionMaxSpeeds);
     }
 
     /**
@@ -2333,7 +2411,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     /**
     * UserFriendly Whole Body API: enable to keep balance in support polygon.
     * 
-    * @param isEnable  Enable Nao to keep balance.
+    * @param isEnable  Enable Robot to keep balance.
     * @param supportLeg  Name of the support leg: "Legs", "LLeg", "RLeg".
     * @return The Future
     */
@@ -2346,10 +2424,21 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     * 
     * @param supportLeg  Name of the support leg: "Legs", "LLeg", "RLeg".
     * @param duration  Time in seconds. Must be upper 0.5 s.
-    * @return The Future
+    * @return A boolean of the success of the go to balance.
     */
-    public Future<Void> wbGoToBalance(String supportLeg, Float duration) throws CallError, InterruptedException{
+    public Future<Boolean> wbGoToBalance(String supportLeg, Float duration) throws CallError, InterruptedException {
         return call("wbGoToBalance", supportLeg, duration);
+    }
+
+    /**
+    * Advanced Whole Body API: "Com" go to a desired support polygon. This is a blocking call.
+    * 
+    * @param supportLeg  Name of the support leg: "Legs", "LLeg", "RLeg".
+    * @param fractionMaxSpeed  The fraction of maximum speed to use.
+    * @return A boolean of the success of the go to balance.
+    */
+    public Future<Boolean> wbGoToBalanceWithSpeed(String supportLeg, Float fractionMaxSpeed) throws CallError, InterruptedException {
+        return call("wbGoToBalanceWithSpeed", supportLeg, fractionMaxSpeed);
     }
 
     /**
@@ -2657,6 +2746,17 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     }
 
     /**
+    * Gets the support polygon
+    * 
+    * @param pSpace  Task frame {FRAME_TORSO = 0, FRAME_WORLD = 1, FRAME_ROBOT = 2}.
+    * @param pUseSensorValues  If true, the sensor values will be used to determine the position.
+    * @return A vector containing the x,y coordinates of each of the outer points of the support polygon in specified frame.
+    */
+    public Future<List<List<Float>>> getSupportPolygon(Integer pSpace, Boolean pUseSensorValues) throws CallError, InterruptedException {
+        return call("getSupportPolygon", pSpace, pUseSensorValues);
+    }
+
+    /**
     * Internal Use.
     * 
     * @param config  Internal: An array of ALValues [i][0]: name, [i][1]: value
@@ -2664,21 +2764,6 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public Future<Void> setMotionConfig(Object config) throws CallError, InterruptedException{
         return call("setMotionConfig", config);
-    }
-
-    /**
-    * Update the target to follow by the head of NAO.
-DEPRECATED Function. Please use ALTracker::lookAt.
-
-    * 
-    * @param pTargetPositionWy  The target position wy in FRAME_ROBOT
-    * @param pTargetPositionWz  The target position wz in  FRAME_ROBOT
-    * @param pTimeSinceDetectionMs  The time in Ms since the target was detected
-    * @param pUseOfWholeBody  If true, the target is follow in cartesian space by the Head with whole Body constraints.
-    * @return The Future
-    */
-    public Future<Void> updateTrackerTarget(Float pTargetPositionWy, Float pTargetPositionWz, Integer pTimeSinceDetectionMs, Boolean pUseOfWholeBody) throws CallError, InterruptedException{
-        return call("updateTrackerTarget", pTargetPositionWy, pTargetPositionWz, pTimeSinceDetectionMs, pUseOfWholeBody);
     }
 
     /**

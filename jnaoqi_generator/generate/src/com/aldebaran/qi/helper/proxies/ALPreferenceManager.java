@@ -12,10 +12,11 @@ import com.aldebaran.qi.Session;
 import com.aldebaran.qi.helper.ALProxy;
 
 import java.util.List;
+import java.util.Map;
 /**
 * 
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/core/alpreferencemanager.html#alpreferencemanager">NAOqi APIs for ALPreferenceManager </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/core/alpreferencemanager.html#alpreferencemanager">NAOqi APIs for ALPreferenceManager </a>
+* NAOqi V2.4.x
 */
 public class ALPreferenceManager extends ALProxy {
 
@@ -126,6 +127,15 @@ public class ALPreferenceManager extends ALProxy {
     }
 
     /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
+    }
+
+    /**
     * Returns true if the method is currently running.
     * 
     * @param id  The ID of the method that was returned when calling the method using 'post'
@@ -212,6 +222,15 @@ public class ALPreferenceManager extends ALProxy {
     */
     public void removeValue(String domain, String setting) throws CallError, InterruptedException{
         call("removeValue", domain, setting).get();
+    }
+
+    /**
+    * Add many values at once.
+    * 
+    * @param values  A map (domain as index) of map (setting name as index) of values.
+    */
+    public void setValues(Map<String, Map<String, Object>> values) throws CallError, InterruptedException{
+        call("setValues", values).get();
     }
 
     /**
@@ -342,6 +361,16 @@ public class ALPreferenceManager extends ALProxy {
     }
 
     /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
+    }
+
+    /**
     * Returns true if the method is currently running.
     * 
     * @param id  The ID of the method that was returned when calling the method using 'post'
@@ -431,6 +460,16 @@ public class ALPreferenceManager extends ALProxy {
     */
     public Future<Void> removeValue(String domain, String setting) throws CallError, InterruptedException{
         return call("removeValue", domain, setting);
+    }
+
+    /**
+    * Add many values at once.
+    * 
+    * @param values  A map (domain as index) of map (setting name as index) of values.
+    * @return The Future
+    */
+    public Future<Void> setValues(Map<String, Map<String, Object>> values) throws CallError, InterruptedException{
+        return call("setValues", values);
     }
 
     /**

@@ -14,8 +14,8 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * Use ALTracker module to make the robot track an object or a person with head and arms or not.
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/trackers/altracker.html#altracker">NAOqi APIs for ALTracker </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/trackers/index.html#altracker">NAOqi APIs for ALTracker </a>
+* NAOqi V2.4.x
 */
 public class ALTracker extends ALProxy {
 
@@ -123,6 +123,15 @@ public class ALTracker extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
     }
 
     /**
@@ -270,6 +279,24 @@ public class ALTracker extends ALProxy {
     */
     public void toggleSearch(Boolean pSearch) throws CallError, InterruptedException{
         call("toggleSearch", pSearch).get();
+    }
+
+    /**
+    * Set search process fraction max speed.
+    * 
+    * @param pFractionMaxSpeed  a fraction max speed.
+    */
+    public void setSearchFractionMaxSpeed(Float pFractionMaxSpeed) throws CallError, InterruptedException{
+        call("setSearchFractionMaxSpeed", pFractionMaxSpeed).get();
+    }
+
+    /**
+    * Get search process fraction max speed.
+    * 
+    * @return a fraction max speed.
+    */
+    public Float getSearchFractionMaxSpeed() throws CallError, InterruptedException {
+        return (Float)call("getSearchFractionMaxSpeed").get();
     }
 
     /**
@@ -498,6 +525,14 @@ public class ALTracker extends ALProxy {
     }
 
     /**
+    * Initialize tracker parameters with default values.
+    * 
+    */
+    public void initialize() throws CallError, InterruptedException{
+        call("initialize").get();
+    }
+
+    /**
     * DEPRECATED. Use lookAt with frame instead. Look at the target position with head.
 
     * 
@@ -701,6 +736,16 @@ public class ALTracker extends ALProxy {
     }
 
     /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
+    }
+
+    /**
     * Returns true if the method is currently running.
     * 
     * @param id  The ID of the method that was returned when calling the method using 'post'
@@ -850,6 +895,25 @@ public class ALTracker extends ALProxy {
     */
     public Future<Void> toggleSearch(Boolean pSearch) throws CallError, InterruptedException{
         return call("toggleSearch", pSearch);
+    }
+
+    /**
+    * Set search process fraction max speed.
+    * 
+    * @param pFractionMaxSpeed  a fraction max speed.
+    * @return The Future
+    */
+    public Future<Void> setSearchFractionMaxSpeed(Float pFractionMaxSpeed) throws CallError, InterruptedException{
+        return call("setSearchFractionMaxSpeed", pFractionMaxSpeed);
+    }
+
+    /**
+    * Get search process fraction max speed.
+    * 
+    * @return a fraction max speed.
+    */
+    public Future<Float> getSearchFractionMaxSpeed() throws CallError, InterruptedException {
+        return call("getSearchFractionMaxSpeed");
     }
 
     /**
@@ -1089,6 +1153,15 @@ public class ALTracker extends ALProxy {
     */
     public Future<Void> setEffector(String pEffector) throws CallError, InterruptedException{
         return call("setEffector", pEffector);
+    }
+
+    /**
+    * Initialize tracker parameters with default values.
+    * 
+    * @return The Future
+    */
+    public Future<Void> initialize() throws CallError, InterruptedException{
+        return call("initialize");
     }
 
     /**

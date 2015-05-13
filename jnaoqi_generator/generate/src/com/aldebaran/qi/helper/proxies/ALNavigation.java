@@ -14,8 +14,8 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * Use ALNavigation module to make the robot go safely to the asked pose2D.
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/motion/alnavigation.html#alnavigation">NAOqi APIs for ALNavigation </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/motion/alnavigation.html#alnavigation">NAOqi APIs for ALNavigation </a>
+* NAOqi V2.4.x
 */
 public class ALNavigation extends ALProxy {
 
@@ -123,6 +123,15 @@ public class ALNavigation extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
     }
 
     /**
@@ -310,11 +319,33 @@ public class ALNavigation extends ALProxy {
     }
 
     /**
-    * .
+    *  Starts a loop to update the mapping of the free space around the robot. 
     * 
     */
-    public void onTouchChanged(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        call("onTouchChanged", param1, param2, param3).get();
+    public void startFreeZoneUpdate() throws CallError, InterruptedException{
+        call("startFreeZoneUpdate").get();
+    }
+
+    /**
+    * Stops and returns free zone.
+    * 
+    * @param desiredRadius  The radius of the space we want in meters [m].
+    * @param maximumDisplacement  The max distance we accept to move toreach the found place [m].
+    * @return Returns [errorCode, result radius (m), [worldMotionToRobotCenterX (m), worldMotionToRobotCenterY (m)]]
+    */
+    public Object stopAndComputeFreeZone(Float desiredRadius, Float maximumDisplacement) throws CallError, InterruptedException {
+        return (Object)call("stopAndComputeFreeZone", desiredRadius, maximumDisplacement).get();
+    }
+
+    /**
+    * Returns [errorCode, result radius[centerWorldMotionX, centerWorldMotionY]]
+    * 
+    * @param desiredRadius  The radius of the space we want in meters [m].
+    * @param maximumDisplacement  The max distance we accept to move toreach the found place [m].
+    * @return Returns [errorCode, result radius (m), [worldMotionToRobotCenterX (m), worldMotionToRobotCenterY (m)]]
+    */
+    public Object findFreeZone(Float desiredRadius, Float maximumDisplacement) throws CallError, InterruptedException {
+        return (Object)call("findFreeZone", desiredRadius, maximumDisplacement).get();
     }
 
 
@@ -413,6 +444,16 @@ public class ALNavigation extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
     }
 
     /**
@@ -609,12 +650,34 @@ public class ALNavigation extends ALProxy {
     }
 
     /**
-    * .
+    *  Starts a loop to update the mapping of the free space around the robot. 
     * 
     * @return The Future
     */
-    public Future<Void> onTouchChanged(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        return call("onTouchChanged", param1, param2, param3);
+    public Future<Void> startFreeZoneUpdate() throws CallError, InterruptedException{
+        return call("startFreeZoneUpdate");
+    }
+
+    /**
+    * Stops and returns free zone.
+    * 
+    * @param desiredRadius  The radius of the space we want in meters [m].
+    * @param maximumDisplacement  The max distance we accept to move toreach the found place [m].
+    * @return Returns [errorCode, result radius (m), [worldMotionToRobotCenterX (m), worldMotionToRobotCenterY (m)]]
+    */
+    public Future<Object> stopAndComputeFreeZone(Float desiredRadius, Float maximumDisplacement) throws CallError, InterruptedException {
+        return call("stopAndComputeFreeZone", desiredRadius, maximumDisplacement);
+    }
+
+    /**
+    * Returns [errorCode, result radius[centerWorldMotionX, centerWorldMotionY]]
+    * 
+    * @param desiredRadius  The radius of the space we want in meters [m].
+    * @param maximumDisplacement  The max distance we accept to move toreach the found place [m].
+    * @return Returns [errorCode, result radius (m), [worldMotionToRobotCenterX (m), worldMotionToRobotCenterY (m)]]
+    */
+    public Future<Object> findFreeZone(Float desiredRadius, Float maximumDisplacement) throws CallError, InterruptedException {
+        return call("findFreeZone", desiredRadius, maximumDisplacement);
     }
 
     }

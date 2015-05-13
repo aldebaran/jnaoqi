@@ -18,8 +18,8 @@ import java.util.List;
  One event is created when nao locates a sound source : ALSoundLocalization/SoundLocated.
  ALSoundLocalization/SoundLocated : [ [time(sec), time(usec)], [azimuth, elevation, confidence, (optional: energy)] , [Head Position[6D]] ] 
 
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/audio/alaudiosourcelocalization.html#alaudiosourcelocalization">NAOqi APIs for ALAudioSourceLocalization </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/audio/alaudiosourcelocalization.html#alaudiosourcelocalization">NAOqi APIs for ALAudioSourceLocalization </a>
+* NAOqi V2.4.x
 */
 public class ALAudioSourceLocalization extends ALProxy {
 
@@ -41,12 +41,12 @@ public class ALAudioSourceLocalization extends ALProxy {
     }
 
     /**
-    * Gets extractor running status
+    * Changes the pause status of the extractor
     * 
-    * @return True if the extractor is currently processing images, False if not
+    * @param status  New pause satus
     */
-    public Boolean isProcessing() throws CallError, InterruptedException {
-        return (Boolean)call("isProcessing").get();
+    public void pause(Boolean status) throws CallError, InterruptedException{
+        call("pause", status).get();
     }
 
     /**
@@ -57,6 +57,15 @@ public class ALAudioSourceLocalization extends ALProxy {
     */
     public void setParameter(String parameter, Object value) throws CallError, InterruptedException{
         call("setParameter", parameter, value).get();
+    }
+
+    /**
+    * Gets extractor running status
+    * 
+    * @return True if the extractor is currently processing images, False if not
+    */
+    public Boolean isProcessing() throws CallError, InterruptedException {
+        return (Boolean)call("isProcessing").get();
     }
 
     /**
@@ -146,6 +155,15 @@ public class ALAudioSourceLocalization extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
     }
 
     /**
@@ -318,15 +336,6 @@ public class ALAudioSourceLocalization extends ALProxy {
         return (Boolean)call("isPaused").get();
     }
 
-    /**
-    * Changes the pause status of the extractor
-    * 
-    * @param status  New pause satus
-    */
-    public void pause(Boolean status) throws CallError, InterruptedException{
-        call("pause", status).get();
-    }
-
 
     public class AsyncALAudioSourceLocalization extends ALProxy {
 
@@ -335,12 +344,13 @@ public class ALAudioSourceLocalization extends ALProxy {
         }
     
     /**
-    * Gets extractor running status
+    * Changes the pause status of the extractor
     * 
-    * @return True if the extractor is currently processing images, False if not
+    * @param status  New pause satus
+    * @return The Future
     */
-    public Future<Boolean> isProcessing() throws CallError, InterruptedException {
-        return call("isProcessing");
+    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
+        return call("pause", status);
     }
 
     /**
@@ -352,6 +362,15 @@ public class ALAudioSourceLocalization extends ALProxy {
     */
     public Future<Void> setParameter(String parameter, Object value) throws CallError, InterruptedException{
         return call("setParameter", parameter, value);
+    }
+
+    /**
+    * Gets extractor running status
+    * 
+    * @return True if the extractor is currently processing images, False if not
+    */
+    public Future<Boolean> isProcessing() throws CallError, InterruptedException {
+        return call("isProcessing");
     }
 
     /**
@@ -443,6 +462,16 @@ public class ALAudioSourceLocalization extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
     }
 
     /**
@@ -619,16 +648,6 @@ public class ALAudioSourceLocalization extends ALProxy {
     */
     public Future<Boolean> isPaused() throws CallError, InterruptedException {
         return call("isPaused");
-    }
-
-    /**
-    * Changes the pause status of the extractor
-    * 
-    * @param status  New pause satus
-    * @return The Future
-    */
-    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
-        return call("pause", status);
     }
 
     }

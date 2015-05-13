@@ -14,8 +14,8 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * VisualSpaceHistory module
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/vision/alvisualspacehistory.html#alvisualspacehistory">NAOqi APIs for ALVisualSpaceHistory </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/vision/alvisualspacehistory.html#alvisualspacehistory">NAOqi APIs for ALVisualSpaceHistory </a>
+* NAOqi V2.4.x
 */
 public class ALVisualSpaceHistory extends ALProxy {
 
@@ -34,6 +34,15 @@ public class ALVisualSpaceHistory extends ALProxy {
 	 */
     public AsyncALVisualSpaceHistory async() {
         return asyncProxy;
+    }
+
+    /**
+    * Gets grid precision
+    * 
+    * @return Grid precision
+    */
+    public Float getGridPrecision() throws CallError, InterruptedException {
+        return (Float)call("getGridPrecision").get();
     }
 
     /**
@@ -131,6 +140,15 @@ public class ALVisualSpaceHistory extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
     }
 
     /**
@@ -303,15 +321,6 @@ public class ALVisualSpaceHistory extends ALProxy {
         call("setGridPrecision", precision).get();
     }
 
-    /**
-    * Gets grid precision
-    * 
-    * @return Grid precision
-    */
-    public Float getGridPrecision() throws CallError, InterruptedException {
-        return (Float)call("getGridPrecision").get();
-    }
-
 
     public class AsyncALVisualSpaceHistory extends ALProxy {
 
@@ -319,6 +328,15 @@ public class ALVisualSpaceHistory extends ALProxy {
             super();
         }
     
+    /**
+    * Gets grid precision
+    * 
+    * @return Grid precision
+    */
+    public Future<Float> getGridPrecision() throws CallError, InterruptedException {
+        return call("getGridPrecision");
+    }
+
     /**
     * Resets grid with current timestamp
     * 
@@ -417,6 +435,16 @@ public class ALVisualSpaceHistory extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
     }
 
     /**
@@ -594,15 +622,6 @@ public class ALVisualSpaceHistory extends ALProxy {
     */
     public Future<Void> setGridPrecision(Float precision) throws CallError, InterruptedException{
         return call("setGridPrecision", precision);
-    }
-
-    /**
-    * Gets grid precision
-    * 
-    * @return Grid precision
-    */
-    public Future<Float> getGridPrecision() throws CallError, InterruptedException {
-        return call("getGridPrecision");
     }
 
     }

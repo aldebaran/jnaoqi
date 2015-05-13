@@ -14,8 +14,8 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * The ALAudioDevice module allows other modules to access to the sound data of the nao's microphones, and to send sound toward its loudspeakers  The way to receive or send the audio data depends whether the modules are local (dynamic library) or remote (executable).
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/audio/alaudiodevice.html#alaudiodevice">NAOqi APIs for ALAudioDevice </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/audio/alaudiodevice.html#alaudiodevice">NAOqi APIs for ALAudioDevice </a>
+* NAOqi V2.4.x
 */
 public class ALAudioDevice extends ALProxy {
 
@@ -37,11 +37,11 @@ public class ALAudioDevice extends ALProxy {
     }
 
     /**
-    * Flush the audio device for playback. close the audio device for capture. You can call this method if you want to send sound to alsa in another program than naoqi while naoqi is running (with aplay for example)
+    * Closes the audio device for playback. close the audio device for capture. You can call this method if you want to send sound to alsa in another program than naoqi while naoqi is running (with aplay for example)
     * 
     */
-    public void flushAudioOutputs() throws CallError, InterruptedException{
-        call("flushAudioOutputs").get();
+    public void closeAudioOutputs() throws CallError, InterruptedException{
+        call("closeAudioOutputs").get();
     }
 
     /**
@@ -57,20 +57,20 @@ public class ALAudioDevice extends ALProxy {
     }
 
     /**
-    * Enables the computation of the energy of each microphone signal
+    * Allows to know if audio ouputs are closed or not
     * 
+    * @return True if audio outputs are closed / False otherwise
     */
-    public void enableEnergyComputation() throws CallError, InterruptedException{
-        call("enableEnergyComputation").get();
+    public Boolean isOutputClosed() throws CallError, InterruptedException {
+        return (Boolean)call("isOutputClosed").get();
     }
 
     /**
-    * Allows to know if audio inputs are closed or not
+    * Disables the computation of the energy of each microphone signal
     * 
-    * @return True if audio inputs are closed / False otherwise
     */
-    public Boolean isInputClosed() throws CallError, InterruptedException {
-        return (Boolean)call("isInputClosed").get();
+    public void disableEnergyComputation() throws CallError, InterruptedException{
+        call("disableEnergyComputation").get();
     }
 
     /**
@@ -110,6 +110,27 @@ public class ALAudioDevice extends ALProxy {
     }
 
     /**
+    * Allows to know if audio inputs are closed or not
+    * 
+    * @return True if audio inputs are closed / False otherwise
+    */
+    public Boolean isInputClosed() throws CallError, InterruptedException {
+        return (Boolean)call("isInputClosed").get();
+    }
+
+    /**
+    * Set AudioDevice Client preferences
+    * 
+    * @param name  name of the client
+    * @param sampleRate  sample rate of the microphones data sent to the process function - must be 16000 or 48000
+    * @param channelsConfiguration  An int (defined in ALSoundExtractor) indicating which microphones data will be send to the process function. ALLCHANNELS, LEFTCHANNEL, RIGHTCHANNEL, FRONTCHANNEL, REARCHANNEL are the configuration currently supported.
+    * @param deinterleaved  indicates if the microphones data sent to the process function are interleaved or not - 0 : interleaved - 1 : deinterleaved 
+    */
+    public void setClientPreferences(String name, Integer sampleRate, Integer channelsConfiguration, Integer deinterleaved) throws CallError, InterruptedException{
+        call("setClientPreferences", name, sampleRate, channelsConfiguration, deinterleaved).get();
+    }
+
+    /**
     * Set AudioDevice Client preferences. This function is deprecated, the use of the alternate 4 arguments setClientPreferences() is now prefered.
     * 
     * @param name  name of the client
@@ -140,32 +161,19 @@ public class ALAudioDevice extends ALProxy {
     }
 
     /**
-    * Allows to know if audio ouputs are closed or not
+    * Flush the audio device for playback. close the audio device for capture. You can call this method if you want to send sound to alsa in another program than naoqi while naoqi is running (with aplay for example)
     * 
-    * @return True if audio outputs are closed / False otherwise
     */
-    public Boolean isOutputClosed() throws CallError, InterruptedException {
-        return (Boolean)call("isOutputClosed").get();
+    public void flushAudioOutputs() throws CallError, InterruptedException{
+        call("flushAudioOutputs").get();
     }
 
     /**
-    * Set AudioDevice Client preferences
-    * 
-    * @param name  name of the client
-    * @param sampleRate  sample rate of the microphones data sent to the process function - must be 16000 or 48000
-    * @param channelsConfiguration  An int (defined in ALSoundExtractor) indicating which microphones data will be send to the process function. ALLCHANNELS, LEFTCHANNEL, RIGHTCHANNEL, FRONTCHANNEL, REARCHANNEL are the configuration currently supported.
-    * @param deinterleaved  indicates if the microphones data sent to the process function are interleaved or not - 0 : interleaved - 1 : deinterleaved 
-    */
-    public void setClientPreferences(String name, Integer sampleRate, Integer channelsConfiguration, Integer deinterleaved) throws CallError, InterruptedException{
-        call("setClientPreferences", name, sampleRate, channelsConfiguration, deinterleaved).get();
-    }
-
-    /**
-    * Disables the computation of the energy of each microphone signal
+    * Enables the computation of the energy of each microphone signal
     * 
     */
-    public void disableEnergyComputation() throws CallError, InterruptedException{
-        call("disableEnergyComputation").get();
+    public void enableEnergyComputation() throws CallError, InterruptedException{
+        call("enableEnergyComputation").get();
     }
 
     /**
@@ -255,6 +263,15 @@ public class ALAudioDevice extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
     }
 
     /**
@@ -427,14 +444,6 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
         call("closeAudioInputs").get();
     }
 
-    /**
-    * Closes the audio device for playback. close the audio device for capture. You can call this method if you want to send sound to alsa in another program than naoqi while naoqi is running (with aplay for example)
-    * 
-    */
-    public void closeAudioOutputs() throws CallError, InterruptedException{
-        call("closeAudioOutputs").get();
-    }
-
 
     public class AsyncALAudioDevice extends ALProxy {
 
@@ -443,12 +452,12 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
         }
     
     /**
-    * Flush the audio device for playback. close the audio device for capture. You can call this method if you want to send sound to alsa in another program than naoqi while naoqi is running (with aplay for example)
+    * Closes the audio device for playback. close the audio device for capture. You can call this method if you want to send sound to alsa in another program than naoqi while naoqi is running (with aplay for example)
     * 
     * @return The Future
     */
-    public Future<Void> flushAudioOutputs() throws CallError, InterruptedException{
-        return call("flushAudioOutputs");
+    public Future<Void> closeAudioOutputs() throws CallError, InterruptedException{
+        return call("closeAudioOutputs");
     }
 
     /**
@@ -465,21 +474,21 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
     }
 
     /**
-    * Enables the computation of the energy of each microphone signal
+    * Allows to know if audio ouputs are closed or not
     * 
-    * @return The Future
+    * @return True if audio outputs are closed / False otherwise
     */
-    public Future<Void> enableEnergyComputation() throws CallError, InterruptedException{
-        return call("enableEnergyComputation");
+    public Future<Boolean> isOutputClosed() throws CallError, InterruptedException {
+        return call("isOutputClosed");
     }
 
     /**
-    * Allows to know if audio inputs are closed or not
+    * Disables the computation of the energy of each microphone signal
     * 
-    * @return True if audio inputs are closed / False otherwise
+    * @return The Future
     */
-    public Future<Boolean> isInputClosed() throws CallError, InterruptedException {
-        return call("isInputClosed");
+    public Future<Void> disableEnergyComputation() throws CallError, InterruptedException{
+        return call("disableEnergyComputation");
     }
 
     /**
@@ -519,6 +528,28 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
     }
 
     /**
+    * Allows to know if audio inputs are closed or not
+    * 
+    * @return True if audio inputs are closed / False otherwise
+    */
+    public Future<Boolean> isInputClosed() throws CallError, InterruptedException {
+        return call("isInputClosed");
+    }
+
+    /**
+    * Set AudioDevice Client preferences
+    * 
+    * @param name  name of the client
+    * @param sampleRate  sample rate of the microphones data sent to the process function - must be 16000 or 48000
+    * @param channelsConfiguration  An int (defined in ALSoundExtractor) indicating which microphones data will be send to the process function. ALLCHANNELS, LEFTCHANNEL, RIGHTCHANNEL, FRONTCHANNEL, REARCHANNEL are the configuration currently supported.
+    * @param deinterleaved  indicates if the microphones data sent to the process function are interleaved or not - 0 : interleaved - 1 : deinterleaved 
+    * @return The Future
+    */
+    public Future<Void> setClientPreferences(String name, Integer sampleRate, Integer channelsConfiguration, Integer deinterleaved) throws CallError, InterruptedException{
+        return call("setClientPreferences", name, sampleRate, channelsConfiguration, deinterleaved);
+    }
+
+    /**
     * Set AudioDevice Client preferences. This function is deprecated, the use of the alternate 4 arguments setClientPreferences() is now prefered.
     * 
     * @param name  name of the client
@@ -551,34 +582,21 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
     }
 
     /**
-    * Allows to know if audio ouputs are closed or not
-    * 
-    * @return True if audio outputs are closed / False otherwise
-    */
-    public Future<Boolean> isOutputClosed() throws CallError, InterruptedException {
-        return call("isOutputClosed");
-    }
-
-    /**
-    * Set AudioDevice Client preferences
-    * 
-    * @param name  name of the client
-    * @param sampleRate  sample rate of the microphones data sent to the process function - must be 16000 or 48000
-    * @param channelsConfiguration  An int (defined in ALSoundExtractor) indicating which microphones data will be send to the process function. ALLCHANNELS, LEFTCHANNEL, RIGHTCHANNEL, FRONTCHANNEL, REARCHANNEL are the configuration currently supported.
-    * @param deinterleaved  indicates if the microphones data sent to the process function are interleaved or not - 0 : interleaved - 1 : deinterleaved 
-    * @return The Future
-    */
-    public Future<Void> setClientPreferences(String name, Integer sampleRate, Integer channelsConfiguration, Integer deinterleaved) throws CallError, InterruptedException{
-        return call("setClientPreferences", name, sampleRate, channelsConfiguration, deinterleaved);
-    }
-
-    /**
-    * Disables the computation of the energy of each microphone signal
+    * Flush the audio device for playback. close the audio device for capture. You can call this method if you want to send sound to alsa in another program than naoqi while naoqi is running (with aplay for example)
     * 
     * @return The Future
     */
-    public Future<Void> disableEnergyComputation() throws CallError, InterruptedException{
-        return call("disableEnergyComputation");
+    public Future<Void> flushAudioOutputs() throws CallError, InterruptedException{
+        return call("flushAudioOutputs");
+    }
+
+    /**
+    * Enables the computation of the energy of each microphone signal
+    * 
+    * @return The Future
+    */
+    public Future<Void> enableEnergyComputation() throws CallError, InterruptedException{
+        return call("enableEnergyComputation");
     }
 
     /**
@@ -670,6 +688,16 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
     }
 
     /**
@@ -851,15 +879,6 @@ outputSampleRate can bet set to 16000 Hz, 22050 Hz, 44100 Hz or 48000 Hz. Warnin
     */
     public Future<Void> closeAudioInputs() throws CallError, InterruptedException{
         return call("closeAudioInputs");
-    }
-
-    /**
-    * Closes the audio device for playback. close the audio device for capture. You can call this method if you want to send sound to alsa in another program than naoqi while naoqi is running (with aplay for example)
-    * 
-    * @return The Future
-    */
-    public Future<Void> closeAudioOutputs() throws CallError, InterruptedException{
-        return call("closeAudioOutputs");
     }
 
     }

@@ -14,8 +14,8 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * 
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/vision/allocalization.html#allocalization">NAOqi APIs for ALLocalization </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/vision/allocalization.html#allocalization">NAOqi APIs for ALLocalization </a>
+* NAOqi V2.4.x
 */
 public class ALLocalization extends ALProxy {
 
@@ -37,11 +37,11 @@ public class ALLocalization extends ALProxy {
     }
 
     /**
-    * Go to a given position.
+    * Get the robot position in world navigation.
     * 
     */
-    public Integer goToPosition(List<Float> param1) throws CallError, InterruptedException {
-        return (Integer)call("goToPosition", param1).get();
+    public List<Float> getRobotPosition(Boolean param1) throws CallError, InterruptedException {
+        return (List<Float>)call("getRobotPosition", param1).get();
     }
 
     /**
@@ -53,6 +53,14 @@ public class ALLocalization extends ALProxy {
     }
 
     /**
+    * 
+    * 
+    */
+    public Object isInGivenZone(Float param1, Float param2, Float param3, Float param4) throws CallError, InterruptedException {
+        return (Object)call("isInGivenZone", param1, param2, param3, param4).get();
+    }
+
+    /**
     * Go to the robot home.
     * 
     */
@@ -61,11 +69,19 @@ public class ALLocalization extends ALProxy {
     }
 
     /**
-    * 
+    * Go to a given position.
     * 
     */
-    public Object isInGivenZone(Float param1, Float param2, Float param3, Float param4) throws CallError, InterruptedException {
-        return (Object)call("isInGivenZone", param1, param2, param3, param4).get();
+    public Integer goToPosition(List<Float> param1) throws CallError, InterruptedException {
+        return (Integer)call("goToPosition", param1).get();
+    }
+
+    /**
+    * Get the robot orientation.
+    * 
+    */
+    public Object getRobotOrientation(Boolean param1) throws CallError, InterruptedException {
+        return (Object)call("getRobotOrientation", param1).get();
     }
 
     /**
@@ -155,6 +171,15 @@ public class ALLocalization extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
     }
 
     /**
@@ -282,6 +307,14 @@ public class ALLocalization extends ALProxy {
     * 
     * 
     */
+    public List<Float> getDriftPercentages() throws CallError, InterruptedException {
+        return (List<Float>)call("getDriftPercentages").get();
+    }
+
+    /**
+    * 
+    * 
+    */
     public Boolean isDataAvailable() throws CallError, InterruptedException {
         return (Boolean)call("isDataAvailable").get();
     }
@@ -294,22 +327,6 @@ public class ALLocalization extends ALProxy {
         return (List<Float>)call("getRobotPosition").get();
     }
 
-    /**
-    * Get the robot position in world navigation.
-    * 
-    */
-    public List<Float> getRobotPosition(Boolean param1) throws CallError, InterruptedException {
-        return (List<Float>)call("getRobotPosition", param1).get();
-    }
-
-    /**
-    * Get the robot orientation.
-    * 
-    */
-    public Object getRobotOrientation(Boolean param1) throws CallError, InterruptedException {
-        return (Object)call("getRobotOrientation", param1).get();
-    }
-
 
     public class AsyncALLocalization extends ALProxy {
 
@@ -317,6 +334,38 @@ public class ALLocalization extends ALProxy {
             super();
         }
     
+    /**
+    * Get the robot position in world navigation.
+    * 
+    */
+    public Future<List<Float>> getRobotPosition(Boolean param1) throws CallError, InterruptedException {
+        return call("getRobotPosition", param1);
+    }
+
+    /**
+    * Get the robot orientation.
+    * 
+    */
+    public Future<Object> getRobotOrientation() throws CallError, InterruptedException {
+        return call("getRobotOrientation");
+    }
+
+    /**
+    * 
+    * 
+    */
+    public Future<Object> isInGivenZone(Float param1, Float param2, Float param3, Float param4) throws CallError, InterruptedException {
+        return call("isInGivenZone", param1, param2, param3, param4);
+    }
+
+    /**
+    * Go to the robot home.
+    * 
+    */
+    public Future<Integer> goToHome() throws CallError, InterruptedException {
+        return call("goToHome");
+    }
+
     /**
     * Go to a given position.
     * 
@@ -329,24 +378,8 @@ public class ALLocalization extends ALProxy {
     * Get the robot orientation.
     * 
     */
-    public Future<Object> getRobotOrientation() throws CallError, InterruptedException {
-        return call("getRobotOrientation");
-    }
-
-    /**
-    * Go to the robot home.
-    * 
-    */
-    public Future<Integer> goToHome() throws CallError, InterruptedException {
-        return call("goToHome");
-    }
-
-    /**
-    * 
-    * 
-    */
-    public Future<Object> isInGivenZone(Float param1, Float param2, Float param3, Float param4) throws CallError, InterruptedException {
-        return call("isInGivenZone", param1, param2, param3, param4);
+    public Future<Object> getRobotOrientation(Boolean param1) throws CallError, InterruptedException {
+        return call("getRobotOrientation", param1);
     }
 
     /**
@@ -438,6 +471,16 @@ public class ALLocalization extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
     }
 
     /**
@@ -567,6 +610,14 @@ public class ALLocalization extends ALProxy {
     * 
     * 
     */
+    public Future<List<Float>> getDriftPercentages() throws CallError, InterruptedException {
+        return call("getDriftPercentages");
+    }
+
+    /**
+    * 
+    * 
+    */
     public Future<Boolean> isDataAvailable() throws CallError, InterruptedException {
         return call("isDataAvailable");
     }
@@ -577,22 +628,6 @@ public class ALLocalization extends ALProxy {
     */
     public Future<List<Float>> getRobotPosition() throws CallError, InterruptedException {
         return call("getRobotPosition");
-    }
-
-    /**
-    * Get the robot position in world navigation.
-    * 
-    */
-    public Future<List<Float>> getRobotPosition(Boolean param1) throws CallError, InterruptedException {
-        return call("getRobotPosition", param1);
-    }
-
-    /**
-    * Get the robot orientation.
-    * 
-    */
-    public Future<Object> getRobotOrientation(Boolean param1) throws CallError, InterruptedException {
-        return call("getRobotOrientation", param1);
     }
 
     }

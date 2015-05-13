@@ -12,10 +12,11 @@ import com.aldebaran.qi.Session;
 import com.aldebaran.qi.helper.ALProxy;
 
 import java.util.List;
+import java.util.Map;
 /**
 * 
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/connectionmanager/index.html#alconnectionmanager">NAOqi APIs for ALConnectionManager </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/connectionmanager/index.html#alconnectionmanager">NAOqi APIs for ALConnectionManager </a>
+* NAOqi V2.4.x
 */
 public class ALConnectionManager extends ALProxy {
 
@@ -228,6 +229,30 @@ public class ALConnectionManager extends ALProxy {
         return (Object)call("interfaces").get();
     }
 
+    /**
+    * 
+    * 
+    */
+    public void provisionService(Map<String, String> param1) throws CallError, InterruptedException{
+        call("provisionService", param1).get();
+    }
+
+    /**
+    * 
+    * 
+    */
+    public List<Map<String, String>> provisionedServices() throws CallError, InterruptedException {
+        return (List<Map<String, String>>)call("provisionedServices").get();
+    }
+
+    /**
+    * 
+    * 
+    */
+    public void removeProvisionedService(String param1) throws CallError, InterruptedException{
+        call("removeProvisionedService", param1).get();
+    }
+
 
     public class AsyncALConnectionManager extends ALProxy {
 
@@ -437,6 +462,32 @@ public class ALConnectionManager extends ALProxy {
     */
     public Future<Object> interfaces() throws CallError, InterruptedException {
         return call("interfaces");
+    }
+
+    /**
+    * 
+    * 
+    * @return The Future
+    */
+    public Future<Void> provisionService(Map<String, String> param1) throws CallError, InterruptedException{
+        return call("provisionService", param1);
+    }
+
+    /**
+    * 
+    * 
+    */
+    public Future<List<Map<String, String>>> provisionedServices() throws CallError, InterruptedException {
+        return call("provisionedServices");
+    }
+
+    /**
+    * 
+    * 
+    * @return The Future
+    */
+    public Future<Void> removeProvisionedService(String param1) throws CallError, InterruptedException{
+        return call("removeProvisionedService", param1);
     }
 
     }

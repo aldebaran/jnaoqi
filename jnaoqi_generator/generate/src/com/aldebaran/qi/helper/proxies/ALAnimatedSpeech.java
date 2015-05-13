@@ -14,8 +14,8 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * The Animated Speech module makes NAO interpret a text annotated with behaviors.
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/audio/alanimatedspeech.html#alanimatedspeech">NAOqi APIs for ALAnimatedSpeech </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/audio/alanimatedspeech.html#alanimatedspeech">NAOqi APIs for ALAnimatedSpeech </a>
+* NAOqi V2.4.x
 */
 public class ALAnimatedSpeech extends ALProxy {
 
@@ -37,6 +37,24 @@ public class ALAnimatedSpeech extends ALProxy {
     }
 
     /**
+    * Add some new links between tags and words.
+    * 
+    * @param tagsToWords  Map of tags to words.
+    */
+    public void addTagsToWords(Object tagsToWords) throws CallError, InterruptedException{
+        call("addTagsToWords", tagsToWords).get();
+    }
+
+    /**
+    * DEPRECATED since 2.2: use ALAnimationPlayer.declareTagForAnimations instead.Declare some tags with the associated animations.
+    * 
+    * @param tagsToAnimations  Map of Tags to Animations.
+    */
+    public void declareTagForAnimations(Object tagsToAnimations) throws CallError, InterruptedException{
+        call("declareTagForAnimations", tagsToAnimations).get();
+    }
+
+    /**
     * DEPRECATED since 1.18: use getBodyLanguageMode instead.Indicate if the body talk is enabled or not.
     * 
     * @return The boolean value: true means it is enabled, false means it is disabled.
@@ -46,30 +64,12 @@ public class ALAnimatedSpeech extends ALProxy {
     }
 
     /**
-    * Declare some tags with the associated animations.
-    * 
-    * @param tagsToAnimations  Map of Tags to Animations.
-    */
-    public void declareTagForAnimations(Object tagsToAnimations) throws CallError, InterruptedException{
-        call("declareTagForAnimations", tagsToAnimations).get();
-    }
-
-    /**
     * DEPRECATED since 1.22: use getBodyLanguageMode instead.Indicate if the body language is enabled or not.
     * 
     * @return The boolean value: true means it is enabled, false means it is disabled.
     */
     public Boolean isBodyLanguageEnabled() throws CallError, InterruptedException {
         return (Boolean)call("isBodyLanguageEnabled").get();
-    }
-
-    /**
-    * Add some new links between tags and words.
-    * 
-    * @param tagsToWords  Map of tags to words.
-    */
-    public void addTagsToWords(Object tagsToWords) throws CallError, InterruptedException{
-        call("addTagsToWords", tagsToWords).get();
     }
 
     /**
@@ -159,6 +159,15 @@ public class ALAnimatedSpeech extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
     }
 
     /**
@@ -281,7 +290,7 @@ public class ALAnimatedSpeech extends ALProxy {
     }
 
     /**
-    * Add a new package that contains animations.
+    * DEPRECATED since 2.2: use ALAnimationPlayer.declareAnimationsPackage instead.Add a new package that contains animations.
     * 
     * @param animationsPackage  The new package that contains animations.
     */
@@ -297,16 +306,17 @@ public class ALAnimatedSpeech extends ALProxy {
         }
     
     /**
-    * DEPRECATED since 1.18: use getBodyLanguageMode instead.Indicate if the body talk is enabled or not.
+    * Add some new links between tags and words.
     * 
-    * @return The boolean value: true means it is enabled, false means it is disabled.
+    * @param tagsToWords  Map of tags to words.
+    * @return The Future
     */
-    public Future<Boolean> isBodyTalkEnabled() throws CallError, InterruptedException {
-        return call("isBodyTalkEnabled");
+    public Future<Void> addTagsToWords(Object tagsToWords) throws CallError, InterruptedException{
+        return call("addTagsToWords", tagsToWords);
     }
 
     /**
-    * Declare some tags with the associated animations.
+    * DEPRECATED since 2.2: use ALAnimationPlayer.declareTagForAnimations instead.Declare some tags with the associated animations.
     * 
     * @param tagsToAnimations  Map of Tags to Animations.
     * @return The Future
@@ -316,22 +326,21 @@ public class ALAnimatedSpeech extends ALProxy {
     }
 
     /**
+    * DEPRECATED since 1.18: use getBodyLanguageMode instead.Indicate if the body talk is enabled or not.
+    * 
+    * @return The boolean value: true means it is enabled, false means it is disabled.
+    */
+    public Future<Boolean> isBodyTalkEnabled() throws CallError, InterruptedException {
+        return call("isBodyTalkEnabled");
+    }
+
+    /**
     * DEPRECATED since 1.22: use getBodyLanguageMode instead.Indicate if the body language is enabled or not.
     * 
     * @return The boolean value: true means it is enabled, false means it is disabled.
     */
     public Future<Boolean> isBodyLanguageEnabled() throws CallError, InterruptedException {
         return call("isBodyLanguageEnabled");
-    }
-
-    /**
-    * Add some new links between tags and words.
-    * 
-    * @param tagsToWords  Map of tags to words.
-    * @return The Future
-    */
-    public Future<Void> addTagsToWords(Object tagsToWords) throws CallError, InterruptedException{
-        return call("addTagsToWords", tagsToWords);
     }
 
     /**
@@ -423,6 +432,16 @@ public class ALAnimatedSpeech extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
     }
 
     /**
@@ -552,7 +571,7 @@ public class ALAnimatedSpeech extends ALProxy {
     }
 
     /**
-    * Add a new package that contains animations.
+    * DEPRECATED since 2.2: use ALAnimationPlayer.declareAnimationsPackage instead.Add a new package that contains animations.
     * 
     * @param animationsPackage  The new package that contains animations.
     * @return The Future

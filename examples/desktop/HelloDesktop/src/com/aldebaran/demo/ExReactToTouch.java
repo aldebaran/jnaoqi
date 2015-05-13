@@ -26,7 +26,6 @@ public class ExReactToTouch {
 
 	        ALMemory alMemory = new ALMemory(application.session());
             tts = new ALTextToSpeech(application.session());
-	        ALBehaviorManager alBehaviorManager = new ALBehaviorManager()
 
 	        alMemory.subscribeToEvent("FrontTactilTouched", touch -> {
 		        if ((float) touch == 1.0) {

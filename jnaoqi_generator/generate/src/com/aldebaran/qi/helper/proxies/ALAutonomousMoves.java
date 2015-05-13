@@ -14,8 +14,8 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * Module that manage the background moves automatically started by the robot.
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/motion/autonomousmoves.html#autonomousmoves">NAOqi APIs for ALAutonomousMoves </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/interaction/autonomousmoves.html#autonomousmoves">NAOqi APIs for ALAutonomousMoves </a>
+* NAOqi V2.4.x
 */
 public class ALAutonomousMoves extends ALProxy {
 
@@ -34,6 +34,15 @@ public class ALAutonomousMoves extends ALProxy {
 	 */
     public AsyncALAutonomousMoves async() {
         return asyncProxy;
+    }
+
+    /**
+    * Gets the background strategy.
+    * 
+    * @return The autonomous background posture strategy. ("none" or "backToNeutral")
+    */
+    public String getBackgroundStrategy() throws CallError, InterruptedException {
+        return (String)call("getBackgroundStrategy").get();
     }
 
     /**
@@ -126,6 +135,15 @@ public class ALAutonomousMoves extends ALProxy {
     }
 
     /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
+    }
+
+    /**
     * Returns true if the method is currently running.
     * 
     * @param id  The ID of the method that was returned when calling the method using 'post'
@@ -206,15 +224,6 @@ public class ALAutonomousMoves extends ALProxy {
         call("setBackgroundStrategy", strategy).get();
     }
 
-    /**
-    * Gets the background strategy.
-    * 
-    * @return The autonomous background posture strategy. ("none" or "backToNeutral")
-    */
-    public String getBackgroundStrategy() throws CallError, InterruptedException {
-        return (String)call("getBackgroundStrategy").get();
-    }
-
 
     public class AsyncALAutonomousMoves extends ALProxy {
 
@@ -222,6 +231,15 @@ public class ALAutonomousMoves extends ALProxy {
             super();
         }
     
+    /**
+    * Gets the background strategy.
+    * 
+    * @return The autonomous background posture strategy. ("none" or "backToNeutral")
+    */
+    public Future<String> getBackgroundStrategy() throws CallError, InterruptedException {
+        return call("getBackgroundStrategy");
+    }
+
     /**
     * 
     * 
@@ -314,6 +332,16 @@ public class ALAutonomousMoves extends ALProxy {
     }
 
     /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
+    }
+
+    /**
     * Returns true if the method is currently running.
     * 
     * @param id  The ID of the method that was returned when calling the method using 'post'
@@ -397,15 +425,6 @@ public class ALAutonomousMoves extends ALProxy {
     */
     public Future<Void> setBackgroundStrategy(String strategy) throws CallError, InterruptedException{
         return call("setBackgroundStrategy", strategy);
-    }
-
-    /**
-    * Gets the background strategy.
-    * 
-    * @return The autonomous background posture strategy. ("none" or "backToNeutral")
-    */
-    public Future<String> getBackgroundStrategy() throws CallError, InterruptedException {
-        return call("getBackgroundStrategy");
     }
 
     }

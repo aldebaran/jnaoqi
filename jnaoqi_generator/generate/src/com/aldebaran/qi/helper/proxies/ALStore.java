@@ -12,8 +12,8 @@ import com.aldebaran.qi.Session;
 import com.aldebaran.qi.helper.ALProxy;
 /**
 * 
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/core/alstore.html#alstore">NAOqi APIs for ALStore </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/core/alstore.html#alstore">NAOqi APIs for ALStore </a>
+* NAOqi V2.4.x
 */
 public class ALStore extends ALProxy {
 
@@ -32,6 +32,30 @@ public class ALStore extends ALProxy {
 	 */
     public AsyncALStore async() {
         return asyncProxy;
+    }
+
+    /**
+    *  Subscribe to the Connect Event to Update just After 
+    * 
+    */
+    public Object updateOnConnect() throws CallError, InterruptedException {
+        return (Object)call("updateOnConnect").get();
+    }
+
+    /**
+    *  Launch Update of the system image if not already running 
+    * 
+    */
+    public Object updateSystem() throws CallError, InterruptedException {
+        return (Object)call("updateSystem").get();
+    }
+
+    /**
+    *  Return True if Running Applications should be Removed or Updated 
+    * 
+    */
+    public Object updateRunningApps() throws CallError, InterruptedException {
+        return (Object)call("updateRunningApps").get();
     }
 
     /**
@@ -59,11 +83,11 @@ public class ALStore extends ALProxy {
     }
 
     /**
-    *  Add a Robot Notification 
+    *  Activate the Running Apps Update 
     * 
     */
-    public Object add_notification(Object param1) throws CallError, InterruptedException {
-        return (Object)call("add_notification", param1).get();
+    public Object activateUpdateRunningApps() throws CallError, InterruptedException {
+        return (Object)call("activateUpdateRunningApps").get();
     }
 
     /**
@@ -75,19 +99,11 @@ public class ALStore extends ALProxy {
     }
 
     /**
-    *  Assign the Robot to a User 
+    *  Deactivate the Running Apps Update 
     * 
     */
-    public Object assign(Object param1, Object param2) throws CallError, InterruptedException {
-        return (Object)call("assign", param1, param2).get();
-    }
-
-    /**
-    *  Check Updates From the Store 
-    * 
-    */
-    public Object checkUpdate() throws CallError, InterruptedException {
-        return (Object)call("checkUpdate").get();
+    public Object deactivateUpdateRunningApps() throws CallError, InterruptedException {
+        return (Object)call("deactivateUpdateRunningApps").get();
     }
 
     /**
@@ -115,46 +131,6 @@ public class ALStore extends ALProxy {
     }
 
     /**
-    *  Log a Debugging Message 
-    * 
-    */
-    public Object log_debug(Object param1) throws CallError, InterruptedException {
-        return (Object)call("log_debug", param1).get();
-    }
-
-    /**
-    *  Log an Error Message 
-    * 
-    */
-    public Object log_error(Object param1) throws CallError, InterruptedException {
-        return (Object)call("log_error", param1).get();
-    }
-
-    /**
-    *  Log an Information Message 
-    * 
-    */
-    public Object log_info(Object param1) throws CallError, InterruptedException {
-        return (Object)call("log_info", param1).get();
-    }
-
-    /**
-    *  Log a Warning Message 
-    * 
-    */
-    public Object log_warning(Object param1) throws CallError, InterruptedException {
-        return (Object)call("log_warning", param1).get();
-    }
-
-    /**
-    *  Play a Sound using the Audio Player 
-    * 
-    */
-    public Object play_sound(Object param1) throws CallError, InterruptedException {
-        return (Object)call("play_sound", param1).get();
-    }
-
-    /**
     *  Get the status of the update 
     * 
     */
@@ -171,14 +147,6 @@ public class ALStore extends ALProxy {
     }
 
     /**
-    *  Translate a massage using the Translator 
-    * 
-    */
-    public Object translate(Object param1) throws CallError, InterruptedException {
-        return (Object)call("translate", param1).get();
-    }
-
-    /**
     *  Launch Update if not already running 
     * 
     */
@@ -187,27 +155,11 @@ public class ALStore extends ALProxy {
     }
 
     /**
-    *  Update the Applications 
+    *  Launch Update of the apps if not already running 
     * 
     */
     public Object updateApps() throws CallError, InterruptedException {
         return (Object)call("updateApps").get();
-    }
-
-    /**
-    *  Subscribe to the Connect Event to Update just After 
-    * 
-    */
-    public Object updateOnConnect() throws CallError, InterruptedException {
-        return (Object)call("updateOnConnect").get();
-    }
-
-    /**
-    *  Update the System 
-    * 
-    */
-    public Object updateSystem() throws CallError, InterruptedException {
-        return (Object)call("updateSystem").get();
     }
 
 
@@ -217,6 +169,30 @@ public class ALStore extends ALProxy {
             super();
         }
     
+    /**
+    *  Subscribe to the Connect Event to Update just After 
+    * 
+    */
+    public Future<Object> updateOnConnect() throws CallError, InterruptedException {
+        return call("updateOnConnect");
+    }
+
+    /**
+    *  Launch Update of the system image if not already running 
+    * 
+    */
+    public Future<Object> updateSystem() throws CallError, InterruptedException {
+        return call("updateSystem");
+    }
+
+    /**
+    *  Return True if Running Applications should be Removed or Updated 
+    * 
+    */
+    public Future<Object> updateRunningApps() throws CallError, InterruptedException {
+        return call("updateRunningApps");
+    }
+
     /**
     * 
     * 
@@ -243,11 +219,11 @@ public class ALStore extends ALProxy {
     }
 
     /**
-    *  Add a Robot Notification 
+    *  Activate the Running Apps Update 
     * 
     */
-    public Future<Object> add_notification(Object param1) throws CallError, InterruptedException {
-        return call("add_notification", param1);
+    public Future<Object> activateUpdateRunningApps() throws CallError, InterruptedException {
+        return call("activateUpdateRunningApps");
     }
 
     /**
@@ -259,19 +235,11 @@ public class ALStore extends ALProxy {
     }
 
     /**
-    *  Assign the Robot to a User 
+    *  Deactivate the Running Apps Update 
     * 
     */
-    public Future<Object> assign(Object param1, Object param2) throws CallError, InterruptedException {
-        return call("assign", param1, param2);
-    }
-
-    /**
-    *  Check Updates From the Store 
-    * 
-    */
-    public Future<Object> checkUpdate() throws CallError, InterruptedException {
-        return call("checkUpdate");
+    public Future<Object> deactivateUpdateRunningApps() throws CallError, InterruptedException {
+        return call("deactivateUpdateRunningApps");
     }
 
     /**
@@ -299,46 +267,6 @@ public class ALStore extends ALProxy {
     }
 
     /**
-    *  Log a Debugging Message 
-    * 
-    */
-    public Future<Object> log_debug(Object param1) throws CallError, InterruptedException {
-        return call("log_debug", param1);
-    }
-
-    /**
-    *  Log an Error Message 
-    * 
-    */
-    public Future<Object> log_error(Object param1) throws CallError, InterruptedException {
-        return call("log_error", param1);
-    }
-
-    /**
-    *  Log an Information Message 
-    * 
-    */
-    public Future<Object> log_info(Object param1) throws CallError, InterruptedException {
-        return call("log_info", param1);
-    }
-
-    /**
-    *  Log a Warning Message 
-    * 
-    */
-    public Future<Object> log_warning(Object param1) throws CallError, InterruptedException {
-        return call("log_warning", param1);
-    }
-
-    /**
-    *  Play a Sound using the Audio Player 
-    * 
-    */
-    public Future<Object> play_sound(Object param1) throws CallError, InterruptedException {
-        return call("play_sound", param1);
-    }
-
-    /**
     *  Get the status of the update 
     * 
     */
@@ -355,14 +283,6 @@ public class ALStore extends ALProxy {
     }
 
     /**
-    *  Translate a massage using the Translator 
-    * 
-    */
-    public Future<Object> translate(Object param1) throws CallError, InterruptedException {
-        return call("translate", param1);
-    }
-
-    /**
     *  Launch Update if not already running 
     * 
     */
@@ -371,27 +291,11 @@ public class ALStore extends ALProxy {
     }
 
     /**
-    *  Update the Applications 
+    *  Launch Update of the apps if not already running 
     * 
     */
     public Future<Object> updateApps() throws CallError, InterruptedException {
         return call("updateApps");
-    }
-
-    /**
-    *  Subscribe to the Connect Event to Update just After 
-    * 
-    */
-    public Future<Object> updateOnConnect() throws CallError, InterruptedException {
-        return call("updateOnConnect");
-    }
-
-    /**
-    *  Update the System 
-    * 
-    */
-    public Future<Object> updateSystem() throws CallError, InterruptedException {
-        return call("updateSystem");
     }
 
     }

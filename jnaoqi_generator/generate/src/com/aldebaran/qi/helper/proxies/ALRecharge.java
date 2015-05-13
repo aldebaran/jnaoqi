@@ -13,27 +13,35 @@ import com.aldebaran.qi.helper.ALProxy;
 
 import java.util.List;
 /**
-* This module works with Linux Infrared Remote Control (LIRC) in order to emit/receive IR remotes keys or to emit/receive IR information to/from an other Nao.
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/sensors/alinfrared.html#alinfrared">NAOqi APIs for ALInfrared </a>
-*
+* 
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/motion/alrecharge.html#alrecharge">NAOqi APIs for ALRecharge </a>
+* NAOqi V2.4.x
 */
-public class ALInfrared extends ALProxy {
+public class ALRecharge extends ALProxy {
 
-    private AsyncALInfrared asyncProxy;
+    private AsyncALRecharge asyncProxy;
 
-    public ALInfrared(Session session) throws Exception{
+    public ALRecharge(Session session) throws Exception{
         super(session);
-        asyncProxy = new AsyncALInfrared();
+        asyncProxy = new AsyncALRecharge();
 	    asyncProxy.setService(getService());
     }
 
     /**
      * Get the async version of this proxy
      *
-	 * @return a AsyncALInfrared object
+	 * @return a AsyncALRecharge object
 	 */
-    public AsyncALInfrared async() {
+    public AsyncALRecharge async() {
         return asyncProxy;
+    }
+
+    /**
+    * .
+    * 
+    */
+    public Integer adjustDockingPosition(List<List<Float>> param1) throws CallError, InterruptedException {
+        return (Integer)call("adjustDockingPosition", param1).get();
     }
 
     /**
@@ -126,6 +134,15 @@ public class ALInfrared extends ALProxy {
     }
 
     /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
+    }
+
+    /**
     * Returns true if the method is currently running.
     * 
     * @param id  The ID of the method that was returned when calling the method using 'post'
@@ -164,89 +181,132 @@ public class ALInfrared extends ALProxy {
     }
 
     /**
-    * Init IR reception (connect as a client to the LIRC daemon).
+    * .
     * 
-    * @param RepeatThreshold  Give the keep-pressing threshold after which the repetition of a key is taken into consideration.
     */
-    public void initReception(Integer RepeatThreshold) throws CallError, InterruptedException{
-        call("initReception", RepeatThreshold).get();
+    public void goToStation() throws CallError, InterruptedException{
+        call("goToStation").get();
     }
 
     /**
-    * Simulate a remote control (Nao as a remote control).
+    * .
     * 
-    * @param Remote  IR remote control name.
-    * @param Key  IR remote control key name.
     */
-    public void sendRemoteKey(String Remote, String Key) throws CallError, InterruptedException{
-        call("sendRemoteKey", Remote, Key).get();
+    public Integer leaveStation() throws CallError, InterruptedException {
+        return (Integer)call("leaveStation").get();
     }
 
     /**
-    * Simulate a remote control (Nao as a remote control).
+    * .
     * 
-    * @param Remote  IR remote control name.
-    * @param Key  IR remote control key name.
-    * @param pTimeMs  The time in ms when the remote key must be send. 0 deals like sendRemoteKey
     */
-    public void sendRemoteKeyWithTime(String Remote, String Key, Integer pTimeMs) throws CallError, InterruptedException{
-        call("sendRemoteKeyWithTime", Remote, Key, pTimeMs).get();
+    public List<Float> getStationPosition() throws CallError, InterruptedException {
+        return (List<Float>)call("getStationPosition").get();
     }
 
     /**
-    * Send an IP by IR.
+    * .
     * 
-    * @param IP  IP adress to send through IR.
     */
-    public void sendIpAddress(String IP) throws CallError, InterruptedException{
-        call("sendIpAddress", IP).get();
+    public void stopAll() throws CallError, InterruptedException{
+        call("stopAll").get();
     }
 
     /**
-    * Send 1 octet by IR.
+    * .
     * 
-    * @param Octet  octet to send through IR.
     */
-    public void send8(Integer Octet) throws CallError, InterruptedException{
-        call("send8", Octet).get();
+    public void subscribe() throws CallError, InterruptedException{
+        call("subscribe").get();
     }
 
     /**
-    * Send 4 octets by IR.
+    * .
     * 
-    * @param Data_IR  4 octets to send through IR.
     */
-    public void send32(String Data_IR) throws CallError, InterruptedException{
-        call("send32", Data_IR).get();
+    public void unsubscribe() throws CallError, InterruptedException{
+        call("unsubscribe").get();
     }
 
     /**
-    * Send 4 octets by IR.
+    * .
     * 
-    * @param Octet1  Octet 1 to send through IR.
-    * @param Octet2  Octet 2 to send through IR.
-    * @param Octet3  Octet 3 to send through IR.
-    * @param Octet4  Octet 4 to send through IR.
     */
-    public void send32(Integer Octet1, Integer Octet2, Integer Octet3, Integer Octet4) throws CallError, InterruptedException{
-        call("send32", Octet1, Octet2, Octet3, Octet4).get();
+    public Integer getStatus() throws CallError, InterruptedException {
+        return (Integer)call("getStatus").get();
     }
 
     /**
-    * Rewrite the LIRC daemon configuration file (lircd.conf) with everyremotes configuration concatenated, and reload it in LIRC daemons
+    * .
     * 
     */
-    public void confRemoteRecordSave() throws CallError, InterruptedException{
-        call("confRemoteRecordSave").get();
+    public Object lookForStation() throws CallError, InterruptedException {
+        return (Object)call("lookForStation").get();
+    }
+
+    /**
+    * .
+    * 
+    */
+    public Integer moveInFrontOfStation() throws CallError, InterruptedException {
+        return (Integer)call("moveInFrontOfStation").get();
+    }
+
+    /**
+    * .
+    * 
+    */
+    public Integer dockOnStation() throws CallError, InterruptedException {
+        return (Integer)call("dockOnStation").get();
+    }
+
+    /**
+    * .
+    * 
+    */
+    public void setUseTrackerSearcher(Boolean param1) throws CallError, InterruptedException{
+        call("setUseTrackerSearcher", param1).get();
+    }
+
+    /**
+    * .
+    * 
+    */
+    public Boolean getUseTrackerSearcher() throws CallError, InterruptedException {
+        return (Boolean)call("getUseTrackerSearcher").get();
+    }
+
+    /**
+    * .
+    * 
+    */
+    public void setMaxNumberOfTries(Integer param1) throws CallError, InterruptedException{
+        call("setMaxNumberOfTries", param1).get();
+    }
+
+    /**
+    * .
+    * 
+    */
+    public Integer getMaxNumberOfTries() throws CallError, InterruptedException {
+        return (Integer)call("getMaxNumberOfTries").get();
     }
 
 
-    public class AsyncALInfrared extends ALProxy {
+    public class AsyncALRecharge extends ALProxy {
 
-        protected AsyncALInfrared(){
+        protected AsyncALRecharge(){
             super();
         }
     
+    /**
+    * .
+    * 
+    */
+    public Future<Integer> adjustDockingPosition(List<List<Float>> param1) throws CallError, InterruptedException {
+        return call("adjustDockingPosition", param1);
+    }
+
     /**
     * 
     * 
@@ -339,6 +399,16 @@ public class ALInfrared extends ALProxy {
     }
 
     /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
+    }
+
+    /**
     * Returns true if the method is currently running.
     * 
     * @param id  The ID of the method that was returned when calling the method using 'post'
@@ -378,88 +448,121 @@ public class ALInfrared extends ALProxy {
     }
 
     /**
-    * Init IR reception (connect as a client to the LIRC daemon).
+    * .
     * 
-    * @param RepeatThreshold  Give the keep-pressing threshold after which the repetition of a key is taken into consideration.
     * @return The Future
     */
-    public Future<Void> initReception(Integer RepeatThreshold) throws CallError, InterruptedException{
-        return call("initReception", RepeatThreshold);
+    public Future<Void> goToStation() throws CallError, InterruptedException{
+        return call("goToStation");
     }
 
     /**
-    * Simulate a remote control (Nao as a remote control).
+    * .
     * 
-    * @param Remote  IR remote control name.
-    * @param Key  IR remote control key name.
-    * @return The Future
     */
-    public Future<Void> sendRemoteKey(String Remote, String Key) throws CallError, InterruptedException{
-        return call("sendRemoteKey", Remote, Key);
+    public Future<Integer> leaveStation() throws CallError, InterruptedException {
+        return call("leaveStation");
     }
 
     /**
-    * Simulate a remote control (Nao as a remote control).
+    * .
     * 
-    * @param Remote  IR remote control name.
-    * @param Key  IR remote control key name.
-    * @param pTimeMs  The time in ms when the remote key must be send. 0 deals like sendRemoteKey
-    * @return The Future
     */
-    public Future<Void> sendRemoteKeyWithTime(String Remote, String Key, Integer pTimeMs) throws CallError, InterruptedException{
-        return call("sendRemoteKeyWithTime", Remote, Key, pTimeMs);
+    public Future<List<Float>> getStationPosition() throws CallError, InterruptedException {
+        return call("getStationPosition");
     }
 
     /**
-    * Send an IP by IR.
+    * .
     * 
-    * @param IP  IP adress to send through IR.
     * @return The Future
     */
-    public Future<Void> sendIpAddress(String IP) throws CallError, InterruptedException{
-        return call("sendIpAddress", IP);
+    public Future<Void> stopAll() throws CallError, InterruptedException{
+        return call("stopAll");
     }
 
     /**
-    * Send 1 octet by IR.
+    * .
     * 
-    * @param Octet  octet to send through IR.
     * @return The Future
     */
-    public Future<Void> send8(Integer Octet) throws CallError, InterruptedException{
-        return call("send8", Octet);
+    public Future<Void> subscribe() throws CallError, InterruptedException{
+        return call("subscribe");
     }
 
     /**
-    * Send 4 octets by IR.
+    * .
     * 
-    * @param Data_IR  4 octets to send through IR.
     * @return The Future
     */
-    public Future<Void> send32(String Data_IR) throws CallError, InterruptedException{
-        return call("send32", Data_IR);
+    public Future<Void> unsubscribe() throws CallError, InterruptedException{
+        return call("unsubscribe");
     }
 
     /**
-    * Send 4 octets by IR.
+    * .
     * 
-    * @param Octet1  Octet 1 to send through IR.
-    * @param Octet2  Octet 2 to send through IR.
-    * @param Octet3  Octet 3 to send through IR.
-    * @param Octet4  Octet 4 to send through IR.
-    * @return The Future
     */
-    public Future<Void> send32(Integer Octet1, Integer Octet2, Integer Octet3, Integer Octet4) throws CallError, InterruptedException{
-        return call("send32", Octet1, Octet2, Octet3, Octet4);
+    public Future<Integer> getStatus() throws CallError, InterruptedException {
+        return call("getStatus");
     }
 
     /**
-    * Rewrite the LIRC daemon configuration file (lircd.conf) with everyremotes configuration concatenated, and reload it in LIRC daemons
+    * .
+    * 
+    */
+    public Future<Object> lookForStation() throws CallError, InterruptedException {
+        return call("lookForStation");
+    }
+
+    /**
+    * .
+    * 
+    */
+    public Future<Integer> moveInFrontOfStation() throws CallError, InterruptedException {
+        return call("moveInFrontOfStation");
+    }
+
+    /**
+    * .
+    * 
+    */
+    public Future<Integer> dockOnStation() throws CallError, InterruptedException {
+        return call("dockOnStation");
+    }
+
+    /**
+    * .
     * 
     * @return The Future
     */
-    public Future<Void> confRemoteRecordSave() throws CallError, InterruptedException{
-        return call("confRemoteRecordSave");
+    public Future<Void> setUseTrackerSearcher(Boolean param1) throws CallError, InterruptedException{
+        return call("setUseTrackerSearcher", param1);
+    }
+
+    /**
+    * .
+    * 
+    */
+    public Future<Boolean> getUseTrackerSearcher() throws CallError, InterruptedException {
+        return call("getUseTrackerSearcher");
+    }
+
+    /**
+    * .
+    * 
+    * @return The Future
+    */
+    public Future<Void> setMaxNumberOfTries(Integer param1) throws CallError, InterruptedException{
+        return call("setMaxNumberOfTries", param1);
+    }
+
+    /**
+    * .
+    * 
+    */
+    public Future<Integer> getMaxNumberOfTries() throws CallError, InterruptedException {
+        return call("getMaxNumberOfTries");
     }
 
     }

@@ -48,7 +48,7 @@ import java.util.List;
 /**
 * %(module_desc)s
 * @see <a href="%(module_link_overview)s">NAOqi APIs for %(module_name)s </a>
-*
+* NAOqi V%(nVersion)s
 */
 public class %(module_name)s extends %(module_parent)s {
 
@@ -102,15 +102,19 @@ TEMPLATE_RETURN_ASYNC = """
 
 
 BLACKLIST_METHODS = set("registerEvent, unregisterEvent, metaObject, terminate, property, setProperty, registerEventWithSignature, enableStats, enableTrace, pCall, stats, properties, subscriber".split(", "))
-BLACKLIST_MODULES = set("ALTabletService, ALFindPersonHead".split(", "))
+BLACKLIST_MODULES = set("".split(", "))
 
 OPENERS, CLOSERS = '([{<', ')]}>'
 EXPECTED_CLOSER = dict(zip(OPENERS, CLOSERS))
 
 linksDicOverview = {}
 linksDicApi = {}
-# docURLRoot = "http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/"
-docURLRoot = "http://doc.aldebaran.com/2-1/naoqi/"
+version = ""
+URL_2_3 = "http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/"
+URL_2_1 = "http://doc.aldebaran.com/2-1/naoqi/"
+URL_OTHER = "http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/"
+docURLRoot = ""
+naoqiVersion = ""
 
 def get_subtrees(closer, symbols):
     trees = []
@@ -280,6 +284,9 @@ def _iter_services(address):
 
 def generate_java(address):
     directory = "generate/src/com/aldebaran/qi/helper/proxies"
+    global naoqiVersion
+
+
     if os.path.exists(directory):
         shutil.rmtree(directory)
 
@@ -287,6 +294,7 @@ def generate_java(address):
     for module_name, service in _iter_services(address):
 
         if module_name in linksDicOverview and module_name not in BLACKLIST_MODULES:
+            nVersion = naoqiVersion[:3]+".x"
             content = ""
             content_async=""
             meta = service.metaObject()
@@ -311,6 +319,7 @@ def generate_java(address):
                     content_async += translateFunc(method, True)+"\n"
 
             with open(directory+"/"+module_name + ".java", "w") as outfile:
+                module_link_overview = module_link_overview.encode('utf-8')
                 outfile.write(TEMPLATE_CLASS % locals())
                 outfile.close()
         # break
@@ -361,7 +370,22 @@ def test():
     print "================================"
 
 
-def fillLinksMap():
+def fillLinksMap(address):
+    global docURLRoot
+    global naoqiVersion
+
+    session = Session()
+    session.connect('tcp://'+address+':9559')
+    system = session.service("ALSystem")
+    naoqiVersion = system.systemVersion()
+
+    if naoqiVersion[:3] == "2.3":
+        docURLRoot = URL_2_3
+    elif naoqiVersion[:3] == "2.1" :
+        docURLRoot = URL_2_1
+    else:
+        docURLRoot = URL_OTHER
+
     url = docURLRoot+"index.html"
     print "Parse : "+url
 
@@ -378,12 +402,13 @@ def fillLinksMap():
             # linksDicApi[key] = links[0]["href"]
             linksDicOverview[key] = links[1]["href"]
 
+
 if __name__ == "__main__":
 
     if len(sys.argv) < 2:
         print "ip or name.local of the robot needed"
     else:
-        fillLinksMap()
+        fillLinksMap(sys.argv[1])
         generate_java(sys.argv[1])
     # test()
     # find_errors()

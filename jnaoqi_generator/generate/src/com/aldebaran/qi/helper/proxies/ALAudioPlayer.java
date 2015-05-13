@@ -14,8 +14,8 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * This module allows to play wav and mp3 files on NAO
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/audio/alaudioplayer.html#alaudioplayer">NAOqi APIs for ALAudioPlayer </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/audio/alaudioplayer.html#alaudioplayer">NAOqi APIs for ALAudioPlayer </a>
+* NAOqi V2.4.x
 */
 public class ALAudioPlayer extends ALProxy {
 
@@ -123,6 +123,15 @@ public class ALAudioPlayer extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
     }
 
     /**
@@ -532,6 +541,25 @@ public class ALAudioPlayer extends ALProxy {
         call("playSine", frequence, gain, pan, duration).get();
     }
 
+    /**
+    * Remove pitch on the current file
+    * 
+    * @param id  Id returned by the loadFile function
+    */
+    public void disablePitch(Integer id) throws CallError, InterruptedException{
+        call("disablePitch", id).get();
+    }
+
+    /**
+    * Set a pith on the current playing file
+    * 
+    * @param id  Id returned by the loadFile function
+    * @param level  Pitch shifting to apply
+    */
+    public void setPitch(Integer id, Float level) throws CallError, InterruptedException{
+        call("setPitch", id, level).get();
+    }
+
 
     public class AsyncALAudioPlayer extends ALProxy {
 
@@ -628,6 +656,16 @@ public class ALAudioPlayer extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
     }
 
     /**
@@ -1062,6 +1100,27 @@ public class ALAudioPlayer extends ALProxy {
     */
     public Future<Void> playSine(Integer frequence, Integer gain, Integer pan, Float duration) throws CallError, InterruptedException{
         return call("playSine", frequence, gain, pan, duration);
+    }
+
+    /**
+    * Remove pitch on the current file
+    * 
+    * @param id  Id returned by the loadFile function
+    * @return The Future
+    */
+    public Future<Void> disablePitch(Integer id) throws CallError, InterruptedException{
+        return call("disablePitch", id);
+    }
+
+    /**
+    * Set a pith on the current playing file
+    * 
+    * @param id  Id returned by the loadFile function
+    * @param level  Pitch shifting to apply
+    * @return The Future
+    */
+    public Future<Void> setPitch(Integer id, Float level) throws CallError, InterruptedException{
+        return call("setPitch", id, level);
     }
 
     }

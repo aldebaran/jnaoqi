@@ -14,8 +14,8 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * 
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/vision/almovementdetection.html#almovementdetection">NAOqi APIs for ALMovementDetection </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/vision/almovementdetection.html#almovementdetection">NAOqi APIs for ALMovementDetection </a>
+* NAOqi V2.4.x
 */
 public class ALMovementDetection extends ALProxy {
 
@@ -37,51 +37,6 @@ public class ALMovementDetection extends ALProxy {
     }
 
     /**
-    * Gets extractor resolution
-    * 
-    * @return Current value of the resolution of the extractor
-    */
-    public Integer getResolution() throws CallError, InterruptedException {
-        return (Integer)call("getResolution").get();
-    }
-
-    /**
-    * Gets the value of the color sensitivity
-    * 
-    * @return Current color sensitivity (between 0 and 1)
-    */
-    public Float getColorSensitivity() throws CallError, InterruptedException {
-        return (Float)call("getColorSensitivity").get();
-    }
-
-    /**
-    * Gets extractor running status
-    * 
-    * @return True if the extractor is currently processing images, False if not
-    */
-    public Boolean isProcessing() throws CallError, InterruptedException {
-        return (Boolean)call("isProcessing").get();
-    }
-
-    /**
-    * gets the value of the depth sensitivity (in meters)
-    * 
-    * @return Current depth sensitivity (in meters)
-    */
-    public Float getDepthSensitivity() throws CallError, InterruptedException {
-        return (Float)call("getDepthSensitivity").get();
-    }
-
-    /**
-    * Gets extractor framerate
-    * 
-    * @return Current value of the framerate of the extractor
-    */
-    public Integer getFrameRate() throws CallError, InterruptedException {
-        return (Integer)call("getFrameRate").get();
-    }
-
-    /**
     * Sets extractor resolution
     * 
     * @param resolution  New resolution
@@ -92,22 +47,39 @@ public class ALMovementDetection extends ALProxy {
     }
 
     /**
-    * Sets extractor active camera
+    * Sets the value of the color sensitivity used for the 2D detection  of moving pixels in the image.
     * 
-    * @param cameraId  Id of the camera that will become the active camera
-    * @return True if the update succeeded, False if not
+    * @param sensitivity  New color sensitivity (between 0 and 1)
     */
-    public Boolean setActiveCamera(Integer cameraId) throws CallError, InterruptedException {
-        return (Boolean)call("setActiveCamera", cameraId).get();
+    public void setColorSensitivity(Float sensitivity) throws CallError, InterruptedException{
+        call("setColorSensitivity", sensitivity).get();
     }
 
     /**
-    * Gets extractor active camera
+    * Changes the pause status of the extractor
     * 
-    * @return Id of the current active camera of the extractor
+    * @param status  New pause satus
     */
-    public Integer getActiveCamera() throws CallError, InterruptedException {
-        return (Integer)call("getActiveCamera").get();
+    public void pause(Boolean status) throws CallError, InterruptedException{
+        call("pause", status).get();
+    }
+
+    /**
+    * Sets the value of the depth sensitivity (in meters) used for the detection 3D of moving pixels in the image.
+    * 
+    * @param sensitivity  New depth sensitivity (in meters)
+    */
+    public void setDepthSensitivity(Float sensitivity) throws CallError, InterruptedException{
+        call("setDepthSensitivity", sensitivity).get();
+    }
+
+    /**
+    * gets the value of the depth sensitivity (in meters)
+    * 
+    * @return Current depth sensitivity (in meters)
+    */
+    public Float getDepthSensitivity() throws CallError, InterruptedException {
+        return (Float)call("getDepthSensitivity").get();
     }
 
     /**
@@ -121,6 +93,52 @@ public class ALMovementDetection extends ALProxy {
     }
 
     /**
+    * Gets extractor framerate
+    * 
+    * @return Current value of the framerate of the extractor
+    */
+    public Integer getFrameRate() throws CallError, InterruptedException {
+        return (Integer)call("getFrameRate").get();
+    }
+
+    /**
+    * Gets extractor resolution
+    * 
+    * @return Current value of the resolution of the extractor
+    */
+    public Integer getResolution() throws CallError, InterruptedException {
+        return (Integer)call("getResolution").get();
+    }
+
+    /**
+    * Sets extractor active camera
+    * 
+    * @param cameraId  Id of the camera that will become the active camera
+    * @return True if the update succeeded, False if not
+    */
+    public Boolean setActiveCamera(Integer cameraId) throws CallError, InterruptedException {
+        return (Boolean)call("setActiveCamera", cameraId).get();
+    }
+
+    /**
+    * Gets extractor running status
+    * 
+    * @return True if the extractor is currently processing images, False if not
+    */
+    public Boolean isProcessing() throws CallError, InterruptedException {
+        return (Boolean)call("isProcessing").get();
+    }
+
+    /**
+    * Gets extractor active camera
+    * 
+    * @return Id of the current active camera of the extractor
+    */
+    public Integer getActiveCamera() throws CallError, InterruptedException {
+        return (Integer)call("getActiveCamera").get();
+    }
+
+    /**
     * Enables to reset the movement detection when desired
     * 
     */
@@ -129,21 +147,12 @@ public class ALMovementDetection extends ALProxy {
     }
 
     /**
-    * Sets the value of the color sensitivity used for the 2D detection  of moving pixels in the image.
+    * Gets the value of the color sensitivity
     * 
-    * @param sensitivity  New color sensitivity (between 0 and 1)
+    * @return Current color sensitivity (between 0 and 1)
     */
-    public void setColorSensitivity(Float sensitivity) throws CallError, InterruptedException{
-        call("setColorSensitivity", sensitivity).get();
-    }
-
-    /**
-    * Sets the value of the depth sensitivity (in meters) used for the detection 3D of moving pixels in the image.
-    * 
-    * @param sensitivity  New depth sensitivity (in meters)
-    */
-    public void setDepthSensitivity(Float sensitivity) throws CallError, InterruptedException{
-        call("setDepthSensitivity", sensitivity).get();
+    public Float getColorSensitivity() throws CallError, InterruptedException {
+        return (Float)call("getColorSensitivity").get();
     }
 
     /**
@@ -233,6 +242,15 @@ public class ALMovementDetection extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
     }
 
     /**
@@ -405,15 +423,6 @@ public class ALMovementDetection extends ALProxy {
         return (Boolean)call("isPaused").get();
     }
 
-    /**
-    * Changes the pause status of the extractor
-    * 
-    * @param status  New pause satus
-    */
-    public void pause(Boolean status) throws CallError, InterruptedException{
-        call("pause", status).get();
-    }
-
 
     public class AsyncALMovementDetection extends ALProxy {
 
@@ -422,51 +431,6 @@ public class ALMovementDetection extends ALProxy {
         }
     
     /**
-    * Gets extractor resolution
-    * 
-    * @return Current value of the resolution of the extractor
-    */
-    public Future<Integer> getResolution() throws CallError, InterruptedException {
-        return call("getResolution");
-    }
-
-    /**
-    * Gets the value of the color sensitivity
-    * 
-    * @return Current color sensitivity (between 0 and 1)
-    */
-    public Future<Float> getColorSensitivity() throws CallError, InterruptedException {
-        return call("getColorSensitivity");
-    }
-
-    /**
-    * Gets extractor running status
-    * 
-    * @return True if the extractor is currently processing images, False if not
-    */
-    public Future<Boolean> isProcessing() throws CallError, InterruptedException {
-        return call("isProcessing");
-    }
-
-    /**
-    * gets the value of the depth sensitivity (in meters)
-    * 
-    * @return Current depth sensitivity (in meters)
-    */
-    public Future<Float> getDepthSensitivity() throws CallError, InterruptedException {
-        return call("getDepthSensitivity");
-    }
-
-    /**
-    * Gets extractor framerate
-    * 
-    * @return Current value of the framerate of the extractor
-    */
-    public Future<Integer> getFrameRate() throws CallError, InterruptedException {
-        return call("getFrameRate");
-    }
-
-    /**
     * Sets extractor resolution
     * 
     * @param resolution  New resolution
@@ -474,44 +438,6 @@ public class ALMovementDetection extends ALProxy {
     */
     public Future<Boolean> setResolution(Integer resolution) throws CallError, InterruptedException {
         return call("setResolution", resolution);
-    }
-
-    /**
-    * Sets extractor active camera
-    * 
-    * @param cameraId  Id of the camera that will become the active camera
-    * @return True if the update succeeded, False if not
-    */
-    public Future<Boolean> setActiveCamera(Integer cameraId) throws CallError, InterruptedException {
-        return call("setActiveCamera", cameraId);
-    }
-
-    /**
-    * Gets extractor active camera
-    * 
-    * @return Id of the current active camera of the extractor
-    */
-    public Future<Integer> getActiveCamera() throws CallError, InterruptedException {
-        return call("getActiveCamera");
-    }
-
-    /**
-    * Sets extractor framerate
-    * 
-    * @param value  New framerate
-    * @return True if the update succeeded, False if not
-    */
-    public Future<Boolean> setFrameRate(Integer value) throws CallError, InterruptedException {
-        return call("setFrameRate", value);
-    }
-
-    /**
-    * Enables to reset the movement detection when desired
-    * 
-    * @return The Future
-    */
-    public Future<Void> resetDetection() throws CallError, InterruptedException{
-        return call("resetDetection");
     }
 
     /**
@@ -525,6 +451,16 @@ public class ALMovementDetection extends ALProxy {
     }
 
     /**
+    * Changes the pause status of the extractor
+    * 
+    * @param status  New pause satus
+    * @return The Future
+    */
+    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
+        return call("pause", status);
+    }
+
+    /**
     * Sets the value of the depth sensitivity (in meters) used for the detection 3D of moving pixels in the image.
     * 
     * @param sensitivity  New depth sensitivity (in meters)
@@ -532,6 +468,89 @@ public class ALMovementDetection extends ALProxy {
     */
     public Future<Void> setDepthSensitivity(Float sensitivity) throws CallError, InterruptedException{
         return call("setDepthSensitivity", sensitivity);
+    }
+
+    /**
+    * gets the value of the depth sensitivity (in meters)
+    * 
+    * @return Current depth sensitivity (in meters)
+    */
+    public Future<Float> getDepthSensitivity() throws CallError, InterruptedException {
+        return call("getDepthSensitivity");
+    }
+
+    /**
+    * Sets extractor framerate
+    * 
+    * @param value  New framerate
+    * @return True if the update succeeded, False if not
+    */
+    public Future<Boolean> setFrameRate(Integer value) throws CallError, InterruptedException {
+        return call("setFrameRate", value);
+    }
+
+    /**
+    * Gets extractor framerate
+    * 
+    * @return Current value of the framerate of the extractor
+    */
+    public Future<Integer> getFrameRate() throws CallError, InterruptedException {
+        return call("getFrameRate");
+    }
+
+    /**
+    * Gets extractor resolution
+    * 
+    * @return Current value of the resolution of the extractor
+    */
+    public Future<Integer> getResolution() throws CallError, InterruptedException {
+        return call("getResolution");
+    }
+
+    /**
+    * Sets extractor active camera
+    * 
+    * @param cameraId  Id of the camera that will become the active camera
+    * @return True if the update succeeded, False if not
+    */
+    public Future<Boolean> setActiveCamera(Integer cameraId) throws CallError, InterruptedException {
+        return call("setActiveCamera", cameraId);
+    }
+
+    /**
+    * Gets extractor running status
+    * 
+    * @return True if the extractor is currently processing images, False if not
+    */
+    public Future<Boolean> isProcessing() throws CallError, InterruptedException {
+        return call("isProcessing");
+    }
+
+    /**
+    * Gets extractor active camera
+    * 
+    * @return Id of the current active camera of the extractor
+    */
+    public Future<Integer> getActiveCamera() throws CallError, InterruptedException {
+        return call("getActiveCamera");
+    }
+
+    /**
+    * Enables to reset the movement detection when desired
+    * 
+    * @return The Future
+    */
+    public Future<Void> resetDetection() throws CallError, InterruptedException{
+        return call("resetDetection");
+    }
+
+    /**
+    * Gets the value of the color sensitivity
+    * 
+    * @return Current color sensitivity (between 0 and 1)
+    */
+    public Future<Float> getColorSensitivity() throws CallError, InterruptedException {
+        return call("getColorSensitivity");
     }
 
     /**
@@ -623,6 +642,16 @@ public class ALMovementDetection extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
     }
 
     /**
@@ -799,16 +828,6 @@ public class ALMovementDetection extends ALProxy {
     */
     public Future<Boolean> isPaused() throws CallError, InterruptedException {
         return call("isPaused");
-    }
-
-    /**
-    * Changes the pause status of the extractor
-    * 
-    * @param status  New pause satus
-    * @return The Future
-    */
-    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
-        return call("pause", status);
     }
 
     }

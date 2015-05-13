@@ -16,8 +16,8 @@ import java.util.List;
 import java.util.Map;
 /**
 * Manages the focused Activity and Autonomous Life state
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/core/autonomouslife.html#autonomouslife">NAOqi APIs for ALAutonomousLife </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/interaction/autonomouslife.html#autonomouslife">NAOqi APIs for ALAutonomousLife </a>
+* NAOqi V2.4.x
 */
 public class ALAutonomousLife extends ALProxy {
 
@@ -39,6 +39,22 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
+    * 
+    * 
+    */
+    public Map<String, Map<String, Integer>> getActivityStatistics() throws CallError, InterruptedException {
+        return (Map<String, Map<String, Integer>>)call("getActivityStatistics").get();
+    }
+
+    /**
+    * 
+    * 
+    */
+    public List<Tuple2<String, Integer>> getStateHistory(Integer param1) throws CallError, InterruptedException {
+        return (List<Tuple2<String, Integer>>)call("getStateHistory", param1).get();
+    }
+
+    /**
     * Stops the focused activity and clears stack of activities
     * 
     */
@@ -47,50 +63,11 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
-    * Get a list of the order that states that have been entered, and their time entered.
+    * Start monitoring ALMemory and reporting conditional triggers with AutonomousLaunchpad.
     * 
-    * @return A list of pairs, each pair is StateName/PreviousEnteredTime
     */
-    public List<Tuple2<String, Integer>> getStateHistory() throws CallError, InterruptedException {
-        return (List<Tuple2<String, Integer>>)call("getStateHistory").get();
-    }
-
-    /**
-    * Returns the currently focused activity
-    * 
-    * @return The name of the focused activity
-    */
-    public String focusedActivity() throws CallError, InterruptedException {
-        return (String)call("focusedActivity").get();
-    }
-
-    /**
-    * Get a list of the order that states that have been entered, and their time entered.
-    * 
-    * @param depth  How many items of history to report, starting from most recent.
-    * @return A list of pairs, each pair is StateName/PreviousEnteredTime
-    */
-    public List<Tuple2<String, Integer>> getStateHistory(Integer depth) throws CallError, InterruptedException {
-        return (List<Tuple2<String, Integer>>)call("getStateHistory", depth).get();
-    }
-
-    /**
-    * Get the time in seconds as life sees it.  Based on gettimeofday()
-    * 
-    * @return The int time in seconds as Autonomous Life sees it
-    */
-    public Integer getLifeTime() throws CallError, InterruptedException {
-        return (Integer)call("getLifeTime").get();
-    }
-
-    /**
-    * Set an activity as running with user focus
-    * 
-    * @param activity_name  The package_name/activity_name to run
-    * @param flags  Flags for focus changing. STOP_CURRENT or STOP_AND_STACK_CURRENT
-    */
-    public void switchFocus(String activity_name, Integer flags) throws CallError, InterruptedException{
-        call("switchFocus", activity_name, flags).get();
+    public void startMonitoringLaunchpadConditions() throws CallError, InterruptedException{
+        call("startMonitoringLaunchpadConditions").get();
     }
 
     /**
@@ -102,12 +79,13 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
-    * Gets running status of AutonomousLaunchpad
+    * Get a list of permissions that would be violated by a given activity in the current context.
     * 
-    * @return True if AutonomousLaunchpad is monitoring ALMemory and reporting conditional triggers.
+    * @param name  The name of the activity to check.
+    * @return An array of strings of the violated permissions. EG: ["nature", "canRunOnPod", "canRunInSleep"]
     */
-    public Boolean isMonitoringLaunchpadConditions() throws CallError, InterruptedException {
-        return (Boolean)call("isMonitoringLaunchpadConditions").get();
+    public List<String> getActivityContextPermissionViolations(String name) throws CallError, InterruptedException {
+        return (List<String>)call("getActivityContextPermissionViolations", name).get();
     }
 
     /**
@@ -127,14 +105,6 @@ public class ALAutonomousLife extends ALProxy {
     */
     public List<String> getEnabledLaunchpadPlugins() throws CallError, InterruptedException {
         return (List<String>)call("getEnabledLaunchpadPlugins").get();
-    }
-
-    /**
-    * Stops the focused activity. If another activity is stacked it will be started.
-    * 
-    */
-    public void stopFocus() throws CallError, InterruptedException{
-        call("stopFocus").get();
     }
 
     /**
@@ -166,6 +136,16 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
+    * Returns the nature of an activity
+    * 
+    * @param activity_name  The package_name/activity_name to check
+    * @return Possible values are: solitary, interactive
+    */
+    public String getActivityNature(String activity_name) throws CallError, InterruptedException {
+        return (String)call("getActivityNature", activity_name).get();
+    }
+
+    /**
     * Set if a given safeguard will be handled by Autonomous Life or not.
     * 
     * @param name  Name of the safeguard to consider: RobotPushed, RobotFell,CriticalDiagnosis, CriticalTemperature
@@ -186,34 +166,6 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
-    * Returns the nature of an activity
-    * 
-    * @param activity_name  The package_name/activity_name to check
-    * @return Possible values are: solitary, interactive
-    */
-    public String getActivityNature(String activity_name) throws CallError, InterruptedException {
-        return (String)call("getActivityNature", activity_name).get();
-    }
-
-    /**
-    * Get launch count, last completion time, etc for activities.
-    * 
-    * @return A map of activity names, with a cooresponding map of  "prevStartTime", "prevCompletionTime", "startCount", "totalDuration". Times are 0 for unlaunched Activities
-    */
-    public Map<String, Map<String, Integer>> getActivityStatistics() throws CallError, InterruptedException {
-        return (Map<String, Map<String, Integer>>)call("getActivityStatistics").get();
-    }
-
-    /**
-    * Set an activity as running with user focus
-    * 
-    * @param activity_name  The package_name/activity_name to run
-    */
-    public void switchFocus(String activity_name) throws CallError, InterruptedException{
-        call("switchFocus", activity_name).get();
-    }
-
-    /**
     * Get launch count, last completion time, etc for activities with autonomous launch trigger conditions.
     * 
     * @return A map of activity names, with a cooresponding map of  "prevStartTime", "prevCompletionTime", "startCount", "totalDuration". Times are 0 for unlaunched Activities
@@ -223,30 +175,55 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
-    * Get a list of the order that activities that have been focused, and their time focused.
     * 
-    * @return A list of pairs, each pair is ActivityName/PreviousFocusedTime
+    * 
     */
     public List<Tuple2<String, Integer>> getFocusHistory() throws CallError, InterruptedException {
         return (List<Tuple2<String, Integer>>)call("getFocusHistory").get();
     }
 
     /**
-    * Get a list of the order that activities that have been focused, and their time focused.
+    * Get a value of an ALMemory key that is used in a condition, which is the value at the previous autonomous activity focus.
     * 
-    * @param depth  How many items of history to report, starting from most recent.
-    * @return A list of pairs, each pair is ActivityName/PreviousFocusedTime
+    * @param name  Name of the ALMemory key to get.  Will throw if key is not used in any activity conditions.
+    * @return An array of the ALValue of the memory key and timestamp of when it was set: [seconds, microseconds, value]
     */
-    public List<Tuple2<String, Integer>> getFocusHistory(Integer depth) throws CallError, InterruptedException {
-        return (List<Tuple2<String, Integer>>)call("getFocusHistory", depth).get();
+    public Object getFocusContext(String name) throws CallError, InterruptedException {
+        return (Object)call("getFocusContext", name).get();
     }
 
     /**
-    * Start monitoring ALMemory and reporting conditional triggers with AutonomousLaunchpad.
+    * 
     * 
     */
-    public void startMonitoringLaunchpadConditions() throws CallError, InterruptedException{
-        call("startMonitoringLaunchpadConditions").get();
+    public List<Tuple2<String, Integer>> getFocusHistory(Integer param1) throws CallError, InterruptedException {
+        return (List<Tuple2<String, Integer>>)call("getFocusHistory", param1).get();
+    }
+
+    /**
+    * 
+    * 
+    */
+    public List<Tuple2<String, Integer>> getStateHistory() throws CallError, InterruptedException {
+        return (List<Tuple2<String, Integer>>)call("getStateHistory").get();
+    }
+
+    /**
+    * Get the time in seconds as life sees it.  Based on gettimeofday()
+    * 
+    * @return The int time in seconds as Autonomous Life sees it
+    */
+    public Integer getLifeTime() throws CallError, InterruptedException {
+        return (Integer)call("getLifeTime").get();
+    }
+
+    /**
+    * Gets running status of AutonomousLaunchpad
+    * 
+    * @return True if AutonomousLaunchpad is monitoring ALMemory and reporting conditional triggers.
+    */
+    public Boolean isMonitoringLaunchpadConditions() throws CallError, InterruptedException {
+        return (Boolean)call("isMonitoringLaunchpadConditions").get();
     }
 
     /**
@@ -339,6 +316,15 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
+    }
+
+    /**
     * Returns true if the method is currently running.
     * 
     * @param id  The ID of the method that was returned when calling the method using 'post'
@@ -377,6 +363,17 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
+    * 
+    * 
+    * @param   
+    * @param   
+    * @param   
+    */
+    public void onReady(String param1, Object param2, String param3) throws CallError, InterruptedException{
+        call("onReady", param1, param2, param3).get();
+    }
+
+    /**
     * Programatically control the state of Autonomous Life
     * 
     * @param state  The possible states of AutonomousLife are: interactive, solitary, safeguard, disabled
@@ -394,6 +391,42 @@ public class ALAutonomousLife extends ALProxy {
         return (String)call("getState").get();
     }
 
+    /**
+    * Returns the currently focused activity
+    * 
+    * @return The name of the focused activity
+    */
+    public String focusedActivity() throws CallError, InterruptedException {
+        return (String)call("focusedActivity").get();
+    }
+
+    /**
+    * Set an activity as running with user focus
+    * 
+    * @param activity_name  The package_name/activity_name to run
+    */
+    public void switchFocus(String activity_name) throws CallError, InterruptedException{
+        call("switchFocus", activity_name).get();
+    }
+
+    /**
+    * Set an activity as running with user focus
+    * 
+    * @param activity_name  The package_name/activity_name to run
+    * @param flags  Int flags for focus changing. STOP_CURRENT(0) or STOP_AND_STACK_CURRENT(1)
+    */
+    public void switchFocus(String activity_name, Integer flags) throws CallError, InterruptedException{
+        call("switchFocus", activity_name, flags).get();
+    }
+
+    /**
+    * Stops the focused activity. If another activity is stacked it will be started.
+    * 
+    */
+    public void stopFocus() throws CallError, InterruptedException{
+        call("stopFocus").get();
+    }
+
 
     public class AsyncALAutonomousLife extends ALProxy {
 
@@ -401,6 +434,22 @@ public class ALAutonomousLife extends ALProxy {
             super();
         }
     
+    /**
+    * 
+    * 
+    */
+    public Future<Map<String, Map<String, Integer>>> getActivityStatistics() throws CallError, InterruptedException {
+        return call("getActivityStatistics");
+    }
+
+    /**
+    * 
+    * 
+    */
+    public Future<List<Tuple2<String, Integer>>> getStateHistory(Integer param1) throws CallError, InterruptedException {
+        return call("getStateHistory", param1);
+    }
+
     /**
     * Stops the focused activity and clears stack of activities
     * 
@@ -411,51 +460,12 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
-    * Get a list of the order that states that have been entered, and their time entered.
+    * Start monitoring ALMemory and reporting conditional triggers with AutonomousLaunchpad.
     * 
-    * @return A list of pairs, each pair is StateName/PreviousEnteredTime
-    */
-    public Future<List<Tuple2<String, Integer>>> getStateHistory() throws CallError, InterruptedException {
-        return call("getStateHistory");
-    }
-
-    /**
-    * Returns the currently focused activity
-    * 
-    * @return The name of the focused activity
-    */
-    public Future<String> focusedActivity() throws CallError, InterruptedException {
-        return call("focusedActivity");
-    }
-
-    /**
-    * Get a list of the order that states that have been entered, and their time entered.
-    * 
-    * @param depth  How many items of history to report, starting from most recent.
-    * @return A list of pairs, each pair is StateName/PreviousEnteredTime
-    */
-    public Future<List<Tuple2<String, Integer>>> getStateHistory(Integer depth) throws CallError, InterruptedException {
-        return call("getStateHistory", depth);
-    }
-
-    /**
-    * Get the time in seconds as life sees it.  Based on gettimeofday()
-    * 
-    * @return The int time in seconds as Autonomous Life sees it
-    */
-    public Future<Integer> getLifeTime() throws CallError, InterruptedException {
-        return call("getLifeTime");
-    }
-
-    /**
-    * Set an activity as running with user focus
-    * 
-    * @param activity_name  The package_name/activity_name to run
-    * @param flags  Flags for focus changing. STOP_CURRENT or STOP_AND_STACK_CURRENT
     * @return The Future
     */
-    public Future<Void> switchFocus(String activity_name, Integer flags) throws CallError, InterruptedException{
-        return call("switchFocus", activity_name, flags);
+    public Future<Void> startMonitoringLaunchpadConditions() throws CallError, InterruptedException{
+        return call("startMonitoringLaunchpadConditions");
     }
 
     /**
@@ -468,12 +478,13 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
-    * Gets running status of AutonomousLaunchpad
+    * Get a list of permissions that would be violated by a given activity in the current context.
     * 
-    * @return True if AutonomousLaunchpad is monitoring ALMemory and reporting conditional triggers.
+    * @param name  The name of the activity to check.
+    * @return An array of strings of the violated permissions. EG: ["nature", "canRunOnPod", "canRunInSleep"]
     */
-    public Future<Boolean> isMonitoringLaunchpadConditions() throws CallError, InterruptedException {
-        return call("isMonitoringLaunchpadConditions");
+    public Future<List<String>> getActivityContextPermissionViolations(String name) throws CallError, InterruptedException {
+        return call("getActivityContextPermissionViolations", name);
     }
 
     /**
@@ -494,15 +505,6 @@ public class ALAutonomousLife extends ALProxy {
     */
     public Future<List<String>> getEnabledLaunchpadPlugins() throws CallError, InterruptedException {
         return call("getEnabledLaunchpadPlugins");
-    }
-
-    /**
-    * Stops the focused activity. If another activity is stacked it will be started.
-    * 
-    * @return The Future
-    */
-    public Future<Void> stopFocus() throws CallError, InterruptedException{
-        return call("stopFocus");
     }
 
     /**
@@ -535,6 +537,16 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
+    * Returns the nature of an activity
+    * 
+    * @param activity_name  The package_name/activity_name to check
+    * @return Possible values are: solitary, interactive
+    */
+    public Future<String> getActivityNature(String activity_name) throws CallError, InterruptedException {
+        return call("getActivityNature", activity_name);
+    }
+
+    /**
     * Set if a given safeguard will be handled by Autonomous Life or not.
     * 
     * @param name  Name of the safeguard to consider: RobotPushed, RobotFell,CriticalDiagnosis, CriticalTemperature
@@ -556,35 +568,6 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
-    * Returns the nature of an activity
-    * 
-    * @param activity_name  The package_name/activity_name to check
-    * @return Possible values are: solitary, interactive
-    */
-    public Future<String> getActivityNature(String activity_name) throws CallError, InterruptedException {
-        return call("getActivityNature", activity_name);
-    }
-
-    /**
-    * Get launch count, last completion time, etc for activities.
-    * 
-    * @return A map of activity names, with a cooresponding map of  "prevStartTime", "prevCompletionTime", "startCount", "totalDuration". Times are 0 for unlaunched Activities
-    */
-    public Future<Map<String, Map<String, Integer>>> getActivityStatistics() throws CallError, InterruptedException {
-        return call("getActivityStatistics");
-    }
-
-    /**
-    * Set an activity as running with user focus
-    * 
-    * @param activity_name  The package_name/activity_name to run
-    * @return The Future
-    */
-    public Future<Void> switchFocus(String activity_name) throws CallError, InterruptedException{
-        return call("switchFocus", activity_name);
-    }
-
-    /**
     * Get launch count, last completion time, etc for activities with autonomous launch trigger conditions.
     * 
     * @return A map of activity names, with a cooresponding map of  "prevStartTime", "prevCompletionTime", "startCount", "totalDuration". Times are 0 for unlaunched Activities
@@ -594,31 +577,55 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
-    * Get a list of the order that activities that have been focused, and their time focused.
     * 
-    * @return A list of pairs, each pair is ActivityName/PreviousFocusedTime
+    * 
     */
     public Future<List<Tuple2<String, Integer>>> getFocusHistory() throws CallError, InterruptedException {
         return call("getFocusHistory");
     }
 
     /**
-    * Get a list of the order that activities that have been focused, and their time focused.
+    * Get a value of an ALMemory key that is used in a condition, which is the value at the previous autonomous activity focus.
     * 
-    * @param depth  How many items of history to report, starting from most recent.
-    * @return A list of pairs, each pair is ActivityName/PreviousFocusedTime
+    * @param name  Name of the ALMemory key to get.  Will throw if key is not used in any activity conditions.
+    * @return An array of the ALValue of the memory key and timestamp of when it was set: [seconds, microseconds, value]
     */
-    public Future<List<Tuple2<String, Integer>>> getFocusHistory(Integer depth) throws CallError, InterruptedException {
-        return call("getFocusHistory", depth);
+    public Future<Object> getFocusContext(String name) throws CallError, InterruptedException {
+        return call("getFocusContext", name);
     }
 
     /**
-    * Start monitoring ALMemory and reporting conditional triggers with AutonomousLaunchpad.
     * 
-    * @return The Future
+    * 
     */
-    public Future<Void> startMonitoringLaunchpadConditions() throws CallError, InterruptedException{
-        return call("startMonitoringLaunchpadConditions");
+    public Future<List<Tuple2<String, Integer>>> getFocusHistory(Integer param1) throws CallError, InterruptedException {
+        return call("getFocusHistory", param1);
+    }
+
+    /**
+    * 
+    * 
+    */
+    public Future<List<Tuple2<String, Integer>>> getStateHistory() throws CallError, InterruptedException {
+        return call("getStateHistory");
+    }
+
+    /**
+    * Get the time in seconds as life sees it.  Based on gettimeofday()
+    * 
+    * @return The int time in seconds as Autonomous Life sees it
+    */
+    public Future<Integer> getLifeTime() throws CallError, InterruptedException {
+        return call("getLifeTime");
+    }
+
+    /**
+    * Gets running status of AutonomousLaunchpad
+    * 
+    * @return True if AutonomousLaunchpad is monitoring ALMemory and reporting conditional triggers.
+    */
+    public Future<Boolean> isMonitoringLaunchpadConditions() throws CallError, InterruptedException {
+        return call("isMonitoringLaunchpadConditions");
     }
 
     /**
@@ -713,6 +720,16 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
+    }
+
+    /**
     * Returns true if the method is currently running.
     * 
     * @param id  The ID of the method that was returned when calling the method using 'post'
@@ -752,6 +769,18 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
+    * 
+    * 
+    * @param   
+    * @param   
+    * @param   
+    * @return The Future
+    */
+    public Future<Void> onReady(String param1, Object param2, String param3) throws CallError, InterruptedException{
+        return call("onReady", param1, param2, param3);
+    }
+
+    /**
     * Programatically control the state of Autonomous Life
     * 
     * @param state  The possible states of AutonomousLife are: interactive, solitary, safeguard, disabled
@@ -768,6 +797,45 @@ public class ALAutonomousLife extends ALProxy {
     */
     public Future<String> getState() throws CallError, InterruptedException {
         return call("getState");
+    }
+
+    /**
+    * Returns the currently focused activity
+    * 
+    * @return The name of the focused activity
+    */
+    public Future<String> focusedActivity() throws CallError, InterruptedException {
+        return call("focusedActivity");
+    }
+
+    /**
+    * Set an activity as running with user focus
+    * 
+    * @param activity_name  The package_name/activity_name to run
+    * @return The Future
+    */
+    public Future<Void> switchFocus(String activity_name) throws CallError, InterruptedException{
+        return call("switchFocus", activity_name);
+    }
+
+    /**
+    * Set an activity as running with user focus
+    * 
+    * @param activity_name  The package_name/activity_name to run
+    * @param flags  Int flags for focus changing. STOP_CURRENT(0) or STOP_AND_STACK_CURRENT(1)
+    * @return The Future
+    */
+    public Future<Void> switchFocus(String activity_name, Integer flags) throws CallError, InterruptedException{
+        return call("switchFocus", activity_name, flags);
+    }
+
+    /**
+    * Stops the focused activity. If another activity is stacked it will be started.
+    * 
+    * @return The Future
+    */
+    public Future<Void> stopFocus() throws CallError, InterruptedException{
+        return call("stopFocus");
     }
 
     }

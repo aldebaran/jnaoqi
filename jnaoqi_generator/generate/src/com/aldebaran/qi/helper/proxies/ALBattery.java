@@ -20,8 +20,8 @@ A event name BatteryFullChargedFlagChanged is raised when the flag battery is fu
 A event name BatteryDisChargingFlagChanged is raised when the flag battery is disCharging (bool) changed.
 A event name BatteryChargeChanged is raised when the battery level percentage (int) changed.
 
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/sensors/albattery.html#albattery">NAOqi APIs for ALBattery </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/sensors/albattery.html#albattery">NAOqi APIs for ALBattery </a>
+* NAOqi V2.4.x
 */
 public class ALBattery extends ALProxy {
 
@@ -129,6 +129,15 @@ public class ALBattery extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
     }
 
     /**
@@ -283,6 +292,16 @@ public class ALBattery extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
     }
 
     /**

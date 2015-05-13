@@ -14,8 +14,8 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * This module embeds a speech synthetizer whose role is to convert text commands into sound waves that are then either sent to Nao's loudspeakers or written into a file. This service supports several languages and some parameters of the synthetizer can be tuned to change each language's synthetic voice.
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/audio/altexttospeech.html#altexttospeech">NAOqi APIs for ALTextToSpeech </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/audio/altexttospeech.html#altexttospeech">NAOqi APIs for ALTextToSpeech </a>
+* NAOqi V2.4.x
 */
 public class ALTextToSpeech extends ALProxy {
 
@@ -37,30 +37,12 @@ public class ALTextToSpeech extends ALProxy {
     }
 
     /**
-    * Loads a set of voice parameters defined in a xml file contained in the preferences folder.The name of the xml file must begin with ALTextToSpeech_Voice_ 
+    * Sets the volume of text-to-speech output.
     * 
-    * @param pPreferenceName  Name of the voice preference.
+    * @param volume  Volume (between 0.0 and 1.0).
     */
-    public void loadVoicePreference(String pPreferenceName) throws CallError, InterruptedException{
-        call("loadVoicePreference", pPreferenceName).get();
-    }
-
-    /**
-    * Outputs the available voices. The returned list contains the voice IDs.
-    * 
-    * @return  Array of std::string containing the voices installed on the system.
-    */
-    public List<String> getAvailableVoices() throws CallError, InterruptedException {
-        return (List<String>)call("getAvailableVoices").get();
-    }
-
-    /**
-    * Fetches the current volume the text to speech.
-    * 
-    * @return Volume (integer between 0 and 100).
-    */
-    public Float getVolume() throws CallError, InterruptedException {
-        return (Float)call("getVolume").get();
+    public void setVolume(Float volume) throws CallError, InterruptedException{
+        call("setVolume", volume).get();
     }
 
     /**
@@ -70,6 +52,66 @@ public class ALTextToSpeech extends ALProxy {
     */
     public String locale() throws CallError, InterruptedException {
         return (String)call("locale").get();
+    }
+
+    /**
+    * Shows the Dictionary.
+    * 
+    */
+    public void showDictionary() throws CallError, InterruptedException{
+        call("showDictionary").get();
+    }
+
+    /**
+    * Reset ALTextToSpeech to his default state.
+    * 
+    */
+    public void reset() throws CallError, InterruptedException{
+        call("reset").get();
+    }
+
+    /**
+    * Loads a set of voice parameters defined in a xml file contained in the preferences folder.The name of the xml file must begin with ALTextToSpeech_Voice_ 
+    * 
+    * @param pPreferenceName  Name of the voice preference.
+    */
+    public void loadVoicePreference(String pPreferenceName) throws CallError, InterruptedException{
+        call("loadVoicePreference", pPreferenceName).get();
+    }
+
+    /**
+    * Unload the dictionary.
+    * 
+    * @param word  the word you wish to delete, does not have to be in japanese.
+    * @return bool: true if succeeded, false if failed
+    */
+    public Boolean deleteFromDictionary(String word) throws CallError, InterruptedException {
+        return (Boolean)call("deleteFromDictionary", word).get();
+    }
+
+    /**
+    * Add a word to the library
+    * 
+    * @param type  the type of word you wish to insert, does not have to be in japanese.
+    * @param word  the word you wish to insert, does not have to be in japanese.
+    * @param priority  the priority of the word.
+    * @param phonetic  the phonetic pronouciation in KATAKANA.
+    * @param accent  syllabus and accentuation
+    * @return bool: true if succeeded, false if failed
+    */
+    public Boolean addToDictionary(String type, String word, String priority, String phonetic, String accent) throws CallError, InterruptedException {
+        return (Boolean)call("addToDictionary", type, word, priority, phonetic, accent).get();
+    }
+
+    /**
+    * Add a word to the library
+    * 
+    * @param text  the text you wish to insert.
+    * @param toReplace  text to replace.
+    * @return bool: true if succeeded, false if failed
+    */
+    public Boolean addToDictionary(String text, String toReplace) throws CallError, InterruptedException {
+        return (Boolean)call("addToDictionary", text, toReplace).get();
     }
 
     /**
@@ -83,28 +125,22 @@ public class ALTextToSpeech extends ALProxy {
     }
 
     /**
-    * Sets the volume of text-to-speech output.
+    * Fetches the current volume the text to speech.
     * 
-    * @param volume  Volume (between 0.0 and 1.0).
+    * @return Volume (integer between 0 and 100).
     */
-    public void setVolume(Float volume) throws CallError, InterruptedException{
-        call("setVolume", volume).get();
+    public Float getVolume() throws CallError, InterruptedException {
+        return (Float)call("getVolume").get();
     }
 
     /**
-    * Enables the notifications puted in ALMemory during the synthesis (TextStarted, TextDone, CurrentBookMark, CurrentWord, ...)
+    * Unload the dictionary.
     * 
+    * @param word  the word you wish to delete, does not have to be in japanese.
+    * @return bool: true if succeeded, false if failed
     */
-    public void enableNotifications() throws CallError, InterruptedException{
-        call("enableNotifications").get();
-    }
-
-    /**
-    * Disables the notifications puted in ALMemory during the synthesis (TextStarted, TextDone, CurrentBookMark, CurrentWord, ...)
-    * 
-    */
-    public void disableNotifications() throws CallError, InterruptedException{
-        call("disableNotifications").get();
+    public Boolean deleteFromDictionary(String word, String param1) throws CallError, InterruptedException {
+        return (Boolean)call("deleteFromDictionary", word, param1).get();
     }
 
     /**
@@ -197,6 +233,15 @@ public class ALTextToSpeech extends ALProxy {
     }
 
     /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
+    }
+
+    /**
     * Returns true if the method is currently running.
     * 
     * @param id  The ID of the method that was returned when calling the method using 'post'
@@ -264,15 +309,6 @@ public class ALTextToSpeech extends ALProxy {
     }
 
     /**
-    * This method performs the text-to-speech operations: it takes a std::string, outputs the synthesis resulting audio signal in a file, and then plays the audio file. The file is deleted afterwards. It is useful when you want to perform a short synthesis, when few CPU is available. Do not use it if you want a low-latency synthesis or to synthesize a long std::string.
-    * 
-    * @param pStringToSay  Text to say, encoded in UTF-8.
-    */
-    public void sayToFileAndPlay(String pStringToSay) throws CallError, InterruptedException{
-        call("sayToFileAndPlay", pStringToSay).get();
-    }
-
-    /**
     * This method stops the current and all the pending tasks immediately.
     * 
     */
@@ -296,16 +332,6 @@ public class ALTextToSpeech extends ALProxy {
     */
     public String getLanguage() throws CallError, InterruptedException {
         return (String)call("getLanguage").get();
-    }
-
-    /**
-    * Returns the encoding that should be used with the specified language.
-    * 
-    * @param pLanguage  Language name (as a std::string). Must belong to the languages available in TTS.
-    * @return Encoding of the specified language.
-    */
-    public String getLanguageEncoding(String pLanguage) throws CallError, InterruptedException {
-        return (String)call("getLanguageEncoding", pLanguage).get();
     }
 
     /**
@@ -378,6 +404,15 @@ public class ALTextToSpeech extends ALProxy {
         return (String)call("getVoice").get();
     }
 
+    /**
+    * Outputs the available voices. The returned list contains the voice IDs.
+    * 
+    * @return  Array of std::string containing the voices installed on the system.
+    */
+    public List<String> getAvailableVoices() throws CallError, InterruptedException {
+        return (List<String>)call("getAvailableVoices").get();
+    }
+
 
     public class AsyncALTextToSpeech extends ALProxy {
 
@@ -385,6 +420,43 @@ public class ALTextToSpeech extends ALProxy {
             super();
         }
     
+    /**
+    * Sets the volume of text-to-speech output.
+    * 
+    * @param volume  Volume (between 0.0 and 1.0).
+    * @return The Future
+    */
+    public Future<Void> setVolume(Float volume) throws CallError, InterruptedException{
+        return call("setVolume", volume);
+    }
+
+    /**
+    * Get the locale associate to the current language.
+    * 
+    * @return A string with xx_XX format (region_country)
+    */
+    public Future<String> locale() throws CallError, InterruptedException {
+        return call("locale");
+    }
+
+    /**
+    * Shows the Dictionary.
+    * 
+    * @return The Future
+    */
+    public Future<Void> showDictionary() throws CallError, InterruptedException{
+        return call("showDictionary");
+    }
+
+    /**
+    * Reset ALTextToSpeech to his default state.
+    * 
+    * @return The Future
+    */
+    public Future<Void> reset() throws CallError, InterruptedException{
+        return call("reset");
+    }
+
     /**
     * Loads a set of voice parameters defined in a xml file contained in the preferences folder.The name of the xml file must begin with ALTextToSpeech_Voice_ 
     * 
@@ -396,30 +468,38 @@ public class ALTextToSpeech extends ALProxy {
     }
 
     /**
-    * Outputs the available voices. The returned list contains the voice IDs.
+    * Unload the dictionary.
     * 
-    * @return  Array of std::string containing the voices installed on the system.
+    * @param word  the word you wish to delete, does not have to be in japanese.
+    * @return bool: true if succeeded, false if failed
     */
-    public Future<List<String>> getAvailableVoices() throws CallError, InterruptedException {
-        return call("getAvailableVoices");
+    public Future<Boolean> deleteFromDictionary(String word) throws CallError, InterruptedException {
+        return call("deleteFromDictionary", word);
     }
 
     /**
-    * Fetches the current volume the text to speech.
+    * Add a word to the library
     * 
-    * @return Volume (integer between 0 and 100).
+    * @param type  the type of word you wish to insert, does not have to be in japanese.
+    * @param word  the word you wish to insert, does not have to be in japanese.
+    * @param priority  the priority of the word.
+    * @param phonetic  the phonetic pronouciation in KATAKANA.
+    * @param accent  syllabus and accentuation
+    * @return bool: true if succeeded, false if failed
     */
-    public Future<Float> getVolume() throws CallError, InterruptedException {
-        return call("getVolume");
+    public Future<Boolean> addToDictionary(String type, String word, String priority, String phonetic, String accent) throws CallError, InterruptedException {
+        return call("addToDictionary", type, word, priority, phonetic, accent);
     }
 
     /**
-    * Get the locale associate to the current language.
+    * Add a word to the library
     * 
-    * @return A string with xx_XX format (region_country)
+    * @param text  the text you wish to insert.
+    * @param toReplace  text to replace.
+    * @return bool: true if succeeded, false if failed
     */
-    public Future<String> locale() throws CallError, InterruptedException {
-        return call("locale");
+    public Future<Boolean> addToDictionary(String text, String toReplace) throws CallError, InterruptedException {
+        return call("addToDictionary", text, toReplace);
     }
 
     /**
@@ -434,31 +514,22 @@ public class ALTextToSpeech extends ALProxy {
     }
 
     /**
-    * Sets the volume of text-to-speech output.
+    * Fetches the current volume the text to speech.
     * 
-    * @param volume  Volume (between 0.0 and 1.0).
-    * @return The Future
+    * @return Volume (integer between 0 and 100).
     */
-    public Future<Void> setVolume(Float volume) throws CallError, InterruptedException{
-        return call("setVolume", volume);
+    public Future<Float> getVolume() throws CallError, InterruptedException {
+        return call("getVolume");
     }
 
     /**
-    * Enables the notifications puted in ALMemory during the synthesis (TextStarted, TextDone, CurrentBookMark, CurrentWord, ...)
+    * Unload the dictionary.
     * 
-    * @return The Future
+    * @param word  the word you wish to delete, does not have to be in japanese.
+    * @return bool: true if succeeded, false if failed
     */
-    public Future<Void> enableNotifications() throws CallError, InterruptedException{
-        return call("enableNotifications");
-    }
-
-    /**
-    * Disables the notifications puted in ALMemory during the synthesis (TextStarted, TextDone, CurrentBookMark, CurrentWord, ...)
-    * 
-    * @return The Future
-    */
-    public Future<Void> disableNotifications() throws CallError, InterruptedException{
-        return call("disableNotifications");
+    public Future<Boolean> deleteFromDictionary(String word, String param1) throws CallError, InterruptedException {
+        return call("deleteFromDictionary", word, param1);
     }
 
     /**
@@ -553,6 +624,16 @@ public class ALTextToSpeech extends ALProxy {
     }
 
     /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
+    }
+
+    /**
     * Returns true if the method is currently running.
     * 
     * @param id  The ID of the method that was returned when calling the method using 'post'
@@ -624,16 +705,6 @@ public class ALTextToSpeech extends ALProxy {
     }
 
     /**
-    * This method performs the text-to-speech operations: it takes a std::string, outputs the synthesis resulting audio signal in a file, and then plays the audio file. The file is deleted afterwards. It is useful when you want to perform a short synthesis, when few CPU is available. Do not use it if you want a low-latency synthesis or to synthesize a long std::string.
-    * 
-    * @param pStringToSay  Text to say, encoded in UTF-8.
-    * @return The Future
-    */
-    public Future<Void> sayToFileAndPlay(String pStringToSay) throws CallError, InterruptedException{
-        return call("sayToFileAndPlay", pStringToSay);
-    }
-
-    /**
     * This method stops the current and all the pending tasks immediately.
     * 
     * @return The Future
@@ -659,16 +730,6 @@ public class ALTextToSpeech extends ALProxy {
     */
     public Future<String> getLanguage() throws CallError, InterruptedException {
         return call("getLanguage");
-    }
-
-    /**
-    * Returns the encoding that should be used with the specified language.
-    * 
-    * @param pLanguage  Language name (as a std::string). Must belong to the languages available in TTS.
-    * @return Encoding of the specified language.
-    */
-    public Future<String> getLanguageEncoding(String pLanguage) throws CallError, InterruptedException {
-        return call("getLanguageEncoding", pLanguage);
     }
 
     /**
@@ -742,6 +803,15 @@ public class ALTextToSpeech extends ALProxy {
     */
     public Future<String> getVoice() throws CallError, InterruptedException {
         return call("getVoice");
+    }
+
+    /**
+    * Outputs the available voices. The returned list contains the voice IDs.
+    * 
+    * @return  Array of std::string containing the voices installed on the system.
+    */
+    public Future<List<String>> getAvailableVoices() throws CallError, InterruptedException {
+        return call("getAvailableVoices");
     }
 
     }

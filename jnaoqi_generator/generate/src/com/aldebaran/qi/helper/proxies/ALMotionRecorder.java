@@ -14,8 +14,8 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * ALMotionRecorder is a very specific module for real-time motion recording in Choregraphe. Users can get a simpler interface for motion recording by using the Animation Mode. ALMotionRecorder also supports recording modes using bumpers or torso button, and selective motion replay.
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/motion/almotionrecorder.html#almotionrecorder">NAOqi APIs for ALMotionRecorder </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/motion/almotionrecorder.html#almotionrecorder">NAOqi APIs for ALMotionRecorder </a>
+* NAOqi V2.4.x
 */
 public class ALMotionRecorder extends ALProxy {
 
@@ -126,6 +126,15 @@ public class ALMotionRecorder extends ALProxy {
     }
 
     /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
+    }
+
+    /**
     * Returns true if the method is currently running.
     * 
     * @param id  The ID of the method that was returned when calling the method using 'post'
@@ -169,7 +178,7 @@ public class ALMotionRecorder extends ALProxy {
     * @param jointsToRecord  Names of joints that must be recorded
     * @param nbPoses  Default number of poses to record
     * @param extensionAllowed  Set to true to ignore nbPoses and keep recording new poses as long as record is not manually stopped
-    * @param mode  Indicates which interactive mode must be used. 1 : Use right bumper to enslave and left bumper to store the pose  (deprecated); 2 : Use chest button to store the pose
+    * @param mode  Indicates which interactive mode must be used. 1 : Use right bumper to enslave and left bumper to store the pose  (deprecated); 2 : Use head tap to store the pose
     */
     public void startInteractiveRecording(List<String> jointsToRecord, Integer nbPoses, Boolean extensionAllowed, Integer mode) throws CallError, InterruptedException{
         call("startInteractiveRecording", jointsToRecord, nbPoses, extensionAllowed, mode).get();
@@ -308,6 +317,16 @@ public class ALMotionRecorder extends ALProxy {
     }
 
     /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
+    }
+
+    /**
     * Returns true if the method is currently running.
     * 
     * @param id  The ID of the method that was returned when calling the method using 'post'
@@ -352,7 +371,7 @@ public class ALMotionRecorder extends ALProxy {
     * @param jointsToRecord  Names of joints that must be recorded
     * @param nbPoses  Default number of poses to record
     * @param extensionAllowed  Set to true to ignore nbPoses and keep recording new poses as long as record is not manually stopped
-    * @param mode  Indicates which interactive mode must be used. 1 : Use right bumper to enslave and left bumper to store the pose  (deprecated); 2 : Use chest button to store the pose
+    * @param mode  Indicates which interactive mode must be used. 1 : Use right bumper to enslave and left bumper to store the pose  (deprecated); 2 : Use head tap to store the pose
     * @return The Future
     */
     public Future<Void> startInteractiveRecording(List<String> jointsToRecord, Integer nbPoses, Boolean extensionAllowed, Integer mode) throws CallError, InterruptedException{

@@ -12,10 +12,11 @@ import com.aldebaran.qi.Session;
 import com.aldebaran.qi.helper.ALProxy;
 
 import java.util.List;
+import java.util.Map;
 /**
 * ALDialog is the dialog module. It allows loading a dialog file (.top), starts/stops/loads/unloads the dialog
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/audio/dialog/aldialog.html#aldialog">NAOqi APIs for ALDialog </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/interaction/dialog/aldialog.html#aldialog">NAOqi APIs for ALDialog </a>
+* NAOqi V2.4.x
 */
 public class ALDialog extends ALProxy {
 
@@ -123,6 +124,15 @@ public class ALDialog extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
     }
 
     /**
@@ -287,91 +297,113 @@ public class ALDialog extends ALProxy {
     }
 
     /**
-    * Callback when speech recognition recognized a word
+    * Is engine stoppable
     * 
+    * @return Is engine stoppable
     */
-    public void wordRecognized(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        call("wordRecognized", param1, param2, param3).get();
+    public Boolean getStoppable() throws CallError, InterruptedException {
+        return (Boolean)call("getStoppable").get();
     }
 
     /**
-    * Callback when speech recognition recognized a word
+    * Is engine stoppable
     * 
+    * @param stoppable  set if engine can be stopped by user session
     */
-    public void addBlockingEvent(String param1) throws CallError, InterruptedException{
-        call("addBlockingEvent", param1).get();
+    public void setStoppable(Boolean stoppable) throws CallError, InterruptedException{
+        call("setStoppable", stoppable).get();
     }
 
     /**
-    * Get loaded dialog list
+    * Is engine stoppable
     * 
+    * @param stoppable  set if engine can be stopped by user session
     */
-    public void wordsRecognizedCallback(Object param1, Integer param2) throws CallError, InterruptedException{
-        call("wordsRecognizedCallback", param1, param2).get();
+    public List<String> runTopics(List<String> stoppable) throws CallError, InterruptedException {
+        return (List<String>)call("runTopics", stoppable).get();
     }
 
     /**
-    * End of utterance callback
+    * Is engine stoppable
     * 
+    * @param stoppable  set if engine can be stopped by user session
+    */
+    public void stopTopics(List<String> stoppable) throws CallError, InterruptedException{
+        call("stopTopics", stoppable).get();
+    }
+
+    /**
+    * say a sentence from a topic
+    * 
+    * @param stoppable  set if engine can be stopped by user session
+    */
+    public void say(String stoppable, String param1) throws CallError, InterruptedException{
+        call("say", stoppable, param1).get();
+    }
+
+    /**
+    * ResetLanguage
+    * 
+    * @param stoppable  set if engine can be stopped by user session
+    */
+    public void resetLanguage() throws CallError, InterruptedException{
+        call("resetLanguage").get();
+    }
+
+    /**
+    * The event will stop current TSS
+    * 
+    * @param eventName  Event name
+    */
+    public void addBlockingEvent(String eventName) throws CallError, InterruptedException{
+        call("addBlockingEvent", eventName).get();
+    }
+
+    /**
+    * The event will removed from the blocking list
+    * 
+    * @param eventName  Event name
+    */
+    public void removeBlockingEvent(String eventName) throws CallError, InterruptedException{
+        call("removeBlockingEvent", eventName).get();
+    }
+
+    /**
+    * Asr callback for recognized words
+    * 
+    * @param grammar  recognized grammar
+    * @param utterance Size  Utterance size
+    */
+    public void wordsRecognizedCallback(Object grammar, Integer utteranceSize) throws CallError, InterruptedException{
+        call("wordsRecognizedCallback", grammar, utteranceSize).get();
+    }
+
+    /**
+    * End of utterance asr callback
+    * 
+    * @return true if reprocess buffer
     */
     public Boolean endOfUtteranceCallback() throws CallError, InterruptedException {
         return (Boolean)call("endOfUtteranceCallback").get();
     }
 
     /**
-    * releaseEngine
-    * 
-    */
-    public void releaseEngine() throws CallError, InterruptedException{
-        call("releaseEngine").get();
-    }
-
-    /**
-    * controlEngine
-    * 
-    */
-    public List<String> controlEngine(String param1, String param2) throws CallError, InterruptedException {
-        return (List<String>)call("controlEngine", param1, param2).get();
-    }
-
-    /**
-    * Callback when dialog received a event
-    * 
-    */
-    public void eventReceived(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        call("eventReceived", param1, param2, param3).get();
-    }
-
-    /**
     * Callback when ASR status changes
     * 
+    * @param topicName  topic name
+    * @param tagName  tag name
     */
-    public void statusChanged(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        call("statusChanged", param1, param2, param3).get();
-    }
-
-    /**
-    * Callback when ASR status changes
-    * 
-    */
-    public void gotoTag(String param1, String param2) throws CallError, InterruptedException{
-        call("gotoTag", param1, param2).get();
+    public void gotoTag(String topicName, String tagName) throws CallError, InterruptedException{
+        call("gotoTag", topicName, tagName).get();
     }
 
     /**
     * noPick
     * 
+    * @param topicName  Topic name
     */
-    public void noPick(String param1) throws CallError, InterruptedException{
-        call("noPick", param1).get();
-    }
-
-    /**
-    * Callback when remote connection changes
-    * 
-    */
-    public void connectionChanged(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        call("connectionChanged", param1, param2, param3).get();
+    public void noPick(String topicName) throws CallError, InterruptedException{
+        call("noPick", topicName).get();
     }
 
     /**
@@ -383,35 +415,66 @@ public class ALDialog extends ALProxy {
     }
 
     /**
+    * compile all for ASR
+    * 
+    */
+    public void compileBundle(String param1) throws CallError, InterruptedException{
+        call("compileBundle", param1).get();
+    }
+
+    /**
+    * Create a context
+    * 
+    */
+    public void createContext(String param1, String param2, String param3) throws CallError, InterruptedException{
+        call("createContext", param1, param2, param3).get();
+    }
+
+    /**
     * Load a topic
     * 
+    * @param topicPath  topic full path and filename
+    * @return Topic path and filename
     */
-    public String loadTopic(String param1) throws CallError, InterruptedException {
-        return (String)call("loadTopic", param1).get();
+    public String loadTopic(String topicPath) throws CallError, InterruptedException {
+        return (String)call("loadTopic", topicPath).get();
+    }
+
+    /**
+    * Load a topic
+    * 
+    * @param topicContent  topic content
+    * @return Topic name
+    */
+    public String loadTopicContent(String topicContent) throws CallError, InterruptedException {
+        return (String)call("loadTopicContent", topicContent).get();
     }
 
     /**
     * Activate a topic
     * 
+    * @param topicName  topic name
     */
-    public void deactivateTopic(String param1) throws CallError, InterruptedException{
-        call("deactivateTopic", param1).get();
+    public void deactivateTopic(String topicName) throws CallError, InterruptedException{
+        call("deactivateTopic", topicName).get();
     }
 
     /**
     * Activate a topic
     * 
+    * @param topicName  topic name
     */
-    public void activateTopic(String param1) throws CallError, InterruptedException{
-        call("activateTopic", param1).get();
+    public void activateTopic(String topicName) throws CallError, InterruptedException{
+        call("activateTopic", topicName).get();
     }
 
     /**
     * unload a dialog
     * 
+    * @param topicName  topic name
     */
-    public void unloadTopic(String param1) throws CallError, InterruptedException{
-        call("unloadTopic", param1).get();
+    public void unloadTopic(String topicName) throws CallError, InterruptedException{
+        call("unloadTopic", topicName).get();
     }
 
     /**
@@ -425,30 +488,34 @@ public class ALDialog extends ALProxy {
     /**
     * Give a sentence to the dialog and get the answer
     * 
+    * @param input  input string that simulate humain sentence
     */
-    public void forceInput(String param1) throws CallError, InterruptedException{
-        call("forceInput", param1).get();
+    public void forceInput(String input) throws CallError, InterruptedException{
+        call("forceInput", input).get();
     }
 
     /**
     * Give a sentence to the dialog and get the answer
     * 
+    * @param input  input string that simulate humain sentence
     */
-    public void tell(String param1) throws CallError, InterruptedException{
-        call("tell", param1).get();
+    public void tell(String input) throws CallError, InterruptedException{
+        call("tell", input).get();
     }
 
     /**
-    * Set the minimum confidence required to recognize words
+    * Set the minimum confidence required to recognize words. Better to use confidence by asr model
     * 
+    * @param threshold  input string that simulate humain sentence
     */
-    public void setASRConfidenceThreshold(Float param1) throws CallError, InterruptedException{
-        call("setASRConfidenceThreshold", param1).get();
+    public void setASRConfidenceThreshold(Float threshold) throws CallError, InterruptedException{
+        call("setASRConfidenceThreshold", threshold).get();
     }
 
     /**
     * Get the minimum confidence required to recognize words
     * 
+    * @return current asr confidence
     */
     public Float getASRConfidenceThreshold() throws CallError, InterruptedException {
         return (Float)call("getASRConfidenceThreshold").get();
@@ -457,13 +524,14 @@ public class ALDialog extends ALProxy {
     /**
     * Open a session
     * 
+    * @param id  user id
     */
-    public void openSession(Integer param1) throws CallError, InterruptedException{
-        call("openSession", param1).get();
+    public void openSession(Integer id) throws CallError, InterruptedException{
+        call("openSession", id).get();
     }
 
     /**
-    * Close the session
+    * Close the current session
     * 
     */
     public void closeSession() throws CallError, InterruptedException{
@@ -471,19 +539,30 @@ public class ALDialog extends ALProxy {
     }
 
     /**
-    * change event's delay
+    * Close the test session
     * 
     */
-    public void setDelay(String param1, Integer param2) throws CallError, InterruptedException{
-        call("setDelay", param1, param2).get();
+    public void closeTestSession() throws CallError, InterruptedException{
+        call("closeTestSession").get();
+    }
+
+    /**
+    * change event's delay
+    * 
+    * @param eventName  Event name
+    * @param Delay  Delay in second
+    */
+    public void setDelay(String eventName, Integer Delay) throws CallError, InterruptedException{
+        call("setDelay", eventName, Delay).get();
     }
 
     /**
     * Set how many scopes remains open
     * 
+    * @param numberOfScope  number of scope
     */
-    public void setNumberOfScopes(Integer param1) throws CallError, InterruptedException{
-        call("setNumberOfScopes", param1).get();
+    public void setNumberOfScopes(Integer numberOfScope) throws CallError, InterruptedException{
+        call("setNumberOfScopes", numberOfScope).get();
     }
 
     /**
@@ -492,6 +571,7 @@ public class ALDialog extends ALProxy {
     * @param conceptName  Name of the concept
     * @param language  Language of the concept
     * @param content  content of the concept
+    * @param store  Store concept in database if true
     */
     public void setConcept(String conceptName, String language, List<String> content) throws CallError, InterruptedException{
         call("setConcept", conceptName, language, content).get();
@@ -512,33 +592,51 @@ public class ALDialog extends ALProxy {
     /**
     * set the content of a dynamic concept
     * 
+    * @param conceptName  concept name
+    * @param language  language
+    * @param content  concept content
     */
-    public void setConceptKeepInCache(String param1, String param2, List<String> param3) throws CallError, InterruptedException{
-        call("setConceptKeepInCache", param1, param2, param3).get();
+    public void setConceptKeepInCache(String conceptName, String language, List<String> content) throws CallError, InterruptedException{
+        call("setConceptKeepInCache", conceptName, language, content).get();
     }
 
     /**
-    * Set push mode
+    * add to the content of a dynamic concept
     * 
+    * @param conceptName  Name of the concept
+    * @param language  Language of the concept
+    * @param content  content of the concept
     */
-    public void setPushMode(Integer param1) throws CallError, InterruptedException{
-        call("setPushMode", param1).get();
+    public void addToConcept(String conceptName, String language, List<String> content) throws CallError, InterruptedException{
+        call("addToConcept", conceptName, language, content).get();
+    }
+
+    /**
+    * get the content of a dynamic concept
+    * 
+    * @param conceptName  Name of the concept
+    * @param language  Language of the concept
+    */
+    public List<String> getConcept(String conceptName, String language) throws CallError, InterruptedException {
+        return (List<String>)call("getConcept", conceptName, language).get();
     }
 
     /**
     * enableTriggerSentences
     * 
+    * @param enableTriggerSentences  Enable trigger sentences if true
     */
-    public void enableTriggerSentences(Boolean param1) throws CallError, InterruptedException{
-        call("enableTriggerSentences", param1).get();
+    public void enableTriggerSentences(Boolean enableTriggerSentences) throws CallError, InterruptedException{
+        call("enableTriggerSentences", enableTriggerSentences).get();
     }
 
     /**
     * enableCategory
     * 
+    * @param enableCategory  Enable category if true
     */
-    public void enableCategory(Boolean param1) throws CallError, InterruptedException{
-        call("enableCategory", param1).get();
+    public void enableCategory(Boolean enableCategory) throws CallError, InterruptedException{
+        call("enableCategory", enableCategory).get();
     }
 
     /**
@@ -560,25 +658,44 @@ public class ALDialog extends ALProxy {
     /**
     * Set the configuration of animated speech for the current dialog.
     * 
+    * @param animatedSpeechConfiguration  See animated speech documentation
     */
-    public void setAnimatedSpeechConfiguration(Object param1) throws CallError, InterruptedException{
-        call("setAnimatedSpeechConfiguration", param1).get();
+    public void setAnimatedSpeechConfiguration(Object animatedSpeechConfiguration) throws CallError, InterruptedException{
+        call("setAnimatedSpeechConfiguration", animatedSpeechConfiguration).get();
     }
 
     /**
     * Black list a list of application
     * 
+    * @param applicationList  List of applications that cannot be launched by dialog
     */
-    public void applicationBlackList(List<String> param1) throws CallError, InterruptedException{
-        call("applicationBlackList", param1).get();
+    public void applicationBlackList(List<String> applicationList) throws CallError, InterruptedException{
+        call("applicationBlackList", applicationList).get();
     }
 
     /**
     * True if new content was installed
     * 
+    * @return True if content was updated since last compilation
     */
     public Boolean isContentNeedsUpdate() throws CallError, InterruptedException {
         return (Boolean)call("isContentNeedsUpdate").get();
+    }
+
+    /**
+    * change engagement mode
+    * 
+    */
+    public void pause() throws CallError, InterruptedException{
+        call("pause").get();
+    }
+
+    /**
+    * change engagement mode
+    * 
+    */
+    public void endPause() throws CallError, InterruptedException{
+        call("endPause").get();
     }
 
     /**
@@ -598,64 +715,58 @@ public class ALDialog extends ALProxy {
     }
 
     /**
-    * setVariablePath
+    * setVariablePath redifine a variable name on the fly
     * 
+    * @param topic  Source topic name
+    * @param event  Event name
+    * @param path  New event name
     */
-    public void setVariablePath(String param1, String param2, String param3) throws CallError, InterruptedException{
-        call("setVariablePath", param1, param2, param3).get();
+    public void setVariablePath(String topic, String event, String path) throws CallError, InterruptedException{
+        call("setVariablePath", topic, event, path).get();
     }
 
     /**
     * setLanguage
     * 
+    * @param Language  Set dialog language (frf, enu, jpj...)
     */
-    public void setLanguage(String param1) throws CallError, InterruptedException{
-        call("setLanguage", param1).get();
+    public void setLanguage(String Language) throws CallError, InterruptedException{
+        call("setLanguage", Language).get();
     }
 
     /**
-    * startUpdate
+    * getLanguage
     * 
+    * @return get the dialog language
     */
-    public void startUpdate(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        call("startUpdate", param1, param2, param3).get();
+    public String getLanguage() throws CallError, InterruptedException {
+        return (String)call("getLanguage").get();
     }
 
     /**
-    * startUpdate
+    * dialogAnswered
     * 
+    * @param variableName  variable name
+    * @param variableValue  variable value
+    * @param message  message
     */
-    public void startApp(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        call("startApp", param1, param2, param3).get();
-    }
-
-    /**
-    * packageInstalled
-    * 
-    */
-    public void packageInstalled(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        call("packageInstalled", param1, param2, param3).get();
-    }
-
-    /**
-    * compilationFinished
-    * 
-    */
-    public void compilationFinished(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        call("compilationFinished", param1, param2, param3).get();
+    public void dialogAnswered(String variableName, Object variableValue, String message) throws CallError, InterruptedException{
+        call("dialogAnswered", variableName, variableValue, message).get();
     }
 
     /**
     * Give focus to a dialog
     * 
+    * @param topicName  Topic name
     */
-    public void setFocus(String param1) throws CallError, InterruptedException{
-        call("setFocus", param1).get();
+    public void setFocus(String topicName) throws CallError, InterruptedException{
+        call("setFocus", topicName).get();
     }
 
     /**
     * Give focus to a dialog
     * 
+    * @return Current focus name
     */
     public String getFocus() throws CallError, InterruptedException {
         return (String)call("getFocus").get();
@@ -664,22 +775,26 @@ public class ALDialog extends ALProxy {
     /**
     * Set the focus to a topic and make a proposal
     * 
+    * @param topicName  Topic name
     */
-    public void gotoTopic(String param1) throws CallError, InterruptedException{
-        call("gotoTopic", param1).get();
+    public void gotoTopic(String topicName) throws CallError, InterruptedException{
+        call("gotoTopic", topicName).get();
     }
 
     /**
-    * Load precompiled file
+    * List loaded topics
     * 
+    * @param language  Language name
+    * @return List of loaded topics
     */
-    public List<String> getLoadedTopics(String param1) throws CallError, InterruptedException {
-        return (List<String>)call("getLoadedTopics", param1).get();
+    public List<String> getLoadedTopics(String language) throws CallError, InterruptedException {
+        return (List<String>)call("getLoadedTopics", language).get();
     }
 
     /**
-    * Load precompiled file
+    * List loaded topics independent of language
     * 
+    * @return List of loaded topics
     */
     public List<String> getAllLoadedTopics() throws CallError, InterruptedException {
         return (List<String>)call("getAllLoadedTopics").get();
@@ -688,6 +803,7 @@ public class ALDialog extends ALProxy {
     /**
     * Get activated topics
     * 
+    * @return List of activated topics
     */
     public List<String> getActivatedTopics() throws CallError, InterruptedException {
         return (List<String>)call("getActivatedTopics").get();
@@ -696,21 +812,25 @@ public class ALDialog extends ALProxy {
     /**
     * activate a tag
     * 
+    * @param tagName  tag name
+    * @param topicName  topic name
     */
-    public void activateTag(String param1, String param2) throws CallError, InterruptedException{
-        call("activateTag", param1, param2).get();
+    public void activateTag(String tagName, String topicName) throws CallError, InterruptedException{
+        call("activateTag", tagName, topicName).get();
     }
 
     /**
     * deactivate a tag
     * 
+    * @param tagName  tag name
+    * @param topicName  topic name
     */
-    public void deactivateTag(String param1, String param2) throws CallError, InterruptedException{
-        call("deactivateTag", param1, param2).get();
+    public void deactivateTag(String tagName, String topicName) throws CallError, InterruptedException{
+        call("deactivateTag", tagName, topicName).get();
     }
 
     /**
-    * fallback
+    * Reset all engine
     * 
     */
     public void resetAll() throws CallError, InterruptedException{
@@ -720,30 +840,39 @@ public class ALDialog extends ALProxy {
     /**
     * insert user data into dialog database
     * 
+    * @param variableName  Variable name
+    * @param variableValue  Variable value
+    * @param UserID  User ID
     */
-    public void insertUserData(String param1, String param2, Integer param3) throws CallError, InterruptedException{
-        call("insertUserData", param1, param2, param3).get();
+    public void insertUserData(String variableName, String variableValue, Integer UserID) throws CallError, InterruptedException{
+        call("insertUserData", variableName, variableValue, UserID).get();
     }
 
     /**
     * get user data from dialog database
     * 
+    * @param variableName  Variable name
+    * @param UserID  User ID
+    * @return Value
     */
-    public String getUserData(String param1, Integer param2) throws CallError, InterruptedException {
-        return (String)call("getUserData", param1, param2).get();
+    public String getUserData(String variableName, Integer UserID) throws CallError, InterruptedException {
+        return (String)call("getUserData", variableName, UserID).get();
     }
 
     /**
     * get user data list from dialog database
     * 
+    * @param UserID  User ID
+    * @return Variable list
     */
-    public List<String> getUserDataList(Integer param1) throws CallError, InterruptedException {
-        return (List<String>)call("getUserDataList", param1).get();
+    public List<String> getUserDataList(Integer UserID) throws CallError, InterruptedException {
+        return (List<String>)call("getUserDataList", UserID).get();
     }
 
     /**
     * get user list from dialog database
     * 
+    * @return User list
     */
     public List<Integer> getUserList() throws CallError, InterruptedException {
         return (List<Integer>)call("getUserList").get();
@@ -752,9 +881,10 @@ public class ALDialog extends ALProxy {
     /**
     * remove a user from the database
     * 
+    * @param UserID  User ID
     */
-    public void removeUserData(Integer param1) throws CallError, InterruptedException{
-        call("removeUserData", param1).get();
+    public void removeUserData(Integer UserID) throws CallError, InterruptedException{
+        call("removeUserData", UserID).get();
     }
 
     /**
@@ -768,14 +898,16 @@ public class ALDialog extends ALProxy {
     /**
     * let the robot send log the cloud
     * 
+    * @param EnableLog  Enable log
     */
-    public void enableSendingLogToCloud(Boolean param1) throws CallError, InterruptedException{
-        call("enableSendingLogToCloud", param1).get();
+    public void enableSendingLogToCloud(Boolean EnableLog) throws CallError, InterruptedException{
+        call("enableSendingLogToCloud", EnableLog).get();
     }
 
     /**
     * check if the robot is sending the log to the cloud
     * 
+    * @return True if currently logging
     */
     public Boolean isSendingLogToCloud() throws CallError, InterruptedException {
         return (Boolean)call("isSendingLogToCloud").get();
@@ -798,11 +930,107 @@ public class ALDialog extends ALProxy {
     }
 
     /**
-    * Generate sentences
+    * mute dialog
     * 
     */
-    public void generateSentences(String param1, String param2, String param3) throws CallError, InterruptedException{
-        call("generateSentences", param1, param2, param3).get();
+    public void mute(Boolean param1) throws CallError, InterruptedException{
+        call("mute", param1).get();
+    }
+
+    /**
+    * Generate sentences
+    * 
+    * @param destination  file destination
+    * @param topic  source topic
+    * @param language  source language
+    */
+    public void generateSentences(String destination, String topic, String language) throws CallError, InterruptedException{
+        call("generateSentences", destination, topic, language).get();
+    }
+
+    /**
+    * get language map ISO to NU format
+    * 
+    * @return get language map ISO to NU format
+    */
+    public Map<String, String> getLanguageListISOToNU() throws CallError, InterruptedException {
+        return (Map<String, String>)call("getLanguageListISOToNU").get();
+    }
+
+    /**
+    * get language map NU to ISO format
+    * 
+    * @return get language map NU to ISO format
+    */
+    public Map<String, String> getLanguageListNUToISO() throws CallError, InterruptedException {
+        return (Map<String, String>)call("getLanguageListNUToISO").get();
+    }
+
+    /**
+    * get language map Long to NU format
+    * 
+    * @return get language map Long to NU format
+    */
+    public Map<String, String> getLanguageListLongToNU() throws CallError, InterruptedException {
+        return (Map<String, String>)call("getLanguageListLongToNU").get();
+    }
+
+    /**
+    * get language map NU to Long format
+    * 
+    * @return get language map NU to Long format
+    */
+    public Map<String, String> getLanguageListNUToLong() throws CallError, InterruptedException {
+        return (Map<String, String>)call("getLanguageListNUToLong").get();
+    }
+
+    /**
+    * convert language from NU format to Long format
+    * 
+    * @param Language  language in NU format
+    * @return language in Long format 
+    */
+    public String convertNUToLong(String Language) throws CallError, InterruptedException {
+        return (String)call("convertNUToLong", Language).get();
+    }
+
+    /**
+    * convert language from Long format to NU format
+    * 
+    * @param Language  language in Long format
+    * @return language in NU format 
+    */
+    public String convertLongToNU(String Language) throws CallError, InterruptedException {
+        return (String)call("convertLongToNU", Language).get();
+    }
+
+    /**
+    * convert language from ISO format to NU format
+    * 
+    * @param Language  language in ISO format
+    * @return language in NU format 
+    */
+    public String convertISOToNU(String Language) throws CallError, InterruptedException {
+        return (String)call("convertISOToNU", Language).get();
+    }
+
+    /**
+    * convert language from NU format to ISO format
+    * 
+    * @param Language  language in NU format
+    * @return language in ISO format 
+    */
+    public String convertNUToISO(String Language) throws CallError, InterruptedException {
+        return (String)call("convertNUToISO", Language).get();
+    }
+
+    /**
+    * Define if applications will be launched or not
+    * 
+    * @param simulateApps  set simulated apps
+    */
+    public void enableSimulatedApps(Boolean simulateApps) throws CallError, InterruptedException{
+        call("enableSimulatedApps", simulateApps).get();
     }
 
 
@@ -901,6 +1129,16 @@ public class ALDialog extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
     }
 
     /**
@@ -1071,100 +1309,122 @@ public class ALDialog extends ALProxy {
     }
 
     /**
-    * Callback when speech recognition recognized a word
+    * Is engine stoppable
     * 
-    * @return The Future
+    * @return Is engine stoppable
     */
-    public Future<Void> wordRecognized(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        return call("wordRecognized", param1, param2, param3);
+    public Future<Boolean> getStoppable() throws CallError, InterruptedException {
+        return call("getStoppable");
     }
 
     /**
-    * Callback when speech recognition recognized a word
+    * Is engine stoppable
     * 
+    * @param stoppable  set if engine can be stopped by user session
     * @return The Future
     */
-    public Future<Void> addBlockingEvent(String param1) throws CallError, InterruptedException{
-        return call("addBlockingEvent", param1);
+    public Future<Void> setStoppable(Boolean stoppable) throws CallError, InterruptedException{
+        return call("setStoppable", stoppable);
     }
 
     /**
-    * Get loaded dialog list
+    * Is engine stoppable
     * 
-    * @return The Future
+    * @param stoppable  set if engine can be stopped by user session
     */
-    public Future<Void> wordsRecognizedCallback(Object param1, Integer param2) throws CallError, InterruptedException{
-        return call("wordsRecognizedCallback", param1, param2);
+    public Future<List<String>> runTopics(List<String> stoppable) throws CallError, InterruptedException {
+        return call("runTopics", stoppable);
     }
 
     /**
-    * End of utterance callback
+    * Is engine stoppable
     * 
+    * @param stoppable  set if engine can be stopped by user session
+    * @return The Future
+    */
+    public Future<Void> stopTopics(List<String> stoppable) throws CallError, InterruptedException{
+        return call("stopTopics", stoppable);
+    }
+
+    /**
+    * say a sentence from a topic
+    * 
+    * @param stoppable  set if engine can be stopped by user session
+    * @return The Future
+    */
+    public Future<Void> say(String stoppable, String param1) throws CallError, InterruptedException{
+        return call("say", stoppable, param1);
+    }
+
+    /**
+    * ResetLanguage
+    * 
+    * @param stoppable  set if engine can be stopped by user session
+    * @return The Future
+    */
+    public Future<Void> resetLanguage() throws CallError, InterruptedException{
+        return call("resetLanguage");
+    }
+
+    /**
+    * The event will stop current TSS
+    * 
+    * @param eventName  Event name
+    * @return The Future
+    */
+    public Future<Void> addBlockingEvent(String eventName) throws CallError, InterruptedException{
+        return call("addBlockingEvent", eventName);
+    }
+
+    /**
+    * The event will removed from the blocking list
+    * 
+    * @param eventName  Event name
+    * @return The Future
+    */
+    public Future<Void> removeBlockingEvent(String eventName) throws CallError, InterruptedException{
+        return call("removeBlockingEvent", eventName);
+    }
+
+    /**
+    * Asr callback for recognized words
+    * 
+    * @param grammar  recognized grammar
+    * @param utterance Size  Utterance size
+    * @return The Future
+    */
+    public Future<Void> wordsRecognizedCallback(Object grammar, Integer utteranceSize) throws CallError, InterruptedException{
+        return call("wordsRecognizedCallback", grammar, utteranceSize);
+    }
+
+    /**
+    * End of utterance asr callback
+    * 
+    * @return true if reprocess buffer
     */
     public Future<Boolean> endOfUtteranceCallback() throws CallError, InterruptedException {
         return call("endOfUtteranceCallback");
     }
 
     /**
-    * releaseEngine
-    * 
-    * @return The Future
-    */
-    public Future<Void> releaseEngine() throws CallError, InterruptedException{
-        return call("releaseEngine");
-    }
-
-    /**
-    * controlEngine
-    * 
-    */
-    public Future<List<String>> controlEngine(String param1, String param2) throws CallError, InterruptedException {
-        return call("controlEngine", param1, param2);
-    }
-
-    /**
-    * Callback when dialog received a event
-    * 
-    * @return The Future
-    */
-    public Future<Void> eventReceived(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        return call("eventReceived", param1, param2, param3);
-    }
-
-    /**
     * Callback when ASR status changes
     * 
+    * @param topicName  topic name
+    * @param tagName  tag name
     * @return The Future
     */
-    public Future<Void> statusChanged(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        return call("statusChanged", param1, param2, param3);
-    }
-
-    /**
-    * Callback when ASR status changes
-    * 
-    * @return The Future
-    */
-    public Future<Void> gotoTag(String param1, String param2) throws CallError, InterruptedException{
-        return call("gotoTag", param1, param2);
+    public Future<Void> gotoTag(String topicName, String tagName) throws CallError, InterruptedException{
+        return call("gotoTag", topicName, tagName);
     }
 
     /**
     * noPick
     * 
+    * @param topicName  Topic name
     * @return The Future
     */
-    public Future<Void> noPick(String param1) throws CallError, InterruptedException{
-        return call("noPick", param1);
-    }
-
-    /**
-    * Callback when remote connection changes
-    * 
-    * @return The Future
-    */
-    public Future<Void> connectionChanged(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        return call("connectionChanged", param1, param2, param3);
+    public Future<Void> noPick(String topicName) throws CallError, InterruptedException{
+        return call("noPick", topicName);
     }
 
     /**
@@ -1177,38 +1437,71 @@ public class ALDialog extends ALProxy {
     }
 
     /**
+    * compile all for ASR
+    * 
+    * @return The Future
+    */
+    public Future<Void> compileBundle(String param1) throws CallError, InterruptedException{
+        return call("compileBundle", param1);
+    }
+
+    /**
+    * Create a context
+    * 
+    * @return The Future
+    */
+    public Future<Void> createContext(String param1, String param2, String param3) throws CallError, InterruptedException{
+        return call("createContext", param1, param2, param3);
+    }
+
+    /**
     * Load a topic
     * 
+    * @param topicPath  topic full path and filename
+    * @return Topic path and filename
     */
-    public Future<String> loadTopic(String param1) throws CallError, InterruptedException {
-        return call("loadTopic", param1);
+    public Future<String> loadTopic(String topicPath) throws CallError, InterruptedException {
+        return call("loadTopic", topicPath);
+    }
+
+    /**
+    * Load a topic
+    * 
+    * @param topicContent  topic content
+    * @return Topic name
+    */
+    public Future<String> loadTopicContent(String topicContent) throws CallError, InterruptedException {
+        return call("loadTopicContent", topicContent);
     }
 
     /**
     * Activate a topic
     * 
+    * @param topicName  topic name
     * @return The Future
     */
-    public Future<Void> deactivateTopic(String param1) throws CallError, InterruptedException{
-        return call("deactivateTopic", param1);
+    public Future<Void> deactivateTopic(String topicName) throws CallError, InterruptedException{
+        return call("deactivateTopic", topicName);
     }
 
     /**
     * Activate a topic
     * 
+    * @param topicName  topic name
     * @return The Future
     */
-    public Future<Void> activateTopic(String param1) throws CallError, InterruptedException{
-        return call("activateTopic", param1);
+    public Future<Void> activateTopic(String topicName) throws CallError, InterruptedException{
+        return call("activateTopic", topicName);
     }
 
     /**
     * unload a dialog
     * 
+    * @param topicName  topic name
     * @return The Future
     */
-    public Future<Void> unloadTopic(String param1) throws CallError, InterruptedException{
-        return call("unloadTopic", param1);
+    public Future<Void> unloadTopic(String topicName) throws CallError, InterruptedException{
+        return call("unloadTopic", topicName);
     }
 
     /**
@@ -1223,33 +1516,37 @@ public class ALDialog extends ALProxy {
     /**
     * Give a sentence to the dialog and get the answer
     * 
+    * @param input  input string that simulate humain sentence
     * @return The Future
     */
-    public Future<Void> forceInput(String param1) throws CallError, InterruptedException{
-        return call("forceInput", param1);
+    public Future<Void> forceInput(String input) throws CallError, InterruptedException{
+        return call("forceInput", input);
     }
 
     /**
     * Give a sentence to the dialog and get the answer
     * 
+    * @param input  input string that simulate humain sentence
     * @return The Future
     */
-    public Future<Void> tell(String param1) throws CallError, InterruptedException{
-        return call("tell", param1);
+    public Future<Void> tell(String input) throws CallError, InterruptedException{
+        return call("tell", input);
     }
 
     /**
-    * Set the minimum confidence required to recognize words
+    * Set the minimum confidence required to recognize words. Better to use confidence by asr model
     * 
+    * @param threshold  input string that simulate humain sentence
     * @return The Future
     */
-    public Future<Void> setASRConfidenceThreshold(Float param1) throws CallError, InterruptedException{
-        return call("setASRConfidenceThreshold", param1);
+    public Future<Void> setASRConfidenceThreshold(Float threshold) throws CallError, InterruptedException{
+        return call("setASRConfidenceThreshold", threshold);
     }
 
     /**
     * Get the minimum confidence required to recognize words
     * 
+    * @return current asr confidence
     */
     public Future<Float> getASRConfidenceThreshold() throws CallError, InterruptedException {
         return call("getASRConfidenceThreshold");
@@ -1258,14 +1555,15 @@ public class ALDialog extends ALProxy {
     /**
     * Open a session
     * 
+    * @param id  user id
     * @return The Future
     */
-    public Future<Void> openSession(Integer param1) throws CallError, InterruptedException{
-        return call("openSession", param1);
+    public Future<Void> openSession(Integer id) throws CallError, InterruptedException{
+        return call("openSession", id);
     }
 
     /**
-    * Close the session
+    * Close the current session
     * 
     * @return The Future
     */
@@ -1274,21 +1572,33 @@ public class ALDialog extends ALProxy {
     }
 
     /**
-    * change event's delay
+    * Close the test session
     * 
     * @return The Future
     */
-    public Future<Void> setDelay(String param1, Integer param2) throws CallError, InterruptedException{
-        return call("setDelay", param1, param2);
+    public Future<Void> closeTestSession() throws CallError, InterruptedException{
+        return call("closeTestSession");
+    }
+
+    /**
+    * change event's delay
+    * 
+    * @param eventName  Event name
+    * @param Delay  Delay in second
+    * @return The Future
+    */
+    public Future<Void> setDelay(String eventName, Integer Delay) throws CallError, InterruptedException{
+        return call("setDelay", eventName, Delay);
     }
 
     /**
     * Set how many scopes remains open
     * 
+    * @param numberOfScope  number of scope
     * @return The Future
     */
-    public Future<Void> setNumberOfScopes(Integer param1) throws CallError, InterruptedException{
-        return call("setNumberOfScopes", param1);
+    public Future<Void> setNumberOfScopes(Integer numberOfScope) throws CallError, InterruptedException{
+        return call("setNumberOfScopes", numberOfScope);
     }
 
     /**
@@ -1297,6 +1607,7 @@ public class ALDialog extends ALProxy {
     * @param conceptName  Name of the concept
     * @param language  Language of the concept
     * @param content  content of the concept
+    * @param store  Store concept in database if true
     * @return The Future
     */
     public Future<Void> setConcept(String conceptName, String language, List<String> content) throws CallError, InterruptedException{
@@ -1319,37 +1630,55 @@ public class ALDialog extends ALProxy {
     /**
     * set the content of a dynamic concept
     * 
+    * @param conceptName  concept name
+    * @param language  language
+    * @param content  concept content
     * @return The Future
     */
-    public Future<Void> setConceptKeepInCache(String param1, String param2, List<String> param3) throws CallError, InterruptedException{
-        return call("setConceptKeepInCache", param1, param2, param3);
+    public Future<Void> setConceptKeepInCache(String conceptName, String language, List<String> content) throws CallError, InterruptedException{
+        return call("setConceptKeepInCache", conceptName, language, content);
     }
 
     /**
-    * Set push mode
+    * add to the content of a dynamic concept
     * 
+    * @param conceptName  Name of the concept
+    * @param language  Language of the concept
+    * @param content  content of the concept
     * @return The Future
     */
-    public Future<Void> setPushMode(Integer param1) throws CallError, InterruptedException{
-        return call("setPushMode", param1);
+    public Future<Void> addToConcept(String conceptName, String language, List<String> content) throws CallError, InterruptedException{
+        return call("addToConcept", conceptName, language, content);
+    }
+
+    /**
+    * get the content of a dynamic concept
+    * 
+    * @param conceptName  Name of the concept
+    * @param language  Language of the concept
+    */
+    public Future<List<String>> getConcept(String conceptName, String language) throws CallError, InterruptedException {
+        return call("getConcept", conceptName, language);
     }
 
     /**
     * enableTriggerSentences
     * 
+    * @param enableTriggerSentences  Enable trigger sentences if true
     * @return The Future
     */
-    public Future<Void> enableTriggerSentences(Boolean param1) throws CallError, InterruptedException{
-        return call("enableTriggerSentences", param1);
+    public Future<Void> enableTriggerSentences(Boolean enableTriggerSentences) throws CallError, InterruptedException{
+        return call("enableTriggerSentences", enableTriggerSentences);
     }
 
     /**
     * enableCategory
     * 
+    * @param enableCategory  Enable category if true
     * @return The Future
     */
-    public Future<Void> enableCategory(Boolean param1) throws CallError, InterruptedException{
-        return call("enableCategory", param1);
+    public Future<Void> enableCategory(Boolean enableCategory) throws CallError, InterruptedException{
+        return call("enableCategory", enableCategory);
     }
 
     /**
@@ -1373,27 +1702,48 @@ public class ALDialog extends ALProxy {
     /**
     * Set the configuration of animated speech for the current dialog.
     * 
+    * @param animatedSpeechConfiguration  See animated speech documentation
     * @return The Future
     */
-    public Future<Void> setAnimatedSpeechConfiguration(Object param1) throws CallError, InterruptedException{
-        return call("setAnimatedSpeechConfiguration", param1);
+    public Future<Void> setAnimatedSpeechConfiguration(Object animatedSpeechConfiguration) throws CallError, InterruptedException{
+        return call("setAnimatedSpeechConfiguration", animatedSpeechConfiguration);
     }
 
     /**
     * Black list a list of application
     * 
+    * @param applicationList  List of applications that cannot be launched by dialog
     * @return The Future
     */
-    public Future<Void> applicationBlackList(List<String> param1) throws CallError, InterruptedException{
-        return call("applicationBlackList", param1);
+    public Future<Void> applicationBlackList(List<String> applicationList) throws CallError, InterruptedException{
+        return call("applicationBlackList", applicationList);
     }
 
     /**
     * True if new content was installed
     * 
+    * @return True if content was updated since last compilation
     */
     public Future<Boolean> isContentNeedsUpdate() throws CallError, InterruptedException {
         return call("isContentNeedsUpdate");
+    }
+
+    /**
+    * change engagement mode
+    * 
+    * @return The Future
+    */
+    public Future<Void> pause() throws CallError, InterruptedException{
+        return call("pause");
+    }
+
+    /**
+    * change engagement mode
+    * 
+    * @return The Future
+    */
+    public Future<Void> endPause() throws CallError, InterruptedException{
+        return call("endPause");
     }
 
     /**
@@ -1415,71 +1765,62 @@ public class ALDialog extends ALProxy {
     }
 
     /**
-    * setVariablePath
+    * setVariablePath redifine a variable name on the fly
     * 
+    * @param topic  Source topic name
+    * @param event  Event name
+    * @param path  New event name
     * @return The Future
     */
-    public Future<Void> setVariablePath(String param1, String param2, String param3) throws CallError, InterruptedException{
-        return call("setVariablePath", param1, param2, param3);
+    public Future<Void> setVariablePath(String topic, String event, String path) throws CallError, InterruptedException{
+        return call("setVariablePath", topic, event, path);
     }
 
     /**
     * setLanguage
     * 
+    * @param Language  Set dialog language (frf, enu, jpj...)
     * @return The Future
     */
-    public Future<Void> setLanguage(String param1) throws CallError, InterruptedException{
-        return call("setLanguage", param1);
+    public Future<Void> setLanguage(String Language) throws CallError, InterruptedException{
+        return call("setLanguage", Language);
     }
 
     /**
-    * startUpdate
+    * getLanguage
     * 
-    * @return The Future
+    * @return get the dialog language
     */
-    public Future<Void> startUpdate(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        return call("startUpdate", param1, param2, param3);
+    public Future<String> getLanguage() throws CallError, InterruptedException {
+        return call("getLanguage");
     }
 
     /**
-    * startUpdate
+    * dialogAnswered
     * 
+    * @param variableName  variable name
+    * @param variableValue  variable value
+    * @param message  message
     * @return The Future
     */
-    public Future<Void> startApp(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        return call("startApp", param1, param2, param3);
-    }
-
-    /**
-    * packageInstalled
-    * 
-    * @return The Future
-    */
-    public Future<Void> packageInstalled(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        return call("packageInstalled", param1, param2, param3);
-    }
-
-    /**
-    * compilationFinished
-    * 
-    * @return The Future
-    */
-    public Future<Void> compilationFinished(String param1, Object param2, String param3) throws CallError, InterruptedException{
-        return call("compilationFinished", param1, param2, param3);
+    public Future<Void> dialogAnswered(String variableName, Object variableValue, String message) throws CallError, InterruptedException{
+        return call("dialogAnswered", variableName, variableValue, message);
     }
 
     /**
     * Give focus to a dialog
     * 
+    * @param topicName  Topic name
     * @return The Future
     */
-    public Future<Void> setFocus(String param1) throws CallError, InterruptedException{
-        return call("setFocus", param1);
+    public Future<Void> setFocus(String topicName) throws CallError, InterruptedException{
+        return call("setFocus", topicName);
     }
 
     /**
     * Give focus to a dialog
     * 
+    * @return Current focus name
     */
     public Future<String> getFocus() throws CallError, InterruptedException {
         return call("getFocus");
@@ -1488,23 +1829,27 @@ public class ALDialog extends ALProxy {
     /**
     * Set the focus to a topic and make a proposal
     * 
+    * @param topicName  Topic name
     * @return The Future
     */
-    public Future<Void> gotoTopic(String param1) throws CallError, InterruptedException{
-        return call("gotoTopic", param1);
+    public Future<Void> gotoTopic(String topicName) throws CallError, InterruptedException{
+        return call("gotoTopic", topicName);
     }
 
     /**
-    * Load precompiled file
+    * List loaded topics
     * 
+    * @param language  Language name
+    * @return List of loaded topics
     */
-    public Future<List<String>> getLoadedTopics(String param1) throws CallError, InterruptedException {
-        return call("getLoadedTopics", param1);
+    public Future<List<String>> getLoadedTopics(String language) throws CallError, InterruptedException {
+        return call("getLoadedTopics", language);
     }
 
     /**
-    * Load precompiled file
+    * List loaded topics independent of language
     * 
+    * @return List of loaded topics
     */
     public Future<List<String>> getAllLoadedTopics() throws CallError, InterruptedException {
         return call("getAllLoadedTopics");
@@ -1513,6 +1858,7 @@ public class ALDialog extends ALProxy {
     /**
     * Get activated topics
     * 
+    * @return List of activated topics
     */
     public Future<List<String>> getActivatedTopics() throws CallError, InterruptedException {
         return call("getActivatedTopics");
@@ -1521,23 +1867,27 @@ public class ALDialog extends ALProxy {
     /**
     * activate a tag
     * 
+    * @param tagName  tag name
+    * @param topicName  topic name
     * @return The Future
     */
-    public Future<Void> activateTag(String param1, String param2) throws CallError, InterruptedException{
-        return call("activateTag", param1, param2);
+    public Future<Void> activateTag(String tagName, String topicName) throws CallError, InterruptedException{
+        return call("activateTag", tagName, topicName);
     }
 
     /**
     * deactivate a tag
     * 
+    * @param tagName  tag name
+    * @param topicName  topic name
     * @return The Future
     */
-    public Future<Void> deactivateTag(String param1, String param2) throws CallError, InterruptedException{
-        return call("deactivateTag", param1, param2);
+    public Future<Void> deactivateTag(String tagName, String topicName) throws CallError, InterruptedException{
+        return call("deactivateTag", tagName, topicName);
     }
 
     /**
-    * fallback
+    * Reset all engine
     * 
     * @return The Future
     */
@@ -1548,31 +1898,40 @@ public class ALDialog extends ALProxy {
     /**
     * insert user data into dialog database
     * 
+    * @param variableName  Variable name
+    * @param variableValue  Variable value
+    * @param UserID  User ID
     * @return The Future
     */
-    public Future<Void> insertUserData(String param1, String param2, Integer param3) throws CallError, InterruptedException{
-        return call("insertUserData", param1, param2, param3);
+    public Future<Void> insertUserData(String variableName, String variableValue, Integer UserID) throws CallError, InterruptedException{
+        return call("insertUserData", variableName, variableValue, UserID);
     }
 
     /**
     * get user data from dialog database
     * 
+    * @param variableName  Variable name
+    * @param UserID  User ID
+    * @return Value
     */
-    public Future<String> getUserData(String param1, Integer param2) throws CallError, InterruptedException {
-        return call("getUserData", param1, param2);
+    public Future<String> getUserData(String variableName, Integer UserID) throws CallError, InterruptedException {
+        return call("getUserData", variableName, UserID);
     }
 
     /**
     * get user data list from dialog database
     * 
+    * @param UserID  User ID
+    * @return Variable list
     */
-    public Future<List<String>> getUserDataList(Integer param1) throws CallError, InterruptedException {
-        return call("getUserDataList", param1);
+    public Future<List<String>> getUserDataList(Integer UserID) throws CallError, InterruptedException {
+        return call("getUserDataList", UserID);
     }
 
     /**
     * get user list from dialog database
     * 
+    * @return User list
     */
     public Future<List<Integer>> getUserList() throws CallError, InterruptedException {
         return call("getUserList");
@@ -1581,10 +1940,11 @@ public class ALDialog extends ALProxy {
     /**
     * remove a user from the database
     * 
+    * @param UserID  User ID
     * @return The Future
     */
-    public Future<Void> removeUserData(Integer param1) throws CallError, InterruptedException{
-        return call("removeUserData", param1);
+    public Future<Void> removeUserData(Integer UserID) throws CallError, InterruptedException{
+        return call("removeUserData", UserID);
     }
 
     /**
@@ -1599,15 +1959,17 @@ public class ALDialog extends ALProxy {
     /**
     * let the robot send log the cloud
     * 
+    * @param EnableLog  Enable log
     * @return The Future
     */
-    public Future<Void> enableSendingLogToCloud(Boolean param1) throws CallError, InterruptedException{
-        return call("enableSendingLogToCloud", param1);
+    public Future<Void> enableSendingLogToCloud(Boolean EnableLog) throws CallError, InterruptedException{
+        return call("enableSendingLogToCloud", EnableLog);
     }
 
     /**
     * check if the robot is sending the log to the cloud
     * 
+    * @return True if currently logging
     */
     public Future<Boolean> isSendingLogToCloud() throws CallError, InterruptedException {
         return call("isSendingLogToCloud");
@@ -1632,12 +1994,110 @@ public class ALDialog extends ALProxy {
     }
 
     /**
-    * Generate sentences
+    * mute dialog
     * 
     * @return The Future
     */
-    public Future<Void> generateSentences(String param1, String param2, String param3) throws CallError, InterruptedException{
-        return call("generateSentences", param1, param2, param3);
+    public Future<Void> mute(Boolean param1) throws CallError, InterruptedException{
+        return call("mute", param1);
+    }
+
+    /**
+    * Generate sentences
+    * 
+    * @param destination  file destination
+    * @param topic  source topic
+    * @param language  source language
+    * @return The Future
+    */
+    public Future<Void> generateSentences(String destination, String topic, String language) throws CallError, InterruptedException{
+        return call("generateSentences", destination, topic, language);
+    }
+
+    /**
+    * get language map ISO to NU format
+    * 
+    * @return get language map ISO to NU format
+    */
+    public Future<Map<String, String>> getLanguageListISOToNU() throws CallError, InterruptedException {
+        return call("getLanguageListISOToNU");
+    }
+
+    /**
+    * get language map NU to ISO format
+    * 
+    * @return get language map NU to ISO format
+    */
+    public Future<Map<String, String>> getLanguageListNUToISO() throws CallError, InterruptedException {
+        return call("getLanguageListNUToISO");
+    }
+
+    /**
+    * get language map Long to NU format
+    * 
+    * @return get language map Long to NU format
+    */
+    public Future<Map<String, String>> getLanguageListLongToNU() throws CallError, InterruptedException {
+        return call("getLanguageListLongToNU");
+    }
+
+    /**
+    * get language map NU to Long format
+    * 
+    * @return get language map NU to Long format
+    */
+    public Future<Map<String, String>> getLanguageListNUToLong() throws CallError, InterruptedException {
+        return call("getLanguageListNUToLong");
+    }
+
+    /**
+    * convert language from NU format to Long format
+    * 
+    * @param Language  language in NU format
+    * @return language in Long format 
+    */
+    public Future<String> convertNUToLong(String Language) throws CallError, InterruptedException {
+        return call("convertNUToLong", Language);
+    }
+
+    /**
+    * convert language from Long format to NU format
+    * 
+    * @param Language  language in Long format
+    * @return language in NU format 
+    */
+    public Future<String> convertLongToNU(String Language) throws CallError, InterruptedException {
+        return call("convertLongToNU", Language);
+    }
+
+    /**
+    * convert language from ISO format to NU format
+    * 
+    * @param Language  language in ISO format
+    * @return language in NU format 
+    */
+    public Future<String> convertISOToNU(String Language) throws CallError, InterruptedException {
+        return call("convertISOToNU", Language);
+    }
+
+    /**
+    * convert language from NU format to ISO format
+    * 
+    * @param Language  language in NU format
+    * @return language in ISO format 
+    */
+    public Future<String> convertNUToISO(String Language) throws CallError, InterruptedException {
+        return call("convertNUToISO", Language);
+    }
+
+    /**
+    * Define if applications will be launched or not
+    * 
+    * @param simulateApps  set simulated apps
+    * @return The Future
+    */
+    public Future<Void> enableSimulatedApps(Boolean simulateApps) throws CallError, InterruptedException{
+        return call("enableSimulatedApps", simulateApps);
     }
 
     }

@@ -11,17 +11,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.aldebaran.qi.CallError;
-import com.aldebaran.qi.Callback;
-import com.aldebaran.qi.Future;
+import com.aldebaran.qi.EmbeddedTools;
 import com.aldebaran.qi.Session;
-import com.aldebaran.qi.helper.ALInterface;
-import com.aldebaran.qi.helper.ALProxy;
 import com.aldebaran.qi.helper.proxies.ALAudioDevice;
 import com.aldebaran.qi.helper.proxies.ALMotion;
 import com.aldebaran.qi.helper.proxies.ALRobotPosture;
 import com.aldebaran.qi.helper.proxies.ALTextToSpeech;
 
-public class MyActivity extends Activity implements ALInterface {
+import java.io.File;
+
+public class MyActivity extends Activity {
 	private static final String TAG = "MyActivity";
 	private ALMotion alMotion;
 	private ALTextToSpeech alSpeech;
@@ -38,7 +37,12 @@ public class MyActivity extends Activity implements ALInterface {
 		context = this;
 		setContentView(R.layout.main);
 		ip = (EditText) findViewById(R.id.robot_ip_edit);
-		ALProxy.alInterface = this;
+
+		EmbeddedTools ebt = new EmbeddedTools();
+		File cacheDir = getApplicationContext().getCacheDir();
+		Log.d(TAG, "Extracting libraries in " + cacheDir.getAbsolutePath());
+		ebt.overrideTempDirectory(cacheDir);
+		ebt.loadEmbeddedLibraries();
 	}
 
 	private void startServiceRoutine(final String ipAddress) {
@@ -53,12 +57,11 @@ public class MyActivity extends Activity implements ALInterface {
 					Log.i(TAG, "Ip address : " + ipAddress);
 					session.connect("tcp://" + ipAddress + ":9559").get();
 					alMotion = new ALMotion(session);
-					alMotion.setAsynchronous(true);
 					alSpeech = new ALTextToSpeech(session);
-					alSpeech.setAsynchronous(true);
 					alPosture = new ALRobotPosture(session);
-					alPosture.setAsynchronous(true);
 					alAudioDevice = new ALAudioDevice(session);
+
+					setButtonVisible(true);
 
 				} catch (Exception e) {
 					setButtonVisible(false);
@@ -220,15 +223,4 @@ public class MyActivity extends Activity implements ALInterface {
 		alSpeech.say(text);
 	}
 
-	@Override
-	public void onProxyReady(String name) {
-		Log.i(TAG, "Proxy " + name + " is ready");
-		setButtonVisible(true);
-	}
-
-	@Override
-	public void onProxyException(String name, Exception e) {
-		Log.e(TAG, "Proxy " + name + " can be created");
-		setButtonVisible(false);
-	}
 }

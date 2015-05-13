@@ -17,8 +17,8 @@ import java.util.List;
 Groups of LEDs typically include face LEDs, ear LEDs etc. It is also possible to control each LED separately (for example, each of the 8 LEDs in one NAO's eyes).
 There are three primary colors of LEDs available - red, green and blue, so it is possible to combine them to obtain different colors. The ears contain blue LEDs only.
 It is possible to control the LED's intensity (between 0 and 100%).
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/sensors/alleds.html#alleds">NAOqi APIs for ALLeds </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/sensors/alleds.html#alleds">NAOqi APIs for ALLeds </a>
+* NAOqi V2.4.x
 */
 public class ALLeds extends ALProxy {
 
@@ -40,6 +40,44 @@ public class ALLeds extends ALProxy {
     }
 
     /**
+    * Launch a random animation in eyes
+    * 
+    * @param duration  Approximate duration of the animation in seconds.
+    */
+    public void randomEyes(Float duration) throws CallError, InterruptedException{
+        call("randomEyes", duration).get();
+    }
+
+    /**
+    * Switch to a minimum intensity a LED or Group of LEDs.
+    * 
+    * @param name  The name of the LED or Group.
+    */
+    public void off(String name) throws CallError, InterruptedException{
+        call("off", name).get();
+    }
+
+    /**
+    * Launch a green/yellow/red rasta animation on all body.
+    * 
+    * @param duration  Approximate duration of the animation in seconds.
+    */
+    public void rasta(Float duration) throws CallError, InterruptedException{
+        call("rasta", duration).get();
+    }
+
+    /**
+    * Launch a rotation using the leds of the eyes.
+    * 
+    * @param rgb  the RGB value led, RGB as seen in hexa-decimal: 0x00RRGGBB.
+    * @param timeForRotation  Approximate time to make one turn.
+    * @param totalDuration  Approximate duration of the animation in seconds.
+    */
+    public void rotateEyes(Integer rgb, Float timeForRotation, Float totalDuration) throws CallError, InterruptedException{
+        call("rotateEyes", rgb, timeForRotation, totalDuration).get();
+    }
+
+    /**
     * Sets the intensity of a LED or Group of LEDs.
     * 
     * @param name  The name of the LED or Group.
@@ -56,35 +94,6 @@ public class ALLeds extends ALProxy {
     */
     public void on(String name) throws CallError, InterruptedException{
         call("on", name).get();
-    }
-
-    /**
-    * Launch a rotation using the leds of the eyes.
-    * 
-    * @param rgb  the RGB value led, RGB as seen in hexa-decimal: 0x00RRGGBB.
-    * @param timeForRotation  Approximate time to make one turn.
-    * @param totalDuration  Approximate duration of the animation in seconds.
-    */
-    public void rotateEyes(Integer rgb, Float timeForRotation, Float totalDuration) throws CallError, InterruptedException{
-        call("rotateEyes", rgb, timeForRotation, totalDuration).get();
-    }
-
-    /**
-    * Launch a random animation in eyes
-    * 
-    * @param duration  Approximate duration of the animation in seconds.
-    */
-    public void randomEyes(Float duration) throws CallError, InterruptedException{
-        call("randomEyes", duration).get();
-    }
-
-    /**
-    * Launch a green/yellow/red rasta animation on all body.
-    * 
-    * @param duration  Approximate duration of the animation in seconds.
-    */
-    public void rasta(Float duration) throws CallError, InterruptedException{
-        call("rasta", duration).get();
     }
 
     /**
@@ -174,6 +183,15 @@ public class ALLeds extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
     }
 
     /**
@@ -349,15 +367,6 @@ public class ALLeds extends ALProxy {
         return (List<String>)call("listGroups").get();
     }
 
-    /**
-    * Switch to a minimum intensity a LED or Group of LEDs.
-    * 
-    * @param name  The name of the LED or Group.
-    */
-    public void off(String name) throws CallError, InterruptedException{
-        call("off", name).get();
-    }
-
 
     public class AsyncALLeds extends ALProxy {
 
@@ -365,6 +374,48 @@ public class ALLeds extends ALProxy {
             super();
         }
     
+    /**
+    * Launch a random animation in eyes
+    * 
+    * @param duration  Approximate duration of the animation in seconds.
+    * @return The Future
+    */
+    public Future<Void> randomEyes(Float duration) throws CallError, InterruptedException{
+        return call("randomEyes", duration);
+    }
+
+    /**
+    * Switch to a minimum intensity a LED or Group of LEDs.
+    * 
+    * @param name  The name of the LED or Group.
+    * @return The Future
+    */
+    public Future<Void> off(String name) throws CallError, InterruptedException{
+        return call("off", name);
+    }
+
+    /**
+    * Launch a green/yellow/red rasta animation on all body.
+    * 
+    * @param duration  Approximate duration of the animation in seconds.
+    * @return The Future
+    */
+    public Future<Void> rasta(Float duration) throws CallError, InterruptedException{
+        return call("rasta", duration);
+    }
+
+    /**
+    * Launch a rotation using the leds of the eyes.
+    * 
+    * @param rgb  the RGB value led, RGB as seen in hexa-decimal: 0x00RRGGBB.
+    * @param timeForRotation  Approximate time to make one turn.
+    * @param totalDuration  Approximate duration of the animation in seconds.
+    * @return The Future
+    */
+    public Future<Void> rotateEyes(Integer rgb, Float timeForRotation, Float totalDuration) throws CallError, InterruptedException{
+        return call("rotateEyes", rgb, timeForRotation, totalDuration);
+    }
+
     /**
     * Sets the intensity of a LED or Group of LEDs.
     * 
@@ -384,38 +435,6 @@ public class ALLeds extends ALProxy {
     */
     public Future<Void> on(String name) throws CallError, InterruptedException{
         return call("on", name);
-    }
-
-    /**
-    * Launch a rotation using the leds of the eyes.
-    * 
-    * @param rgb  the RGB value led, RGB as seen in hexa-decimal: 0x00RRGGBB.
-    * @param timeForRotation  Approximate time to make one turn.
-    * @param totalDuration  Approximate duration of the animation in seconds.
-    * @return The Future
-    */
-    public Future<Void> rotateEyes(Integer rgb, Float timeForRotation, Float totalDuration) throws CallError, InterruptedException{
-        return call("rotateEyes", rgb, timeForRotation, totalDuration);
-    }
-
-    /**
-    * Launch a random animation in eyes
-    * 
-    * @param duration  Approximate duration of the animation in seconds.
-    * @return The Future
-    */
-    public Future<Void> randomEyes(Float duration) throws CallError, InterruptedException{
-        return call("randomEyes", duration);
-    }
-
-    /**
-    * Launch a green/yellow/red rasta animation on all body.
-    * 
-    * @param duration  Approximate duration of the animation in seconds.
-    * @return The Future
-    */
-    public Future<Void> rasta(Float duration) throws CallError, InterruptedException{
-        return call("rasta", duration);
     }
 
     /**
@@ -507,6 +526,16 @@ public class ALLeds extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
     }
 
     /**
@@ -689,16 +718,6 @@ public class ALLeds extends ALProxy {
     */
     public Future<List<String>> listGroups() throws CallError, InterruptedException {
         return call("listGroups");
-    }
-
-    /**
-    * Switch to a minimum intensity a LED or Group of LEDs.
-    * 
-    * @param name  The name of the LED or Group.
-    * @return The Future
-    */
-    public Future<Void> off(String name) throws CallError, InterruptedException{
-        return call("off", name);
     }
 
     }

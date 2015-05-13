@@ -14,8 +14,8 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * This module provides methods to record videos and store them on disk.
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/vision/alvideorecorder.html#alvideorecorder">NAOqi APIs for ALVideoRecorder </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/vision/alvideorecorder.html#alvideorecorder">NAOqi APIs for ALVideoRecorder </a>
+* NAOqi V2.4.x
 */
 public class ALVideoRecorder extends ALProxy {
 
@@ -34,6 +34,15 @@ public class ALVideoRecorder extends ALProxy {
 	 */
     public AsyncALVideoRecorder async() {
         return asyncProxy;
+    }
+
+    /**
+    * Returns current video format.
+    * 
+    * @return Current video format.
+    */
+    public String getVideoFormat() throws CallError, InterruptedException {
+        return (String)call("getVideoFormat").get();
     }
 
     /**
@@ -123,6 +132,15 @@ public class ALVideoRecorder extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
     }
 
     /**
@@ -283,15 +301,6 @@ public class ALVideoRecorder extends ALProxy {
         return (Integer)call("getFrameRate").get();
     }
 
-    /**
-    * Returns current video format.
-    * 
-    * @return Current video format.
-    */
-    public String getVideoFormat() throws CallError, InterruptedException {
-        return (String)call("getVideoFormat").get();
-    }
-
 
     public class AsyncALVideoRecorder extends ALProxy {
 
@@ -299,6 +308,15 @@ public class ALVideoRecorder extends ALProxy {
             super();
         }
     
+    /**
+    * Returns current video format.
+    * 
+    * @return Current video format.
+    */
+    public Future<String> getVideoFormat() throws CallError, InterruptedException {
+        return call("getVideoFormat");
+    }
+
     /**
     * 
     * 
@@ -388,6 +406,16 @@ public class ALVideoRecorder extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
     }
 
     /**
@@ -554,15 +582,6 @@ public class ALVideoRecorder extends ALProxy {
     */
     public Future<Integer> getFrameRate() throws CallError, InterruptedException {
         return call("getFrameRate");
-    }
-
-    /**
-    * Returns current video format.
-    * 
-    * @return Current video format.
-    */
-    public Future<String> getVideoFormat() throws CallError, InterruptedException {
-        return call("getVideoFormat");
     }
 
     }

@@ -30,8 +30,8 @@ and boundary_points = [[x0,y0], [x1,y1], ..., [xN,yN]]
 - ratio represents the number of keypoints found for the object in the current frame divided by the number of keypoints found during the learning stage. 
 - boundary_points is a list of points coordinates in angle values representing the reprojection in the current image of the boundaries selected during the learning stage. 
 
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/vision/alvisionrecognition.html#alvisionrecognition">NAOqi APIs for ALVisionRecognition </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/vision/alvisionrecognition.html#alvisionrecognition">NAOqi APIs for ALVisionRecognition </a>
+* NAOqi V2.4.x
 */
 public class ALVisionRecognition extends ALProxy {
 
@@ -53,55 +53,6 @@ public class ALVisionRecognition extends ALProxy {
     }
 
     /**
-    * Gets extractor resolution
-    * 
-    * @return Current value of the resolution of the extractor
-    */
-    public Integer getResolution() throws CallError, InterruptedException {
-        return (Integer)call("getResolution").get();
-    }
-
-    /**
-    * Sets extractor resolution
-    * 
-    * @param resolution  New resolution
-    * @return True if the update succeeded, False if not
-    */
-    public Boolean setResolution(Integer resolution) throws CallError, InterruptedException {
-        return (Boolean)call("setResolution", resolution).get();
-    }
-
-    /**
-    * Set vision recognition parameters (deprecated in 1.22)
-    * 
-    * @param paramName  Name of the parameter to be changed. Only "resolution" can be used.
-    * @param paramValue  Value of the resolution as an integer: 0(QQVGA) 1(QVGA) 2(VGA)
-    */
-    public void setParam(String paramName, Object paramValue) throws CallError, InterruptedException{
-        call("setParam", paramName, paramValue).get();
-    }
-
-    /**
-    * Get some vision recognition parameters.
-    * 
-    * @param paramName  The name of the parameter to get. "db_path" and "db_name" can be used.
-    * @return Value of the parameter as a string for "db_path" and "db_name"
-    */
-    public Object getParam(String paramName) throws CallError, InterruptedException {
-        return (Object)call("getParam", paramName).get();
-    }
-
-    /**
-    * DEPRECATED: Sets pause and resolution
-    * 
-    * @param paramName  Name of the parameter to set
-    * @param value  New value
-    */
-    public void setParameter(String paramName, Object value) throws CallError, InterruptedException{
-        call("setParameter", paramName, value).get();
-    }
-
-    /**
     * Gets extractor framerate
     * 
     * @return Current value of the framerate of the extractor
@@ -111,21 +62,42 @@ public class ALVisionRecognition extends ALProxy {
     }
 
     /**
-    * Gets extractor active camera
+    * Changes the pause status of the extractor
     * 
-    * @return Id of the current active camera of the extractor
+    * @param paused  New pause satus
     */
-    public Integer getActiveCamera() throws CallError, InterruptedException {
-        return (Integer)call("getActiveCamera").get();
+    public void pause(Boolean paused) throws CallError, InterruptedException{
+        call("pause", paused).get();
     }
 
     /**
-    * Gets extractor pause status
+    * Sets the extractor framerate for all the subscribers
     * 
-    * @return True if the extractor is paused, False if not
+    * @param framerate  New framerate
+    * @return True if the update succeeded, False if not
     */
-    public Boolean isPaused() throws CallError, InterruptedException {
-        return (Boolean)call("isPaused").get();
+    public Boolean setFrameRate(Integer framerate) throws CallError, InterruptedException {
+        return (Boolean)call("setFrameRate", framerate).get();
+    }
+
+    /**
+    * By default the database has the name "current" and is on the robot in /home/nao/naoqi/share/naoqi/vision/visionrecognition/ folder. This bound method allows to choose both another name and another folder for the database. 
+
+    * 
+    * @param databasePath  Absolute path of the database on the robot, or "" to set default path.
+    * @param databaseName  Name of the database folder, or "" to set default database folder.
+    * @return True if the operation succeded, false otherwise.
+    */
+    public Boolean changeDatabase(String databasePath, String databaseName) throws CallError, InterruptedException {
+        return (Boolean)call("changeDatabase", databasePath, databaseName).get();
+    }
+
+    /**
+    * Clear the current database, the user has to be warned before calling this function.
+    * 
+    */
+    public void clearCurrentDatabase() throws CallError, InterruptedException{
+        call("clearCurrentDatabase").get();
     }
 
     /**
@@ -139,6 +111,113 @@ public class ALVisionRecognition extends ALProxy {
     }
 
     /**
+    * Get some vision recognition parameters.
+    * 
+    * @param paramName  The name of the parameter to get. "db_path" and "db_name" can be used.
+    * @return Value of the parameter as a string for "db_path" and "db_name"
+    */
+    public Object getParam(String paramName) throws CallError, InterruptedException {
+        return (Object)call("getParam", paramName).get();
+    }
+
+    /**
+    * Load an image and interpret it as an object.
+    * 
+    * @param filename  The filename of the image that will be interpreted as a planar object.
+    * @param name  The name of the object (used as a unique identifier).
+    * @param tags  A list of tags (as strings) containing any met-data about your object.
+    * @param isWholeImage  indicates if the object occupies the whole image. If set to false, visionrecognition will try to detect the border of the object automatically. This works with unicolor background where object stands out well from the background. By default, this is set to true.
+    * @param forced  indicates if learned object will replace existing object (having the same original name) if any.
+    * @return True if the operation succeded, false otherwise.
+    */
+    public Boolean learnFromFile(String filename, String name, List<String> tags, Boolean isWholeImage, Boolean forced) throws CallError, InterruptedException {
+        return (Boolean)call("learnFromFile", filename, name, tags, isWholeImage, forced).get();
+    }
+
+    /**
+    * Set the maximal number (not more than 10) of detected objects for each detection. By default, this is set to 1.
+    * 
+    * @param iMaxOutObjs  number of desired objects to be detected.
+    */
+    public void setMaxOutObjs(Integer iMaxOutObjs) throws CallError, InterruptedException{
+        call("setMaxOutObjs", iMaxOutObjs).get();
+    }
+
+    /**
+    * Get the maximal number of detected objects for each detection.
+    * 
+    * @return number of maximal objects to be detected.
+    */
+    public Integer getMaxOutObjs() throws CallError, InterruptedException {
+        return (Integer)call("getMaxOutObjs").get();
+    }
+
+    /**
+    * Get number of objects in the current database.
+    * 
+    * @return number of objects in the current database.
+    */
+    public Integer getSize() throws CallError, InterruptedException {
+        return (Integer)call("getSize").get();
+    }
+
+    /**
+    * DEPRECATED: Sets pause and resolution
+    * 
+    * @param paramName  Name of the parameter to set
+    * @param value  New value
+    */
+    public void setParameter(String paramName, Object value) throws CallError, InterruptedException{
+        call("setParameter", paramName, value).get();
+    }
+
+    /**
+    * Load an image and search for known objects.
+    * 
+    * @param image  The image that will be searched for known objects.
+    */
+    public void detectFromFile(String image) throws CallError, InterruptedException{
+        call("detectFromFile", image).get();
+    }
+
+    /**
+    * Gets extractor resolution
+    * 
+    * @return Current value of the resolution of the extractor
+    */
+    public Integer getResolution() throws CallError, InterruptedException {
+        return (Integer)call("getResolution").get();
+    }
+
+    /**
+    * Gets extractor active camera
+    * 
+    * @return Id of the current active camera of the extractor
+    */
+    public Integer getActiveCamera() throws CallError, InterruptedException {
+        return (Integer)call("getActiveCamera").get();
+    }
+
+    /**
+    * Sets extractor resolution
+    * 
+    * @param resolution  New resolution
+    * @return True if the update succeeded, False if not
+    */
+    public Boolean setResolution(Integer resolution) throws CallError, InterruptedException {
+        return (Boolean)call("setResolution", resolution).get();
+    }
+
+    /**
+    * Gets extractor pause status
+    * 
+    * @return True if the extractor is paused, False if not
+    */
+    public Boolean isPaused() throws CallError, InterruptedException {
+        return (Boolean)call("isPaused").get();
+    }
+
+    /**
     * Gets extractor running status
     * 
     * @return True if the extractor is currently processing images, False if not
@@ -148,24 +227,13 @@ public class ALVisionRecognition extends ALProxy {
     }
 
     /**
-    * Changes the pause status of the extractor
+    * Set vision recognition parameters (deprecated in 1.22)
     * 
-    * @param paused  New pause satus
+    * @param paramName  Name of the parameter to be changed. Only "resolution" can be used.
+    * @param paramValue  Value of the resolution as an integer: 0(QQVGA) 1(QVGA) 2(VGA)
     */
-    public void pause(Boolean paused) throws CallError, InterruptedException{
-        call("pause", paused).get();
-    }
-
-    /**
-    * By default the database has the name "database" and is on the robot in /home/nao/naoqi/share/naoqi/vision/visionrecognition/current/ folder. This bound method allows to choose both another name and another folder for the database. 
-
-    * 
-    * @param databasePath  Absolute path of the database on the robot, or "" to set default path.
-    * @param databaseName  Name of the database (without extension), or "" to set default database name.
-    * @return True if the operation succeded, false otherwise.
-    */
-    public Boolean changeDatabase(String databasePath, String databaseName) throws CallError, InterruptedException {
-        return (Boolean)call("changeDatabase", databasePath, databaseName).get();
+    public void setParam(String paramName, Object paramValue) throws CallError, InterruptedException{
+        call("setParam", paramName, paramValue).get();
     }
 
     /**
@@ -255,6 +323,15 @@ public class ALVisionRecognition extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
     }
 
     /**
@@ -429,16 +506,6 @@ public class ALVisionRecognition extends ALProxy {
         return (Boolean)call("setFrameRate", subscriberName, framerate).get();
     }
 
-    /**
-    * Sets the extractor framerate for all the subscribers
-    * 
-    * @param framerate  New framerate
-    * @return True if the update succeeded, False if not
-    */
-    public Boolean setFrameRate(Integer framerate) throws CallError, InterruptedException {
-        return (Boolean)call("setFrameRate", framerate).get();
-    }
-
 
     public class AsyncALVisionRecognition extends ALProxy {
 
@@ -447,33 +514,63 @@ public class ALVisionRecognition extends ALProxy {
         }
     
     /**
-    * Gets extractor resolution
+    * Gets extractor framerate
     * 
-    * @return Current value of the resolution of the extractor
+    * @return Current value of the framerate of the extractor
     */
-    public Future<Integer> getResolution() throws CallError, InterruptedException {
-        return call("getResolution");
+    public Future<Integer> getFrameRate() throws CallError, InterruptedException {
+        return call("getFrameRate");
     }
 
     /**
-    * Sets extractor resolution
+    * Changes the pause status of the extractor
     * 
-    * @param resolution  New resolution
-    * @return True if the update succeeded, False if not
-    */
-    public Future<Boolean> setResolution(Integer resolution) throws CallError, InterruptedException {
-        return call("setResolution", resolution);
-    }
-
-    /**
-    * Set vision recognition parameters (deprecated in 1.22)
-    * 
-    * @param paramName  Name of the parameter to be changed. Only "resolution" can be used.
-    * @param paramValue  Value of the resolution as an integer: 0(QQVGA) 1(QVGA) 2(VGA)
+    * @param paused  New pause satus
     * @return The Future
     */
-    public Future<Void> setParam(String paramName, Object paramValue) throws CallError, InterruptedException{
-        return call("setParam", paramName, paramValue);
+    public Future<Void> pause(Boolean paused) throws CallError, InterruptedException{
+        return call("pause", paused);
+    }
+
+    /**
+    * Sets the extractor framerate for all the subscribers
+    * 
+    * @param framerate  New framerate
+    * @return True if the update succeeded, False if not
+    */
+    public Future<Boolean> setFrameRate(Integer framerate) throws CallError, InterruptedException {
+        return call("setFrameRate", framerate);
+    }
+
+    /**
+    * By default the database has the name "current" and is on the robot in /home/nao/naoqi/share/naoqi/vision/visionrecognition/ folder. This bound method allows to choose both another name and another folder for the database. 
+
+    * 
+    * @param databasePath  Absolute path of the database on the robot, or "" to set default path.
+    * @param databaseName  Name of the database folder, or "" to set default database folder.
+    * @return True if the operation succeded, false otherwise.
+    */
+    public Future<Boolean> changeDatabase(String databasePath, String databaseName) throws CallError, InterruptedException {
+        return call("changeDatabase", databasePath, databaseName);
+    }
+
+    /**
+    * Clear the current database, the user has to be warned before calling this function.
+    * 
+    * @return The Future
+    */
+    public Future<Void> clearCurrentDatabase() throws CallError, InterruptedException{
+        return call("clearCurrentDatabase");
+    }
+
+    /**
+    * Sets extractor active camera
+    * 
+    * @param cameraId  Id of the camera that will become the active camera
+    * @return True if the update succeeded, False if not
+    */
+    public Future<Boolean> setActiveCamera(Integer cameraId) throws CallError, InterruptedException {
+        return call("setActiveCamera", cameraId);
     }
 
     /**
@@ -484,6 +581,48 @@ public class ALVisionRecognition extends ALProxy {
     */
     public Future<Object> getParam(String paramName) throws CallError, InterruptedException {
         return call("getParam", paramName);
+    }
+
+    /**
+    * Load an image and interpret it as an object.
+    * 
+    * @param filename  The filename of the image that will be interpreted as a planar object.
+    * @param name  The name of the object (used as a unique identifier).
+    * @param tags  A list of tags (as strings) containing any met-data about your object.
+    * @param isWholeImage  indicates if the object occupies the whole image. If set to false, visionrecognition will try to detect the border of the object automatically. This works with unicolor background where object stands out well from the background. By default, this is set to true.
+    * @param forced  indicates if learned object will replace existing object (having the same original name) if any.
+    * @return True if the operation succeded, false otherwise.
+    */
+    public Future<Boolean> learnFromFile(String filename, String name, List<String> tags, Boolean isWholeImage, Boolean forced) throws CallError, InterruptedException {
+        return call("learnFromFile", filename, name, tags, isWholeImage, forced);
+    }
+
+    /**
+    * Set the maximal number (not more than 10) of detected objects for each detection. By default, this is set to 1.
+    * 
+    * @param iMaxOutObjs  number of desired objects to be detected.
+    * @return The Future
+    */
+    public Future<Void> setMaxOutObjs(Integer iMaxOutObjs) throws CallError, InterruptedException{
+        return call("setMaxOutObjs", iMaxOutObjs);
+    }
+
+    /**
+    * Get the maximal number of detected objects for each detection.
+    * 
+    * @return number of maximal objects to be detected.
+    */
+    public Future<Integer> getMaxOutObjs() throws CallError, InterruptedException {
+        return call("getMaxOutObjs");
+    }
+
+    /**
+    * Get number of objects in the current database.
+    * 
+    * @return number of objects in the current database.
+    */
+    public Future<Integer> getSize() throws CallError, InterruptedException {
+        return call("getSize");
     }
 
     /**
@@ -498,12 +637,22 @@ public class ALVisionRecognition extends ALProxy {
     }
 
     /**
-    * Gets extractor framerate
+    * Load an image and search for known objects.
     * 
-    * @return Current value of the framerate of the extractor
+    * @param image  The image that will be searched for known objects.
+    * @return The Future
     */
-    public Future<Integer> getFrameRate() throws CallError, InterruptedException {
-        return call("getFrameRate");
+    public Future<Void> detectFromFile(String image) throws CallError, InterruptedException{
+        return call("detectFromFile", image);
+    }
+
+    /**
+    * Gets extractor resolution
+    * 
+    * @return Current value of the resolution of the extractor
+    */
+    public Future<Integer> getResolution() throws CallError, InterruptedException {
+        return call("getResolution");
     }
 
     /**
@@ -516,22 +665,22 @@ public class ALVisionRecognition extends ALProxy {
     }
 
     /**
+    * Sets extractor resolution
+    * 
+    * @param resolution  New resolution
+    * @return True if the update succeeded, False if not
+    */
+    public Future<Boolean> setResolution(Integer resolution) throws CallError, InterruptedException {
+        return call("setResolution", resolution);
+    }
+
+    /**
     * Gets extractor pause status
     * 
     * @return True if the extractor is paused, False if not
     */
     public Future<Boolean> isPaused() throws CallError, InterruptedException {
         return call("isPaused");
-    }
-
-    /**
-    * Sets extractor active camera
-    * 
-    * @param cameraId  Id of the camera that will become the active camera
-    * @return True if the update succeeded, False if not
-    */
-    public Future<Boolean> setActiveCamera(Integer cameraId) throws CallError, InterruptedException {
-        return call("setActiveCamera", cameraId);
     }
 
     /**
@@ -544,25 +693,14 @@ public class ALVisionRecognition extends ALProxy {
     }
 
     /**
-    * Changes the pause status of the extractor
+    * Set vision recognition parameters (deprecated in 1.22)
     * 
-    * @param paused  New pause satus
+    * @param paramName  Name of the parameter to be changed. Only "resolution" can be used.
+    * @param paramValue  Value of the resolution as an integer: 0(QQVGA) 1(QVGA) 2(VGA)
     * @return The Future
     */
-    public Future<Void> pause(Boolean paused) throws CallError, InterruptedException{
-        return call("pause", paused);
-    }
-
-    /**
-    * By default the database has the name "database" and is on the robot in /home/nao/naoqi/share/naoqi/vision/visionrecognition/current/ folder. This bound method allows to choose both another name and another folder for the database. 
-
-    * 
-    * @param databasePath  Absolute path of the database on the robot, or "" to set default path.
-    * @param databaseName  Name of the database (without extension), or "" to set default database name.
-    * @return True if the operation succeded, false otherwise.
-    */
-    public Future<Boolean> changeDatabase(String databasePath, String databaseName) throws CallError, InterruptedException {
-        return call("changeDatabase", databasePath, databaseName);
+    public Future<Void> setParam(String paramName, Object paramValue) throws CallError, InterruptedException{
+        return call("setParam", paramName, paramValue);
     }
 
     /**
@@ -654,6 +792,16 @@ public class ALVisionRecognition extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
     }
 
     /**
@@ -832,16 +980,6 @@ public class ALVisionRecognition extends ALProxy {
     */
     public Future<Boolean> setFrameRate(String subscriberName, Integer framerate) throws CallError, InterruptedException {
         return call("setFrameRate", subscriberName, framerate);
-    }
-
-    /**
-    * Sets the extractor framerate for all the subscribers
-    * 
-    * @param framerate  New framerate
-    * @return True if the update succeeded, False if not
-    */
-    public Future<Boolean> setFrameRate(Integer framerate) throws CallError, InterruptedException {
-        return call("setFrameRate", framerate);
     }
 
     }

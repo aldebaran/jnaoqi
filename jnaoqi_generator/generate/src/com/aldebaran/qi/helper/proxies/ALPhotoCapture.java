@@ -14,8 +14,8 @@ import com.aldebaran.qi.helper.ALProxy;
 import java.util.List;
 /**
 * This module provides methods to take pictures and store them on disk.
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/vision/alphotocapture.html#alphotocapture">NAOqi APIs for ALPhotoCapture </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/vision/alphotocapture.html#alphotocapture">NAOqi APIs for ALPhotoCapture </a>
+* NAOqi V2.4.x
 */
 public class ALPhotoCapture extends ALProxy {
 
@@ -37,12 +37,21 @@ public class ALPhotoCapture extends ALProxy {
     }
 
     /**
-    * Returns current picture format.
+    * Returns current delay between captures.
     * 
-    * @return Current picture format.
+    * @return Current delay (in ms) between two pictures.
     */
-    public String getPictureFormat() throws CallError, InterruptedException {
-        return (String)call("getPictureFormat").get();
+    public Integer getCaptureInterval() throws CallError, InterruptedException {
+        return (Integer)call("getCaptureInterval").get();
+    }
+
+    /**
+    * Returns True if the "half press" mode is on.
+    * 
+    * @return True or False.
+    */
+    public Boolean isHalfPressEnabled() throws CallError, InterruptedException {
+        return (Boolean)call("isHalfPressEnabled").get();
     }
 
     /**
@@ -55,12 +64,12 @@ public class ALPhotoCapture extends ALProxy {
     }
 
     /**
-    * Returns True if the "half press" mode is on.
+    * Returns current picture format.
     * 
-    * @return True or False.
+    * @return Current picture format.
     */
-    public Boolean isHalfPressEnabled() throws CallError, InterruptedException {
-        return (Boolean)call("isHalfPressEnabled").get();
+    public String getPictureFormat() throws CallError, InterruptedException {
+        return (String)call("getPictureFormat").get();
     }
 
     /**
@@ -150,6 +159,15 @@ public class ALPhotoCapture extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
     }
 
     /**
@@ -328,15 +346,6 @@ public class ALPhotoCapture extends ALProxy {
         return (Integer)call("getColorSpace").get();
     }
 
-    /**
-    * Returns current delay between captures.
-    * 
-    * @return Current delay (in ms) between two pictures.
-    */
-    public Integer getCaptureInterval() throws CallError, InterruptedException {
-        return (Integer)call("getCaptureInterval").get();
-    }
-
 
     public class AsyncALPhotoCapture extends ALProxy {
 
@@ -345,12 +354,21 @@ public class ALPhotoCapture extends ALProxy {
         }
     
     /**
-    * Returns current picture format.
+    * Returns current delay between captures.
     * 
-    * @return Current picture format.
+    * @return Current delay (in ms) between two pictures.
     */
-    public Future<String> getPictureFormat() throws CallError, InterruptedException {
-        return call("getPictureFormat");
+    public Future<Integer> getCaptureInterval() throws CallError, InterruptedException {
+        return call("getCaptureInterval");
+    }
+
+    /**
+    * Returns True if the "half press" mode is on.
+    * 
+    * @return True or False.
+    */
+    public Future<Boolean> isHalfPressEnabled() throws CallError, InterruptedException {
+        return call("isHalfPressEnabled");
     }
 
     /**
@@ -363,12 +381,12 @@ public class ALPhotoCapture extends ALProxy {
     }
 
     /**
-    * Returns True if the "half press" mode is on.
+    * Returns current picture format.
     * 
-    * @return True or False.
+    * @return Current picture format.
     */
-    public Future<Boolean> isHalfPressEnabled() throws CallError, InterruptedException {
-        return call("isHalfPressEnabled");
+    public Future<String> getPictureFormat() throws CallError, InterruptedException {
+        return call("getPictureFormat");
     }
 
     /**
@@ -460,6 +478,16 @@ public class ALPhotoCapture extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
+    }
+
+    /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
     }
 
     /**
@@ -643,15 +671,6 @@ public class ALPhotoCapture extends ALProxy {
     */
     public Future<Integer> getColorSpace() throws CallError, InterruptedException {
         return call("getColorSpace");
-    }
-
-    /**
-    * Returns current delay between captures.
-    * 
-    * @return Current delay (in ms) between two pictures.
-    */
-    public Future<Integer> getCaptureInterval() throws CallError, InterruptedException {
-        return call("getCaptureInterval");
     }
 
     }

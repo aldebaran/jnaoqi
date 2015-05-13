@@ -15,8 +15,8 @@ import java.util.List;
 /**
 * This module is intended to manage behaviors. With this module, you can load, start, stop behaviors, add default behaviors or remove them. 
 
-* @see <a href="http://doc.aldebaran.com/2-1/naoqi/core/albehaviormanager.html#albehaviormanager">NAOqi APIs for ALBehaviorManager </a>
-*
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/core/albehaviormanager.html#albehaviormanager">NAOqi APIs for ALBehaviorManager </a>
+* NAOqi V2.4.x
 */
 public class ALBehaviorManager extends ALProxy {
 
@@ -38,31 +38,13 @@ public class ALBehaviorManager extends ALProxy {
     }
 
     /**
-    * Get tags found on installed behaviors.
+    * Get the nature of the given behavior.
     * 
-    * @return The list of tags found.
+    * @param behavior  The local path towards a behavior or a directory.
+    * @return The nature of the behavior.
     */
-    public List<String> getTagList() throws CallError, InterruptedException {
-        return (List<String>)call("getTagList").get();
-    }
-
-    /**
-    * Set the given behavior as default
-    * 
-    * @param behavior  Behavior name 
-    */
-    public void addDefaultBehavior(String behavior) throws CallError, InterruptedException{
-        call("addDefaultBehavior", behavior).get();
-    }
-
-    /**
-    * Tell if supplied name corresponds to a running behavior
-    * 
-    * @param behavior  Behavior name 
-    * @return Returns true if it is a running behavior
-    */
-    public Boolean isBehaviorRunning(String behavior) throws CallError, InterruptedException {
-        return (Boolean)call("isBehaviorRunning", behavior).get();
+    public String getBehaviorNature(String behavior) throws CallError, InterruptedException {
+        return (String)call("getBehaviorNature", behavior).get();
     }
 
     /**
@@ -75,14 +57,6 @@ public class ALBehaviorManager extends ALProxy {
     }
 
     /**
-    * Play default behaviors
-    * 
-    */
-    public void playDefaultProject() throws CallError, InterruptedException{
-        call("playDefaultProject").get();
-    }
-
-    /**
     * Get running behaviors
     * 
     * @return Return running behaviors
@@ -92,22 +66,12 @@ public class ALBehaviorManager extends ALProxy {
     }
 
     /**
-    * Find out the actual <package>/<behavior> path behind a behavior name.
+    * Get tags found on installed behaviors.
     * 
-    * @param name  name of a behavior
-    * @return The actual <package>/<behavior> path if found, else an empty string. Throws an ALERROR if two behavior names conflicted.
+    * @return The list of tags found.
     */
-    public String resolveBehaviorName(String name) throws CallError, InterruptedException {
-        return (String)call("resolveBehaviorName", name).get();
-    }
-
-    /**
-    * Get loaded behaviors
-    * 
-    * @return Return loaded behaviors
-    */
-    public List<String> getLoadedBehaviors() throws CallError, InterruptedException {
-        return (List<String>)call("getLoadedBehaviors").get();
+    public List<String> getTagList() throws CallError, InterruptedException {
+        return (List<String>)call("getTagList").get();
     }
 
     /**
@@ -121,23 +85,21 @@ public class ALBehaviorManager extends ALProxy {
     }
 
     /**
-    * Get the nature of the given behavior.
+    * Get loaded behaviors
     * 
-    * @param behavior  The local path towards a behavior or a directory.
-    * @return The nature of the behavior.
+    * @return Return loaded behaviors
     */
-    public String getBehaviorNature(String behavior) throws CallError, InterruptedException {
-        return (String)call("getBehaviorNature", behavior).get();
+    public List<String> getLoadedBehaviors() throws CallError, InterruptedException {
+        return (List<String>)call("getLoadedBehaviors").get();
     }
 
     /**
-    * Tell if supplied name corresponds to a loaded behavior
+    * Set the given behavior as default
     * 
     * @param behavior  Behavior name 
-    * @return Returns true if it is a loaded behavior
     */
-    public Boolean isBehaviorLoaded(String behavior) throws CallError, InterruptedException {
-        return (Boolean)call("isBehaviorLoaded", behavior).get();
+    public void addDefaultBehavior(String behavior) throws CallError, InterruptedException{
+        call("addDefaultBehavior", behavior).get();
     }
 
     /**
@@ -147,6 +109,24 @@ public class ALBehaviorManager extends ALProxy {
     */
     public void removeDefaultBehavior(String behavior) throws CallError, InterruptedException{
         call("removeDefaultBehavior", behavior).get();
+    }
+
+    /**
+    * Play default behaviors
+    * 
+    */
+    public void playDefaultProject() throws CallError, InterruptedException{
+        call("playDefaultProject").get();
+    }
+
+    /**
+    * Find out the actual <package>/<behavior> path behind a behavior name.
+    * 
+    * @param name  name of a behavior
+    * @return The actual <package>/<behavior> path if found, else an empty string. Throws an ALERROR if two behavior names conflicted.
+    */
+    public String resolveBehaviorName(String name) throws CallError, InterruptedException {
+        return (String)call("resolveBehaviorName", name).get();
     }
 
     /**
@@ -239,6 +219,15 @@ public class ALBehaviorManager extends ALProxy {
     }
 
     /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    */
+    public void wait(Integer id) throws CallError, InterruptedException{
+        call("wait", id).get();
+    }
+
+    /**
     * Returns true if the method is currently running.
     * 
     * @param id  The ID of the method that was returned when calling the method using 'post'
@@ -274,33 +263,6 @@ public class ALBehaviorManager extends ALProxy {
     */
     public String getUsage(String name) throws CallError, InterruptedException {
         return (String)call("getUsage", name).get();
-    }
-
-    /**
-    * Install a behavior.
-Check the given local path for a valid behavior or package.
-On success, behavior added or updated signal is emitted.
-DEPRECATED in favor of PackageManager.install.
-    * 
-    * @param localPath  the relative destination path.
-    * @return true on success, false on failure.
-    */
-    public Boolean installBehavior(String localPath) throws CallError, InterruptedException {
-        return (Boolean)call("installBehavior", localPath).get();
-    }
-
-    /**
-    * Install a behavior.
-Check and take the behavior found at the given absolute path andimport it to the given local path, relative to behaviors path.
-On success, behavior added signal is emitted before returning.DEPRECATED in favor of PackageManager.install.
-    * 
-    * @param absolutePath  a behavior on the local file system to install.
-    * @param localPath  the relative destination path.
-    * @param overwrite  whether to replace existing behavior if present.
-    * @return true on success, false on failure.
-    */
-    public Boolean installBehavior(String absolutePath, String localPath, Boolean overwrite) throws CallError, InterruptedException {
-        return (Boolean)call("installBehavior", absolutePath, localPath, overwrite).get();
     }
 
     /**
@@ -346,15 +308,6 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     */
     public void stopAllBehaviors() throws CallError, InterruptedException{
         call("stopAllBehaviors").get();
-    }
-
-    /**
-    * Remove a behavior from the filesystem. DEPRECATED in favor of PackageManager.remove.
-    * 
-    * @param behavior  Behavior name 
-    */
-    public Boolean removeBehavior(String behavior) throws CallError, InterruptedException {
-        return (Boolean)call("removeBehavior", behavior).get();
     }
 
     /**
@@ -423,6 +376,26 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
         return (List<String>)call("getBehaviorsByTag", tag).get();
     }
 
+    /**
+    * Tell if supplied name corresponds to a running behavior
+    * 
+    * @param behavior  Behavior name 
+    * @return Returns true if it is a running behavior
+    */
+    public Boolean isBehaviorRunning(String behavior) throws CallError, InterruptedException {
+        return (Boolean)call("isBehaviorRunning", behavior).get();
+    }
+
+    /**
+    * Tell if supplied name corresponds to a loaded behavior
+    * 
+    * @param behavior  Behavior name 
+    * @return Returns true if it is a loaded behavior
+    */
+    public Boolean isBehaviorLoaded(String behavior) throws CallError, InterruptedException {
+        return (Boolean)call("isBehaviorLoaded", behavior).get();
+    }
+
 
     public class AsyncALBehaviorManager extends ALProxy {
 
@@ -431,32 +404,13 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
         }
     
     /**
-    * Get tags found on installed behaviors.
+    * Get the nature of the given behavior.
     * 
-    * @return The list of tags found.
+    * @param behavior  The local path towards a behavior or a directory.
+    * @return The nature of the behavior.
     */
-    public Future<List<String>> getTagList() throws CallError, InterruptedException {
-        return call("getTagList");
-    }
-
-    /**
-    * Set the given behavior as default
-    * 
-    * @param behavior  Behavior name 
-    * @return The Future
-    */
-    public Future<Void> addDefaultBehavior(String behavior) throws CallError, InterruptedException{
-        return call("addDefaultBehavior", behavior);
-    }
-
-    /**
-    * Tell if supplied name corresponds to a running behavior
-    * 
-    * @param behavior  Behavior name 
-    * @return Returns true if it is a running behavior
-    */
-    public Future<Boolean> isBehaviorRunning(String behavior) throws CallError, InterruptedException {
-        return call("isBehaviorRunning", behavior);
+    public Future<String> getBehaviorNature(String behavior) throws CallError, InterruptedException {
+        return call("getBehaviorNature", behavior);
     }
 
     /**
@@ -469,15 +423,6 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     }
 
     /**
-    * Play default behaviors
-    * 
-    * @return The Future
-    */
-    public Future<Void> playDefaultProject() throws CallError, InterruptedException{
-        return call("playDefaultProject");
-    }
-
-    /**
     * Get running behaviors
     * 
     * @return Return running behaviors
@@ -487,22 +432,12 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     }
 
     /**
-    * Find out the actual <package>/<behavior> path behind a behavior name.
+    * Get tags found on installed behaviors.
     * 
-    * @param name  name of a behavior
-    * @return The actual <package>/<behavior> path if found, else an empty string. Throws an ALERROR if two behavior names conflicted.
+    * @return The list of tags found.
     */
-    public Future<String> resolveBehaviorName(String name) throws CallError, InterruptedException {
-        return call("resolveBehaviorName", name);
-    }
-
-    /**
-    * Get loaded behaviors
-    * 
-    * @return Return loaded behaviors
-    */
-    public Future<List<String>> getLoadedBehaviors() throws CallError, InterruptedException {
-        return call("getLoadedBehaviors");
+    public Future<List<String>> getTagList() throws CallError, InterruptedException {
+        return call("getTagList");
     }
 
     /**
@@ -516,23 +451,22 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     }
 
     /**
-    * Get the nature of the given behavior.
+    * Get loaded behaviors
     * 
-    * @param behavior  The local path towards a behavior or a directory.
-    * @return The nature of the behavior.
+    * @return Return loaded behaviors
     */
-    public Future<String> getBehaviorNature(String behavior) throws CallError, InterruptedException {
-        return call("getBehaviorNature", behavior);
+    public Future<List<String>> getLoadedBehaviors() throws CallError, InterruptedException {
+        return call("getLoadedBehaviors");
     }
 
     /**
-    * Tell if supplied name corresponds to a loaded behavior
+    * Set the given behavior as default
     * 
     * @param behavior  Behavior name 
-    * @return Returns true if it is a loaded behavior
+    * @return The Future
     */
-    public Future<Boolean> isBehaviorLoaded(String behavior) throws CallError, InterruptedException {
-        return call("isBehaviorLoaded", behavior);
+    public Future<Void> addDefaultBehavior(String behavior) throws CallError, InterruptedException{
+        return call("addDefaultBehavior", behavior);
     }
 
     /**
@@ -543,6 +477,25 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     */
     public Future<Void> removeDefaultBehavior(String behavior) throws CallError, InterruptedException{
         return call("removeDefaultBehavior", behavior);
+    }
+
+    /**
+    * Play default behaviors
+    * 
+    * @return The Future
+    */
+    public Future<Void> playDefaultProject() throws CallError, InterruptedException{
+        return call("playDefaultProject");
+    }
+
+    /**
+    * Find out the actual <package>/<behavior> path behind a behavior name.
+    * 
+    * @param name  name of a behavior
+    * @return The actual <package>/<behavior> path if found, else an empty string. Throws an ALERROR if two behavior names conflicted.
+    */
+    public Future<String> resolveBehaviorName(String name) throws CallError, InterruptedException {
+        return call("resolveBehaviorName", name);
     }
 
     /**
@@ -637,6 +590,16 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     }
 
     /**
+    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
+    * 
+    * @param id  The ID of the method that was returned when calling the method using 'post'
+    * @return The Future
+    */
+    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
+        return call("wait", id);
+    }
+
+    /**
     * Returns true if the method is currently running.
     * 
     * @param id  The ID of the method that was returned when calling the method using 'post'
@@ -673,33 +636,6 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     */
     public Future<String> getUsage(String name) throws CallError, InterruptedException {
         return call("getUsage", name);
-    }
-
-    /**
-    * Install a behavior.
-Check the given local path for a valid behavior or package.
-On success, behavior added or updated signal is emitted.
-DEPRECATED in favor of PackageManager.install.
-    * 
-    * @param localPath  the relative destination path.
-    * @return true on success, false on failure.
-    */
-    public Future<Boolean> installBehavior(String localPath) throws CallError, InterruptedException {
-        return call("installBehavior", localPath);
-    }
-
-    /**
-    * Install a behavior.
-Check and take the behavior found at the given absolute path andimport it to the given local path, relative to behaviors path.
-On success, behavior added signal is emitted before returning.DEPRECATED in favor of PackageManager.install.
-    * 
-    * @param absolutePath  a behavior on the local file system to install.
-    * @param localPath  the relative destination path.
-    * @param overwrite  whether to replace existing behavior if present.
-    * @return true on success, false on failure.
-    */
-    public Future<Boolean> installBehavior(String absolutePath, String localPath, Boolean overwrite) throws CallError, InterruptedException {
-        return call("installBehavior", absolutePath, localPath, overwrite);
     }
 
     /**
@@ -749,15 +685,6 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     */
     public Future<Void> stopAllBehaviors() throws CallError, InterruptedException{
         return call("stopAllBehaviors");
-    }
-
-    /**
-    * Remove a behavior from the filesystem. DEPRECATED in favor of PackageManager.remove.
-    * 
-    * @param behavior  Behavior name 
-    */
-    public Future<Boolean> removeBehavior(String behavior) throws CallError, InterruptedException {
-        return call("removeBehavior", behavior);
     }
 
     /**
@@ -824,6 +751,26 @@ On success, behavior added signal is emitted before returning.DEPRECATED in favo
     */
     public Future<List<String>> getBehaviorsByTag(String tag) throws CallError, InterruptedException {
         return call("getBehaviorsByTag", tag);
+    }
+
+    /**
+    * Tell if supplied name corresponds to a running behavior
+    * 
+    * @param behavior  Behavior name 
+    * @return Returns true if it is a running behavior
+    */
+    public Future<Boolean> isBehaviorRunning(String behavior) throws CallError, InterruptedException {
+        return call("isBehaviorRunning", behavior);
+    }
+
+    /**
+    * Tell if supplied name corresponds to a loaded behavior
+    * 
+    * @param behavior  Behavior name 
+    * @return Returns true if it is a loaded behavior
+    */
+    public Future<Boolean> isBehaviorLoaded(String behavior) throws CallError, InterruptedException {
+        return call("isBehaviorLoaded", behavior);
     }
 
     }

@@ -13,42 +13,38 @@ import com.aldebaran.qi.helper.ALProxy;
 
 import java.util.List;
 /**
-* ALRedBallDetection is a module which can detect red ball based on color saturation.
-  The output value is written in ALMemory in the redBallDetected microEvent.
-   It contains an array of tags, with the following format.
-  [ [time_info], [ball_info], [camera_info_torsoFrame] [camera_info_robotFrame] [camera_id] ]
- 
-   Tag time_info = [timestamp_seconds, timestamp_microseconds]
-  The time Stamp when image was taken.
+* This module tries to detect emotions in the voice of the speaker.
 
-   Tag ball_info = [ballAngleWz, ballAngleWy, ballSizeInRadianX, ballSizeInRadianY]
-  ballAngleWz and ballAngleWy are the angular coordinates in camera angles  (in radians), corresponding to the direct (counter-clokwise) rotations along  the Z axis and the Y axis.
-  ballSizeInRadianX and ballSizeInRadianY correspond to the size of the ball in camera angles.
-
-   Tag camera_info_torsoFrame = [x, y, z, wx, wy, wz] in FRAME_TORSO (see motion documentation)
-  Tag camera_info_robotFrame = [x, y, z, wx, wy, wz] in FRAME_ROBOT (see motion documentation)
-  Tag camera_id = id of the active camera (see videodevice documentation)
-
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/vision/alredballdetection.html#alredballdetection">NAOqi APIs for ALRedBallDetection </a>
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/audio/alvoiceemotionanalysis.html#alvoiceemotionanalysis">NAOqi APIs for ALVoiceEmotionAnalysis </a>
 * NAOqi V2.4.x
 */
-public class ALRedBallDetection extends ALProxy {
+public class ALVoiceEmotionAnalysis extends ALProxy {
 
-    private AsyncALRedBallDetection asyncProxy;
+    private AsyncALVoiceEmotionAnalysis asyncProxy;
 
-    public ALRedBallDetection(Session session) throws Exception{
+    public ALVoiceEmotionAnalysis(Session session) throws Exception{
         super(session);
-        asyncProxy = new AsyncALRedBallDetection();
+        asyncProxy = new AsyncALVoiceEmotionAnalysis();
 	    asyncProxy.setService(getService());
     }
 
     /**
      * Get the async version of this proxy
      *
-	 * @return a AsyncALRedBallDetection object
+	 * @return a AsyncALVoiceEmotionAnalysis object
 	 */
-    public AsyncALRedBallDetection async() {
+    public AsyncALVoiceEmotionAnalysis async() {
         return asyncProxy;
+    }
+
+    /**
+    * Set the specified parameter.
+    * 
+    * @param parameter  Name of the parameter. "MinSignalLength" Minimum length (in seconds, positive) required for the analysis of a voice signal
+    * @param value  "MinSignalLength" : int > 0.
+    */
+    public void setParameter(String parameter, Object value) throws CallError, InterruptedException{
+        call("setParameter", parameter, value).get();
     }
 
     /**
@@ -311,12 +307,23 @@ public class ALRedBallDetection extends ALProxy {
     }
 
 
-    public class AsyncALRedBallDetection extends ALProxy {
+    public class AsyncALVoiceEmotionAnalysis extends ALProxy {
 
-        protected AsyncALRedBallDetection(){
+        protected AsyncALVoiceEmotionAnalysis(){
             super();
         }
     
+    /**
+    * Set the specified parameter.
+    * 
+    * @param parameter  Name of the parameter. "MinSignalLength" Minimum length (in seconds, positive) required for the analysis of a voice signal
+    * @param value  "MinSignalLength" : int > 0.
+    * @return The Future
+    */
+    public Future<Void> setParameter(String parameter, Object value) throws CallError, InterruptedException{
+        return call("setParameter", parameter, value);
+    }
+
     /**
     * 
     * 
