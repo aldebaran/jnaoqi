@@ -8,11 +8,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: com.aldebaran:libqi-java-linux64:2.1.3" level="project" />
-    <orderEntry type="library" name="Maven: com.aldebaran:libqi-java-linux32:2.1.3" level="project" />
-    <orderEntry type="library" name="Maven: com.aldebaran:libqi-java-atom:2.1.3" level="project" />
-    <orderEntry type="library" name="Maven: com.aldebaran:libqi-java-win32:2.1.3" level="project" />
-    <orderEntry type="library" name="Maven: com.aldebaran:libqi-java-android:2.1.3" level="project" />
     <orderEntry type="library" name="Maven: com.aldebaran:libqi-java-mac64:2.1.3" level="project" />
   </component>
 </module>
