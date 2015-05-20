@@ -7,7 +7,8 @@
     <version>2.1.3</version>
     <packaging>jar</packaging>
     <name>JavaNaoqiSDK</name>
-    <description>Java SDK to control Nao robot family
+    <description>
+        Java SDK to control Nao robot family
     </description>
 
     <licenses>
@@ -22,8 +23,8 @@
     </properties>
 
     <scm>
-        <connection>scm:git:ssh://git@git.aldebaran.lan/naoqi/tabletmanager.git</connection>
-        <developerConnection>scm:git:ssh://git@git.aldebaran.lan/naoqi/tabletmanager.git</developerConnection>
+        <connection>scm:git:ssh://git@gitlab.aldebaran.lan/naoqi/jnaoqi.git</connection>
+        <developerConnection>scm:git:ssh://git@gitlab.aldebaran.lan/naoqi/jnaoqi.git</developerConnection>
     </scm>
 
 
@@ -31,91 +32,52 @@
         <profile>
             <id>linux64</id>
             <properties>
-                <rp.build.plateform>linux64</rp.build.plateform>
+                <rp.build.platform>linux64</rp.build.platform>
             </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>com.aldebaran</groupId>
-                    <type>jar</type>
-                    <artifactId>libqi-java-linux64</artifactId>
-                    <version>2.1.3</version>
-                </dependency>
-            </dependencies>
         </profile>
         <profile>
             <id>linux32</id>
             <properties>
-                <rp.build.plateform>linux32</rp.build.plateform>
+                <rp.build.platform>linux32</rp.build.platform>
             </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>com.aldebaran</groupId>
-                    <type>jar</type>
-                    <artifactId>libqi-java-linux32</artifactId>
-                    <version>2.1.3</version>
-                </dependency>
-            </dependencies>
         </profile>
         <profile>
             <id>atom</id>
             <properties>
-                <rp.build.plateform>atom</rp.build.plateform>
+                <rp.build.platform>atom</rp.build.platform>
             </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>com.aldebaran</groupId>
-                    <type>jar</type>
-                    <artifactId>libqi-java-atom</artifactId>
-                    <version>2.1.3</version>
-                </dependency>
-            </dependencies>
         </profile>
         <profile>
             <id>win32</id>
             <properties>
-                <rp.build.plateform>win32</rp.build.plateform>
+                <rp.build.platform>win32</rp.build.platform>
             </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>com.aldebaran</groupId>
-                    <type>jar</type>
-                    <artifactId>libqi-java-win32</artifactId>
-                    <version>2.1.3</version>
-                </dependency>
-            </dependencies>
         </profile>
         <profile>
             <id>android</id>
             <properties>
-                <rp.build.plateform>android</rp.build.plateform>
+                <rp.build.platform>android</rp.build.platform>
             </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>com.aldebaran</groupId>
-                    <type>jar</type>
-                    <artifactId>libqi-java-android</artifactId>
-                    <version>2.1.3</version>
-                </dependency>
-            </dependencies>
         </profile>
         <profile>
             <id>mac64</id>
             <properties>
-                <rp.build.plateform>mac64</rp.build.plateform>
+                <rp.build.platform>mac64</rp.build.platform>
             </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>com.aldebaran</groupId>
-                    <type>jar</type>
-                    <artifactId>libqi-java-mac64</artifactId>
-                    <version>2.1.3</version>
-                </dependency>
-            </dependencies>
         </profile>
     </profiles>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.aldebaran</groupId>
+            <type>jar</type>
+            <artifactId>libqi-java-${rp.build.platform}</artifactId>
+            <version>2.1.3</version>
+        </dependency>
+    </dependencies>
+
     <build>
-        <finalName>java-naoqi-sdk-${version}-${rp.build.plateform}</finalName>
+        <finalName>java-naoqi-sdk-${version}-${rp.build.platform}</finalName>
         <plugins>
             <plugin> <!-- Plug Ecplise on project -->
                 <groupId>org.apache.maven.plugins</groupId>
@@ -171,7 +133,7 @@
     <repositories>
         <repository>
             <id>local-repository</id>
-            <name>qiMessaging Java bindings</name>
+            <name>Maven Aldebaran Repository</name>
             <url>http://maven.aldebaran.lan/maven</url>
         </repository>
     </repositories>
