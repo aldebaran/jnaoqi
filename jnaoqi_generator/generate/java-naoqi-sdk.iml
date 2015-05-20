@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" inherit-compiler-output="false">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="libqi-java-2.1.3-mac64" level="project" />
+    <orderEntry type="library" name="Maven: com.aldebaran:libqi-java-linux64:2.1.3" level="project" />
+    <orderEntry type="library" name="Maven: com.aldebaran:libqi-java-linux32:2.1.3" level="project" />
+    <orderEntry type="library" name="Maven: com.aldebaran:libqi-java-atom:2.1.3" level="project" />
+    <orderEntry type="library" name="Maven: com.aldebaran:libqi-java-win32:2.1.3" level="project" />
+    <orderEntry type="library" name="Maven: com.aldebaran:libqi-java-android:2.1.3" level="project" />
+    <orderEntry type="library" name="Maven: com.aldebaran:libqi-java-mac64:2.1.3" level="project" />
   </component>
 </module>
