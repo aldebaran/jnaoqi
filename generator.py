@@ -283,7 +283,7 @@ def _iter_services(address):
             yield module_name, session.service(module_name)
 
 def generate_java(address):
-    directory = "generate/src/com/aldebaran/qi/helper/proxies"
+    directory = "src/main/java/com/aldebaran/qi/helper/proxies"
     global naoqiVersion
 
 
