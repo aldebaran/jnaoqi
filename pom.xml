@@ -126,6 +126,26 @@
                     <target>5</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.3</version>
+                <configuration>
+                    <failOnError>false</failOnError>
+                    <stylesheet>maven</stylesheet>
+                    <stylesheetfile>stylesheet.css</stylesheetfile>
+                    <bottom>Aldebaran SDK for Java Copyright 2006-2015 Aldebaran Robotics. All Rights Reserved.</bottom>
+                    <sourcepath>../libqi-java/qimessaging/src/main/java:src/main/java</sourcepath>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 

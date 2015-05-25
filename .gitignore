@@ -8,6 +8,4 @@ jnaoqi_generator/PyTemp.iml
 *.apk
 
 .idea
-jnaoqi_generator/.idea
-jnaoqi_generator/generate/.idea
-jnaoqi_generator/generate/target
+target
