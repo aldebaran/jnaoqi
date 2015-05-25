@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.aldebaran</groupId>
-    <artifactId>java-naoqi-sdk-${rp.build.platform}</artifactId>
     <version>2.4.0.26</version>
     <packaging>jar</packaging>
+    <artifactId>java-naoqi-sdk</artifactId>
     <name>JavaNaoqiSDK</name>
     <description>
         Java SDK to control Nao robot family
@@ -131,6 +131,7 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>2.10.3</version>
                 <configuration>
+                    <finalName>java-naoqi-sdk-${version}</finalName>
                     <failOnError>false</failOnError>
                     <stylesheet>maven</stylesheet>
                     <stylesheetfile>stylesheet.css</stylesheetfile>
