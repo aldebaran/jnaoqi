@@ -22,6 +22,14 @@
         <jdk.version>1.6</jdk.version>
     </properties>
 
+    <distributionManagement>
+        <repository>
+            <id>ftp-kiwi</id>
+            <url>ftp://kiwi.aldebaran.lan/core/qi/maven</url>
+        </repository>
+    </distributionManagement>
+
+
     <scm>
         <connection>scm:git:ssh://git@gitlab.aldebaran.lan/naoqi/jnaoqi.git</connection>
         <developerConnection>scm:git:ssh://git@gitlab.aldebaran.lan/naoqi/jnaoqi.git</developerConnection>
@@ -148,6 +156,14 @@
                 </executions>
             </plugin>
         </plugins>
+
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ftp</artifactId>
+                <version>2.9</version>
+            </extension>
+        </extensions>
     </build>
 
     <!-- Specify address of QiMessaging maven repository -->
