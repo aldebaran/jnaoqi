@@ -7,10 +7,12 @@
 package com.aldebaran.qi.helper.proxies;
 
 import com.aldebaran.qi.*;
-import com.aldebaran.qi.helper.ALProxy;
-
+import com.aldebaran.qi.helper.*;
 import java.util.List;
 import java.util.Map;
+
+
+import java.util.List;
 /**
 * 
 * @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/core/packagemanager.html#packagemanager">NAOqi APIs for PackageManager </a>

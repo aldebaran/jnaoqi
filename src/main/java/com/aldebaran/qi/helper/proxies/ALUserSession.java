@@ -6,13 +6,13 @@
  */
 package com.aldebaran.qi.helper.proxies;
 
-import com.aldebaran.qi.CallError;
-import com.aldebaran.qi.Future;
-import com.aldebaran.qi.Session;
-import com.aldebaran.qi.helper.ALProxy;
-
+import com.aldebaran.qi.*;
+import com.aldebaran.qi.helper.*;
 import java.util.List;
 import java.util.Map;
+
+
+import java.util.List;
 /**
 * 
 * @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/core/alusersession.html#alusersession">NAOqi APIs for ALUserSession </a>

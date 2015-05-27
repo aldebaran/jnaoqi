@@ -6,13 +6,13 @@
  */
 package com.aldebaran.qi.helper.proxies;
 
-import com.aldebaran.qi.CallError;
-import com.aldebaran.qi.Future;
-import com.aldebaran.qi.Session;
-import com.aldebaran.qi.helper.ALMemoryHelper;
-
+import com.aldebaran.qi.*;
+import com.aldebaran.qi.helper.*;
 import java.util.List;
 import java.util.Map;
+
+
+import java.util.List;
 /**
 * ALMemory provides a centralized memory that can be used to store and retrieve named values. It also acts as a hub for the distribution of event notifications.
 * @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/core/almemory.html#almemory">NAOqi APIs for ALMemory </a>
