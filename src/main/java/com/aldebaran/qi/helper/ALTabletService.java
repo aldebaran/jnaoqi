@@ -4,18 +4,18 @@
  * found in the COPYING file.
  * Created by epinault and tcruz
  */
-package com.aldebaran.qi.helper.proxies;
+package com.aldebaran.qi.helper;
 
 import com.aldebaran.qi.CallError;
 import com.aldebaran.qi.Future;
 import com.aldebaran.qi.Session;
-import com.aldebaran.qi.helper.ALProxy;
 
 import java.util.List;
+
 /**
 * 
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/core/altabletservice.html#altabletservice">NAOqi APIs for ALTabletService </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/core/altabletservice.html#altabletservice">NAOqi APIs for ALTabletService </a>
+* NAOqi V2.3.x
 */
 public class ALTabletService extends ALProxy {
 
@@ -125,7 +125,7 @@ public class ALTabletService extends ALProxy {
     }
 
     /**
-    * Change the onTouch webview scale factor. Default is 1.34 so the viewport is 1707 x 1067
+    * Change the onTouch webview scale factor. Default is 1.34 so the viewport is 1707 √ó 1067
     * 
     */
     public void setOnTouchWebviewScaleFactor(Float param1) throws CallError, InterruptedException{
@@ -614,7 +614,7 @@ public class ALTabletService extends ALProxy {
     }
 
     /**
-    * Change the onTouch webview scale factor. Default is 1.34 so the viewport is 1707 x 1067
+    * Change the onTouch webview scale factor. Default is 1.34 so the viewport is 1707 √ó 1067
     * 
     * @return The Future
     */

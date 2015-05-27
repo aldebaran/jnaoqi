@@ -102,7 +102,7 @@ TEMPLATE_RETURN_ASYNC = """
 
 
 BLACKLIST_METHODS = set("registerEvent, unregisterEvent, metaObject, terminate, property, setProperty, registerEventWithSignature, enableStats, enableTrace, pCall, stats, properties, subscriber".split(", "))
-BLACKLIST_MODULES = set("".split(", "))
+BLACKLIST_MODULES = set("ALTabletService, ".split(", "))
 
 OPENERS, CLOSERS = '([{<', ')]}>'
 EXPECTED_CLOSER = dict(zip(OPENERS, CLOSERS))
@@ -279,7 +279,7 @@ def _iter_services(address):
     print "Number of services : "+str(len(session.services()))
     for servicesDesc in session.services():
         module_name = servicesDesc["name"]
-        if not module_name.startswith('_'):
+        if not module_name.startswith('_') and module_name not in BLACKLIST_MODULES:
             yield module_name, session.service(module_name)
 
 def generate_java(address):
