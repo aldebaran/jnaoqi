@@ -80,7 +80,7 @@
             <groupId>com.aldebaran</groupId>
             <type>jar</type>
             <artifactId>libqi-java-${rp.build.platform}</artifactId>
-            <version>2.4.0.46</version>
+            <version>2.4.0.72</version>
         </dependency>
     </dependencies>
 
