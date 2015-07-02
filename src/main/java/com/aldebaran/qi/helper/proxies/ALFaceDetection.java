@@ -94,6 +94,24 @@ public class ALFaceDetection extends ALProxy {
     }
 
     /**
+    * Get the current confidence threshold for face recognition.
+    * 
+    * @return Confidence threshold
+    */
+    public Float getRecognitionConfidenceThreshold() throws CallError, InterruptedException {
+        return (Float)call("getRecognitionConfidenceThreshold").get();
+    }
+
+    /**
+    * Set the current confidence threshold for face recognition. Matches with lower confidence value will not be considered.
+    * 
+    * @param confThreshold  New confidence threshold between 0.0 and 1.0 (default 0.4).
+    */
+    public void setRecognitionConfidenceThreshold(Float confThreshold) throws CallError, InterruptedException{
+        call("setRecognitionConfidenceThreshold", confThreshold).get();
+    }
+
+    /**
     * deprecated
     * 
     * @param enable  True/False
@@ -121,13 +139,13 @@ public class ALFaceDetection extends ALProxy {
     }
 
     /**
-    * Add a new face in the database.
+    * DEPRECATED: Sets pause and resolution
     * 
-    * @param pId  The name of the person to save
-    * @return true if the operation succeeds
+    * @param paramName  Name of the parameter to set
+    * @param value  New value
     */
-    public Boolean learnFace(String pId) throws CallError, InterruptedException {
-        return (Boolean)call("learnFace", pId).get();
+    public void setParameter(String paramName, Object value) throws CallError, InterruptedException{
+        call("setParameter", paramName, value).get();
     }
 
     /**
@@ -141,13 +159,13 @@ public class ALFaceDetection extends ALProxy {
     }
 
     /**
-    * DEPRECATED: Sets pause and resolution
+    * Delete from the database all faces instances of a person.
     * 
-    * @param paramName  Name of the parameter to set
-    * @param value  New value
+    * @param pId  The name of the person to forget
+    * @return true if the operation succeeds
     */
-    public void setParameter(String paramName, Object value) throws CallError, InterruptedException{
-        call("setParameter", paramName, value).get();
+    public Boolean forgetPerson(String pId) throws CallError, InterruptedException {
+        return (Boolean)call("forgetPerson", pId).get();
     }
 
     /**
@@ -229,13 +247,13 @@ It can be either:
     }
 
     /**
-    * Delete from the database all faces instances of a person.
+    * Add a new face in the database.
     * 
-    * @param pId  The name of the person to forget
+    * @param pId  The name of the person to save
     * @return true if the operation succeeds
     */
-    public Boolean forgetPerson(String pId) throws CallError, InterruptedException {
-        return (Boolean)call("forgetPerson", pId).get();
+    public Boolean learnFace(String pId) throws CallError, InterruptedException {
+        return (Boolean)call("learnFace", pId).get();
     }
 
     /**
@@ -584,6 +602,25 @@ It can be either:
     }
 
     /**
+    * Get the current confidence threshold for face recognition.
+    * 
+    * @return Confidence threshold
+    */
+    public Future<Float> getRecognitionConfidenceThreshold() throws CallError, InterruptedException {
+        return call("getRecognitionConfidenceThreshold");
+    }
+
+    /**
+    * Set the current confidence threshold for face recognition. Matches with lower confidence value will not be considered.
+    * 
+    * @param confThreshold  New confidence threshold between 0.0 and 1.0 (default 0.4).
+    * @return The Future
+    */
+    public Future<Void> setRecognitionConfidenceThreshold(Float confThreshold) throws CallError, InterruptedException{
+        return call("setRecognitionConfidenceThreshold", confThreshold);
+    }
+
+    /**
     * deprecated
     * 
     * @param enable  True/False
@@ -613,13 +650,14 @@ It can be either:
     }
 
     /**
-    * Add a new face in the database.
+    * DEPRECATED: Sets pause and resolution
     * 
-    * @param pId  The name of the person to save
-    * @return true if the operation succeeds
+    * @param paramName  Name of the parameter to set
+    * @param value  New value
+    * @return The Future
     */
-    public Future<Boolean> learnFace(String pId) throws CallError, InterruptedException {
-        return call("learnFace", pId);
+    public Future<Void> setParameter(String paramName, Object value) throws CallError, InterruptedException{
+        return call("setParameter", paramName, value);
     }
 
     /**
@@ -633,14 +671,13 @@ It can be either:
     }
 
     /**
-    * DEPRECATED: Sets pause and resolution
+    * Delete from the database all faces instances of a person.
     * 
-    * @param paramName  Name of the parameter to set
-    * @param value  New value
-    * @return The Future
+    * @param pId  The name of the person to forget
+    * @return true if the operation succeeds
     */
-    public Future<Void> setParameter(String paramName, Object value) throws CallError, InterruptedException{
-        return call("setParameter", paramName, value);
+    public Future<Boolean> forgetPerson(String pId) throws CallError, InterruptedException {
+        return call("forgetPerson", pId);
     }
 
     /**
@@ -722,13 +759,13 @@ It can be either:
     }
 
     /**
-    * Delete from the database all faces instances of a person.
+    * Add a new face in the database.
     * 
-    * @param pId  The name of the person to forget
+    * @param pId  The name of the person to save
     * @return true if the operation succeeds
     */
-    public Future<Boolean> forgetPerson(String pId) throws CallError, InterruptedException {
-        return call("forgetPerson", pId);
+    public Future<Boolean> learnFace(String pId) throws CallError, InterruptedException {
+        return call("learnFace", pId);
     }
 
     /**

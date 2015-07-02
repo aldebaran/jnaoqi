@@ -153,22 +153,6 @@ public class ALKnowledge extends ALProxy {
     * 
     * 
     */
-    public void performInference() throws CallError, InterruptedException{
-        call("performInference").get();
-    }
-
-    /**
-    * 
-    * 
-    */
-    public void clearInference() throws CallError, InterruptedException{
-        call("clearInference").get();
-    }
-
-    /**
-    * 
-    * 
-    */
     public void resetKnowledge(String param1) throws CallError, InterruptedException{
         call("resetKnowledge", param1).get();
     }
@@ -195,6 +179,14 @@ public class ALKnowledge extends ALProxy {
     */
     public List<String> sparqlQuery(String param1) throws CallError, InterruptedException {
         return (List<String>)call("sparqlQuery", param1).get();
+    }
+
+    /**
+    * 
+    * 
+    */
+    public List<String> sparqlQuery(String param1, Boolean param2) throws CallError, InterruptedException {
+        return (List<String>)call("sparqlQuery", param1, param2).get();
     }
 
     /**
@@ -342,24 +334,6 @@ public class ALKnowledge extends ALProxy {
     * 
     * @return The Future
     */
-    public Future<Void> performInference() throws CallError, InterruptedException{
-        return call("performInference");
-    }
-
-    /**
-    * 
-    * 
-    * @return The Future
-    */
-    public Future<Void> clearInference() throws CallError, InterruptedException{
-        return call("clearInference");
-    }
-
-    /**
-    * 
-    * 
-    * @return The Future
-    */
     public Future<Void> resetKnowledge(String param1) throws CallError, InterruptedException{
         return call("resetKnowledge", param1);
     }
@@ -388,6 +362,14 @@ public class ALKnowledge extends ALProxy {
     */
     public Future<List<String>> sparqlQuery(String param1) throws CallError, InterruptedException {
         return call("sparqlQuery", param1);
+    }
+
+    /**
+    * 
+    * 
+    */
+    public Future<List<String>> sparqlQuery(String param1, Boolean param2) throws CallError, InterruptedException {
+        return call("sparqlQuery", param1, param2);
     }
 
     /**

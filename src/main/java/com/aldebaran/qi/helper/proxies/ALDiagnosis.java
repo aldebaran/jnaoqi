@@ -176,6 +176,7 @@ public class ALDiagnosis extends ALProxy {
     /**
     * The actual state of the passive diagnosis.
     * 
+    * @return Return the passive diagnosis last result.
     */
     public Object getPassiveDiagnosis() throws CallError, InterruptedException {
         return (Object)call("getPassiveDiagnosis").get();
@@ -184,9 +185,19 @@ public class ALDiagnosis extends ALProxy {
     /**
     * The actual state of the active diagnosis.
     * 
+    * @return Return the active diagnosis last result.
     */
     public Object getActiveDiagnosis() throws CallError, InterruptedException {
         return (Object)call("getActiveDiagnosis").get();
+    }
+
+    /**
+    * The actual state of the active and passive diagnosis.
+    * 
+    * @return Return the active and passive last result.
+    */
+    public Object getDiagnosisStatus() throws CallError, InterruptedException {
+        return (Object)call("getDiagnosisStatus").get();
     }
 
     /**
@@ -357,6 +368,7 @@ public class ALDiagnosis extends ALProxy {
     /**
     * The actual state of the passive diagnosis.
     * 
+    * @return Return the passive diagnosis last result.
     */
     public Future<Object> getPassiveDiagnosis() throws CallError, InterruptedException {
         return call("getPassiveDiagnosis");
@@ -365,9 +377,19 @@ public class ALDiagnosis extends ALProxy {
     /**
     * The actual state of the active diagnosis.
     * 
+    * @return Return the active diagnosis last result.
     */
     public Future<Object> getActiveDiagnosis() throws CallError, InterruptedException {
         return call("getActiveDiagnosis");
+    }
+
+    /**
+    * The actual state of the active and passive diagnosis.
+    * 
+    * @return Return the active and passive last result.
+    */
+    public Future<Object> getDiagnosisStatus() throws CallError, InterruptedException {
+        return call("getDiagnosisStatus");
     }
 
     /**

@@ -1229,7 +1229,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     }
 
     /**
-    * Get the robot configuration.
+    * Get the robot configuration. DEPRECATED. use ALRobotModel
     * 
     * @return ALValue arrays containing the robot parameter names and the robot parameter values.
     */
@@ -2707,7 +2707,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     }
 
     /**
-    * Get the robot configuration.
+    * Get the robot configuration. DEPRECATED. use ALRobotModel
     * 
     * @return ALValue arrays containing the robot parameter names and the robot parameter values.
     */

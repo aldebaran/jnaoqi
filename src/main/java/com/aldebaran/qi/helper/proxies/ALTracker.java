@@ -534,6 +534,42 @@ public class ALTracker extends ALProxy {
     }
 
     /**
+    * Set the maximum velocity for tracking.
+    * 
+    * @param pVelocity  The maximum velocity in rad.s-1 .
+    */
+    public void setMaximumVelocity(Float pVelocity) throws CallError, InterruptedException{
+        call("setMaximumVelocity", pVelocity).get();
+    }
+
+    /**
+    * Get the maximum velocity for tracking.
+    * 
+    * @return The maximum velocity in rad.s-1 .
+    */
+    public Float getMaximumVelocity() throws CallError, InterruptedException {
+        return (Float)call("getMaximumVelocity").get();
+    }
+
+    /**
+    * Set the maximum acceleration for tracking.
+    * 
+    * @param pAcceleration  The maximum acceleration in rad.s-2 .
+    */
+    public void setMaximumAcceleration(Float pAcceleration) throws CallError, InterruptedException{
+        call("setMaximumAcceleration", pAcceleration).get();
+    }
+
+    /**
+    * Get the maximum acceleration for tracking.
+    * 
+    * @return The maximum acceleration in rad.s-2 .
+    */
+    public Float getMaximumAcceleration() throws CallError, InterruptedException {
+        return (Float)call("getMaximumAcceleration").get();
+    }
+
+    /**
     * DEPRECATED. Use lookAt with frame instead. Look at the target position with head.
 
     * 
@@ -1163,6 +1199,44 @@ public class ALTracker extends ALProxy {
     */
     public Future<Void> initialize() throws CallError, InterruptedException{
         return call("initialize");
+    }
+
+    /**
+    * Set the maximum velocity for tracking.
+    * 
+    * @param pVelocity  The maximum velocity in rad.s-1 .
+    * @return The Future
+    */
+    public Future<Void> setMaximumVelocity(Float pVelocity) throws CallError, InterruptedException{
+        return call("setMaximumVelocity", pVelocity);
+    }
+
+    /**
+    * Get the maximum velocity for tracking.
+    * 
+    * @return The maximum velocity in rad.s-1 .
+    */
+    public Future<Float> getMaximumVelocity() throws CallError, InterruptedException {
+        return call("getMaximumVelocity");
+    }
+
+    /**
+    * Set the maximum acceleration for tracking.
+    * 
+    * @param pAcceleration  The maximum acceleration in rad.s-2 .
+    * @return The Future
+    */
+    public Future<Void> setMaximumAcceleration(Float pAcceleration) throws CallError, InterruptedException{
+        return call("setMaximumAcceleration", pAcceleration);
+    }
+
+    /**
+    * Get the maximum acceleration for tracking.
+    * 
+    * @return The maximum acceleration in rad.s-2 .
+    */
+    public Future<Float> getMaximumAcceleration() throws CallError, InterruptedException {
+        return call("getMaximumAcceleration");
     }
 
     /**

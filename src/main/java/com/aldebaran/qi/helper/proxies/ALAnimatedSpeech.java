@@ -259,7 +259,7 @@ public class ALAnimatedSpeech extends ALProxy {
 
     /**
     * Set the current body language mode.
-3 modes exist: BODY_LANGUAGE_MODE_DISABLED,BODY_LANGUAGE_MODE_RANDOM and BODY_LANGUAGE_MODE_CONTEXTUAL
+3 modes exist: SPEAKINGMOVEMENT_MODE_DISABLED,SPEAKINGMOVEMENT_MODE_RANDOM and SPEAKINGMOVEMENT_MODE_CONTEXTUAL
 (see BodyLanguageMode enum for more details)
     * 
     * @param bodyLanguageMode  The choosen body language mode.
@@ -281,7 +281,7 @@ public class ALAnimatedSpeech extends ALProxy {
 
     /**
     * Set the current body language mode.
-3 modes exist: BODY_LANGUAGE_MODE_DISABLED,BODY_LANGUAGE_MODE_RANDOM and BODY_LANGUAGE_MODE_CONTEXTUAL
+3 modes exist: SPEAKINGMOVEMENT_MODE_DISABLED,SPEAKINGMOVEMENT_MODE_RANDOM and SPEAKINGMOVEMENT_MODE_CONTEXTUAL
 (see BodyLanguageMode enum for more details)
     * 
     * @return The current body language mode.
@@ -539,7 +539,7 @@ public class ALAnimatedSpeech extends ALProxy {
 
     /**
     * Set the current body language mode.
-3 modes exist: BODY_LANGUAGE_MODE_DISABLED,BODY_LANGUAGE_MODE_RANDOM and BODY_LANGUAGE_MODE_CONTEXTUAL
+3 modes exist: SPEAKINGMOVEMENT_MODE_DISABLED,SPEAKINGMOVEMENT_MODE_RANDOM and SPEAKINGMOVEMENT_MODE_CONTEXTUAL
 (see BodyLanguageMode enum for more details)
     * 
     * @param bodyLanguageMode  The choosen body language mode.
@@ -562,7 +562,7 @@ public class ALAnimatedSpeech extends ALProxy {
 
     /**
     * Set the current body language mode.
-3 modes exist: BODY_LANGUAGE_MODE_DISABLED,BODY_LANGUAGE_MODE_RANDOM and BODY_LANGUAGE_MODE_CONTEXTUAL
+3 modes exist: SPEAKINGMOVEMENT_MODE_DISABLED,SPEAKINGMOVEMENT_MODE_RANDOM and SPEAKINGMOVEMENT_MODE_CONTEXTUAL
 (see BodyLanguageMode enum for more details)
     * 
     * @return The current body language mode.
