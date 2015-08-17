@@ -62,6 +62,34 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
+    * 
+    * 
+    */
+    public void setAutonomousAbilityEnabled(String param1, Boolean param2) throws CallError, InterruptedException{
+        call("setAutonomousAbilityEnabled", param1, param2).get();
+    }
+
+    /**
+    * Know is an Autonomous Ability is enabled or not
+    * 
+    * @param autonomousAbility  The Autonomous Ability.
+    * @return True if the Autonomous Ability is enabled, False otherwise.
+    */
+    public Boolean getAutonomousAbilityEnabled(String autonomousAbility) throws CallError, InterruptedException {
+        return (Boolean)call("getAutonomousAbilityEnabled", autonomousAbility).get();
+    }
+
+    /**
+    * Get a list of permissions that would be violated by a given activity in the current context.
+    * 
+    * @param name  The name of the activity to check.
+    * @return An array of strings of the violated permissions. EG: ["nature", "canRunOnPod", "canRunInSleep"]
+    */
+    public List<String> getActivityContextPermissionViolations(String name) throws CallError, InterruptedException {
+        return (List<String>)call("getActivityContextPermissionViolations", name).get();
+    }
+
+    /**
     * Start monitoring ALMemory and reporting conditional triggers with AutonomousLaunchpad.
     * 
     */
@@ -78,13 +106,12 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
-    * Get a list of permissions that would be violated by a given activity in the current context.
+    * Gets running status of AutonomousLaunchpad
     * 
-    * @param name  The name of the activity to check.
-    * @return An array of strings of the violated permissions. EG: ["nature", "canRunOnPod", "canRunInSleep"]
+    * @return True if AutonomousLaunchpad is monitoring ALMemory and reporting conditional triggers.
     */
-    public List<String> getActivityContextPermissionViolations(String name) throws CallError, InterruptedException {
-        return (List<String>)call("getActivityContextPermissionViolations", name).get();
+    public Boolean isMonitoringLaunchpadConditions() throws CallError, InterruptedException {
+        return (Boolean)call("isMonitoringLaunchpadConditions").get();
     }
 
     /**
@@ -107,13 +134,13 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
-    * Get a list of AutonomousLaunchpad Plugins that belong to specified group
+    * Returns the nature of an activity
     * 
-    * @param group  The group to search for the plugins
-    * @return A list of strings of the plugins belonging to the group.
+    * @param activity_name  The package_name/activity_name to check
+    * @return Possible values are: solitary, interactive
     */
-    public List<String> getLaunchpadPluginsForGroup(String group) throws CallError, InterruptedException {
-        return (List<String>)call("getLaunchpadPluginsForGroup", group).get();
+    public String getActivityNature(String activity_name) throws CallError, InterruptedException {
+        return (String)call("getActivityNature", activity_name).get();
     }
 
     /**
@@ -132,16 +159,6 @@ public class ALAutonomousLife extends ALProxy {
     */
     public Float getRobotOffsetFromFloor() throws CallError, InterruptedException {
         return (Float)call("getRobotOffsetFromFloor").get();
-    }
-
-    /**
-    * Returns the nature of an activity
-    * 
-    * @param activity_name  The package_name/activity_name to check
-    * @return Possible values are: solitary, interactive
-    */
-    public String getActivityNature(String activity_name) throws CallError, InterruptedException {
-        return (String)call("getActivityNature", activity_name).get();
     }
 
     /**
@@ -217,12 +234,22 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
-    * Gets running status of AutonomousLaunchpad
+    * Get a list of AutonomousLaunchpad Plugins that belong to specified group
     * 
-    * @return True if AutonomousLaunchpad is monitoring ALMemory and reporting conditional triggers.
+    * @param group  The group to search for the plugins
+    * @return A list of strings of the plugins belonging to the group.
     */
-    public Boolean isMonitoringLaunchpadConditions() throws CallError, InterruptedException {
-        return (Boolean)call("isMonitoringLaunchpadConditions").get();
+    public List<String> getLaunchpadPluginsForGroup(String group) throws CallError, InterruptedException {
+        return (List<String>)call("getLaunchpadPluginsForGroup", group).get();
+    }
+
+    /**
+    * Get the Autonomous Abilities status (get the autonomous abilities name and booleans to know if they are enabled or running
+    * 
+    * @return The Autonomous Abilities status. A vector containing a status for each autonomous ability. Each status is composed of the autonomous ability name, a boolean to know if it's enabled and another boolean to know if it's running.
+    */
+    public List<Tuple3<String, Boolean, Boolean>> getAutonomousAbilitiesStatus() throws CallError, InterruptedException {
+        return (List<Tuple3<String, Boolean, Boolean>>)call("getAutonomousAbilitiesStatus").get();
     }
 
     /**
@@ -459,6 +486,35 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
+    * 
+    * 
+    * @return The Future
+    */
+    public Future<Void> setAutonomousAbilityEnabled(String param1, Boolean param2) throws CallError, InterruptedException{
+        return call("setAutonomousAbilityEnabled", param1, param2);
+    }
+
+    /**
+    * Know is an Autonomous Ability is enabled or not
+    * 
+    * @param autonomousAbility  The Autonomous Ability.
+    * @return True if the Autonomous Ability is enabled, False otherwise.
+    */
+    public Future<Boolean> getAutonomousAbilityEnabled(String autonomousAbility) throws CallError, InterruptedException {
+        return call("getAutonomousAbilityEnabled", autonomousAbility);
+    }
+
+    /**
+    * Get a list of permissions that would be violated by a given activity in the current context.
+    * 
+    * @param name  The name of the activity to check.
+    * @return An array of strings of the violated permissions. EG: ["nature", "canRunOnPod", "canRunInSleep"]
+    */
+    public Future<List<String>> getActivityContextPermissionViolations(String name) throws CallError, InterruptedException {
+        return call("getActivityContextPermissionViolations", name);
+    }
+
+    /**
     * Start monitoring ALMemory and reporting conditional triggers with AutonomousLaunchpad.
     * 
     * @return The Future
@@ -477,13 +533,12 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
-    * Get a list of permissions that would be violated by a given activity in the current context.
+    * Gets running status of AutonomousLaunchpad
     * 
-    * @param name  The name of the activity to check.
-    * @return An array of strings of the violated permissions. EG: ["nature", "canRunOnPod", "canRunInSleep"]
+    * @return True if AutonomousLaunchpad is monitoring ALMemory and reporting conditional triggers.
     */
-    public Future<List<String>> getActivityContextPermissionViolations(String name) throws CallError, InterruptedException {
-        return call("getActivityContextPermissionViolations", name);
+    public Future<Boolean> isMonitoringLaunchpadConditions() throws CallError, InterruptedException {
+        return call("isMonitoringLaunchpadConditions");
     }
 
     /**
@@ -507,13 +562,13 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
-    * Get a list of AutonomousLaunchpad Plugins that belong to specified group
+    * Returns the nature of an activity
     * 
-    * @param group  The group to search for the plugins
-    * @return A list of strings of the plugins belonging to the group.
+    * @param activity_name  The package_name/activity_name to check
+    * @return Possible values are: solitary, interactive
     */
-    public Future<List<String>> getLaunchpadPluginsForGroup(String group) throws CallError, InterruptedException {
-        return call("getLaunchpadPluginsForGroup", group);
+    public Future<String> getActivityNature(String activity_name) throws CallError, InterruptedException {
+        return call("getActivityNature", activity_name);
     }
 
     /**
@@ -533,16 +588,6 @@ public class ALAutonomousLife extends ALProxy {
     */
     public Future<Float> getRobotOffsetFromFloor() throws CallError, InterruptedException {
         return call("getRobotOffsetFromFloor");
-    }
-
-    /**
-    * Returns the nature of an activity
-    * 
-    * @param activity_name  The package_name/activity_name to check
-    * @return Possible values are: solitary, interactive
-    */
-    public Future<String> getActivityNature(String activity_name) throws CallError, InterruptedException {
-        return call("getActivityNature", activity_name);
     }
 
     /**
@@ -619,12 +664,22 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
-    * Gets running status of AutonomousLaunchpad
+    * Get a list of AutonomousLaunchpad Plugins that belong to specified group
     * 
-    * @return True if AutonomousLaunchpad is monitoring ALMemory and reporting conditional triggers.
+    * @param group  The group to search for the plugins
+    * @return A list of strings of the plugins belonging to the group.
     */
-    public Future<Boolean> isMonitoringLaunchpadConditions() throws CallError, InterruptedException {
-        return call("isMonitoringLaunchpadConditions");
+    public Future<List<String>> getLaunchpadPluginsForGroup(String group) throws CallError, InterruptedException {
+        return call("getLaunchpadPluginsForGroup", group);
+    }
+
+    /**
+    * Get the Autonomous Abilities status (get the autonomous abilities name and booleans to know if they are enabled or running
+    * 
+    * @return The Autonomous Abilities status. A vector containing a status for each autonomous ability. Each status is composed of the autonomous ability name, a boolean to know if it's enabled and another boolean to know if it's running.
+    */
+    public Future<List<Tuple3<String, Boolean, Boolean>>> getAutonomousAbilitiesStatus() throws CallError, InterruptedException {
+        return call("getAutonomousAbilitiesStatus");
     }
 
     /**

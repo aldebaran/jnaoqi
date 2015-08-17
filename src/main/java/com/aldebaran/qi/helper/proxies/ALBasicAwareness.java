@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.List;
 /**
 * 
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/interaction/albasicawareness.html#albasicawareness">NAOqi APIs for ALBasicAwareness </a>
+* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/interaction/autonomousabilities/albasicawareness.html#albasicawareness">NAOqi APIs for ALBasicAwareness </a>
 * NAOqi V2.4.x
 */
 public class ALBasicAwareness extends ALProxy {
@@ -38,63 +38,24 @@ public class ALBasicAwareness extends ALProxy {
     }
 
     /**
-    * Reset all parameters, including enabled/disabled stimulus.
+    * Pause BasicAwareness.
     * 
     */
-    public void resetAllParameters() throws CallError, InterruptedException{
-        call("resetAllParameters").get();
-    }
-
-    /**
-    * Set tracking mode.
-    * 
-    * @param modeName  Name of the mode
-    */
-    public void setTrackingMode(String modeName) throws CallError, InterruptedException{
-        call("setTrackingMode", modeName).get();
-    }
-
-    /**
-    * Get the status (started or not) of the module.
-    * 
-    * @return Boolean value, true if running else false
-    */
-    public Boolean isAwarenessRunning() throws CallError, InterruptedException {
-        return (Boolean)call("isAwarenessRunning").get();
-    }
-
-    /**
-    * Force Engage Person.
-    * 
-    * @param engagePerson  ID of the person as found in PeoplePerception.
-    * @return true if the robot succeeded to engage the person, else false.
-    */
-    public Boolean engagePerson(Integer engagePerson) throws CallError, InterruptedException {
-        return (Boolean)call("engagePerson", engagePerson).get();
-    }
-
-    /**
-    * Get status enabled/disabled for Stimulus Detection.
-    * 
-    * @param stimulusName  Name of the stimulus to check
-    * @return Boolean value for status enabled/disabled
-    */
-    public Boolean isStimulusDetectionEnabled(String stimulusName) throws CallError, InterruptedException {
-        return (Boolean)call("isStimulusDetectionEnabled", stimulusName).get();
+    public void pauseAwareness() throws CallError, InterruptedException{
+        call("pauseAwareness").get();
     }
 
     /**
     * Set the specified parameter 
     * 
-    * @param paramName  "ServoingSpeed" : Speed of servoing head moves, as fraction of max speed
- "LookStimulusSpeed" : Speed of head moves when looking at a stimulus, as fraction of max speed
+    * @param paramName  "LookStimulusSpeed" : Speed of head moves when looking at a stimulus, as fraction of max speed
  "LookBackSpeed" : Speed of head moves when looking back to previous position, as fraction of max speed
- "TrackingSpeed" : Tracking speed
  "NobodyFoundTimeOut" : timeout to send HumanLost event when no blob is found, in seconds
  "MinTimeTracking" : Minimum Time for the robot to be focused on someone, without listening to other stimuli, in seconds
  "TimeSleepBeforeResumeMS" : Slept time before automatically resuming BasicAwareness when an automatic pause has been made, in milliseconds
  "TimeOutResetHead" : Timeout to reset the head, in seconds
  "AmplitudeYawTracking" : max absolute value for head yaw in tracking, in degrees
+ "FramerateTracking" : Framerate for FastPersonTracking and FindPersonHead, in frame per second
  "PeoplePerceptionPeriod" : Period for people perception, in milliseconds
  "SlowPeoplePerceptionPeriod" : Period for people perception in FullyEngaged mode, in milliseconds
  "HeadThreshold" : Yaw threshold for tracking, in degrees
@@ -108,7 +69,7 @@ public class ALBasicAwareness extends ALProxy {
  "MoveThresholdTheta" : Theta Threshold for the Move tracking mode, in degrees
  "MaxDistanceFullyEngaged" : Maximum distance for someone to be tracked for FullyEngaged mode, in meters
  "MaxDistanceNotFullyEngaged" : Maximum distance for someone to be tracked for modes different from FullyEngaged, in meters
- "MaxHumanSearchTime" : Maximum time to find a human after observing stimulous, in seconds
+ "MaxHumanSearchTime" : Maximum time to find a human after observing stimulus, in seconds
  "DeltaPitchComfortZone" : Pitch width of the comfort zone, in degree
  "CenterPitchComfortZone" : Pitch center of the confort zone, in degree
  "SoundHeight" : Default Height for sound detection, in meters
@@ -121,15 +82,14 @@ public class ALBasicAwareness extends ALProxy {
  "MC_Interactive_DistanceHumanRobot" : Distance between the human and the robot
  "MC_Interactive_MaxDistanceHumanRobot" : Maximum distance human robot to allow the robot to move (in MoveContextually mode)
  
-    * @param newVal  "ServoingSpeed" : Float in range [0.01;1]
- "LookStimulusSpeed" : Float in range [0.01;1]
+    * @param newVal  "LookStimulusSpeed" : Float in range [0.01;1]
  "LookBackSpeed" : Float in range [0.01;1]
- "TrackingSpeed" : Float in range [0.01;10]
  "NobodyFoundTimeOut" : Float > 0
  "MinTimeTracking" : Float in range [0;20]
  "TimeSleepBeforeResumeMS" : Int > 0
  "TimeOutResetHead" : Float in range [0;30]
  "AmplitudeYawTracking" : Float in range [10;120]
+ "FramerateTracking" : Int in range [1;33]
  "PeoplePerceptionPeriod" : Int > 1
  "SlowPeoplePerceptionPeriod" : Int > 1
  "HeadThreshold" : Float in range [0;180]
@@ -162,17 +122,25 @@ public class ALBasicAwareness extends ALProxy {
     }
 
     /**
+    * Return whether BasicAwareness is running.
+    * 
+    * @return Boolean value, true if running else false
+    */
+    public Boolean isRunning() throws CallError, InterruptedException {
+        return (Boolean)call("isRunning").get();
+    }
+
+    /**
     * Get the specified parameter.
     * 
-    * @param paramName  "ServoingSpeed" : Speed of servoing head moves, as fraction of max speed
- "LookStimulusSpeed" : Speed of head moves when looking at a stimulus, as fraction of max speed
+    * @param paramName  "LookStimulusSpeed" : Speed of head moves when looking at a stimulus, as fraction of max speed
  "LookBackSpeed" : Speed of head moves when looking back to previous position, as fraction of max speed
- "TrackingSpeed" : Tracking speed
  "NobodyFoundTimeOut" : timeout to send HumanLost event when no blob is found, in seconds
  "MinTimeTracking" : Minimum Time for the robot to be focused on someone, without listening to other stimuli, in seconds
  "TimeSleepBeforeResumeMS" : Slept time before automatically resuming BasicAwareness when an automatic pause has been made, in milliseconds
  "TimeOutResetHead" : Timeout to reset the head, in seconds
  "AmplitudeYawTracking" : max absolute value for head yaw in tracking, in degrees
+ "FramerateTracking" : Framerate for FastPersonTracking and FindPersonHead, in frame per second
  "PeoplePerceptionPeriod" : Period for people perception, in milliseconds
  "SlowPeoplePerceptionPeriod" : Period for people perception in FullyEngaged mode, in milliseconds
  "HeadThreshold" : Yaw threshold for tracking, in degrees
@@ -186,7 +154,7 @@ public class ALBasicAwareness extends ALProxy {
  "MoveThresholdTheta" : Theta Threshold for the Move tracking mode, in degrees
  "MaxDistanceFullyEngaged" : Maximum distance for someone to be tracked for FullyEngaged mode, in meters
  "MaxDistanceNotFullyEngaged" : Maximum distance for someone to be tracked for modes different from FullyEngaged, in meters
- "MaxHumanSearchTime" : Maximum time to find a human after observing stimulous, in seconds
+ "MaxHumanSearchTime" : Maximum time to find a human after observing stimulus, in seconds
  "DeltaPitchComfortZone" : Pitch width of the comfort zone, in degree
  "CenterPitchComfortZone" : Pitch center of the confort zone, in degree
  "SoundHeight" : Default Height for sound detection, in meters
@@ -215,22 +183,20 @@ public class ALBasicAwareness extends ALProxy {
     }
 
     /**
-    * Enable/Disable Stimulus Detection.
+    * DEPRECATED since 2.4: use setEnabled instead.Stop Basic Awareness.
     * 
-    * @param stimulusName  Name of the stimulus to enable/disable
-    * @param isStimulusDetectionEnabled  Boolean value: true to enable, false to disable.
     */
-    public void setStimulusDetectionEnabled(String stimulusName, Boolean isStimulusDetectionEnabled) throws CallError, InterruptedException{
-        call("setStimulusDetectionEnabled", stimulusName, isStimulusDetectionEnabled).get();
+    public void stopAwareness() throws CallError, InterruptedException{
+        call("stopAwareness").get();
     }
 
     /**
-    * Set engagement mode.
+    * Set tracking mode.
     * 
-    * @return Name of current engagement mode as a string
+    * @param modeName  Name of the mode
     */
-    public String getEngagementMode() throws CallError, InterruptedException {
-        return (String)call("getEngagementMode").get();
+    public void setTrackingMode(String modeName) throws CallError, InterruptedException{
+        call("setTrackingMode", modeName).get();
     }
 
     /**
@@ -243,6 +209,77 @@ public class ALBasicAwareness extends ALProxy {
     }
 
     /**
+    * Force Engage Person.
+    * 
+    * @param engagePerson  ID of the person as found in PeoplePerception.
+    * @return true if the robot succeeded to engage the person, else false.
+    */
+    public Boolean engagePerson(Integer engagePerson) throws CallError, InterruptedException {
+        return (Boolean)call("engagePerson", engagePerson).get();
+    }
+
+    /**
+    * DEPRECATED since 2.4: use isEnabled instead.Get the status (started or not) of the module.
+    * 
+    * @return Boolean value, true if running else false
+    */
+    public Boolean isAwarenessRunning() throws CallError, InterruptedException {
+        return (Boolean)call("isAwarenessRunning").get();
+    }
+
+    /**
+    * Resume BasicAwareness.
+    * 
+    */
+    public void resumeAwareness() throws CallError, InterruptedException{
+        call("resumeAwareness").get();
+    }
+
+    /**
+    * Get the pause status of the module.
+    * 
+    */
+    public Boolean isAwarenessPaused() throws CallError, InterruptedException {
+        return (Boolean)call("isAwarenessPaused").get();
+    }
+
+    /**
+    * DEPRECATED since 2.4: use setEnabled instead.Start Basic Awareness.
+    * 
+    */
+    public void startAwareness() throws CallError, InterruptedException{
+        call("startAwareness").get();
+    }
+
+    /**
+    * Enable/Disable Stimulus Detection.
+    * 
+    * @param stimulusName  Name of the stimulus to enable/disable
+    * @param isStimulusDetectionEnabled  Boolean value: true to enable, false to disable.
+    */
+    public void setStimulusDetectionEnabled(String stimulusName, Boolean isStimulusDetectionEnabled) throws CallError, InterruptedException{
+        call("setStimulusDetectionEnabled", stimulusName, isStimulusDetectionEnabled).get();
+    }
+
+    /**
+    * Get status enabled/disabled for Stimulus Detection.
+    * 
+    * @param stimulusName  Name of the stimulus to check
+    * @return Boolean value for status enabled/disabled
+    */
+    public Boolean isStimulusDetectionEnabled(String stimulusName) throws CallError, InterruptedException {
+        return (Boolean)call("isStimulusDetectionEnabled", stimulusName).get();
+    }
+
+    /**
+    * Reset all parameters, including enabled/disabled stimulus.
+    * 
+    */
+    public void resetAllParameters() throws CallError, InterruptedException{
+        call("resetAllParameters").get();
+    }
+
+    /**
     * Trigger a custom stimulus.
     * 
     * @param stimulusPosition  Position of the stimulus, in Frame World
@@ -250,6 +287,15 @@ public class ALBasicAwareness extends ALProxy {
     */
     public Integer triggerStimulus(List<Float> stimulusPosition) throws CallError, InterruptedException {
         return (Integer)call("triggerStimulus", stimulusPosition).get();
+    }
+
+    /**
+    * Set engagement mode.
+    * 
+    * @return Name of current engagement mode as a string
+    */
+    public String getEngagementMode() throws CallError, InterruptedException {
+        return (String)call("getEngagementMode").get();
     }
 
     /**
@@ -389,19 +435,21 @@ public class ALBasicAwareness extends ALProxy {
     }
 
     /**
-    * Start Basic Awareness.
+    * Enable/Disable BasicAwareness.
     * 
+    * @param enabled  True to enable BasicAwareness, False to disable BasicAwareness.
     */
-    public void startAwareness() throws CallError, InterruptedException{
-        call("startAwareness").get();
+    public void setEnabled(Boolean enabled) throws CallError, InterruptedException{
+        call("setEnabled", enabled).get();
     }
 
     /**
-    * Stop Basic Awareness.
+    * Return whether BasicAwareness is enabled or not.
     * 
+    * @return Boolean value, true if enabled else false
     */
-    public void stopAwareness() throws CallError, InterruptedException{
-        call("stopAwareness").get();
+    public Boolean isEnabled() throws CallError, InterruptedException {
+        return (Boolean)call("isEnabled").get();
     }
 
 
@@ -412,65 +460,25 @@ public class ALBasicAwareness extends ALProxy {
         }
     
     /**
-    * Reset all parameters, including enabled/disabled stimulus.
+    * Pause BasicAwareness.
     * 
     * @return The Future
     */
-    public Future<Void> resetAllParameters() throws CallError, InterruptedException{
-        return call("resetAllParameters");
-    }
-
-    /**
-    * Set tracking mode.
-    * 
-    * @param modeName  Name of the mode
-    * @return The Future
-    */
-    public Future<Void> setTrackingMode(String modeName) throws CallError, InterruptedException{
-        return call("setTrackingMode", modeName);
-    }
-
-    /**
-    * Get the status (started or not) of the module.
-    * 
-    * @return Boolean value, true if running else false
-    */
-    public Future<Boolean> isAwarenessRunning() throws CallError, InterruptedException {
-        return call("isAwarenessRunning");
-    }
-
-    /**
-    * Force Engage Person.
-    * 
-    * @param engagePerson  ID of the person as found in PeoplePerception.
-    * @return true if the robot succeeded to engage the person, else false.
-    */
-    public Future<Boolean> engagePerson(Integer engagePerson) throws CallError, InterruptedException {
-        return call("engagePerson", engagePerson);
-    }
-
-    /**
-    * Get status enabled/disabled for Stimulus Detection.
-    * 
-    * @param stimulusName  Name of the stimulus to check
-    * @return Boolean value for status enabled/disabled
-    */
-    public Future<Boolean> isStimulusDetectionEnabled(String stimulusName) throws CallError, InterruptedException {
-        return call("isStimulusDetectionEnabled", stimulusName);
+    public Future<Void> pauseAwareness() throws CallError, InterruptedException{
+        return call("pauseAwareness");
     }
 
     /**
     * Set the specified parameter 
     * 
-    * @param paramName  "ServoingSpeed" : Speed of servoing head moves, as fraction of max speed
- "LookStimulusSpeed" : Speed of head moves when looking at a stimulus, as fraction of max speed
+    * @param paramName  "LookStimulusSpeed" : Speed of head moves when looking at a stimulus, as fraction of max speed
  "LookBackSpeed" : Speed of head moves when looking back to previous position, as fraction of max speed
- "TrackingSpeed" : Tracking speed
  "NobodyFoundTimeOut" : timeout to send HumanLost event when no blob is found, in seconds
  "MinTimeTracking" : Minimum Time for the robot to be focused on someone, without listening to other stimuli, in seconds
  "TimeSleepBeforeResumeMS" : Slept time before automatically resuming BasicAwareness when an automatic pause has been made, in milliseconds
  "TimeOutResetHead" : Timeout to reset the head, in seconds
  "AmplitudeYawTracking" : max absolute value for head yaw in tracking, in degrees
+ "FramerateTracking" : Framerate for FastPersonTracking and FindPersonHead, in frame per second
  "PeoplePerceptionPeriod" : Period for people perception, in milliseconds
  "SlowPeoplePerceptionPeriod" : Period for people perception in FullyEngaged mode, in milliseconds
  "HeadThreshold" : Yaw threshold for tracking, in degrees
@@ -484,7 +492,7 @@ public class ALBasicAwareness extends ALProxy {
  "MoveThresholdTheta" : Theta Threshold for the Move tracking mode, in degrees
  "MaxDistanceFullyEngaged" : Maximum distance for someone to be tracked for FullyEngaged mode, in meters
  "MaxDistanceNotFullyEngaged" : Maximum distance for someone to be tracked for modes different from FullyEngaged, in meters
- "MaxHumanSearchTime" : Maximum time to find a human after observing stimulous, in seconds
+ "MaxHumanSearchTime" : Maximum time to find a human after observing stimulus, in seconds
  "DeltaPitchComfortZone" : Pitch width of the comfort zone, in degree
  "CenterPitchComfortZone" : Pitch center of the confort zone, in degree
  "SoundHeight" : Default Height for sound detection, in meters
@@ -497,15 +505,14 @@ public class ALBasicAwareness extends ALProxy {
  "MC_Interactive_DistanceHumanRobot" : Distance between the human and the robot
  "MC_Interactive_MaxDistanceHumanRobot" : Maximum distance human robot to allow the robot to move (in MoveContextually mode)
  
-    * @param newVal  "ServoingSpeed" : Float in range [0.01;1]
- "LookStimulusSpeed" : Float in range [0.01;1]
+    * @param newVal  "LookStimulusSpeed" : Float in range [0.01;1]
  "LookBackSpeed" : Float in range [0.01;1]
- "TrackingSpeed" : Float in range [0.01;10]
  "NobodyFoundTimeOut" : Float > 0
  "MinTimeTracking" : Float in range [0;20]
  "TimeSleepBeforeResumeMS" : Int > 0
  "TimeOutResetHead" : Float in range [0;30]
  "AmplitudeYawTracking" : Float in range [10;120]
+ "FramerateTracking" : Int in range [1;33]
  "PeoplePerceptionPeriod" : Int > 1
  "SlowPeoplePerceptionPeriod" : Int > 1
  "HeadThreshold" : Float in range [0;180]
@@ -539,17 +546,25 @@ public class ALBasicAwareness extends ALProxy {
     }
 
     /**
+    * Return whether BasicAwareness is running.
+    * 
+    * @return Boolean value, true if running else false
+    */
+    public Future<Boolean> isRunning() throws CallError, InterruptedException {
+        return call("isRunning");
+    }
+
+    /**
     * Get the specified parameter.
     * 
-    * @param paramName  "ServoingSpeed" : Speed of servoing head moves, as fraction of max speed
- "LookStimulusSpeed" : Speed of head moves when looking at a stimulus, as fraction of max speed
+    * @param paramName  "LookStimulusSpeed" : Speed of head moves when looking at a stimulus, as fraction of max speed
  "LookBackSpeed" : Speed of head moves when looking back to previous position, as fraction of max speed
- "TrackingSpeed" : Tracking speed
  "NobodyFoundTimeOut" : timeout to send HumanLost event when no blob is found, in seconds
  "MinTimeTracking" : Minimum Time for the robot to be focused on someone, without listening to other stimuli, in seconds
  "TimeSleepBeforeResumeMS" : Slept time before automatically resuming BasicAwareness when an automatic pause has been made, in milliseconds
  "TimeOutResetHead" : Timeout to reset the head, in seconds
  "AmplitudeYawTracking" : max absolute value for head yaw in tracking, in degrees
+ "FramerateTracking" : Framerate for FastPersonTracking and FindPersonHead, in frame per second
  "PeoplePerceptionPeriod" : Period for people perception, in milliseconds
  "SlowPeoplePerceptionPeriod" : Period for people perception in FullyEngaged mode, in milliseconds
  "HeadThreshold" : Yaw threshold for tracking, in degrees
@@ -563,7 +578,7 @@ public class ALBasicAwareness extends ALProxy {
  "MoveThresholdTheta" : Theta Threshold for the Move tracking mode, in degrees
  "MaxDistanceFullyEngaged" : Maximum distance for someone to be tracked for FullyEngaged mode, in meters
  "MaxDistanceNotFullyEngaged" : Maximum distance for someone to be tracked for modes different from FullyEngaged, in meters
- "MaxHumanSearchTime" : Maximum time to find a human after observing stimulous, in seconds
+ "MaxHumanSearchTime" : Maximum time to find a human after observing stimulus, in seconds
  "DeltaPitchComfortZone" : Pitch width of the comfort zone, in degree
  "CenterPitchComfortZone" : Pitch center of the confort zone, in degree
  "SoundHeight" : Default Height for sound detection, in meters
@@ -593,23 +608,22 @@ public class ALBasicAwareness extends ALProxy {
     }
 
     /**
-    * Enable/Disable Stimulus Detection.
+    * DEPRECATED since 2.4: use setEnabled instead.Stop Basic Awareness.
     * 
-    * @param stimulusName  Name of the stimulus to enable/disable
-    * @param isStimulusDetectionEnabled  Boolean value: true to enable, false to disable.
     * @return The Future
     */
-    public Future<Void> setStimulusDetectionEnabled(String stimulusName, Boolean isStimulusDetectionEnabled) throws CallError, InterruptedException{
-        return call("setStimulusDetectionEnabled", stimulusName, isStimulusDetectionEnabled);
+    public Future<Void> stopAwareness() throws CallError, InterruptedException{
+        return call("stopAwareness");
     }
 
     /**
-    * Set engagement mode.
+    * Set tracking mode.
     * 
-    * @return Name of current engagement mode as a string
+    * @param modeName  Name of the mode
+    * @return The Future
     */
-    public Future<String> getEngagementMode() throws CallError, InterruptedException {
-        return call("getEngagementMode");
+    public Future<Void> setTrackingMode(String modeName) throws CallError, InterruptedException{
+        return call("setTrackingMode", modeName);
     }
 
     /**
@@ -622,6 +636,81 @@ public class ALBasicAwareness extends ALProxy {
     }
 
     /**
+    * Force Engage Person.
+    * 
+    * @param engagePerson  ID of the person as found in PeoplePerception.
+    * @return true if the robot succeeded to engage the person, else false.
+    */
+    public Future<Boolean> engagePerson(Integer engagePerson) throws CallError, InterruptedException {
+        return call("engagePerson", engagePerson);
+    }
+
+    /**
+    * DEPRECATED since 2.4: use isEnabled instead.Get the status (started or not) of the module.
+    * 
+    * @return Boolean value, true if running else false
+    */
+    public Future<Boolean> isAwarenessRunning() throws CallError, InterruptedException {
+        return call("isAwarenessRunning");
+    }
+
+    /**
+    * Resume BasicAwareness.
+    * 
+    * @return The Future
+    */
+    public Future<Void> resumeAwareness() throws CallError, InterruptedException{
+        return call("resumeAwareness");
+    }
+
+    /**
+    * Get the pause status of the module.
+    * 
+    */
+    public Future<Boolean> isAwarenessPaused() throws CallError, InterruptedException {
+        return call("isAwarenessPaused");
+    }
+
+    /**
+    * DEPRECATED since 2.4: use setEnabled instead.Start Basic Awareness.
+    * 
+    * @return The Future
+    */
+    public Future<Void> startAwareness() throws CallError, InterruptedException{
+        return call("startAwareness");
+    }
+
+    /**
+    * Enable/Disable Stimulus Detection.
+    * 
+    * @param stimulusName  Name of the stimulus to enable/disable
+    * @param isStimulusDetectionEnabled  Boolean value: true to enable, false to disable.
+    * @return The Future
+    */
+    public Future<Void> setStimulusDetectionEnabled(String stimulusName, Boolean isStimulusDetectionEnabled) throws CallError, InterruptedException{
+        return call("setStimulusDetectionEnabled", stimulusName, isStimulusDetectionEnabled);
+    }
+
+    /**
+    * Get status enabled/disabled for Stimulus Detection.
+    * 
+    * @param stimulusName  Name of the stimulus to check
+    * @return Boolean value for status enabled/disabled
+    */
+    public Future<Boolean> isStimulusDetectionEnabled(String stimulusName) throws CallError, InterruptedException {
+        return call("isStimulusDetectionEnabled", stimulusName);
+    }
+
+    /**
+    * Reset all parameters, including enabled/disabled stimulus.
+    * 
+    * @return The Future
+    */
+    public Future<Void> resetAllParameters() throws CallError, InterruptedException{
+        return call("resetAllParameters");
+    }
+
+    /**
     * Trigger a custom stimulus.
     * 
     * @param stimulusPosition  Position of the stimulus, in Frame World
@@ -629,6 +718,15 @@ public class ALBasicAwareness extends ALProxy {
     */
     public Future<Integer> triggerStimulus(List<Float> stimulusPosition) throws CallError, InterruptedException {
         return call("triggerStimulus", stimulusPosition);
+    }
+
+    /**
+    * Set engagement mode.
+    * 
+    * @return Name of current engagement mode as a string
+    */
+    public Future<String> getEngagementMode() throws CallError, InterruptedException {
+        return call("getEngagementMode");
     }
 
     /**
@@ -772,21 +870,22 @@ public class ALBasicAwareness extends ALProxy {
     }
 
     /**
-    * Start Basic Awareness.
+    * Enable/Disable BasicAwareness.
     * 
+    * @param enabled  True to enable BasicAwareness, False to disable BasicAwareness.
     * @return The Future
     */
-    public Future<Void> startAwareness() throws CallError, InterruptedException{
-        return call("startAwareness");
+    public Future<Void> setEnabled(Boolean enabled) throws CallError, InterruptedException{
+        return call("setEnabled", enabled);
     }
 
     /**
-    * Stop Basic Awareness.
+    * Return whether BasicAwareness is enabled or not.
     * 
-    * @return The Future
+    * @return Boolean value, true if enabled else false
     */
-    public Future<Void> stopAwareness() throws CallError, InterruptedException{
-        return call("stopAwareness");
+    public Future<Boolean> isEnabled() throws CallError, InterruptedException {
+        return call("isEnabled");
     }
 
     }

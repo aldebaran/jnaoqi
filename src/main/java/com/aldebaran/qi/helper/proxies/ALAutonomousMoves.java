@@ -38,15 +38,6 @@ public class ALAutonomousMoves extends ALProxy {
     }
 
     /**
-    * Gets the background strategy.
-    * 
-    * @return The autonomous background posture strategy. ("none" or "backToNeutral")
-    */
-    public String getBackgroundStrategy() throws CallError, InterruptedException {
-        return (String)call("getBackgroundStrategy").get();
-    }
-
-    /**
     * 
     * 
     */
@@ -199,7 +190,7 @@ public class ALAutonomousMoves extends ALProxy {
     }
 
     /**
-    * Enable or disable expressive listening.
+    * DEPRECATED since 2.4: Call ALListeningMovement.setEnabled(bool) instead.Enable or disable the listening movements.
     * 
     * @param enable  The boolean value: true to enable, false to disable.
     */
@@ -208,7 +199,7 @@ public class ALAutonomousMoves extends ALProxy {
     }
 
     /**
-    * If expressive listening is enabled.
+    * DEPRECATED since 2.4: Call ALListeningMovement.isEnabled() instead.If listening movements are enabled.
     * 
     * @return The boolean value: true means it is enabled, false means it is disabled.
     */
@@ -225,6 +216,15 @@ public class ALAutonomousMoves extends ALProxy {
         call("setBackgroundStrategy", strategy).get();
     }
 
+    /**
+    * Gets the background strategy.
+    * 
+    * @return The autonomous background posture strategy. ("none" or "backToNeutral")
+    */
+    public String getBackgroundStrategy() throws CallError, InterruptedException {
+        return (String)call("getBackgroundStrategy").get();
+    }
+
 
     public class AsyncALAutonomousMoves extends ALProxy {
 
@@ -232,15 +232,6 @@ public class ALAutonomousMoves extends ALProxy {
             super();
         }
     
-    /**
-    * Gets the background strategy.
-    * 
-    * @return The autonomous background posture strategy. ("none" or "backToNeutral")
-    */
-    public Future<String> getBackgroundStrategy() throws CallError, InterruptedException {
-        return call("getBackgroundStrategy");
-    }
-
     /**
     * 
     * 
@@ -400,7 +391,7 @@ public class ALAutonomousMoves extends ALProxy {
     }
 
     /**
-    * Enable or disable expressive listening.
+    * DEPRECATED since 2.4: Call ALListeningMovement.setEnabled(bool) instead.Enable or disable the listening movements.
     * 
     * @param enable  The boolean value: true to enable, false to disable.
     * @return The Future
@@ -410,7 +401,7 @@ public class ALAutonomousMoves extends ALProxy {
     }
 
     /**
-    * If expressive listening is enabled.
+    * DEPRECATED since 2.4: Call ALListeningMovement.isEnabled() instead.If listening movements are enabled.
     * 
     * @return The boolean value: true means it is enabled, false means it is disabled.
     */
@@ -426,6 +417,15 @@ public class ALAutonomousMoves extends ALProxy {
     */
     public Future<Void> setBackgroundStrategy(String strategy) throws CallError, InterruptedException{
         return call("setBackgroundStrategy", strategy);
+    }
+
+    /**
+    * Gets the background strategy.
+    * 
+    * @return The autonomous background posture strategy. ("none" or "backToNeutral")
+    */
+    public Future<String> getBackgroundStrategy() throws CallError, InterruptedException {
+        return call("getBackgroundStrategy");
     }
 
     }

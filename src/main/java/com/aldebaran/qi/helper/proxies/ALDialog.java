@@ -710,6 +710,15 @@ public class ALDialog extends ALProxy {
     }
 
     /**
+    * Get the configuration of animated speech for the current dialog.
+    * 
+    * @return See animated speech documentation
+    */
+    public Object getAnimatedSpeechConfiguration() throws CallError, InterruptedException {
+        return (Object)call("getAnimatedSpeechConfiguration").get();
+    }
+
+    /**
     * Black list a list of application
     * 
     * @param applicationList  List of applications that cannot be launched by dialog
@@ -1812,6 +1821,15 @@ public class ALDialog extends ALProxy {
     */
     public Future<Void> setAnimatedSpeechConfiguration(Object animatedSpeechConfiguration) throws CallError, InterruptedException{
         return call("setAnimatedSpeechConfiguration", animatedSpeechConfiguration);
+    }
+
+    /**
+    * Get the configuration of animated speech for the current dialog.
+    * 
+    * @return See animated speech documentation
+    */
+    public Future<Object> getAnimatedSpeechConfiguration() throws CallError, InterruptedException {
+        return call("getAnimatedSpeechConfiguration");
     }
 
     /**
