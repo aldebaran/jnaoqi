@@ -62,6 +62,12 @@
             </properties>
         </profile>
         <profile>
+            <id>win32-vs2013</id>
+            <properties>
+                <rp.build.platform>win32-vs2013</rp.build.platform>
+            </properties>
+        </profile>
+        <profile>
             <id>arm</id>
             <properties>
                 <rp.build.platform>arm</rp.build.platform>
