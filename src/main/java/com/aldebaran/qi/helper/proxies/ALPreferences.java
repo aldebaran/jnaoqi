@@ -20,8 +20,8 @@ pParams[0] Name of the preference;
 pParams[1] Description of the preference; 
 pParams[2] The value of the preference (can contain other preferences); 
 pParams[3] (optional) The name of the data when inserted into memory.
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/core/alpreferences.html#alpreferences">NAOqi APIs for ALPreferences </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/core/alpreferences.html#alpreferences">NAOqi APIs for ALPreferences </a>
+* NAOqi V2.3.x
 */
 public class ALPreferences extends ALProxy {
 
@@ -129,15 +129,6 @@ public class ALPreferences extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
     }
 
     /**
@@ -315,16 +306,6 @@ public class ALPreferences extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
     }
 
     /**

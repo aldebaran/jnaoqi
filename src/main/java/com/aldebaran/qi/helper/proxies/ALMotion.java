@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * ALMotion provides methods that help make Nao move. It contains commands for manipulating joint angles, joint stiffness, and a higher level API for controling walks.
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/motion/almotion.html#almotion">NAOqi APIs for ALMotion </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/motion/almotion.html#almotion">NAOqi APIs for ALMotion </a>
+* NAOqi V2.3.x
 */
 public class ALMotion extends ALProxy {
 
@@ -124,15 +124,6 @@ public class ALMotion extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
     }
 
     /**
@@ -1229,7 +1220,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     }
 
     /**
-    * Get the robot configuration. DEPRECATED. use ALRobotModel
+    * Get the robot configuration.
     * 
     * @return ALValue arrays containing the robot parameter names and the robot parameter values.
     */
@@ -1286,6 +1277,20 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public void setMotionConfig(Object config) throws CallError, InterruptedException{
         call("setMotionConfig", config).get();
+    }
+
+    /**
+    * Update the target to follow by the head of NAO.
+DEPRECATED Function. Please use ALTracker::lookAt.
+
+    * 
+    * @param pTargetPositionWy  The target position wy in FRAME_ROBOT
+    * @param pTargetPositionWz  The target position wz in  FRAME_ROBOT
+    * @param pTimeSinceDetectionMs  The time in Ms since the target was detected
+    * @param pUseOfWholeBody  If true, the target is follow in cartesian space by the Head with whole Body constraints.
+    */
+    public void updateTrackerTarget(Float pTargetPositionWy, Float pTargetPositionWz, Integer pTimeSinceDetectionMs, Boolean pUseOfWholeBody) throws CallError, InterruptedException{
+        call("updateTrackerTarget", pTargetPositionWy, pTargetPositionWz, pTimeSinceDetectionMs, pUseOfWholeBody).get();
     }
 
     /**
@@ -1534,16 +1539,6 @@ Chain name can be "Body", "Arms", "LArm", "RArm", "Legs" or "Head".
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
     }
 
     /**
@@ -2707,7 +2702,7 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     }
 
     /**
-    * Get the robot configuration. DEPRECATED. use ALRobotModel
+    * Get the robot configuration.
     * 
     * @return ALValue arrays containing the robot parameter names and the robot parameter values.
     */
@@ -2765,6 +2760,21 @@ If the robot doesn't walk this function is equivalent to getRobotPosition(false)
     */
     public Future<Void> setMotionConfig(Object config) throws CallError, InterruptedException{
         return call("setMotionConfig", config);
+    }
+
+    /**
+    * Update the target to follow by the head of NAO.
+DEPRECATED Function. Please use ALTracker::lookAt.
+
+    * 
+    * @param pTargetPositionWy  The target position wy in FRAME_ROBOT
+    * @param pTargetPositionWz  The target position wz in  FRAME_ROBOT
+    * @param pTimeSinceDetectionMs  The time in Ms since the target was detected
+    * @param pUseOfWholeBody  If true, the target is follow in cartesian space by the Head with whole Body constraints.
+    * @return The Future
+    */
+    public Future<Void> updateTrackerTarget(Float pTargetPositionWy, Float pTargetPositionWz, Integer pTimeSinceDetectionMs, Boolean pUseOfWholeBody) throws CallError, InterruptedException{
+        return call("updateTrackerTarget", pTargetPositionWy, pTargetPositionWz, pTimeSinceDetectionMs, pUseOfWholeBody);
     }
 
     /**

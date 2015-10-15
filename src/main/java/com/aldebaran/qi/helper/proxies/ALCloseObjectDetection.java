@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * 
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/vision/alcloseobjectdetection.html#alcloseobjectdetection">NAOqi APIs for ALCloseObjectDetection </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/vision/alcloseobjectdetection.html#alcloseobjectdetection">NAOqi APIs for ALCloseObjectDetection </a>
+* NAOqi V2.3.x
 */
 public class ALCloseObjectDetection extends ALProxy {
 
@@ -35,15 +35,6 @@ public class ALCloseObjectDetection extends ALProxy {
 	 */
     public AsyncALCloseObjectDetection async() {
         return asyncProxy;
-    }
-
-    /**
-    * Changes the pause status of the extractor
-    * 
-    * @param status  New pause satus
-    */
-    public void pause(Boolean status) throws CallError, InterruptedException{
-        call("pause", status).get();
     }
 
     /**
@@ -142,15 +133,6 @@ public class ALCloseObjectDetection extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
     }
 
     /**
@@ -323,6 +305,15 @@ public class ALCloseObjectDetection extends ALProxy {
         return (Boolean)call("isPaused").get();
     }
 
+    /**
+    * Changes the pause status of the extractor
+    * 
+    * @param status  New pause satus
+    */
+    public void pause(Boolean status) throws CallError, InterruptedException{
+        call("pause", status).get();
+    }
+
 
     public class AsyncALCloseObjectDetection extends ALProxy {
 
@@ -330,16 +321,6 @@ public class ALCloseObjectDetection extends ALProxy {
             super();
         }
     
-    /**
-    * Changes the pause status of the extractor
-    * 
-    * @param status  New pause satus
-    * @return The Future
-    */
-    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
-        return call("pause", status);
-    }
-
     /**
     * Gets extractor running status
     * 
@@ -438,16 +419,6 @@ public class ALCloseObjectDetection extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
     }
 
     /**
@@ -624,6 +595,16 @@ public class ALCloseObjectDetection extends ALProxy {
     */
     public Future<Boolean> isPaused() throws CallError, InterruptedException {
         return call("isPaused");
+    }
+
+    /**
+    * Changes the pause status of the extractor
+    * 
+    * @param status  New pause satus
+    * @return The Future
+    */
+    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
+        return call("pause", status);
     }
 
     }

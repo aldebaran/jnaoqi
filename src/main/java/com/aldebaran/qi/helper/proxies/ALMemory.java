@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * ALMemory provides a centralized memory that can be used to store and retrieve named values. It also acts as a hub for the distribution of event notifications.
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/core/almemory.html#almemory">NAOqi APIs for ALMemory </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/core/almemory.html#almemory">NAOqi APIs for ALMemory </a>
+* NAOqi V2.3.x
 */
 public class ALMemory extends ALMemoryHelper {
 
@@ -38,41 +38,32 @@ public class ALMemory extends ALMemoryHelper {
     }
 
     /**
-    * Inserts a key-value pair into memory, where value is a float
+    * Inserts a key-value pair into memory, where value is a string
     * 
     * @param key  Name of the value to be inserted.
-    * @param value  The float to be inserted
+    * @param value  The string to be inserted
     */
-    public void insertData(String key, Float value) throws CallError, InterruptedException{
+    public void insertData(String key, String value) throws CallError, InterruptedException{
         call("insertData", key, value).get();
     }
 
     /**
-    * Publishes the given data to all subscribers.
+    * Removes a key-value pair from memory
     * 
-    * @param name  Name of the event to raise.
-    * @param value  The data associated with the event. This could contain a basic type, or a more complex array. See the ALValue documentation for more information.
+    * @param key  Name of the data to be removed.
     */
-    public void raiseMicroEvent(String name, Object value) throws CallError, InterruptedException{
-        call("raiseMicroEvent", name, value).get();
+    public void removeData(String key) throws CallError, InterruptedException{
+        call("removeData", key).get();
     }
 
     /**
-    * Gets a list containing the names of all the declared micro events
+    * Gets a list containing the names of subscribers to an event.
     * 
-    * @return A list containing the names of all the microEvents
+    * @param name  Name of the event or micro-event
+    * @return List of subscriber names
     */
-    public List<String> getMicroEventList() throws CallError, InterruptedException {
-        return (List<String>)call("getMicroEventList").get();
-    }
-
-    /**
-    * Removes a event from memory and unsubscribes any exiting subscribers.
-    * 
-    * @param name  Name of the event to remove.
-    */
-    public void removeEvent(String name) throws CallError, InterruptedException{
-        call("removeEvent", name).get();
+    public List<String> getSubscribers(String name) throws CallError, InterruptedException {
+        return (List<String>)call("getSubscribers", name).get();
     }
 
     /**
@@ -85,25 +76,24 @@ public class ALMemory extends ALMemoryHelper {
     }
 
     /**
-    * Gets the storage class of the stored data. This is not the underlying POD type.
-    * 
-    * @param key  Name of the variable
-    * @return String type: Data, Event, MicroEvent
-    */
-    public String getType(String key) throws CallError, InterruptedException {
-        return (String)call("getType", key).get();
-    }
-
-    /**
-    * DEPRECATED Subscribes to event and automaticaly launches the module capable of generating the event if it is not already running. Please use the version without the callbackMessage parameter.
+    * Subscribes to an event and automaticaly launches the module that declared itself as the generator of the event if required.
     * 
     * @param name  The name of the event to subscribe to
     * @param callbackModule  Name of the module to call with notifications
-    * @param callbackMessage  DEPRECATED Message included in the notification.
-    * @param callbacMethod  Name of the module's method to call when a data is changed
+    * @param callbackMethod  Name of the module's method to call when a data is changed
     */
-    public void subscribeToEvent(String name, String callbackModule, String callbackMessage, String callbacMethod) throws CallError, InterruptedException{
-        call("subscribeToEvent", name, callbackModule, callbackMessage, callbacMethod).get();
+    public void subscribeToEvent(String name, String callbackModule, String callbackMethod) throws CallError, InterruptedException{
+        call("subscribeToEvent", name, callbackModule, callbackMethod).get();
+    }
+
+    /**
+    * Inserts a key-value pair into memory, where value is an int
+    * 
+    * @param key  Name of the value to be inserted.
+    * @param value  The int to be inserted
+    */
+    public void insertData(String key, Integer value) throws CallError, InterruptedException{
+        call("insertData", key, value).get();
     }
 
     /**
@@ -138,12 +128,22 @@ public class ALMemory extends ALMemoryHelper {
     }
 
     /**
-    * Inserts a key-value pair into memory, where value is an int
+    * Unsubscribes from the given event. No further notifications will be received.
+    * 
+    * @param name  Name of the event.
+    * @param callbackModule  The name of the module that was given when subscribing.
+    */
+    public void unsubscribeToMicroEvent(String name, String callbackModule) throws CallError, InterruptedException{
+        call("unsubscribeToMicroEvent", name, callbackModule).get();
+    }
+
+    /**
+    * Inserts a key-value pair into memory, where value is a float
     * 
     * @param key  Name of the value to be inserted.
-    * @param value  The int to be inserted
+    * @param value  The float to be inserted
     */
-    public void insertData(String key, Integer value) throws CallError, InterruptedException{
+    public void insertData(String key, Float value) throws CallError, InterruptedException{
         call("insertData", key, value).get();
     }
 
@@ -189,16 +189,6 @@ public class ALMemory extends ALMemoryHelper {
     }
 
     /**
-    * Inserts a key-value pair into memory, where value is a string
-    * 
-    * @param key  Name of the value to be inserted.
-    * @param value  The string to be inserted
-    */
-    public void insertData(String key, String value) throws CallError, InterruptedException{
-        call("insertData", key, value).get();
-    }
-
-    /**
     * Inserts a key-value pair into memory, where value is an ALValue
     * 
     * @param key  Name of the value to be inserted.
@@ -209,22 +199,22 @@ public class ALMemory extends ALMemoryHelper {
     }
 
     /**
-    * Gets a list containing the names of subscribers to an event.
-    * 
-    * @param name  Name of the event or micro-event
-    * @return List of subscriber names
-    */
-    public List<String> getSubscribers(String name) throws CallError, InterruptedException {
-        return (List<String>)call("getSubscribers", name).get();
-    }
-
-    /**
     * Inserts a list of key-value pairs into memory.
     * 
     * @param list  An ALValue list of the form [[Key, Value],...]. Each item will be inserted.
     */
     public void insertListData(Object list) throws CallError, InterruptedException{
         call("insertListData", list).get();
+    }
+
+    /**
+    * Gets the storage class of the stored data. This is not the underlying POD type.
+    * 
+    * @param key  Name of the variable
+    * @return String type: Data, Event, MicroEvent
+    */
+    public String getType(String key) throws CallError, InterruptedException {
+        return (String)call("getType", key).get();
     }
 
     /**
@@ -238,33 +228,34 @@ public class ALMemory extends ALMemoryHelper {
     }
 
     /**
-    * Removes a key-value pair from memory
+    * Publishes the given data to all subscribers.
     * 
-    * @param key  Name of the data to be removed.
+    * @param name  Name of the event to raise.
+    * @param value  The data associated with the event. This could contain a basic type, or a more complex array. See the ALValue documentation for more information.
     */
-    public void removeData(String key) throws CallError, InterruptedException{
-        call("removeData", key).get();
+    public void raiseMicroEvent(String name, Object value) throws CallError, InterruptedException{
+        call("raiseMicroEvent", name, value).get();
     }
 
     /**
-    * Unsubscribes from the given event. No further notifications will be received.
+    * Removes a event from memory and unsubscribes any exiting subscribers.
     * 
-    * @param name  Name of the event.
-    * @param callbackModule  The name of the module that was given when subscribing.
+    * @param name  Name of the event to remove.
     */
-    public void unsubscribeToMicroEvent(String name, String callbackModule) throws CallError, InterruptedException{
-        call("unsubscribeToMicroEvent", name, callbackModule).get();
+    public void removeEvent(String name) throws CallError, InterruptedException{
+        call("removeEvent", name).get();
     }
 
     /**
-    * Subscribes to an event and automaticaly launches the module that declared itself as the generator of the event if required.
+    * DEPRECATED Subscribes to event and automaticaly launches the module capable of generating the event if it is not already running. Please use the version without the callbackMessage parameter.
     * 
     * @param name  The name of the event to subscribe to
     * @param callbackModule  Name of the module to call with notifications
-    * @param callbackMethod  Name of the module's method to call when a data is changed
+    * @param callbackMessage  DEPRECATED Message included in the notification.
+    * @param callbacMethod  Name of the module's method to call when a data is changed
     */
-    public void subscribeToEvent(String name, String callbackModule, String callbackMethod) throws CallError, InterruptedException{
-        call("subscribeToEvent", name, callbackModule, callbackMethod).get();
+    public void subscribeToEvent(String name, String callbackModule, String callbackMessage, String callbacMethod) throws CallError, InterruptedException{
+        call("subscribeToEvent", name, callbackModule, callbackMessage, callbacMethod).get();
     }
 
     /**
@@ -354,15 +345,6 @@ public class ALMemory extends ALMemoryHelper {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
     }
 
     /**
@@ -532,6 +514,15 @@ public class ALMemory extends ALMemoryHelper {
         return (Object)call("getListData", keyList).get();
     }
 
+    /**
+    * Gets a list containing the names of all the declared micro events
+    * 
+    * @return A list containing the names of all the microEvents
+    */
+    public List<String> getMicroEventList() throws CallError, InterruptedException {
+        return (List<String>)call("getMicroEventList").get();
+    }
+
 
     public class AsyncALMemory extends ALMemoryHelper {
 
@@ -540,44 +531,34 @@ public class ALMemory extends ALMemoryHelper {
         }
     
     /**
-    * Inserts a key-value pair into memory, where value is a float
+    * Inserts a key-value pair into memory, where value is a string
     * 
     * @param key  Name of the value to be inserted.
-    * @param value  The float to be inserted
+    * @param value  The string to be inserted
     * @return The Future
     */
-    public Future<Void> insertData(String key, Float value) throws CallError, InterruptedException{
+    public Future<Void> insertData(String key, String value) throws CallError, InterruptedException{
         return call("insertData", key, value);
     }
 
     /**
-    * Publishes the given data to all subscribers.
+    * Removes a key-value pair from memory
     * 
-    * @param name  Name of the event to raise.
-    * @param value  The data associated with the event. This could contain a basic type, or a more complex array. See the ALValue documentation for more information.
+    * @param key  Name of the data to be removed.
     * @return The Future
     */
-    public Future<Void> raiseMicroEvent(String name, Object value) throws CallError, InterruptedException{
-        return call("raiseMicroEvent", name, value);
+    public Future<Void> removeData(String key) throws CallError, InterruptedException{
+        return call("removeData", key);
     }
 
     /**
-    * Gets a list containing the names of all the declared micro events
+    * Gets a list containing the names of subscribers to an event.
     * 
-    * @return A list containing the names of all the microEvents
+    * @param name  Name of the event or micro-event
+    * @return List of subscriber names
     */
-    public Future<List<String>> getMicroEventList() throws CallError, InterruptedException {
-        return call("getMicroEventList");
-    }
-
-    /**
-    * Removes a event from memory and unsubscribes any exiting subscribers.
-    * 
-    * @param name  Name of the event to remove.
-    * @return The Future
-    */
-    public Future<Void> removeEvent(String name) throws CallError, InterruptedException{
-        return call("removeEvent", name);
+    public Future<List<String>> getSubscribers(String name) throws CallError, InterruptedException {
+        return call("getSubscribers", name);
     }
 
     /**
@@ -591,26 +572,26 @@ public class ALMemory extends ALMemoryHelper {
     }
 
     /**
-    * Gets the storage class of the stored data. This is not the underlying POD type.
-    * 
-    * @param key  Name of the variable
-    * @return String type: Data, Event, MicroEvent
-    */
-    public Future<String> getType(String key) throws CallError, InterruptedException {
-        return call("getType", key);
-    }
-
-    /**
-    * DEPRECATED Subscribes to event and automaticaly launches the module capable of generating the event if it is not already running. Please use the version without the callbackMessage parameter.
+    * Subscribes to an event and automaticaly launches the module that declared itself as the generator of the event if required.
     * 
     * @param name  The name of the event to subscribe to
     * @param callbackModule  Name of the module to call with notifications
-    * @param callbackMessage  DEPRECATED Message included in the notification.
-    * @param callbacMethod  Name of the module's method to call when a data is changed
+    * @param callbackMethod  Name of the module's method to call when a data is changed
     * @return The Future
     */
-    public Future<Void> subscribeToEvent(String name, String callbackModule, String callbackMessage, String callbacMethod) throws CallError, InterruptedException{
-        return call("subscribeToEvent", name, callbackModule, callbackMessage, callbacMethod);
+    public Future<Void> subscribeToEvent(String name, String callbackModule, String callbackMethod) throws CallError, InterruptedException{
+        return call("subscribeToEvent", name, callbackModule, callbackMethod);
+    }
+
+    /**
+    * Inserts a key-value pair into memory, where value is an int
+    * 
+    * @param key  Name of the value to be inserted.
+    * @param value  The int to be inserted
+    * @return The Future
+    */
+    public Future<Void> insertData(String key, Integer value) throws CallError, InterruptedException{
+        return call("insertData", key, value);
     }
 
     /**
@@ -648,13 +629,24 @@ public class ALMemory extends ALMemoryHelper {
     }
 
     /**
-    * Inserts a key-value pair into memory, where value is an int
+    * Unsubscribes from the given event. No further notifications will be received.
     * 
-    * @param key  Name of the value to be inserted.
-    * @param value  The int to be inserted
+    * @param name  Name of the event.
+    * @param callbackModule  The name of the module that was given when subscribing.
     * @return The Future
     */
-    public Future<Void> insertData(String key, Integer value) throws CallError, InterruptedException{
+    public Future<Void> unsubscribeToMicroEvent(String name, String callbackModule) throws CallError, InterruptedException{
+        return call("unsubscribeToMicroEvent", name, callbackModule);
+    }
+
+    /**
+    * Inserts a key-value pair into memory, where value is a float
+    * 
+    * @param key  Name of the value to be inserted.
+    * @param value  The float to be inserted
+    * @return The Future
+    */
+    public Future<Void> insertData(String key, Float value) throws CallError, InterruptedException{
         return call("insertData", key, value);
     }
 
@@ -703,17 +695,6 @@ public class ALMemory extends ALMemoryHelper {
     }
 
     /**
-    * Inserts a key-value pair into memory, where value is a string
-    * 
-    * @param key  Name of the value to be inserted.
-    * @param value  The string to be inserted
-    * @return The Future
-    */
-    public Future<Void> insertData(String key, String value) throws CallError, InterruptedException{
-        return call("insertData", key, value);
-    }
-
-    /**
     * Inserts a key-value pair into memory, where value is an ALValue
     * 
     * @param key  Name of the value to be inserted.
@@ -725,16 +706,6 @@ public class ALMemory extends ALMemoryHelper {
     }
 
     /**
-    * Gets a list containing the names of subscribers to an event.
-    * 
-    * @param name  Name of the event or micro-event
-    * @return List of subscriber names
-    */
-    public Future<List<String>> getSubscribers(String name) throws CallError, InterruptedException {
-        return call("getSubscribers", name);
-    }
-
-    /**
     * Inserts a list of key-value pairs into memory.
     * 
     * @param list  An ALValue list of the form [[Key, Value],...]. Each item will be inserted.
@@ -742,6 +713,16 @@ public class ALMemory extends ALMemoryHelper {
     */
     public Future<Void> insertListData(Object list) throws CallError, InterruptedException{
         return call("insertListData", list);
+    }
+
+    /**
+    * Gets the storage class of the stored data. This is not the underlying POD type.
+    * 
+    * @param key  Name of the variable
+    * @return String type: Data, Event, MicroEvent
+    */
+    public Future<String> getType(String key) throws CallError, InterruptedException {
+        return call("getType", key);
     }
 
     /**
@@ -756,36 +737,37 @@ public class ALMemory extends ALMemoryHelper {
     }
 
     /**
-    * Removes a key-value pair from memory
+    * Publishes the given data to all subscribers.
     * 
-    * @param key  Name of the data to be removed.
+    * @param name  Name of the event to raise.
+    * @param value  The data associated with the event. This could contain a basic type, or a more complex array. See the ALValue documentation for more information.
     * @return The Future
     */
-    public Future<Void> removeData(String key) throws CallError, InterruptedException{
-        return call("removeData", key);
+    public Future<Void> raiseMicroEvent(String name, Object value) throws CallError, InterruptedException{
+        return call("raiseMicroEvent", name, value);
     }
 
     /**
-    * Unsubscribes from the given event. No further notifications will be received.
+    * Removes a event from memory and unsubscribes any exiting subscribers.
     * 
-    * @param name  Name of the event.
-    * @param callbackModule  The name of the module that was given when subscribing.
+    * @param name  Name of the event to remove.
     * @return The Future
     */
-    public Future<Void> unsubscribeToMicroEvent(String name, String callbackModule) throws CallError, InterruptedException{
-        return call("unsubscribeToMicroEvent", name, callbackModule);
+    public Future<Void> removeEvent(String name) throws CallError, InterruptedException{
+        return call("removeEvent", name);
     }
 
     /**
-    * Subscribes to an event and automaticaly launches the module that declared itself as the generator of the event if required.
+    * DEPRECATED Subscribes to event and automaticaly launches the module capable of generating the event if it is not already running. Please use the version without the callbackMessage parameter.
     * 
     * @param name  The name of the event to subscribe to
     * @param callbackModule  Name of the module to call with notifications
-    * @param callbackMethod  Name of the module's method to call when a data is changed
+    * @param callbackMessage  DEPRECATED Message included in the notification.
+    * @param callbacMethod  Name of the module's method to call when a data is changed
     * @return The Future
     */
-    public Future<Void> subscribeToEvent(String name, String callbackModule, String callbackMethod) throws CallError, InterruptedException{
-        return call("subscribeToEvent", name, callbackModule, callbackMethod);
+    public Future<Void> subscribeToEvent(String name, String callbackModule, String callbackMessage, String callbacMethod) throws CallError, InterruptedException{
+        return call("subscribeToEvent", name, callbackModule, callbackMessage, callbacMethod);
     }
 
     /**
@@ -877,16 +859,6 @@ public class ALMemory extends ALMemoryHelper {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
     }
 
     /**
@@ -1057,6 +1029,15 @@ public class ALMemory extends ALMemoryHelper {
     */
     public Future<Object> getListData(Object keyList) throws CallError, InterruptedException {
         return call("getListData", keyList);
+    }
+
+    /**
+    * Gets a list containing the names of all the declared micro events
+    * 
+    * @return A list containing the names of all the microEvents
+    */
+    public Future<List<String>> getMicroEventList() throws CallError, InterruptedException {
+        return call("getMicroEventList");
     }
 
     }

@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * This module allows you log errors, warnings, and info stdout or a file. The verbosity level allow you to  customize the output.
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/core/allogger.html#allogger">NAOqi APIs for ALLogger </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/core/allogger.html#allogger">NAOqi APIs for ALLogger </a>
+* NAOqi V2.3.x
 */
 public class ALLogger extends ALProxy {
 
@@ -124,15 +124,6 @@ public class ALLogger extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
     }
 
     /**
@@ -363,16 +354,6 @@ public class ALLogger extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
     }
 
     /**

@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * Module that manage the background moves automatically started by the robot.
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/interaction/autonomousmoves.html#autonomousmoves">NAOqi APIs for ALAutonomousMoves </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/interaction/autonomousmoves.html#autonomousmoves">NAOqi APIs for ALAutonomousMoves </a>
+* NAOqi V2.3.x
 */
 public class ALAutonomousMoves extends ALProxy {
 
@@ -127,15 +127,6 @@ public class ALAutonomousMoves extends ALProxy {
     }
 
     /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
-    }
-
-    /**
     * Returns true if the method is currently running.
     * 
     * @param id  The ID of the method that was returned when calling the method using 'post'
@@ -190,7 +181,7 @@ public class ALAutonomousMoves extends ALProxy {
     }
 
     /**
-    * DEPRECATED since 2.4: Call ALListeningMovement.setEnabled(bool) instead.Enable or disable the listening movements.
+    * Enable or disable expressive listening.
     * 
     * @param enable  The boolean value: true to enable, false to disable.
     */
@@ -199,7 +190,7 @@ public class ALAutonomousMoves extends ALProxy {
     }
 
     /**
-    * DEPRECATED since 2.4: Call ALListeningMovement.isEnabled() instead.If listening movements are enabled.
+    * If expressive listening is enabled.
     * 
     * @return The boolean value: true means it is enabled, false means it is disabled.
     */
@@ -324,16 +315,6 @@ public class ALAutonomousMoves extends ALProxy {
     }
 
     /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
-    }
-
-    /**
     * Returns true if the method is currently running.
     * 
     * @param id  The ID of the method that was returned when calling the method using 'post'
@@ -391,7 +372,7 @@ public class ALAutonomousMoves extends ALProxy {
     }
 
     /**
-    * DEPRECATED since 2.4: Call ALListeningMovement.setEnabled(bool) instead.Enable or disable the listening movements.
+    * Enable or disable expressive listening.
     * 
     * @param enable  The boolean value: true to enable, false to disable.
     * @return The Future
@@ -401,7 +382,7 @@ public class ALAutonomousMoves extends ALProxy {
     }
 
     /**
-    * DEPRECATED since 2.4: Call ALListeningMovement.isEnabled() instead.If listening movements are enabled.
+    * If expressive listening is enabled.
     * 
     * @return The boolean value: true means it is enabled, false means it is disabled.
     */

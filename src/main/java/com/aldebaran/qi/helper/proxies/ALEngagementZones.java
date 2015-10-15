@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * This module enables to compue the engagement zones of detected people or detected movements
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/peopleperception/alengagementzones.html#alengagementzones">NAOqi APIs for ALEngagementZones </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/peopleperception/alengagementzones.html#alengagementzones">NAOqi APIs for ALEngagementZones </a>
+* NAOqi V2.3.x
 */
 public class ALEngagementZones extends ALProxy {
 
@@ -38,12 +38,78 @@ public class ALEngagementZones extends ALProxy {
     }
 
     /**
+    * Get the first distance used for the delimitation of the engagement zones (nearest limit)
+    * 
+    * @return Current first distance (in meters) used for delimitation (nearest limit)
+    */
+    public Float getFirstLimitDistance() throws CallError, InterruptedException {
+        return (Float)call("getFirstLimitDistance").get();
+    }
+
+    /**
+    * Gets extractor running status
+    * 
+    * @return True if the extractor is currently processing images, False if not
+    */
+    public Boolean isProcessing() throws CallError, InterruptedException {
+        return (Boolean)call("isProcessing").get();
+    }
+
+    /**
+    * Get the angle used for the delimitation of the engagement zones
+    * 
+    * @return Current angle used for delimitation
+    */
+    public Float getLimitAngle() throws CallError, InterruptedException {
+        return (Float)call("getLimitAngle").get();
+    }
+
+    /**
     * Set the first distance used for the delimitation of the engagement zones (nearest limit)
     * 
     * @param distance  New first distance (in meters) for delimitation (nearest limit), it should be positive and smaller than the second distance
     */
     public void setFirstLimitDistance(Float distance) throws CallError, InterruptedException{
         call("setFirstLimitDistance", distance).get();
+    }
+
+    /**
+    * Set the second distance used for the delimitation of the engagement zones (furthest limit)
+    * 
+    * @param distance  New second distance (in meters) for delimitation (furthest limit), it should be positive and bigger than the first distance
+    */
+    public void setSecondLimitDistance(Float distance) throws CallError, InterruptedException{
+        call("setSecondLimitDistance", distance).get();
+    }
+
+    /**
+    * Get the second distance used for the delimitation of the engagement zones (furthest limit)
+    * 
+    * @return Current second distance (in meters) used for delimitation (furthest limit)
+    */
+    public Float getSecondLimitDistance() throws CallError, InterruptedException {
+        return (Float)call("getSecondLimitDistance").get();
+    }
+
+    /**
+    * Set the angle used for the delimitation of the engagement zones
+    * 
+    * @param angle  New angle (in degrees) for delimitation, it should be below 180
+    */
+    public void setLimitAngle(Float angle) throws CallError, InterruptedException{
+        call("setLimitAngle", angle).get();
+    }
+
+    /**
+    * Computes the engagement zone in which an object is from its position in FRAME_ROBOT
+    * 
+    * @param x  X coordinate of the object in FRAME_ROBOT
+    * @param y  Y coordinate of the object in FRAME_ROBOT
+    * @param z  Z coordinate of the object in FRAME_ROBOT
+    * @return Engagement zone of the object
+    */
+    public Integer computeEngagementZone(Float x, Float y, Float z) throws CallError, InterruptedException {
+        return (Integer)call("computeEngagementZone", x, y, z).get();
     }
 
     /**
@@ -57,81 +123,6 @@ public class ALEngagementZones extends ALProxy {
     */
     public Integer computeEngagementZone(Float xAngle, Float yAngle, Float distance, Object cameraPositionRobot) throws CallError, InterruptedException {
         return (Integer)call("computeEngagementZone", xAngle, yAngle, distance, cameraPositionRobot).get();
-    }
-
-    /**
-    * Changes the pause status of the extractor
-    * 
-    * @param status  New pause satus
-    */
-    public void pause(Boolean status) throws CallError, InterruptedException{
-        call("pause", status).get();
-    }
-
-    /**
-    * Set the angle used for the delimitation of the engagement zones
-    * 
-    * @param angle  New angle (in degrees) for delimitation, it should be below 180
-    */
-    public void setLimitAngle(Float angle) throws CallError, InterruptedException{
-        call("setLimitAngle", angle).get();
-    }
-
-    /**
-    * Get the angle used for the delimitation of the engagement zones
-    * 
-    * @return Current angle used for delimitation
-    */
-    public Float getLimitAngle() throws CallError, InterruptedException {
-        return (Float)call("getLimitAngle").get();
-    }
-
-    /**
-    * Get the first distance used for the delimitation of the engagement zones (nearest limit)
-    * 
-    * @return Current first distance (in meters) used for delimitation (nearest limit)
-    */
-    public Float getFirstLimitDistance() throws CallError, InterruptedException {
-        return (Float)call("getFirstLimitDistance").get();
-    }
-
-    /**
-    * Set the second distance used for the delimitation of the engagement zones (furthest limit)
-    * 
-    * @param distance  New second distance (in meters) for delimitation (furthest limit), it should be positive and bigger than the first distance
-    */
-    public void setSecondLimitDistance(Float distance) throws CallError, InterruptedException{
-        call("setSecondLimitDistance", distance).get();
-    }
-
-    /**
-    * Gets extractor running status
-    * 
-    * @return True if the extractor is currently processing images, False if not
-    */
-    public Boolean isProcessing() throws CallError, InterruptedException {
-        return (Boolean)call("isProcessing").get();
-    }
-
-    /**
-    * Get the second distance used for the delimitation of the engagement zones (furthest limit)
-    * 
-    * @return Current second distance (in meters) used for delimitation (furthest limit)
-    */
-    public Float getSecondLimitDistance() throws CallError, InterruptedException {
-        return (Float)call("getSecondLimitDistance").get();
-    }
-
-    /**
-    * Computes the engagement zone in which an object is from its position in FRAME_ROBOT
-    * 
-    * @param x  X coordinate of the object in FRAME_ROBOT
-    * @param y  Y coordinate of the object in FRAME_ROBOT
-    * @param z  Z coordinate of the object in FRAME_ROBOT
-    * @return Engagement zone of the object
-    */
-    public Integer computeEngagementZone(Float x, Float y, Float z) throws CallError, InterruptedException {
-        return (Integer)call("computeEngagementZone", x, y, z).get();
     }
 
     /**
@@ -221,15 +212,6 @@ public class ALEngagementZones extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
     }
 
     /**
@@ -402,6 +384,15 @@ public class ALEngagementZones extends ALProxy {
         return (Boolean)call("isPaused").get();
     }
 
+    /**
+    * Changes the pause status of the extractor
+    * 
+    * @param status  New pause satus
+    */
+    public void pause(Boolean status) throws CallError, InterruptedException{
+        call("pause", status).get();
+    }
+
 
     public class AsyncALEngagementZones extends ALProxy {
 
@@ -410,46 +401,21 @@ public class ALEngagementZones extends ALProxy {
         }
     
     /**
-    * Set the first distance used for the delimitation of the engagement zones (nearest limit)
+    * Get the first distance used for the delimitation of the engagement zones (nearest limit)
     * 
-    * @param distance  New first distance (in meters) for delimitation (nearest limit), it should be positive and smaller than the second distance
-    * @return The Future
+    * @return Current first distance (in meters) used for delimitation (nearest limit)
     */
-    public Future<Void> setFirstLimitDistance(Float distance) throws CallError, InterruptedException{
-        return call("setFirstLimitDistance", distance);
+    public Future<Float> getFirstLimitDistance() throws CallError, InterruptedException {
+        return call("getFirstLimitDistance");
     }
 
     /**
-    * Computes the engagement zone in which an object is from its anglular position in the camera image, its distance from the robot, and the position of the camera in FRAME_ROBOT
+    * Gets extractor running status
     * 
-    * @param xAngle  X angular coordinate of the object in the image
-    * @param yAngle  Y angular coordinate of the object in the image
-    * @param distance  distance of the object from the robot
-    * @param cameraPositionRobot  camera position in FRAME_ROBOT
-    * @return Engagement zone of the object
+    * @return True if the extractor is currently processing images, False if not
     */
-    public Future<Integer> computeEngagementZone(Float xAngle, Float yAngle, Float distance, Object cameraPositionRobot) throws CallError, InterruptedException {
-        return call("computeEngagementZone", xAngle, yAngle, distance, cameraPositionRobot);
-    }
-
-    /**
-    * Changes the pause status of the extractor
-    * 
-    * @param status  New pause satus
-    * @return The Future
-    */
-    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
-        return call("pause", status);
-    }
-
-    /**
-    * Set the angle used for the delimitation of the engagement zones
-    * 
-    * @param angle  New angle (in degrees) for delimitation, it should be below 180
-    * @return The Future
-    */
-    public Future<Void> setLimitAngle(Float angle) throws CallError, InterruptedException{
-        return call("setLimitAngle", angle);
+    public Future<Boolean> isProcessing() throws CallError, InterruptedException {
+        return call("isProcessing");
     }
 
     /**
@@ -462,12 +428,13 @@ public class ALEngagementZones extends ALProxy {
     }
 
     /**
-    * Get the first distance used for the delimitation of the engagement zones (nearest limit)
+    * Set the first distance used for the delimitation of the engagement zones (nearest limit)
     * 
-    * @return Current first distance (in meters) used for delimitation (nearest limit)
+    * @param distance  New first distance (in meters) for delimitation (nearest limit), it should be positive and smaller than the second distance
+    * @return The Future
     */
-    public Future<Float> getFirstLimitDistance() throws CallError, InterruptedException {
-        return call("getFirstLimitDistance");
+    public Future<Void> setFirstLimitDistance(Float distance) throws CallError, InterruptedException{
+        return call("setFirstLimitDistance", distance);
     }
 
     /**
@@ -481,21 +448,22 @@ public class ALEngagementZones extends ALProxy {
     }
 
     /**
-    * Gets extractor running status
-    * 
-    * @return True if the extractor is currently processing images, False if not
-    */
-    public Future<Boolean> isProcessing() throws CallError, InterruptedException {
-        return call("isProcessing");
-    }
-
-    /**
     * Get the second distance used for the delimitation of the engagement zones (furthest limit)
     * 
     * @return Current second distance (in meters) used for delimitation (furthest limit)
     */
     public Future<Float> getSecondLimitDistance() throws CallError, InterruptedException {
         return call("getSecondLimitDistance");
+    }
+
+    /**
+    * Set the angle used for the delimitation of the engagement zones
+    * 
+    * @param angle  New angle (in degrees) for delimitation, it should be below 180
+    * @return The Future
+    */
+    public Future<Void> setLimitAngle(Float angle) throws CallError, InterruptedException{
+        return call("setLimitAngle", angle);
     }
 
     /**
@@ -508,6 +476,19 @@ public class ALEngagementZones extends ALProxy {
     */
     public Future<Integer> computeEngagementZone(Float x, Float y, Float z) throws CallError, InterruptedException {
         return call("computeEngagementZone", x, y, z);
+    }
+
+    /**
+    * Computes the engagement zone in which an object is from its anglular position in the camera image, its distance from the robot, and the position of the camera in FRAME_ROBOT
+    * 
+    * @param xAngle  X angular coordinate of the object in the image
+    * @param yAngle  Y angular coordinate of the object in the image
+    * @param distance  distance of the object from the robot
+    * @param cameraPositionRobot  camera position in FRAME_ROBOT
+    * @return Engagement zone of the object
+    */
+    public Future<Integer> computeEngagementZone(Float xAngle, Float yAngle, Float distance, Object cameraPositionRobot) throws CallError, InterruptedException {
+        return call("computeEngagementZone", xAngle, yAngle, distance, cameraPositionRobot);
     }
 
     /**
@@ -599,16 +580,6 @@ public class ALEngagementZones extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
     }
 
     /**
@@ -785,6 +756,16 @@ public class ALEngagementZones extends ALProxy {
     */
     public Future<Boolean> isPaused() throws CallError, InterruptedException {
         return call("isPaused");
+    }
+
+    /**
+    * Changes the pause status of the extractor
+    * 
+    * @param status  New pause satus
+    * @return The Future
+    */
+    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
+        return call("pause", status);
     }
 
     }

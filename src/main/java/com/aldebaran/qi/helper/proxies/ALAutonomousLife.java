@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * Manages the focused Activity and Autonomous Life state
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/interaction/autonomouslife.html#autonomouslife">NAOqi APIs for ALAutonomousLife </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/interaction/autonomouslife.html#autonomouslife">NAOqi APIs for ALAutonomousLife </a>
+* NAOqi V2.3.x
 */
 public class ALAutonomousLife extends ALProxy {
 
@@ -38,63 +38,31 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
+    * Get launch count, last completion time, etc for activities with autonomous launch trigger conditions.
     * 
-    * 
+    * @return A map of activity names, with a cooresponding map of  "prevStartTime", "prevCompletionTime", "startCount", "totalDuration". Times are 0 for unlaunched Activities
     */
-    public Map<String, Map<String, Integer>> getActivityStatistics() throws CallError, InterruptedException {
-        return (Map<String, Map<String, Integer>>)call("getActivityStatistics").get();
+    public Map<String, Map<String, Integer>> getAutonomousActivityStatistics() throws CallError, InterruptedException {
+        return (Map<String, Map<String, Integer>>)call("getAutonomousActivityStatistics").get();
     }
 
     /**
+    * Get the time in seconds as life sees it.  Based on gettimeofday()
     * 
-    * 
+    * @return The int time in seconds as Autonomous Life sees it
     */
-    public List<Tuple2<String, Integer>> getStateHistory(Integer param1) throws CallError, InterruptedException {
-        return (List<Tuple2<String, Integer>>)call("getStateHistory", param1).get();
+    public Integer getLifeTime() throws CallError, InterruptedException {
+        return (Integer)call("getLifeTime").get();
     }
 
     /**
-    * Stops the focused activity and clears stack of activities
+    * Get a value of an ALMemory key that is used in a condition, which is the value at the previous autonomous activity focus.
     * 
+    * @param name  Name of the ALMemory key to get.  Will throw if key is not used in any activity conditions.
+    * @return An array of the ALValue of the memory key and timestamp of when it was set: [seconds, microseconds, value]
     */
-    public void stopAll() throws CallError, InterruptedException{
-        call("stopAll").get();
-    }
-
-    /**
-    * 
-    * 
-    */
-    public void setAutonomousAbilityEnabled(String param1, Boolean param2) throws CallError, InterruptedException{
-        call("setAutonomousAbilityEnabled", param1, param2).get();
-    }
-
-    /**
-    * Know is an Autonomous Ability is enabled or not
-    * 
-    * @param autonomousAbility  The Autonomous Ability.
-    * @return True if the Autonomous Ability is enabled, False otherwise.
-    */
-    public Boolean getAutonomousAbilityEnabled(String autonomousAbility) throws CallError, InterruptedException {
-        return (Boolean)call("getAutonomousAbilityEnabled", autonomousAbility).get();
-    }
-
-    /**
-    * Get a list of permissions that would be violated by a given activity in the current context.
-    * 
-    * @param name  The name of the activity to check.
-    * @return An array of strings of the violated permissions. EG: ["nature", "canRunOnPod", "canRunInSleep"]
-    */
-    public List<String> getActivityContextPermissionViolations(String name) throws CallError, InterruptedException {
-        return (List<String>)call("getActivityContextPermissionViolations", name).get();
-    }
-
-    /**
-    * Start monitoring ALMemory and reporting conditional triggers with AutonomousLaunchpad.
-    * 
-    */
-    public void startMonitoringLaunchpadConditions() throws CallError, InterruptedException{
-        call("startMonitoringLaunchpadConditions").get();
+    public Object getFocusContext(String name) throws CallError, InterruptedException {
+        return (Object)call("getFocusContext", name).get();
     }
 
     /**
@@ -115,13 +83,13 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
-    * Temporarily enables/disables AutonomousLaunchpad Plugins
+    * Returns the nature of an activity
     * 
-    * @param plugin_name  The name of the plugin to enable/disable
-    * @param enabled  Whether or not to enable this plugin
+    * @param activity_name  The package_name/activity_name to check
+    * @return Possible values are: solitary, interactive
     */
-    public void setLaunchpadPluginEnabled(String plugin_name, Boolean enabled) throws CallError, InterruptedException{
-        call("setLaunchpadPluginEnabled", plugin_name, enabled).get();
+    public String getActivityNature(String activity_name) throws CallError, InterruptedException {
+        return (String)call("getActivityNature", activity_name).get();
     }
 
     /**
@@ -134,13 +102,13 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
-    * Returns the nature of an activity
+    * Get a list of AutonomousLaunchpad Plugins that belong to specified group
     * 
-    * @param activity_name  The package_name/activity_name to check
-    * @return Possible values are: solitary, interactive
+    * @param group  The group to search for the plugins
+    * @return A list of strings of the plugins belonging to the group.
     */
-    public String getActivityNature(String activity_name) throws CallError, InterruptedException {
-        return (String)call("getActivityNature", activity_name).get();
+    public List<String> getLaunchpadPluginsForGroup(String group) throws CallError, InterruptedException {
+        return (List<String>)call("getLaunchpadPluginsForGroup", group).get();
     }
 
     /**
@@ -159,6 +127,14 @@ public class ALAutonomousLife extends ALProxy {
     */
     public Float getRobotOffsetFromFloor() throws CallError, InterruptedException {
         return (Float)call("getRobotOffsetFromFloor").get();
+    }
+
+    /**
+    * 
+    * 
+    */
+    public Map<String, Map<String, Integer>> getActivityStatistics() throws CallError, InterruptedException {
+        return (Map<String, Map<String, Integer>>)call("getActivityStatistics").get();
     }
 
     /**
@@ -182,30 +158,11 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
-    * Get launch count, last completion time, etc for activities with autonomous launch trigger conditions.
-    * 
-    * @return A map of activity names, with a cooresponding map of  "prevStartTime", "prevCompletionTime", "startCount", "totalDuration". Times are 0 for unlaunched Activities
-    */
-    public Map<String, Map<String, Integer>> getAutonomousActivityStatistics() throws CallError, InterruptedException {
-        return (Map<String, Map<String, Integer>>)call("getAutonomousActivityStatistics").get();
-    }
-
-    /**
     * 
     * 
     */
     public List<Tuple2<String, Integer>> getFocusHistory() throws CallError, InterruptedException {
         return (List<Tuple2<String, Integer>>)call("getFocusHistory").get();
-    }
-
-    /**
-    * Get a value of an ALMemory key that is used in a condition, which is the value at the previous autonomous activity focus.
-    * 
-    * @param name  Name of the ALMemory key to get.  Will throw if key is not used in any activity conditions.
-    * @return An array of the ALValue of the memory key and timestamp of when it was set: [seconds, microseconds, value]
-    */
-    public Object getFocusContext(String name) throws CallError, InterruptedException {
-        return (Object)call("getFocusContext", name).get();
     }
 
     /**
@@ -217,6 +174,16 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
+    * Get a list of permissions that would be violated by a given activity in the current context.
+    * 
+    * @param name  The name of the activity to check.
+    * @return An array of strings of the violated permissions. EG: ["nature", "canRunOnPod", "canRunInSleep"]
+    */
+    public List<String> getActivityContextPermissionViolations(String name) throws CallError, InterruptedException {
+        return (List<String>)call("getActivityContextPermissionViolations", name).get();
+    }
+
+    /**
     * 
     * 
     */
@@ -225,31 +192,29 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
-    * Get the time in seconds as life sees it.  Based on gettimeofday()
     * 
-    * @return The int time in seconds as Autonomous Life sees it
+    * 
     */
-    public Integer getLifeTime() throws CallError, InterruptedException {
-        return (Integer)call("getLifeTime").get();
+    public List<Tuple2<String, Integer>> getStateHistory(Integer param1) throws CallError, InterruptedException {
+        return (List<Tuple2<String, Integer>>)call("getStateHistory", param1).get();
     }
 
     /**
-    * Get a list of AutonomousLaunchpad Plugins that belong to specified group
+    * Start monitoring ALMemory and reporting conditional triggers with AutonomousLaunchpad.
     * 
-    * @param group  The group to search for the plugins
-    * @return A list of strings of the plugins belonging to the group.
     */
-    public List<String> getLaunchpadPluginsForGroup(String group) throws CallError, InterruptedException {
-        return (List<String>)call("getLaunchpadPluginsForGroup", group).get();
+    public void startMonitoringLaunchpadConditions() throws CallError, InterruptedException{
+        call("startMonitoringLaunchpadConditions").get();
     }
 
     /**
-    * Get the Autonomous Abilities status (get the autonomous abilities name and booleans to know if they are enabled or running
+    * Temporarily enables/disables AutonomousLaunchpad Plugins
     * 
-    * @return The Autonomous Abilities status. A vector containing a status for each autonomous ability. Each status is composed of the autonomous ability name, a boolean to know if it's enabled and another boolean to know if it's running.
+    * @param plugin_name  The name of the plugin to enable/disable
+    * @param enabled  Whether or not to enable this plugin
     */
-    public List<Tuple3<String, Boolean, Boolean>> getAutonomousAbilitiesStatus() throws CallError, InterruptedException {
-        return (List<Tuple3<String, Boolean, Boolean>>)call("getAutonomousAbilitiesStatus").get();
+    public void setLaunchpadPluginEnabled(String plugin_name, Boolean enabled) throws CallError, InterruptedException{
+        call("setLaunchpadPluginEnabled", plugin_name, enabled).get();
     }
 
     /**
@@ -339,15 +304,6 @@ public class ALAutonomousLife extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
     }
 
     /**
@@ -453,6 +409,14 @@ public class ALAutonomousLife extends ALProxy {
         call("stopFocus").get();
     }
 
+    /**
+    * Stops the focused activity and clears stack of activities
+    * 
+    */
+    public void stopAll() throws CallError, InterruptedException{
+        call("stopAll").get();
+    }
+
 
     public class AsyncALAutonomousLife extends ALProxy {
 
@@ -461,66 +425,31 @@ public class ALAutonomousLife extends ALProxy {
         }
     
     /**
+    * Get launch count, last completion time, etc for activities with autonomous launch trigger conditions.
     * 
-    * 
+    * @return A map of activity names, with a cooresponding map of  "prevStartTime", "prevCompletionTime", "startCount", "totalDuration". Times are 0 for unlaunched Activities
     */
-    public Future<Map<String, Map<String, Integer>>> getActivityStatistics() throws CallError, InterruptedException {
-        return call("getActivityStatistics");
+    public Future<Map<String, Map<String, Integer>>> getAutonomousActivityStatistics() throws CallError, InterruptedException {
+        return call("getAutonomousActivityStatistics");
     }
 
     /**
+    * Get the time in seconds as life sees it.  Based on gettimeofday()
     * 
-    * 
+    * @return The int time in seconds as Autonomous Life sees it
     */
-    public Future<List<Tuple2<String, Integer>>> getStateHistory(Integer param1) throws CallError, InterruptedException {
-        return call("getStateHistory", param1);
+    public Future<Integer> getLifeTime() throws CallError, InterruptedException {
+        return call("getLifeTime");
     }
 
     /**
-    * Stops the focused activity and clears stack of activities
+    * Get a value of an ALMemory key that is used in a condition, which is the value at the previous autonomous activity focus.
     * 
-    * @return The Future
+    * @param name  Name of the ALMemory key to get.  Will throw if key is not used in any activity conditions.
+    * @return An array of the ALValue of the memory key and timestamp of when it was set: [seconds, microseconds, value]
     */
-    public Future<Void> stopAll() throws CallError, InterruptedException{
-        return call("stopAll");
-    }
-
-    /**
-    * 
-    * 
-    * @return The Future
-    */
-    public Future<Void> setAutonomousAbilityEnabled(String param1, Boolean param2) throws CallError, InterruptedException{
-        return call("setAutonomousAbilityEnabled", param1, param2);
-    }
-
-    /**
-    * Know is an Autonomous Ability is enabled or not
-    * 
-    * @param autonomousAbility  The Autonomous Ability.
-    * @return True if the Autonomous Ability is enabled, False otherwise.
-    */
-    public Future<Boolean> getAutonomousAbilityEnabled(String autonomousAbility) throws CallError, InterruptedException {
-        return call("getAutonomousAbilityEnabled", autonomousAbility);
-    }
-
-    /**
-    * Get a list of permissions that would be violated by a given activity in the current context.
-    * 
-    * @param name  The name of the activity to check.
-    * @return An array of strings of the violated permissions. EG: ["nature", "canRunOnPod", "canRunInSleep"]
-    */
-    public Future<List<String>> getActivityContextPermissionViolations(String name) throws CallError, InterruptedException {
-        return call("getActivityContextPermissionViolations", name);
-    }
-
-    /**
-    * Start monitoring ALMemory and reporting conditional triggers with AutonomousLaunchpad.
-    * 
-    * @return The Future
-    */
-    public Future<Void> startMonitoringLaunchpadConditions() throws CallError, InterruptedException{
-        return call("startMonitoringLaunchpadConditions");
+    public Future<Object> getFocusContext(String name) throws CallError, InterruptedException {
+        return call("getFocusContext", name);
     }
 
     /**
@@ -542,14 +471,13 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
-    * Temporarily enables/disables AutonomousLaunchpad Plugins
+    * Returns the nature of an activity
     * 
-    * @param plugin_name  The name of the plugin to enable/disable
-    * @param enabled  Whether or not to enable this plugin
-    * @return The Future
+    * @param activity_name  The package_name/activity_name to check
+    * @return Possible values are: solitary, interactive
     */
-    public Future<Void> setLaunchpadPluginEnabled(String plugin_name, Boolean enabled) throws CallError, InterruptedException{
-        return call("setLaunchpadPluginEnabled", plugin_name, enabled);
+    public Future<String> getActivityNature(String activity_name) throws CallError, InterruptedException {
+        return call("getActivityNature", activity_name);
     }
 
     /**
@@ -562,13 +490,13 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
-    * Returns the nature of an activity
+    * Get a list of AutonomousLaunchpad Plugins that belong to specified group
     * 
-    * @param activity_name  The package_name/activity_name to check
-    * @return Possible values are: solitary, interactive
+    * @param group  The group to search for the plugins
+    * @return A list of strings of the plugins belonging to the group.
     */
-    public Future<String> getActivityNature(String activity_name) throws CallError, InterruptedException {
-        return call("getActivityNature", activity_name);
+    public Future<List<String>> getLaunchpadPluginsForGroup(String group) throws CallError, InterruptedException {
+        return call("getLaunchpadPluginsForGroup", group);
     }
 
     /**
@@ -588,6 +516,14 @@ public class ALAutonomousLife extends ALProxy {
     */
     public Future<Float> getRobotOffsetFromFloor() throws CallError, InterruptedException {
         return call("getRobotOffsetFromFloor");
+    }
+
+    /**
+    * 
+    * 
+    */
+    public Future<Map<String, Map<String, Integer>>> getActivityStatistics() throws CallError, InterruptedException {
+        return call("getActivityStatistics");
     }
 
     /**
@@ -612,30 +548,11 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
-    * Get launch count, last completion time, etc for activities with autonomous launch trigger conditions.
-    * 
-    * @return A map of activity names, with a cooresponding map of  "prevStartTime", "prevCompletionTime", "startCount", "totalDuration". Times are 0 for unlaunched Activities
-    */
-    public Future<Map<String, Map<String, Integer>>> getAutonomousActivityStatistics() throws CallError, InterruptedException {
-        return call("getAutonomousActivityStatistics");
-    }
-
-    /**
     * 
     * 
     */
     public Future<List<Tuple2<String, Integer>>> getFocusHistory() throws CallError, InterruptedException {
         return call("getFocusHistory");
-    }
-
-    /**
-    * Get a value of an ALMemory key that is used in a condition, which is the value at the previous autonomous activity focus.
-    * 
-    * @param name  Name of the ALMemory key to get.  Will throw if key is not used in any activity conditions.
-    * @return An array of the ALValue of the memory key and timestamp of when it was set: [seconds, microseconds, value]
-    */
-    public Future<Object> getFocusContext(String name) throws CallError, InterruptedException {
-        return call("getFocusContext", name);
     }
 
     /**
@@ -647,6 +564,16 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
+    * Get a list of permissions that would be violated by a given activity in the current context.
+    * 
+    * @param name  The name of the activity to check.
+    * @return An array of strings of the violated permissions. EG: ["nature", "canRunOnPod", "canRunInSleep"]
+    */
+    public Future<List<String>> getActivityContextPermissionViolations(String name) throws CallError, InterruptedException {
+        return call("getActivityContextPermissionViolations", name);
+    }
+
+    /**
     * 
     * 
     */
@@ -655,31 +582,31 @@ public class ALAutonomousLife extends ALProxy {
     }
 
     /**
-    * Get the time in seconds as life sees it.  Based on gettimeofday()
     * 
-    * @return The int time in seconds as Autonomous Life sees it
+    * 
     */
-    public Future<Integer> getLifeTime() throws CallError, InterruptedException {
-        return call("getLifeTime");
+    public Future<List<Tuple2<String, Integer>>> getStateHistory(Integer param1) throws CallError, InterruptedException {
+        return call("getStateHistory", param1);
     }
 
     /**
-    * Get a list of AutonomousLaunchpad Plugins that belong to specified group
+    * Start monitoring ALMemory and reporting conditional triggers with AutonomousLaunchpad.
     * 
-    * @param group  The group to search for the plugins
-    * @return A list of strings of the plugins belonging to the group.
+    * @return The Future
     */
-    public Future<List<String>> getLaunchpadPluginsForGroup(String group) throws CallError, InterruptedException {
-        return call("getLaunchpadPluginsForGroup", group);
+    public Future<Void> startMonitoringLaunchpadConditions() throws CallError, InterruptedException{
+        return call("startMonitoringLaunchpadConditions");
     }
 
     /**
-    * Get the Autonomous Abilities status (get the autonomous abilities name and booleans to know if they are enabled or running
+    * Temporarily enables/disables AutonomousLaunchpad Plugins
     * 
-    * @return The Autonomous Abilities status. A vector containing a status for each autonomous ability. Each status is composed of the autonomous ability name, a boolean to know if it's enabled and another boolean to know if it's running.
+    * @param plugin_name  The name of the plugin to enable/disable
+    * @param enabled  Whether or not to enable this plugin
+    * @return The Future
     */
-    public Future<List<Tuple3<String, Boolean, Boolean>>> getAutonomousAbilitiesStatus() throws CallError, InterruptedException {
-        return call("getAutonomousAbilitiesStatus");
+    public Future<Void> setLaunchpadPluginEnabled(String plugin_name, Boolean enabled) throws CallError, InterruptedException{
+        return call("setLaunchpadPluginEnabled", plugin_name, enabled);
     }
 
     /**
@@ -771,16 +698,6 @@ public class ALAutonomousLife extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
     }
 
     /**
@@ -890,6 +807,15 @@ public class ALAutonomousLife extends ALProxy {
     */
     public Future<Void> stopFocus() throws CallError, InterruptedException{
         return call("stopFocus");
+    }
+
+    /**
+    * Stops the focused activity and clears stack of activities
+    * 
+    * @return The Future
+    */
+    public Future<Void> stopAll() throws CallError, InterruptedException{
+        return call("stopAll");
     }
 
     }

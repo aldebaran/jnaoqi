@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * This module enables to detect if the robot is in a dark environment
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/vision/aldarknessdetection.html#aldarknessdetection">NAOqi APIs for ALDarknessDetection </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/vision/aldarknessdetection.html#aldarknessdetection">NAOqi APIs for ALDarknessDetection </a>
+* NAOqi V2.3.x
 */
 public class ALDarknessDetection extends ALProxy {
 
@@ -38,87 +38,12 @@ public class ALDarknessDetection extends ALProxy {
     }
 
     /**
-    * Gets extractor framerate
-    * 
-    * @return Current value of the framerate of the extractor
-    */
-    public Integer getFrameRate() throws CallError, InterruptedException {
-        return (Integer)call("getFrameRate").get();
-    }
-
-    /**
-    * Changes the pause status of the extractor
-    * 
-    * @param paused  New pause satus
-    */
-    public void pause(Boolean paused) throws CallError, InterruptedException{
-        call("pause", paused).get();
-    }
-
-    /**
-    * Sets the extractor framerate for all the subscribers
-    * 
-    * @param framerate  New framerate
-    * @return True if the update succeeded, False if not
-    */
-    public Boolean setFrameRate(Integer framerate) throws CallError, InterruptedException {
-        return (Boolean)call("setFrameRate", framerate).get();
-    }
-
-    /**
-    * Enables to change the DarknessThreshold for isItDark
-    * 
-    * @param threshold  New darkness threshold (between 0 and 100)
-    */
-    public void setDarknessThreshold(Integer threshold) throws CallError, InterruptedException{
-        call("setDarknessThreshold", threshold).get();
-    }
-
-    /**
-    * Returns the current DarknessThreshold for isItDark
-    * 
-    * @return Current darkness threshold value
-    */
-    public Integer getDarknessThreshold() throws CallError, InterruptedException {
-        return (Integer)call("getDarknessThreshold").get();
-    }
-
-    /**
-    * Sets extractor active camera
-    * 
-    * @param cameraId  Id of the camera that will become the active camera
-    * @return True if the update succeeded, False if not
-    */
-    public Boolean setActiveCamera(Integer cameraId) throws CallError, InterruptedException {
-        return (Boolean)call("setActiveCamera", cameraId).get();
-    }
-
-    /**
-    * DEPRECATED: Sets pause and resolution
-    * 
-    * @param paramName  Name of the parameter to set
-    * @param value  New value
-    */
-    public void setParameter(String paramName, Object value) throws CallError, InterruptedException{
-        call("setParameter", paramName, value).get();
-    }
-
-    /**
     * Gets extractor resolution
     * 
     * @return Current value of the resolution of the extractor
     */
     public Integer getResolution() throws CallError, InterruptedException {
         return (Integer)call("getResolution").get();
-    }
-
-    /**
-    * Gets extractor active camera
-    * 
-    * @return Id of the current active camera of the extractor
-    */
-    public Integer getActiveCamera() throws CallError, InterruptedException {
-        return (Integer)call("getActiveCamera").get();
     }
 
     /**
@@ -132,6 +57,43 @@ public class ALDarknessDetection extends ALProxy {
     }
 
     /**
+    * Returns the current DarknessThreshold for isItDark
+    * 
+    * @return Current darkness threshold value
+    */
+    public Integer getDarknessThreshold() throws CallError, InterruptedException {
+        return (Integer)call("getDarknessThreshold").get();
+    }
+
+    /**
+    * DEPRECATED: Sets pause and resolution
+    * 
+    * @param paramName  Name of the parameter to set
+    * @param value  New value
+    */
+    public void setParameter(String paramName, Object value) throws CallError, InterruptedException{
+        call("setParameter", paramName, value).get();
+    }
+
+    /**
+    * Gets extractor framerate
+    * 
+    * @return Current value of the framerate of the extractor
+    */
+    public Integer getFrameRate() throws CallError, InterruptedException {
+        return (Integer)call("getFrameRate").get();
+    }
+
+    /**
+    * Gets extractor active camera
+    * 
+    * @return Id of the current active camera of the extractor
+    */
+    public Integer getActiveCamera() throws CallError, InterruptedException {
+        return (Integer)call("getActiveCamera").get();
+    }
+
+    /**
     * Gets extractor pause status
     * 
     * @return True if the extractor is paused, False if not
@@ -141,12 +103,40 @@ public class ALDarknessDetection extends ALProxy {
     }
 
     /**
+    * Sets extractor active camera
+    * 
+    * @param cameraId  Id of the camera that will become the active camera
+    * @return True if the update succeeded, False if not
+    */
+    public Boolean setActiveCamera(Integer cameraId) throws CallError, InterruptedException {
+        return (Boolean)call("setActiveCamera", cameraId).get();
+    }
+
+    /**
     * Gets extractor running status
     * 
     * @return True if the extractor is currently processing images, False if not
     */
     public Boolean isProcessing() throws CallError, InterruptedException {
         return (Boolean)call("isProcessing").get();
+    }
+
+    /**
+    * Changes the pause status of the extractor
+    * 
+    * @param paused  New pause satus
+    */
+    public void pause(Boolean paused) throws CallError, InterruptedException{
+        call("pause", paused).get();
+    }
+
+    /**
+    * Enables to change the DarknessThreshold for isItDark
+    * 
+    * @param threshold  New darkness threshold (between 0 and 100)
+    */
+    public void setDarknessThreshold(Integer threshold) throws CallError, InterruptedException{
+        call("setDarknessThreshold", threshold).get();
     }
 
     /**
@@ -236,15 +226,6 @@ public class ALDarknessDetection extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
     }
 
     /**
@@ -419,6 +400,16 @@ public class ALDarknessDetection extends ALProxy {
         return (Boolean)call("setFrameRate", subscriberName, framerate).get();
     }
 
+    /**
+    * Sets the extractor framerate for all the subscribers
+    * 
+    * @param framerate  New framerate
+    * @return True if the update succeeded, False if not
+    */
+    public Boolean setFrameRate(Integer framerate) throws CallError, InterruptedException {
+        return (Boolean)call("setFrameRate", framerate).get();
+    }
+
 
     public class AsyncALDarknessDetection extends ALProxy {
 
@@ -427,42 +418,22 @@ public class ALDarknessDetection extends ALProxy {
         }
     
     /**
-    * Gets extractor framerate
+    * Gets extractor resolution
     * 
-    * @return Current value of the framerate of the extractor
+    * @return Current value of the resolution of the extractor
     */
-    public Future<Integer> getFrameRate() throws CallError, InterruptedException {
-        return call("getFrameRate");
+    public Future<Integer> getResolution() throws CallError, InterruptedException {
+        return call("getResolution");
     }
 
     /**
-    * Changes the pause status of the extractor
+    * Sets extractor resolution
     * 
-    * @param paused  New pause satus
-    * @return The Future
-    */
-    public Future<Void> pause(Boolean paused) throws CallError, InterruptedException{
-        return call("pause", paused);
-    }
-
-    /**
-    * Sets the extractor framerate for all the subscribers
-    * 
-    * @param framerate  New framerate
+    * @param resolution  New resolution
     * @return True if the update succeeded, False if not
     */
-    public Future<Boolean> setFrameRate(Integer framerate) throws CallError, InterruptedException {
-        return call("setFrameRate", framerate);
-    }
-
-    /**
-    * Enables to change the DarknessThreshold for isItDark
-    * 
-    * @param threshold  New darkness threshold (between 0 and 100)
-    * @return The Future
-    */
-    public Future<Void> setDarknessThreshold(Integer threshold) throws CallError, InterruptedException{
-        return call("setDarknessThreshold", threshold);
+    public Future<Boolean> setResolution(Integer resolution) throws CallError, InterruptedException {
+        return call("setResolution", resolution);
     }
 
     /**
@@ -472,16 +443,6 @@ public class ALDarknessDetection extends ALProxy {
     */
     public Future<Integer> getDarknessThreshold() throws CallError, InterruptedException {
         return call("getDarknessThreshold");
-    }
-
-    /**
-    * Sets extractor active camera
-    * 
-    * @param cameraId  Id of the camera that will become the active camera
-    * @return True if the update succeeded, False if not
-    */
-    public Future<Boolean> setActiveCamera(Integer cameraId) throws CallError, InterruptedException {
-        return call("setActiveCamera", cameraId);
     }
 
     /**
@@ -496,12 +457,12 @@ public class ALDarknessDetection extends ALProxy {
     }
 
     /**
-    * Gets extractor resolution
+    * Gets extractor framerate
     * 
-    * @return Current value of the resolution of the extractor
+    * @return Current value of the framerate of the extractor
     */
-    public Future<Integer> getResolution() throws CallError, InterruptedException {
-        return call("getResolution");
+    public Future<Integer> getFrameRate() throws CallError, InterruptedException {
+        return call("getFrameRate");
     }
 
     /**
@@ -514,16 +475,6 @@ public class ALDarknessDetection extends ALProxy {
     }
 
     /**
-    * Sets extractor resolution
-    * 
-    * @param resolution  New resolution
-    * @return True if the update succeeded, False if not
-    */
-    public Future<Boolean> setResolution(Integer resolution) throws CallError, InterruptedException {
-        return call("setResolution", resolution);
-    }
-
-    /**
     * Gets extractor pause status
     * 
     * @return True if the extractor is paused, False if not
@@ -533,12 +484,42 @@ public class ALDarknessDetection extends ALProxy {
     }
 
     /**
+    * Sets extractor active camera
+    * 
+    * @param cameraId  Id of the camera that will become the active camera
+    * @return True if the update succeeded, False if not
+    */
+    public Future<Boolean> setActiveCamera(Integer cameraId) throws CallError, InterruptedException {
+        return call("setActiveCamera", cameraId);
+    }
+
+    /**
     * Gets extractor running status
     * 
     * @return True if the extractor is currently processing images, False if not
     */
     public Future<Boolean> isProcessing() throws CallError, InterruptedException {
         return call("isProcessing");
+    }
+
+    /**
+    * Changes the pause status of the extractor
+    * 
+    * @param paused  New pause satus
+    * @return The Future
+    */
+    public Future<Void> pause(Boolean paused) throws CallError, InterruptedException{
+        return call("pause", paused);
+    }
+
+    /**
+    * Enables to change the DarknessThreshold for isItDark
+    * 
+    * @param threshold  New darkness threshold (between 0 and 100)
+    * @return The Future
+    */
+    public Future<Void> setDarknessThreshold(Integer threshold) throws CallError, InterruptedException{
+        return call("setDarknessThreshold", threshold);
     }
 
     /**
@@ -630,16 +611,6 @@ public class ALDarknessDetection extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
     }
 
     /**
@@ -818,6 +789,16 @@ public class ALDarknessDetection extends ALProxy {
     */
     public Future<Boolean> setFrameRate(String subscriberName, Integer framerate) throws CallError, InterruptedException {
         return call("setFrameRate", subscriberName, framerate);
+    }
+
+    /**
+    * Sets the extractor framerate for all the subscribers
+    * 
+    * @param framerate  New framerate
+    * @return True if the update succeeded, False if not
+    */
+    public Future<Boolean> setFrameRate(Integer framerate) throws CallError, InterruptedException {
+        return call("setFrameRate", framerate);
     }
 
     }

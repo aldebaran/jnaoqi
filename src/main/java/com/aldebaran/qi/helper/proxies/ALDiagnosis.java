@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * This module is dedicated to Aldebaran Robots Diagnosis.
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/diagnosis/aldiagnosis.html#aldiagnosis">NAOqi APIs for ALDiagnosis </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/diagnosis/aldiagnosis.html#aldiagnosis">NAOqi APIs for ALDiagnosis </a>
+* NAOqi V2.3.x
 */
 public class ALDiagnosis extends ALProxy {
 
@@ -127,15 +127,6 @@ public class ALDiagnosis extends ALProxy {
     }
 
     /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
-    }
-
-    /**
     * Returns true if the method is currently running.
     * 
     * @param id  The ID of the method that was returned when calling the method using 'post'
@@ -176,7 +167,6 @@ public class ALDiagnosis extends ALProxy {
     /**
     * The actual state of the passive diagnosis.
     * 
-    * @return Return the passive diagnosis last result.
     */
     public Object getPassiveDiagnosis() throws CallError, InterruptedException {
         return (Object)call("getPassiveDiagnosis").get();
@@ -185,19 +175,9 @@ public class ALDiagnosis extends ALProxy {
     /**
     * The actual state of the active diagnosis.
     * 
-    * @return Return the active diagnosis last result.
     */
     public Object getActiveDiagnosis() throws CallError, InterruptedException {
         return (Object)call("getActiveDiagnosis").get();
-    }
-
-    /**
-    * The actual state of the active and passive diagnosis.
-    * 
-    * @return Return the active and passive last result.
-    */
-    public Object getDiagnosisStatus() throws CallError, InterruptedException {
-        return (Object)call("getDiagnosisStatus").get();
     }
 
     /**
@@ -317,16 +297,6 @@ public class ALDiagnosis extends ALProxy {
     }
 
     /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
-    }
-
-    /**
     * Returns true if the method is currently running.
     * 
     * @param id  The ID of the method that was returned when calling the method using 'post'
@@ -368,7 +338,6 @@ public class ALDiagnosis extends ALProxy {
     /**
     * The actual state of the passive diagnosis.
     * 
-    * @return Return the passive diagnosis last result.
     */
     public Future<Object> getPassiveDiagnosis() throws CallError, InterruptedException {
         return call("getPassiveDiagnosis");
@@ -377,19 +346,9 @@ public class ALDiagnosis extends ALProxy {
     /**
     * The actual state of the active diagnosis.
     * 
-    * @return Return the active diagnosis last result.
     */
     public Future<Object> getActiveDiagnosis() throws CallError, InterruptedException {
         return call("getActiveDiagnosis");
-    }
-
-    /**
-    * The actual state of the active and passive diagnosis.
-    * 
-    * @return Return the active and passive last result.
-    */
-    public Future<Object> getDiagnosisStatus() throws CallError, InterruptedException {
-        return call("getDiagnosisStatus");
     }
 
     /**

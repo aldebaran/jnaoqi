@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * The Animated Speech module makes NAO interpret a text annotated with behaviors.
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/audio/alanimatedspeech.html#alanimatedspeech">NAOqi APIs for ALAnimatedSpeech </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/audio/alanimatedspeech.html#alanimatedspeech">NAOqi APIs for ALAnimatedSpeech </a>
+* NAOqi V2.3.x
 */
 public class ALAnimatedSpeech extends ALProxy {
 
@@ -38,12 +38,12 @@ public class ALAnimatedSpeech extends ALProxy {
     }
 
     /**
-    * Add some new links between tags and words.
+    * DEPRECATED since 1.18: use getBodyLanguageMode instead.Indicate if the body talk is enabled or not.
     * 
-    * @param tagsToWords  Map of tags to words.
+    * @return The boolean value: true means it is enabled, false means it is disabled.
     */
-    public void addTagsToWords(Object tagsToWords) throws CallError, InterruptedException{
-        call("addTagsToWords", tagsToWords).get();
+    public Boolean isBodyTalkEnabled() throws CallError, InterruptedException {
+        return (Boolean)call("isBodyTalkEnabled").get();
     }
 
     /**
@@ -56,21 +56,21 @@ public class ALAnimatedSpeech extends ALProxy {
     }
 
     /**
-    * DEPRECATED since 1.18: use getBodyLanguageMode instead.Indicate if the body talk is enabled or not.
-    * 
-    * @return The boolean value: true means it is enabled, false means it is disabled.
-    */
-    public Boolean isBodyTalkEnabled() throws CallError, InterruptedException {
-        return (Boolean)call("isBodyTalkEnabled").get();
-    }
-
-    /**
     * DEPRECATED since 1.22: use getBodyLanguageMode instead.Indicate if the body language is enabled or not.
     * 
     * @return The boolean value: true means it is enabled, false means it is disabled.
     */
     public Boolean isBodyLanguageEnabled() throws CallError, InterruptedException {
         return (Boolean)call("isBodyLanguageEnabled").get();
+    }
+
+    /**
+    * Add some new links between tags and words.
+    * 
+    * @param tagsToWords  Map of tags to words.
+    */
+    public void addTagsToWords(Object tagsToWords) throws CallError, InterruptedException{
+        call("addTagsToWords", tagsToWords).get();
     }
 
     /**
@@ -163,15 +163,6 @@ public class ALAnimatedSpeech extends ALProxy {
     }
 
     /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
-    }
-
-    /**
     * Returns true if the method is currently running.
     * 
     * @param id  The ID of the method that was returned when calling the method using 'post'
@@ -259,7 +250,7 @@ public class ALAnimatedSpeech extends ALProxy {
 
     /**
     * Set the current body language mode.
-3 modes exist: SPEAKINGMOVEMENT_MODE_DISABLED,SPEAKINGMOVEMENT_MODE_RANDOM and SPEAKINGMOVEMENT_MODE_CONTEXTUAL
+3 modes exist: BODY_LANGUAGE_MODE_DISABLED,BODY_LANGUAGE_MODE_RANDOM and BODY_LANGUAGE_MODE_CONTEXTUAL
 (see BodyLanguageMode enum for more details)
     * 
     * @param bodyLanguageMode  The choosen body language mode.
@@ -281,7 +272,7 @@ public class ALAnimatedSpeech extends ALProxy {
 
     /**
     * Set the current body language mode.
-3 modes exist: SPEAKINGMOVEMENT_MODE_DISABLED,SPEAKINGMOVEMENT_MODE_RANDOM and SPEAKINGMOVEMENT_MODE_CONTEXTUAL
+3 modes exist: BODY_LANGUAGE_MODE_DISABLED,BODY_LANGUAGE_MODE_RANDOM and BODY_LANGUAGE_MODE_CONTEXTUAL
 (see BodyLanguageMode enum for more details)
     * 
     * @return The current body language mode.
@@ -307,13 +298,12 @@ public class ALAnimatedSpeech extends ALProxy {
         }
     
     /**
-    * Add some new links between tags and words.
+    * DEPRECATED since 1.18: use getBodyLanguageMode instead.Indicate if the body talk is enabled or not.
     * 
-    * @param tagsToWords  Map of tags to words.
-    * @return The Future
+    * @return The boolean value: true means it is enabled, false means it is disabled.
     */
-    public Future<Void> addTagsToWords(Object tagsToWords) throws CallError, InterruptedException{
-        return call("addTagsToWords", tagsToWords);
+    public Future<Boolean> isBodyTalkEnabled() throws CallError, InterruptedException {
+        return call("isBodyTalkEnabled");
     }
 
     /**
@@ -327,21 +317,22 @@ public class ALAnimatedSpeech extends ALProxy {
     }
 
     /**
-    * DEPRECATED since 1.18: use getBodyLanguageMode instead.Indicate if the body talk is enabled or not.
-    * 
-    * @return The boolean value: true means it is enabled, false means it is disabled.
-    */
-    public Future<Boolean> isBodyTalkEnabled() throws CallError, InterruptedException {
-        return call("isBodyTalkEnabled");
-    }
-
-    /**
     * DEPRECATED since 1.22: use getBodyLanguageMode instead.Indicate if the body language is enabled or not.
     * 
     * @return The boolean value: true means it is enabled, false means it is disabled.
     */
     public Future<Boolean> isBodyLanguageEnabled() throws CallError, InterruptedException {
         return call("isBodyLanguageEnabled");
+    }
+
+    /**
+    * Add some new links between tags and words.
+    * 
+    * @param tagsToWords  Map of tags to words.
+    * @return The Future
+    */
+    public Future<Void> addTagsToWords(Object tagsToWords) throws CallError, InterruptedException{
+        return call("addTagsToWords", tagsToWords);
     }
 
     /**
@@ -433,16 +424,6 @@ public class ALAnimatedSpeech extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
     }
 
     /**
@@ -539,7 +520,7 @@ public class ALAnimatedSpeech extends ALProxy {
 
     /**
     * Set the current body language mode.
-3 modes exist: SPEAKINGMOVEMENT_MODE_DISABLED,SPEAKINGMOVEMENT_MODE_RANDOM and SPEAKINGMOVEMENT_MODE_CONTEXTUAL
+3 modes exist: BODY_LANGUAGE_MODE_DISABLED,BODY_LANGUAGE_MODE_RANDOM and BODY_LANGUAGE_MODE_CONTEXTUAL
 (see BodyLanguageMode enum for more details)
     * 
     * @param bodyLanguageMode  The choosen body language mode.
@@ -562,7 +543,7 @@ public class ALAnimatedSpeech extends ALProxy {
 
     /**
     * Set the current body language mode.
-3 modes exist: SPEAKINGMOVEMENT_MODE_DISABLED,SPEAKINGMOVEMENT_MODE_RANDOM and SPEAKINGMOVEMENT_MODE_CONTEXTUAL
+3 modes exist: BODY_LANGUAGE_MODE_DISABLED,BODY_LANGUAGE_MODE_RANDOM and BODY_LANGUAGE_MODE_CONTEXTUAL
 (see BodyLanguageMode enum for more details)
     * 
     * @return The current body language mode.

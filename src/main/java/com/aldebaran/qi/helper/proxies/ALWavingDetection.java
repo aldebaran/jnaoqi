@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * This module enables to detect if a person is waving at the robot. To be detected as waving, a person must be looking at the robot.
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/peopleperception/alwavingdetection.html#alwavingdetection">NAOqi APIs for ALWavingDetection </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/peopleperception/alwavingdetection.html#alwavingdetection">NAOqi APIs for ALWavingDetection </a>
+* NAOqi V2.3.x
 */
 public class ALWavingDetection extends ALProxy {
 
@@ -38,42 +38,6 @@ public class ALWavingDetection extends ALProxy {
     }
 
     /**
-    * Set minimum size of movement for waving detection
-    * 
-    * @param sensitivity  New minimum size (in meters), between 0.05m and 0.3m
-    */
-    public void setMinSize(Float sensitivity) throws CallError, InterruptedException{
-        call("setMinSize", sensitivity).get();
-    }
-
-    /**
-    * Changes the pause status of the extractor
-    * 
-    * @param status  New pause satus
-    */
-    public void pause(Boolean status) throws CallError, InterruptedException{
-        call("pause", status).get();
-    }
-
-    /**
-    * Set maximum distance for waving detection
-    * 
-    * @param maxDistance  New maximum distance (in meters), between 0.5m and 3m
-    */
-    public void setMaxDistance(Float maxDistance) throws CallError, InterruptedException{
-        call("setMaxDistance", maxDistance).get();
-    }
-
-    /**
-    * Get maximum distance for waving detection
-    * 
-    * @return Current maximum distance (in meters)
-    */
-    public Float getMaxDistance() throws CallError, InterruptedException {
-        return (Float)call("getMaxDistance").get();
-    }
-
-    /**
     * Get minimum size of movement for waving detection
     * 
     * @return Current minimum size (in meters)
@@ -89,6 +53,33 @@ public class ALWavingDetection extends ALProxy {
     */
     public Boolean isProcessing() throws CallError, InterruptedException {
         return (Boolean)call("isProcessing").get();
+    }
+
+    /**
+    * Get maximum distance for waving detection
+    * 
+    * @return Current maximum distance (in meters)
+    */
+    public Float getMaxDistance() throws CallError, InterruptedException {
+        return (Float)call("getMaxDistance").get();
+    }
+
+    /**
+    * Set minimum size of movement for waving detection
+    * 
+    * @param sensitivity  New minimum size (in meters), between 0.05m and 0.3m
+    */
+    public void setMinSize(Float sensitivity) throws CallError, InterruptedException{
+        call("setMinSize", sensitivity).get();
+    }
+
+    /**
+    * Set maximum distance for waving detection
+    * 
+    * @param maxDistance  New maximum distance (in meters), between 0.5m and 3m
+    */
+    public void setMaxDistance(Float maxDistance) throws CallError, InterruptedException{
+        call("setMaxDistance", maxDistance).get();
     }
 
     /**
@@ -178,15 +169,6 @@ public class ALWavingDetection extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
     }
 
     /**
@@ -359,6 +341,15 @@ public class ALWavingDetection extends ALProxy {
         return (Boolean)call("isPaused").get();
     }
 
+    /**
+    * Changes the pause status of the extractor
+    * 
+    * @param status  New pause satus
+    */
+    public void pause(Boolean status) throws CallError, InterruptedException{
+        call("pause", status).get();
+    }
+
 
     public class AsyncALWavingDetection extends ALProxy {
 
@@ -366,45 +357,6 @@ public class ALWavingDetection extends ALProxy {
             super();
         }
     
-    /**
-    * Set minimum size of movement for waving detection
-    * 
-    * @param sensitivity  New minimum size (in meters), between 0.05m and 0.3m
-    * @return The Future
-    */
-    public Future<Void> setMinSize(Float sensitivity) throws CallError, InterruptedException{
-        return call("setMinSize", sensitivity);
-    }
-
-    /**
-    * Changes the pause status of the extractor
-    * 
-    * @param status  New pause satus
-    * @return The Future
-    */
-    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
-        return call("pause", status);
-    }
-
-    /**
-    * Set maximum distance for waving detection
-    * 
-    * @param maxDistance  New maximum distance (in meters), between 0.5m and 3m
-    * @return The Future
-    */
-    public Future<Void> setMaxDistance(Float maxDistance) throws CallError, InterruptedException{
-        return call("setMaxDistance", maxDistance);
-    }
-
-    /**
-    * Get maximum distance for waving detection
-    * 
-    * @return Current maximum distance (in meters)
-    */
-    public Future<Float> getMaxDistance() throws CallError, InterruptedException {
-        return call("getMaxDistance");
-    }
-
     /**
     * Get minimum size of movement for waving detection
     * 
@@ -421,6 +373,35 @@ public class ALWavingDetection extends ALProxy {
     */
     public Future<Boolean> isProcessing() throws CallError, InterruptedException {
         return call("isProcessing");
+    }
+
+    /**
+    * Get maximum distance for waving detection
+    * 
+    * @return Current maximum distance (in meters)
+    */
+    public Future<Float> getMaxDistance() throws CallError, InterruptedException {
+        return call("getMaxDistance");
+    }
+
+    /**
+    * Set minimum size of movement for waving detection
+    * 
+    * @param sensitivity  New minimum size (in meters), between 0.05m and 0.3m
+    * @return The Future
+    */
+    public Future<Void> setMinSize(Float sensitivity) throws CallError, InterruptedException{
+        return call("setMinSize", sensitivity);
+    }
+
+    /**
+    * Set maximum distance for waving detection
+    * 
+    * @param maxDistance  New maximum distance (in meters), between 0.5m and 3m
+    * @return The Future
+    */
+    public Future<Void> setMaxDistance(Float maxDistance) throws CallError, InterruptedException{
+        return call("setMaxDistance", maxDistance);
     }
 
     /**
@@ -512,16 +493,6 @@ public class ALWavingDetection extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
     }
 
     /**
@@ -698,6 +669,16 @@ public class ALWavingDetection extends ALProxy {
     */
     public Future<Boolean> isPaused() throws CallError, InterruptedException {
         return call("isPaused");
+    }
+
+    /**
+    * Changes the pause status of the extractor
+    * 
+    * @param status  New pause satus
+    * @return The Future
+    */
+    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
+        return call("pause", status);
     }
 
     }

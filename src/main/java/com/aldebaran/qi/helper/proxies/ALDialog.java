@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * ALDialog is the dialog module. It allows loading a dialog file (.top), starts/stops/loads/unloads the dialog
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/interaction/dialog/aldialog.html#aldialog">NAOqi APIs for ALDialog </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/interaction/dialog/aldialog.html#aldialog">NAOqi APIs for ALDialog </a>
+* NAOqi V2.3.x
 */
 public class ALDialog extends ALProxy {
 
@@ -124,15 +124,6 @@ public class ALDialog extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
     }
 
     /**
@@ -522,51 +513,6 @@ public class ALDialog extends ALProxy {
     }
 
     /**
-    * Set the confidence threshold
-    * 
-    * @param strategy  Name of the concept
-    * @param confidence  Language of the concept
-    */
-    public void setConfidenceThreshold(String strategy, Float confidence) throws CallError, InterruptedException{
-        call("setConfidenceThreshold", strategy, confidence).get();
-    }
-
-    /**
-    * Set the confidence threshold
-    * 
-    * @param strategy  Name of the concept
-    * @param confidence  Language of the concept
-    * @param language  language of the threshold
-    */
-    public void setConfidenceThreshold(String strategy, Float confidence, String language) throws CallError, InterruptedException{
-        call("setConfidenceThreshold", strategy, confidence, language).get();
-    }
-
-    /**
-    * Get all the confidence thresholds
-    * 
-    */
-    public Map<String, Map<String, Float>> getAllConfidenceThresholds() throws CallError, InterruptedException {
-        return (Map<String, Map<String, Float>>)call("getAllConfidenceThresholds").get();
-    }
-
-    /**
-    * Get all the confidence thresholds
-    * 
-    */
-    public Float getConfidenceThreshold(String param1, String param2) throws CallError, InterruptedException {
-        return (Float)call("getConfidenceThreshold", param1, param2).get();
-    }
-
-    /**
-    * Remove all language specific confidence thresholds
-    * 
-    */
-    public void removeAllLanguageThresholds() throws CallError, InterruptedException{
-        call("removeAllLanguageThresholds").get();
-    }
-
-    /**
     * Open a session
     * 
     * @param id  user id
@@ -710,15 +656,6 @@ public class ALDialog extends ALProxy {
     }
 
     /**
-    * Get the configuration of animated speech for the current dialog.
-    * 
-    * @return See animated speech documentation
-    */
-    public Object getAnimatedSpeechConfiguration() throws CallError, InterruptedException {
-        return (Object)call("getAnimatedSpeechConfiguration").get();
-    }
-
-    /**
     * Black list a list of application
     * 
     * @param applicationList  List of applications that cannot be launched by dialog
@@ -740,8 +677,16 @@ public class ALDialog extends ALProxy {
     * change engagement mode
     * 
     */
-    public void pause(Boolean param1) throws CallError, InterruptedException{
-        call("pause", param1).get();
+    public void pause() throws CallError, InterruptedException{
+        call("pause").get();
+    }
+
+    /**
+    * change engagement mode
+    * 
+    */
+    public void endPause() throws CallError, InterruptedException{
+        call("endPause").get();
     }
 
     /**
@@ -825,26 +770,6 @@ public class ALDialog extends ALProxy {
     */
     public void gotoTopic(String topicName) throws CallError, InterruptedException{
         call("gotoTopic", topicName).get();
-    }
-
-    /**
-    * Add a fallback plugin
-    * 
-    * @param language  The language of the plugin
-    * @param name  The name of the plugin
-    */
-    public void addFallback(String language, String name) throws CallError, InterruptedException{
-        call("addFallback", language, name).get();
-    }
-
-    /**
-    * Remove a fallback plugin
-    * 
-    * @param language  The language of the plugin
-    * @param name  The name of the plugin
-    */
-    public void removeFallback(String language, String name) throws CallError, InterruptedException{
-        call("removeFallback", language, name).get();
     }
 
     /**
@@ -1195,16 +1120,6 @@ public class ALDialog extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
     }
 
     /**
@@ -1619,54 +1534,6 @@ public class ALDialog extends ALProxy {
     }
 
     /**
-    * Set the confidence threshold
-    * 
-    * @param strategy  Name of the concept
-    * @param confidence  Language of the concept
-    * @return The Future
-    */
-    public Future<Void> setConfidenceThreshold(String strategy, Float confidence) throws CallError, InterruptedException{
-        return call("setConfidenceThreshold", strategy, confidence);
-    }
-
-    /**
-    * Set the confidence threshold
-    * 
-    * @param strategy  Name of the concept
-    * @param confidence  Language of the concept
-    * @param language  language of the threshold
-    * @return The Future
-    */
-    public Future<Void> setConfidenceThreshold(String strategy, Float confidence, String language) throws CallError, InterruptedException{
-        return call("setConfidenceThreshold", strategy, confidence, language);
-    }
-
-    /**
-    * Get all the confidence thresholds
-    * 
-    */
-    public Future<Map<String, Map<String, Float>>> getAllConfidenceThresholds() throws CallError, InterruptedException {
-        return call("getAllConfidenceThresholds");
-    }
-
-    /**
-    * Get all the confidence thresholds
-    * 
-    */
-    public Future<Float> getConfidenceThreshold(String param1, String param2) throws CallError, InterruptedException {
-        return call("getConfidenceThreshold", param1, param2);
-    }
-
-    /**
-    * Remove all language specific confidence thresholds
-    * 
-    * @return The Future
-    */
-    public Future<Void> removeAllLanguageThresholds() throws CallError, InterruptedException{
-        return call("removeAllLanguageThresholds");
-    }
-
-    /**
     * Open a session
     * 
     * @param id  user id
@@ -1824,15 +1691,6 @@ public class ALDialog extends ALProxy {
     }
 
     /**
-    * Get the configuration of animated speech for the current dialog.
-    * 
-    * @return See animated speech documentation
-    */
-    public Future<Object> getAnimatedSpeechConfiguration() throws CallError, InterruptedException {
-        return call("getAnimatedSpeechConfiguration");
-    }
-
-    /**
     * Black list a list of application
     * 
     * @param applicationList  List of applications that cannot be launched by dialog
@@ -1856,8 +1714,17 @@ public class ALDialog extends ALProxy {
     * 
     * @return The Future
     */
-    public Future<Void> pause(Boolean param1) throws CallError, InterruptedException{
-        return call("pause", param1);
+    public Future<Void> pause() throws CallError, InterruptedException{
+        return call("pause");
+    }
+
+    /**
+    * change engagement mode
+    * 
+    * @return The Future
+    */
+    public Future<Void> endPause() throws CallError, InterruptedException{
+        return call("endPause");
     }
 
     /**
@@ -1948,28 +1815,6 @@ public class ALDialog extends ALProxy {
     */
     public Future<Void> gotoTopic(String topicName) throws CallError, InterruptedException{
         return call("gotoTopic", topicName);
-    }
-
-    /**
-    * Add a fallback plugin
-    * 
-    * @param language  The language of the plugin
-    * @param name  The name of the plugin
-    * @return The Future
-    */
-    public Future<Void> addFallback(String language, String name) throws CallError, InterruptedException{
-        return call("addFallback", language, name);
-    }
-
-    /**
-    * Remove a fallback plugin
-    * 
-    * @param language  The language of the plugin
-    * @param name  The name of the plugin
-    * @return The Future
-    */
-    public Future<Void> removeFallback(String language, String name) throws CallError, InterruptedException{
-        return call("removeFallback", language, name);
     }
 
     /**

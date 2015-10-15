@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * This module controls the People Perception flow and pushes information about detected people in ALMemory.
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/peopleperception/alpeopleperception.html#alpeopleperception">NAOqi APIs for ALPeoplePerception </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/peopleperception/alpeopleperception.html#alpeopleperception">NAOqi APIs for ALPeoplePerception </a>
+* NAOqi V2.3.x
 */
 public class ALPeoplePerception extends ALProxy {
 
@@ -38,38 +38,30 @@ public class ALPeoplePerception extends ALProxy {
     }
 
     /**
-    * Gets the current maximum body height used for human detection (3D mode only).
+    * Gets the time after which a person, supposed not to be in the field of view of the camera disappears if it has not been detected.
     * 
-    * @return Maximum height in meters.
+    * @return Time in seconds.
     */
-    public Float getMaximumBodyHeight() throws CallError, InterruptedException {
-        return (Float)call("getMaximumBodyHeight").get();
+    public Float getTimeBeforePersonDisappears() throws CallError, InterruptedException {
+        return (Float)call("getTimeBeforePersonDisappears").get();
     }
 
     /**
-    * Gets the current status of graphical display in Choregraphe.
+    * Gets the current status of movement detection in Choregraphe.
     * 
-    * @return True if graphical display is enabled, False otherwise.
+    * @return True if movement detection is enabled, False otherwise.
     */
-    public Boolean isGraphicalDisplayEnabled() throws CallError, InterruptedException {
-        return (Boolean)call("isGraphicalDisplayEnabled").get();
+    public Boolean isMovementDetectionEnabled() throws CallError, InterruptedException {
+        return (Boolean)call("isMovementDetectionEnabled").get();
     }
 
     /**
-    * Changes the pause status of the extractor
+    * Gets extractor running status
     * 
-    * @param status  New pause satus
+    * @return True if the extractor is currently processing images, False if not
     */
-    public void pause(Boolean status) throws CallError, InterruptedException{
-        call("pause", status).get();
-    }
-
-    /**
-    * Empties the tracked population.
-    * 
-    */
-    public void resetPopulation() throws CallError, InterruptedException{
-        call("resetPopulation").get();
+    public Boolean isProcessing() throws CallError, InterruptedException {
+        return (Boolean)call("isProcessing").get();
     }
 
     /**
@@ -82,21 +74,21 @@ public class ALPeoplePerception extends ALProxy {
     }
 
     /**
-    * Gets the current maximum detection and tracking range.
+    * Turns graphical display in Choregraphe on or off.
     * 
-    * @return Maximum range in meters.
+    * @param enable  True to turn it on, False to turn it off.
     */
-    public Float getMaximumDetectionRange() throws CallError, InterruptedException {
-        return (Float)call("getMaximumDetectionRange").get();
+    public void setGraphicalDisplayEnabled(Boolean enable) throws CallError, InterruptedException{
+        call("setGraphicalDisplayEnabled", enable).get();
     }
 
     /**
-    * Sets the maximum range for human detection and tracking.
+    * Gets the current minimum body height used for human detection (3D mode only).
     * 
-    * @param range  Maximum range in meters.
+    * @return Minimum height in meters.
     */
-    public void setMaximumDetectionRange(Float range) throws CallError, InterruptedException{
-        call("setMaximumDetectionRange", range).get();
+    public Float getMinimumBodyHeight() throws CallError, InterruptedException {
+        return (Float)call("getMinimumBodyHeight").get();
     }
 
     /**
@@ -136,12 +128,21 @@ public class ALPeoplePerception extends ALProxy {
     }
 
     /**
-    * Gets the current minimum body height used for human detection (3D mode only).
+    * Sets the time after which a person, supposed to be in the field of view of the camera disappears if it has not been detected.
     * 
-    * @return Minimum height in meters.
+    * @param seconds  Time in seconds.
     */
-    public Float getMinimumBodyHeight() throws CallError, InterruptedException {
-        return (Float)call("getMinimumBodyHeight").get();
+    public void setTimeBeforeVisiblePersonDisappears(Float seconds) throws CallError, InterruptedException{
+        call("setTimeBeforeVisiblePersonDisappears", seconds).get();
+    }
+
+    /**
+    * Gets the current maximum body height used for human detection (3D mode only).
+    * 
+    * @return Maximum height in meters.
+    */
+    public Float getMaximumBodyHeight() throws CallError, InterruptedException {
+        return (Float)call("getMaximumBodyHeight").get();
     }
 
     /**
@@ -154,30 +155,12 @@ public class ALPeoplePerception extends ALProxy {
     }
 
     /**
-    * Gets the time after which a person, supposed not to be in the field of view of the camera disappears if it has not been detected.
-    * 
-    * @return Time in seconds.
-    */
-    public Float getTimeBeforePersonDisappears() throws CallError, InterruptedException {
-        return (Float)call("getTimeBeforePersonDisappears").get();
-    }
-
-    /**
     * Gets the time after which a person, supposed to be in the field of view of the camera disappears if it has not been detected.
     * 
     * @return Time in seconds.
     */
     public Float getTimeBeforeVisiblePersonDisappears() throws CallError, InterruptedException {
         return (Float)call("getTimeBeforeVisiblePersonDisappears").get();
-    }
-
-    /**
-    * Gets extractor running status
-    * 
-    * @return True if the extractor is currently processing images, False if not
-    */
-    public Boolean isProcessing() throws CallError, InterruptedException {
-        return (Boolean)call("isProcessing").get();
     }
 
     /**
@@ -190,6 +173,15 @@ public class ALPeoplePerception extends ALProxy {
     }
 
     /**
+    * Gets the current maximum detection and tracking range.
+    * 
+    * @return Maximum range in meters.
+    */
+    public Float getMaximumDetectionRange() throws CallError, InterruptedException {
+        return (Float)call("getMaximumDetectionRange").get();
+    }
+
+    /**
     * Gets the current status of fast mode.
     * 
     * @return True if fast mode is enabled, False otherwise.
@@ -199,30 +191,29 @@ public class ALPeoplePerception extends ALProxy {
     }
 
     /**
-    * Gets the current status of movement detection in Choregraphe.
+    * Gets the current status of graphical display in Choregraphe.
     * 
-    * @return True if movement detection is enabled, False otherwise.
+    * @return True if graphical display is enabled, False otherwise.
     */
-    public Boolean isMovementDetectionEnabled() throws CallError, InterruptedException {
-        return (Boolean)call("isMovementDetectionEnabled").get();
+    public Boolean isGraphicalDisplayEnabled() throws CallError, InterruptedException {
+        return (Boolean)call("isGraphicalDisplayEnabled").get();
     }
 
     /**
-    * Sets the time after which a person, supposed to be in the field of view of the camera disappears if it has not been detected.
+    * Empties the tracked population.
     * 
-    * @param seconds  Time in seconds.
     */
-    public void setTimeBeforeVisiblePersonDisappears(Float seconds) throws CallError, InterruptedException{
-        call("setTimeBeforeVisiblePersonDisappears", seconds).get();
+    public void resetPopulation() throws CallError, InterruptedException{
+        call("resetPopulation").get();
     }
 
     /**
-    * Turns graphical display in Choregraphe on or off.
+    * Sets the maximum range for human detection and tracking.
     * 
-    * @param enable  True to turn it on, False to turn it off.
+    * @param range  Maximum range in meters.
     */
-    public void setGraphicalDisplayEnabled(Boolean enable) throws CallError, InterruptedException{
-        call("setGraphicalDisplayEnabled", enable).get();
+    public void setMaximumDetectionRange(Float range) throws CallError, InterruptedException{
+        call("setMaximumDetectionRange", range).get();
     }
 
     /**
@@ -312,15 +303,6 @@ public class ALPeoplePerception extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
     }
 
     /**
@@ -493,6 +475,15 @@ public class ALPeoplePerception extends ALProxy {
         return (Boolean)call("isPaused").get();
     }
 
+    /**
+    * Changes the pause status of the extractor
+    * 
+    * @param status  New pause satus
+    */
+    public void pause(Boolean status) throws CallError, InterruptedException{
+        call("pause", status).get();
+    }
+
 
     public class AsyncALPeoplePerception extends ALProxy {
 
@@ -501,40 +492,30 @@ public class ALPeoplePerception extends ALProxy {
         }
     
     /**
-    * Gets the current maximum body height used for human detection (3D mode only).
+    * Gets the time after which a person, supposed not to be in the field of view of the camera disappears if it has not been detected.
     * 
-    * @return Maximum height in meters.
+    * @return Time in seconds.
     */
-    public Future<Float> getMaximumBodyHeight() throws CallError, InterruptedException {
-        return call("getMaximumBodyHeight");
+    public Future<Float> getTimeBeforePersonDisappears() throws CallError, InterruptedException {
+        return call("getTimeBeforePersonDisappears");
     }
 
     /**
-    * Gets the current status of graphical display in Choregraphe.
+    * Gets the current status of movement detection in Choregraphe.
     * 
-    * @return True if graphical display is enabled, False otherwise.
+    * @return True if movement detection is enabled, False otherwise.
     */
-    public Future<Boolean> isGraphicalDisplayEnabled() throws CallError, InterruptedException {
-        return call("isGraphicalDisplayEnabled");
+    public Future<Boolean> isMovementDetectionEnabled() throws CallError, InterruptedException {
+        return call("isMovementDetectionEnabled");
     }
 
     /**
-    * Changes the pause status of the extractor
+    * Gets extractor running status
     * 
-    * @param status  New pause satus
-    * @return The Future
+    * @return True if the extractor is currently processing images, False if not
     */
-    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
-        return call("pause", status);
-    }
-
-    /**
-    * Empties the tracked population.
-    * 
-    * @return The Future
-    */
-    public Future<Void> resetPopulation() throws CallError, InterruptedException{
-        return call("resetPopulation");
+    public Future<Boolean> isProcessing() throws CallError, InterruptedException {
+        return call("isProcessing");
     }
 
     /**
@@ -548,22 +529,22 @@ public class ALPeoplePerception extends ALProxy {
     }
 
     /**
-    * Gets the current maximum detection and tracking range.
+    * Turns graphical display in Choregraphe on or off.
     * 
-    * @return Maximum range in meters.
+    * @param enable  True to turn it on, False to turn it off.
+    * @return The Future
     */
-    public Future<Float> getMaximumDetectionRange() throws CallError, InterruptedException {
-        return call("getMaximumDetectionRange");
+    public Future<Void> setGraphicalDisplayEnabled(Boolean enable) throws CallError, InterruptedException{
+        return call("setGraphicalDisplayEnabled", enable);
     }
 
     /**
-    * Sets the maximum range for human detection and tracking.
+    * Gets the current minimum body height used for human detection (3D mode only).
     * 
-    * @param range  Maximum range in meters.
-    * @return The Future
+    * @return Minimum height in meters.
     */
-    public Future<Void> setMaximumDetectionRange(Float range) throws CallError, InterruptedException{
-        return call("setMaximumDetectionRange", range);
+    public Future<Float> getMinimumBodyHeight() throws CallError, InterruptedException {
+        return call("getMinimumBodyHeight");
     }
 
     /**
@@ -607,12 +588,22 @@ public class ALPeoplePerception extends ALProxy {
     }
 
     /**
-    * Gets the current minimum body height used for human detection (3D mode only).
+    * Sets the time after which a person, supposed to be in the field of view of the camera disappears if it has not been detected.
     * 
-    * @return Minimum height in meters.
+    * @param seconds  Time in seconds.
+    * @return The Future
     */
-    public Future<Float> getMinimumBodyHeight() throws CallError, InterruptedException {
-        return call("getMinimumBodyHeight");
+    public Future<Void> setTimeBeforeVisiblePersonDisappears(Float seconds) throws CallError, InterruptedException{
+        return call("setTimeBeforeVisiblePersonDisappears", seconds);
+    }
+
+    /**
+    * Gets the current maximum body height used for human detection (3D mode only).
+    * 
+    * @return Maximum height in meters.
+    */
+    public Future<Float> getMaximumBodyHeight() throws CallError, InterruptedException {
+        return call("getMaximumBodyHeight");
     }
 
     /**
@@ -626,30 +617,12 @@ public class ALPeoplePerception extends ALProxy {
     }
 
     /**
-    * Gets the time after which a person, supposed not to be in the field of view of the camera disappears if it has not been detected.
-    * 
-    * @return Time in seconds.
-    */
-    public Future<Float> getTimeBeforePersonDisappears() throws CallError, InterruptedException {
-        return call("getTimeBeforePersonDisappears");
-    }
-
-    /**
     * Gets the time after which a person, supposed to be in the field of view of the camera disappears if it has not been detected.
     * 
     * @return Time in seconds.
     */
     public Future<Float> getTimeBeforeVisiblePersonDisappears() throws CallError, InterruptedException {
         return call("getTimeBeforeVisiblePersonDisappears");
-    }
-
-    /**
-    * Gets extractor running status
-    * 
-    * @return True if the extractor is currently processing images, False if not
-    */
-    public Future<Boolean> isProcessing() throws CallError, InterruptedException {
-        return call("isProcessing");
     }
 
     /**
@@ -662,6 +635,15 @@ public class ALPeoplePerception extends ALProxy {
     }
 
     /**
+    * Gets the current maximum detection and tracking range.
+    * 
+    * @return Maximum range in meters.
+    */
+    public Future<Float> getMaximumDetectionRange() throws CallError, InterruptedException {
+        return call("getMaximumDetectionRange");
+    }
+
+    /**
     * Gets the current status of fast mode.
     * 
     * @return True if fast mode is enabled, False otherwise.
@@ -671,32 +653,31 @@ public class ALPeoplePerception extends ALProxy {
     }
 
     /**
-    * Gets the current status of movement detection in Choregraphe.
+    * Gets the current status of graphical display in Choregraphe.
     * 
-    * @return True if movement detection is enabled, False otherwise.
+    * @return True if graphical display is enabled, False otherwise.
     */
-    public Future<Boolean> isMovementDetectionEnabled() throws CallError, InterruptedException {
-        return call("isMovementDetectionEnabled");
+    public Future<Boolean> isGraphicalDisplayEnabled() throws CallError, InterruptedException {
+        return call("isGraphicalDisplayEnabled");
     }
 
     /**
-    * Sets the time after which a person, supposed to be in the field of view of the camera disappears if it has not been detected.
+    * Empties the tracked population.
     * 
-    * @param seconds  Time in seconds.
     * @return The Future
     */
-    public Future<Void> setTimeBeforeVisiblePersonDisappears(Float seconds) throws CallError, InterruptedException{
-        return call("setTimeBeforeVisiblePersonDisappears", seconds);
+    public Future<Void> resetPopulation() throws CallError, InterruptedException{
+        return call("resetPopulation");
     }
 
     /**
-    * Turns graphical display in Choregraphe on or off.
+    * Sets the maximum range for human detection and tracking.
     * 
-    * @param enable  True to turn it on, False to turn it off.
+    * @param range  Maximum range in meters.
     * @return The Future
     */
-    public Future<Void> setGraphicalDisplayEnabled(Boolean enable) throws CallError, InterruptedException{
-        return call("setGraphicalDisplayEnabled", enable);
+    public Future<Void> setMaximumDetectionRange(Float range) throws CallError, InterruptedException{
+        return call("setMaximumDetectionRange", range);
     }
 
     /**
@@ -788,16 +769,6 @@ public class ALPeoplePerception extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
     }
 
     /**
@@ -974,6 +945,16 @@ public class ALPeoplePerception extends ALProxy {
     */
     public Future<Boolean> isPaused() throws CallError, InterruptedException {
         return call("isPaused");
+    }
+
+    /**
+    * Changes the pause status of the extractor
+    * 
+    * @param status  New pause satus
+    * @return The Future
+    */
+    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
+        return call("pause", status);
     }
 
     }

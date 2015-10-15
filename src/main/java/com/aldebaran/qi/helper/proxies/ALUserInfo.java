@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * 
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/core/aluserinfo.html#aluserinfo">NAOqi APIs for ALUserInfo </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/core/aluserinfo.html#aluserinfo">NAOqi APIs for ALUserInfo </a>
+* NAOqi V2.3.x
 */
 public class ALUserInfo extends ALProxy {
 

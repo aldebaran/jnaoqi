@@ -14,35 +14,26 @@ import java.util.Map;
 
 import java.util.List;
 /**
-* Deals with FSR sensors.
- A MicroEvent is generated when the foot contact changed.
-The ALMemory Key is footContactChanged, its a boolean which is set to "True" if one of the foot touched the ground
-Also some fast access Memory key are available : 
- footContact (1.0f if one of the foot touched the ground)
- leftFootContact (1.0f if the left foot touched the ground)
- rightFootContact (1.0f if the right foot touched the ground)
- leftFootTotalWeight (the average weight on the left foot in Kg)
- rightFootTotalWeight (the average weight on the right foot in Kg)
-
-* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/sensors/alfsr.html#alfsr">NAOqi APIs for ALFsr </a>
+* 
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/sensors/alinfrared.html#alinfrared">NAOqi APIs for ALInfrared </a>
 * NAOqi V2.3.x
 */
-public class ALFsr extends ALProxy {
+public class ALInfrared extends ALProxy {
 
-    private AsyncALFsr asyncProxy;
+    private AsyncALInfrared asyncProxy;
 
-    public ALFsr(Session session) throws Exception{
+    public ALInfrared(Session session) throws Exception{
         super(session);
-        asyncProxy = new AsyncALFsr();
+        asyncProxy = new AsyncALInfrared();
 	    asyncProxy.setService(getService());
     }
 
     /**
      * Get the async version of this proxy
      *
-	 * @return a AsyncALFsr object
+	 * @return a AsyncALInfrared object
 	 */
-    public AsyncALFsr async() {
+    public AsyncALInfrared async() {
         return asyncProxy;
     }
 
@@ -174,9 +165,9 @@ public class ALFsr extends ALProxy {
     }
 
 
-    public class AsyncALFsr extends ALProxy {
+    public class AsyncALInfrared extends ALProxy {
 
-        protected AsyncALFsr(){
+        protected AsyncALInfrared(){
             super();
         }
     

@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * This module computes the direction of the look of a person from the orientation of his/her face. It is then possible to know if the person looks at the robot or not.
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/peopleperception/algazeanalysis.html#algazeanalysis">NAOqi APIs for ALGazeAnalysis </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/peopleperception/algazeanalysis.html#algazeanalysis">NAOqi APIs for ALGazeAnalysis </a>
+* NAOqi V2.3.x
 */
 public class ALGazeAnalysis extends ALProxy {
 
@@ -38,42 +38,6 @@ public class ALGazeAnalysis extends ALProxy {
     }
 
     /**
-    * Sets the tolerance (between 0 and 1) for deciding whether or not a person is looking at the robot after face analysis. This tolerance is used only when face analysis is enabled.
-    * 
-    * @param tolerance  New value of the tolerance (between 0 and 1).
-    */
-    public void setTolerance(Float tolerance) throws CallError, InterruptedException{
-        call("setTolerance", tolerance).get();
-    }
-
-    /**
-    * Changes the pause status of the extractor
-    * 
-    * @param status  New pause satus
-    */
-    public void pause(Boolean status) throws CallError, InterruptedException{
-        call("pause", status).get();
-    }
-
-    /**
-    * Turns face analysis on or off.
-    * 
-    * @param status  True to turn it on, False to turn it off.
-    */
-    public void setFaceAnalysisEnabled(Boolean status) throws CallError, InterruptedException{
-        call("setFaceAnalysisEnabled", status).get();
-    }
-
-    /**
-    * Gets the current status of face analysis.
-    * 
-    * @return True if face analysis is enabled, False otherwise.
-    */
-    public Boolean isFaceAnalysisEnabled() throws CallError, InterruptedException {
-        return (Boolean)call("isFaceAnalysisEnabled").get();
-    }
-
-    /**
     * Gets the tolerance used to decide whether or not a person is looking at the robot after face analysis.
     * 
     * @return Current value of the tolerance.
@@ -89,6 +53,33 @@ public class ALGazeAnalysis extends ALProxy {
     */
     public Boolean isProcessing() throws CallError, InterruptedException {
         return (Boolean)call("isProcessing").get();
+    }
+
+    /**
+    * Gets the current status of face analysis.
+    * 
+    * @return True if face analysis is enabled, False otherwise.
+    */
+    public Boolean isFaceAnalysisEnabled() throws CallError, InterruptedException {
+        return (Boolean)call("isFaceAnalysisEnabled").get();
+    }
+
+    /**
+    * Sets the tolerance (between 0 and 1) for deciding whether or not a person is looking at the robot after face analysis. This tolerance is used only when face analysis is enabled.
+    * 
+    * @param tolerance  New value of the tolerance (between 0 and 1).
+    */
+    public void setTolerance(Float tolerance) throws CallError, InterruptedException{
+        call("setTolerance", tolerance).get();
+    }
+
+    /**
+    * Turns face analysis on or off.
+    * 
+    * @param status  True to turn it on, False to turn it off.
+    */
+    public void setFaceAnalysisEnabled(Boolean status) throws CallError, InterruptedException{
+        call("setFaceAnalysisEnabled", status).get();
     }
 
     /**
@@ -178,15 +169,6 @@ public class ALGazeAnalysis extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
     }
 
     /**
@@ -359,6 +341,15 @@ public class ALGazeAnalysis extends ALProxy {
         return (Boolean)call("isPaused").get();
     }
 
+    /**
+    * Changes the pause status of the extractor
+    * 
+    * @param status  New pause satus
+    */
+    public void pause(Boolean status) throws CallError, InterruptedException{
+        call("pause", status).get();
+    }
+
 
     public class AsyncALGazeAnalysis extends ALProxy {
 
@@ -366,45 +357,6 @@ public class ALGazeAnalysis extends ALProxy {
             super();
         }
     
-    /**
-    * Sets the tolerance (between 0 and 1) for deciding whether or not a person is looking at the robot after face analysis. This tolerance is used only when face analysis is enabled.
-    * 
-    * @param tolerance  New value of the tolerance (between 0 and 1).
-    * @return The Future
-    */
-    public Future<Void> setTolerance(Float tolerance) throws CallError, InterruptedException{
-        return call("setTolerance", tolerance);
-    }
-
-    /**
-    * Changes the pause status of the extractor
-    * 
-    * @param status  New pause satus
-    * @return The Future
-    */
-    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
-        return call("pause", status);
-    }
-
-    /**
-    * Turns face analysis on or off.
-    * 
-    * @param status  True to turn it on, False to turn it off.
-    * @return The Future
-    */
-    public Future<Void> setFaceAnalysisEnabled(Boolean status) throws CallError, InterruptedException{
-        return call("setFaceAnalysisEnabled", status);
-    }
-
-    /**
-    * Gets the current status of face analysis.
-    * 
-    * @return True if face analysis is enabled, False otherwise.
-    */
-    public Future<Boolean> isFaceAnalysisEnabled() throws CallError, InterruptedException {
-        return call("isFaceAnalysisEnabled");
-    }
-
     /**
     * Gets the tolerance used to decide whether or not a person is looking at the robot after face analysis.
     * 
@@ -421,6 +373,35 @@ public class ALGazeAnalysis extends ALProxy {
     */
     public Future<Boolean> isProcessing() throws CallError, InterruptedException {
         return call("isProcessing");
+    }
+
+    /**
+    * Gets the current status of face analysis.
+    * 
+    * @return True if face analysis is enabled, False otherwise.
+    */
+    public Future<Boolean> isFaceAnalysisEnabled() throws CallError, InterruptedException {
+        return call("isFaceAnalysisEnabled");
+    }
+
+    /**
+    * Sets the tolerance (between 0 and 1) for deciding whether or not a person is looking at the robot after face analysis. This tolerance is used only when face analysis is enabled.
+    * 
+    * @param tolerance  New value of the tolerance (between 0 and 1).
+    * @return The Future
+    */
+    public Future<Void> setTolerance(Float tolerance) throws CallError, InterruptedException{
+        return call("setTolerance", tolerance);
+    }
+
+    /**
+    * Turns face analysis on or off.
+    * 
+    * @param status  True to turn it on, False to turn it off.
+    * @return The Future
+    */
+    public Future<Void> setFaceAnalysisEnabled(Boolean status) throws CallError, InterruptedException{
+        return call("setFaceAnalysisEnabled", status);
     }
 
     /**
@@ -512,16 +493,6 @@ public class ALGazeAnalysis extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
     }
 
     /**
@@ -698,6 +669,16 @@ public class ALGazeAnalysis extends ALProxy {
     */
     public Future<Boolean> isPaused() throws CallError, InterruptedException {
         return call("isPaused");
+    }
+
+    /**
+    * Changes the pause status of the extractor
+    * 
+    * @param status  New pause satus
+    * @return The Future
+    */
+    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
+        return call("pause", status);
     }
 
     }

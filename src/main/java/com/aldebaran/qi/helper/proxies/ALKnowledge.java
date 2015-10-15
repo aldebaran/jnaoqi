@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * 
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/core/alknowledge.html#alknowledge">NAOqi APIs for ALKnowledge </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/core/alknowledge.html#alknowledge">NAOqi APIs for ALKnowledge </a>
+* NAOqi V2.3.x
 */
 public class ALKnowledge extends ALProxy {
 
@@ -113,14 +113,6 @@ public class ALKnowledge extends ALProxy {
     * 
     * 
     */
-    public List<List<String>> queryTriplet(String param1, String param2, String param3, String param4) throws CallError, InterruptedException {
-        return (List<List<String>>)call("queryTriplet", param1, param2, param3, param4).get();
-    }
-
-    /**
-    * 
-    * 
-    */
     public void remove(String param1, String param2, String param3, String param4) throws CallError, InterruptedException{
         call("remove", param1, param2, param3, param4).get();
     }
@@ -145,8 +137,8 @@ public class ALKnowledge extends ALProxy {
     * 
     * 
     */
-    public void clearRules() throws CallError, InterruptedException{
-        call("clearRules").get();
+    public void performInference() throws CallError, InterruptedException{
+        call("performInference").get();
     }
 
     /**
@@ -179,30 +171,6 @@ public class ALKnowledge extends ALProxy {
     */
     public List<String> sparqlQuery(String param1) throws CallError, InterruptedException {
         return (List<String>)call("sparqlQuery", param1).get();
-    }
-
-    /**
-    * 
-    * 
-    */
-    public List<String> sparqlQuery(String param1, Boolean param2) throws CallError, InterruptedException {
-        return (List<String>)call("sparqlQuery", param1, param2).get();
-    }
-
-    /**
-    * 
-    * 
-    */
-    public void createBackupModel(Object param1) throws CallError, InterruptedException{
-        call("createBackupModel", param1).get();
-    }
-
-    /**
-    * 
-    * 
-    */
-    public void recoverBackupModel(Object param1) throws CallError, InterruptedException{
-        call("recoverBackupModel", param1).get();
     }
 
 
@@ -290,14 +258,6 @@ public class ALKnowledge extends ALProxy {
     /**
     * 
     * 
-    */
-    public Future<List<List<String>>> queryTriplet(String param1, String param2, String param3, String param4) throws CallError, InterruptedException {
-        return call("queryTriplet", param1, param2, param3, param4);
-    }
-
-    /**
-    * 
-    * 
     * @return The Future
     */
     public Future<Void> remove(String param1, String param2, String param3, String param4) throws CallError, InterruptedException{
@@ -325,8 +285,8 @@ public class ALKnowledge extends ALProxy {
     * 
     * @return The Future
     */
-    public Future<Void> clearRules() throws CallError, InterruptedException{
-        return call("clearRules");
+    public Future<Void> performInference() throws CallError, InterruptedException{
+        return call("performInference");
     }
 
     /**
@@ -362,32 +322,6 @@ public class ALKnowledge extends ALProxy {
     */
     public Future<List<String>> sparqlQuery(String param1) throws CallError, InterruptedException {
         return call("sparqlQuery", param1);
-    }
-
-    /**
-    * 
-    * 
-    */
-    public Future<List<String>> sparqlQuery(String param1, Boolean param2) throws CallError, InterruptedException {
-        return call("sparqlQuery", param1, param2);
-    }
-
-    /**
-    * 
-    * 
-    * @return The Future
-    */
-    public Future<Void> createBackupModel(Object param1) throws CallError, InterruptedException{
-        return call("createBackupModel", param1);
-    }
-
-    /**
-    * 
-    * 
-    * @return The Future
-    */
-    public Future<Void> recoverBackupModel(Object param1) throws CallError, InterruptedException{
-        return call("recoverBackupModel", param1);
     }
 
     }

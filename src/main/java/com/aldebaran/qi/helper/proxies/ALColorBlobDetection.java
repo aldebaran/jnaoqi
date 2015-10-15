@@ -17,8 +17,8 @@ import java.util.List;
 * ALColorBlobDetection is a module which can detect blobs of a certain color.
   The output value is written in ALMemory has a Tracker microEvent.
  
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/vision/alcolorblobdetection.html#alcolorblobdetection">NAOqi APIs for ALColorBlobDetection </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/vision/alcolorblobdetection.html#alcolorblobdetection">NAOqi APIs for ALColorBlobDetection </a>
+* NAOqi V2.3.x
 */
 public class ALColorBlobDetection extends ALProxy {
 
@@ -40,43 +40,22 @@ public class ALColorBlobDetection extends ALProxy {
     }
 
     /**
-    * Gets extractor framerate
+    * Gets extractor resolution
     * 
-    * @return Current value of the framerate of the extractor
+    * @return Current value of the resolution of the extractor
     */
-    public Integer getFrameRate() throws CallError, InterruptedException {
-        return (Integer)call("getFrameRate").get();
+    public Integer getResolution() throws CallError, InterruptedException {
+        return (Integer)call("getResolution").get();
     }
 
     /**
-    * Changes the pause status of the extractor
+    * Sets extractor resolution
     * 
-    * @param paused  New pause satus
-    */
-    public void pause(Boolean paused) throws CallError, InterruptedException{
-        call("pause", paused).get();
-    }
-
-    /**
-    * Sets the extractor framerate for all the subscribers
-    * 
-    * @param framerate  New framerate
+    * @param resolution  New resolution
     * @return True if the update succeeded, False if not
     */
-    public Boolean setFrameRate(Integer framerate) throws CallError, InterruptedException {
-        return (Boolean)call("setFrameRate", framerate).get();
-    }
-
-    /**
-    * Color parameter setting
-    * 
-    * @param r  The R component in RGB of the color to find
-    * @param g  The G component in RGB of the color to find
-    * @param b  The B component in RGB of the color to find
-    * @param colorThres  The color threshold
-    */
-    public void setColor(Integer r, Integer g, Integer b, Integer colorThres) throws CallError, InterruptedException{
-        call("setColor", r, g, b, colorThres).get();
+    public Boolean setResolution(Integer resolution) throws CallError, InterruptedException {
+        return (Boolean)call("setResolution", resolution).get();
     }
 
     /**
@@ -90,22 +69,24 @@ public class ALColorBlobDetection extends ALProxy {
     }
 
     /**
-    * Sets extractor active camera
+    * Object parameter setting
     * 
-    * @param cameraId  Id of the camera that will become the active camera
-    * @return True if the update succeeded, False if not
+    * @param minSize  The minimum size of the cluster to find
+    * @param span  The span of the object in meters
+    * @param shape  The shape of the object
     */
-    public Boolean setActiveCamera(Integer cameraId) throws CallError, InterruptedException {
-        return (Boolean)call("setActiveCamera", cameraId).get();
+    public void setObjectProperties(Integer minSize, Float span, String shape) throws CallError, InterruptedException{
+        call("setObjectProperties", minSize, span, shape).get();
     }
 
     /**
-    * Send back the x,y,radius of the circle if any
+    * DEPRECATED: Sets pause and resolution
     * 
-    * @return The circle as x,y,radius in image relative coordinates (x,radius divided by rows and y by cols)
+    * @param paramName  Name of the parameter to set
+    * @param value  New value
     */
-    public Object getCircle() throws CallError, InterruptedException {
-        return (Object)call("getCircle").get();
+    public void setParameter(String paramName, Object value) throws CallError, InterruptedException{
+        call("setParameter", paramName, value).get();
     }
 
     /**
@@ -127,22 +108,12 @@ public class ALColorBlobDetection extends ALProxy {
     }
 
     /**
-    * DEPRECATED: Sets pause and resolution
+    * Gets extractor framerate
     * 
-    * @param paramName  Name of the parameter to set
-    * @param value  New value
+    * @return Current value of the framerate of the extractor
     */
-    public void setParameter(String paramName, Object value) throws CallError, InterruptedException{
-        call("setParameter", paramName, value).get();
-    }
-
-    /**
-    * Gets extractor resolution
-    * 
-    * @return Current value of the resolution of the extractor
-    */
-    public Integer getResolution() throws CallError, InterruptedException {
-        return (Integer)call("getResolution").get();
+    public Integer getFrameRate() throws CallError, InterruptedException {
+        return (Integer)call("getFrameRate").get();
     }
 
     /**
@@ -155,22 +126,22 @@ public class ALColorBlobDetection extends ALProxy {
     }
 
     /**
-    * Sets extractor resolution
-    * 
-    * @param resolution  New resolution
-    * @return True if the update succeeded, False if not
-    */
-    public Boolean setResolution(Integer resolution) throws CallError, InterruptedException {
-        return (Boolean)call("setResolution", resolution).get();
-    }
-
-    /**
     * Gets extractor pause status
     * 
     * @return True if the extractor is paused, False if not
     */
     public Boolean isPaused() throws CallError, InterruptedException {
         return (Boolean)call("isPaused").get();
+    }
+
+    /**
+    * Sets extractor active camera
+    * 
+    * @param cameraId  Id of the camera that will become the active camera
+    * @return True if the update succeeded, False if not
+    */
+    public Boolean setActiveCamera(Integer cameraId) throws CallError, InterruptedException {
+        return (Boolean)call("setActiveCamera", cameraId).get();
     }
 
     /**
@@ -183,14 +154,33 @@ public class ALColorBlobDetection extends ALProxy {
     }
 
     /**
-    * Object parameter setting
+    * Changes the pause status of the extractor
     * 
-    * @param minSize  The minimum size of the cluster to find
-    * @param span  The span of the object in meters
-    * @param shape  The shape of the object
+    * @param paused  New pause satus
     */
-    public void setObjectProperties(Integer minSize, Float span, String shape) throws CallError, InterruptedException{
-        call("setObjectProperties", minSize, span, shape).get();
+    public void pause(Boolean paused) throws CallError, InterruptedException{
+        call("pause", paused).get();
+    }
+
+    /**
+    * Color parameter setting
+    * 
+    * @param r  The R component in RGB of the color to find
+    * @param g  The G component in RGB of the color to find
+    * @param b  The B component in RGB of the color to find
+    * @param colorThres  The color threshold
+    */
+    public void setColor(Integer r, Integer g, Integer b, Integer colorThres) throws CallError, InterruptedException{
+        call("setColor", r, g, b, colorThres).get();
+    }
+
+    /**
+    * Send back the x,y,radius of the circle if any
+    * 
+    * @return The circle as x,y,radius in image relative coordinates (x,radius divided by rows and y by cols)
+    */
+    public Object getCircle() throws CallError, InterruptedException {
+        return (Object)call("getCircle").get();
     }
 
     /**
@@ -280,15 +270,6 @@ public class ALColorBlobDetection extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
     }
 
     /**
@@ -463,6 +444,16 @@ public class ALColorBlobDetection extends ALProxy {
         return (Boolean)call("setFrameRate", subscriberName, framerate).get();
     }
 
+    /**
+    * Sets the extractor framerate for all the subscribers
+    * 
+    * @param framerate  New framerate
+    * @return True if the update succeeded, False if not
+    */
+    public Boolean setFrameRate(Integer framerate) throws CallError, InterruptedException {
+        return (Boolean)call("setFrameRate", framerate).get();
+    }
+
 
     public class AsyncALColorBlobDetection extends ALProxy {
 
@@ -471,45 +462,22 @@ public class ALColorBlobDetection extends ALProxy {
         }
     
     /**
-    * Gets extractor framerate
+    * Gets extractor resolution
     * 
-    * @return Current value of the framerate of the extractor
+    * @return Current value of the resolution of the extractor
     */
-    public Future<Integer> getFrameRate() throws CallError, InterruptedException {
-        return call("getFrameRate");
+    public Future<Integer> getResolution() throws CallError, InterruptedException {
+        return call("getResolution");
     }
 
     /**
-    * Changes the pause status of the extractor
+    * Sets extractor resolution
     * 
-    * @param paused  New pause satus
-    * @return The Future
-    */
-    public Future<Void> pause(Boolean paused) throws CallError, InterruptedException{
-        return call("pause", paused);
-    }
-
-    /**
-    * Sets the extractor framerate for all the subscribers
-    * 
-    * @param framerate  New framerate
+    * @param resolution  New resolution
     * @return True if the update succeeded, False if not
     */
-    public Future<Boolean> setFrameRate(Integer framerate) throws CallError, InterruptedException {
-        return call("setFrameRate", framerate);
-    }
-
-    /**
-    * Color parameter setting
-    * 
-    * @param r  The R component in RGB of the color to find
-    * @param g  The G component in RGB of the color to find
-    * @param b  The B component in RGB of the color to find
-    * @param colorThres  The color threshold
-    * @return The Future
-    */
-    public Future<Void> setColor(Integer r, Integer g, Integer b, Integer colorThres) throws CallError, InterruptedException{
-        return call("setColor", r, g, b, colorThres);
+    public Future<Boolean> setResolution(Integer resolution) throws CallError, InterruptedException {
+        return call("setResolution", resolution);
     }
 
     /**
@@ -524,22 +492,26 @@ public class ALColorBlobDetection extends ALProxy {
     }
 
     /**
-    * Sets extractor active camera
+    * Object parameter setting
     * 
-    * @param cameraId  Id of the camera that will become the active camera
-    * @return True if the update succeeded, False if not
+    * @param minSize  The minimum size of the cluster to find
+    * @param span  The span of the object in meters
+    * @param shape  The shape of the object
+    * @return The Future
     */
-    public Future<Boolean> setActiveCamera(Integer cameraId) throws CallError, InterruptedException {
-        return call("setActiveCamera", cameraId);
+    public Future<Void> setObjectProperties(Integer minSize, Float span, String shape) throws CallError, InterruptedException{
+        return call("setObjectProperties", minSize, span, shape);
     }
 
     /**
-    * Send back the x,y,radius of the circle if any
+    * DEPRECATED: Sets pause and resolution
     * 
-    * @return The circle as x,y,radius in image relative coordinates (x,radius divided by rows and y by cols)
+    * @param paramName  Name of the parameter to set
+    * @param value  New value
+    * @return The Future
     */
-    public Future<Object> getCircle() throws CallError, InterruptedException {
-        return call("getCircle");
+    public Future<Void> setParameter(String paramName, Object value) throws CallError, InterruptedException{
+        return call("setParameter", paramName, value);
     }
 
     /**
@@ -562,23 +534,12 @@ public class ALColorBlobDetection extends ALProxy {
     }
 
     /**
-    * DEPRECATED: Sets pause and resolution
+    * Gets extractor framerate
     * 
-    * @param paramName  Name of the parameter to set
-    * @param value  New value
-    * @return The Future
+    * @return Current value of the framerate of the extractor
     */
-    public Future<Void> setParameter(String paramName, Object value) throws CallError, InterruptedException{
-        return call("setParameter", paramName, value);
-    }
-
-    /**
-    * Gets extractor resolution
-    * 
-    * @return Current value of the resolution of the extractor
-    */
-    public Future<Integer> getResolution() throws CallError, InterruptedException {
-        return call("getResolution");
+    public Future<Integer> getFrameRate() throws CallError, InterruptedException {
+        return call("getFrameRate");
     }
 
     /**
@@ -591,22 +552,22 @@ public class ALColorBlobDetection extends ALProxy {
     }
 
     /**
-    * Sets extractor resolution
-    * 
-    * @param resolution  New resolution
-    * @return True if the update succeeded, False if not
-    */
-    public Future<Boolean> setResolution(Integer resolution) throws CallError, InterruptedException {
-        return call("setResolution", resolution);
-    }
-
-    /**
     * Gets extractor pause status
     * 
     * @return True if the extractor is paused, False if not
     */
     public Future<Boolean> isPaused() throws CallError, InterruptedException {
         return call("isPaused");
+    }
+
+    /**
+    * Sets extractor active camera
+    * 
+    * @param cameraId  Id of the camera that will become the active camera
+    * @return True if the update succeeded, False if not
+    */
+    public Future<Boolean> setActiveCamera(Integer cameraId) throws CallError, InterruptedException {
+        return call("setActiveCamera", cameraId);
     }
 
     /**
@@ -619,15 +580,35 @@ public class ALColorBlobDetection extends ALProxy {
     }
 
     /**
-    * Object parameter setting
+    * Changes the pause status of the extractor
     * 
-    * @param minSize  The minimum size of the cluster to find
-    * @param span  The span of the object in meters
-    * @param shape  The shape of the object
+    * @param paused  New pause satus
     * @return The Future
     */
-    public Future<Void> setObjectProperties(Integer minSize, Float span, String shape) throws CallError, InterruptedException{
-        return call("setObjectProperties", minSize, span, shape);
+    public Future<Void> pause(Boolean paused) throws CallError, InterruptedException{
+        return call("pause", paused);
+    }
+
+    /**
+    * Color parameter setting
+    * 
+    * @param r  The R component in RGB of the color to find
+    * @param g  The G component in RGB of the color to find
+    * @param b  The B component in RGB of the color to find
+    * @param colorThres  The color threshold
+    * @return The Future
+    */
+    public Future<Void> setColor(Integer r, Integer g, Integer b, Integer colorThres) throws CallError, InterruptedException{
+        return call("setColor", r, g, b, colorThres);
+    }
+
+    /**
+    * Send back the x,y,radius of the circle if any
+    * 
+    * @return The circle as x,y,radius in image relative coordinates (x,radius divided by rows and y by cols)
+    */
+    public Future<Object> getCircle() throws CallError, InterruptedException {
+        return call("getCircle");
     }
 
     /**
@@ -719,16 +700,6 @@ public class ALColorBlobDetection extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
     }
 
     /**
@@ -907,6 +878,16 @@ public class ALColorBlobDetection extends ALProxy {
     */
     public Future<Boolean> setFrameRate(String subscriberName, Integer framerate) throws CallError, InterruptedException {
         return call("setFrameRate", subscriberName, framerate);
+    }
+
+    /**
+    * Sets the extractor framerate for all the subscribers
+    * 
+    * @param framerate  New framerate
+    * @return True if the update succeeded, False if not
+    */
+    public Future<Boolean> setFrameRate(Integer framerate) throws CallError, InterruptedException {
+        return call("setFrameRate", framerate);
     }
 
     }

@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * 
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/vision/alsegmentation3D.html#alsegmentation3d">NAOqi APIs for ALSegmentation3D </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/vision/alsegmentation3D.html#alsegmentation3d">NAOqi APIs for ALSegmentation3D </a>
+* NAOqi V2.3.x
 */
 public class ALSegmentation3D extends ALProxy {
 
@@ -38,40 +38,30 @@ public class ALSegmentation3D extends ALProxy {
     }
 
     /**
-    * Sets extractor resolution
+    * Gets extractor resolution
     * 
-    * @param resolution  New resolution
-    * @return True if the update succeeded, False if not
+    * @return Current value of the resolution of the extractor
     */
-    public Boolean setResolution(Integer resolution) throws CallError, InterruptedException {
-        return (Boolean)call("setResolution", resolution).get();
+    public Integer getResolution() throws CallError, InterruptedException {
+        return (Integer)call("getResolution").get();
     }
 
     /**
-    * Turn the blob tracker on or off. When the blob tracker is running, events containing the position of the top of the tracked blob are raised.
+    * Gets the current status of the blob tracker. When the blob tracker is running, events containing the position of the top of the tracked blob are raised.
     * 
-    * @param status  True to turn it on, False to turn it off.
+    * @return True if the blob tracker is enabled, False otherwise.
     */
-    public void setBlobTrackingEnabled(Boolean status) throws CallError, InterruptedException{
-        call("setBlobTrackingEnabled", status).get();
+    public Boolean isBlobTrackingEnabled() throws CallError, InterruptedException {
+        return (Boolean)call("isBlobTrackingEnabled").get();
     }
 
     /**
-    * Changes the pause status of the extractor
+    * Gets extractor running status
     * 
-    * @param status  New pause satus
+    * @return True if the extractor is currently processing images, False if not
     */
-    public void pause(Boolean status) throws CallError, InterruptedException{
-        call("pause", status).get();
-    }
-
-    /**
-    * Sets the distance (in meters) for the blob tracker
-    * 
-    * @param distance  New value (in meters)
-    */
-    public void setBlobTrackingDistance(Float distance) throws CallError, InterruptedException{
-        call("setBlobTrackingDistance", distance).get();
+    public Boolean isProcessing() throws CallError, InterruptedException {
+        return (Boolean)call("isProcessing").get();
     }
 
     /**
@@ -83,22 +73,21 @@ public class ALSegmentation3D extends ALProxy {
     }
 
     /**
-    * Sets extractor framerate
+    * Sets the value of vertical offset (in meters) for the blob tracker
     * 
-    * @param value  New framerate
-    * @return True if the update succeeded, False if not
+    * @param value  New vertical offset (in meters), added if positive, substracted if negative
     */
-    public Boolean setFrameRate(Integer value) throws CallError, InterruptedException {
-        return (Boolean)call("setFrameRate", value).get();
+    public void setVerticalOffset(Float value) throws CallError, InterruptedException{
+        call("setVerticalOffset", value).get();
     }
 
     /**
-    * Sets the value of vertical offset (in meters) for the blob tracker
+    * Gets extractor framerate
     * 
-    * @return Current vertical offset of the blob tracker
+    * @return Current value of the framerate of the extractor
     */
-    public Float getVerticalOffset() throws CallError, InterruptedException {
-        return (Float)call("getVerticalOffset").get();
+    public Integer getFrameRate() throws CallError, InterruptedException {
+        return (Integer)call("getFrameRate").get();
     }
 
     /**
@@ -120,21 +109,13 @@ public class ALSegmentation3D extends ALProxy {
     }
 
     /**
-    * Gets extractor framerate
+    * Sets extractor resolution
     * 
-    * @return Current value of the framerate of the extractor
+    * @param resolution  New resolution
+    * @return True if the update succeeded, False if not
     */
-    public Integer getFrameRate() throws CallError, InterruptedException {
-        return (Integer)call("getFrameRate").get();
-    }
-
-    /**
-    * Gets extractor resolution
-    * 
-    * @return Current value of the resolution of the extractor
-    */
-    public Integer getResolution() throws CallError, InterruptedException {
-        return (Integer)call("getResolution").get();
+    public Boolean setResolution(Integer resolution) throws CallError, InterruptedException {
+        return (Boolean)call("setResolution", resolution).get();
     }
 
     /**
@@ -148,21 +129,22 @@ public class ALSegmentation3D extends ALProxy {
     }
 
     /**
-    * Gets extractor running status
-    * 
-    * @return True if the extractor is currently processing images, False if not
-    */
-    public Boolean isProcessing() throws CallError, InterruptedException {
-        return (Boolean)call("isProcessing").get();
-    }
-
-    /**
     * Gets extractor active camera
     * 
     * @return Id of the current active camera of the extractor
     */
     public Integer getActiveCamera() throws CallError, InterruptedException {
         return (Integer)call("getActiveCamera").get();
+    }
+
+    /**
+    * Sets extractor framerate
+    * 
+    * @param value  New framerate
+    * @return True if the update succeeded, False if not
+    */
+    public Boolean setFrameRate(Integer value) throws CallError, InterruptedException {
+        return (Boolean)call("setFrameRate", value).get();
     }
 
     /**
@@ -178,21 +160,30 @@ public class ALSegmentation3D extends ALProxy {
     }
 
     /**
-    * Gets the current status of the blob tracker. When the blob tracker is running, events containing the position of the top of the tracked blob are raised.
+    * Turn the blob tracker on or off. When the blob tracker is running, events containing the position of the top of the tracked blob are raised.
     * 
-    * @return True if the blob tracker is enabled, False otherwise.
+    * @param status  True to turn it on, False to turn it off.
     */
-    public Boolean isBlobTrackingEnabled() throws CallError, InterruptedException {
-        return (Boolean)call("isBlobTrackingEnabled").get();
+    public void setBlobTrackingEnabled(Boolean status) throws CallError, InterruptedException{
+        call("setBlobTrackingEnabled", status).get();
+    }
+
+    /**
+    * Sets the distance (in meters) for the blob tracker
+    * 
+    * @param distance  New value (in meters)
+    */
+    public void setBlobTrackingDistance(Float distance) throws CallError, InterruptedException{
+        call("setBlobTrackingDistance", distance).get();
     }
 
     /**
     * Sets the value of vertical offset (in meters) for the blob tracker
     * 
-    * @param value  New vertical offset (in meters), added if positive, substracted if negative
+    * @return Current vertical offset of the blob tracker
     */
-    public void setVerticalOffset(Float value) throws CallError, InterruptedException{
-        call("setVerticalOffset", value).get();
+    public Float getVerticalOffset() throws CallError, InterruptedException {
+        return (Float)call("getVerticalOffset").get();
     }
 
     /**
@@ -282,15 +273,6 @@ public class ALSegmentation3D extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
     }
 
     /**
@@ -463,6 +445,15 @@ public class ALSegmentation3D extends ALProxy {
         return (Boolean)call("isPaused").get();
     }
 
+    /**
+    * Changes the pause status of the extractor
+    * 
+    * @param status  New pause satus
+    */
+    public void pause(Boolean status) throws CallError, InterruptedException{
+        call("pause", status).get();
+    }
+
 
     public class AsyncALSegmentation3D extends ALProxy {
 
@@ -471,43 +462,30 @@ public class ALSegmentation3D extends ALProxy {
         }
     
     /**
-    * Sets extractor resolution
+    * Gets extractor resolution
     * 
-    * @param resolution  New resolution
-    * @return True if the update succeeded, False if not
+    * @return Current value of the resolution of the extractor
     */
-    public Future<Boolean> setResolution(Integer resolution) throws CallError, InterruptedException {
-        return call("setResolution", resolution);
+    public Future<Integer> getResolution() throws CallError, InterruptedException {
+        return call("getResolution");
     }
 
     /**
-    * Turn the blob tracker on or off. When the blob tracker is running, events containing the position of the top of the tracked blob are raised.
+    * Gets the current status of the blob tracker. When the blob tracker is running, events containing the position of the top of the tracked blob are raised.
     * 
-    * @param status  True to turn it on, False to turn it off.
-    * @return The Future
+    * @return True if the blob tracker is enabled, False otherwise.
     */
-    public Future<Void> setBlobTrackingEnabled(Boolean status) throws CallError, InterruptedException{
-        return call("setBlobTrackingEnabled", status);
+    public Future<Boolean> isBlobTrackingEnabled() throws CallError, InterruptedException {
+        return call("isBlobTrackingEnabled");
     }
 
     /**
-    * Changes the pause status of the extractor
+    * Gets extractor running status
     * 
-    * @param status  New pause satus
-    * @return The Future
+    * @return True if the extractor is currently processing images, False if not
     */
-    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
-        return call("pause", status);
-    }
-
-    /**
-    * Sets the distance (in meters) for the blob tracker
-    * 
-    * @param distance  New value (in meters)
-    * @return The Future
-    */
-    public Future<Void> setBlobTrackingDistance(Float distance) throws CallError, InterruptedException{
-        return call("setBlobTrackingDistance", distance);
+    public Future<Boolean> isProcessing() throws CallError, InterruptedException {
+        return call("isProcessing");
     }
 
     /**
@@ -519,22 +497,22 @@ public class ALSegmentation3D extends ALProxy {
     }
 
     /**
-    * Sets extractor framerate
+    * Sets the value of vertical offset (in meters) for the blob tracker
     * 
-    * @param value  New framerate
-    * @return True if the update succeeded, False if not
+    * @param value  New vertical offset (in meters), added if positive, substracted if negative
+    * @return The Future
     */
-    public Future<Boolean> setFrameRate(Integer value) throws CallError, InterruptedException {
-        return call("setFrameRate", value);
+    public Future<Void> setVerticalOffset(Float value) throws CallError, InterruptedException{
+        return call("setVerticalOffset", value);
     }
 
     /**
-    * Sets the value of vertical offset (in meters) for the blob tracker
+    * Gets extractor framerate
     * 
-    * @return Current vertical offset of the blob tracker
+    * @return Current value of the framerate of the extractor
     */
-    public Future<Float> getVerticalOffset() throws CallError, InterruptedException {
-        return call("getVerticalOffset");
+    public Future<Integer> getFrameRate() throws CallError, InterruptedException {
+        return call("getFrameRate");
     }
 
     /**
@@ -557,21 +535,13 @@ public class ALSegmentation3D extends ALProxy {
     }
 
     /**
-    * Gets extractor framerate
+    * Sets extractor resolution
     * 
-    * @return Current value of the framerate of the extractor
+    * @param resolution  New resolution
+    * @return True if the update succeeded, False if not
     */
-    public Future<Integer> getFrameRate() throws CallError, InterruptedException {
-        return call("getFrameRate");
-    }
-
-    /**
-    * Gets extractor resolution
-    * 
-    * @return Current value of the resolution of the extractor
-    */
-    public Future<Integer> getResolution() throws CallError, InterruptedException {
-        return call("getResolution");
+    public Future<Boolean> setResolution(Integer resolution) throws CallError, InterruptedException {
+        return call("setResolution", resolution);
     }
 
     /**
@@ -585,21 +555,22 @@ public class ALSegmentation3D extends ALProxy {
     }
 
     /**
-    * Gets extractor running status
-    * 
-    * @return True if the extractor is currently processing images, False if not
-    */
-    public Future<Boolean> isProcessing() throws CallError, InterruptedException {
-        return call("isProcessing");
-    }
-
-    /**
     * Gets extractor active camera
     * 
     * @return Id of the current active camera of the extractor
     */
     public Future<Integer> getActiveCamera() throws CallError, InterruptedException {
         return call("getActiveCamera");
+    }
+
+    /**
+    * Sets extractor framerate
+    * 
+    * @param value  New framerate
+    * @return True if the update succeeded, False if not
+    */
+    public Future<Boolean> setFrameRate(Integer value) throws CallError, InterruptedException {
+        return call("setFrameRate", value);
     }
 
     /**
@@ -615,22 +586,32 @@ public class ALSegmentation3D extends ALProxy {
     }
 
     /**
-    * Gets the current status of the blob tracker. When the blob tracker is running, events containing the position of the top of the tracked blob are raised.
+    * Turn the blob tracker on or off. When the blob tracker is running, events containing the position of the top of the tracked blob are raised.
     * 
-    * @return True if the blob tracker is enabled, False otherwise.
+    * @param status  True to turn it on, False to turn it off.
+    * @return The Future
     */
-    public Future<Boolean> isBlobTrackingEnabled() throws CallError, InterruptedException {
-        return call("isBlobTrackingEnabled");
+    public Future<Void> setBlobTrackingEnabled(Boolean status) throws CallError, InterruptedException{
+        return call("setBlobTrackingEnabled", status);
+    }
+
+    /**
+    * Sets the distance (in meters) for the blob tracker
+    * 
+    * @param distance  New value (in meters)
+    * @return The Future
+    */
+    public Future<Void> setBlobTrackingDistance(Float distance) throws CallError, InterruptedException{
+        return call("setBlobTrackingDistance", distance);
     }
 
     /**
     * Sets the value of vertical offset (in meters) for the blob tracker
     * 
-    * @param value  New vertical offset (in meters), added if positive, substracted if negative
-    * @return The Future
+    * @return Current vertical offset of the blob tracker
     */
-    public Future<Void> setVerticalOffset(Float value) throws CallError, InterruptedException{
-        return call("setVerticalOffset", value);
+    public Future<Float> getVerticalOffset() throws CallError, InterruptedException {
+        return call("getVerticalOffset");
     }
 
     /**
@@ -722,16 +703,6 @@ public class ALSegmentation3D extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
     }
 
     /**
@@ -908,6 +879,16 @@ public class ALSegmentation3D extends ALProxy {
     */
     public Future<Boolean> isPaused() throws CallError, InterruptedException {
         return call("isPaused");
+    }
+
+    /**
+    * Changes the pause status of the extractor
+    * 
+    * @param status  New pause satus
+    * @return The Future
+    */
+    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
+        return call("pause", status);
     }
 
     }

@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * Manage robot resources: Synchronize movement, led, sound. Run specific actions when another behavior wants your resources
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/core/alresourcemanager.html#alresourcemanager">NAOqi APIs for ALResourceManager </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/core/alresourcemanager.html#alresourcemanager">NAOqi APIs for ALResourceManager </a>
+* NAOqi V2.3.x
 */
 public class ALResourceManager extends ALProxy {
 
@@ -43,16 +43,8 @@ public class ALResourceManager extends ALProxy {
     * @param resourceGroupName  Group name. Ex: Arm
     * @param resourceName  Resource name
     */
-    public Boolean isInGroup(String resourceGroupName, String resourceName) throws CallError, InterruptedException {
-        return (Boolean)call("isInGroup", resourceGroupName, resourceName).get();
-    }
-
-    /**
-    * Get tree of resources
-    * 
-    */
-    public Object getResources() throws CallError, InterruptedException {
-        return (Object)call("getResources").get();
+    public void createResourcesList(List<String> resourceGroupName, String resourceName) throws CallError, InterruptedException{
+        call("createResourcesList", resourceGroupName, resourceName).get();
     }
 
     /**
@@ -64,13 +56,11 @@ public class ALResourceManager extends ALProxy {
     }
 
     /**
-    * True if a resource is in another parent resource
+    * Get tree of resources
     * 
-    * @param resourceGroupName  Group name. Ex: Arm
-    * @param resourceName  Resource name
     */
-    public void createResourcesList(List<String> resourceGroupName, String resourceName) throws CallError, InterruptedException{
-        call("createResourcesList", resourceGroupName, resourceName).get();
+    public Object getResources() throws CallError, InterruptedException {
+        return (Object)call("getResources").get();
     }
 
     /**
@@ -160,15 +150,6 @@ public class ALResourceManager extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
     }
 
     /**
@@ -355,6 +336,16 @@ public class ALResourceManager extends ALProxy {
         call("deleteResource", resourceName, deleteChildResources).get();
     }
 
+    /**
+    * True if a resource is in another parent resource
+    * 
+    * @param resourceGroupName  Group name. Ex: Arm
+    * @param resourceName  Resource name
+    */
+    public Boolean isInGroup(String resourceGroupName, String resourceName) throws CallError, InterruptedException {
+        return (Boolean)call("isInGroup", resourceGroupName, resourceName).get();
+    }
+
 
     public class AsyncALResourceManager extends ALProxy {
 
@@ -367,17 +358,10 @@ public class ALResourceManager extends ALProxy {
     * 
     * @param resourceGroupName  Group name. Ex: Arm
     * @param resourceName  Resource name
+    * @return The Future
     */
-    public Future<Boolean> isInGroup(String resourceGroupName, String resourceName) throws CallError, InterruptedException {
-        return call("isInGroup", resourceGroupName, resourceName);
-    }
-
-    /**
-    * Get tree of resources
-    * 
-    */
-    public Future<Object> getResources() throws CallError, InterruptedException {
-        return call("getResources");
+    public Future<Void> createResourcesList(List<String> resourceGroupName, String resourceName) throws CallError, InterruptedException{
+        return call("createResourcesList", resourceGroupName, resourceName);
     }
 
     /**
@@ -389,14 +373,11 @@ public class ALResourceManager extends ALProxy {
     }
 
     /**
-    * True if a resource is in another parent resource
+    * Get tree of resources
     * 
-    * @param resourceGroupName  Group name. Ex: Arm
-    * @param resourceName  Resource name
-    * @return The Future
     */
-    public Future<Void> createResourcesList(List<String> resourceGroupName, String resourceName) throws CallError, InterruptedException{
-        return call("createResourcesList", resourceGroupName, resourceName);
+    public Future<Object> getResources() throws CallError, InterruptedException {
+        return call("getResources");
     }
 
     /**
@@ -488,16 +469,6 @@ public class ALResourceManager extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
     }
 
     /**
@@ -692,6 +663,16 @@ public class ALResourceManager extends ALProxy {
     */
     public Future<Void> deleteResource(String resourceName, Boolean deleteChildResources) throws CallError, InterruptedException{
         return call("deleteResource", resourceName, deleteChildResources);
+    }
+
+    /**
+    * True if a resource is in another parent resource
+    * 
+    * @param resourceGroupName  Group name. Ex: Arm
+    * @param resourceName  Resource name
+    */
+    public Future<Boolean> isInGroup(String resourceGroupName, String resourceName) throws CallError, InterruptedException {
+        return call("isInGroup", resourceGroupName, resourceName);
     }
 
     }

@@ -16,8 +16,8 @@ import java.util.List;
 /**
 * This module tries to detect emotions in the voice of the speaker.
 
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/audio/alvoiceemotionanalysis.html#alvoiceemotionanalysis">NAOqi APIs for ALVoiceEmotionAnalysis </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/audio/alvoiceemotionanalysis.html#alvoiceemotionanalysis">NAOqi APIs for ALVoiceEmotionAnalysis </a>
+* NAOqi V2.3.x
 */
 public class ALVoiceEmotionAnalysis extends ALProxy {
 
@@ -36,16 +36,6 @@ public class ALVoiceEmotionAnalysis extends ALProxy {
 	 */
     public AsyncALVoiceEmotionAnalysis async() {
         return asyncProxy;
-    }
-
-    /**
-    * Set the specified parameter.
-    * 
-    * @param parameter  Name of the parameter. "MinSignalLength" Minimum length (in seconds, positive) required for the analysis of a voice signal
-    * @param value  "MinSignalLength" : int > 0.
-    */
-    public void setParameter(String parameter, Object value) throws CallError, InterruptedException{
-        call("setParameter", parameter, value).get();
     }
 
     /**
@@ -135,15 +125,6 @@ public class ALVoiceEmotionAnalysis extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
     }
 
     /**
@@ -307,6 +288,16 @@ public class ALVoiceEmotionAnalysis extends ALProxy {
         return (List<String>)call("getMemoryKeyList").get();
     }
 
+    /**
+    * Set the specified parameter.
+    * 
+    * @param parameter  Name of the parameter. "MinSignalLength" Minimum length (in seconds, positive) required for the analysis of a voice signal
+    * @param value  "MinSignalLength" : int > 0.
+    */
+    public void setParameter(String parameter, Object value) throws CallError, InterruptedException{
+        call("setParameter", parameter, value).get();
+    }
+
 
     public class AsyncALVoiceEmotionAnalysis extends ALProxy {
 
@@ -314,17 +305,6 @@ public class ALVoiceEmotionAnalysis extends ALProxy {
             super();
         }
     
-    /**
-    * Set the specified parameter.
-    * 
-    * @param parameter  Name of the parameter. "MinSignalLength" Minimum length (in seconds, positive) required for the analysis of a voice signal
-    * @param value  "MinSignalLength" : int > 0.
-    * @return The Future
-    */
-    public Future<Void> setParameter(String parameter, Object value) throws CallError, InterruptedException{
-        return call("setParameter", parameter, value);
-    }
-
     /**
     * 
     * 
@@ -414,16 +394,6 @@ public class ALVoiceEmotionAnalysis extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
     }
 
     /**
@@ -591,6 +561,17 @@ public class ALVoiceEmotionAnalysis extends ALProxy {
     */
     public Future<List<String>> getMemoryKeyList() throws CallError, InterruptedException {
         return call("getMemoryKeyList");
+    }
+
+    /**
+    * Set the specified parameter.
+    * 
+    * @param parameter  Name of the parameter. "MinSignalLength" Minimum length (in seconds, positive) required for the analysis of a voice signal
+    * @param value  "MinSignalLength" : int > 0.
+    * @return The Future
+    */
+    public Future<Void> setParameter(String parameter, Object value) throws CallError, InterruptedException{
+        return call("setParameter", parameter, value);
     }
 
     }

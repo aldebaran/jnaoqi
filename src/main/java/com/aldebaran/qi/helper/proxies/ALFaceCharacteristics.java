@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * This module enables to extract information from the characteristics of the faces of detected people.
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/peopleperception/alfacecharacteristics.html#alfacecharacteristics">NAOqi APIs for ALFaceCharacteristics </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/peopleperception/alfacecharacteristics.html#alfacecharacteristics">NAOqi APIs for ALFaceCharacteristics </a>
+* NAOqi V2.3.x
 */
 public class ALFaceCharacteristics extends ALProxy {
 
@@ -38,31 +38,12 @@ public class ALFaceCharacteristics extends ALProxy {
     }
 
     /**
-    * Gets the smile degree threshold above which an event is raised.
+    * Gets extractor running status
     * 
-    * @return Threshold for Smiling event
+    * @return True if the extractor is currently processing images, False if not
     */
-    public Float getSmilingThreshold() throws CallError, InterruptedException {
-        return (Float)call("getSmilingThreshold").get();
-    }
-
-    /**
-    * Changes the pause status of the extractor
-    * 
-    * @param status  New pause satus
-    */
-    public void pause(Boolean status) throws CallError, InterruptedException{
-        call("pause", status).get();
-    }
-
-    /**
-    * Runs face analysis for a given person ID.
-    * 
-    * @param id  Person ID.
-    * @return True if the face analysis succeeded, false otherwise.
-    */
-    public Boolean analyzeFaceCharacteristics(Integer id) throws CallError, InterruptedException {
-        return (Boolean)call("analyzeFaceCharacteristics", id).get();
+    public Boolean isProcessing() throws CallError, InterruptedException {
+        return (Boolean)call("isProcessing").get();
     }
 
     /**
@@ -75,12 +56,22 @@ public class ALFaceCharacteristics extends ALProxy {
     }
 
     /**
-    * Gets extractor running status
+    * Gets the smile degree threshold above which an event is raised.
     * 
-    * @return True if the extractor is currently processing images, False if not
+    * @return Threshold for Smiling event
     */
-    public Boolean isProcessing() throws CallError, InterruptedException {
-        return (Boolean)call("isProcessing").get();
+    public Float getSmilingThreshold() throws CallError, InterruptedException {
+        return (Float)call("getSmilingThreshold").get();
+    }
+
+    /**
+    * Runs face analysis for a given person ID.
+    * 
+    * @param id  Person ID.
+    * @return True if the face analysis succeeded, false otherwise.
+    */
+    public Boolean analyzeFaceCharacteristics(Integer id) throws CallError, InterruptedException {
+        return (Boolean)call("analyzeFaceCharacteristics", id).get();
     }
 
     /**
@@ -170,15 +161,6 @@ public class ALFaceCharacteristics extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
     }
 
     /**
@@ -351,6 +333,15 @@ public class ALFaceCharacteristics extends ALProxy {
         return (Boolean)call("isPaused").get();
     }
 
+    /**
+    * Changes the pause status of the extractor
+    * 
+    * @param status  New pause satus
+    */
+    public void pause(Boolean status) throws CallError, InterruptedException{
+        call("pause", status).get();
+    }
+
 
     public class AsyncALFaceCharacteristics extends ALProxy {
 
@@ -359,32 +350,12 @@ public class ALFaceCharacteristics extends ALProxy {
         }
     
     /**
-    * Gets the smile degree threshold above which an event is raised.
+    * Gets extractor running status
     * 
-    * @return Threshold for Smiling event
+    * @return True if the extractor is currently processing images, False if not
     */
-    public Future<Float> getSmilingThreshold() throws CallError, InterruptedException {
-        return call("getSmilingThreshold");
-    }
-
-    /**
-    * Changes the pause status of the extractor
-    * 
-    * @param status  New pause satus
-    * @return The Future
-    */
-    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
-        return call("pause", status);
-    }
-
-    /**
-    * Runs face analysis for a given person ID.
-    * 
-    * @param id  Person ID.
-    * @return True if the face analysis succeeded, false otherwise.
-    */
-    public Future<Boolean> analyzeFaceCharacteristics(Integer id) throws CallError, InterruptedException {
-        return call("analyzeFaceCharacteristics", id);
+    public Future<Boolean> isProcessing() throws CallError, InterruptedException {
+        return call("isProcessing");
     }
 
     /**
@@ -398,12 +369,22 @@ public class ALFaceCharacteristics extends ALProxy {
     }
 
     /**
-    * Gets extractor running status
+    * Gets the smile degree threshold above which an event is raised.
     * 
-    * @return True if the extractor is currently processing images, False if not
+    * @return Threshold for Smiling event
     */
-    public Future<Boolean> isProcessing() throws CallError, InterruptedException {
-        return call("isProcessing");
+    public Future<Float> getSmilingThreshold() throws CallError, InterruptedException {
+        return call("getSmilingThreshold");
+    }
+
+    /**
+    * Runs face analysis for a given person ID.
+    * 
+    * @param id  Person ID.
+    * @return True if the face analysis succeeded, false otherwise.
+    */
+    public Future<Boolean> analyzeFaceCharacteristics(Integer id) throws CallError, InterruptedException {
+        return call("analyzeFaceCharacteristics", id);
     }
 
     /**
@@ -495,16 +476,6 @@ public class ALFaceCharacteristics extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
     }
 
     /**
@@ -681,6 +652,16 @@ public class ALFaceCharacteristics extends ALProxy {
     */
     public Future<Boolean> isPaused() throws CallError, InterruptedException {
         return call("isPaused");
+    }
+
+    /**
+    * Changes the pause status of the extractor
+    * 
+    * @param status  New pause satus
+    * @return The Future
+    */
+    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
+        return call("pause", status);
     }
 
     }

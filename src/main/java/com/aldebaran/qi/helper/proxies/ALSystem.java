@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * 
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/core/alsystem.html#alsystem">NAOqi APIs for ALSystem </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/core/alsystem.html#alsystem">NAOqi APIs for ALSystem </a>
+* NAOqi V2.3.x
 */
 public class ALSystem extends ALProxy {
 
@@ -38,32 +38,12 @@ public class ALSystem extends ALProxy {
     }
 
     /**
-    * Flash the system image and erase the user data
+    * Previous system version before software update (empty if this is not the 1st boot after a software update)
     * 
-    * @param image  Local path to a valid image.
-    * @param checksum  Local path to a md5 checksum file, or empty string for no verification
+    * @return Previous system version before software update.
     */
-    public void factoryReset(String image, String checksum) throws CallError, InterruptedException{
-        call("factoryReset", image, checksum).get();
-    }
-
-    /**
-    * Set current robot icon
-    * 
-    * @param imageFile  Image file to use as a robot icon
-    */
-    public Integer setRobotIcon(AnyObject imageFile) throws CallError, InterruptedException {
-        return (Integer)call("setRobotIcon", imageFile).get();
-    }
-
-    /**
-    * Change the user password.
-    * 
-    * @param old password  The current password of the user.
-    * @param new password  The new user password.
-    */
-    public void changePassword(String oldPassword, String newPassword) throws CallError, InterruptedException{
-        call("changePassword", oldPassword, newPassword).get();
+    public String previousSystemVersion() throws CallError, InterruptedException {
+        return (String)call("previousSystemVersion").get();
     }
 
     /**
@@ -77,12 +57,23 @@ public class ALSystem extends ALProxy {
     }
 
     /**
-    * Previous system version before software update (empty if this is not the 1st boot after a software update)
+    * Flash the system image and erase the user data
     * 
-    * @return Previous system version before software update.
+    * @param image  Local path to a valid image.
+    * @param checksum  Local path to a md5 checksum file, or empty string for no verification
     */
-    public String previousSystemVersion() throws CallError, InterruptedException {
-        return (String)call("previousSystemVersion").get();
+    public void factoryReset(String image, String checksum) throws CallError, InterruptedException{
+        call("factoryReset", image, checksum).get();
+    }
+
+    /**
+    * Change the user password.
+    * 
+    * @param old password  The current password of the user.
+    * @param new password  The new user password.
+    */
+    public void changePassword(String oldPassword, String newPassword) throws CallError, InterruptedException{
+        call("changePassword", oldPassword, newPassword).get();
     }
 
     /**
@@ -172,15 +163,6 @@ public class ALSystem extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
     }
 
     /**
@@ -346,6 +328,15 @@ public class ALSystem extends ALProxy {
         return (Boolean)call("setTimezone", timezone).get();
     }
 
+    /**
+    * Set current robot icon
+    * 
+    * @param imageFile  Image file to use as a robot icon
+    */
+    public Integer setRobotIcon(AnyObject imageFile) throws CallError, InterruptedException {
+        return (Integer)call("setRobotIcon", imageFile).get();
+    }
+
 
     public class AsyncALSystem extends ALProxy {
 
@@ -354,34 +345,12 @@ public class ALSystem extends ALProxy {
         }
     
     /**
-    * Flash the system image and erase the user data
+    * Previous system version before software update (empty if this is not the 1st boot after a software update)
     * 
-    * @param image  Local path to a valid image.
-    * @param checksum  Local path to a md5 checksum file, or empty string for no verification
-    * @return The Future
+    * @return Previous system version before software update.
     */
-    public Future<Void> factoryReset(String image, String checksum) throws CallError, InterruptedException{
-        return call("factoryReset", image, checksum);
-    }
-
-    /**
-    * Set current robot icon
-    * 
-    * @param imageFile  Image file to use as a robot icon
-    */
-    public Future<Integer> setRobotIcon(AnyObject imageFile) throws CallError, InterruptedException {
-        return call("setRobotIcon", imageFile);
-    }
-
-    /**
-    * Change the user password.
-    * 
-    * @param old password  The current password of the user.
-    * @param new password  The new user password.
-    * @return The Future
-    */
-    public Future<Void> changePassword(String oldPassword, String newPassword) throws CallError, InterruptedException{
-        return call("changePassword", oldPassword, newPassword);
+    public Future<String> previousSystemVersion() throws CallError, InterruptedException {
+        return call("previousSystemVersion");
     }
 
     /**
@@ -396,12 +365,25 @@ public class ALSystem extends ALProxy {
     }
 
     /**
-    * Previous system version before software update (empty if this is not the 1st boot after a software update)
+    * Flash the system image and erase the user data
     * 
-    * @return Previous system version before software update.
+    * @param image  Local path to a valid image.
+    * @param checksum  Local path to a md5 checksum file, or empty string for no verification
+    * @return The Future
     */
-    public Future<String> previousSystemVersion() throws CallError, InterruptedException {
-        return call("previousSystemVersion");
+    public Future<Void> factoryReset(String image, String checksum) throws CallError, InterruptedException{
+        return call("factoryReset", image, checksum);
+    }
+
+    /**
+    * Change the user password.
+    * 
+    * @param old password  The current password of the user.
+    * @param new password  The new user password.
+    * @return The Future
+    */
+    public Future<Void> changePassword(String oldPassword, String newPassword) throws CallError, InterruptedException{
+        return call("changePassword", oldPassword, newPassword);
     }
 
     /**
@@ -493,16 +475,6 @@ public class ALSystem extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
     }
 
     /**
@@ -669,6 +641,15 @@ public class ALSystem extends ALProxy {
     */
     public Future<Boolean> setTimezone(String timezone) throws CallError, InterruptedException {
         return call("setTimezone", timezone);
+    }
+
+    /**
+    * Set current robot icon
+    * 
+    * @param imageFile  Image file to use as a robot icon
+    */
+    public Future<Integer> setRobotIcon(AnyObject imageFile) throws CallError, InterruptedException {
+        return call("setRobotIcon", imageFile);
     }
 
     }

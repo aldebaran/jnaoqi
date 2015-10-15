@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * This module embeds a speech synthetizer whose role is to convert text commands into sound waves that are then either sent to Nao's loudspeakers or written into a file. This service supports several languages and some parameters of the synthetizer can be tuned to change each language's synthetic voice.
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/audio/altexttospeech.html#altexttospeech">NAOqi APIs for ALTextToSpeech </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/audio/altexttospeech.html#altexttospeech">NAOqi APIs for ALTextToSpeech </a>
+* NAOqi V2.3.x
 */
 public class ALTextToSpeech extends ALProxy {
 
@@ -38,21 +38,31 @@ public class ALTextToSpeech extends ALProxy {
     }
 
     /**
-    * Sets the volume of text-to-speech output.
+    * Sets a voice as the default voice for the corresponding language
     * 
-    * @param volume  Volume (between 0.0 and 1.0).
+    * @param Language  The language among those available on your robot as a String
+    * @param Voice  The voice among those available on your robot as a String
     */
-    public void setVolume(Float volume) throws CallError, InterruptedException{
-        call("setVolume", volume).get();
+    public void setLanguageDefaultVoice(String Language, String Voice) throws CallError, InterruptedException{
+        call("setLanguageDefaultVoice", Language, Voice).get();
     }
 
     /**
-    * Get the locale associate to the current language.
+    * Fetches the current volume the text to speech.
     * 
-    * @return A string with xx_XX format (region_country)
+    * @return Volume (integer between 0 and 100).
     */
-    public String locale() throws CallError, InterruptedException {
-        return (String)call("locale").get();
+    public Float getVolume() throws CallError, InterruptedException {
+        return (Float)call("getVolume").get();
+    }
+
+    /**
+    * Loads a set of voice parameters defined in a xml file contained in the preferences folder.The name of the xml file must begin with ALTextToSpeech_Voice_ 
+    * 
+    * @param pPreferenceName  Name of the voice preference.
+    */
+    public void loadVoicePreference(String pPreferenceName) throws CallError, InterruptedException{
+        call("loadVoicePreference", pPreferenceName).get();
     }
 
     /**
@@ -72,22 +82,13 @@ public class ALTextToSpeech extends ALProxy {
     }
 
     /**
-    * Loads a set of voice parameters defined in a xml file contained in the preferences folder.The name of the xml file must begin with ALTextToSpeech_Voice_ 
-    * 
-    * @param pPreferenceName  Name of the voice preference.
-    */
-    public void loadVoicePreference(String pPreferenceName) throws CallError, InterruptedException{
-        call("loadVoicePreference", pPreferenceName).get();
-    }
-
-    /**
     * Unload the dictionary.
     * 
     * @param word  the word you wish to delete, does not have to be in japanese.
     * @return bool: true if succeeded, false if failed
     */
-    public Boolean deleteFromDictionary(String word) throws CallError, InterruptedException {
-        return (Boolean)call("deleteFromDictionary", word).get();
+    public Boolean deleteFromDictionary(String word, String param1) throws CallError, InterruptedException {
+        return (Boolean)call("deleteFromDictionary", word, param1).get();
     }
 
     /**
@@ -116,22 +117,12 @@ public class ALTextToSpeech extends ALProxy {
     }
 
     /**
-    * Sets a voice as the default voice for the corresponding language
+    * Get the locale associate to the current language.
     * 
-    * @param Language  The language among those available on your robot as a String
-    * @param Voice  The voice among those available on your robot as a String
+    * @return A string with xx_XX format (region_country)
     */
-    public void setLanguageDefaultVoice(String Language, String Voice) throws CallError, InterruptedException{
-        call("setLanguageDefaultVoice", Language, Voice).get();
-    }
-
-    /**
-    * Fetches the current volume the text to speech.
-    * 
-    * @return Volume (integer between 0 and 100).
-    */
-    public Float getVolume() throws CallError, InterruptedException {
-        return (Float)call("getVolume").get();
+    public String locale() throws CallError, InterruptedException {
+        return (String)call("locale").get();
     }
 
     /**
@@ -140,8 +131,8 @@ public class ALTextToSpeech extends ALProxy {
     * @param word  the word you wish to delete, does not have to be in japanese.
     * @return bool: true if succeeded, false if failed
     */
-    public Boolean deleteFromDictionary(String word, String param1) throws CallError, InterruptedException {
-        return (Boolean)call("deleteFromDictionary", word, param1).get();
+    public Boolean deleteFromDictionary(String word) throws CallError, InterruptedException {
+        return (Boolean)call("deleteFromDictionary", word).get();
     }
 
     /**
@@ -231,15 +222,6 @@ public class ALTextToSpeech extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
     }
 
     /**
@@ -414,6 +396,15 @@ public class ALTextToSpeech extends ALProxy {
         return (List<String>)call("getAvailableVoices").get();
     }
 
+    /**
+    * Sets the volume of text-to-speech output.
+    * 
+    * @param volume  Volume (between 0.0 and 1.0).
+    */
+    public void setVolume(Float volume) throws CallError, InterruptedException{
+        call("setVolume", volume).get();
+    }
+
 
     public class AsyncALTextToSpeech extends ALProxy {
 
@@ -422,22 +413,33 @@ public class ALTextToSpeech extends ALProxy {
         }
     
     /**
-    * Sets the volume of text-to-speech output.
+    * Sets a voice as the default voice for the corresponding language
     * 
-    * @param volume  Volume (between 0.0 and 1.0).
+    * @param Language  The language among those available on your robot as a String
+    * @param Voice  The voice among those available on your robot as a String
     * @return The Future
     */
-    public Future<Void> setVolume(Float volume) throws CallError, InterruptedException{
-        return call("setVolume", volume);
+    public Future<Void> setLanguageDefaultVoice(String Language, String Voice) throws CallError, InterruptedException{
+        return call("setLanguageDefaultVoice", Language, Voice);
     }
 
     /**
-    * Get the locale associate to the current language.
+    * Fetches the current volume the text to speech.
     * 
-    * @return A string with xx_XX format (region_country)
+    * @return Volume (integer between 0 and 100).
     */
-    public Future<String> locale() throws CallError, InterruptedException {
-        return call("locale");
+    public Future<Float> getVolume() throws CallError, InterruptedException {
+        return call("getVolume");
+    }
+
+    /**
+    * Loads a set of voice parameters defined in a xml file contained in the preferences folder.The name of the xml file must begin with ALTextToSpeech_Voice_ 
+    * 
+    * @param pPreferenceName  Name of the voice preference.
+    * @return The Future
+    */
+    public Future<Void> loadVoicePreference(String pPreferenceName) throws CallError, InterruptedException{
+        return call("loadVoicePreference", pPreferenceName);
     }
 
     /**
@@ -459,23 +461,13 @@ public class ALTextToSpeech extends ALProxy {
     }
 
     /**
-    * Loads a set of voice parameters defined in a xml file contained in the preferences folder.The name of the xml file must begin with ALTextToSpeech_Voice_ 
-    * 
-    * @param pPreferenceName  Name of the voice preference.
-    * @return The Future
-    */
-    public Future<Void> loadVoicePreference(String pPreferenceName) throws CallError, InterruptedException{
-        return call("loadVoicePreference", pPreferenceName);
-    }
-
-    /**
     * Unload the dictionary.
     * 
     * @param word  the word you wish to delete, does not have to be in japanese.
     * @return bool: true if succeeded, false if failed
     */
-    public Future<Boolean> deleteFromDictionary(String word) throws CallError, InterruptedException {
-        return call("deleteFromDictionary", word);
+    public Future<Boolean> deleteFromDictionary(String word, String param1) throws CallError, InterruptedException {
+        return call("deleteFromDictionary", word, param1);
     }
 
     /**
@@ -504,23 +496,12 @@ public class ALTextToSpeech extends ALProxy {
     }
 
     /**
-    * Sets a voice as the default voice for the corresponding language
+    * Get the locale associate to the current language.
     * 
-    * @param Language  The language among those available on your robot as a String
-    * @param Voice  The voice among those available on your robot as a String
-    * @return The Future
+    * @return A string with xx_XX format (region_country)
     */
-    public Future<Void> setLanguageDefaultVoice(String Language, String Voice) throws CallError, InterruptedException{
-        return call("setLanguageDefaultVoice", Language, Voice);
-    }
-
-    /**
-    * Fetches the current volume the text to speech.
-    * 
-    * @return Volume (integer between 0 and 100).
-    */
-    public Future<Float> getVolume() throws CallError, InterruptedException {
-        return call("getVolume");
+    public Future<String> locale() throws CallError, InterruptedException {
+        return call("locale");
     }
 
     /**
@@ -529,8 +510,8 @@ public class ALTextToSpeech extends ALProxy {
     * @param word  the word you wish to delete, does not have to be in japanese.
     * @return bool: true if succeeded, false if failed
     */
-    public Future<Boolean> deleteFromDictionary(String word, String param1) throws CallError, InterruptedException {
-        return call("deleteFromDictionary", word, param1);
+    public Future<Boolean> deleteFromDictionary(String word) throws CallError, InterruptedException {
+        return call("deleteFromDictionary", word);
     }
 
     /**
@@ -622,16 +603,6 @@ public class ALTextToSpeech extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
     }
 
     /**
@@ -813,6 +784,16 @@ public class ALTextToSpeech extends ALProxy {
     */
     public Future<List<String>> getAvailableVoices() throws CallError, InterruptedException {
         return call("getAvailableVoices");
+    }
+
+    /**
+    * Sets the volume of text-to-speech output.
+    * 
+    * @param volume  Volume (between 0.0 and 1.0).
+    * @return The Future
+    */
+    public Future<Void> setVolume(Float volume) throws CallError, InterruptedException{
+        return call("setVolume", volume);
     }
 
     }

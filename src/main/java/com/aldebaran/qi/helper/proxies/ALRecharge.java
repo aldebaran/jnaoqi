@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * 
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/motion/alrecharge.html#alrecharge">NAOqi APIs for ALRecharge </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/motion/alrecharge.html#alrecharge">NAOqi APIs for ALRecharge </a>
+* NAOqi V2.3.x
 */
 public class ALRecharge extends ALProxy {
 
@@ -35,14 +35,6 @@ public class ALRecharge extends ALProxy {
 	 */
     public AsyncALRecharge async() {
         return asyncProxy;
-    }
-
-    /**
-    * .
-    * 
-    */
-    public Integer adjustDockingPosition(List<List<Float>> param1) throws CallError, InterruptedException {
-        return (Integer)call("adjustDockingPosition", param1).get();
     }
 
     /**
@@ -132,15 +124,6 @@ public class ALRecharge extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
     }
 
     /**
@@ -293,6 +276,14 @@ public class ALRecharge extends ALProxy {
         return (Integer)call("getMaxNumberOfTries").get();
     }
 
+    /**
+    * .
+    * 
+    */
+    public Integer adjustDockingPosition(List<List<Float>> param1) throws CallError, InterruptedException {
+        return (Integer)call("adjustDockingPosition", param1).get();
+    }
+
 
     public class AsyncALRecharge extends ALProxy {
 
@@ -300,14 +291,6 @@ public class ALRecharge extends ALProxy {
             super();
         }
     
-    /**
-    * .
-    * 
-    */
-    public Future<Integer> adjustDockingPosition(List<List<Float>> param1) throws CallError, InterruptedException {
-        return call("adjustDockingPosition", param1);
-    }
-
     /**
     * 
     * 
@@ -397,16 +380,6 @@ public class ALRecharge extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
     }
 
     /**
@@ -564,6 +537,14 @@ public class ALRecharge extends ALProxy {
     */
     public Future<Integer> getMaxNumberOfTries() throws CallError, InterruptedException {
         return call("getMaxNumberOfTries");
+    }
+
+    /**
+    * .
+    * 
+    */
+    public Future<Integer> adjustDockingPosition(List<List<Float>> param1) throws CallError, InterruptedException {
+        return call("adjustDockingPosition", param1);
     }
 
     }

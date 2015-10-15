@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * 
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/core/packagemanager.html#packagemanager">NAOqi APIs for PackageManager </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/core/packagemanager.html#packagemanager">NAOqi APIs for PackageManager </a>
+* NAOqi V2.3.x
 */
 public class PackageManager extends ALProxy {
 
@@ -66,14 +66,6 @@ public class PackageManager extends ALProxy {
     * 
     */
     public Boolean install(String param1) throws CallError, InterruptedException {
-        return (Boolean)call("install", param1).get();
-    }
-
-    /**
-    * 
-    * 
-    */
-    public Boolean install(AnyObject param1) throws CallError, InterruptedException {
         return (Boolean)call("install", param1).get();
     }
 
@@ -226,14 +218,6 @@ public class PackageManager extends ALProxy {
     * 
     */
     public Future<Boolean> install(String param1) throws CallError, InterruptedException {
-        return call("install", param1);
-    }
-
-    /**
-    * 
-    * 
-    */
-    public Future<Boolean> install(AnyObject param1) throws CallError, InterruptedException {
         return call("install", param1);
     }
 

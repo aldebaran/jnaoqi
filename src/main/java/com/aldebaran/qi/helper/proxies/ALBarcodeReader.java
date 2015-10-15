@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.List;
 /**
 * This module allows the search for barcodes in the camera image.
-* @see <a href="http://doc.aldebaran.lan/doc/master/aldeb-doc/naoqi/vision/albarcodereader.html#albarcodereader">NAOqi APIs for ALBarcodeReader </a>
-* NAOqi V2.4.x
+* @see <a href="http://doc.aldebaran.lan/doc/release-2.3/aldeb-doc/naoqi/vision/albarcodereader.html#albarcodereader">NAOqi APIs for ALBarcodeReader </a>
+* NAOqi V2.3.x
 */
 public class ALBarcodeReader extends ALProxy {
 
@@ -38,32 +38,21 @@ public class ALBarcodeReader extends ALProxy {
     }
 
     /**
-    * Sets extractor resolution
+    * Gets extractor resolution
     * 
-    * @param resolution  New resolution
-    * @return True if the update succeeded, False if not
+    * @return Current value of the resolution of the extractor
     */
-    public Boolean setResolution(Integer resolution) throws CallError, InterruptedException {
-        return (Boolean)call("setResolution", resolution).get();
+    public Integer getResolution() throws CallError, InterruptedException {
+        return (Integer)call("getResolution").get();
     }
 
     /**
-    * Changes the pause status of the extractor
+    * Gets extractor running status
     * 
-    * @param status  New pause satus
+    * @return True if the extractor is currently processing images, False if not
     */
-    public void pause(Boolean status) throws CallError, InterruptedException{
-        call("pause", status).get();
-    }
-
-    /**
-    * Sets extractor framerate
-    * 
-    * @param value  New framerate
-    * @return True if the update succeeded, False if not
-    */
-    public Boolean setFrameRate(Integer value) throws CallError, InterruptedException {
-        return (Boolean)call("setFrameRate", value).get();
+    public Boolean isProcessing() throws CallError, InterruptedException {
+        return (Boolean)call("isProcessing").get();
     }
 
     /**
@@ -76,12 +65,13 @@ public class ALBarcodeReader extends ALProxy {
     }
 
     /**
-    * Gets extractor resolution
+    * Sets extractor resolution
     * 
-    * @return Current value of the resolution of the extractor
+    * @param resolution  New resolution
+    * @return True if the update succeeded, False if not
     */
-    public Integer getResolution() throws CallError, InterruptedException {
-        return (Integer)call("getResolution").get();
+    public Boolean setResolution(Integer resolution) throws CallError, InterruptedException {
+        return (Boolean)call("setResolution", resolution).get();
     }
 
     /**
@@ -95,21 +85,22 @@ public class ALBarcodeReader extends ALProxy {
     }
 
     /**
-    * Gets extractor running status
-    * 
-    * @return True if the extractor is currently processing images, False if not
-    */
-    public Boolean isProcessing() throws CallError, InterruptedException {
-        return (Boolean)call("isProcessing").get();
-    }
-
-    /**
     * Gets extractor active camera
     * 
     * @return Id of the current active camera of the extractor
     */
     public Integer getActiveCamera() throws CallError, InterruptedException {
         return (Integer)call("getActiveCamera").get();
+    }
+
+    /**
+    * Sets extractor framerate
+    * 
+    * @param value  New framerate
+    * @return True if the update succeeded, False if not
+    */
+    public Boolean setFrameRate(Integer value) throws CallError, InterruptedException {
+        return (Boolean)call("setFrameRate", value).get();
     }
 
     /**
@@ -199,15 +190,6 @@ public class ALBarcodeReader extends ALProxy {
     */
     public Boolean wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return (Boolean)call("wait", id, timeoutPeriod).get();
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    */
-    public void wait(Integer id) throws CallError, InterruptedException{
-        call("wait", id).get();
     }
 
     /**
@@ -380,6 +362,15 @@ public class ALBarcodeReader extends ALProxy {
         return (Boolean)call("isPaused").get();
     }
 
+    /**
+    * Changes the pause status of the extractor
+    * 
+    * @param status  New pause satus
+    */
+    public void pause(Boolean status) throws CallError, InterruptedException{
+        call("pause", status).get();
+    }
+
 
     public class AsyncALBarcodeReader extends ALProxy {
 
@@ -388,33 +379,21 @@ public class ALBarcodeReader extends ALProxy {
         }
     
     /**
-    * Sets extractor resolution
+    * Gets extractor resolution
     * 
-    * @param resolution  New resolution
-    * @return True if the update succeeded, False if not
+    * @return Current value of the resolution of the extractor
     */
-    public Future<Boolean> setResolution(Integer resolution) throws CallError, InterruptedException {
-        return call("setResolution", resolution);
+    public Future<Integer> getResolution() throws CallError, InterruptedException {
+        return call("getResolution");
     }
 
     /**
-    * Changes the pause status of the extractor
+    * Gets extractor running status
     * 
-    * @param status  New pause satus
-    * @return The Future
+    * @return True if the extractor is currently processing images, False if not
     */
-    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
-        return call("pause", status);
-    }
-
-    /**
-    * Sets extractor framerate
-    * 
-    * @param value  New framerate
-    * @return True if the update succeeded, False if not
-    */
-    public Future<Boolean> setFrameRate(Integer value) throws CallError, InterruptedException {
-        return call("setFrameRate", value);
+    public Future<Boolean> isProcessing() throws CallError, InterruptedException {
+        return call("isProcessing");
     }
 
     /**
@@ -427,12 +406,13 @@ public class ALBarcodeReader extends ALProxy {
     }
 
     /**
-    * Gets extractor resolution
+    * Sets extractor resolution
     * 
-    * @return Current value of the resolution of the extractor
+    * @param resolution  New resolution
+    * @return True if the update succeeded, False if not
     */
-    public Future<Integer> getResolution() throws CallError, InterruptedException {
-        return call("getResolution");
+    public Future<Boolean> setResolution(Integer resolution) throws CallError, InterruptedException {
+        return call("setResolution", resolution);
     }
 
     /**
@@ -446,21 +426,22 @@ public class ALBarcodeReader extends ALProxy {
     }
 
     /**
-    * Gets extractor running status
-    * 
-    * @return True if the extractor is currently processing images, False if not
-    */
-    public Future<Boolean> isProcessing() throws CallError, InterruptedException {
-        return call("isProcessing");
-    }
-
-    /**
     * Gets extractor active camera
     * 
     * @return Id of the current active camera of the extractor
     */
     public Future<Integer> getActiveCamera() throws CallError, InterruptedException {
         return call("getActiveCamera");
+    }
+
+    /**
+    * Sets extractor framerate
+    * 
+    * @param value  New framerate
+    * @return True if the update succeeded, False if not
+    */
+    public Future<Boolean> setFrameRate(Integer value) throws CallError, InterruptedException {
+        return call("setFrameRate", value);
     }
 
     /**
@@ -552,16 +533,6 @@ public class ALBarcodeReader extends ALProxy {
     */
     public Future<Boolean> wait(Integer id, Integer timeoutPeriod) throws CallError, InterruptedException {
         return call("wait", id, timeoutPeriod);
-    }
-
-    /**
-    * Wait for the end of a long running method that was called using 'post', returns a cancelable future
-    * 
-    * @param id  The ID of the method that was returned when calling the method using 'post'
-    * @return The Future
-    */
-    public Future<Void> wait(Integer id) throws CallError, InterruptedException{
-        return call("wait", id);
     }
 
     /**
@@ -738,6 +709,16 @@ public class ALBarcodeReader extends ALProxy {
     */
     public Future<Boolean> isPaused() throws CallError, InterruptedException {
         return call("isPaused");
+    }
+
+    /**
+    * Changes the pause status of the extractor
+    * 
+    * @param status  New pause satus
+    * @return The Future
+    */
+    public Future<Void> pause(Boolean status) throws CallError, InterruptedException{
+        return call("pause", status);
     }
 
     }
