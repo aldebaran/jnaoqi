@@ -69,9 +69,9 @@
             </properties>
         </profile>
         <profile>
-            <id>arm</id>
+            <id>android</id>
             <properties>
-                <rp.build.platform>arm</rp.build.platform>
+                <rp.build.platform>android</rp.build.platform>
             </properties>
         </profile>
         <profile>
