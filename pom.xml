@@ -87,7 +87,7 @@
             <groupId>com.aldebaran</groupId>
             <type>jar</type>
             <artifactId>libqi-java-${rp.build.platform}</artifactId>
-            <version>2.5.0.51</version>
+            <version>sdk-2015-12-10_18-19-32</version>
         </dependency>
     </dependencies>
 
