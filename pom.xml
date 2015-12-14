@@ -92,7 +92,7 @@
     </dependencies>
 
     <build>
-        <finalName>java-naoqi-sdk-${version}-${rp.build.platform}</finalName>
+        <finalName>java-naoqi-sdk-${project.version}-${rp.build.platform}</finalName>
         <plugins>
             <plugin> <!-- Plug Ecplise on project -->
                 <groupId>org.apache.maven.plugins</groupId>
@@ -119,7 +119,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>${groupId}.App</mainClass>
+                            <mainClass>${project.groupId}.App</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -146,7 +146,7 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>2.10.3</version>
                 <configuration>
-                    <finalName>java-naoqi-sdk-${version}</finalName>
+                    <finalName>java-naoqi-sdk-${project.version}</finalName>
                     <failOnError>false</failOnError>
                     <stylesheet>maven</stylesheet>
                     <stylesheetfile>stylesheet.css</stylesheetfile>
