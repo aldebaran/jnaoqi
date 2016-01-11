@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.aldebaran</groupId>
-    <version>2.5.0.51</version>
+    <version>platform-141</version>
     <packaging>jar</packaging>
     <artifactId>java-naoqi-sdk</artifactId>
     <name>JavaNaoqiSDK</name>
@@ -87,7 +87,7 @@
             <groupId>com.aldebaran</groupId>
             <type>jar</type>
             <artifactId>libqi-java-${rp.build.platform}</artifactId>
-            <version>sdk-2015-12-10_18-19-32</version>
+            <version>platform-141</version>
         </dependency>
     </dependencies>
 
