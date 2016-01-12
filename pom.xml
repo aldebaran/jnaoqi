@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.aldebaran</groupId>
-    <version>2.5.0.51</version>
+    <version>platform-141</version>
     <packaging>jar</packaging>
     <artifactId>java-naoqi-sdk</artifactId>
     <name>JavaNaoqiSDK</name>
@@ -20,6 +20,7 @@
 
     <properties>
         <jdk.version>1.6</jdk.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <distributionManagement>
@@ -68,9 +69,9 @@
             </properties>
         </profile>
         <profile>
-            <id>arm</id>
+            <id>android</id>
             <properties>
-                <rp.build.platform>arm</rp.build.platform>
+                <rp.build.platform>android</rp.build.platform>
             </properties>
         </profile>
         <profile>
@@ -86,12 +87,12 @@
             <groupId>com.aldebaran</groupId>
             <type>jar</type>
             <artifactId>libqi-java-${rp.build.platform}</artifactId>
-            <version>2.5.0.51</version>
+            <version>platform-141</version>
         </dependency>
     </dependencies>
 
     <build>
-        <finalName>java-naoqi-sdk-${version}-${rp.build.platform}</finalName>
+        <finalName>java-naoqi-sdk-${project.version}-${rp.build.platform}</finalName>
         <plugins>
             <plugin> <!-- Plug Ecplise on project -->
                 <groupId>org.apache.maven.plugins</groupId>
@@ -118,7 +119,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>${groupId}.App</mainClass>
+                            <mainClass>${project.groupId}.App</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -145,7 +146,7 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>2.10.3</version>
                 <configuration>
-                    <finalName>java-naoqi-sdk-${version}</finalName>
+                    <finalName>java-naoqi-sdk-${project.version}</finalName>
                     <failOnError>false</failOnError>
                     <stylesheet>maven</stylesheet>
                     <stylesheetfile>stylesheet.css</stylesheetfile>
