@@ -75,6 +75,12 @@
             </properties>
         </profile>
         <profile>
+            <id>arm</id>
+            <properties>
+                <rp.build.platform>arm</rp.build.platform>
+            </properties>
+        </profile>
+        <profile>
             <id>mac64</id>
             <properties>
                 <rp.build.platform>mac64</rp.build.platform>
